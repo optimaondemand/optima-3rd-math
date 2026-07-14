@@ -68,6 +68,29 @@
 .bb-reset{background:#fff;border:2.5px solid #7A88A8;color:#7A88A8;padding:7px 14px;border-radius:10px;font-family:'Nunito',sans-serif;font-weight:800;font-size:12px;cursor:pointer;display:block;margin:8px auto 0}
 .bb-reset:hover{background:#F0F2F8}
 .ex-tbl{width:100%;border-collapse:separate;border-spacing:0;margin:14px 0;background:#fff;border:2px solid #E2E8F4;border-radius:14px;overflow:hidden}.ex-tbl thead th{background:#0E1C42;color:#fff;font-size:12px;padding:12px;text-align:left;text-transform:uppercase;font-weight:900}.ex-tbl tbody td{padding:12px 14px;border-top:1px solid #E2E8F4;font-size:14.5px;color:#0E1C42;line-height:1.5}.ex-tbl tbody td:first-child{font-family:'Lora',serif;font-weight:800;font-size:17px}.ex-tbl tbody td:last-child{text-align:center;font-family:'Lora',serif;font-weight:900;font-size:18px;background:#FAFBFF;border-left:1px dashed #E2E8F4;color:#1A8A5A}
+</style>
+<style id="fluencyStyles">
+.fluency-box{background:#fff;border:2px solid #F5C518;border-radius:18px;overflow:hidden;margin-bottom:22px;font-family:'Nunito',sans-serif}
+.fluency-head{display:flex;align-items:center;gap:12px;background:linear-gradient(135deg,#F5C518,#E8B723);padding:14px 20px;flex-wrap:wrap}
+.fluency-head-icon{font-size:26px;line-height:1}
+.fluency-head-label{font-size:10px;color:#0E1C42;font-weight:800;text-transform:uppercase;letter-spacing:0.5px}
+.fluency-head-title{font-size:15px;color:#0E1C42;font-weight:800}
+.fluency-timer-ui{margin-left:auto;display:flex;align-items:center;gap:10px}
+.fluency-timer-display{font-size:20px;font-weight:800;color:#0E1C42;min-width:46px;text-align:center}
+.fluency-start-btn{background:#0E1C42;color:#fff;border:none;border-radius:10px;padding:8px 14px;font-weight:700;font-size:12px;cursor:pointer}
+.fluency-start-btn:disabled{opacity:0.55;cursor:default}
+.fluency-body{padding:16px 20px}
+.fluency-instructions{font-size:13px;color:#4A5568;margin:0 0 12px}
+.fluency-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(128px,1fr));gap:10px;margin-bottom:14px}
+.fluency-item{display:flex;align-items:center;gap:6px;background:#FAFBFF;border:1.5px solid #E2E8F4;border-radius:10px;padding:8px 10px}
+.fluency-item.fluency-correct{border-color:#2DB87A;background:#EAFBF3}
+.fluency-item.fluency-wrong{border-color:#E07B39;background:#FDF1E9}
+.fluency-q{font-size:13px;font-weight:700;color:#0E1C42;white-space:nowrap}
+.fluency-input{width:46px;border:1.5px solid #CBD5E8;border-radius:6px;padding:4px;font-size:14px;text-align:center;font-family:'Nunito',sans-serif}
+.fluency-input:disabled{background:#F0F2F8}
+.fluency-check-btn{background:#2DB87A;color:#fff;border:none;border-radius:10px;padding:10px 18px;font-weight:800;font-size:13px;cursor:pointer}
+.fluency-check-btn:disabled{opacity:0.55;cursor:default}
+.fluency-result{margin-top:10px;font-size:14px;color:#0E1C42;font-weight:700}
 </style></head><body>
 <div class="page-wrap">
 <div class="progress-wrap"><span class="progress-label">📐 Lesson Progress</span><div class="progress-track"><div class="progress-fill" id="pf"></div></div><span class="progress-pct" id="pp">0%</span></div>
@@ -113,7 +136,43 @@
 </div>
 
 <div class="tab-panel active" id="tab-warmup">
-  <div class="video-wrap" data-video-slot="3-07-02-welcome"><div class="video-wrap-header"><span style="font-size:20px;">🎬</span><div><div class="video-wrap-type">Welcome · Lesson 3.07.02</div><div class="video-wrap-title">Stack one cube per count</div></div></div><div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">🎬</div><div class="video-placeholder-text">📹 <strong>3-07-02_Welcome.mp4</strong></div><div class="record-note"><strong>Recording prompt:</strong> Show a small table: Dogs 7, Cats 5, Fish 3, Birds 2. "I want to compare these at a glance." Stack five cubes for Soccer, three for Basketball, four for Swimming, two for Running. Stand back. "Now I can see which is biggest and which is smallest without counting again." (~1–2 min)</div><div class="video-placeholder-id"><!-- slot: 3-07-02-welcome --></div></div></div></div>
+<div class="fluency-box" data-timed="true">
+  <div class="fluency-head">
+    <div class="fluency-head-icon">&#9203;</div>
+    <div><div class="fluency-head-label">TIMED FLUENCY CHECK</div><div class="fluency-head-title">Mixed Multiplication &amp; Division</div></div>
+    <div class="fluency-timer-ui"><span class="fluency-timer-display" id="fluencyTimerDisplay">60s</span><button class="fluency-start-btn" id="fluencyStartBtn" onclick="fluencyStart()">Start 1-Minute Check</button></div>
+  </div>
+  <div class="fluency-body">
+    <p class="fluency-instructions">Unit check &#8212; Quarter 3 timed fluency. Click Start, then answer as many as you can in 60 seconds. Answers lock in automatically when time is up.</p>
+    <div class="fluency-grid" id="fluencyGrid">
+      <div class="fluency-item"><span class="fluency-q">6 × 7 =</span><input type="text" class="fluency-input" inputmode="numeric" autocomplete="off" data-answer="42" disabled></div>
+      <div class="fluency-item"><span class="fluency-q">42 ÷ 6 =</span><input type="text" class="fluency-input" inputmode="numeric" autocomplete="off" data-answer="7" disabled></div>
+      <div class="fluency-item"><span class="fluency-q">8 × 9 =</span><input type="text" class="fluency-input" inputmode="numeric" autocomplete="off" data-answer="72" disabled></div>
+      <div class="fluency-item"><span class="fluency-q">72 ÷ 8 =</span><input type="text" class="fluency-input" inputmode="numeric" autocomplete="off" data-answer="9" disabled></div>
+      <div class="fluency-item"><span class="fluency-q">7 × 7 =</span><input type="text" class="fluency-input" inputmode="numeric" autocomplete="off" data-answer="49" disabled></div>
+      <div class="fluency-item"><span class="fluency-q">49 ÷ 7 =</span><input type="text" class="fluency-input" inputmode="numeric" autocomplete="off" data-answer="7" disabled></div>
+      <div class="fluency-item"><span class="fluency-q">9 × 6 =</span><input type="text" class="fluency-input" inputmode="numeric" autocomplete="off" data-answer="54" disabled></div>
+      <div class="fluency-item"><span class="fluency-q">54 ÷ 9 =</span><input type="text" class="fluency-input" inputmode="numeric" autocomplete="off" data-answer="6" disabled></div>
+      <div class="fluency-item"><span class="fluency-q">8 × 7 =</span><input type="text" class="fluency-input" inputmode="numeric" autocomplete="off" data-answer="56" disabled></div>
+      <div class="fluency-item"><span class="fluency-q">56 ÷ 8 =</span><input type="text" class="fluency-input" inputmode="numeric" autocomplete="off" data-answer="7" disabled></div>
+      <div class="fluency-item"><span class="fluency-q">6 × 9 =</span><input type="text" class="fluency-input" inputmode="numeric" autocomplete="off" data-answer="54" disabled></div>
+      <div class="fluency-item"><span class="fluency-q">63 ÷ 7 =</span><input type="text" class="fluency-input" inputmode="numeric" autocomplete="off" data-answer="9" disabled></div>
+      <div class="fluency-item"><span class="fluency-q">7 × 8 =</span><input type="text" class="fluency-input" inputmode="numeric" autocomplete="off" data-answer="56" disabled></div>
+      <div class="fluency-item"><span class="fluency-q">45 ÷ 5 =</span><input type="text" class="fluency-input" inputmode="numeric" autocomplete="off" data-answer="9" disabled></div>
+      <div class="fluency-item"><span class="fluency-q">9 × 9 =</span><input type="text" class="fluency-input" inputmode="numeric" autocomplete="off" data-answer="81" disabled></div>
+      <div class="fluency-item"><span class="fluency-q">81 ÷ 9 =</span><input type="text" class="fluency-input" inputmode="numeric" autocomplete="off" data-answer="9" disabled></div>
+      <div class="fluency-item"><span class="fluency-q">6 × 6 =</span><input type="text" class="fluency-input" inputmode="numeric" autocomplete="off" data-answer="36" disabled></div>
+      <div class="fluency-item"><span class="fluency-q">36 ÷ 6 =</span><input type="text" class="fluency-input" inputmode="numeric" autocomplete="off" data-answer="6" disabled></div>
+      <div class="fluency-item"><span class="fluency-q">7 × 9 =</span><input type="text" class="fluency-input" inputmode="numeric" autocomplete="off" data-answer="63" disabled></div>
+      <div class="fluency-item"><span class="fluency-q">64 ÷ 8 =</span><input type="text" class="fluency-input" inputmode="numeric" autocomplete="off" data-answer="8" disabled></div>
+    </div>
+    <button class="fluency-check-btn" id="fluencyCheckBtn" onclick="fluencyCheck()" disabled>Check My Answers</button>
+    <div class="fluency-result" id="fluencyResult"></div>
+  </div>
+  <textarea class="journal-box" id="fluencyJournal" data-label="Fluency Warm-Up (Mixed Multiplication &amp; Division)" readonly style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;"></textarea>
+</div>
+
+  <div class="video-wrap" data-video-slot="3-07-02-welcome"><div class="video-wrap-header"><span style="font-size:20px;">🎬</span><div><div class="video-wrap-type">Welcome · Lesson 3.07.02</div><div class="video-wrap-title">Stack one cube per count</div></div></div><div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">🎬</div><div class="video-placeholder-text">📹 <strong>3-07-02_Welcome.mp4</strong></div><div class="record-note"><strong>Recording prompt:</strong> Show a small table: Dogs 7, Cats 5, Fish 3, Birds 2. "I want to compare these at a glance." Stack seven cubes for Dogs, five for Cats, three for Fish, two for Birds. Stand back. "Now I can see which is biggest and which is smallest without counting again." (~1–2 min)</div><div class="video-placeholder-id"><!-- slot: 3-07-02-welcome --></div></div></div></div>
 
   <div class="activity bl-yellow"><div class="activity-head"><div class="activity-num" style="background:#F5C518;color:#0E1C42;">🔎</div><div><div class="activity-title">Readiness Check</div><div class="activity-sub">Tap the card.</div></div></div><div class="activity-body">
     <p><strong>A graph shows Dogs = 7 cubes and Birds = 2 cubes. Which has more?</strong></p>
@@ -194,9 +253,9 @@
     <p>A picture graph works the same way — just replace each cube with a small picture (a soccer ball, a basketball, etc.). Same data, different look.</p>
   </div>
 
-  <div class="video-wrap" data-video-slot="3-07-02-example"><div class="video-wrap-header"><span style="font-size:20px;">🎬</span><div><div class="video-wrap-type">Worked Example · Lesson 3.07.02</div><div class="video-wrap-title">Felix's after-school club survey</div></div></div><div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">🎬</div><div class="video-placeholder-text">📹 <strong>3-07-02_Worked-Example.mp4</strong></div><div class="record-note"><strong>Recording prompt:</strong> Felix counted students in each after-school club. Chess 4, Art 6, Drama 3, Robotics 5. Build each bar one cube at a time. Then read: most popular = Chocolate, least = Mint, how many more like Chocolate than Mint = 4, total = 15. (~2 min)</div><div class="video-placeholder-id"><!-- slot: 3-07-02-example --></div></div></div></div>
+  <div class="video-wrap" data-video-slot="3-07-02-example"><div class="video-wrap-header"><span style="font-size:20px;">🎬</span><div><div class="video-wrap-type">Worked Example · Lesson 3.07.02</div><div class="video-wrap-title">Felix's after-school club survey</div></div></div><div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">🎬</div><div class="video-placeholder-text">📹 <strong>3-07-02_Worked-Example.mp4</strong></div><div class="record-note"><strong>Recording prompt:</strong> Felix counted students in each after-school club. Chess 4, Art 6, Drama 3, Robotics 5. Build each bar one cube at a time. Then read: most popular = Art, least = Drama, how many more in Art than Drama = 3, total = 18. (~2 min)</div><div class="video-placeholder-id"><!-- slot: 3-07-02-example --></div></div></div></div>
 
-  <div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">🧠</div><div><div class="activity-title">Worked Example: Ice Cream Survey</div></div></div><div class="activity-body">
+  <div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">🧠</div><div><div class="activity-title">Worked Example: After-School Club Survey</div></div></div><div class="activity-body">
     <div class="task-box"><div class="task-label">Problem</div><p>Felix's clubs: Chess 4, Art 6, Drama 3, Robotics 5. Make a bar graph and answer: <em>Which club is largest? How many more in Art than Drama?</em></p></div>
     <div class="bubble-row">
       <div class="bubble atlas"><div class="bubble-avatar">A</div><div class="bubble-body"><div class="bubble-name">Atlas — build the bars</div><div class="bubble-text">"4 cubes for Chess, 6 for Art, 3 for Drama, 5 for Robotics."</div></div></div>
@@ -217,16 +276,16 @@
   <div class="activity bl-em"><div class="activity-head"><div class="activity-num" style="background:var(--em);">1</div><div><div class="activity-title">Read the bars</div></div></div><div class="activity-body">
     <div class="fill-row"><strong>Tallest bar (most popular pet)?</strong></div>
     <div class="value-card-row" id="p1-tall">
-      <div class="value-card" onclick="p1Tall(this,'Soccer')"><div class="big">Dogs</div></div>
-      <div class="value-card" onclick="p1Tall(this,'Basketball')"><div class="big">Basketball</div></div>
-      <div class="value-card" onclick="p1Tall(this,'Swimming')"><div class="big">Swimming</div></div>
-      <div class="value-card" onclick="p1Tall(this,'Running')"><div class="big">Birds</div></div>
+      <div class="value-card" onclick="p1Tall(this,'Dogs')"><div class="big">Dogs</div></div>
+      <div class="value-card" onclick="p1Tall(this,'Cats')"><div class="big">Cats</div></div>
+      <div class="value-card" onclick="p1Tall(this,'Fish')"><div class="big">Fish</div></div>
+      <div class="value-card" onclick="p1Tall(this,'Birds')"><div class="big">Birds</div></div>
     </div>
     <div class="fill-row"><strong>How many more own Cats than Fish?</strong><input type="number" class="fill-input" id="p1-diff" placeholder="?"/></div>
     <div class="fill-row"><strong>Total neighbors surveyed:</strong><input type="number" class="fill-input" id="p1-tot" placeholder="?"/></div>
     <button class="check-btn" onclick="checkP1()">Check ✓</button>
     <div class="feedback-branch feedback-pass" id="p1-pass"><strong>✅</strong> Dogs is tallest. Cats − Fish = 5 − 3 = 2 more. Total = 7+5+3+2 = 17.</div>
-    <div class="feedback-branch feedback-retry" id="p1-retry"><strong>🔄 Read each bar's height.</strong><div class="hint-callout">Dogs 7, Cats 5, Fish 3, Birds 2. Tallest = Soccer. Difference = 4 − 2 = 2. Total = 14.</div><button class="orange-btn" onclick="resetP1()">↩ Reset</button></div>
+    <div class="feedback-branch feedback-retry" id="p1-retry"><strong>🔄 Read each bar's height.</strong><div class="hint-callout">Dogs 7, Cats 5, Fish 3, Birds 2. Tallest = Dogs. Difference = 5 − 3 = 2. Total = 17.</div><button class="orange-btn" onclick="resetP1()">↩ Reset</button></div>
   </div></div>
 
   <div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">2</div><div><div class="activity-title">From bars back to count</div></div></div><div class="activity-body">
@@ -248,8 +307,8 @@
   </div></div>
 
   <div class="activity bl-navy"><div class="activity-head"><div class="activity-num" style="background:#0E1C42;">📬</div><div><div class="activity-title">Show What You Know</div></div></div><div class="activity-body">
-    <div class="q-block"><p class="q-text"><span class="q-num">1</span><strong>Fluency.</strong> Using Hazel's pet survey (Dogs 7, Cats 5, Fish 3, Birds 2): which sport was most popular, and how many more chose Soccer than Basketball?</p><div class="journal-label">✏️ <span class="saved-dot" id="da1"></span></div><textarea class="journal-box" id="j-a1" data-label="SWYK 1" oninput="autoSave(this,'da1')" placeholder=""></textarea></div>
-    <div class="q-block"><p class="q-text"><span class="q-num">2</span><strong>Transfer.</strong> Felix's after-school club survey: Chocolate 6, Vanilla 4, Strawberry 3, Mint 2. Sketch a bar graph in your journal (one cube per vote). Which flavor is least popular?</p><div class="journal-label">✏️ <span class="saved-dot" id="da2"></span></div><textarea class="journal-box" id="j-a2" data-label="SWYK 2" oninput="autoSave(this,'da2')" placeholder=""></textarea></div>
+    <div class="q-block"><p class="q-text"><span class="q-num">1</span><strong>Fluency.</strong> Using Hazel's pet survey (Dogs 7, Cats 5, Fish 3, Birds 2): which pet was most popular, and how many more chose Dogs than Cats?</p><div class="journal-label">✏️ <span class="saved-dot" id="da1"></span></div><textarea class="journal-box" id="j-a1" data-label="SWYK 1" oninput="autoSave(this,'da1')" placeholder=""></textarea></div>
+    <div class="q-block"><p class="q-text"><span class="q-num">2</span><strong>Transfer.</strong> Felix's after-school club survey: Chess 4, Art 6, Drama 3, Robotics 5. Sketch a bar graph in your journal (one cube per vote). Which club is least popular?</p><div class="journal-label">✏️ <span class="saved-dot" id="da2"></span></div><textarea class="journal-box" id="j-a2" data-label="SWYK 2" oninput="autoSave(this,'da2')" placeholder=""></textarea></div>
 
     <div class="video-wrap" data-video-slot="3-07-02-swyk-feedback"><div class="video-wrap-header"><span style="font-size:20px;">🎬</span><div><div class="video-wrap-type">Show What You Know Feedback · Lesson 3.07.02</div><div class="video-wrap-title">Walk-through</div></div></div><div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">🎬</div><div class="video-placeholder-text">📹 <strong>3-07-02_SWYK-Feedback.mp4</strong></div><div class="record-note"><strong>Recording prompt:</strong> Q1: Dogs most popular (7). Dogs − Cats = 7 − 5 = 2 more. Q2: Bars: 4, 6, 3, 5. Largest = Art (6). The count column is the same numbers you used to build the bars. (~1–2 min)</div><div class="video-placeholder-id"><!-- slot: 3-07-02-swyk-feedback --></div></div></div></div>
 
@@ -340,4 +399,71 @@ function parseManifest(txt){var map={};var lines=txt.split(/\r?\n/);var current=
 
 window.addEventListener('DOMContentLoaded',function(){loadVideoManifest();restore();bbRender();});
 </script>
+
+<script id="fluencyScript">
+(function(){
+var FLUENCY_TIMED = true;
+var FLUENCY_TITLE = "Mixed Multiplication & Division";
+var fluencyInterval = null;
+var fluencySecondsLeft = 60;
+
+window.fluencyStart = function(){
+  if(!FLUENCY_TIMED) return;
+  var grid = document.getElementById('fluencyGrid');
+  if(!grid) return;
+  grid.querySelectorAll('.fluency-input').forEach(function(i){ i.disabled = false; });
+  var btn = document.getElementById('fluencyStartBtn');
+  if(btn){ btn.disabled = true; btn.textContent = 'Timer Running\u2026'; }
+  var checkBtn = document.getElementById('fluencyCheckBtn');
+  if(checkBtn) checkBtn.disabled = false;
+  fluencySecondsLeft = 60;
+  fluencyUpdateDisplay();
+  fluencyInterval = setInterval(function(){
+    fluencySecondsLeft--;
+    fluencyUpdateDisplay();
+    if(fluencySecondsLeft <= 0){
+      clearInterval(fluencyInterval);
+      grid.querySelectorAll('.fluency-input').forEach(function(i){ i.disabled = true; });
+      window.fluencyCheck();
+    }
+  }, 1000);
+};
+
+function fluencyUpdateDisplay(){
+  var el = document.getElementById('fluencyTimerDisplay');
+  if(el) el.textContent = fluencySecondsLeft + 's';
+}
+
+window.fluencyCheck = function(){
+  if(fluencyInterval){ clearInterval(fluencyInterval); fluencyInterval = null; }
+  var items = document.querySelectorAll('#fluencyGrid .fluency-item');
+  var correct = 0, attempted = 0, total = items.length;
+  var lines = [];
+  items.forEach(function(item){
+    var input = item.querySelector('.fluency-input');
+    var qText = item.querySelector('.fluency-q').textContent;
+    var given = (input.value || '').trim();
+    var ans = input.dataset.answer;
+    var ok = given !== '' && given === ans;
+    if(given !== '') attempted++;
+    item.classList.remove('fluency-correct','fluency-wrong');
+    if(ok){ correct++; item.classList.add('fluency-correct'); }
+    else if(given !== ''){ item.classList.add('fluency-wrong'); }
+    lines.push(qText + ' ' + ans + '   [answered: ' + (given || 'blank') + ']' + (ok ? ' \u2713' : (given ? ' \u2717' : '')));
+  });
+  var pct = total ? Math.round((correct/total)*100) : 0;
+  var timeStr = FLUENCY_TIMED ? (' in ' + (60 - fluencySecondsLeft) + ' seconds') : '';
+  var summary = 'Fluency Warm-Up \u2014 ' + FLUENCY_TITLE + '\n' + correct + ' / ' + total + ' correct (' + pct + '%)' + timeStr + '\n\n' + lines.join('\n');
+  var j = document.getElementById('fluencyJournal');
+  if(j) j.value = summary;
+  var resEl = document.getElementById('fluencyResult');
+  if(resEl) resEl.innerHTML = correct + ' / ' + total + ' correct (' + pct + '%)' + timeStr;
+  var checkBtn = document.getElementById('fluencyCheckBtn');
+  if(checkBtn) checkBtn.disabled = true;
+  var startBtn = document.getElementById('fluencyStartBtn');
+  if(startBtn) startBtn.textContent = 'Done';
+};
+})();
+</script>
+
 </body></html>

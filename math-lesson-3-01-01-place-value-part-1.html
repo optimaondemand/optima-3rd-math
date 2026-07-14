@@ -306,6 +306,29 @@
 .bubble-text{font-size:14.5px;color:#0E1C42;line-height:1.5;font-weight:600;font-family:'Lora',Georgia,serif;font-style:italic}
 @media(max-width:620px){.bubble{flex:1 1 100%;max-width:100%}}
 </style>
+<style id="fluencyStyles">
+.fluency-box{background:#fff;border:2px solid #F5C518;border-radius:18px;overflow:hidden;margin-bottom:22px;font-family:'Nunito',sans-serif}
+.fluency-head{display:flex;align-items:center;gap:12px;background:linear-gradient(135deg,#F5C518,#E8B723);padding:14px 20px;flex-wrap:wrap}
+.fluency-head-icon{font-size:26px;line-height:1}
+.fluency-head-label{font-size:10px;color:#0E1C42;font-weight:800;text-transform:uppercase;letter-spacing:0.5px}
+.fluency-head-title{font-size:15px;color:#0E1C42;font-weight:800}
+.fluency-timer-ui{margin-left:auto;display:flex;align-items:center;gap:10px}
+.fluency-timer-display{font-size:20px;font-weight:800;color:#0E1C42;min-width:46px;text-align:center}
+.fluency-start-btn{background:#0E1C42;color:#fff;border:none;border-radius:10px;padding:8px 14px;font-weight:700;font-size:12px;cursor:pointer}
+.fluency-start-btn:disabled{opacity:0.55;cursor:default}
+.fluency-body{padding:16px 20px}
+.fluency-instructions{font-size:13px;color:#4A5568;margin:0 0 12px}
+.fluency-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(128px,1fr));gap:10px;margin-bottom:14px}
+.fluency-item{display:flex;align-items:center;gap:6px;background:#FAFBFF;border:1.5px solid #E2E8F4;border-radius:10px;padding:8px 10px}
+.fluency-item.fluency-correct{border-color:#2DB87A;background:#EAFBF3}
+.fluency-item.fluency-wrong{border-color:#E07B39;background:#FDF1E9}
+.fluency-q{font-size:13px;font-weight:700;color:#0E1C42;white-space:nowrap}
+.fluency-input{width:46px;border:1.5px solid #CBD5E8;border-radius:6px;padding:4px;font-size:14px;text-align:center;font-family:'Nunito',sans-serif}
+.fluency-input:disabled{background:#F0F2F8}
+.fluency-check-btn{background:#2DB87A;color:#fff;border:none;border-radius:10px;padding:10px 18px;font-weight:800;font-size:13px;cursor:pointer}
+.fluency-check-btn:disabled{opacity:0.55;cursor:default}
+.fluency-result{margin-top:10px;font-size:14px;color:#0E1C42;font-weight:700}
+</style>
 </head>
 <body id="pageTop">
 <div class="page-wrap">
@@ -334,6 +357,32 @@
 <div class="tab-bar" id="tabBar"><button class="tab-btn active" data-tab="warmup" onclick="switchTab('warmup')">🔍 Warm-Up <span class="tab-check">✓</span></button><button class="tab-btn" data-tab="learn" onclick="switchTab('learn')">📐 Learn <span class="tab-check">✓</span></button><button class="tab-btn" data-tab="practice" onclick="switchTab('practice')">🧮 Practice <span class="tab-check">✓</span></button><button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">🌟 Show What You Know <span class="tab-check">✓</span></button></div>
 
 <div class="tab-panel active" id="tab-warmup">
+<div class="fluency-box" data-timed="false">
+  <div class="fluency-head">
+    <div class="fluency-head-icon">&#9997;&#65039;</div>
+    <div><div class="fluency-head-label">FLUENCY WARM-UP</div><div class="fluency-head-title">Add &amp; Subtract 0, 1, 2</div></div>
+    
+  </div>
+  <div class="fluency-body">
+    <p class="fluency-instructions">Warm up your fact fluency before today&#8217;s lesson. Work through these, then check your answers.</p>
+    <div class="fluency-grid" id="fluencyGrid">
+      <div class="fluency-item"><span class="fluency-q">5 + 0 =</span><input type="text" class="fluency-input" inputmode="numeric" autocomplete="off" data-answer="5"></div>
+      <div class="fluency-item"><span class="fluency-q">5 + 1 =</span><input type="text" class="fluency-input" inputmode="numeric" autocomplete="off" data-answer="6"></div>
+      <div class="fluency-item"><span class="fluency-q">5 + 2 =</span><input type="text" class="fluency-input" inputmode="numeric" autocomplete="off" data-answer="7"></div>
+      <div class="fluency-item"><span class="fluency-q">9 - 0 =</span><input type="text" class="fluency-input" inputmode="numeric" autocomplete="off" data-answer="9"></div>
+      <div class="fluency-item"><span class="fluency-q">9 - 1 =</span><input type="text" class="fluency-input" inputmode="numeric" autocomplete="off" data-answer="8"></div>
+      <div class="fluency-item"><span class="fluency-q">9 - 2 =</span><input type="text" class="fluency-input" inputmode="numeric" autocomplete="off" data-answer="7"></div>
+      <div class="fluency-item"><span class="fluency-q">7 + 1 =</span><input type="text" class="fluency-input" inputmode="numeric" autocomplete="off" data-answer="8"></div>
+      <div class="fluency-item"><span class="fluency-q">7 - 2 =</span><input type="text" class="fluency-input" inputmode="numeric" autocomplete="off" data-answer="5"></div>
+      <div class="fluency-item"><span class="fluency-q">4 + 2 =</span><input type="text" class="fluency-input" inputmode="numeric" autocomplete="off" data-answer="6"></div>
+      <div class="fluency-item"><span class="fluency-q">10 - 1 =</span><input type="text" class="fluency-input" inputmode="numeric" autocomplete="off" data-answer="9"></div>
+    </div>
+    <button class="fluency-check-btn" id="fluencyCheckBtn" onclick="fluencyCheck()">Check My Answers</button>
+    <div class="fluency-result" id="fluencyResult"></div>
+  </div>
+  <textarea class="journal-box" id="fluencyJournal" data-label="Fluency Warm-Up (Add &amp; Subtract 0, 1, 2)" readonly style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;"></textarea>
+</div>
+
   <div class="video-wrap" data-video-slot="3-01-01-welcome"><div class="video-wrap-header"><span style="font-size:20px;">🎬</span><div><div class="video-wrap-type">Welcome · Lesson 3.01.01</div><div class="video-wrap-title">Build the number before you name it</div></div></div><div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">🎬</div><div class="video-placeholder-text">📹 <strong>3-01-01_Welcome.mp4</strong></div><div class="record-note"><strong>Recording prompt:</strong> Welcome students to Unit 1: Numbers to 10,000. Hold up physical place-value disks (or draw them on a whiteboard). Say: "Today you will build numbers with your hands before you write them with a pencil. That is how mathematicians work — they touch it, see it, then write it." Briefly show a three-digit number on the mat (like 342) and tell students they already know hundreds, tens, and ones. Ask: "What happens when a number gets bigger than 999?" Leave it unanswered — the lesson will answer it. Tone: warm, exploratory, unhurried. (~1–2 min)</div><div class="video-placeholder-id"><!-- slot: 3-01-01-welcome --></div></div></div></div>
   <div class="activity bl-violet"><div class="activity-head"><div class="activity-num" style="background:#6B3FA0;">👋</div><div><div class="activity-title">Meet the Math Crew</div><div class="activity-sub">Four students who'll think alongside you this year.</div></div></div><div class="activity-body">
     <p>From now on, you'll see thought bubbles from four students whenever we work an example together. Each one thinks a little differently. Watch how they solve the same problem in their own way.</p>
@@ -669,5 +718,72 @@ function flipVocabCard(card){card.classList.toggle('flipped');}
 function checkExitA(card,correct){document.querySelectorAll('#tab-assignment .q-block:first-of-type .value-card').forEach(c=>{c.classList.remove('good','bad','selected')});var fb=document.getElementById('exitA-fb');if(correct){card.classList.add('good');fb.className='inline-feedback show good';fb.innerHTML='<strong>✅ Yes!</strong> The 3 is in the thousands place, so it is worth 3,000.';miniCelebrate(card)}else{card.classList.add('bad');fb.className='inline-feedback show think';fb.innerHTML='<strong>Not quite.</strong> Think about which <em>place</em> the 3 sits in. Thousands? Hundreds? Tens? Ones?'}}
 function checkExitB(card,correct){document.querySelectorAll('#tab-assignment .q-block:nth-of-type(2) .value-card').forEach(c=>{c.classList.remove('good','bad','selected')});var fb=document.getElementById('exitB-fb');if(correct){card.classList.add('good');fb.className='inline-feedback show good';fb.innerHTML='<strong>✅ Yes!</strong> 9,060 = 9,000 + 0 hundreds + 60 + 0 ones. The 6 is in the tens place, so it is 60, not 600 or 6.';miniCelebrate(card)}else{card.classList.add('bad');fb.className='inline-feedback show think';fb.innerHTML='<strong>Not quite.</strong> Look at 9,060 — which place is the 6 in? Is it hundreds, tens, or ones?'}}
 </script>
+
+<script id="fluencyScript">
+(function(){
+var FLUENCY_TIMED = false;
+var FLUENCY_TITLE = "Add & Subtract 0, 1, 2";
+var fluencyInterval = null;
+var fluencySecondsLeft = 60;
+
+window.fluencyStart = function(){
+  if(!FLUENCY_TIMED) return;
+  var grid = document.getElementById('fluencyGrid');
+  if(!grid) return;
+  grid.querySelectorAll('.fluency-input').forEach(function(i){ i.disabled = false; });
+  var btn = document.getElementById('fluencyStartBtn');
+  if(btn){ btn.disabled = true; btn.textContent = 'Timer Running\u2026'; }
+  var checkBtn = document.getElementById('fluencyCheckBtn');
+  if(checkBtn) checkBtn.disabled = false;
+  fluencySecondsLeft = 60;
+  fluencyUpdateDisplay();
+  fluencyInterval = setInterval(function(){
+    fluencySecondsLeft--;
+    fluencyUpdateDisplay();
+    if(fluencySecondsLeft <= 0){
+      clearInterval(fluencyInterval);
+      grid.querySelectorAll('.fluency-input').forEach(function(i){ i.disabled = true; });
+      window.fluencyCheck();
+    }
+  }, 1000);
+};
+
+function fluencyUpdateDisplay(){
+  var el = document.getElementById('fluencyTimerDisplay');
+  if(el) el.textContent = fluencySecondsLeft + 's';
+}
+
+window.fluencyCheck = function(){
+  if(fluencyInterval){ clearInterval(fluencyInterval); fluencyInterval = null; }
+  var items = document.querySelectorAll('#fluencyGrid .fluency-item');
+  var correct = 0, attempted = 0, total = items.length;
+  var lines = [];
+  items.forEach(function(item){
+    var input = item.querySelector('.fluency-input');
+    var qText = item.querySelector('.fluency-q').textContent;
+    var given = (input.value || '').trim();
+    var ans = input.dataset.answer;
+    var ok = given !== '' && given === ans;
+    if(given !== '') attempted++;
+    item.classList.remove('fluency-correct','fluency-wrong');
+    if(ok){ correct++; item.classList.add('fluency-correct'); }
+    else if(given !== ''){ item.classList.add('fluency-wrong'); }
+    lines.push(qText + ' ' + ans + '   [answered: ' + (given || 'blank') + ']' + (ok ? ' \u2713' : (given ? ' \u2717' : '')));
+  });
+  var pct = total ? Math.round((correct/total)*100) : 0;
+  var timeStr = FLUENCY_TIMED ? (' in ' + (60 - fluencySecondsLeft) + ' seconds') : '';
+  var summary = 'Fluency Warm-Up \u2014 ' + FLUENCY_TITLE + '\n' + correct + ' / ' + total + ' correct (' + pct + '%)' + timeStr + '\n\n' + lines.join('\n');
+  var j = document.getElementById('fluencyJournal');
+  if(j) j.value = summary;
+  var resEl = document.getElementById('fluencyResult');
+  if(resEl) resEl.innerHTML = correct + ' / ' + total + ' correct (' + pct + '%)' + timeStr;
+  var checkBtn = document.getElementById('fluencyCheckBtn');
+  if(checkBtn) checkBtn.disabled = true;
+  var startBtn = document.getElementById('fluencyStartBtn');
+  if(startBtn) startBtn.textContent = 'Done';
+};
+})();
+</script>
+
 </body>
 </html>

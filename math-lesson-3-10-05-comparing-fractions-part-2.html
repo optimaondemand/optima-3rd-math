@@ -75,6 +75,29 @@
 .frac .bar{border-top:2.5px solid currentColor;width:100%;min-width:18px;margin:2px 0}
 .frac .den{padding:0 6px;font-size:1em}
 .frac.lg{font-size:28px}.frac.md{font-size:20px}
+</style>
+<style id="fluencyStyles">
+.fluency-box{background:#fff;border:2px solid #F5C518;border-radius:18px;overflow:hidden;margin-bottom:22px;font-family:'Nunito',sans-serif}
+.fluency-head{display:flex;align-items:center;gap:12px;background:linear-gradient(135deg,#F5C518,#E8B723);padding:14px 20px;flex-wrap:wrap}
+.fluency-head-icon{font-size:26px;line-height:1}
+.fluency-head-label{font-size:10px;color:#0E1C42;font-weight:800;text-transform:uppercase;letter-spacing:0.5px}
+.fluency-head-title{font-size:15px;color:#0E1C42;font-weight:800}
+.fluency-timer-ui{margin-left:auto;display:flex;align-items:center;gap:10px}
+.fluency-timer-display{font-size:20px;font-weight:800;color:#0E1C42;min-width:46px;text-align:center}
+.fluency-start-btn{background:#0E1C42;color:#fff;border:none;border-radius:10px;padding:8px 14px;font-weight:700;font-size:12px;cursor:pointer}
+.fluency-start-btn:disabled{opacity:0.55;cursor:default}
+.fluency-body{padding:16px 20px}
+.fluency-instructions{font-size:13px;color:#4A5568;margin:0 0 12px}
+.fluency-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(128px,1fr));gap:10px;margin-bottom:14px}
+.fluency-item{display:flex;align-items:center;gap:6px;background:#FAFBFF;border:1.5px solid #E2E8F4;border-radius:10px;padding:8px 10px}
+.fluency-item.fluency-correct{border-color:#2DB87A;background:#EAFBF3}
+.fluency-item.fluency-wrong{border-color:#E07B39;background:#FDF1E9}
+.fluency-q{font-size:13px;font-weight:700;color:#0E1C42;white-space:nowrap}
+.fluency-input{width:46px;border:1.5px solid #CBD5E8;border-radius:6px;padding:4px;font-size:14px;text-align:center;font-family:'Nunito',sans-serif}
+.fluency-input:disabled{background:#F0F2F8}
+.fluency-check-btn{background:#2DB87A;color:#fff;border:none;border-radius:10px;padding:10px 18px;font-weight:800;font-size:13px;cursor:pointer}
+.fluency-check-btn:disabled{opacity:0.55;cursor:default}
+.fluency-result{margin-top:10px;font-size:14px;color:#0E1C42;font-weight:700}
 </style></head><body>
 <div class="page-wrap">
 <div class="progress-wrap"><span class="progress-label">Lesson Progress</span><div class="progress-track"><div class="progress-fill" id="pf"></div></div><span class="progress-pct" id="pp">0%</span></div>
@@ -117,6 +140,32 @@
 
 <!-- WARM-UP TAB -->
 <div class="tab-panel active" id="tab-warmup">
+<div class="fluency-box" data-timed="false">
+  <div class="fluency-head">
+    <div class="fluency-head-icon">&#9997;&#65039;</div>
+    <div><div class="fluency-head-label">FLUENCY WARM-UP</div><div class="fluency-head-title">Multiples of Ten (like 7 × 40)</div></div>
+    
+  </div>
+  <div class="fluency-body">
+    <p class="fluency-instructions">Warm up your fact fluency before today&#8217;s lesson. Work through these, then check your answers.</p>
+    <div class="fluency-grid" id="fluencyGrid">
+      <div class="fluency-item"><span class="fluency-q">7 × 40 =</span><input type="text" class="fluency-input" inputmode="numeric" autocomplete="off" data-answer="280"></div>
+      <div class="fluency-item"><span class="fluency-q">6 × 30 =</span><input type="text" class="fluency-input" inputmode="numeric" autocomplete="off" data-answer="180"></div>
+      <div class="fluency-item"><span class="fluency-q">8 × 50 =</span><input type="text" class="fluency-input" inputmode="numeric" autocomplete="off" data-answer="400"></div>
+      <div class="fluency-item"><span class="fluency-q">9 × 20 =</span><input type="text" class="fluency-input" inputmode="numeric" autocomplete="off" data-answer="180"></div>
+      <div class="fluency-item"><span class="fluency-q">5 × 60 =</span><input type="text" class="fluency-input" inputmode="numeric" autocomplete="off" data-answer="300"></div>
+      <div class="fluency-item"><span class="fluency-q">4 × 70 =</span><input type="text" class="fluency-input" inputmode="numeric" autocomplete="off" data-answer="280"></div>
+      <div class="fluency-item"><span class="fluency-q">3 × 90 =</span><input type="text" class="fluency-input" inputmode="numeric" autocomplete="off" data-answer="270"></div>
+      <div class="fluency-item"><span class="fluency-q">6 × 80 =</span><input type="text" class="fluency-input" inputmode="numeric" autocomplete="off" data-answer="480"></div>
+      <div class="fluency-item"><span class="fluency-q">7 × 20 =</span><input type="text" class="fluency-input" inputmode="numeric" autocomplete="off" data-answer="140"></div>
+      <div class="fluency-item"><span class="fluency-q">9 × 30 =</span><input type="text" class="fluency-input" inputmode="numeric" autocomplete="off" data-answer="270"></div>
+    </div>
+    <button class="fluency-check-btn" id="fluencyCheckBtn" onclick="fluencyCheck()">Check My Answers</button>
+    <div class="fluency-result" id="fluencyResult"></div>
+  </div>
+  <textarea class="journal-box" id="fluencyJournal" data-label="Fluency Warm-Up (Multiples of Ten (like 7 × 40))" readonly style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;"></textarea>
+</div>
+
   <div class="video-wrap" data-video-slot="3-10-05-welcome"><div class="video-wrap-header"><span style="font-size:20px;">&#x1F3AC;</span><div><div class="video-wrap-type">Welcome &middot; Lesson 3.10.05</div><div class="video-wrap-title">Three shortcuts</div></div></div><div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">&#x1F3AC;</div><div class="video-placeholder-text">&#x1F4F9; <strong>3-10-05_Welcome.mp4</strong></div><div class="record-note"><strong>Recording prompt:</strong> "Last time you re-cut both strips to the same bottom. That always works &#8212; but sometimes there's a shortcut. Today: three tricks that let you compare fractions without re-cutting." (~1 min)</div><div class="video-placeholder-id"><!-- slot: 3-10-05-welcome --></div></div></div></div>
 
   <div class="activity bl-yellow"><div class="activity-head"><div class="activity-num" style="background:#F5C518;color:#0E1C42;">&#x1F50E;</div><div><div class="activity-title">Readiness Check</div><div class="activity-sub">Tap the card.</div></div></div><div class="activity-body">
@@ -365,4 +414,71 @@ function parseManifest(txt){var map={};var lines=txt.split(/\r?\n/);var current=
 
 window.addEventListener('DOMContentLoaded',function(){loadVideoManifest();restore();bbRender();});
 </script>
+
+<script id="fluencyScript">
+(function(){
+var FLUENCY_TIMED = false;
+var FLUENCY_TITLE = "Multiples of Ten (like 7 × 40)";
+var fluencyInterval = null;
+var fluencySecondsLeft = 60;
+
+window.fluencyStart = function(){
+  if(!FLUENCY_TIMED) return;
+  var grid = document.getElementById('fluencyGrid');
+  if(!grid) return;
+  grid.querySelectorAll('.fluency-input').forEach(function(i){ i.disabled = false; });
+  var btn = document.getElementById('fluencyStartBtn');
+  if(btn){ btn.disabled = true; btn.textContent = 'Timer Running\u2026'; }
+  var checkBtn = document.getElementById('fluencyCheckBtn');
+  if(checkBtn) checkBtn.disabled = false;
+  fluencySecondsLeft = 60;
+  fluencyUpdateDisplay();
+  fluencyInterval = setInterval(function(){
+    fluencySecondsLeft--;
+    fluencyUpdateDisplay();
+    if(fluencySecondsLeft <= 0){
+      clearInterval(fluencyInterval);
+      grid.querySelectorAll('.fluency-input').forEach(function(i){ i.disabled = true; });
+      window.fluencyCheck();
+    }
+  }, 1000);
+};
+
+function fluencyUpdateDisplay(){
+  var el = document.getElementById('fluencyTimerDisplay');
+  if(el) el.textContent = fluencySecondsLeft + 's';
+}
+
+window.fluencyCheck = function(){
+  if(fluencyInterval){ clearInterval(fluencyInterval); fluencyInterval = null; }
+  var items = document.querySelectorAll('#fluencyGrid .fluency-item');
+  var correct = 0, attempted = 0, total = items.length;
+  var lines = [];
+  items.forEach(function(item){
+    var input = item.querySelector('.fluency-input');
+    var qText = item.querySelector('.fluency-q').textContent;
+    var given = (input.value || '').trim();
+    var ans = input.dataset.answer;
+    var ok = given !== '' && given === ans;
+    if(given !== '') attempted++;
+    item.classList.remove('fluency-correct','fluency-wrong');
+    if(ok){ correct++; item.classList.add('fluency-correct'); }
+    else if(given !== ''){ item.classList.add('fluency-wrong'); }
+    lines.push(qText + ' ' + ans + '   [answered: ' + (given || 'blank') + ']' + (ok ? ' \u2713' : (given ? ' \u2717' : '')));
+  });
+  var pct = total ? Math.round((correct/total)*100) : 0;
+  var timeStr = FLUENCY_TIMED ? (' in ' + (60 - fluencySecondsLeft) + ' seconds') : '';
+  var summary = 'Fluency Warm-Up \u2014 ' + FLUENCY_TITLE + '\n' + correct + ' / ' + total + ' correct (' + pct + '%)' + timeStr + '\n\n' + lines.join('\n');
+  var j = document.getElementById('fluencyJournal');
+  if(j) j.value = summary;
+  var resEl = document.getElementById('fluencyResult');
+  if(resEl) resEl.innerHTML = correct + ' / ' + total + ' correct (' + pct + '%)' + timeStr;
+  var checkBtn = document.getElementById('fluencyCheckBtn');
+  if(checkBtn) checkBtn.disabled = true;
+  var startBtn = document.getElementById('fluencyStartBtn');
+  if(startBtn) startBtn.textContent = 'Done';
+};
+})();
+</script>
+
 </body></html>

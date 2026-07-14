@@ -90,6 +90,29 @@
 .sm-total.show{display:block;animation:reveal .35s}
 .sm-total .ans{color:#1A8A5A;background:#E3F8ED;padding:2px 14px;border-radius:8px;border:2px solid #B8E8CF}
 .ex-tbl{width:100%;border-collapse:separate;border-spacing:0;margin:14px 0;background:#fff;border:2px solid #E2E8F4;border-radius:14px;overflow:hidden}.ex-tbl thead th{background:#0E1C42;color:#fff;font-size:12px;padding:12px;text-align:left;text-transform:uppercase;font-weight:900}.ex-tbl tbody td{padding:12px 14px;border-top:1px solid #E2E8F4;font-size:14px;color:#0E1C42;line-height:1.5}.ex-tbl tbody td:first-child{font-family:'Lora',serif;font-weight:800;font-size:16px}.ex-tbl tbody td:last-child{text-align:center;font-family:'Lora',serif;font-weight:900;font-size:16px;background:#FAFBFF;border-left:1px dashed #E2E8F4;color:#1A8A5A}
+</style>
+<style id="fluencyStyles">
+.fluency-box{background:#fff;border:2px solid #F5C518;border-radius:18px;overflow:hidden;margin-bottom:22px;font-family:'Nunito',sans-serif}
+.fluency-head{display:flex;align-items:center;gap:12px;background:linear-gradient(135deg,#F5C518,#E8B723);padding:14px 20px;flex-wrap:wrap}
+.fluency-head-icon{font-size:26px;line-height:1}
+.fluency-head-label{font-size:10px;color:#0E1C42;font-weight:800;text-transform:uppercase;letter-spacing:0.5px}
+.fluency-head-title{font-size:15px;color:#0E1C42;font-weight:800}
+.fluency-timer-ui{margin-left:auto;display:flex;align-items:center;gap:10px}
+.fluency-timer-display{font-size:20px;font-weight:800;color:#0E1C42;min-width:46px;text-align:center}
+.fluency-start-btn{background:#0E1C42;color:#fff;border:none;border-radius:10px;padding:8px 14px;font-weight:700;font-size:12px;cursor:pointer}
+.fluency-start-btn:disabled{opacity:0.55;cursor:default}
+.fluency-body{padding:16px 20px}
+.fluency-instructions{font-size:13px;color:#4A5568;margin:0 0 12px}
+.fluency-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(128px,1fr));gap:10px;margin-bottom:14px}
+.fluency-item{display:flex;align-items:center;gap:6px;background:#FAFBFF;border:1.5px solid #E2E8F4;border-radius:10px;padding:8px 10px}
+.fluency-item.fluency-correct{border-color:#2DB87A;background:#EAFBF3}
+.fluency-item.fluency-wrong{border-color:#E07B39;background:#FDF1E9}
+.fluency-q{font-size:13px;font-weight:700;color:#0E1C42;white-space:nowrap}
+.fluency-input{width:46px;border:1.5px solid #CBD5E8;border-radius:6px;padding:4px;font-size:14px;text-align:center;font-family:'Nunito',sans-serif}
+.fluency-input:disabled{background:#F0F2F8}
+.fluency-check-btn{background:#2DB87A;color:#fff;border:none;border-radius:10px;padding:10px 18px;font-weight:800;font-size:13px;cursor:pointer}
+.fluency-check-btn:disabled{opacity:0.55;cursor:default}
+.fluency-result{margin-top:10px;font-size:14px;color:#0E1C42;font-weight:700}
 </style></head><body>
 <div class="page-wrap">
 <div class="progress-wrap"><span class="progress-label">📐 Lesson Progress</span><div class="progress-track"><div class="progress-fill" id="pf"></div></div><span class="progress-pct" id="pp">0%</span></div>
@@ -135,6 +158,32 @@
 </div>
 
 <div class="tab-panel active" id="tab-warmup">
+<div class="fluency-box" data-timed="false">
+  <div class="fluency-head">
+    <div class="fluency-head-icon">&#9997;&#65039;</div>
+    <div><div class="fluency-head-label">FLUENCY WARM-UP</div><div class="fluency-head-title">×10 Facts</div></div>
+    
+  </div>
+  <div class="fluency-body">
+    <p class="fluency-instructions">Warm up your fact fluency before today&#8217;s lesson. Work through these, then check your answers.</p>
+    <div class="fluency-grid" id="fluencyGrid">
+      <div class="fluency-item"><span class="fluency-q">10 × 3 =</span><input type="text" class="fluency-input" inputmode="numeric" autocomplete="off" data-answer="30"></div>
+      <div class="fluency-item"><span class="fluency-q">10 × 6 =</span><input type="text" class="fluency-input" inputmode="numeric" autocomplete="off" data-answer="60"></div>
+      <div class="fluency-item"><span class="fluency-q">10 × 8 =</span><input type="text" class="fluency-input" inputmode="numeric" autocomplete="off" data-answer="80"></div>
+      <div class="fluency-item"><span class="fluency-q">10 × 4 =</span><input type="text" class="fluency-input" inputmode="numeric" autocomplete="off" data-answer="40"></div>
+      <div class="fluency-item"><span class="fluency-q">10 × 7 =</span><input type="text" class="fluency-input" inputmode="numeric" autocomplete="off" data-answer="70"></div>
+      <div class="fluency-item"><span class="fluency-q">10 × 9 =</span><input type="text" class="fluency-input" inputmode="numeric" autocomplete="off" data-answer="90"></div>
+      <div class="fluency-item"><span class="fluency-q">10 × 2 =</span><input type="text" class="fluency-input" inputmode="numeric" autocomplete="off" data-answer="20"></div>
+      <div class="fluency-item"><span class="fluency-q">10 × 5 =</span><input type="text" class="fluency-input" inputmode="numeric" autocomplete="off" data-answer="50"></div>
+      <div class="fluency-item"><span class="fluency-q">10 × 10 =</span><input type="text" class="fluency-input" inputmode="numeric" autocomplete="off" data-answer="100"></div>
+      <div class="fluency-item"><span class="fluency-q">10 × 1 =</span><input type="text" class="fluency-input" inputmode="numeric" autocomplete="off" data-answer="10"></div>
+    </div>
+    <button class="fluency-check-btn" id="fluencyCheckBtn" onclick="fluencyCheck()">Check My Answers</button>
+    <div class="fluency-result" id="fluencyResult"></div>
+  </div>
+  <textarea class="journal-box" id="fluencyJournal" data-label="Fluency Warm-Up (×10 Facts)" readonly style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;"></textarea>
+</div>
+
   <div class="video-wrap" data-video-slot="3-06-06-welcome"><div class="video-wrap-header"><span style="font-size:20px;">🎬</span><div><div class="video-wrap-type">Welcome · Lesson 3.06.06</div><div class="video-wrap-title">Share 525 into 5 rows</div></div></div><div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">🎬</div><div class="video-placeholder-text">📹 <strong>3-06-06_Welcome.mp4</strong></div><div class="record-note"><strong>Recording prompt:</strong> Build 525 on the mat: 5 hundreds + 2 tens + 5 ones. "Same mat. Now 5 rows." Share hundreds: 1 each. Tens — 2÷5=0, 2 left over. Trade 2 tens → 20 ones. Ones column = 25. Share: 5 each. Each row: 1 hundred + 0 tens + 5 ones = 105. (~1–2 min)</div><div class="video-placeholder-id"><!-- slot: 3-06-06-welcome --></div></div></div></div>
 
   <div class="activity bl-yellow"><div class="activity-head"><div class="activity-num" style="background:#F5C518;color:#0E1C42;">🔎</div><div><div class="activity-title">Readiness Check</div><div class="activity-sub">Tap the card.</div></div></div><div class="activity-body">
@@ -161,7 +210,7 @@
     <textarea class="journal-box" id="j-t" data-label="Warm-Up think" oninput="autoSave(this,'dt')" placeholder=""></textarea>
   </div></div>
 
-  <div class="tab-next-wrap"><p class="tab-transition-voice">All three digits are even. No trade today. Time to build.</p><button class="tab-next-btn" onclick="switchTab('learn')">Continue to 📐 Learn →</button></div>
+  <div class="tab-next-wrap"><p class="tab-transition-voice">Hundreds share evenly, but the tens column leaves a leftover of 2 — time to trade. Let's build it.</p><button class="tab-next-btn" onclick="switchTab('learn')">Continue to 📐 Learn →</button></div>
 </div>
 
 <div class="tab-panel" id="tab-learn">
@@ -211,7 +260,7 @@
         <div class="sm-total" id="tot"></div>
       </div>
     </div>
-    <p style="font-size:13px;color:#5A4520;font-family:'Lora',serif;font-style:italic;text-align:center;margin-top:8px;">Try 525 ÷ 5 (all clean), then 524 ÷ 2 (hundreds trade), then 728 ÷ 4 (hundreds trade).</p>
+    <p style="font-size:13px;color:#5A4520;font-family:'Lora',serif;font-style:italic;text-align:center;margin-top:8px;">Try 396 ÷ 3 (all clean), then 524 ÷ 2 (hundreds trade), then 728 ÷ 4 (hundreds trade).</p>
   </div></div>
 
   <div class="activity bl-slate"><div class="activity-head"><div class="activity-num" style="background:#3A6B9A;">📋</div><div><div class="activity-title">Steps for 728 ÷ 4</div></div></div><div class="activity-body">
@@ -232,7 +281,7 @@
     <p style="text-align:center;background:#fff;border:2px solid var(--honey-mid);border-radius:10px;padding:12px;margin:10px 0;font-size:15px;">Share hundreds → trade if leftover → share tens → trade if leftover → share ones → read.</p>
   </div>
 
-  <div class="video-wrap" data-video-slot="3-06-06-example"><div class="video-wrap-header"><span style="font-size:20px;">🎬</span><div><div class="video-wrap-type">Worked Example · Lesson 3.06.06</div><div class="video-wrap-title">728 ÷ 4 = 182</div></div></div><div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">🎬</div><div class="video-placeholder-text">📹 <strong>3-06-06_Worked-Example.mp4</strong></div><div class="record-note"><strong>Recording prompt:</strong> Build 728. Share 3 hundreds → 1 each + 1 left. Trade → tens become 18. Share 18 tens → 9 each. Share 4 ones → 2 each. Read: 1 H + 9 T + 2 O = 192. Check: 2 × 192 = 384. (~2 min)</div><div class="video-placeholder-id"><!-- slot: 3-06-06-example --></div></div></div></div>
+  <div class="video-wrap" data-video-slot="3-06-06-example"><div class="video-wrap-header"><span style="font-size:20px;">🎬</span><div><div class="video-wrap-type">Worked Example · Lesson 3.06.06</div><div class="video-wrap-title">728 ÷ 4 = 182</div></div></div><div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">🎬</div><div class="video-placeholder-text">📹 <strong>3-06-06_Worked-Example.mp4</strong></div><div class="record-note"><strong>Recording prompt:</strong> Build 728. Share 7 hundreds → 1 each + 3 left. Trade → tens become 32 (30+2). Share 32 tens → 8 each. Share 8 ones → 2 each. Read: 1 H + 8 T + 2 O = 182. Check: 4 × 182 = 728. (~2 min)</div><div class="video-placeholder-id"><!-- slot: 3-06-06-example --></div></div></div></div>
 
   <div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">🧠</div><div><div class="activity-title">Worked Example: 728 ÷ 4</div></div></div><div class="activity-body">
     <div class="task-box"><div class="task-label">Problem</div><p>A teacher splits 728 stickers among 4 students equally. How many does each get?</p></div>
@@ -242,7 +291,7 @@
       <div class="bubble felix"><div class="bubble-avatar">F</div><div class="bubble-body"><div class="bubble-name">Felix — tens &amp; ones</div><div class="bubble-text">"32 tens ÷ 4 = 8 tens each. 8 ones ÷ 4 = 2 ones each."</div></div></div>
       <div class="bubble cora"><div class="bubble-avatar">C</div><div class="bubble-body"><div class="bubble-name">Cora — read &amp; check</div><div class="bubble-text">"1 H + 8 T + 2 O = 182 stickers each. Check: 4 × 182 = 728. ✓"</div></div></div>
     </div>
-    <p style="font-family:'Lora',serif;background:#FAFBFF;border:2px solid #E2E8F4;border-radius:12px;padding:10px;text-align:center;font-size:18px;font-weight:800;margin-top:14px;">728 ÷ 4 = <span style="color:#1A8A5A;">192</span></p>
+    <p style="font-family:'Lora',serif;background:#FAFBFF;border:2px solid #E2E8F4;border-radius:12px;padding:10px;text-align:center;font-size:18px;font-weight:800;margin-top:14px;">728 ÷ 4 = <span style="color:#1A8A5A;">182</span></p>
   </div></div>
 
   <div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">Why do we start with the hundreds column instead of the ones?</p><div class="journal-label">✏️ <span class="saved-dot" id="ds1"></span></div><textarea class="journal-box" id="j-s1" data-label="Learn socratic" oninput="autoSave(this,'ds1')" placeholder=""></textarea></div>
@@ -253,11 +302,11 @@
 <div class="tab-panel" id="tab-practice">
   <div class="callout callout-info"><span class="callout-icon">🧭</span><p>Share hundreds, then tens, then ones. Trade leftovers down.</p></div>
 
-  <div class="activity bl-honey"><div class="activity-head"><div class="activity-num" style="background:var(--honey);">1</div><div><div class="activity-title">525 ÷ 5 (no trade)</div></div></div><div class="activity-body">
+  <div class="activity bl-honey"><div class="activity-head"><div class="activity-num" style="background:var(--honey);">1</div><div><div class="activity-title">396 ÷ 3 (no trade)</div></div></div><div class="activity-body">
     <div class="fill-row"><strong>Hundreds per row:</strong><input type="number" class="fill-input" id="p1-h" placeholder="?"/></div>
     <div class="fill-row"><strong>Tens per row:</strong><input type="number" class="fill-input" id="p1-t" placeholder="?"/></div>
     <div class="fill-row"><strong>Ones per row:</strong><input type="number" class="fill-input" id="p1-o" placeholder="?"/></div>
-    <div class="fill-row"><strong>525 ÷ 5 =</strong><input type="number" class="fill-input" id="p1-tot" placeholder="?"/></div>
+    <div class="fill-row"><strong>396 ÷ 3 =</strong><input type="number" class="fill-input" id="p1-tot" placeholder="?"/></div>
     <button class="check-btn" onclick="checkP1()">Check ✓</button>
     <div class="feedback-branch feedback-pass" id="p1-pass"><strong>✅</strong> 1 H · 3 T · 2 O · 132. No trade.</div>
     <div class="feedback-branch feedback-retry" id="p1-retry"><strong>🔄 All three digits split cleanly.</strong><div class="hint-callout">3÷3=1, 9÷3=3, 6÷3=2. 1 hundred + 3 tens + 2 ones = 132.</div><button class="orange-btn" onclick="resetP1()">↩ Reset</button></div>
@@ -289,7 +338,7 @@
     <div class="q-block"><p class="q-text"><span class="q-num">1</span><strong>Fluency.</strong> Find 396 ÷ 3 on the 3-column mat.</p><div class="journal-label">✏️ <span class="saved-dot" id="da1"></span></div><textarea class="journal-box" id="j-a1" data-label="SWYK 1" oninput="autoSave(this,'da1')" placeholder=""></textarea></div>
     <div class="q-block"><p class="q-text"><span class="q-num">2</span><strong>Transfer.</strong> 4 friends split 728 stickers equally. Show the trade and the final count for each.</p><div class="journal-label">✏️ <span class="saved-dot" id="da2"></span></div><textarea class="journal-box" id="j-a2" data-label="SWYK 2" oninput="autoSave(this,'da2')" placeholder=""></textarea></div>
 
-    <div class="video-wrap" data-video-slot="3-06-06-swyk-feedback"><div class="video-wrap-header"><span style="font-size:20px;">🎬</span><div><div class="video-wrap-type">Show What You Know Feedback · Lesson 3.06.06</div><div class="video-wrap-title">Walk-through</div></div></div><div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">🎬</div><div class="video-placeholder-text">📹 <strong>3-06-06_SWYK-Feedback.mp4</strong></div><div class="record-note"><strong>Recording prompt:</strong> Q1: 396 ÷ 3 = 123 (no trade). Q2: 728 ÷ 4 = 182 (3 H → 1 each + 1 left; trade → tens = 18 → 9 each; 4 ones → 2 each). 192 trading cards each. (~1–2 min)</div><div class="video-placeholder-id"><!-- slot: 3-06-06-swyk-feedback --></div></div></div></div>
+    <div class="video-wrap" data-video-slot="3-06-06-swyk-feedback"><div class="video-wrap-header"><span style="font-size:20px;">🎬</span><div><div class="video-wrap-type">Show What You Know Feedback · Lesson 3.06.06</div><div class="video-wrap-title">Walk-through</div></div></div><div class="video-ratio"><div class="video-placeholder"><div class="video-placeholder-icon">🎬</div><div class="video-placeholder-text">📹 <strong>3-06-06_SWYK-Feedback.mp4</strong></div><div class="record-note"><strong>Recording prompt:</strong> Q1: 396 ÷ 3 = 132 (no trade: 3÷3=1, 9÷3=3, 6÷3=2). Q2: 728 ÷ 4 = 182 (7 H → 1 each + 3 left; trade → tens = 32 → 8 each; 8 ones → 2 each). (~1–2 min)</div><div class="video-placeholder-id"><!-- slot: 3-06-06-swyk-feedback --></div></div></div></div>
 
     <div class="activity bl-slate" style="margin-top:18px;border-left-color:#F5A36F;"><div class="activity-head"><div class="activity-num" style="background:#F5A36F;color:#0E1C42;">🗺️</div><div><div class="activity-title">Connection Forward</div><div class="activity-sub">Preview Lesson 3.06.07 — Capstone</div></div></div><div class="activity-body">
       <p>Next (capstone): 3-digit numbers where the hundreds digit is smaller than the divisor, so the quotient has only 2 digits.</p>
@@ -316,7 +365,7 @@ function restore(){document.querySelectorAll('textarea.journal-box').forEach(fun
 function showBranch(id){document.getElementById(id).classList.add('show');}function hideBranches(p){['pass','retry'].forEach(function(x){var e=document.getElementById(p+'-'+x);if(e)e.classList.remove('show');});}
 
 function rA(c,ok){c.parentElement.querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});var f=document.getElementById('rA-fb');if(ok){c.classList.add('good');f.className='inline-feedback show good';f.innerHTML='<strong>✅</strong> 246 = 2 H + 4 T + 6 O.';mini(c);}else{c.classList.add('bad');f.className='inline-feedback show think';f.innerHTML='Hundreds first, then tens, then ones.';}}
-function rT(c,ok){c.parentElement.querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});var f=document.getElementById('rT-fb');if(ok){c.classList.add('good');f.className='inline-feedback show good';f.innerHTML='<strong>✅</strong> All three digits are even. No trade.';mini(c);}else{c.classList.add('bad');f.className='inline-feedback show think';f.innerHTML='2, 4, 6 — all even. ÷ 2 splits clean.';}}
+function rT(c,ok){c.parentElement.querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});var f=document.getElementById('rT-fb');if(ok){c.classList.add('good');f.className='inline-feedback show good';f.innerHTML='<strong>✅</strong> Hundreds share evenly (5÷5=1), but tens (2÷5) leaves 2 left over — that's the trade!';mini(c);}else{c.classList.add('bad');f.className='inline-feedback show think';f.innerHTML='Check each column separately: hundreds (5÷5), tens (2÷5), ones (5÷5). Where does a column not divide evenly?';}}
 
 /* 3-column Share Mat */
 var sm={d:5,h:5,t:2,o:5,step:0};
@@ -417,4 +466,71 @@ function parseManifest(txt){var map={};var lines=txt.split(/\r?\n/);var current=
 
 window.addEventListener('DOMContentLoaded',function(){loadVideoManifest();restore();smRender();});
 </script>
+
+<script id="fluencyScript">
+(function(){
+var FLUENCY_TIMED = false;
+var FLUENCY_TITLE = "×10 Facts";
+var fluencyInterval = null;
+var fluencySecondsLeft = 60;
+
+window.fluencyStart = function(){
+  if(!FLUENCY_TIMED) return;
+  var grid = document.getElementById('fluencyGrid');
+  if(!grid) return;
+  grid.querySelectorAll('.fluency-input').forEach(function(i){ i.disabled = false; });
+  var btn = document.getElementById('fluencyStartBtn');
+  if(btn){ btn.disabled = true; btn.textContent = 'Timer Running\u2026'; }
+  var checkBtn = document.getElementById('fluencyCheckBtn');
+  if(checkBtn) checkBtn.disabled = false;
+  fluencySecondsLeft = 60;
+  fluencyUpdateDisplay();
+  fluencyInterval = setInterval(function(){
+    fluencySecondsLeft--;
+    fluencyUpdateDisplay();
+    if(fluencySecondsLeft <= 0){
+      clearInterval(fluencyInterval);
+      grid.querySelectorAll('.fluency-input').forEach(function(i){ i.disabled = true; });
+      window.fluencyCheck();
+    }
+  }, 1000);
+};
+
+function fluencyUpdateDisplay(){
+  var el = document.getElementById('fluencyTimerDisplay');
+  if(el) el.textContent = fluencySecondsLeft + 's';
+}
+
+window.fluencyCheck = function(){
+  if(fluencyInterval){ clearInterval(fluencyInterval); fluencyInterval = null; }
+  var items = document.querySelectorAll('#fluencyGrid .fluency-item');
+  var correct = 0, attempted = 0, total = items.length;
+  var lines = [];
+  items.forEach(function(item){
+    var input = item.querySelector('.fluency-input');
+    var qText = item.querySelector('.fluency-q').textContent;
+    var given = (input.value || '').trim();
+    var ans = input.dataset.answer;
+    var ok = given !== '' && given === ans;
+    if(given !== '') attempted++;
+    item.classList.remove('fluency-correct','fluency-wrong');
+    if(ok){ correct++; item.classList.add('fluency-correct'); }
+    else if(given !== ''){ item.classList.add('fluency-wrong'); }
+    lines.push(qText + ' ' + ans + '   [answered: ' + (given || 'blank') + ']' + (ok ? ' \u2713' : (given ? ' \u2717' : '')));
+  });
+  var pct = total ? Math.round((correct/total)*100) : 0;
+  var timeStr = FLUENCY_TIMED ? (' in ' + (60 - fluencySecondsLeft) + ' seconds') : '';
+  var summary = 'Fluency Warm-Up \u2014 ' + FLUENCY_TITLE + '\n' + correct + ' / ' + total + ' correct (' + pct + '%)' + timeStr + '\n\n' + lines.join('\n');
+  var j = document.getElementById('fluencyJournal');
+  if(j) j.value = summary;
+  var resEl = document.getElementById('fluencyResult');
+  if(resEl) resEl.innerHTML = correct + ' / ' + total + ' correct (' + pct + '%)' + timeStr;
+  var checkBtn = document.getElementById('fluencyCheckBtn');
+  if(checkBtn) checkBtn.disabled = true;
+  var startBtn = document.getElementById('fluencyStartBtn');
+  if(startBtn) startBtn.textContent = 'Done';
+};
+})();
+</script>
+
 </body></html>
