@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Teacher Manual — OAO 3rd Grade Math</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Nunito:wght@400;600;700;800;900&display=swap');
+
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito',Arial,sans-serif;background:#F4F6FB;color:#0B1F3A;font-size:15px;line-height:1.7}
+.page{max-width:820px;margin:0 auto;background:#fff;box-shadow:0 0 40px rgba(11,31,58,.08)}
+
+/* ── BANNER ── */
+.banner{background:linear-gradient(135deg,#7A2B2B,#9B3535);border-bottom:4px solid #C7922C;padding:20px 32px;text-align:center}
+.banner-label{font-size:11px;color:#FFD080;text-transform:uppercase;letter-spacing:1.5px;font-weight:900;margin-bottom:6px}
+.banner-title{font-family:'Lora',Georgia,serif;font-size:22px;color:#fff;font-weight:700;line-height:1.3;margin-bottom:6px}
+.banner-sub{font-size:13px;color:rgba(255,255,255,.75)}
+
+/* ── COVER ── */
+.cover{background:linear-gradient(135deg,#0B1F3A 0%,#162D58 55%,#1E3A70 100%);padding:52px 40px;text-align:center;position:relative;overflow:hidden}
+.cover::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 20% 30%,rgba(85,200,232,.18),transparent 35%),radial-gradient(circle at 80% 70%,rgba(245,197,24,.12),transparent 35%)}
+.cover-inner{position:relative}
+.cover-logo{font-size:56px;margin-bottom:16px}
+.cover-org{font-size:13px;color:#55C8E8;font-weight:900;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:20px}
+.cover-title{font-family:'Lora',Georgia,serif;font-size:38px;color:#fff;font-weight:700;line-height:1.2;margin-bottom:10px}
+.cover-title em{color:#F5C518;font-style:italic}
+.cover-sub{font-size:17px;color:rgba(255,255,255,.75);margin-bottom:30px}
+.cover-badges{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-bottom:28px}
+.cover-badge{background:rgba(255,255,255,.12);border:1.5px solid rgba(255,255,255,.25);border-radius:24px;padding:8px 20px;font-size:13px;color:#fff;font-weight:800}
+.cover-date{font-size:12px;color:rgba(255,255,255,.45)}
+
+/* ── SECTION HEADERS ── */
+.section-head{background:#0B1F3A;padding:16px 32px;display:flex;align-items:center;gap:14px;border-left:6px solid #55C8E8;margin:0}
+.section-head-num{width:36px;height:36px;border-radius:50%;background:#55C8E8;color:#0B1F3A;font-size:16px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.section-head-text{color:#fff;font-size:20px;font-weight:800;line-height:1.2}
+.section-head-sub{color:#55C8E8;font-size:12px;font-weight:700;margin-top:2px}
+
+.subsection-head{background:#F0F4FF;border-left:4px solid #6B3FA0;padding:10px 20px;margin:20px 0 10px;font-size:16px;font-weight:900;color:#0B1F3A}
+
+/* ── BODY TEXT ── */
+.body{padding:24px 32px}
+.body p{margin-bottom:12px;font-size:15px;color:#1A2E50;line-height:1.75}
+.body h3{font-size:17px;color:#0B1F3A;font-weight:900;margin:20px 0 8px}
+.body ul{margin:8px 0 14px 22px}
+.body li{margin-bottom:5px;font-size:15px;color:#1A2E50;line-height:1.65}
+
+/* ── CALLOUTS ── */
+.callout{border-radius:12px;padding:14px 18px;display:flex;gap:12px;margin:14px 0}
+.callout-icon{font-size:22px;flex-shrink:0;margin-top:2px}
+.callout p{font-size:14px;color:#0B1F3A;margin:0;line-height:1.65}
+.callout-navy{background:#EAF2FB;border:2px solid #C0D8F0}
+.callout-gold{background:#FFF8E0;border:2px solid #F0D980}
+.callout-green{background:#E4F8EE;border:2px solid #B0E8CC}
+.callout-red{background:#FDF0F0;border:2px solid #F0C0C0}
+.callout-purple{background:#F2EAFF;border:2px solid #C8AAEE}
+
+/* ── TABLES ── */
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:14px}
+th{background:#0B1F3A;color:#fff;padding:10px 14px;text-align:left;font-weight:800;font-size:13px}
+td{padding:9px 14px;border-bottom:1px solid #E2E8F4;vertical-align:top;line-height:1.55}
+tr:nth-child(even) td{background:#F8FAFF}
+tr:hover td{background:#F0F4FF}
+.td-unit{font-weight:900;color:#0B1F3A;white-space:nowrap}
+.td-light{color:#5A6B8A;font-size:13px}
+
+/* ── UNIT CARDS ── */
+.unit-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:0 32px 24px}
+.unit-card{border:2px solid #E2E8F4;border-radius:14px;overflow:hidden;box-shadow:0 2px 8px rgba(11,31,58,.04)}
+.unit-card-head{padding:10px 14px;color:#fff;font-size:13px;font-weight:900}
+.unit-card-body{padding:10px 14px;font-size:13px;color:#1A2E50;line-height:1.55}
+.unit-card-body strong{display:block;font-size:12px;color:#5A6B8A;text-transform:uppercase;letter-spacing:.5px;margin-bottom:2px}
+
+/* ── TAB VISUAL ── */
+.tab-demo{background:#0B1F3A;border-radius:10px;overflow:hidden;margin:14px 0}
+.tab-demo-bar{display:flex;border-bottom:3px solid #55C8E8}
+.tab-demo-btn{flex:1;padding:10px 6px;background:transparent;border:none;border-bottom:3px solid transparent;font-size:12px;font-weight:800;color:rgba(255,255,255,.5);text-align:center;cursor:default}
+.tab-demo-btn.active{color:#fff;border-bottom-color:#6B3FA0;background:rgba(255,255,255,.05)}
+.tab-demo-body{padding:14px 18px;font-size:13px;color:rgba(255,255,255,.82);line-height:1.6}
+
+/* ── MATH CREW ── */
+.crew-row{display:flex;gap:12px;flex-wrap:wrap;padding:0 32px 24px}
+.crew-card{flex:1;min-width:170px;border-radius:14px;overflow:hidden;border:2px solid #E2E8F4}
+.crew-head{padding:10px 14px;color:#fff;font-weight:900;font-size:14px}
+.crew-body{padding:10px 14px;font-size:13px;color:#1A2E50;line-height:1.55}
+
+/* ── WORKLOAD BAR ── */
+.workload-wrap{padding:0 32px 24px}
+.workload-chart{display:flex;align-items:flex-end;gap:6px;height:160px;border-bottom:2px solid #0B1F3A;padding-bottom:0}
+.workload-bar-col{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center}
+.workload-bar{width:72%;border-radius:4px 4px 0 0}
+.workload-labels{display:flex;gap:6px;margin-top:5px}
+.workload-label{flex:1;text-align:center;font-size:10px;color:#0B1F3A;font-weight:800}
+.workload-legend{display:flex;gap:16px;margin-top:10px;font-size:12px;color:#3A4A6B;flex-wrap:wrap}
+.workload-dot{width:12px;height:12px;border-radius:3px;display:inline-block;margin-right:5px}
+
+/* ── STANDARDS ── */
+.std-row{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-bottom:1px solid #E8EDF6}
+.std-code{background:#0B1F3A;color:#55C8E8;border-radius:8px;padding:4px 10px;font-size:12px;font-weight:900;white-space:nowrap;font-family:monospace}
+.std-desc{font-size:13px;color:#1A2E50;flex:1;line-height:1.5}
+.std-units{font-size:12px;color:#6B3FA0;font-weight:800;white-space:nowrap}
+
+/* ── DIVIDER ── */
+.divider{height:3px;background:linear-gradient(90deg,#55C8E8,#6B3FA0,#F5C518);margin:0}
+
+/* ── ASSESSMENT ANSWER KEY ── */
+.ak-box{background:#FFF8F0;border:2px solid #F5C518;border-left:6px solid #C7922C;border-radius:12px;padding:14px 18px;margin:12px 0}
+.ak-label{font-size:11px;color:#8A6D2B;font-weight:900;text-transform:uppercase;letter-spacing:.8px;margin-bottom:6px}
+.ak-item{display:flex;gap:10px;margin-bottom:6px;font-size:14px;color:#0B1F3A;line-height:1.55}
+.ak-num{font-weight:900;min-width:22px;color:#C7922C}
+
+/* ── TOC ── */
+.toc-item{display:flex;gap:10px;align-items:baseline;padding:6px 0;border-bottom:1px dotted #D8E2F0}
+.toc-num{font-size:14px;font-weight:900;color:#6B3FA0;min-width:28px}
+.toc-title{font-size:14px;color:#0B1F3A;flex:1}
+.toc-page{font-size:13px;color:#7A88A8}
+
+/* ── PAGE BREAK ── */
+@media print{
+  .page-break{page-break-before:always}
+  .no-break{page-break-inside:avoid}
+  .banner,.cover,.section-head{page-break-inside:avoid}
+}
+
+/* ── MISC ── */
+.chip{display:inline-flex;align-items:center;gap:5px;background:#E3F8ED;border:1.5px solid #B8E8CF;border-radius:20px;padding:3px 10px;font-size:12px;font-weight:800;color:#0B1F3A;margin:2px}
+.chip-navy{background:#E8EDF8;border-color:#B0C4E0}
+.chip-gold{background:#FFF3DC;border-color:#F5D88A}
+.chip-purple{background:#F0E8FF;border-color:#C8AAE8}
+.footer-strip{background:#0B1F3A;padding:14px 32px;text-align:center}
+.footer-strip p{font-size:12px;color:rgba(255,255,255,.55)}
+.footer-strip span{color:#55C8E8;font-weight:700}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- ═══════════════════════════════════════════════════════════
+     FACILITATOR COPY BANNER
+════════════════════════════════════════════════════════════ -->
+<div class="banner">
+  <div class="banner-label">⚠️ Facilitator Copy — Contains Answer Keys &amp; Grading Guidance</div>
+  <div class="banner-title">Do Not Publish to Students · Do Not Share Publicly</div>
+  <div class="banner-sub">This document is for the OAO 3rd Grade Math teacher/facilitator only.</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     COVER PAGE
+════════════════════════════════════════════════════════════ -->
+<div class="cover">
+  <div class="cover-inner">
+    <div class="cover-logo">🦉</div>
+    <div class="cover-org">Optima Academy Online</div>
+    <div class="cover-title"><em>3rd Grade Math</em><br/>Teacher Manual</div>
+    <div class="cover-sub">Facilitator Guide · Singapore Math / Florida B.E.S.T. Aligned</div>
+    <div class="cover-badges">
+      <span class="cover-badge">📐 12 Units · 75 Lessons</span>
+      <span class="cover-badge">📄 12 Concept Checks</span>
+      <span class="cover-badge">📊 12 Summative Assessments</span>
+      <span class="cover-badge">⭐ 16 Spotlight Tasks (Weeks 17–32)</span>
+    </div>
+    <div class="cover-date">© 2025 Optima Academy Online · An Education Experience Company</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     HOW TO USE THIS MANUAL
+════════════════════════════════════════════════════════════ -->
+<div class="body" style="background:#F8FAFF;border-bottom:2px solid #E2E8F4">
+  <h3 style="color:#0B1F3A;font-size:18px;margin-bottom:10px;">How to Use This Manual</h3>
+  <p>This manual documents the OAO 3rd Grade Math course as it is built and deployed on GitHub Pages, embedded in Canvas LMS as iframes. Every lesson, assessment type, and grading note in this document is drawn from the actual built course — not from assumption.</p>
+  <p>The manual is organized in reading order below. Most facilitators will use it in three ways: <strong>before the course starts</strong> (read Sections 1–3 to understand what students experience), <strong>weekly</strong> (Section 7 for grading workflow and announcement templates), and <strong>at grading time</strong> (Sections 5 and 6 for answer guides and rubrics).</p>
+  <div class="callout callout-red">
+    <span class="callout-icon">🔒</span>
+    <p><strong>Teacher-only content.</strong> Sections 5 and 6 contain answer keys for Concept Checks and Summative Assessments. Do not post these pages in Canvas or share them with students or families. Keep this document in your facilitator folder only.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     TABLE OF CONTENTS
+════════════════════════════════════════════════════════════ -->
+<div class="body">
+  <h3 style="font-size:18px;margin-bottom:14px;">Table of Contents</h3>
+  <div class="toc-item"><span class="toc-num">1.</span><span class="toc-title">How This Course Works — Lesson Structure, Typical Week, Major Assessments</span></div>
+  <div class="toc-item"><span class="toc-num">2.</span><span class="toc-title">The Lesson Page Tour — Four Tabs Explained</span></div>
+  <div class="toc-item"><span class="toc-num">3.</span><span class="toc-title">The Math Crew — Who They Are and Why They Matter</span></div>
+  <div class="toc-item"><span class="toc-num">4.</span><span class="toc-title">Ungraded Interactives — What the Teacher Does Not Grade</span></div>
+  <div class="toc-item"><span class="toc-num">5.</span><span class="toc-title">Graded Items — Concept Checks, Summative Assessments, Spotlight Tasks, Independent Practice</span></div>
+  <div class="toc-item"><span class="toc-num">6.</span><span class="toc-title">Assessment Answer Guides &amp; Rubrics (Teacher Copy Only)</span></div>
+  <div class="toc-item"><span class="toc-num">7.</span><span class="toc-title">Teacher Workflow, Workload Map &amp; Weekly Announcement Templates</span></div>
+  <div class="toc-item"><span class="toc-num">8.</span><span class="toc-title">Florida B.E.S.T. Standards Coverage Map</span></div>
+  <div class="toc-item"><span class="toc-num">9.</span><span class="toc-title">What Makes This Course Classical</span></div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SECTION 1 — HOW THIS COURSE WORKS
+════════════════════════════════════════════════════════════ -->
+<div class="section-head">
+  <div class="section-head-num">1</div>
+  <div><div class="section-head-text">How This Course Works</div>
+  <div class="section-head-sub">Lesson structure · typical week · major assessments</div></div>
+</div>
+<div class="body">
+
+  <h3>The Course at a Glance</h3>
+  <p>OAO 3rd Grade Math follows Dimensions Math (Singapore Math) scope and sequence, aligned to Florida B.E.S.T. standards. The course runs 12 units across the school year. Every lesson is a self-contained HTML page hosted on GitHub Pages and embedded in Canvas as an iframe. Students work entirely independently — there is no synchronous class session. The teacher's role is to assign work in Canvas, grade paper-based assessments, and support students who need help.</p>
+
+  <table>
+    <tr><th>Component</th><th>Count</th><th>Where it lives</th><th>Who grades it</th></tr>
+    <tr><td>Lesson pages (HTML)</td><td>75 lessons across 12 units</td><td>GitHub Pages → Canvas iframe</td><td>Self-graded / ungraded</td></tr>
+    <tr><td>Concept Checks (CC)</td><td>1 per unit (12 total)</td><td>PDF → printed or Canvas upload</td><td>Teacher</td></tr>
+    <tr><td>Summative Assessments (SA)</td><td>1 per unit (12 total)</td><td>PDF → printed or Canvas upload</td><td>Teacher</td></tr>
+    <tr><td>Independent Practice (IP)</td><td>1 per lesson (~75 total)</td><td>PDF → printed or Canvas upload</td><td>Teacher (spot-check) or completion</td></tr>
+    <tr><td>Spotlight Tasks</td><td>2 per week, Weeks 17–32 (32 total)</td><td>HTML → Canvas iframe + upload</td><td>Teacher (VR capture/submission)</td></tr>
+  </table>
+
+  <h3>A Typical Lesson</h3>
+  <p>Each lesson page (e.g., Lesson 3.01.01 "Place Value, Part 1") opens in the Canvas iframe. The student sees:</p>
+  <ol style="margin:8px 0 14px 22px">
+    <li style="margin-bottom:6px">A <strong>progress bar</strong> at the top showing how far through the page they are.</li>
+    <li style="margin-bottom:6px">A <strong>header</strong> with the lesson title, unit, lesson number, Florida B.E.S.T. standard, and focus skill.</li>
+    <li style="margin-bottom:6px">An <strong>Explorer Strip</strong> ("Today's Mission") and <strong>Essential Question + Objectives</strong> card pair.</li>
+    <li style="margin-bottom:6px">A <strong>"You'll need" strip</strong> (typically: Math Journal, Pencil, Ruler or straight edge).</li>
+    <li style="margin-bottom:6px">Four <strong>tabs</strong>: Warm-Up → Learn → Practice → Show What You Know. (Explained in Section 2.)</li>
+  </ol>
+  <p>The student moves through all four tabs in order. Tab checkmarks appear as they visit each tab. The Show What You Know tab has a turn-in checklist with confetti when all items are checked.</p>
+
+  <h3>A Typical Week</h3>
+  <table>
+    <tr><th>What the student does</th><th>Page type</th><th>Graded?</th></tr>
+    <tr><td>Work through 1–2 lesson HTML pages</td><td>Lesson (iframe)</td><td>No — self-check only</td></tr>
+    <tr><td>Complete 1–2 Independent Practice PDFs</td><td>IP PDF (paper/upload)</td><td>Yes — completion or spot-check</td></tr>
+    <tr><td>During weeks 17–32: complete a Spotlight Task</td><td>Spotlight HTML + VR upload</td><td>Yes — teacher reviews submission</td></tr>
+    <tr><td>At end of unit: Concept Check</td><td>CC PDF (paper/upload)</td><td>Yes — teacher grades</td></tr>
+    <tr><td>At end of unit: Summative Assessment</td><td>SA PDF (paper/upload)</td><td>Yes — teacher grades</td></tr>
+  </table>
+  <div class="callout callout-navy">
+    <span class="callout-icon">📌</span>
+    <p><strong>Pacing note.</strong> The course does not prescribe an exact daily schedule. Most units have 6–10 lessons. A reasonable pace for a full-year course is 1–2 lessons per week, with a Concept Check at the unit midpoint and a Summative Assessment at unit end. Teachers set their own Canvas due dates.</p>
+  </div>
+
+  <h3>Major Assessments by Unit</h3>
+  <table>
+    <tr><th>Unit</th><th>Title</th><th>Lessons</th><th>Concept Check (CC)</th><th>Summative Assessment (SA)</th></tr>
+    <tr><td class="td-unit">3.01</td><td>Numbers to 10,000</td><td>8</td><td>3.01.CC (after L1–L4)</td><td>3.01.SA</td></tr>
+    <tr><td class="td-unit">3.02</td><td>Mental Addition &amp; Subtraction</td><td>10</td><td>3.02.CC</td><td>3.02.SA</td></tr>
+    <tr><td class="td-unit">3.03</td><td>Addition &amp; Subtraction with Regrouping</td><td>6</td><td>3.03.CC</td><td>3.03.SA</td></tr>
+    <tr><td class="td-unit">3.04</td><td>Multiplication &amp; Division (Review)</td><td>9</td><td>3.04.CC</td><td>3.04.SA</td></tr>
+    <tr><td class="td-unit">3.05</td><td>Multiplication (3-Digit × 1-Digit)</td><td>7</td><td>3.05.CC</td><td>3.05.SA</td></tr>
+    <tr><td class="td-unit">3.06</td><td>Division (2–3-Digit ÷ 1-Digit)</td><td>7</td><td>3.06.CC</td><td>3.06.SA</td></tr>
+    <tr><td class="td-unit">3.07</td><td>Data — Graphs &amp; Tables</td><td>2</td><td>3.07.CC</td><td>3.07.SA</td></tr>
+    <tr><td class="td-unit">3.08</td><td>Multiplication Tables 6–9</td><td>7</td><td>3.08.CC</td><td>3.08.SA</td></tr>
+    <tr><td class="td-unit">3.09</td><td>Fractions of a Whole &amp; Number Line</td><td>4</td><td>3.09.CC</td><td>3.09.SA</td></tr>
+    <tr><td class="td-unit">3.10</td><td>Equivalent Fractions &amp; Operations</td><td>7</td><td>3.10.CC</td><td>3.10.SA</td></tr>
+    <tr><td class="td-unit">3.11</td><td>Measurement (Length, Capacity, Mass)</td><td>7</td><td>3.11.CC</td><td>3.11.SA</td></tr>
+    <tr><td class="td-unit">3.12</td><td>Geometry (Circles, Angles, Shapes)</td><td>7</td><td>3.12.CC</td><td>3.12.SA</td></tr>
+  </table>
+</div>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SECTION 2 — LESSON PAGE TOUR
+════════════════════════════════════════════════════════════ -->
+<div class="section-head">
+  <div class="section-head-num">2</div>
+  <div><div class="section-head-text">The Lesson Page Tour</div>
+  <div class="section-head-sub">Four tabs — what students do in each</div></div>
+</div>
+<div class="body">
+  <p>Every lesson follows the same four-tab structure. The tab bar sticks at the top as the student scrolls. A checkmark (✓) appears on each tab after the student visits it. The tabs are designed to guide students through a complete Singapore Math lesson arc: readiness → concept → practice → application.</p>
+
+  <div class="tab-demo">
+    <div class="tab-demo-bar">
+      <div class="tab-demo-btn active">🔍 Warm-Up</div>
+      <div class="tab-demo-btn">📐 Learn</div>
+      <div class="tab-demo-btn">🧮 Practice</div>
+      <div class="tab-demo-btn">🌟 Show What You Know</div>
+    </div>
+    <div class="tab-demo-body">← Students move left to right through these four tabs. Each tab's checkmark lights up when visited.</div>
+  </div>
+
+  <div class="subsection-head">🔍 Tab 1 — Warm-Up</div>
+  <p><strong>What's here:</strong> A timed or untimed fluency drill (addition, subtraction, or multiplication facts), a Readiness Check (a quick concrete/pictorial problem at the prior grade level), and a Think Prompt with a Notice/Wonder grid and a prediction box.</p>
+  <p><strong>Purpose:</strong> The Readiness Check connects to what students already know (the bridge from 2nd grade or the prior lesson). The Notice/Wonder prompt activates curiosity before the concept is taught — students guess and record a prediction. This is the classical narration-before-instruction move: observe first, then learn.</p>
+  <p><strong>Teacher note:</strong> None of this tab is collected or graded. Journal entries auto-save in the browser but are not submitted anywhere. If a student skips this tab, it shows up indirectly in their performance on the Practice tab — don't chase it as a missing assignment.</p>
+
+  <div class="subsection-head">📐 Tab 2 — Learn</div>
+  <p><strong>What's here:</strong> A concept video placeholder (placeholder text indicates video slots — videos are added as they are recorded), vocabulary flip cards (tap to reveal definition), a Key Concept box, interactive models (place-value mats, digit tiles, fraction strips, etc.), a Worked Example narrated by the Math Crew characters, a Socratic question, and a journal reflection prompt.</p>
+  <p><strong>The CPA arc:</strong> Every Learn tab moves through Concrete (Touch It) → Pictorial (See It) → Abstract (Write It). Students build with on-screen manipulatives, read a chart representation, then write the standard/expanded form. This mirrors the Singapore Math CPA sequence.</p>
+  <p><strong>Teacher note:</strong> The concept videos show as placeholders in lessons where they haven't been recorded yet. Students who encounter a video placeholder should still work through the rest of the tab — all the key concept content is also in the interactive and text elements on the page.</p>
+
+  <div class="subsection-head">🧮 Tab 3 — Practice</div>
+  <p><strong>What's here:</strong> Typically three interactive activities, each with its own Check button. When a student answers correctly, a green "pass" branch appears with positive feedback and the next-step nudge. When they answer incorrectly, an orange "retry" branch appears that re-teaches the specific concept and resets the problem for another attempt.</p>
+  <p><strong>Teacher note:</strong> These are fully self-graded. Students can retry indefinitely. No attempt data is sent to Canvas — the practice is formative, not summative. A student who can pass all three activities in Practice is generally ready for the Concept Check on that lesson's skill.</p>
+
+  <div class="subsection-head">🌟 Tab 4 — Show What You Know</div>
+  <p><strong>What's here:</strong> A short set of written/drawn problems (usually 2–4), a "Connection Forward" note linking today's skill to the next lesson, a copy-your-work or PDF-download option, and a turn-in checklist. When all checklist items are ticked, confetti fires.</p>
+  <p><strong>Teacher note:</strong> The Show What You Know tab is the bridge to the Independent Practice PDF. Students who use it well will copy their journal work and compare it to the IP problems. The tab itself is not collected — the Independent Practice PDF (submitted separately in Canvas) is the graded artifact.</p>
+
+  <div class="callout callout-gold">
+    <span class="callout-icon">💡</span>
+    <p><strong>Biggest misconception for new teachers:</strong> The lesson page does not produce a submission. Students work on the HTML page, then download/print the Independent Practice PDF and submit that separately. If Canvas shows "no submission" for a lesson, check whether the IP PDF was submitted — not whether the iframe was opened.</p>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SECTION 3 — THE MATH CREW
+════════════════════════════════════════════════════════════ -->
+<div class="section-head">
+  <div class="section-head-num">3</div>
+  <div><div class="section-head-text">The Math Crew</div>
+  <div class="section-head-sub">Four characters who model mathematical thinking</div></div>
+</div>
+<div class="body">
+  <p>Every lesson's Learn tab and Worked Example sections feature four student characters called the Math Crew. They appear in thought bubbles (side-by-side panels) whenever a new problem is worked through. Their purpose is to model the range of valid strategies and show that mathematics has multiple entry points.</p>
+</div>
+<div class="crew-row">
+  <div class="crew-card">
+    <div class="crew-head" style="background:#6B3FA0;">A — Atlas (Purple)</div>
+    <div class="crew-body"><strong>The Builder</strong><br/>Uses place-value mats, discs, and concrete tools. "I like to start with pieces I can see and touch." Represents the Concrete phase of CPA.</div>
+  </div>
+  <div class="crew-card">
+    <div class="crew-head" style="background:#2DB87A;">H — Hazel (Green)</div>
+    <div class="crew-body"><strong>The Diagrammer</strong><br/>Draws number lines, bar models, and charts. "I draw it out — a diagram helps me see." Represents the Pictorial phase of CPA.</div>
+  </div>
+  <div class="crew-card">
+    <div class="crew-head" style="background:#D4A800;color:#0B1F3A;">F — Felix (Gold)</div>
+    <div class="crew-body"><strong>The Shortcutter</strong><br/>Looks for mental math strategies and patterns. "I find the quickest way — sometimes I do it in my head." Bridges Pictorial to Abstract.</div>
+  </div>
+  <div class="crew-card">
+    <div class="crew-head" style="background:#3A6B9A;">C — Cora (Blue)</div>
+    <div class="crew-body"><strong>The Checker</strong><br/>Verifies answers and catches errors. "I make sure we're right — does the answer actually check out?" Represents mathematical precision and self-monitoring.</div>
+  </div>
+</div>
+<div class="body">
+  <div class="callout callout-purple">
+    <span class="callout-icon">🎯</span>
+    <p><strong>Why it matters for the teacher:</strong> When a student consistently uses only one strategy on their IP or assessments, you can nudge them toward another Crew member's approach. "Have you tried Hazel's way — can you draw a bar model for this?" The characters give you a shared vocabulary with students for talking about strategy flexibility without judgment.</p>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SECTION 4 — UNGRADED INTERACTIVES
+════════════════════════════════════════════════════════════ -->
+<div class="section-head">
+  <div class="section-head-num">4</div>
+  <div><div class="section-head-text">Ungraded Interactives</div>
+  <div class="section-head-sub">What the teacher does not collect or grade</div></div>
+</div>
+<div class="body">
+  <p>The following elements live on the lesson HTML pages, give immediate feedback to students, and produce no Canvas submission. They are learning tools, not assessment items.</p>
+
+  <table>
+    <tr><th>Interactive</th><th>Where it appears</th><th>What it does</th><th>Teacher action</th></tr>
+    <tr><td><strong>Fluency drill</strong></td><td>Warm-Up tab</td><td>10 fact-fluency problems, student types answers, gets instant right/wrong feedback</td><td>None — completion not tracked</td></tr>
+    <tr><td><strong>Readiness Check</strong></td><td>Warm-Up tab</td><td>1 prior-knowledge problem with reveal button</td><td>None</td></tr>
+    <tr><td><strong>Notice/Wonder journal</strong></td><td>Warm-Up tab</td><td>Free-text textarea, auto-saves in browser session</td><td>None — not submitted</td></tr>
+    <tr><td><strong>Place-value mat</strong></td><td>Learn tab</td><td>Drag/click to add/remove discs, number updates live</td><td>None</td></tr>
+    <tr><td><strong>Vocabulary flip cards</strong></td><td>Learn tab</td><td>Tap to flip front/back; term → definition</td><td>None</td></tr>
+    <tr><td><strong>Digit tiles / match cards / value cards</strong></td><td>Learn tab</td><td>Click-to-reveal or drag-to-match interactives</td><td>None</td></tr>
+    <tr><td><strong>Socratic question + journal box</strong></td><td>Learn tab</td><td>Text area for student thinking; auto-saves locally</td><td>None — not submitted</td></tr>
+    <tr><td><strong>Practice activities (×3)</strong></td><td>Practice tab</td><td>Self-check with pass/retry branches; infinite retries</td><td>None</td></tr>
+    <tr><td><strong>Turn-in checklist + confetti</strong></td><td>Show What You Know tab</td><td>Student self-check; celebration animation on completion</td><td>None</td></tr>
+  </table>
+
+  <div class="callout callout-green">
+    <span class="callout-icon">✅</span>
+    <p><strong>The key point:</strong> A student who opens the lesson iframe and spends 30 minutes working through all four tabs has done real mathematical work — but nothing appears in the Canvas gradebook. The gradebook evidence comes from the Independent Practice PDF submission. These are complementary, not redundant. Don't penalize students for "missing" the iframe if the IP shows mastery, and don't award credit for opening the iframe if no IP was submitted.</p>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SECTION 5 — GRADED ITEMS
+════════════════════════════════════════════════════════════ -->
+<div class="section-head">
+  <div class="section-head-num">5</div>
+  <div><div class="section-head-text">Graded Items</div>
+  <div class="section-head-sub">Independent Practice · Concept Checks · Summative Assessments · Spotlight Tasks</div></div>
+</div>
+<div class="body">
+
+  <h3>Independent Practice PDFs (IP)</h3>
+  <p>There is one IP PDF per lesson, named <code>math-lesson-3-XX-XX-independent-practice.pdf</code>. These are printed or uploaded student worksheets that parallel the lesson's Learn and Practice content. They are the primary formative assessment for each lesson.</p>
+  <p><strong>Grading approach:</strong> IPs can be graded for accuracy (correct/incorrect per problem) or for completion (student showed work and attempted all problems). For most lessons, a spot-check of 3–4 key problems is sufficient. See the rubric in Section 6.</p>
+
+  <h3>Concept Checks (CC)</h3>
+  <p>One CC per unit, named <code>math-3-XX-CC-concept-check.pdf</code>. The CC is administered roughly at the unit midpoint (after the first 4 lessons of a longer unit, or after the full unit for shorter units). It is 4 pages, typically 8 problems, and covers the core concrete-to-abstract skills through models, standard form, expanded form, comparison, and explanation tasks.</p>
+  <p><strong>Purpose:</strong> Catch gaps before the Summative Assessment. A student who misses 3+ problems on the CC should get targeted support before the SA.</p>
+  <p><strong>Grading approach:</strong> Grade each problem right/wrong. For explanation questions (the final 1–2 items), use the rubric in Section 6. Total points and record in Canvas.</p>
+
+  <h3>Summative Assessments (SA)</h3>
+  <p>One SA per unit, named <code>math-3-XX-SA-summative-assessment.pdf</code>. The SA is 5 pages, 10 problems. It covers all unit skills and includes: show-your-work computation problems, a visual/drawing task, pattern/rule problems, word problems, an error-analysis item ("Find the Mistake"), and a multi-part reasoning item.</p>
+  <p><strong>What makes the SA harder than the CC:</strong> The SA includes error analysis (identify and correct a wrong answer), multi-step reasoning, and "why are the answers different" explanation questions. These require full written responses, not just a number.</p>
+  <p><strong>Grading approach:</strong> 1 point per problem for problems 1–8; 2 points for the final 2 reasoning/explanation problems. Maximum 12 points per SA. Use the answer guide in Section 6.</p>
+
+  <h3>Spotlight Tasks (Weeks 17–32)</h3>
+  <p>Spotlight Tasks are weekly VR activities embedded as iframes in Canvas. There are 32 Spotlight Task HTML files in the repository (two per week: a primary version and an alternate version labeled "-2"). The tasks run from Week 17 through Week 32 of the school year.</p>
+  <div class="callout callout-gold">
+    <span class="callout-icon">⚠️</span>
+    <p><strong>[VERIFY] Status at time of manual generation:</strong> The Spotlight Task HTML files currently contain placeholder content — the week-specific VR activity directions have not been added yet. The pages describe what the final VR activity will ask students to do (observe, build, model, or sort in VR, then upload a file). Once the final VR content is added to these pages, update this section with the specific task for each week. The grading workflow below applies to the final version.</p>
+  </div>
+  <p><strong>Once VR content is live — grading approach:</strong> Each Spotlight Task asks students to upload a file from their VR work (a screenshot, export, or recording). Review the uploaded file for evidence that the student completed the activity. Grade on a 3-point rubric: 3 = file submitted and shows clear engagement with the math task; 2 = file submitted but connection to math is unclear; 1 = file submitted but activity appears incomplete; 0 = no submission.</p>
+  <p>The two versions per week ("-2" variant) are alternates — students do one version, not both. [VERIFY which version is primary for each week once VR content is finalized.]</p>
+
+  <h3>Canvas Gradebook Setup</h3>
+  <table>
+    <tr><th>Assignment Group</th><th>Items</th><th>Grading</th><th>Suggested Weight</th></tr>
+    <tr><td><strong>Independent Practice</strong></td><td>~75 IP PDFs</td><td>Accuracy or completion; 10 pts each</td><td>30%</td></tr>
+    <tr><td><strong>Concept Checks</strong></td><td>12 CCs</td><td>Points per problem; 8 pts each</td><td>25%</td></tr>
+    <tr><td><strong>Summative Assessments</strong></td><td>12 SAs</td><td>12 pts each (see Section 6)</td><td>35%</td></tr>
+    <tr><td><strong>Spotlight Tasks</strong></td><td>16 weeks × 1 task</td><td>3-point rubric (see above)</td><td>10%</td></tr>
+  </table>
+  <p class="td-light" style="font-size:12px;margin-top:4px;">Weights are suggested. Adjust to match your school's gradebook policies. Mark IP as completion-scored if your school doesn't grade homework for points.</p>
+</div>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SECTION 6 — ANSWER GUIDES & RUBRICS
+════════════════════════════════════════════════════════════ -->
+<div class="section-head">
+  <div class="section-head-num">6</div>
+  <div><div class="section-head-text">Assessment Answer Guides &amp; Rubrics</div>
+  <div class="section-head-sub">Teacher copy only — do not share with students</div></div>
+</div>
+<div class="body">
+  <div class="callout callout-red">
+    <span class="callout-icon">🔒</span>
+    <p><strong>This section contains answer keys for Unit 1 Concept Check and Summative Assessment, drawn from the built course. Answer keys for Units 2–12 should be generated when those assessments are finalized and added here.</strong></p>
+  </div>
+
+  <h3>General Grading Rubric — All Assessments</h3>
+  <p>Use this rubric for any problem that asks a student to show work and explain. Apply it to the final 1–2 explanation problems on each CC and SA.</p>
+  <table>
+    <tr><th>Score</th><th>Computation</th><th>Shown Work / Model</th><th>Explanation (when required)</th></tr>
+    <tr><td><strong>Full credit</strong></td><td>Correct answer</td><td>Work clearly shown; model matches answer</td><td>Uses math vocabulary; names the place or strategy; answer makes sense</td></tr>
+    <tr><td><strong>Partial credit (½)</strong></td><td>Minor error in computation but method is correct</td><td>Work partially shown; some steps visible</td><td>Explanation present but incomplete or missing vocab</td></tr>
+    <tr><td><strong>No credit</strong></td><td>Incorrect with no recoverable work</td><td>No work shown; answer only</td><td>No explanation or "I don't know"</td></tr>
+  </table>
+
+  <h3>IP Spot-Check Rubric (per lesson)</h3>
+  <table>
+    <tr><th>Score</th><th>Criteria</th></tr>
+    <tr><td><strong>10 / Meets</strong></td><td>All attempted; 80%+ correct on spot-check problems; work shown</td></tr>
+    <tr><td><strong>7 / Approaching</strong></td><td>Most attempted; 50–79% correct; some work shown</td></tr>
+    <tr><td><strong>4 / Beginning</strong></td><td>Half or fewer attempted; significant errors; little work shown</td></tr>
+    <tr><td><strong>0 / Not submitted</strong></td><td>No submission</td></tr>
+  </table>
+
+  <div class="subsection-head">🔑 Unit 3.01 — Concept Check Answer Guide (3.01.CC)</div>
+  <p><em>Covers lessons 3.01.01–3.01.04: place value, standard/expanded form, comparing, number line</em></p>
+  <div class="ak-box">
+    <div class="ak-label">3.01.CC Answer Key (8 problems)</div>
+    <div class="ak-item"><span class="ak-num">1.</span><span>For 3,521 → Thousands: <strong>3</strong>, Hundreds: <strong>5</strong>, Tens: <strong>2</strong>, Ones: <strong>1</strong></span></div>
+    <div class="ak-item"><span class="ak-num">2a.</span><span>2,476 in expanded form: <strong>2,000 + 400 + 70 + 6</strong></span></div>
+    <div class="ak-item"><span class="ak-num">2b.</span><span>4,000 + 300 + 50 + 8 in standard form: <strong>4,358</strong></span></div>
+    <div class="ak-item"><span class="ak-num">3.</span><span>24 hundreds and 5 tens = 2,400 + 50 = <strong>2,450</strong> <em>(key concept: 24 hundreds = 2 thousands 4 hundreds)</em></span></div>
+    <div class="ak-item"><span class="ak-num">4a.</span><span>3,486 <strong>&lt;</strong> 3,498 (tens: 8 &lt; 9)</span></div>
+    <div class="ak-item"><span class="ak-num">4b.</span><span>7,205 <strong>&gt;</strong> 7,025 (hundreds: 2 &gt; 0)</span></div>
+    <div class="ak-item"><span class="ak-num">4c.</span><span>4,800 <strong>=</strong> 4,800</span></div>
+    <div class="ak-item"><span class="ak-num">5.</span><span>Order least to greatest: <strong>4,025 &lt; 4,205 &lt; 4,520</strong></span></div>
+    <div class="ak-item"><span class="ak-num">6.</span><span>4,250 plotted at the halfway mark between 4,200 and 4,300 on a 4,000–5,000 number line with marks every 100. Accept any clearly labeled dot at 4,250.</span></div>
+    <div class="ak-item"><span class="ak-num">7.</span><span>Draw place-value blocks for 1,235: 1 large square (thousand), 2 squares (hundreds), 3 lines (tens), 5 dots (ones). Accept labeled diagram. Answer: <strong>1 thousand, 2 hundreds, 3 tens, 5 ones</strong></span></div>
+    <div class="ak-item"><span class="ak-num">8.</span><span>Greater number: <strong>2,809</strong>. Explanation must say: same thousands digit (2), but hundreds digits differ — 8 hundreds vs. 0 hundreds, so 2,809 is greater. Award partial credit for correct answer without vocabulary.</span></div>
+  </div>
+
+  <div class="subsection-head">🔑 Unit 3.01 — Summative Assessment Answer Guide (3.01.SA)</div>
+  <p><em>Covers all of Unit 1: place value, expanded form, comparing, number line, patterns, rounding ×3 (thousand, hundred, ten)</em></p>
+  <div class="ak-box">
+    <div class="ak-label">3.01.SA Answer Key (10 problems, 12 pts total)</div>
+    <div class="ak-item"><span class="ak-num">1.</span><span>2,476 in expanded form: <strong>2,000 + 400 + 70 + 6</strong> (1 pt)</span></div>
+    <div class="ak-item"><span class="ak-num">2.</span><span>3 thousands, 4 hundreds, 7 tens, 8 ones → <strong>3,478</strong> (1 pt)</span></div>
+    <div class="ak-item"><span class="ak-num">3a.</span><span>5,367 <strong>&lt;</strong> 5,376 (tens: 6 &lt; 7) (1 pt for all three symbols)</span></div>
+    <div class="ak-item"><span class="ak-num">3b.</span><span>8,200 <strong>&gt;</strong> 8,020 (hundreds: 2 &gt; 0)</span></div>
+    <div class="ak-item"><span class="ak-num">3c.</span><span>3,499 <strong>&lt;</strong> 3,500</span></div>
+    <div class="ak-item"><span class="ak-num">4.</span><span>Number line 4,000–5,000, marks every 100. 4,650 is between 4,600 and 4,700 (closer to 4,700). 4,200 is at the 4,200 mark. Accept clearly labeled dots. (1 pt)</span></div>
+    <div class="ak-item"><span class="ak-num">5.</span><span>Pattern: 4,200 → 4,400 → 4,600 → <strong>4,800</strong> → <strong>5,000</strong>. Rule: +200 each time. (1 pt)</span></div>
+    <div class="ak-item"><span class="ak-num">6.</span><span>Round 4,672 to nearest thousand: look at hundreds digit (6 ≥ 5) → round up → <strong>5,000</strong> (1 pt)</span></div>
+    <div class="ak-item"><span class="ak-num">7.</span><span>Round 3,475 to nearest hundred: look at tens digit (7 ≥ 5) → round up → <strong>3,500</strong> (1 pt)</span></div>
+    <div class="ak-item"><span class="ak-num">8.</span><span>School B (4,253) has more students. Compare tens: 5 &gt; 3. Full credit requires showing place-by-place comparison and 1-sentence explanation. (1 pt)</span></div>
+    <div class="ak-item"><span class="ak-num">9.</span><span><em>Error analysis (2 pts).</em> The student is <strong>wrong</strong>. 4,367 rounded to nearest thousand → look at hundreds digit: 3 &lt; 5 → round <em>down</em> → correct answer is <strong>4,000</strong>. The student likely rounded up incorrectly. Full credit: correct answer + identifies the error (looked at wrong digit, or rounded wrong direction). Partial credit (1 pt): correct answer without explanation.</span></div>
+    <div class="ak-item"><span class="ak-num">10.</span><span><em>Multi-part reasoning (2 pts).</em> (a) Nearest ten: <strong>3,850</strong> (look at ones: 7 ≥ 5, round up). (b) Nearest hundred: <strong>3,800</strong> (look at tens: 4 &lt; 5, round down). (c) Nearest thousand: <strong>4,000</strong> (look at hundreds: 8 ≥ 5, round up). Explanation: the answers differ because each rounding looks at a different digit in a different place. Full credit: all three correct + explanation mentioning different place values. Partial (1 pt): 2 of 3 correct or explanation only.</span></div>
+  </div>
+
+  <div class="callout callout-navy">
+    <span class="callout-icon">📋</span>
+    <p><strong>Units 3.02–3.12:</strong> Answer guides for remaining units should be added here as each unit's CC and SA are finalized. Follow the same format: list each problem with the correct answer, key concept to look for in shown work, and partial-credit criteria for explanation items. [VERIFY — add answer keys here as units are completed and assessments are reviewed.]</p>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SECTION 7 — TEACHER WORKFLOW
+════════════════════════════════════════════════════════════ -->
+<div class="section-head">
+  <div class="section-head-num">7</div>
+  <div><div class="section-head-text">Teacher Workflow &amp; Workload Map</div>
+  <div class="section-head-sub">Weekly routine · heavy units · announcement templates</div></div>
+</div>
+<div class="body">
+
+  <h3>Normal-Week Teacher Tasks</h3>
+  <table>
+    <tr><th>Task</th><th>When</th><th>Time estimate</th></tr>
+    <tr><td>Review IP submissions in Canvas; spot-check 3–4 key problems per submission</td><td>After IP due date</td><td>~3–5 min/student</td></tr>
+    <tr><td>Grade Concept Checks (8 problems, use answer key in Section 6)</td><td>At unit midpoint</td><td>~5–8 min/student</td></tr>
+    <tr><td>Grade Summative Assessments (10 problems, 12 pts)</td><td>At unit end</td><td>~8–12 min/student</td></tr>
+    <tr><td>Review Spotlight Task uploads (Weeks 17–32)</td><td>Weekly</td><td>~2–3 min/student</td></tr>
+    <tr><td>Post weekly Canvas announcement</td><td>Monday morning</td><td>~10 min (use templates below)</td></tr>
+    <tr><td>Respond to student/family messages</td><td>Ongoing</td><td>Variable</td></tr>
+  </table>
+
+  <h3>Workload by Unit — Relative Teacher Grading Load</h3>
+  <p>Units with more lessons and a full SA are heavier grading weeks. Units 3.02 and 3.04 (10 and 9 lessons respectively) are the longest. Units 3.07 (2 lessons) is the lightest.</p>
+</div>
+
+<div class="workload-wrap">
+  <div class="workload-chart">
+    <!-- Bar heights: proportional to lesson count. Max = U2 (10 lessons = 140px). Scale: px = lessons * 14. -->
+    <div class="workload-bar-col"><div class="workload-bar" style="height:112px;background:#7fb3d5;" title="U1 — 8 lessons"></div></div>
+    <div class="workload-bar-col"><div class="workload-bar" style="height:140px;background:#e07a5f;" title="U2 — 10 lessons"></div></div>
+    <div class="workload-bar-col"><div class="workload-bar" style="height:84px;background:#7fb3d5;" title="U3 — 6 lessons"></div></div>
+    <div class="workload-bar-col"><div class="workload-bar" style="height:126px;background:#e07a5f;" title="U4 — 9 lessons"></div></div>
+    <div class="workload-bar-col"><div class="workload-bar" style="height:98px;background:#f1c40f;" title="U5 — 7 lessons"></div></div>
+    <div class="workload-bar-col"><div class="workload-bar" style="height:98px;background:#f1c40f;" title="U6 — 7 lessons"></div></div>
+    <div class="workload-bar-col"><div class="workload-bar" style="height:28px;background:#7fb3d5;" title="U7 — 2 lessons"></div></div>
+    <div class="workload-bar-col"><div class="workload-bar" style="height:98px;background:#f1c40f;" title="U8 — 7 lessons"></div></div>
+    <div class="workload-bar-col"><div class="workload-bar" style="height:56px;background:#7fb3d5;" title="U9 — 4 lessons"></div></div>
+    <div class="workload-bar-col"><div class="workload-bar" style="height:98px;background:#f1c40f;" title="U10 — 7 lessons"></div></div>
+    <div class="workload-bar-col"><div class="workload-bar" style="height:98px;background:#f1c40f;" title="U11 — 7 lessons"></div></div>
+    <div class="workload-bar-col"><div class="workload-bar" style="height:98px;background:#f1c40f;" title="U12 — 7 lessons"></div></div>
+  </div>
+  <div class="workload-labels">
+    <div class="workload-label">U1</div><div class="workload-label">U2</div><div class="workload-label">U3</div>
+    <div class="workload-label">U4</div><div class="workload-label">U5</div><div class="workload-label">U6</div>
+    <div class="workload-label">U7</div><div class="workload-label">U8</div><div class="workload-label">U9</div>
+    <div class="workload-label">U10</div><div class="workload-label">U11</div><div class="workload-label">U12</div>
+  </div>
+  <div class="workload-legend">
+    <span><span class="workload-dot" style="background:#7fb3d5"></span>Light (≤6 lessons)</span>
+    <span><span class="workload-dot" style="background:#f1c40f"></span>Moderate (7 lessons)</span>
+    <span><span class="workload-dot" style="background:#e07a5f"></span>Heavy (9–10 lessons)</span>
+  </div>
+</div>
+
+<div class="body">
+  <h3>Weekly Announcement Templates</h3>
+  <p>Copy, customize the bracketed fields, and post in Canvas each Monday. Keep announcements short — students are 3rd graders working independently.</p>
+
+  <div class="subsection-head">Template: Normal Week</div>
+  <div style="background:#F8FAFF;border:2px solid #C8D8F0;border-radius:12px;padding:16px;margin:8px 0;font-size:14px;line-height:1.7">
+    <strong>Subject: Week [#] — What we're working on this week 🧮</strong><br/><br/>
+    Hi 3rd Grade Math Explorers! 👋<br/><br/>
+    This week we're working on <strong>[lesson title(s) — e.g., "mental addition strategies"]</strong>. Open your Canvas Math module and work through the lesson page(s) before completing your Independent Practice.<br/><br/>
+    Don't forget: your Math Journal is your thinking space. Use it during the Warm-Up and Learn tabs — even if nobody collects it, it helps your brain.<br/><br/>
+    <strong>Due this week:</strong> [IP PDF for Lesson X.XX.XX — due [date]]<br/><br/>
+    If you get stuck, send me a message and we'll figure it out together.<br/><br/>
+    — [Your name]
+  </div>
+
+  <div class="subsection-head">Template: Concept Check Week</div>
+  <div style="background:#FFF8F0;border:2px solid #F5D88A;border-radius:12px;padding:16px;margin:8px 0;font-size:14px;line-height:1.7">
+    <strong>Subject: Week [#] — Concept Check coming up 📋</strong><br/><br/>
+    Hi explorers! This week you'll take the <strong>Unit [X] Concept Check</strong>. It covers [brief list — e.g., "place value, expanded form, comparing numbers, and the number line"] — everything from the first part of Unit [X].<br/><br/>
+    The Concept Check is printed (or uploaded as a PDF). Show your work in the work box for each problem. I'm looking at your thinking, not just your answers.<br/><br/>
+    <strong>Before you take it:</strong> Flip back through your Math Journal. If expanded form or comparing felt tricky, try one more practice problem on the lesson page first.<br/><br/>
+    <strong>Due:</strong> Concept Check PDF uploaded to Canvas by [date].<br/><br/>
+    — [Your name]
+  </div>
+
+  <div class="subsection-head">Template: Summative Assessment Week</div>
+  <div style="background:#F2EAFF;border:2px solid #C8AAE8;border-radius:12px;padding:16px;margin:8px 0;font-size:14px;line-height:1.7">
+    <strong>Subject: Week [#] — Unit [X] Summative Assessment 📊</strong><br/><br/>
+    You made it to the end of Unit [X]! This week's Summative Assessment covers everything from the unit. It's a little longer than the Concept Check — 10 problems, and two of them ask you to explain your thinking in writing.<br/><br/>
+    For the "Find the Mistake" problem: read the other student's work carefully, decide if they're right or wrong, and explain what went wrong and what the correct answer is.<br/><br/>
+    Take your time. Show every step. Remember Cora — check your work before you're done.<br/><br/>
+    <strong>Due:</strong> SA PDF uploaded by [date].<br/><br/>
+    — [Your name]
+  </div>
+
+  <div class="subsection-head">Template: Spotlight Task Week (Weeks 17–32)</div>
+  <div style="background:#E4F8EE;border:2px solid #B0E8CC;border-radius:12px;padding:16px;margin:8px 0;font-size:14px;line-height:1.7">
+    <strong>Subject: Week [17–32] — Spotlight Task + VR this week ⭐🥽</strong><br/><br/>
+    This week we have a Spotlight Task! Open the Spotlight Task page in Canvas and follow the directions inside. You'll do a short VR activity and then upload a file from your work.<br/><br/>
+    <strong>What to upload:</strong> [Specific file type — e.g., "a screenshot of your VR scene" — add once VR content is finalized]<br/><br/>
+    <strong>Due:</strong> Spotlight Task upload by [date].<br/><br/>
+    Keep exploring — math is everywhere in VR! 🧮<br/><br/>
+    — [Your name]
+  </div>
+
+  <div class="subsection-head">Template: Re-engagement Nudge (for quiet students)</div>
+  <div style="background:#FDF0F0;border:2px solid #F0C0C0;border-radius:12px;padding:16px;margin:8px 0;font-size:14px;line-height:1.7">
+    <strong>Subject: Checking in on you 👋</strong> <em>(send as individual message, not announcement)</em><br/><br/>
+    Hi [Student name]! I noticed you haven't submitted [assignment name] yet. I wanted to check in — is everything okay? Sometimes a lesson feels confusing, and that's completely normal.<br/><br/>
+    If you got stuck somewhere, let me know which tab or which problem felt hard and we'll work through it together. No judgment — just want to make sure you get the math.<br/><br/>
+    — [Your name]
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SECTION 8 — STANDARDS COVERAGE MAP
+════════════════════════════════════════════════════════════ -->
+<div class="section-head">
+  <div class="section-head-num">8</div>
+  <div><div class="section-head-text">Florida B.E.S.T. Standards Coverage Map</div>
+  <div class="section-head-sub">Teacher copy only — standards codes do not appear on student pages</div></div>
+</div>
+<div class="body">
+  <p>Florida B.E.S.T. standard codes are visible in the lesson HTML info strip but are not the focus of student-facing language. The table below maps each primary standard to the units and lessons that address it. [VERIFY codes against the full Florida B.E.S.T. 3rd grade document — codes below are drawn from the lesson HTML files and are correct as built.]</p>
+
+  <div class="std-row">
+    <span class="std-code">MA.3.NSO.1.1</span>
+    <span class="std-desc">Read and write numbers to 10,000 in standard, expanded, and word form</span>
+    <span class="std-units">U1 L1–L2</span>
+  </div>
+  <div class="std-row">
+    <span class="std-code">MA.3.NSO.1.2</span>
+    <span class="std-desc">Compare and order numbers to 10,000 using &gt;, &lt;, =; use a number line</span>
+    <span class="std-units">U1 L3–L4</span>
+  </div>
+  <div class="std-row">
+    <span class="std-code">MA.3.NSO.1.3</span>
+    <span class="std-desc">Identify and complete number patterns; round to nearest 10, 100, 1000</span>
+    <span class="std-units">U1 L5–L8</span>
+  </div>
+  <div class="std-row">
+    <span class="std-code">MA.3.NSO.2.1</span>
+    <span class="std-desc">Add and subtract multi-digit numbers using mental strategies and standard algorithm</span>
+    <span class="std-units">U2 L1–L7, U3 L1–L3</span>
+  </div>
+  <div class="std-row">
+    <span class="std-code">MA.3.NSO.2.2</span>
+    <span class="std-desc">Estimate sums and differences</span>
+    <span class="std-units">U3 L4–L5</span>
+  </div>
+  <div class="std-row">
+    <span class="std-code">MA.3.NSO.2.3</span>
+    <span class="std-desc">Multiply one-digit numbers by multiples of 10 and 100</span>
+    <span class="std-units">U5 L1</span>
+  </div>
+  <div class="std-row">
+    <span class="std-code">MA.3.AR.1.1</span>
+    <span class="std-desc">Apply properties of multiplication; recall multiplication and division facts 0–10</span>
+    <span class="std-units">U4 L1–L6, U8 L1–L7</span>
+  </div>
+  <div class="std-row">
+    <span class="std-code">MA.3.AR.1.2</span>
+    <span class="std-desc">Solve one- and two-step word problems involving multiplication and division</span>
+    <span class="std-units">U4 L7–L9, U5 L6–L7, U6 L6–L7</span>
+  </div>
+  <div class="std-row">
+    <span class="std-code">MA.3.AR.2.1</span>
+    <span class="std-desc">Multiply two-digit by one-digit numbers with and without regrouping</span>
+    <span class="std-units">U5 L2–L7</span>
+  </div>
+  <div class="std-row">
+    <span class="std-code">MA.3.AR.2.2</span>
+    <span class="std-desc">Divide two- and three-digit numbers by a one-digit divisor</span>
+    <span class="std-units">U6 L1–L7</span>
+  </div>
+  <div class="std-row">
+    <span class="std-code">MA.3.FR.1.1</span>
+    <span class="std-desc">Identify unit fractions; represent fractions on a number line</span>
+    <span class="std-units">U9 L1–L2</span>
+  </div>
+  <div class="std-row">
+    <span class="std-code">MA.3.FR.1.2</span>
+    <span class="std-desc">Compare fractions with like numerators or like denominators</span>
+    <span class="std-units">U9 L3–L4</span>
+  </div>
+  <div class="std-row">
+    <span class="std-code">MA.3.FR.2.1</span>
+    <span class="std-desc">Generate equivalent fractions; simplify fractions</span>
+    <span class="std-units">U10 L1–L3</span>
+  </div>
+  <div class="std-row">
+    <span class="std-code">MA.3.FR.2.2</span>
+    <span class="std-desc">Compare and order fractions; add and subtract fractions with like denominators</span>
+    <span class="std-units">U10 L4–L7</span>
+  </div>
+  <div class="std-row">
+    <span class="std-code">MA.3.M.1.1</span>
+    <span class="std-desc">Measure length in metric units (m, cm, km); solve word problems</span>
+    <span class="std-units">U11 L1–L4, L7</span>
+  </div>
+  <div class="std-row">
+    <span class="std-code">MA.3.M.1.2</span>
+    <span class="std-desc">Measure capacity (L, mL) and mass (kg, g)</span>
+    <span class="std-units">U11 L5–L6</span>
+  </div>
+  <div class="std-row">
+    <span class="std-code">MA.3.DP.1.1</span>
+    <span class="std-desc">Collect and represent data using picture graphs, bar graphs, and tables</span>
+    <span class="std-units">U7 L1–L2</span>
+  </div>
+  <div class="std-row">
+    <span class="std-code">MA.3.GR.1.1</span>
+    <span class="std-desc">Identify and classify polygons; properties of triangles and quadrilaterals</span>
+    <span class="std-units">U12 L4–L6</span>
+  </div>
+  <div class="std-row">
+    <span class="std-code">MA.3.GR.1.2</span>
+    <span class="std-desc">Identify circles, angles (right angles), and use geometric tools (compass)</span>
+    <span class="std-units">U12 L1–L3, L7</span>
+  </div>
+  <div class="std-row">
+    <span class="std-code">MTR.2.1</span>
+    <span class="std-desc">Demonstrate understanding using models and representations (throughout)</span>
+    <span class="std-units">All units</span>
+  </div>
+  <div class="std-row">
+    <span class="std-code">MTR.5.1</span>
+    <span class="std-desc">Use patterns, structures, and mathematical relationships to solve problems</span>
+    <span class="std-units">All units</span>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SECTION 9 — WHAT MAKES THIS COURSE CLASSICAL
+════════════════════════════════════════════════════════════ -->
+<div class="section-head">
+  <div class="section-head-num">9</div>
+  <div><div class="section-head-text">What Makes This Course Classical</div>
+  <div class="section-head-sub">Where classical pedagogy appears in the built lessons</div></div>
+</div>
+<div class="body">
+  <h3>Classical Moves That Are Actually in the Lessons</h3>
+  <p>These are not abstract principles — they are features you can point to in every lesson HTML file.</p>
+
+  <table>
+    <tr><th>Classical Move</th><th>Where It Appears</th><th>What It Does</th></tr>
+    <tr><td><strong>Notice/Wonder before instruction</strong></td><td>Warm-Up tab → Think About It section</td><td>Students observe a number, object, or situation and record what they notice and wonder <em>before</em> the concept is taught. This is narration before imitation — the classical sequence of observation preceding formal instruction.</td></tr>
+    <tr><td><strong>CPA sequence (imitation before independence)</strong></td><td>Learn tab → Touch It / See It / Write It panels</td><td>Every concept is taught Concrete first (build with discs), then Pictorial (read a chart), then Abstract (write the equation). Students imitate the concrete model before working independently in abstract form. This mirrors classical grammar-stage imitation.</td></tr>
+    <tr><td><strong>Socratic questioning</strong></td><td>Learn tab → Socratic Question box (labeled "Stop and think")</td><td>Each lesson has a genuine question that doesn't have an obvious answer — "Which digit has the greatest value, and how do you know?" Students write their thinking before the explanation is revealed. This is interrogative, not declarative, teaching.</td></tr>
+    <tr><td><strong>Multiple perspectives on one problem</strong></td><td>Math Crew thought bubbles in Worked Examples</td><td>The same problem is solved four different ways (concrete, pictorial, shortcut, verification) in every worked example. Classical education prizes understanding a thing from multiple angles over mastering a single algorithm.</td></tr>
+    <tr><td><strong>Virtue thread — mathematical character</strong></td><td>Math Crew characters as recurring types</td><td>Cora (the checker) models intellectual humility and precision. Felix models efficiency. Atlas models patience with concrete work. Hazel models the value of representing ideas visually. Together they model what a virtuous mathematical thinker looks like — careful, curious, creative, self-correcting.</td></tr>
+    <tr><td><strong>Quote strips — classical opening</strong></td><td>Below the header, above the info strip</td><td>Each lesson opens with a short mathematical truth as a quote ("A digit tells more than its name. Its place tells its value."). This is the classical practice of beginning a lesson with a statement worth examining — the opening of the Great Conversation, even at 3rd grade.</td></tr>
+  </table>
+
+  <h3>How to Talk About This With Families</h3>
+  <p>If families ask why the lessons start with questions rather than explanations, or why students are asked to guess before they're taught: this is deliberate. Classical math education holds that a student who has wrestled with a problem — even incorrectly — understands the answer more deeply when it arrives than a student who was told the rule first. The Notice/Wonder prompt and the Readiness Check are not filler. They are the pedagogical setup for genuine understanding.</p>
+
+  <h3>How to Cultivate Mathematical Culture Asynchronously</h3>
+  <p>In an async course with young students, culture comes through consistency and warmth, not live discussion. A few practices that work:</p>
+  <ul>
+    <li>Reference the Math Crew by name in your Canvas announcements and feedback. "I saw some real Cora thinking in your work this week — you checked your rounding carefully."</li>
+    <li>When returning graded work, name the thinking that worked, not just the answer that was right. "You compared place by place starting from the thousands — that's exactly the strategy."</li>
+    <li>Occasionally share a quote from a student's explanation (anonymized and with permission) in your weekly announcement to model good mathematical writing for the cohort.</li>
+    <li>Hold the question open. When a student gets something wrong, respond with a question: "Which digit did you look at when you rounded? Let's start there."</li>
+  </ul>
+</div>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════════════════════ -->
+<div class="footer-strip">
+  <p><span>Optima Academy Online</span> · 3rd Grade Math Teacher Manual · Facilitator Copy Only</p>
+  <p style="margin-top:4px;">Contains answer keys and grading guidance — do not publish to students or share publicly.</p>
+  <p style="margin-top:4px;">© 2025 Optima Academy Online · An Education Experience Company</p>
+</div>
+
+</div><!-- end .page -->
+</body>
+</html>
