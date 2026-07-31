@@ -1,3 +1,647 @@
 <!DOCTYPE html>
 
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Optima Academy Online — Grade 3 Math Lesson 3.03.02</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito:wght@400;600;700;800;900&display=swap');
+*{box-sizing:border-box;margin:0;padding:0} body{font-family:'Nunito','Century Gothic',Verdana,sans-serif;background:#F0F2F8;color:#0E1C42;line-height:1.6} .page-wrap{max-width:920px;margin:0 auto;background:#fff;box-shadow:0 0 40px rgba(14,28,66,.08)}
+.progress-wrap{position:sticky;top:0;z-index:200;background:#0E1C42;padding:8px 20px 10px;display:flex;align-items:center;gap:14px}.progress-label{font-size:12px;color:#F5C518;font-weight:800;text-transform:uppercase;letter-spacing:.8px;white-space:nowrap}.progress-track{flex:1;height:10px;background:rgba(255,255,255,.1);border-radius:10px;overflow:hidden}.progress-fill{height:100%;width:0%;background:linear-gradient(90deg,#1A8A9A,#2DB87A,#F5C518);border-radius:10px;transition:width .4s}.progress-pct{font-size:13px;color:#F5C518;font-weight:800;min-width:36px;text-align:right}
+.header{background:#0E1C42;border-bottom:6px solid #1A8A9A;padding:20px 28px 18px;position:relative;overflow:hidden}.header::after{content:'';position:absolute;bottom:6px;left:0;right:0;height:3px;background:linear-gradient(90deg,#1A8A9A,#55C8E8,#1A8A9A)}.header-brand{display:flex;align-items:center;gap:12px;margin-bottom:14px}.header-logo{width:52px;height:52px;border-radius:50%;background:#FFFFFF;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 2px 8px rgba(0,0,0,.15)}.header-logo img{width:48px;height:38px;display:block}.header-org{font-size:22px;color:#fff;font-weight:800;line-height:1.15}.header-sub{font-size:11px;color:#55C8E8;letter-spacing:.5px}.header-title{font-family:'Lora',Georgia,serif;font-size:28px;color:#fff;font-weight:700;line-height:1.2;margin-bottom:10px}.header-title em{color:#A0E8DA;font-style:italic}.header-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(26,138,154,.18);border:1.5px solid rgba(26,138,154,.45);border-radius:28px;padding:6px 16px}.header-badge-icon{font-size:22px}.header-badge-text{font-size:18px;color:#fff;font-weight:800}
+.quote-strip{background:linear-gradient(135deg,#E8F5F8,#D6EEF3);border-bottom:2px solid #B5DBE3;padding:14px 28px;text-align:center}.quote-strip-text{font-family:'Lora',Georgia,serif;font-size:16px;font-style:italic;color:#1A4A55;line-height:1.6}.quote-strip-attr{font-size:11px;color:#1A8A9A;font-weight:700;margin-top:4px;text-transform:uppercase;letter-spacing:.5px}.info-strip{display:flex;flex-wrap:wrap;background:#fff;border-bottom:2px solid #E2E8F4}.info-cell{flex:1;min-width:150px;padding:12px 16px;border-right:1px solid #E2E8F4;display:flex;align-items:center;gap:10px}.info-cell:last-child{border-right:none}.info-icon{width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}.info-label{font-size:10px;color:#7A88A8;text-transform:uppercase;letter-spacing:.5px;font-weight:700}.info-value{font-size:16px;color:#0E1C42;font-weight:800;line-height:1.2}.info-detail{font-size:11px;color:#3A4A6B;line-height:1.3}.explorer-strip{display:flex;align-items:center;gap:16px;padding:12px 28px;background:linear-gradient(135deg,#1A2340,#0E1C42);border-bottom:3px solid #1A8A9A}.explorer-compass{font-size:28px;flex-shrink:0}.explorer-mission-label{font-size:10px;color:#F5C518;text-transform:uppercase;letter-spacing:1px;font-weight:800;margin-bottom:2px}.explorer-mission-text{font-size:15px;color:#fff;font-weight:700;line-height:1.3}
+.intro-2col{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:20px 28px 4px}.intro-card{background:#fff;border:2px solid #E2E8F4;border-radius:18px;overflow:hidden;box-shadow:0 2px 10px rgba(14,28,66,.04)}.intro-card-head{display:flex;align-items:center;gap:10px;padding:14px 18px;border-bottom:2px solid}.intro-card-head-icon{width:40px;height:40px;border-radius:50%;color:#fff;font-size:20px;display:flex;align-items:center;justify-content:center;flex-shrink:0}.intro-card-head-label{font-size:10px;color:#7A88A8;text-transform:uppercase;letter-spacing:.8px;font-weight:700}.intro-card-head-title{font-size:18px;color:#0E1C42;font-weight:800;line-height:1.2}.intro-card-body{padding:14px 18px}.intro-card-body p{font-size:15px;color:#3A4A6B;line-height:1.65;margin-bottom:8px}.obj-line{display:flex;align-items:flex-start;gap:8px;font-size:15px;color:#0E1C42;line-height:1.55;margin-bottom:8px}.obj-icon{flex-shrink:0;font-size:17px}.theme-question .intro-card-head{background:#FFF8E6;border-color:#F5E6C8}.theme-question .intro-card-head-icon{background:#F5C518}.theme-objectives .intro-card-head{background:#E8F5F8;border-color:#B5DBE3}.theme-objectives .intro-card-head-icon{background:#1A8A9A}.need-strip{display:flex;align-items:center;flex-wrap:wrap;gap:8px;padding:12px 28px 18px}.need-strip-label{font-size:13px;color:#3A4A6B;font-weight:700;white-space:nowrap}.need-chip{display:inline-flex;align-items:center;gap:5px;background:#E3F8ED;border:1.5px solid #B8E8CF;border-radius:20px;padding:5px 12px;font-size:13px;color:#0E1C42;font-weight:700}
+.tab-bar{position:sticky;top:38px;z-index:100;background:#fff;border-bottom:3px solid #E2E8F4;display:flex;overflow-x:auto;box-shadow:0 -4px 0 0 #0E1C42}.tab-btn{flex:1;min-width:130px;padding:12px 8px 11px;background:transparent;border:none;border-bottom:4px solid transparent;font-family:'Nunito',sans-serif;font-size:13px;font-weight:700;color:#7A88A8;cursor:pointer;transition:all .2s;white-space:nowrap;line-height:1.3;text-align:center}.tab-btn:hover{color:#0E1C42;background:#E8F5F8}.tab-btn.active{color:#0E1C42;border-bottom-color:#1A8A9A;background:#fff}.tab-btn .tab-check{display:none;font-size:12px;color:#2DB87A;margin-left:4px;font-weight:800}.tab-btn.visited .tab-check{display:inline}.tab-panel{display:none;padding:24px 28px 36px}.tab-panel.active{display:block}
+.video-wrap{border-radius:18px;overflow:hidden;border:2px solid #E2E8F4;box-shadow:0 4px 20px rgba(14,28,66,.08);background:#000;margin:0 0 22px}.video-wrap-header{display:flex;align-items:center;gap:12px;padding:12px 18px;background:linear-gradient(135deg,#0E1C42,#1A2D5A);border-bottom:2px solid rgba(26,138,154,.3)}.video-wrap-type{font-size:10px;color:#F5C518;text-transform:uppercase;letter-spacing:1.5px;font-weight:800;margin-bottom:2px}.video-wrap-title{font-size:16px;color:#fff;font-weight:800;line-height:1.2}.video-ratio{position:relative;padding-bottom:56.25%;height:0;overflow:hidden}.video-placeholder,.video-iframe{position:absolute;top:0;left:0;width:100%;height:100%}.video-placeholder{background:linear-gradient(135deg,#0E1C42,#1A2D5A);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px}.video-placeholder-icon{font-size:44px;margin-bottom:10px;opacity:.55}.video-placeholder-text{font-size:14px;color:rgba(255,255,255,.78);font-weight:700;line-height:1.5;max-width:620px}.video-placeholder-id{font-size:11px;color:rgba(245,197,24,.85);font-family:monospace;margin-top:10px;letter-spacing:.5px}.record-note{margin-top:10px;background:rgba(255,255,255,.08);border:1px solid rgba(245,197,24,.28);border-radius:10px;padding:8px 10px;color:rgba(255,255,255,.82);font-size:12.5px;line-height:1.45;max-width:620px}
+.activity{background:#fff;border:2px solid #E2E8F4;border-radius:18px;margin-bottom:18px;overflow:hidden;box-shadow:0 2px 10px rgba(14,28,66,.04)}.activity.bl-teal{border-left:6px solid #1A8A9A}.activity.bl-green{border-left:6px solid #2DB87A}.activity.bl-yellow{border-left:6px solid #F5C518}.activity.bl-orange{border-left:6px solid #E07B39}.activity.bl-slate{border-left:6px solid #3A6B9A}.activity.bl-navy{border-left:6px solid #0E1C42}.activity-head{display:flex;align-items:center;gap:12px;padding:14px 20px 14px 18px;border-bottom:1.5px solid #E2E8F4}.activity-num{width:38px;height:38px;border-radius:14px;color:#fff;font-size:18px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0}.activity-title{font-size:19px;color:#0E1C42;font-weight:800;line-height:1.2}.activity-sub{font-size:12px;color:#7A88A8}.activity-time{display:inline-flex;align-items:center;gap:4px;padding:4px 12px;border-radius:20px;font-size:13px;font-weight:700;color:#fff;white-space:nowrap;margin-left:auto}.activity-body{padding:18px 22px}.activity-body p{font-size:17px;color:#3A4A6B;line-height:1.75;margin-bottom:12px}.callout{border-radius:14px;padding:16px 18px;display:flex;align-items:flex-start;gap:12px;margin-bottom:14px}.callout-icon{font-size:28px;flex-shrink:0;margin-top:2px}.callout p{font-size:16px;color:#0E1C42;line-height:1.65;margin:0}.callout-info{background:#E8F5F8;border:2px solid #B5DBE3}.callout-think{background:#FFF8E6;border:2px solid #F5E6C8}.callout-tip{background:#E3F8ED;border:2px solid #B8E8CF}.callout-vocab{background:#F0E8FF;border:2px solid #D8CCF0}.key-concept{background:#E8F5F8;border:2px solid #B5DBE3;border-radius:14px;padding:16px 18px;margin-bottom:14px}.key-concept-label{font-size:12px;color:#1A8A9A;text-transform:uppercase;letter-spacing:.5px;font-weight:800;margin-bottom:8px}.key-concept p{font-size:15px;color:#0E1C42;line-height:1.7;margin-bottom:6px}.socratic-box{background:linear-gradient(135deg,#E8F5F8,#D6EEF3);border:2px solid #B5DBE3;border-radius:14px;padding:16px 18px;margin-bottom:14px}.socratic-label{font-size:12px;color:#1A8A9A;text-transform:uppercase;letter-spacing:.5px;font-weight:800;margin-bottom:8px;display:flex;align-items:center;gap:6px}.socratic-q{font-size:16px;color:#0E1C42;line-height:1.7;font-style:italic;margin-bottom:8px}.journal-label{font-size:13px;color:#3A4A6B;font-weight:700;margin:10px 0 4px;display:flex;align-items:center;gap:6px}.journal-box{width:100%;min-height:80px;border:2px solid #E2E8F4;border-radius:12px;padding:12px 14px;font-family:'Nunito',sans-serif;font-size:15px;color:#0E1C42;resize:vertical;transition:border-color .2s;line-height:1.6}.journal-box:focus{outline:none;border-color:#1A8A9A;box-shadow:0 0 0 3px rgba(26,138,154,.12)}.saved-dot{width:8px;height:8px;border-radius:50%;background:#E2E8F4;display:inline-block;transition:background .3s}.saved-dot.saved{background:#2DB87A}.check-btn,.teal-btn,.green-btn,.orange-btn,.violet-btn{display:inline-flex;align-items:center;gap:6px;color:#fff;border:none;border-radius:12px;padding:10px 20px;font-size:14px;font-weight:800;cursor:pointer;font-family:'Nunito',sans-serif;margin-top:10px}.check-btn{background:#3A6B9A}.teal-btn{background:#1A8A9A}.green-btn{background:#2DB87A}.orange-btn{background:#E07B39}.violet-btn{background:#6B3FA0}.hint-callout{background:#FFF8E6;border:2px solid #F5C518;border-radius:10px;padding:10px 14px;margin:12px 0;font-size:14px;color:#5A4A00;font-weight:700}.task-box{background:#FAFBFF;border:2px solid #E2E8F4;border-radius:14px;padding:16px 18px;margin-bottom:14px}.task-label{font-size:12px;color:#1A8A9A;text-transform:uppercase;letter-spacing:.6px;font-weight:800;margin-bottom:10px}.feedback-branch{display:none;margin-top:16px;border-radius:14px;overflow:hidden;padding:16px}.feedback-branch.show{display:block}.feedback-pass{background:#E3F8ED;border:2px solid #B8E8CF}.feedback-retry{background:#FFF0E6;border:2px solid #F5C8A0}
+.value-card-row{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}.value-card{border:2px solid #E2E8F4;background:#fff;border-radius:14px;padding:10px 14px;min-width:110px;text-align:center;cursor:pointer;transition:.2s}.value-card:hover,.value-card.selected{border-color:#1A8A9A;background:#E8F5F8}.value-card.good{background:#E3F8ED;border-color:#2DB87A}.value-card.bad{background:#FFF0E6;border-color:#E07B39;animation:shake .25s}.value-card .big{font-size:22px;font-weight:900;color:#0E1C42}.value-card .small{font-size:12px;color:#3A4A6B;font-weight:800}
+.fill-row{display:flex;align-items:center;gap:8px;background:#FAFBFF;border:2px solid #E2E8F4;border-radius:12px;padding:12px 14px;margin:10px 0;flex-wrap:wrap;font-size:18px;font-weight:800;color:#0E1C42}.fill-input{width:130px;padding:8px 10px;border:2.5px solid #B5DBE3;border-radius:10px;font-size:18px;font-weight:900;color:#1A8A9A;text-align:center;font-family:'Nunito',sans-serif;background:#fff}.fill-input:focus{outline:none;border-color:#1A8A9A;box-shadow:0 0 0 3px rgba(26,138,154,.15)}.fill-input.good{border-color:#2DB87A;background:#E3F8ED;color:#1A8A5A}.fill-input.bad{border-color:#E07B39;background:#FFF0E6;color:#B85A1F;animation:shake .25s}
+.q-block{background:#FAFBFF;border:2px solid #E2E8F4;border-radius:14px;padding:14px 18px;margin-bottom:14px}.q-num{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#1A8A9A;color:#fff;font-weight:800;font-size:14px;margin-right:8px;vertical-align:middle}.q-text{font-size:16px;color:#0E1C42;line-height:1.65;margin-bottom:4px}.gathered-box{background:#fff;border:2px solid #E2E8F4;border-radius:18px;overflow:hidden;margin-top:24px}.gathered-head{display:flex;align-items:center;gap:14px;background:linear-gradient(135deg,#0E1C42,#1A2D5A);padding:18px 22px}.gathered-head-icon{font-size:32px}.gathered-head-label{font-size:11px;color:#F5C518;font-weight:800;text-transform:uppercase;letter-spacing:1px;margin-bottom:2px}.gathered-head-title{font-size:18px;color:#fff;font-weight:800}.gathered-body{padding:16px 22px}.gathered-output{width:100%;min-height:180px;border:2px solid #E2E8F4;border-radius:12px;padding:14px;font-family:'Courier New',monospace;font-size:13px;color:#0E1C42;resize:vertical;background:#FAFBFF}.gathered-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}.tab-next-wrap{text-align:center;padding:24px 0 8px}.tab-transition-voice{font-family:'Lora',Georgia,serif;font-size:15px;font-style:italic;color:#1A4A55;margin-bottom:12px;line-height:1.6}.tab-next-btn{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#1A8A9A,#2BABBD);color:#fff;border:none;border-radius:28px;padding:13px 28px;font-size:15px;font-weight:800;cursor:pointer;font-family:'Nunito',sans-serif;box-shadow:0 4px 14px rgba(26,138,154,.3);transition:all .2s}.turn-in-card{background:#fff;border:2px solid #E2E8F4;border-radius:18px;overflow:hidden;box-shadow:0 2px 10px rgba(14,28,66,.04);margin-top:18px}.turn-in-header{display:flex;align-items:center;gap:14px;background:#E8F5F8;padding:18px 22px;border-bottom:2px solid #B5DBE3}.turn-in-header-icon{font-size:36px}.turn-in-header-label{font-size:11px;color:#1A6B8E;font-weight:800;text-transform:uppercase;letter-spacing:1px;margin-bottom:3px}.turn-in-header-title{font-family:'Lora',Georgia,serif;font-size:22px;color:#0E1C42;font-weight:700}.turn-in-body{padding:18px 22px 20px}.turn-in-item{display:flex;align-items:center;gap:14px;padding:12px 16px;background:#FAFBFF;border:1.5px solid #E2E8F4;border-radius:12px;cursor:pointer;transition:.2s;margin-bottom:10px}.turn-in-item.checked{background:#E3F8ED;border-color:#B8E8CF}.turn-in-check{width:26px;height:26px;border-radius:8px;border:2px solid #B5DBE3;background:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px}.turn-in-item.checked .turn-in-check{background:#2DB87A;border-color:#2DB87A;color:#fff}@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}@media(max-width:720px){.intro-2col{grid-template-columns:1fr}.tab-panel{padding:20px 18px}.activity-time{display:none}.header-title{font-size:24px}}
+#confettiCanvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:10000}
+.footer{background:#0E1C42;border-top:4px solid #1A8A9A;padding:18px 28px;text-align:center}.footer-main{font-size:14px;color:#fff;margin-bottom:4px}.footer-main span{color:#55C8E8;font-weight:700}.footer-sub{font-size:12px;color:rgba(255,255,255,.5);margin-bottom:2px}.footer-copy{font-size:11px;color:rgba(255,255,255,.3)}
+.page-feedback{display:none;margin:12px 0;padding:12px 14px;border-radius:12px;border:2px solid #F5E6C8;background:#FFF8F0;color:#0E1C42;font-weight:800;line-height:1.45}.page-feedback.show{display:block}.page-feedback.good{background:#E3F8ED;border-color:#B8E8CF}.page-feedback.warn{background:#FFF3DC;border-color:#F5E6C8}
+.inline-feedback{display:none;margin:12px 0;border-radius:14px;padding:12px 14px;font-weight:800;line-height:1.5}.inline-feedback.show{display:block}.inline-feedback.good{background:#E3F8ED;border:2px solid #B8E8CF;color:#0E1C42}.inline-feedback.think{background:#FFF3DC;border:2px solid #F5E6C8;color:#5A4A3A}
+.vocab-section{background:#fff;border:2px solid #B5DBE3;border-left:6px solid #1A8A9A;border-radius:18px;padding:18px 20px 20px;margin:0 0 20px;box-shadow:0 2px 10px rgba(14,28,66,.04)}.vocab-section-head{display:flex;align-items:flex-start;gap:12px;margin-bottom:14px}.vocab-section-icon{width:42px;height:42px;border-radius:50%;color:#fff;background:#1A8A9A;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}.vocab-section-label{font-size:11px;color:#1A8A9A;text-transform:uppercase;letter-spacing:.9px;font-weight:900;margin-bottom:3px}.vocab-section-title{font-size:21px;color:#0E1C42;font-weight:900;line-height:1.2}.vocab-section-directions{font-size:15px;color:#3A4A6B;line-height:1.55;font-weight:700;margin:0 0 14px}.vocab-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:14px 0 0}.flip-card{perspective:900px;height:160px;cursor:pointer}.flip-card-inner{position:relative;width:100%;height:100%;transition:transform .5s ease;transform-style:preserve-3d}.flip-card.flipped .flip-card-inner{transform:rotateY(180deg)}.flip-card-front,.flip-card-back{position:absolute;top:0;left:0;width:100%;height:100%;border-radius:16px;backface-visibility:hidden;-webkit-backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:12px 14px;text-align:center;border:2px solid #E2E8F4;box-shadow:0 2px 10px rgba(14,28,66,.06)}.flip-card-front{background:#FAFBFF;border-top:5px solid #1A8A9A}.flip-card-front .fc-emoji{font-size:26px;margin-bottom:6px}.flip-card-front .fc-word{font-size:18px;font-weight:900;color:#0E1C42;margin-bottom:4px;line-height:1.15}.flip-card-front .fc-tap{font-size:11px;color:#1A8A9A;font-weight:900;letter-spacing:.6px;text-transform:uppercase}.flip-card-back{background:linear-gradient(145deg,#0E1C42,#1A2D5A);border-color:#0E1C42;transform:rotateY(180deg)}.flip-card-back .fc-word-back{font-size:11px;color:#55C8E8;text-transform:uppercase;letter-spacing:1px;font-weight:900;margin-bottom:8px}.flip-card-back .fc-def{font-size:14px;color:#fff;line-height:1.5;font-weight:700}.flip-card-back .fc-tap-back{font-size:11px;color:rgba(255,255,255,.55);margin-top:9px;font-weight:800;letter-spacing:.4px;text-transform:uppercase}.fc-color-1 .flip-card-front{border-top-color:#3A6B9A}.fc-color-2 .flip-card-front{border-top-color:#6B3FA0}.fc-color-3 .flip-card-front{border-top-color:#F5C518}@media(max-width:720px){.vocab-grid{grid-template-columns:1fr}.flip-card{height:140px}}
+@keyframes miniPop{0%{transform:translateY(0) scale(0);opacity:1}50%{transform:translateY(-30px) scale(1.2);opacity:1}100%{transform:translateY(-60px) scale(.6);opacity:0}}
+@keyframes progressShimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}.progress-fill{background:linear-gradient(90deg,#1A8A9A,#2DB87A,#F5C518,#1A8A9A);background-size:200% 100%;animation:progressShimmer 3s linear infinite}
+@keyframes gentleFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}.tab-next-btn{animation:gentleFloat 3s ease-in-out infinite}
+@keyframes checkPop{0%{transform:scale(0)}60%{transform:scale(1.3)}100%{transform:scale(1)}}.turn-in-item.checked .turn-in-check{animation:checkPop .3s ease-out}
+@keyframes revealSlide{0%{opacity:0;transform:translateY(10px)}100%{opacity:1;transform:translateY(0)}}.reveal-box.show,.feedback-branch.show,.inline-feedback.show{animation:revealSlide .35s ease-out}
+.flip-card{transition:transform .15s}.flip-card:hover{transform:translateY(-3px)}
+.callout{transition:transform .2s,box-shadow .2s}.callout:hover{transform:translateY(-1px);box-shadow:0 4px 14px rgba(14,28,66,.06)}.activity{transition:transform .2s,box-shadow .2s}.activity:hover{box-shadow:0 6px 24px rgba(14,28,66,.08)}.value-card{transition:transform .15s,border-color .2s,background .2s,box-shadow .2s}.value-card:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 6px 16px rgba(14,28,66,.08)}
+.bubble-row{display:flex;gap:12px;flex-wrap:wrap;margin:14px 0;align-items:flex-start}
+.bubble{display:flex;gap:10px;align-items:flex-start;flex:1 1 260px;max-width:340px;background:#fff;border:2px solid #E2E8F4;border-radius:18px;padding:12px 14px;box-shadow:0 2px 10px rgba(14,28,66,.05);position:relative}
+.bubble.atlas{border-left:5px solid #6B3FA0;background:linear-gradient(135deg,#fff,#F8F4FF)}
+.bubble.hazel{border-left:5px solid #2DB87A;background:linear-gradient(135deg,#fff,#F4FBF7)}
+.bubble.felix{border-left:5px solid #F5C518;background:linear-gradient(135deg,#fff,#FEFBEB)}
+.bubble.cora{border-left:5px solid #3A6B9A;background:linear-gradient(135deg,#fff,#F4F8FC)}
+.bubble-avatar{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:900;color:#fff;flex-shrink:0;font-family:'Lora',Georgia,serif}
+.bubble.atlas .bubble-avatar{background:#6B3FA0}
+.bubble.hazel .bubble-avatar{background:#2DB87A}
+.bubble.felix .bubble-avatar{background:#F5C518;color:#0E1C42}
+.bubble.cora .bubble-avatar{background:#3A6B9A}
+.bubble-body{flex:1;min-width:0}
+.bubble-name{font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.7px;margin-bottom:3px;color:#6B3FA0}
+.bubble.hazel .bubble-name{color:#1A8A5A}
+.bubble.felix .bubble-name{color:#8A6D2B}
+.bubble.cora .bubble-name{color:#1A6B8E}
+.bubble-text{font-size:14.5px;color:#0E1C42;line-height:1.5;font-weight:600;font-family:'Lora',Georgia,serif;font-style:italic}
+@media(max-width:620px){.bubble{flex:1 1 100%;max-width:100%}}
 
+/* ═══ SUBTRACTION STACKER — UNBUNDLE ═══ */
+.pvs-frame{background:#fff;border:2px solid #B5DBE3;border-radius:16px;padding:18px;margin:14px 0}
+.pvs-title{text-align:center;font-family:'Lora',Georgia,serif;font-size:18px;font-weight:800;color:#0E1C42;margin-bottom:6px}
+.pvs-sub{text-align:center;font-size:13px;color:#1A8A9A;font-weight:800;letter-spacing:.5px;text-transform:uppercase;margin-bottom:14px}
+.pvs-grid{display:grid;grid-template-columns:80px repeat(3,1fr);gap:6px;max-width:480px;margin:0 auto;font-family:'Lora',Georgia,serif}
+.pvs-head{display:grid;grid-template-columns:80px repeat(3,1fr);gap:6px;max-width:480px;margin:0 auto 6px;font-family:'Nunito',sans-serif}
+.pvs-head-cell{text-align:center;font-size:11px;font-weight:900;color:#1A8A9A;text-transform:uppercase;letter-spacing:.5px;padding:4px 0;background:#E8F5F8;border-radius:8px}
+.pvs-row{display:contents}
+.pvs-rowlabel{background:#FAFBFF;color:#7A88A8;font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.5px;display:flex;align-items:center;justify-content:flex-end;padding-right:8px;border-right:3px solid #1A8A9A}
+.pvs-cell{background:#fff;border:2px solid #E2E8F4;border-radius:8px;height:54px;display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:900;color:#0E1C42;position:relative;transition:.3s}
+.pvs-cell.empty{color:#D0D8E8}
+.pvs-cell.borrow{background:linear-gradient(135deg,#F0E8FF,#E0CCFF);border-color:#6B3FA0;color:#6B3FA0;font-size:22px;height:36px;animation:popIn .5s ease-out}
+.pvs-cell.borrow.hidden{visibility:hidden;height:36px}
+.pvs-cell.sum{background:#E3F8ED;border-color:#2DB87A;color:#1A8A5A;font-size:30px}
+.pvs-cell.sum.hidden{background:#fff;border-color:#E2E8F4;color:#D0D8E8;font-size:24px}
+.pvs-cell.strike{position:relative;color:#A0AAC8}
+.pvs-cell.strike::after{content:'';position:absolute;left:8%;right:8%;top:50%;height:3px;background:#E07B39;transform:rotate(-12deg);border-radius:2px}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 4px rgba(26,138,154,.35)}50%{box-shadow:0 0 0 8px rgba(26,138,154,.18)}}
+@keyframes popIn{0%{transform:scale(0) rotate(-15deg);opacity:0}60%{transform:scale(1.18) rotate(5deg);opacity:1}100%{transform:scale(1) rotate(0)}}
+.pvs-line{grid-column:1/-1;height:3px;background:#0E1C42;margin:2px 0;border-radius:2px}
+.pvs-explain{margin-top:14px;background:#FAFBFF;border:2px dashed #B5DBE3;border-radius:10px;padding:12px;text-align:center;font-family:'Lora',Georgia,serif;font-size:16px;font-weight:700;color:#0E1C42;min-height:40px;line-height:1.55}
+.pvs-explain.active{background:#E8F5F8;border-color:#1A8A9A;border-style:solid;font-weight:800}
+.pvs-explain .calc{color:#1A8A9A;font-weight:900}
+.pvs-explain .borrow-txt{color:#6B3FA0;font-weight:900}
+.pvs-controls{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:14px}
+.pvs-progress{display:flex;gap:6px;justify-content:center;margin-top:12px}
+.pvs-step-dot{width:24px;height:24px;border-radius:50%;background:#E2E8F4;border:2px solid #D0D8E8;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;color:#7A88A8;transition:.3s;font-family:'Nunito'}
+.pvs-step-dot.active{background:#1A8A9A;border-color:#0E5B68;color:#fff;transform:scale(1.1)}
+.pvs-step-dot.done{background:#2DB87A;border-color:#1A8A5A;color:#fff}
+.pvs-final{display:none;margin-top:14px;padding:14px;background:linear-gradient(135deg,#E3F8ED,#D0F0DE);border:2px solid #2DB87A;border-radius:12px;text-align:center;font-family:'Lora',Georgia,serif;font-size:20px;font-weight:900;color:#1A8A5A}
+.pvs-final.show{display:block;animation:revealSlide .5s ease-out}
+.ex-tbl{width:100%;border-collapse:separate;border-spacing:0;margin:14px 0;background:#fff;border:2px solid #E2E8F4;border-radius:14px;overflow:hidden}
+.ex-tbl thead th{background:#0E1C42;color:#fff;font-size:12px;padding:12px;text-align:left;text-transform:uppercase;font-weight:900;letter-spacing:.4px}
+.ex-tbl tbody td{padding:14px;border-top:1px solid #E2E8F4;font-size:14.5px;color:#0E1C42;vertical-align:middle;line-height:1.5}
+.ex-tbl tbody td:first-child{font-family:'Lora',Georgia,serif;font-weight:800;font-size:18px}
+.ex-tbl tbody td:last-child{text-align:center;font-family:'Lora',Georgia,serif;font-weight:800;font-size:19px;background:#FAFBFF;border-left:1px dashed #E2E8F4;color:#1A8A5A}
+</style>
+<style id="fluencyStyles">
+.fluency-box{background:#fff;border:2px solid #F5C518;border-radius:18px;overflow:hidden;margin-bottom:22px;font-family:'Nunito',sans-serif}
+.fluency-head{display:flex;align-items:center;gap:12px;background:linear-gradient(135deg,#F5C518,#E8B723);padding:14px 20px;flex-wrap:wrap}
+.fluency-head-icon{font-size:26px;line-height:1}
+.fluency-head-label{font-size:10px;color:#0E1C42;font-weight:800;text-transform:uppercase;letter-spacing:0.5px}
+.fluency-head-title{font-size:15px;color:#0E1C42;font-weight:800}
+.fluency-timer-ui{margin-left:auto;display:flex;align-items:center;gap:10px}
+.fluency-timer-display{font-size:20px;font-weight:800;color:#0E1C42;min-width:46px;text-align:center}
+.fluency-start-btn{background:#0E1C42;color:#fff;border:none;border-radius:10px;padding:8px 14px;font-weight:700;font-size:12px;cursor:pointer}
+.fluency-start-btn:disabled{opacity:0.55;cursor:default}
+.fluency-body{padding:16px 20px}
+.fluency-instructions{font-size:13px;color:#4A5568;margin:0 0 12px}
+.fluency-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(128px,1fr));gap:10px;margin-bottom:14px}
+.fluency-item{display:flex;align-items:center;gap:6px;background:#FAFBFF;border:1.5px solid #E2E8F4;border-radius:10px;padding:8px 10px}
+.fluency-item.fluency-correct{border-color:#2DB87A;background:#EAFBF3}
+.fluency-item.fluency-wrong{border-color:#E07B39;background:#FDF1E9}
+.fluency-q{font-size:13px;font-weight:700;color:#0E1C42;white-space:nowrap}
+.fluency-input{width:46px;border:1.5px solid #CBD5E8;border-radius:6px;padding:4px;font-size:14px;text-align:center;font-family:'Nunito',sans-serif}
+.fluency-input:disabled{background:#F0F2F8}
+.fluency-check-btn{background:#2DB87A;color:#fff;border:none;border-radius:10px;padding:10px 18px;font-weight:800;font-size:13px;cursor:pointer}
+.fluency-check-btn:disabled{opacity:0.55;cursor:default}
+.fluency-result{margin-top:10px;font-size:14px;color:#0E1C42;font-weight:700}
+</style>
+</head>
+<body id="pageTop">
+<div class="page-wrap">
+<div class="progress-wrap"><span class="progress-label">📐 Lesson Progress</span><div class="progress-track"><div class="progress-fill" id="progressFill"></div></div><span class="progress-pct" id="progressPct">0%</span></div>
+<div class="header">
+<div class="header-brand"><div class="header-logo"><img alt="Optima Academy" src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png"/></div><div><div class="header-org">Optima Academy Online</div><div class="header-sub">An Education Experience Company</div></div></div>
+<div class="header-title"><em>Subtraction with Regrouping — Part 1</em></div>
+<div class="header-badge"><span class="header-badge-icon">🦉</span><span class="header-badge-text">Lesson 3.03.02</span></div>
+</div>
+<div class="quote-strip"><div class="quote-strip-text">"When the top is smaller than the bottom, borrow ten from the column to the left."</div><div class="quote-strip-attr">Subtraction with regrouping</div></div>
+<div class="info-strip">
+<div class="info-cell"><div class="info-icon" style="background:#E8F5F8;">🧭</div><div><div class="info-label">Unit</div><div class="info-value">Unit 3</div><div class="info-detail">Add &amp; Subtract Part 2</div></div></div>
+<div class="info-cell"><div class="info-icon" style="background:#E3F8ED;">📅</div><div><div class="info-label">Lesson</div><div class="info-value">3.03.02</div><div class="info-detail">U2 Connect</div></div></div>
+<div class="info-cell"><div class="info-icon" style="background:#EAF0FF;">📐</div><div><div class="info-label">Standard</div><div class="info-value">MA.3.NSO.2.1</div><div class="info-detail">Add &amp; subtract</div></div></div>
+<div class="info-cell"><div class="info-icon" style="background:#F0E8FF;">↩️</div><div><div class="info-label">Focus</div><div class="info-value">Unbundle</div><div class="info-detail">column algorithm</div></div></div>
+</div>
+<div class="explorer-strip"><span class="explorer-compass">🧭</span><div><div class="explorer-mission-label">Today's Mission</div><div class="explorer-mission-text">Stack the numbers. Subtract right to left. Unbundle when the top digit is too small.</div></div></div>
+<div class="intro-2col">
+<div class="intro-card theme-question"><div class="intro-card-head"><div class="intro-card-head-icon">❓</div><div><div class="intro-card-head-label">Essential Question</div><div class="intro-card-head-title">What if the top digit is too small?</div></div></div><div class="intro-card-body"><p>In addition, you BUNDLED 10 ones into 1 ten. In subtraction, sometimes you have to do the OPPOSITE: UNBUNDLE 1 ten into 10 ones so you have enough to subtract from.</p><p>Same chart. Same right-to-left march. Just the inverse move.</p></div></div>
+<div class="intro-card theme-objectives"><div class="intro-card-head"><div class="intro-card-head-icon">🎯</div><div><div class="intro-card-head-label">Today's Objectives</div><div class="intro-card-head-title">You will…</div></div></div><div class="intro-card-body">
+<div class="obj-line"><span class="obj-icon">📊</span><span><strong>Stack</strong> two numbers by lining up place values.</span></div>
+<div class="obj-line"><span class="obj-icon">↩️</span><span><strong>Unbundle</strong> 1 from the next column when the top digit is too small.</span></div>
+<div class="obj-line"><span class="obj-icon">➖</span><span><strong>Subtract</strong> column by column, right to left.</span></div>
+</div></div>
+</div>
+<div class="need-strip"><span class="need-strip-label">You'll need:</span><span class="need-chip">📓 Math Journal</span><span class="need-chip">✏️ Pencil</span></div>
+<div class="tab-bar" id="tabBar">
+<button class="tab-btn active" data-tab="warmup" onclick="switchTab('warmup')">🔍 Warm-Up <span class="tab-check">✓</span></button>
+<button class="tab-btn" data-tab="learn" onclick="switchTab('learn')">📐 Learn <span class="tab-check">✓</span></button>
+<button class="tab-btn" data-tab="practice" onclick="switchTab('practice')">🧮 Practice <span class="tab-check">✓</span></button>
+<button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">🌟 Show What You Know <span class="tab-check">✓</span></button>
+</div>
+<!-- ═══════════ WARM-UP ═══════════ -->
+<div class="tab-panel active" id="tab-warmup">
+<div class="fluency-box" data-timed="false">
+<div class="fluency-head">
+<div class="fluency-head-icon">✍️</div>
+<div><div class="fluency-head-label">FLUENCY WARM-UP</div><div class="fluency-head-title">Doubles Facts</div></div>
+</div>
+<div class="fluency-body">
+<p class="fluency-instructions">Warm up your fact fluency before today’s lesson. Work through these, then check your answers.</p>
+<div class="fluency-grid" id="fluencyGrid">
+<div class="fluency-item"><span class="fluency-q">2 + 2 =</span><input autocomplete="off" class="fluency-input" data-answer="4" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">3 + 3 =</span><input autocomplete="off" class="fluency-input" data-answer="6" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">4 + 4 =</span><input autocomplete="off" class="fluency-input" data-answer="8" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">5 + 5 =</span><input autocomplete="off" class="fluency-input" data-answer="10" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">6 + 6 =</span><input autocomplete="off" class="fluency-input" data-answer="12" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">7 + 7 =</span><input autocomplete="off" class="fluency-input" data-answer="14" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">8 + 8 =</span><input autocomplete="off" class="fluency-input" data-answer="16" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">9 + 9 =</span><input autocomplete="off" class="fluency-input" data-answer="18" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">12 - 6 =</span><input autocomplete="off" class="fluency-input" data-answer="6" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">16 - 8 =</span><input autocomplete="off" class="fluency-input" data-answer="8" inputmode="numeric" type="text"/></div>
+</div>
+<button class="fluency-check-btn" id="fluencyCheckBtn" onclick="fluencyCheck()">Check My Answers</button>
+<div class="fluency-result" id="fluencyResult"></div>
+</div>
+<textarea class="journal-box" data-label="Fluency Warm-Up (Doubles Facts)" id="fluencyJournal" readonly="" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;"></textarea>
+</div>
+
+<div class="activity bl-yellow"><div class="activity-head"><div class="activity-num" style="background:#F5C518;color:#0E1C42;">🔎</div><div><div class="activity-title">Warm-Up: Too Small to Subtract?</div><div class="activity-sub">Spot when you need to unbundle.</div></div><span class="activity-time" style="background:#F5C518;color:#0E1C42;">~3 min</span></div><div class="activity-body">
+<p><strong>(a) Which subtraction needs UNBUNDLING in the ones column?</strong></p>
+<div class="value-card-row">
+<div class="value-card" onclick="checkReadinessA(this,false)"><div class="big">68 − 25</div></div>
+<div class="value-card" onclick="checkReadinessA(this,true)"><div class="big">52 − 27</div></div>
+<div class="value-card" onclick="checkReadinessA(this,false)"><div class="big">89 − 34</div></div>
+</div>
+<div class="inline-feedback" id="readiness-fb-a"></div>
+<p style="margin-top:14px;"><strong>(b) After you unbundle one ten from 5 tens, you have…</strong></p>
+<div class="value-card-row">
+<div class="value-card" onclick="checkReadinessB(this,false)"><div class="big">5 tens</div></div>
+<div class="value-card" onclick="checkReadinessB(this,true)"><div class="big">4 tens and 10 ones added to ones</div></div>
+<div class="value-card" onclick="checkReadinessB(this,false)"><div class="big">5 tens and 10 more ones</div></div>
+</div>
+<div class="inline-feedback" id="readiness-fb-b"></div>
+<div class="hint-callout" style="margin-top:12px;">Unbundling means TAKING 1 from one column and turning it into 10 in the column to the right. The total amount stays the same — just in a different shape.</div>
+</div></div>
+<!-- Think About It -->
+<div class="activity bl-yellow"><div class="activity-head"><div class="activity-num" style="background:#F5C518;color:#0E1C42;">🤔</div><div><div class="activity-title">Think About It: Predict the Unbundles</div><div class="activity-sub">Look before you subtract.</div></div></div><div class="activity-body">
+<div class="callout callout-think"><span class="callout-icon">🧠</span><p>Below is 524 stacked over 286. Look at each column. Which ones will need UNBUNDLING?</p></div>
+<div class="pvs-frame" style="max-width:380px;margin:14px auto;">
+<div class="pvs-head" style="grid-template-columns:60px repeat(3,1fr);gap:4px;max-width:300px;">
+<div></div>
+<div class="pvs-head-cell">Hundreds</div>
+<div class="pvs-head-cell">Tens</div>
+<div class="pvs-head-cell">Ones</div>
+</div>
+<div class="pvs-grid" style="grid-template-columns:60px repeat(3,1fr);gap:4px;max-width:300px;">
+<div class="pvs-rowlabel">top</div>
+<div class="pvs-cell">5</div>
+<div class="pvs-cell">2</div>
+<div class="pvs-cell">4</div>
+<div class="pvs-rowlabel">−</div>
+<div class="pvs-cell">2</div>
+<div class="pvs-cell">8</div>
+<div class="pvs-cell">6</div>
+</div>
+</div>
+<p><strong>Quick check:</strong> Which columns have a TOP DIGIT smaller than the bottom?</p>
+<div class="value-card-row">
+<div class="value-card" onclick="checkTA(this,false)"><div class="big">Ones only</div><div class="small">4 &lt; 6</div></div>
+<div class="value-card" onclick="checkTA(this,false)"><div class="big">Tens only</div><div class="small">2 &lt; 8</div></div>
+<div class="value-card" onclick="checkTA(this,true)"><div class="big">Ones AND Tens</div><div class="small">both need unbundling</div></div>
+<div class="value-card" onclick="checkTA(this,false)"><div class="big">None</div></div>
+</div>
+<div class="inline-feedback" id="ta-fb"></div>
+<div class="journal-label">✏️ Which columns will need unbundling and why? <span class="saved-dot" id="dot-think"></span></div>
+<textarea class="journal-box" data-label="Warm-Up — Think Prompt: predict the unbundles" id="journal-think" oninput="autoSave(this,'dot-think')" placeholder=""></textarea>
+</div></div>
+<div class="tab-next-wrap"><p class="tab-transition-voice">Stack. Subtract right to left. Unbundle when the top is too small. Let's see it.</p><button class="tab-next-btn" onclick="switchTab('learn')">Continue to 📐 Learn →</button></div>
+</div>
+<!-- ═══════════ LEARN ═══════════ -->
+<div class="tab-panel" id="tab-learn">
+<div class="vocab-section">
+<div class="vocab-section-head"><div class="vocab-section-icon">📚</div><div><div class="vocab-section-label">Daily Vocabulary</div><div class="vocab-section-title">Three Words for Today</div></div></div>
+<p class="vocab-section-directions">Tap each card to flip it.</p>
+<div class="vocab-grid">
+<div class="flip-card fc-color-1" onclick="this.classList.toggle('flipped')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('flipped');}" role="button" tabindex="0"><div class="flip-card-inner">
+<div class="flip-card-front"><div class="fc-emoji">↩️</div><div class="fc-word">unbundle</div><div class="fc-tap">tap to flip</div></div>
+<div class="flip-card-back"><div class="fc-word-back">unbundle</div><div class="fc-def">to take 1 of a place value and split it into 10 of the next lower place. 1 ten becomes 10 ones; 1 hundred becomes 10 tens.</div><div class="fc-tap-back">tap to flip back</div></div>
+</div></div>
+<div class="flip-card fc-color-2" onclick="this.classList.toggle('flipped')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('flipped');}" role="button" tabindex="0"><div class="flip-card-inner">
+<div class="flip-card-front"><div class="fc-emoji">📊</div><div class="fc-word">minuend</div><div class="fc-tap">tap to flip</div></div>
+<div class="flip-card-back"><div class="fc-word-back">top number</div><div class="fc-def">the number you START with — the one you subtract FROM. It sits on top of the stack.</div><div class="fc-tap-back">tap to flip back</div></div>
+</div></div>
+<div class="flip-card fc-color-3" onclick="this.classList.toggle('flipped')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('flipped');}" role="button" tabindex="0"><div class="flip-card-inner">
+<div class="flip-card-front"><div class="fc-emoji">➖</div><div class="fc-word">difference</div><div class="fc-tap">tap to flip</div></div>
+<div class="flip-card-back"><div class="fc-word-back">difference</div><div class="fc-def">the answer when you subtract. How far apart the two numbers are.</div><div class="fc-tap-back">tap to flip back</div></div>
+</div></div>
+</div>
+<p style="font-size:12px;color:#7A88A8;font-style:italic;margin-top:10px;text-align:center;">"Top number" is the everyday name for the minuend — the one you're subtracting from.</p>
+</div>
+
+<div class="callout callout-info" style="margin-bottom:14px;"><span class="callout-icon">🤔</span><p>Below: the Subtraction Stacker. Click each column from RIGHT to LEFT. When the top digit is too small, watch the unbundle happen.</p></div>
+<!-- ═══ SUBTRACTION STACKER ═══ -->
+<div class="activity bl-teal"><div class="activity-head"><div class="activity-num" style="background:#1A8A9A;">📊</div><div><div class="activity-title">Subtraction Stacker</div><div class="activity-sub">Subtract 524 − 286 column by column.</div></div></div><div class="activity-body">
+<div class="pvs-frame">
+<div class="pvs-title">524 − 286</div>
+<div class="pvs-sub">Click each column from right to left</div>
+<div class="pvs-head">
+<div></div>
+<div class="pvs-head-cell">Hundreds</div>
+<div class="pvs-head-cell">Tens</div>
+<div class="pvs-head-cell">Ones</div>
+</div>
+<div class="pvs-grid">
+<!-- borrow row (unbundled new top digits) -->
+<div class="pvs-rowlabel">borrow</div>
+<div class="pvs-cell borrow hidden" id="b-h">4</div>
+<div class="pvs-cell borrow hidden" id="b-t">1</div>
+<div class="pvs-cell borrow hidden" id="b-o">14</div>
+<!-- original top number 5 2 4 -->
+<div class="pvs-rowlabel">top</div>
+<div class="pvs-cell" id="t-h">5</div>
+<div class="pvs-cell" id="t-t">2</div>
+<div class="pvs-cell" id="t-o">4</div>
+<!-- bottom number 2 8 6 -->
+<div class="pvs-rowlabel">− bot</div>
+<div class="pvs-cell">2</div>
+<div class="pvs-cell">8</div>
+<div class="pvs-cell">6</div>
+<!-- horizontal rule -->
+<div class="pvs-line"></div>
+<!-- difference row -->
+<div class="pvs-rowlabel">diff</div>
+<div class="pvs-cell sum hidden" id="d-h">0</div>
+<div class="pvs-cell sum hidden" id="d-t">0</div>
+<div class="pvs-cell sum hidden" id="d-o">0</div>
+</div>
+<div class="pvs-explain" id="pvsExplain">Tap the <strong>ones</strong> column to start. Watch for the unbundle.</div>
+<div class="pvs-progress">
+<div class="pvs-step-dot active" id="pvs-dot-1">1</div>
+<div class="pvs-step-dot" id="pvs-dot-2">2</div>
+<div class="pvs-step-dot" id="pvs-dot-3">3</div>
+</div>
+<div class="pvs-controls">
+<button class="teal-btn" id="pvs-btn-1" onclick="pvsStep(1)">Subtract ones column →</button>
+<button class="teal-btn" id="pvs-btn-2" onclick="pvsStep(2)" style="display:none;">Subtract tens column →</button>
+<button class="teal-btn" id="pvs-btn-3" onclick="pvsStep(3)" style="display:none;">Subtract hundreds column →</button>
+<button class="orange-btn" onclick="pvsReset()">↩ Reset</button>
+</div>
+<div class="pvs-final" id="pvsFinal">✓ 524 − 286 = <strong>238</strong></div>
+</div>
+<div class="journal-label">✏️ Write the difference and explain what "unbundle" did. <span class="saved-dot" id="dot-pvs"></span></div>
+<textarea class="journal-box" data-label="Learn — Subtraction Stacker: 524-286" id="journal-pvs" oninput="autoSave(this,'dot-pvs')" placeholder=""></textarea>
+</div></div>
+<div class="key-concept"><div class="key-concept-label">📐 Key Concept</div>
+<p><strong>The column-subtraction recipe:</strong></p>
+<p style="text-align:center;font-size:16px;background:#fff;border:2px solid #B5DBE3;border-radius:10px;padding:12px;margin:10px 0;">1. Stack the numbers, top number on top.   2. Go right to left.   3. If the top digit is too small, UNBUNDLE 1 from the next column to the left.</p>
+<p>The total amount on the top NEVER changes when you unbundle. It just gets rewritten — like trading a $10 bill for ten $1 bills. Same money, smaller pieces.</p>
+</div>
+<div class="activity bl-slate"><div class="activity-head"><div class="activity-num" style="background:#3A6B9A;">📋</div><div><div class="activity-title">Three Quick Examples</div><div class="activity-sub">Spot where the unbundles happen.</div></div></div><div class="activity-body">
+<p>Read each row carefully — the unbundles are highlighted.</p>
+<table class="ex-tbl">
+<thead><tr><th>Problem</th><th>Where unbundling happened</th><th>Difference</th></tr></thead>
+<tbody>
+<tr><td>524 − 286</td><td>Ones (4 &lt; 6) and tens (1 &lt; 8 after first unbundle)</td><td>238</td></tr>
+<tr><td>4,206 − 335</td><td>Tens (0 &lt; 3) — unbundle from hundreds</td><td>3,871</td></tr>
+<tr><td>6,912 − 54</td><td>Tens (1 &lt; 5) — unbundle from hundreds</td><td>6,858</td></tr>
+</tbody>
+</table>
+<div class="callout callout-tip" style="margin-top:14px;"><span class="callout-icon">🔍</span><p>You only unbundle when you NEED to. If the top digit is already big enough, just subtract directly.</p></div>
+</div></div>
+<!-- WORKED EXAMPLE — Aki -->
+<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">🧠</div><div><div class="activity-title">Worked Example: Aki's Bead Bag</div><div class="activity-sub">Two unbundles across four columns.</div></div></div><div class="activity-body">
+<div class="task-box"><div class="task-label">Problem</div><p>Aki had <strong>8,420 beads</strong> to use in all. She has already used <strong>3,363 beads</strong>. How many beads does Aki have left? Find <strong>8,420 − 3,363</strong> by stacking.</p></div>
+<div class="bubble-row">
+<div class="bubble atlas"><div class="bubble-avatar">A</div><div class="bubble-body"><div class="bubble-name">Atlas — stack and start</div><div class="bubble-text">"I stack 8,420 on top of 3,363, lined up by ones. Start in the ones column: 0 minus 3. Too small. I need to unbundle 1 ten."</div></div></div>
+<div class="bubble hazel"><div class="bubble-avatar">H</div><div class="bubble-body"><div class="bubble-name">Hazel — first unbundle</div><div class="bubble-text">"Tens digit is 2. Cross it out and write 1 above. The 0 in ones becomes 10. Now 10 − 3 = 7. Now move to the tens column: 1 − 6. Too small again. Unbundle from hundreds: 4 becomes 3, tens 1 becomes 11. 11 − 6 = 5."</div></div></div>
+</div>
+<!-- WE static visualization -->
+<div style="background:#fff;border:2px solid #B5DBE3;border-radius:14px;padding:14px;margin:12px 0;font-family:'Lora',Georgia,serif;">
+<div style="text-align:center;font-weight:800;color:#0E1C42;font-size:17px;margin-bottom:10px;">8,420 − 3,363 column by column</div>
+<div style="display:grid;grid-template-columns:60px repeat(4,60px);gap:6px;justify-content:center;font-family:'Lora',Georgia,serif;">
+<div style="font-size:10px;color:#7A88A8;font-weight:900;text-transform:uppercase;letter-spacing:.5px;text-align:right;align-self:end;padding-bottom:6px;">place</div>
+<div style="text-align:center;font-size:10px;color:#1A8A9A;font-weight:900;text-transform:uppercase;">Thou.</div>
+<div style="text-align:center;font-size:10px;color:#1A8A9A;font-weight:900;text-transform:uppercase;">Hund.</div>
+<div style="text-align:center;font-size:10px;color:#1A8A9A;font-weight:900;text-transform:uppercase;">Tens</div>
+<div style="text-align:center;font-size:10px;color:#1A8A9A;font-weight:900;text-transform:uppercase;">Ones</div>
+<!-- borrow row -->
+<div style="font-size:11px;color:#6B3FA0;font-weight:900;text-align:right;padding:0 4px;">borrow</div>
+<div></div>
+<div style="background:#F0E8FF;border:2px solid #6B3FA0;border-radius:6px;text-align:center;color:#6B3FA0;font-weight:900;padding:2px;">3</div>
+<div style="background:#F0E8FF;border:2px solid #6B3FA0;border-radius:6px;text-align:center;color:#6B3FA0;font-weight:900;padding:2px;">11</div>
+<div style="background:#F0E8FF;border:2px solid #6B3FA0;border-radius:6px;text-align:center;color:#6B3FA0;font-weight:900;padding:2px;">10</div>
+<!-- top row (strikethrough where unbundled) -->
+<div style="font-size:11px;color:#7A88A8;font-weight:900;text-align:right;padding:0 4px;align-self:center;">top</div>
+<div style="text-align:center;font-size:24px;font-weight:900;color:#0E1C42;">8</div>
+<div style="text-align:center;font-size:24px;font-weight:900;color:#A0AAC8;text-decoration:line-through;">4</div>
+<div style="text-align:center;font-size:24px;font-weight:900;color:#A0AAC8;text-decoration:line-through;">2</div>
+<div style="text-align:center;font-size:24px;font-weight:900;color:#A0AAC8;text-decoration:line-through;">0</div>
+<!-- bottom -->
+<div style="font-size:11px;color:#7A88A8;font-weight:900;text-align:right;padding:0 4px;align-self:center;">− bot</div>
+<div style="text-align:center;font-size:24px;font-weight:900;color:#0E1C42;">3</div>
+<div style="text-align:center;font-size:24px;font-weight:900;color:#0E1C42;">3</div>
+<div style="text-align:center;font-size:24px;font-weight:900;color:#0E1C42;">6</div>
+<div style="text-align:center;font-size:24px;font-weight:900;color:#0E1C42;">3</div>
+<!-- rule -->
+<div></div>
+<div style="grid-column:2/-1;height:3px;background:#0E1C42;margin:4px 0;"></div>
+<!-- diff -->
+<div style="font-size:11px;color:#1A8A5A;font-weight:900;text-align:right;padding:0 4px;align-self:center;">diff</div>
+<div style="background:#E3F8ED;border:2px solid #2DB87A;border-radius:6px;text-align:center;font-size:26px;font-weight:900;color:#1A8A5A;">5</div>
+<div style="background:#E3F8ED;border:2px solid #2DB87A;border-radius:6px;text-align:center;font-size:26px;font-weight:900;color:#1A8A5A;">0</div>
+<div style="background:#E3F8ED;border:2px solid #2DB87A;border-radius:6px;text-align:center;font-size:26px;font-weight:900;color:#1A8A5A;">5</div>
+<div style="background:#E3F8ED;border:2px solid #2DB87A;border-radius:6px;text-align:center;font-size:26px;font-weight:900;color:#1A8A5A;">7</div>
+</div>
+</div>
+<div class="bubble-row">
+<div class="bubble felix"><div class="bubble-avatar">F</div><div class="bubble-body"><div class="bubble-name">Felix — hundreds and thousands</div><div class="bubble-text">"Hundreds: 3 (after unbundle) minus 3 = 0. Thousands: 8 − 3 = 5. No more unbundling needed. Difference: 5,057 beads."</div></div></div>
+<div class="bubble cora"><div class="bubble-avatar">C</div><div class="bubble-body"><div class="bubble-name">Cora — checking the work</div><div class="bubble-text">"Let's check by adding back: 5,057 + 3,363 should equal 8,420. 5,057 + 3,363 = 8,420 ✓. Or estimate: 8,400 − 3,400 = 5,000. My 5,057 is close to 5,000."</div></div></div>
+</div>
+<p style="font-family:'Lora',Georgia,serif;background:#FAFBFF;border:2px solid #E2E8F4;border-radius:12px;padding:10px;text-align:center;font-size:22px;font-weight:800;margin-top:14px;">8,420 − 3,363 = <span style="color:#1A8A5A;">5,057</span> beads left</p>
+<div class="callout callout-tip" style="margin-top:8px;"><span class="callout-icon">💡</span><p>Two unbundles, both in a row. Once you start unbundling, the next column's top digit has already shrunk — so it may need to unbundle too.</p></div>
+</div></div>
+
+<div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">When you unbundle 1 ten into 10 ones, the TOTAL amount in the top number doesn't change. Why is that — even though the digits look different?</p><div class="journal-label">✏️ My reasoning <span class="saved-dot" id="dot-soc1"></span></div><textarea class="journal-box" data-label="Learn — Socratic: total amount stays the same" id="journal-soc1" oninput="autoSave(this,'dot-soc1')" placeholder=""></textarea></div>
+<div class="tab-next-wrap"><p class="tab-transition-voice">Stack, subtract right to left, unbundle when too small. Your turn.</p><button class="tab-next-btn" onclick="switchTab('practice')">Continue to 🧮 Practice →</button></div>
+</div>
+<!-- ═══════════ PRACTICE ═══════════ -->
+<div class="tab-panel" id="tab-practice">
+<div class="callout callout-info"><span class="callout-icon">🧭</span><p>You saw <strong>8,420 − 3,363 = 5,057</strong> with two unbundles. Practice gives you four problems and one word problem.</p></div>
+<div class="callout callout-think"><span class="callout-icon">🧠</span><p><strong>For each problem:</strong> stack, go right to left, unbundle when the top is too small.</p></div>
+<div class="activity bl-teal"><div class="activity-head"><div class="activity-num" style="background:#1A8A9A;">1</div><div><div class="activity-title">Stack and Subtract</div><div class="activity-sub">Four problems. Watch the unbundles.</div></div><span class="activity-time" style="background:#1A8A9A;">~6 min</span></div><div class="activity-body">
+<div class="bubble-row">
+<div class="bubble felix"><div class="bubble-avatar">F</div><div class="bubble-body"><div class="bubble-name">Felix — shortcut</div><div class="bubble-text">"Before each column, ask: 'Top minus bottom — can I do it?' If yes, subtract. If no, unbundle first, then subtract."</div></div></div>
+</div>
+<div class="fill-row"><strong>5,483 − 3,397 =</strong><input class="fill-input" id="p1-a" placeholder="?" type="number"/></div>
+<div class="fill-row"><strong>4,206 − 335 =</strong><input class="fill-input" id="p1-b" placeholder="?" type="number"/></div>
+<div class="fill-row"><strong>7,123 − 1,456 =</strong><input class="fill-input" id="p1-c" placeholder="?" type="number"/></div>
+<div class="fill-row"><strong>3,183 − 2,346 =</strong><input class="fill-input" id="p1-d" placeholder="?" type="number"/></div>
+<button class="check-btn" onclick="checkP1()">Check My Answers ✓</button>
+<div class="feedback-branch feedback-pass" id="p1-pass"><strong>✅ Yes!</strong> 5,483−3,397=2,086. 4,206−335=3,871. 7,123−1,456=5,667. 3,183−2,346=837.
+      <div class="bubble-row" style="margin-top:10px;"><div class="bubble cora"><div class="bubble-avatar">C</div><div class="bubble-body"><div class="bubble-name">Cora — checking the work</div><div class="bubble-text">"Add-check: 2,086+3,397=5,483 ✓. 3,871+335=4,206 ✓. 5,667+1,456=7,123 ✓. 837+2,346=3,183 ✓. Every subtraction has an addition that proves it."</div></div></div></div>
+
+</div>
+<div class="feedback-branch feedback-retry" id="p1-retry"><strong>🔄 Stack, subtract right to left, unbundle when needed.</strong>
+<div class="hint-callout">5,483−3,397: ones 3−7 unbundle. Tens 7−9 (after unbundle) unbundle again. Hundreds 3−3=0. Thousands 5−3=2.  ·  4,206−335: line up by ones. Tens 0−3 unbundle from hundreds.  ·  7,123−1,456: unbundles in ones and tens.  ·  3,183−2,346: ones 3−6 unbundle.</div>
+<button class="orange-btn" onclick="resetP1()">↩ Reset and Try Again</button>
+</div>
+</div></div>
+<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">2</div><div><div class="activity-title">Show Your Unbundles</div><div class="activity-sub">Write each column step.</div></div><span class="activity-time" style="background:#2DB87A;">~4 min</span></div><div class="activity-body">
+<div class="bubble-row">
+<div class="bubble hazel"><div class="bubble-avatar">H</div><div class="bubble-body"><div class="bubble-name">Hazel — show the marks</div><div class="bubble-text">"Cross out the original top digit when you unbundle it. Write the new digit above. That way you don't forget which column has been changed."</div></div></div>
+</div>
+<div class="task-box"><div class="task-label">Problem</div><p>Find <strong>4,444 − 888</strong>. Show your stack and every unbundle.</p></div>
+<div class="journal-label">✏️ My stack + difference <span class="saved-dot" id="dot-p2"></span></div>
+<textarea class="journal-box" data-label="Practice 2 — 4444-888 show unbundles" id="journal-p2" oninput="autoSave(this,'dot-p2')" placeholder="Stack:
+          4 , 4 4 4
+       −     8 8 8
+       ─────────
+Ones: 4 − 8 → unbundle. Tens 4 becomes ___, ones 4 becomes ___. ___ − 8 = ___
+Tens: ___ − 8 → unbundle? ___ − 8 = ___
+Hundreds: ___ − 8 → unbundle? ___ − 8 = ___
+Thousands: ___ − 0 = ___
+Difference: ___" style="min-height:170px;"></textarea>
+<div class="callout callout-tip" style="margin-top:10px;"><span class="callout-icon">💡</span><p><strong>Answer:</strong> 4,444 − 888 = 3,556. Three unbundles needed — one for each non-thousands column. Watch how the tops shrink each time.</p></div>
+</div></div>
+<div class="activity bl-teal"><div class="activity-head"><div class="activity-num" style="background:#1A8A9A;">3</div><div><div class="activity-title">Aki's Beads — How Many Left?</div><div class="activity-sub">A word problem using stacking.</div></div></div><div class="activity-body">
+<div class="bubble-row">
+<div class="bubble atlas"><div class="bubble-avatar">A</div><div class="bubble-body"><div class="bubble-name">Atlas — concrete</div><div class="bubble-text">"Subtraction word problems work the same way. Find the two numbers, stack them — bigger on top — and subtract."</div></div></div>
+</div>
+<div class="task-box"><div class="task-label">Word problem</div><p>Aki had <strong>6,302 beads</strong> for her art projects. She has already used <strong>1,847 beads</strong>. How many beads does Aki have left?</p></div>
+<div class="fill-row"><strong>Beads left:</strong><input class="fill-input" id="p3-a" placeholder="?" type="number"/></div>
+<button class="check-btn" onclick="checkP3()">Check My Answer ✓</button>
+<div class="feedback-branch feedback-pass" id="p3-pass"><strong>✅ Yes — 4,455 beads.</strong> Ones: 2 − 7 → unbundle (tens 0 becomes... wait, tens is already 0 — that's tomorrow's lesson!). For now: tens 0 borrows from hundreds 3 (now 2), then tens 0 becomes 10, lend 1 to ones (tens becomes 9), ones 2 becomes 12. 12−7=5. Tens 9−4=5. Hundreds 2−8 → unbundle from thousands 6 (now 5), hundreds 2 becomes 12. 12−8=4. Thousands 5−1=4.
+      <div class="bubble-row" style="margin-top:10px;"><div class="bubble cora"><div class="bubble-avatar">C</div><div class="bubble-body"><div class="bubble-name">Cora — checking the work</div><div class="bubble-text">"Add-check: 4,455 + 1,847 = 6,302 ✓. The math holds."</div></div></div></div>
+</div>
+<div class="feedback-branch feedback-retry" id="p3-retry"><strong>🔄 Stack 6,302 on top of 1,847.</strong>
+<div class="hint-callout">Ones: 2 − 7 — unbundle from tens. Be careful: tens digit is 0, so you'll need to unbundle the hundreds first to give the tens something to lend. (This is a sneak peek of tomorrow's lesson!)</div>
+<button class="orange-btn" onclick="resetP3()">↩ Reset and Try Again</button>
+</div>
+</div></div>
+<div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">When you unbundle a ten, the tens digit goes DOWN by 1 and the ones digit goes UP by 10. Why isn't that "cheating" — adding 10 to one side without adding it to the bottom number too?</p><div class="journal-label">✏️ My reasoning <span class="saved-dot" id="dot-soc2"></span></div><textarea class="journal-box" data-label="Practice — Socratic: why unbundling isn't cheating" id="journal-soc2" oninput="autoSave(this,'dot-soc2')" placeholder=""></textarea></div>
+<div class="tab-next-wrap"><p class="tab-transition-voice">Stack, subtract right to left, unbundle when too small. Time to show what you know.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
+</div>
+<!-- ═══════════ SHOW WHAT YOU KNOW ═══════════ -->
+<div class="tab-panel" id="tab-assignment">
+<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">🎯</div><div><div class="activity-title">Ready Check</div><div class="activity-sub">Two quick questions.</div></div></div><div class="activity-body">
+<p>If both are right, you're ready for the assignment.</p>
+<div class="q-block"><p class="q-text"><span class="q-num">A</span>You're subtracting 73 − 28. After you unbundle 1 ten, what do the new top digits look like?</p>
+<div class="value-card-row">
+<div class="value-card" onclick="checkExitA(this,false)"><div class="big">6 tens and 3 ones</div></div>
+<div class="value-card" onclick="checkExitA(this,false)"><div class="big">7 tens and 13 ones</div></div>
+<div class="value-card" onclick="checkExitA(this,true)"><div class="big">6 tens and 13 ones</div></div>
+<div class="value-card" onclick="checkExitA(this,false)"><div class="big">6 tens and 30 ones</div></div>
+</div>
+<div class="inline-feedback" id="exitA-fb"></div>
+</div>
+<div class="q-block"><p class="q-text"><span class="q-num">B</span>What is <strong>73 − 28</strong>?</p>
+<div class="value-card-row">
+<div class="value-card" onclick="checkExitB(this,false)"><div class="big">35</div></div>
+<div class="value-card" onclick="checkExitB(this,true)"><div class="big">45</div></div>
+<div class="value-card" onclick="checkExitB(this,false)"><div class="big">55</div></div>
+<div class="value-card" onclick="checkExitB(this,false)"><div class="big">101</div></div>
+</div>
+<div class="inline-feedback" id="exitB-fb"></div>
+</div>
+</div></div>
+<div class="activity bl-navy"><div class="activity-head"><div class="activity-num" style="background:#0E1C42;">📬</div><div><div class="activity-title">Show What You Know</div><div class="activity-sub">Five problems.</div></div></div><div class="activity-body">
+<div class="callout callout-think"><span class="callout-icon">🧠</span><p><strong>For each problem:</strong> stack, go right to left, unbundle when the top is too small.</p></div>
+<div class="q-block"><p class="q-text"><span class="q-num">1</span>Find each difference. Show your stack and every unbundle.<br/>(a) <strong>5,483 − 3,397</strong>  ·  (b) <strong>4,206 − 335</strong>  ·  (c) <strong>7,123 − 1,456</strong>  ·  (d) <strong>6,912 − 54</strong></p><div class="journal-label">✏️ My answers <span class="saved-dot" id="dot-a1"></span></div><textarea class="journal-box" data-label="SWYK — Problem 1: four subtractions" id="journal-a1" oninput="autoSave(this,'dot-a1')" placeholder=""></textarea></div>
+<div class="q-block"><p class="q-text"><span class="q-num">2</span>Find <strong>4,444 − 888</strong>. Show your stack with every unbundle marked.</p><div class="journal-label">✏️ My stack + difference <span class="saved-dot" id="dot-a2"></span></div><textarea class="journal-box" data-label="SWYK — Problem 2: 4444-888 with marks" id="journal-a2" oninput="autoSave(this,'dot-a2')" placeholder=""></textarea></div>
+<div class="q-block"><p class="q-text"><span class="q-num">3</span><strong>Number pattern.</strong> Find the missing terms. Each step decreases by 456.<br/>3,279 → 2,823 → 2,367 → ____ → 1,455 → ____</p><div class="journal-label">✏️ My missing terms + rule check <span class="saved-dot" id="dot-a3"></span></div><textarea class="journal-box" data-label="SWYK — Problem 3: pattern decreases by 456" id="journal-a3" oninput="autoSave(this,'dot-a3')" placeholder=""></textarea></div>
+<div class="q-block"><p class="q-text"><span class="q-num">4</span><strong>Word problem.</strong> Aki had <strong>8,420 beads</strong>. She has already used <strong>3,363</strong>. How many beads does Aki have left?</p><div class="journal-label">✏️ My answer <span class="saved-dot" id="dot-a4"></span></div><textarea class="journal-box" data-label="SWYK — Problem 4: Aki word problem" id="journal-a4" oninput="autoSave(this,'dot-a4')" placeholder=""></textarea></div>
+<div class="q-block"><p class="q-text"><span class="q-num">5</span><strong>Reflection.</strong> Why does the top digit get SMALLER by 1 when you unbundle, but the digit to its right gets BIGGER by 10 — not by 1?</p><div class="journal-label">✏️ My reflection <span class="saved-dot" id="dot-a5"></span></div><textarea class="journal-box" data-label="SWYK — Problem 5: reflection on unbundle math" id="journal-a5" oninput="autoSave(this,'dot-a5')" placeholder=""></textarea></div>
+<div class="activity bl-slate" style="margin-top:18px;border-left-color:#55C8E8;"><div class="activity-head"><div class="activity-num" style="background:#55C8E8;color:#0E1C42;">🗺️</div><div><div class="activity-title">Connection Forward: What Comes Next</div><div class="activity-sub">Preview Lesson 3.03.03 — Subtraction with Zeros</div></div></div><div class="activity-body">
+<p>You can now unbundle one column. Next lesson: what if the column you need to borrow FROM is ZERO? You can't take 1 from 0. The borrow has to CASCADE — travel left through the zeros until it finds a non-zero column.</p>
+<p>Big question next time: <em>How do you borrow from 9,005 when the tens and hundreds are both zero?</em></p>
+</div></div>
+</div></div>
+
+<div class="gathered-box"><div class="gathered-head"><div class="gathered-head-icon">📋</div><div><div class="gathered-head-label">Your Math Journal</div><div class="gathered-head-title">All Answers from Today</div></div></div><div class="gathered-body"><textarea class="gathered-output" id="gatheredOutput" readonly="">Click "Gather My Answers" to collect your work.</textarea><div class="gathered-actions"><button class="teal-btn" onclick="gatherAnswers()">📋 Gather My Answers</button><button class="green-btn" onclick="copyAnswers()">Copy All Answers</button><button class="check-btn" onclick="downloadJournal()">Download My Math Journal</button></div></div></div>
+<div class="turn-in-card"><div class="turn-in-header"><div class="turn-in-header-icon">✅</div><div><div class="turn-in-header-label">Turn-In Checklist</div><div class="turn-in-header-title">Ready to Submit?</div></div></div><div class="turn-in-body">
+<div class="turn-in-item" onclick="toggleCheck(this)"><span class="turn-in-check">✓</span><span>I completed the Show What You Know problems on this lesson page.</span></div>
+<div class="turn-in-item" onclick="toggleCheck(this)"><span class="turn-in-check">✓</span><span>I stacked the numbers and subtracted one column at a time.</span></div>
+<div class="turn-in-item" onclick="toggleCheck(this)"><span class="turn-in-check">✓</span><span>I unbundled at least one column.</span></div>
+</div></div>
+</div>
+<div class="footer">
+<div class="footer-main">🏫 <span>Optima Academy Online</span></div>
+<div class="footer-sub">Math · Grade 3 · 3.03.02</div>
+<div class="footer-copy">© 2025 Optima Academy Online</div>
+</div>
+</div>
+<canvas id="confettiCanvas"></canvas>
+<script>
+var LS_PREFIX = 'g3-3-03-02-';
+function showPageFeedback(msg,type){var panel=document.querySelector('.tab-panel.active')||document.body;var box=panel.querySelector(':scope > .page-feedback');if(!box){box=document.createElement('div');box.className='page-feedback';panel.insertBefore(box,panel.firstChild);}box.className='page-feedback show '+(type||'warn');box.innerHTML=msg;box.scrollIntoView({behavior:'smooth',block:'nearest'});}
+function miniCelebrate(el){if(!el)return;var emojis=['⭐','✨','📊','🌟','↩️'];for(var i=0;i<8;i++){var s=document.createElement('span');s.textContent=emojis[Math.floor(Math.random()*emojis.length)];s.style.cssText='position:absolute;font-size:'+(16+Math.random()*14)+'px;pointer-events:none;z-index:999;animation:miniPop .7s ease-out forwards;left:'+(20+Math.random()*60)+'%;top:'+(Math.random()*40)+'%;';el.style.position='relative';el.style.overflow='visible';el.appendChild(s);setTimeout(function(x){x.remove()}.bind(null,s),800);}}
+function switchTab(tab){document.querySelectorAll('.tab-panel').forEach(function(p){p.classList.remove('active');});document.getElementById('tab-'+tab).classList.add('active');document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active');if(b.dataset.tab===tab){b.classList.add('active');b.classList.add('visited');}});updateProgress();window.scrollTo({top:0,behavior:'smooth'});}
+function updateProgress(){var btns=[].slice.call(document.querySelectorAll('.tab-btn'));var idx=btns.findIndex(function(b){return b.classList.contains('active');});var pct=Math.round(((idx+1)/btns.length)*100);document.getElementById('progressFill').style.width=pct+'%';document.getElementById('progressPct').textContent=pct+'%';}
+function autoSave(el,dotId){try{localStorage.setItem(LS_PREFIX+el.id,el.value);}catch(e){}var dot=document.getElementById(dotId);if(dot){dot.classList.add('saved');setTimeout(function(){dot.classList.remove('saved');},900);}}
+function restoreJournals(){document.querySelectorAll('textarea.journal-box').forEach(function(t){try{var v=localStorage.getItem(LS_PREFIX+t.id);if(v)t.value=v;}catch(e){}});}
+function showBranch(id){var el=document.getElementById(id);if(el)el.classList.add('show');}
+function hideBranches(prefix){['pass','retry'].forEach(function(x){var el=document.getElementById(prefix+'-'+x);if(el)el.classList.remove('show');});}
+
+function checkReadinessA(card,correct){card.parentElement.querySelectorAll('.value-card').forEach(function(c){c.classList.remove('good','bad','selected');});var fb=document.getElementById('readiness-fb-a');if(correct){card.classList.add('good');fb.className='inline-feedback show good';fb.innerHTML='<strong>✅ Yes.</strong> 52 − 27: ones 2 minus 7 — top is too small, need to unbundle.';miniCelebrate(card);}else{card.classList.add('bad');fb.className='inline-feedback show think';fb.innerHTML='<strong>Not quite.</strong> Compare the ones digits. Which top is smaller than its bottom?';}}
+function checkReadinessB(card,correct){card.parentElement.querySelectorAll('.value-card').forEach(function(c){c.classList.remove('good','bad','selected');});var fb=document.getElementById('readiness-fb-b');if(correct){card.classList.add('good');fb.className='inline-feedback show good';fb.innerHTML='<strong>✅ Yes.</strong> You took 1 ten, leaving 4 tens. That 1 ten = 10 ones, which join the ones column.';miniCelebrate(card);}else{card.classList.add('bad');fb.className='inline-feedback show think';fb.innerHTML='<strong>Not quite.</strong> Taking 1 from 5 leaves 4. And that 1 ten becomes 10 ones in the column to the right.';}}
+function checkTA(card,correct){card.parentElement.querySelectorAll('.value-card').forEach(function(c){c.classList.remove('good','bad','selected');});var fb=document.getElementById('ta-fb');if(correct){card.classList.add('good');fb.className='inline-feedback show good';fb.innerHTML='<strong>✅ Yes.</strong> Ones: 4 &lt; 6 → unbundle. Tens: 2 &lt; 8 → unbundle. Hundreds: 5 &gt; 2, no unbundle needed.';miniCelebrate(card);}else{card.classList.add('bad');fb.className='inline-feedback show think';fb.innerHTML='<strong>Not quite.</strong> Check each column: is the TOP smaller than the BOTTOM?';}}
+
+/* SUBTRACTION STACKER */
+function setStepDot(n, state){var d=document.getElementById('pvs-dot-'+n); if(d){d.classList.remove('active','done'); if(state) d.classList.add(state);}}
+function pvsStep(step){
+  var ex = document.getElementById('pvsExplain');
+  ex.classList.add('active');
+  if(step === 1){
+    // Ones: 4 - 6 needs unbundle. Tens 2 → 1 (strike old), ones 4 → 14 (strike old). 14-6=8.
+    document.getElementById('t-o').classList.add('strike');
+    document.getElementById('t-t').classList.add('strike');
+    document.getElementById('b-o').classList.remove('hidden');
+    document.getElementById('b-t').classList.remove('hidden');
+    document.getElementById('d-o').classList.remove('hidden');
+    document.getElementById('d-o').textContent = '8';
+    ex.innerHTML = '<span class="calc">Ones: 4 − 6</span> — top too small. <span class="borrow-txt">Unbundle 1 ten</span>: the 2 in tens becomes 1, the 4 in ones becomes 14. Now <span class="calc">14 − 6 = <strong>8</strong></span>.';
+    setStepDot(1,'done'); setStepDot(2,'active');
+    document.getElementById('pvs-btn-1').style.display='none';
+    document.getElementById('pvs-btn-2').style.display='inline-flex';
+  } else if(step === 2){
+    // Tens: 1 - 8 needs unbundle. Hundreds 5 → 4, tens 1 → 11. 11-8=3.
+    document.getElementById('t-h').classList.add('strike');
+    // tens row already had strike from step 1; the borrow b-t showing "1" needs to update to "11"
+    document.getElementById('b-t').textContent = '11';
+    document.getElementById('b-h').classList.remove('hidden');
+    document.getElementById('d-t').classList.remove('hidden');
+    document.getElementById('d-t').textContent = '3';
+    ex.innerHTML = '<span class="calc">Tens: 1 − 8</span> — still too small. <span class="borrow-txt">Unbundle 1 hundred</span>: the 5 in hundreds becomes 4, the 1 in tens becomes 11. Now <span class="calc">11 − 8 = <strong>3</strong></span>.';
+    setStepDot(2,'done'); setStepDot(3,'active');
+    document.getElementById('pvs-btn-2').style.display='none';
+    document.getElementById('pvs-btn-3').style.display='inline-flex';
+  } else if(step === 3){
+    // Hundreds: 4 - 2 = 2. No unbundle.
+    document.getElementById('d-h').classList.remove('hidden');
+    document.getElementById('d-h').textContent = '2';
+    ex.innerHTML = '<span class="calc">Hundreds: 4 − 2 = <strong>2</strong></span>. No unbundle needed. Final difference: <strong>238</strong>.';
+    setStepDot(3,'done');
+    document.getElementById('pvs-btn-3').style.display='none';
+    document.getElementById('pvsFinal').classList.add('show');
+    miniCelebrate(document.getElementById('pvsFinal'));
+  }
+}
+function pvsReset(){
+  ['b-h','b-t','b-o','d-h','d-t','d-o'].forEach(function(id){var el=document.getElementById(id); if(el){el.classList.add('hidden');}});
+  document.getElementById('b-t').textContent = '1';
+  document.getElementById('t-h').classList.remove('strike');
+  document.getElementById('t-t').classList.remove('strike');
+  document.getElementById('t-o').classList.remove('strike');
+  document.getElementById('pvsExplain').classList.remove('active');
+  document.getElementById('pvsExplain').innerHTML = 'Tap the <strong>ones</strong> column to start. Watch for the unbundle.';
+  document.getElementById('pvsFinal').classList.remove('show');
+  document.getElementById('pvs-btn-1').style.display='inline-flex';
+  document.getElementById('pvs-btn-2').style.display='none';
+  document.getElementById('pvs-btn-3').style.display='none';
+  setStepDot(1,'active'); setStepDot(2,null); setStepDot(3,null);
+}
+
+/* Practice 1 */
+var p1Answers = { 'p1-a': 2086, 'p1-b': 3871, 'p1-c': 5667, 'p1-d': 837 };
+function checkP1(){
+  hideBranches('p1');
+  var allCorrect = true;
+  Object.keys(p1Answers).forEach(function(id){var el=document.getElementById(id);el.classList.remove('good','bad');if(parseInt(el.value,10)===p1Answers[id]){el.classList.add('good');}else{el.classList.add('bad');allCorrect=false;}});
+  if(allCorrect){showBranch('p1-pass');window._p1Done=true;miniCelebrate(document.getElementById('p1-pass'));}else{showBranch('p1-retry');}
+}
+function resetP1(){Object.keys(p1Answers).forEach(function(id){var el=document.getElementById(id);el.value='';el.classList.remove('good','bad');});hideBranches('p1');}
+
+var p3Answers = { 'p3-a': 4455 };
+function checkP3(){
+  hideBranches('p3');
+  var allCorrect = true;
+  Object.keys(p3Answers).forEach(function(id){var el=document.getElementById(id);el.classList.remove('good','bad');if(parseInt(el.value,10)===p3Answers[id]){el.classList.add('good');}else{el.classList.add('bad');allCorrect=false;}});
+  if(allCorrect){showBranch('p3-pass');window._p3Done=true;miniCelebrate(document.getElementById('p3-pass'));}else{showBranch('p3-retry');}
+}
+function resetP3(){Object.keys(p3Answers).forEach(function(id){var el=document.getElementById(id);el.value='';el.classList.remove('good','bad');});hideBranches('p3');}
+
+function checkExitA(card,correct){card.parentElement.querySelectorAll('.value-card').forEach(function(c){c.classList.remove('good','bad');});var fb=document.getElementById('exitA-fb');if(correct){card.classList.add('good');fb.className='inline-feedback show good';fb.innerHTML='<strong>✅ Yes.</strong> 7 tens becomes 6 tens; 3 ones becomes 13 ones.';miniCelebrate(card);}else{card.classList.add('bad');fb.className='inline-feedback show think';fb.innerHTML='<strong>Not quite.</strong> The tens digit goes DOWN by 1. The ones digit goes UP by 10.';}}
+function checkExitB(card,correct){card.parentElement.querySelectorAll('.value-card').forEach(function(c){c.classList.remove('good','bad');});var fb=document.getElementById('exitB-fb');if(correct){card.classList.add('good');fb.className='inline-feedback show good';fb.innerHTML='<strong>✅ Yes.</strong> 73 − 28 = 45. Ones: 13 − 8 = 5 (after unbundle). Tens: 6 − 2 = 4.';miniCelebrate(card);}else{card.classList.add('bad');fb.className='inline-feedback show think';fb.innerHTML='<strong>Not quite.</strong> Unbundle 1 ten → 13 − 8 = 5; 6 − 2 = 4.';}}
+
+function gatherAnswers(){var out='Lesson 3.03.02 — Subtraction with Regrouping Part 1\n\n';document.querySelectorAll('textarea.journal-box').forEach(function(t){out+=(t.dataset.label||t.id)+'\n'+((t.value||'').trim()||'[No answer yet]')+'\n\n';});out+='Practice results\n· Practice 1: '+(window._p1Done?'Completed':'Not completed')+'\n· Practice 3: '+(window._p3Done?'Completed':'Not completed')+'\n';document.getElementById('gatheredOutput').value=out;}
+function copyAnswers(){gatherAnswers();if(navigator.clipboard){navigator.clipboard.writeText(document.getElementById('gatheredOutput').value);}showPageFeedback('Your answers were copied to your clipboard.','good');}
+function downloadJournal(){gatherAnswers();var text=document.getElementById('gatheredOutput').value;var w=window.open('','_blank');w.document.write('<title>Lesson 3.03.02 Journal</title><pre style="font-family:Arial;white-space:pre-wrap;font-size:14px;line-height:1.5;">'+text.replace(/[&<>]/g,function(s){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[s];})+'</pre>');w.document.close();w.print();}
+
+function toggleCheck(item){item.classList.toggle('checked');var check=item.querySelector('.turn-in-check');if(check)check.textContent=item.classList.contains('checked')?'✓':'';var items=[].slice.call(document.querySelectorAll('.turn-in-item'));var allChecked=items.length>0&&items.every(function(x){return x.classList.contains('checked');});if(allChecked&&!window._turnInConfettiFired){window._turnInConfettiFired=true;fireConfetti();}if(!allChecked){window._turnInConfettiFired=false;}}
+function fireConfetti(){var canvas=document.getElementById('confettiCanvas');var ctx=canvas.getContext('2d');canvas.width=window.innerWidth;canvas.height=window.innerHeight;var particles=[];var colors=['#1A8A9A','#55C8E8','#2DB87A','#F5C518','#6B3FA0','#3A6B9A'];var emojis=['📊','↩️','✨','⭐'];for(var i=0;i<120;i++){particles.push({type:'rect',x:Math.random()*canvas.width,y:Math.random()*canvas.height-canvas.height,r:Math.random()*6+3,c:colors[Math.floor(Math.random()*colors.length)],vx:(Math.random()-0.5)*4,vy:Math.random()*3+2,rot:Math.random()*360,rv:(Math.random()-0.5)*8});}for(var j=0;j<18;j++){particles.push({type:'emoji',x:Math.random()*canvas.width,y:Math.random()*canvas.height-canvas.height,emoji:emojis[Math.floor(Math.random()*emojis.length)],size:Math.random()*14+26,vx:(Math.random()-0.5)*3,vy:Math.random()*2.5+1.5,rot:Math.random()*360,rv:(Math.random()-0.5)*5});}var frames=0;function animate(){ctx.clearRect(0,0,canvas.width,canvas.height);particles.forEach(function(p){ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.rot*Math.PI/180);if(p.type==='emoji'){ctx.font=p.size+'px serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(p.emoji,0,0);}else{ctx.fillStyle=p.c;ctx.fillRect(-p.r,-p.r/2,p.r*2,p.r);}ctx.restore();p.x+=p.vx;p.y+=p.vy;p.rot+=p.rv;p.vy+=0.04;});frames++;if(frames<300){if(frames>220){canvas.style.opacity=1-((frames-220)/80);}requestAnimationFrame(animate);}else{ctx.clearRect(0,0,canvas.width,canvas.height);canvas.style.opacity=1;}}animate();}
+
+async function loadVideoManifest(){try{var res=await fetch('video-manifest.md',{cache:'no-store'});if(!res.ok)return;var txt=await res.text();var map=parseManifest(txt);document.querySelectorAll('.video-wrap[data-video-slot]').forEach(function(w){var slot=w.dataset.videoSlot;if(map[slot]){var ratio=w.querySelector('.video-ratio');ratio.innerHTML=map[slot].trim();var iframe=ratio.querySelector('iframe');if(iframe){iframe.classList.add('video-iframe');iframe.setAttribute('allowfullscreen','');iframe.setAttribute('loading','lazy');}}});}catch(e){}}
+function parseManifest(txt){var map={};var lines=txt.split(/\r?\n/);var current=null,buf=[];function commit(){if(current&&buf.join('\n').trim()){map[current]=buf.join('\n').trim();}buf=[];}for(var i=0;i<lines.length;i++){var line=lines[i];var m=line.match(/^([A-Za-z0-9-]+):\s*$/);if(m){commit();current=m[1];}else if(current){buf.push(line);}}commit();return map;}
+
+window.addEventListener('DOMContentLoaded',function(){restoreJournals();updateProgress();loadVideoManifest();});
+</script>
+<script id="fluencyScript">
+(function(){
+var FLUENCY_TIMED = false;
+var FLUENCY_TITLE = "Doubles Facts";
+var fluencyInterval = null;
+var fluencySecondsLeft = 60;
+
+window.fluencyStart = function(){
+  if(!FLUENCY_TIMED) return;
+  var grid = document.getElementById('fluencyGrid');
+  if(!grid) return;
+  grid.querySelectorAll('.fluency-input').forEach(function(i){ i.disabled = false; });
+  var btn = document.getElementById('fluencyStartBtn');
+  if(btn){ btn.disabled = true; btn.textContent = 'Timer Running\u2026'; }
+  var checkBtn = document.getElementById('fluencyCheckBtn');
+  if(checkBtn) checkBtn.disabled = false;
+  fluencySecondsLeft = 60;
+  fluencyUpdateDisplay();
+  fluencyInterval = setInterval(function(){
+    fluencySecondsLeft--;
+    fluencyUpdateDisplay();
+    if(fluencySecondsLeft <= 0){
+      clearInterval(fluencyInterval);
+      grid.querySelectorAll('.fluency-input').forEach(function(i){ i.disabled = true; });
+      window.fluencyCheck();
+    }
+  }, 1000);
+};
+
+function fluencyUpdateDisplay(){
+  var el = document.getElementById('fluencyTimerDisplay');
+  if(el) el.textContent = fluencySecondsLeft + 's';
+}
+
+window.fluencyCheck = function(){
+  if(fluencyInterval){ clearInterval(fluencyInterval); fluencyInterval = null; }
+  var items = document.querySelectorAll('#fluencyGrid .fluency-item');
+  var correct = 0, attempted = 0, total = items.length;
+  var lines = [];
+  items.forEach(function(item){
+    var input = item.querySelector('.fluency-input');
+    var qText = item.querySelector('.fluency-q').textContent;
+    var given = (input.value || '').trim();
+    var ans = input.dataset.answer;
+    var ok = given !== '' && given === ans;
+    if(given !== '') attempted++;
+    item.classList.remove('fluency-correct','fluency-wrong');
+    if(ok){ correct++; item.classList.add('fluency-correct'); }
+    else if(given !== ''){ item.classList.add('fluency-wrong'); }
+    lines.push(qText + ' ' + ans + '   [answered: ' + (given || 'blank') + ']' + (ok ? ' \u2713' : (given ? ' \u2717' : '')));
+  });
+  var pct = total ? Math.round((correct/total)*100) : 0;
+  var timeStr = FLUENCY_TIMED ? (' in ' + (60 - fluencySecondsLeft) + ' seconds') : '';
+  var summary = 'Fluency Warm-Up \u2014 ' + FLUENCY_TITLE + '\n' + correct + ' / ' + total + ' correct (' + pct + '%)' + timeStr + '\n\n' + lines.join('\n');
+  var j = document.getElementById('fluencyJournal');
+  if(j) j.value = summary;
+  var resEl = document.getElementById('fluencyResult');
+  if(resEl) resEl.innerHTML = correct + ' / ' + total + ' correct (' + pct + '%)' + timeStr;
+  var checkBtn = document.getElementById('fluencyCheckBtn');
+  if(checkBtn) checkBtn.disabled = true;
+  var startBtn = document.getElementById('fluencyStartBtn');
+  if(startBtn) startBtn.textContent = 'Done';
+};
+})();
+</script>
+</body>
+</html>

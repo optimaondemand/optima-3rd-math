@@ -1,3 +1,493 @@
 <!DOCTYPE html>
 
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Optima Academy Online — Grade 3 Math Lesson 3.12.02</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Nunito:wght@400;700;800;900&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Nunito',Verdana,sans-serif;background:#F5F8FA;color:#0E1C42;line-height:1.6}.page-wrap{max-width:920px;margin:0 auto;background:#fff;box-shadow:0 0 40px rgba(14,28,66,.08)}
+:root{--geo:#5B52A8;--geo-light:#EEEDFA;--geo-mid:#9A92D0;--geo-deep:#2D2A5E}
+.progress-wrap{position:sticky;top:0;z-index:200;background:#0E1C42;padding:8px 20px 10px;display:flex;align-items:center;gap:14px}.progress-label{font-size:12px;color:#F5C518;font-weight:800;text-transform:uppercase}.progress-track{flex:1;height:10px;background:rgba(255,255,255,.1);border-radius:10px;overflow:hidden}.progress-fill{height:100%;width:0%;background:linear-gradient(90deg,var(--geo),#9A92D0,#F5C518,var(--geo));background-size:200% 100%;animation:shimmer 3s linear infinite;border-radius:10px;transition:width .4s}.progress-pct{font-size:13px;color:#F5C518;font-weight:800;min-width:36px;text-align:right}@keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
+.header{background:#0E1C42;border-bottom:6px solid var(--geo);padding:20px 28px 18px}.header-brand{display:flex;align-items:center;gap:12px;margin-bottom:14px}.header-logo{width:52px;height:52px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center}.header-logo img{width:48px;height:38px}.header-org{font-size:22px;color:#fff;font-weight:800}.header-sub{font-size:11px;color:var(--geo-mid)}.header-title{font-family:'Lora',serif;font-size:28px;color:#fff;font-weight:700;margin-bottom:10px}.header-title em{color:var(--geo-mid);font-style:italic}.header-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(91,82,168,.25);border:1.5px solid rgba(154,146,208,.5);border-radius:28px;padding:6px 16px}.header-badge-icon{font-size:22px}.header-badge-text{font-size:18px;color:#fff;font-weight:800}
+.quote-strip{background:linear-gradient(135deg,var(--geo-light),var(--geo-mid));border-bottom:2px solid var(--geo-mid);padding:14px 28px;text-align:center}.quote-strip-text{font-family:'Lora',serif;font-size:16px;font-style:italic;color:var(--geo-deep)}.quote-strip-attr{font-size:11px;color:var(--geo);font-weight:700;margin-top:4px;text-transform:uppercase}
+.info-strip{display:flex;flex-wrap:wrap;background:#fff;border-bottom:2px solid #E2E8F4}.info-cell{flex:1;min-width:150px;padding:12px 16px;border-right:1px solid #E2E8F4;display:flex;align-items:center;gap:10px}.info-icon{width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px}.info-label{font-size:10px;color:#7A88A8;text-transform:uppercase;font-weight:700}.info-value{font-size:16px;color:#0E1C42;font-weight:800}.info-detail{font-size:11px;color:#3A4A6B}
+.explorer-strip{display:flex;align-items:center;gap:16px;padding:12px 28px;background:linear-gradient(135deg,#1A2340,#0E1C42);border-bottom:3px solid var(--geo)}.explorer-compass{font-size:28px}.explorer-mission-label{font-size:10px;color:#F5C518;text-transform:uppercase;font-weight:800}.explorer-mission-text{font-size:15px;color:#fff;font-weight:700}
+.intro-2col{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:20px 28px 4px}@media(max-width:720px){.intro-2col{grid-template-columns:1fr}}.intro-card{background:#fff;border:2px solid #E2E8F4;border-radius:18px;overflow:hidden}.intro-card-head{display:flex;align-items:center;gap:10px;padding:14px 18px;border-bottom:2px solid}.intro-card-head-icon{width:40px;height:40px;border-radius:50%;color:#fff;font-size:20px;display:flex;align-items:center;justify-content:center}.intro-card-head-label{font-size:10px;color:#7A88A8;text-transform:uppercase;font-weight:700}.intro-card-head-title{font-size:18px;color:#0E1C42;font-weight:800}.intro-card-body{padding:14px 18px}.intro-card-body p{font-size:15px;color:#3A4A6B;line-height:1.65;margin-bottom:8px}.obj-line{display:flex;gap:8px;font-size:15px;color:#0E1C42;line-height:1.55;margin-bottom:8px}.theme-question .intro-card-head{background:#FFF8E6;border-color:#F5E6C8}.theme-question .intro-card-head-icon{background:#F5C518}.theme-objectives .intro-card-head{background:var(--geo-light);border-color:var(--geo-mid)}.theme-objectives .intro-card-head-icon{background:var(--geo)}
+.need-strip{display:flex;flex-wrap:wrap;gap:8px;padding:12px 28px 18px}.need-strip-label{font-size:13px;color:#3A4A6B;font-weight:700}.need-chip{background:#E3F8ED;border:1.5px solid #B8E8CF;border-radius:20px;padding:5px 12px;font-size:13px;color:#0E1C42;font-weight:700}
+.tab-bar{position:sticky;top:38px;z-index:100;background:#fff;border-bottom:3px solid #E2E8F4;display:flex;overflow-x:auto;box-shadow:0 -4px 0 0 #0E1C42}.tab-btn{flex:1;min-width:130px;padding:12px 8px 11px;background:transparent;border:none;border-bottom:4px solid transparent;font-family:'Nunito',sans-serif;font-size:13px;font-weight:700;color:#7A88A8;cursor:pointer;text-align:center}.tab-btn.active{color:#0E1C42;border-bottom-color:var(--geo);background:#fff}.tab-btn .tab-check{display:none;color:#2DB87A;margin-left:4px;font-weight:800}.tab-btn.visited .tab-check{display:inline}.tab-panel{display:none;padding:24px 28px 36px}.tab-panel.active{display:block}
+.activity{background:#fff;border:2px solid #E2E8F4;border-radius:18px;margin-bottom:18px}.activity.bl-geo{border-left:6px solid var(--geo)}.activity.bl-green{border-left:6px solid #2DB87A}.activity.bl-yellow{border-left:6px solid #F5C518}.activity.bl-slate{border-left:6px solid #3A6B9A}.activity.bl-navy{border-left:6px solid #0E1C42}.activity-head{display:flex;align-items:center;gap:12px;padding:14px 20px 14px 18px;border-bottom:1.5px solid #E2E8F4}.activity-num{width:38px;height:38px;border-radius:14px;color:#fff;font-size:18px;font-weight:800;display:flex;align-items:center;justify-content:center}.activity-title{font-size:19px;color:#0E1C42;font-weight:800}.activity-sub{font-size:12px;color:#7A88A8}.activity-body{padding:18px 22px}.activity-body p{font-size:16px;color:#3A4A6B;line-height:1.7;margin-bottom:12px}
+.callout{border-radius:14px;padding:16px 18px;display:flex;gap:12px;margin-bottom:14px}.callout-icon{font-size:28px}.callout p{font-size:15.5px;color:#0E1C42;line-height:1.65;margin:0}.callout-info{background:var(--geo-light);border:2px solid var(--geo-mid)}.callout-think{background:#FFF8E6;border:2px solid #F5E6C8}.callout-tip{background:#E3F8ED;border:2px solid #B8E8CF}
+.key-concept{background:var(--geo-light);border:2px solid var(--geo-mid);border-radius:14px;padding:16px 18px;margin-bottom:14px}.key-concept-label{font-size:12px;color:var(--geo-deep);text-transform:uppercase;font-weight:800;margin-bottom:8px}.key-concept p{font-size:15px;color:#0E1C42;line-height:1.7}
+.socratic-box{background:linear-gradient(135deg,var(--geo-light),var(--geo-mid));border:2px solid var(--geo-mid);border-radius:14px;padding:16px 18px;margin-bottom:14px}.socratic-label{font-size:12px;color:var(--geo-deep);text-transform:uppercase;font-weight:800;margin-bottom:8px}.socratic-q{font-size:15.5px;color:#0E1C42;font-style:italic}
+.journal-label{font-size:13px;color:#3A4A6B;font-weight:700;margin:10px 0 4px}.journal-box{width:100%;min-height:80px;border:2px solid #E2E8F4;border-radius:12px;padding:12px 14px;font-family:'Nunito',sans-serif;font-size:15px;color:#0E1C42;resize:vertical}.journal-box:focus{outline:none;border-color:var(--geo)}.saved-dot{width:8px;height:8px;border-radius:50%;background:#E2E8F4;display:inline-block;transition:.3s}.saved-dot.saved{background:#2DB87A}
+.check-btn,.geo-btn,.green-btn,.orange-btn{display:inline-flex;align-items:center;gap:6px;color:#fff;border:none;border-radius:12px;padding:10px 20px;font-size:14px;font-weight:800;cursor:pointer;font-family:'Nunito',sans-serif;margin-top:10px}.check-btn{background:#3A6B9A}.geo-btn{background:var(--geo)}.green-btn{background:#2DB87A}.orange-btn{background:#E07B39}
+.hint-callout{background:#FFF8E6;border:2px solid #F5C518;border-radius:10px;padding:10px 14px;margin:12px 0;font-size:14px;color:#5A4A00;font-weight:700}
+.task-box{background:#FAFBFF;border:2px solid #E2E8F4;border-radius:14px;padding:16px 18px;margin-bottom:14px}.task-label{font-size:12px;color:var(--geo-deep);text-transform:uppercase;font-weight:800;margin-bottom:10px}
+.feedback-branch{display:none;margin-top:16px;border-radius:14px;padding:16px}.feedback-branch.show{display:block;animation:reveal .35s}.feedback-pass{background:#E3F8ED;border:2px solid #B8E8CF}.feedback-retry{background:#FFF0E6;border:2px solid #F5C8A0}
+.value-card-row{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}.value-card{border:2px solid #E2E8F4;background:#fff;border-radius:14px;padding:10px 14px;min-width:110px;text-align:center;cursor:pointer;transition:.2s}.value-card:hover{border-color:var(--geo);background:var(--geo-light)}.value-card.good{background:#E3F8ED;border-color:#2DB87A}.value-card.bad{background:#FFF0E6;border-color:#E07B39;animation:shake .25s}.value-card .big{font-size:22px;font-weight:900;color:#0E1C42}.value-card .small{font-size:12px;color:#3A4A6B;font-weight:800}
+.fill-row{display:flex;align-items:center;gap:8px;background:#FAFBFF;border:2px solid #E2E8F4;border-radius:12px;padding:12px 14px;margin:10px 0;flex-wrap:wrap;font-size:17px;font-weight:800;color:#0E1C42}.fill-input{width:100px;padding:8px 10px;border:2.5px solid var(--geo-mid);border-radius:10px;font-size:17px;font-weight:900;color:var(--geo-deep);text-align:center;font-family:'Nunito',sans-serif;background:#fff}.fill-input:focus{outline:none;border-color:var(--geo)}.fill-input.good{border-color:#2DB87A;background:#E3F8ED;color:#1A8A5A}.fill-input.bad{border-color:#E07B39;background:#FFF0E6;animation:shake .25s}
+.q-block{background:#FAFBFF;border:2px solid #E2E8F4;border-radius:14px;padding:14px 18px;margin-bottom:14px}.q-num{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--geo);color:#fff;font-weight:800;font-size:14px;margin-right:8px;vertical-align:middle}.q-text{font-size:15.5px;color:#0E1C42;line-height:1.65}
+.gathered-box{background:#fff;border:2px solid #E2E8F4;border-radius:18px;overflow:hidden;margin-top:24px}.gathered-head{display:flex;align-items:center;gap:14px;background:linear-gradient(135deg,#0E1C42,#1A2D5A);padding:18px 22px}.gathered-head-icon{font-size:32px}.gathered-head-label{font-size:11px;color:#F5C518;font-weight:800;text-transform:uppercase}.gathered-head-title{font-size:18px;color:#fff;font-weight:800}.gathered-body{padding:16px 22px}.gathered-output{width:100%;min-height:160px;border:2px solid #E2E8F4;border-radius:12px;padding:14px;font-family:monospace;font-size:13px;background:#FAFBFF}
+.tab-next-wrap{text-align:center;padding:24px 0 8px}.tab-transition-voice{font-family:'Lora',serif;font-size:15px;font-style:italic;color:var(--geo-deep);margin-bottom:12px}.tab-next-btn{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--geo),#2D2A5E);color:#fff;border:none;border-radius:28px;padding:13px 28px;font-size:15px;font-weight:800;cursor:pointer;box-shadow:0 4px 14px rgba(45,42,94,.3);animation:float 3s infinite}
+.turn-in-card{background:#fff;border:2px solid #E2E8F4;border-radius:18px;overflow:hidden;margin-top:18px}.turn-in-header{display:flex;align-items:center;gap:14px;background:var(--geo-light);padding:18px 22px;border-bottom:2px solid var(--geo-mid)}.turn-in-header-icon{font-size:36px}.turn-in-header-label{font-size:11px;color:var(--geo-deep);font-weight:800;text-transform:uppercase}.turn-in-header-title{font-family:'Lora',serif;font-size:22px;color:#0E1C42;font-weight:700}.turn-in-body{padding:18px 22px 20px}.turn-in-item{display:flex;align-items:center;gap:14px;padding:12px 16px;background:#FAFBFF;border:1.5px solid #E2E8F4;border-radius:12px;cursor:pointer;margin-bottom:10px}.turn-in-item.checked{background:#E3F8ED;border-color:#B8E8CF}.turn-in-check{width:26px;height:26px;border-radius:8px;border:2px solid var(--geo-mid);background:#fff;display:flex;align-items:center;justify-content:center;font-size:16px}.turn-in-item.checked .turn-in-check{background:#2DB87A;border-color:#2DB87A;color:#fff}
+.footer{background:#0E1C42;border-top:4px solid var(--geo);padding:18px 28px;text-align:center}.footer-main{font-size:14px;color:#fff;margin-bottom:4px}.footer-main span{color:var(--geo-mid);font-weight:700}.footer-sub{font-size:12px;color:rgba(255,255,255,.5)}.footer-copy{font-size:11px;color:rgba(255,255,255,.3)}
+.inline-feedback{display:none;margin:12px 0;border-radius:14px;padding:12px 14px;font-weight:800;line-height:1.5}.inline-feedback.show{display:block;animation:reveal .3s}.inline-feedback.good{background:#E3F8ED;border:2px solid #B8E8CF;color:#0E1C42}.inline-feedback.think{background:#FFF3DC;border:2px solid #F5E6C8;color:#5A4A3A}
+.vocab-section{background:#fff;border:2px solid var(--geo-mid);border-left:6px solid var(--geo);border-radius:18px;padding:14px 20px;margin:0 0 20px}.vocab-section-title{font-size:16px;color:#0E1C42;font-weight:900;margin-bottom:4px}
+.bubble-row{display:flex;gap:12px;flex-wrap:wrap;margin:14px 0}.bubble{display:flex;gap:10px;flex:1 1 260px;max-width:340px;background:#fff;border:2px solid #E2E8F4;border-radius:18px;padding:12px 14px}.bubble.atlas{border-left:5px solid #6B3FA0;background:linear-gradient(135deg,#fff,#F8F4FF)}.bubble.hazel{border-left:5px solid #2DB87A;background:linear-gradient(135deg,#fff,#F4FBF7)}.bubble.felix{border-left:5px solid #F5C518;background:linear-gradient(135deg,#fff,#FEFBEB)}.bubble.cora{border-left:5px solid #3A6B9A;background:linear-gradient(135deg,#fff,#F4F8FC)}.bubble-avatar{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:900;color:#fff;flex-shrink:0;font-family:'Lora',serif}.bubble.atlas .bubble-avatar{background:#6B3FA0}.bubble.hazel .bubble-avatar{background:#2DB87A}.bubble.felix .bubble-avatar{background:#F5C518;color:#0E1C42}.bubble.cora .bubble-avatar{background:#3A6B9A}.bubble-body{flex:1;min-width:0}.bubble-name{font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.7px;margin-bottom:3px;color:#6B3FA0}.bubble.hazel .bubble-name{color:#1A8A5A}.bubble.felix .bubble-name{color:#8A6D2B}.bubble.cora .bubble-name{color:#1A6B8E}.bubble-text{font-size:14.5px;color:#0E1C42;line-height:1.5;font-weight:600;font-family:'Lora',serif;font-style:italic}
+.video-wrap{border-radius:18px;overflow:hidden;border:2px solid #E2E8F4;box-shadow:0 4px 20px rgba(14,28,66,.08);background:#000;margin:0 0 22px}.video-wrap-header{display:flex;align-items:center;gap:12px;padding:12px 18px;background:linear-gradient(135deg,#0E1C42,#1A2D5A);border-bottom:2px solid rgba(91,82,168,.3)}.video-wrap-type{font-size:10px;color:#F5C518;text-transform:uppercase;letter-spacing:1.5px;font-weight:800;margin-bottom:2px}.video-wrap-title{font-size:16px;color:#fff;font-weight:800;line-height:1.2}.video-ratio{position:relative;padding-bottom:56.25%;height:0;overflow:hidden}.video-placeholder,.video-iframe{position:absolute;top:0;left:0;width:100%;height:100%}.video-placeholder{background:linear-gradient(135deg,#0E1C42,#1A2D5A);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px}.video-placeholder-icon{font-size:44px;margin-bottom:10px;opacity:.55}.video-placeholder-text{font-size:14px;color:rgba(255,255,255,.78);font-weight:700;line-height:1.5;max-width:620px}.video-placeholder-id{font-size:11px;color:rgba(245,197,24,.85);font-family:monospace;margin-top:10px;letter-spacing:.5px}.record-note{margin-top:10px;background:rgba(255,255,255,.08);border:1px solid rgba(245,197,24,.28);border-radius:10px;padding:8px 10px;color:rgba(255,255,255,.82);font-size:12.5px;line-height:1.45;max-width:620px}
 
+/* ANGLE OPENER */
+.angle-frame{background:#fff;border:2px solid var(--geo-mid);border-radius:16px;padding:18px;margin:14px 0}
+.angle-canvas-wrap{background:#FAFBFF;border:2px dashed var(--geo-mid);border-radius:12px;padding:16px 14px;margin-bottom:14px;display:flex;justify-content:center;touch-action:none}
+.angle-readout{background:linear-gradient(135deg,var(--geo-light),#9A92D0);border:2px solid var(--geo-mid);border-radius:12px;padding:16px;text-align:center;margin-bottom:8px;font-family:'Lora',serif;font-weight:900;color:#0E1C42;font-size:22px}
+.angle-controls{display:flex;gap:10px;justify-content:center;margin-top:8px}
+.angle-snap-btn{background:var(--geo);color:#fff;border:none;border-radius:14px;padding:10px 18px;font-size:14px;font-weight:900;cursor:pointer;font-family:'Nunito',sans-serif}
+.angle-reset-btn{background:#7A88A8;color:#fff;border:none;border-radius:14px;padding:10px 18px;font-size:14px;font-weight:900;cursor:pointer;font-family:'Nunito',sans-serif}
+
+@keyframes reveal{0%{opacity:0;transform:translateY(10px)}100%{opacity:1;transform:translateY(0)}}@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}@keyframes mini{0%{transform:translateY(0) scale(0);opacity:1}50%{transform:translateY(-30px) scale(1.2)}100%{transform:translateY(-60px) scale(.6);opacity:0}}
+</style>
+<style id="fluencyStyles">
+.fluency-box{background:#fff;border:2px solid #F5C518;border-radius:18px;overflow:hidden;margin-bottom:22px;font-family:'Nunito',sans-serif}
+.fluency-head{display:flex;align-items:center;gap:12px;background:linear-gradient(135deg,#F5C518,#E8B723);padding:14px 20px;flex-wrap:wrap}
+.fluency-head-icon{font-size:26px;line-height:1}
+.fluency-head-label{font-size:10px;color:#0E1C42;font-weight:800;text-transform:uppercase;letter-spacing:0.5px}
+.fluency-head-title{font-size:15px;color:#0E1C42;font-weight:800}
+.fluency-timer-ui{margin-left:auto;display:flex;align-items:center;gap:10px}
+.fluency-timer-display{font-size:20px;font-weight:800;color:#0E1C42;min-width:46px;text-align:center}
+.fluency-start-btn{background:#0E1C42;color:#fff;border:none;border-radius:10px;padding:8px 14px;font-weight:700;font-size:12px;cursor:pointer}
+.fluency-start-btn:disabled{opacity:0.55;cursor:default}
+.fluency-body{padding:16px 20px}
+.fluency-instructions{font-size:13px;color:#4A5568;margin:0 0 12px}
+.fluency-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(128px,1fr));gap:10px;margin-bottom:14px}
+.fluency-item{display:flex;align-items:center;gap:6px;background:#FAFBFF;border:1.5px solid #E2E8F4;border-radius:10px;padding:8px 10px}
+.fluency-item.fluency-correct{border-color:#2DB87A;background:#EAFBF3}
+.fluency-item.fluency-wrong{border-color:#E07B39;background:#FDF1E9}
+.fluency-q{font-size:13px;font-weight:700;color:#0E1C42;white-space:nowrap}
+.fluency-input{width:46px;border:1.5px solid #CBD5E8;border-radius:6px;padding:4px;font-size:14px;text-align:center;font-family:'Nunito',sans-serif}
+.fluency-input:disabled{background:#F0F2F8}
+.fluency-check-btn{background:#2DB87A;color:#fff;border:none;border-radius:10px;padding:10px 18px;font-weight:800;font-size:13px;cursor:pointer}
+.fluency-check-btn:disabled{opacity:0.55;cursor:default}
+.fluency-result{margin-top:10px;font-size:14px;color:#0E1C42;font-weight:700}
+</style></head><body>
+<div class="page-wrap">
+<div class="progress-wrap"><span class="progress-label">Lesson Progress</span><div class="progress-track"><div class="progress-fill" id="pf"></div></div><span class="progress-pct" id="pp">0%</span></div>
+<div class="header">
+<div class="header-brand"><div class="header-logo"><img alt="Optima" src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png"/></div><div><div class="header-org">Optima Academy Online</div><div class="header-sub">An Education Experience Company</div></div></div>
+<div class="header-title"><em>Angles</em></div>
+<div class="header-badge"><span class="header-badge-icon">📐</span><span class="header-badge-text">Lesson 3.12.02 · U2 Connect</span></div>
+</div>
+<div class="quote-strip"><div class="quote-strip-text">"An angle is the space between two rays that share the same starting point."</div><div class="quote-strip-attr">Geometry fact</div></div>
+<div class="info-strip">
+<div class="info-cell"><div class="info-icon" style="background:var(--geo-light);">🟣</div><div><div class="info-label">Unit</div><div class="info-value">Unit 12</div><div class="info-detail">Geometry</div></div></div>
+<div class="info-cell"><div class="info-icon" style="background:#E3F8ED;">📅</div><div><div class="info-label">Lesson</div><div class="info-value">3.12.02</div><div class="info-detail">U2 Connect</div></div></div>
+<div class="info-cell"><div class="info-icon" style="background:#EAF0FF;">📐</div><div><div class="info-label">Standards</div><div class="info-value">MA.3.GR.1.1</div><div class="info-detail">classify angles</div></div></div>
+<div class="info-cell"><div class="info-icon" style="background:#FFF8E6;">🔧</div><div><div class="info-label">Tool</div><div class="info-value">Angle Opener</div><div class="info-detail">drag to open &amp; close</div></div></div>
+</div>
+<div class="explorer-strip"><span class="explorer-compass">🧭</span><div><div class="explorer-mission-label">Today’s Mission</div><div class="explorer-mission-text">Open and close angles — see what makes them bigger or smaller.</div></div></div>
+<div class="intro-2col">
+<div class="intro-card theme-question"><div class="intro-card-head"><div class="intro-card-head-icon">❓</div><div><div class="intro-card-head-label">Essential Question</div><div class="intro-card-head-title">What is an angle, and how do we measure it?</div></div></div><div class="intro-card-body"><p>Two rays meet at a point. The opening between them is the angle.</p></div></div>
+<div class="intro-card theme-objectives"><div class="intro-card-head"><div class="intro-card-head-icon">🎯</div><div><div class="intro-card-head-label">Today’s Objectives</div><div class="intro-card-head-title">You will…</div></div></div><div class="intro-card-body">
+<div class="obj-line"><span style="flex-shrink:0">📐</span><span><strong>Identify</strong> angles in shapes and real objects.</span></div>
+<div class="obj-line"><span style="flex-shrink:0">🔍</span><span><strong>Classify</strong> angles as less than, equal to, or greater than a right angle.</span></div>
+</div></div>
+</div>
+<div class="need-strip"><span class="need-strip-label">You’ll need:</span><span class="need-chip">📓 Math Journal</span><span class="need-chip">✏️ Pencil</span></div>
+<div class="tab-bar" id="tabBar">
+<button class="tab-btn active" data-tab="warmup" onclick="switchTab('warmup')">🔍 Warm-Up <span class="tab-check">✓</span></button>
+<button class="tab-btn" data-tab="learn" onclick="switchTab('learn')">📐 Learn <span class="tab-check">✓</span></button>
+<button class="tab-btn" data-tab="practice" onclick="switchTab('practice')">🧮 Practice <span class="tab-check">✓</span></button>
+<button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">🌟 Show What You Know <span class="tab-check">✓</span></button>
+</div>
+<!-- WARM-UP TAB -->
+<div class="tab-panel active" id="tab-warmup">
+<div class="fluency-box" data-timed="false">
+<div class="fluency-head">
+<div class="fluency-head-icon">✍️</div>
+<div><div class="fluency-head-label">FLUENCY WARM-UP</div><div class="fluency-head-title">Estimation Check (round to tens)</div></div>
+</div>
+<div class="fluency-body">
+<p class="fluency-instructions">Warm up your fact fluency before today’s lesson. Work through these, then check your answers.</p>
+<div class="fluency-grid" id="fluencyGrid">
+<div class="fluency-item"><span class="fluency-q">29 + 42 =</span><input autocomplete="off" class="fluency-input" data-answer="70" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">58 - 31 =</span><input autocomplete="off" class="fluency-input" data-answer="30" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">6 × 21 =</span><input autocomplete="off" class="fluency-input" data-answer="120" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">79 + 18 =</span><input autocomplete="off" class="fluency-input" data-answer="100" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">93 - 47 =</span><input autocomplete="off" class="fluency-input" data-answer="40" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">4 × 48 =</span><input autocomplete="off" class="fluency-input" data-answer="200" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">61 + 29 =</span><input autocomplete="off" class="fluency-input" data-answer="90" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">82 - 19 =</span><input autocomplete="off" class="fluency-input" data-answer="60" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">7 × 19 =</span><input autocomplete="off" class="fluency-input" data-answer="140" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">36 + 44 =</span><input autocomplete="off" class="fluency-input" data-answer="80" inputmode="numeric" type="text"/></div>
+</div>
+<button class="fluency-check-btn" id="fluencyCheckBtn" onclick="fluencyCheck()">Check My Answers</button>
+<div class="fluency-result" id="fluencyResult"></div>
+</div>
+<textarea class="journal-box" data-label="Fluency Warm-Up (Estimation Check (round to tens))" id="fluencyJournal" readonly="" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;"></textarea>
+</div>
+<div class="activity bl-yellow"><div class="activity-head"><div class="activity-num" style="background:#F5C518;color:#0E1C42;">🔎</div><div><div class="activity-title">Readiness Check</div><div class="activity-sub">Tap the card.</div></div></div><div class="activity-body">
+<p>In Lesson 3.12.01, you learned that a diameter is always ___ the radius.</p>
+<div class="value-card-row">
+<div class="value-card" onclick="rA(this,true)"><div class="big">2 ×</div></div>
+<div class="value-card" onclick="rA(this,false)"><div class="big">3 ×</div></div>
+<div class="value-card" onclick="rA(this,false)"><div class="big">half</div></div>
+</div>
+<div class="inline-feedback" id="rA-fb"></div>
+<div class="hint-callout">Diameter = 2 × radius. The diameter stretches all the way across through the center.</div>
+</div></div>
+
+<div class="activity bl-yellow"><div class="activity-head"><div class="activity-num" style="background:#F5C518;color:#0E1C42;">🤔</div><div><div class="activity-title">Think About It</div></div></div><div class="activity-body">
+<div class="callout callout-think"><span class="callout-icon">🧠</span><p>Felix is building a ramp. He can make it steep or flat. What changes — the length or the angle?</p></div>
+<div class="value-card-row">
+<div class="value-card" onclick="rT(this,true)"><div class="big">The angle</div></div>
+<div class="value-card" onclick="rT(this,false)"><div class="big">The length</div></div>
+</div>
+<div class="inline-feedback" id="rT-fb"></div>
+<div class="journal-label">✏️ What do you think an angle measures? <span class="saved-dot" id="dt"></span></div>
+<textarea class="journal-box" data-label="Warm-Up journal" id="j-t01" oninput="autoSave(this,'dt')" placeholder=""></textarea>
+</div></div>
+<div class="tab-next-wrap"><p class="tab-transition-voice">Two lines meet — and the space between them matters.</p><button class="tab-next-btn" onclick="switchTab('learn')">Continue to 📐 Learn →</button></div>
+</div>
+<!-- LEARN TAB -->
+<div class="tab-panel" id="tab-learn">
+<div class="vocab-section"><div class="vocab-section-title">Vocabulary</div>
+<p style="font-size:14px;color:#3A4A6B;font-family:'Lora',serif;font-style:italic;margin-bottom:10px;"><strong>Angle</strong> — the opening between two rays that share a vertex.</p>
+<p style="font-size:14px;color:#3A4A6B;font-family:'Lora',serif;font-style:italic;margin-bottom:10px;"><strong>Vertex</strong> — the point where two rays meet.</p>
+<p style="font-size:14px;color:#3A4A6B;font-family:'Lora',serif;font-style:italic;margin-bottom:10px;"><strong>Ray</strong> — a line that starts at a point and goes on forever in one direction.</p>
+<p style="font-size:14px;color:#3A4A6B;font-family:'Lora',serif;font-style:italic;"><strong>Right angle</strong> — an angle that makes a perfect square corner.</p>
+</div>
+
+<div class="callout callout-info"><span class="callout-icon">🔧</span><p><strong>Try the Angle Opener.</strong> Drag the ray to make the angle bigger or smaller.</p></div>
+<!-- CENTERPIECE: Angle Opener -->
+<div class="activity bl-geo"><div class="activity-head"><div class="activity-num" style="background:var(--geo);">📐</div><div><div class="activity-title">Angle Opener</div></div></div><div class="activity-body">
+<p style="font-family:'Lora',serif;font-size:14.5px;font-style:italic;color:var(--geo-deep);margin-bottom:8px;">Drag the purple ray to open or close the angle. Watch the label change.</p>
+<div class="angle-frame">
+<div class="angle-canvas-wrap"><svg height="340" id="ao-svg" style="cursor:grab;" viewbox="0 0 340 340" width="340"></svg></div>
+<div class="angle-readout" id="ao-readout">A right angle</div>
+<div class="angle-controls"><button class="angle-snap-btn" onclick="aoSnap()">▢ Snap to right angle</button><button class="angle-reset-btn" onclick="aoReset()">↩ Reset</button></div>
+</div>
+</div></div>
+<div class="key-concept"><div class="key-concept-label">📐 Key Concept — What You Just Saw</div>
+<p>An angle is the opening between two rays at a vertex. A <strong>right angle</strong> makes a perfect square corner. Angles can be <strong>less than a right angle</strong> (smaller opening) or <strong>greater than a right angle</strong> (wider opening).</p>
+</div>
+
+<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">🧠</div><div><div class="activity-title">Worked Example: Felix’s Ramp</div></div></div><div class="activity-body">
+<div class="task-box"><div class="task-label">Problem</div><p>Felix tests two ramp angles. Ramp A has a small opening. Ramp B has a square corner. Which is steeper?</p></div>
+<div class="bubble-row">
+<div class="bubble atlas"><div class="bubble-avatar">A</div><div class="bubble-body"><div class="bubble-name">Atlas</div><div class="bubble-text">“A right angle is like a wall corner — a perfect square corner.”</div></div></div>
+<div class="bubble felix"><div class="bubble-avatar">F</div><div class="bubble-body"><div class="bubble-name">Felix</div><div class="bubble-text">“Ramp A is flatter. Ramp B is steeper.”</div></div></div>
+</div>
+<div class="bubble-row">
+<div class="bubble hazel"><div class="bubble-avatar">H</div><div class="bubble-body"><div class="bubble-name">Hazel</div><div class="bubble-text">“The bigger the angle, the steeper the ramp.”</div></div></div>
+<div class="bubble cora"><div class="bubble-avatar">C</div><div class="bubble-body"><div class="bubble-name">Cora</div><div class="bubble-text">“A right angle is our benchmark. We compare everything to it.”</div></div></div>
+</div>
+<p style="font-family:'Lora',serif;background:#FAFBFF;border:2px solid #E2E8F4;border-radius:12px;padding:10px;text-align:center;font-size:18px;font-weight:900;margin-top:14px;">Ramp A: less than a right angle (gentle)  •  Ramp B: right angle (steep)</p>
+</div></div>
+<div class="socratic-box"><div class="socratic-label">🔮 Think Deeper</div><p class="socratic-q">Can you find a right angle in the room around you right now? Where is it?</p><div class="journal-label">✏️ <span class="saved-dot" id="ds1"></span></div><textarea class="journal-box" data-label="Learn socratic" id="j-s101" oninput="autoSave(this,'ds1')" placeholder=""></textarea></div>
+<div class="tab-next-wrap"><p class="tab-transition-voice">Square corners everywhere — once you see them, you can’t stop.</p><button class="tab-next-btn" onclick="switchTab('practice')">Continue to 🧮 Practice →</button></div>
+</div>
+<!-- PRACTICE TAB -->
+<div class="tab-panel" id="tab-practice">
+<div class="callout callout-info"><span class="callout-icon">🧭</span><p>You just built angles with the Angle Opener. Now classify them on your own.</p></div>
+<div class="callout callout-tip"><span class="callout-icon">💡</span><p><strong>Before each problem, ask yourself:</strong> “Is this opening smaller than, equal to, or bigger than a square corner?”</p></div>
+<div class="hint-callout">🔄 <strong>Stuck?</strong> Go back to Learn and try the Angle Opener again.</div>
+<!-- P1: classify acute angle -->
+<div class="activity bl-geo"><div class="activity-head"><div class="activity-num" style="background:var(--geo);">1</div><div><div class="activity-title">Classify This Angle</div></div></div><div class="activity-body">
+<div class="task-box"><div class="task-label">Look at the angle</div>
+<svg height="140" style="display:block;margin:0 auto 10px;" viewbox="0 0 200 140" width="200">
+<circle cx="30" cy="110" fill="var(--geo-deep)" r="4"></circle>
+<line stroke="var(--geo)" stroke-width="3" x1="30" x2="180" y1="110" y2="110"></line>
+<line stroke="var(--geo)" stroke-width="3" x1="30" x2="140" y1="110" y2="20"></line>
+<path d="M 60 110 A 30 30 0 0 0 52 88" fill="none" stroke="var(--geo-mid)" stroke-width="2.5"></path>
+</svg>
+<p>Is this angle less than, equal to, or greater than a right angle?</p>
+</div>
+<div class="value-card-row">
+<div class="value-card" onclick="p1(this,true)"><div class="big">Less than</div></div>
+<div class="value-card" onclick="p1(this,false)"><div class="big">Equal to</div></div>
+<div class="value-card" onclick="p1(this,false)"><div class="big">Greater than</div></div>
+</div>
+<div class="inline-feedback" id="p1-fb"></div>
+<div class="feedback-branch feedback-pass" id="p1-pass"><strong>✅</strong> This angle is less than a right angle — the opening is smaller than a square corner.
+      
+</div>
+<div class="feedback-branch feedback-retry" id="p1-retry"><strong>🔄 Picture a square corner. Is this opening smaller or bigger than that?</strong>
+
+<button class="orange-btn" onclick="resetP(1)">↩ Reset</button>
+</div>
+</div></div>
+<!-- P2: classify obtuse angle -->
+<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">2</div><div><div class="activity-title">Classify This Angle</div></div></div><div class="activity-body">
+<div class="task-box"><div class="task-label">Look at the angle</div>
+<svg height="160" style="display:block;margin:0 auto 10px;" viewbox="0 0 200 160" width="200">
+<circle cx="30" cy="130" fill="var(--geo-deep)" r="4"></circle>
+<line stroke="var(--geo)" stroke-width="3" x1="30" x2="190" y1="130" y2="130"></line>
+<line stroke="var(--geo)" stroke-width="3" x1="30" x2="60" y1="130" y2="15"></line>
+<path d="M 60 130 A 30 30 0 0 0 38 102" fill="none" stroke="var(--geo-mid)" stroke-width="2.5"></path>
+</svg>
+<p>Is this angle less than, equal to, or greater than a right angle?</p>
+</div>
+<div class="value-card-row">
+<div class="value-card" onclick="p2(this,false)"><div class="big">Less than</div></div>
+<div class="value-card" onclick="p2(this,false)"><div class="big">Equal to</div></div>
+<div class="value-card" onclick="p2(this,true)"><div class="big">Greater than</div></div>
+</div>
+<div class="inline-feedback" id="p2-fb"></div>
+<div class="feedback-branch feedback-pass" id="p2-pass"><strong>✅</strong> This angle is greater than a right angle — the opening is wider than a square corner.
+      
+</div>
+<div class="feedback-branch feedback-retry" id="p2-retry"><strong>🔄 Imagine fitting a square corner into that opening. Would the corner fit, or is the angle wider?</strong>
+
+<button class="orange-btn" onclick="resetP(2)">↩ Reset</button>
+</div>
+</div></div>
+<!-- P3: compare two angles -->
+<div class="activity bl-slate"><div class="activity-head"><div class="activity-num" style="background:#3A6B9A;">3</div><div><div class="activity-title">Which Is Closer to a Right Angle?</div></div></div><div class="activity-body">
+<div class="task-box"><div class="task-label">Compare</div>
+<div style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap;">
+<div style="text-align:center;">
+<svg height="120" viewbox="0 0 140 120" width="140">
+<circle cx="20" cy="100" fill="var(--geo-deep)" r="3"></circle>
+<line stroke="var(--geo)" stroke-width="3" x1="20" x2="130" y1="100" y2="100"></line>
+<line stroke="var(--geo)" stroke-width="3" x1="20" x2="110" y1="100" y2="22"></line>
+<path d="M 45 100 A 25 25 0 0 0 40 82" fill="none" stroke="var(--geo-mid)" stroke-width="2"></path>
+</svg>
+<div style="font-weight:900;font-size:15px;">Angle A</div>
+</div>
+<div style="text-align:center;">
+<svg height="120" viewbox="0 0 140 120" width="140">
+<circle cx="20" cy="100" fill="var(--geo-deep)" r="3"></circle>
+<line stroke="var(--geo)" stroke-width="3" x1="20" x2="130" y1="100" y2="100"></line>
+<line stroke="var(--geo)" stroke-width="3" x1="20" x2="80" y1="100" y2="14"></line>
+<path d="M 45 100 A 25 25 0 0 0 34 78" fill="none" stroke="var(--geo-mid)" stroke-width="2"></path>
+</svg>
+<div style="font-weight:900;font-size:15px;">Angle B</div>
+</div>
+</div>
+<p style="margin-top:10px;">Which angle is closer to a right angle?</p>
+</div>
+<div class="value-card-row">
+<div class="value-card" onclick="p3(this,true)"><div class="big">Angle A</div></div>
+<div class="value-card" onclick="p3(this,false)"><div class="big">Angle B</div></div>
+</div>
+<div class="inline-feedback" id="p3-fb"></div>
+<div class="feedback-branch feedback-pass" id="p3-pass"><strong>✅</strong> Angle A opens wider — closer to a square corner. Angle B is much smaller.
+      
+</div>
+<div class="feedback-branch feedback-retry" id="p3-retry"><strong>🔄 A right angle makes a perfect L shape. Which opening is closer to that L?</strong>
+
+<button class="orange-btn" onclick="resetP(3)">↩ Reset</button>
+</div>
+</div></div>
+<div class="socratic-box"><div class="socratic-label">🔮 Think Deeper</div><p class="socratic-q">If you opened an angle wider and wider, what would eventually happen?</p><div class="journal-label">✏️ <span class="saved-dot" id="ds2"></span></div><textarea class="journal-box" data-label="Practice socratic" id="j-s201" oninput="autoSave(this,'ds2')" placeholder=""></textarea></div>
+<div class="tab-next-wrap"><p class="tab-transition-voice">Less than, equal to, greater than — three ways to talk about every angle.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
+</div>
+<!-- SHOW WHAT YOU KNOW TAB -->
+<div class="tab-panel" id="tab-assignment">
+<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">🎯</div><div><div class="activity-title">Ready Check</div></div></div><div class="activity-body">
+<div class="q-block"><p class="q-text"><span class="q-num">A</span>This angle is a ___.</p>
+<svg height="120" style="display:block;margin:6px auto;" viewbox="0 0 120 120" width="120">
+<circle cx="20" cy="100" fill="var(--geo-deep)" r="3"></circle>
+<line stroke="var(--geo)" stroke-width="3" x1="20" x2="120" y1="100" y2="100"></line>
+<line stroke="var(--geo)" stroke-width="3" x1="20" x2="20" y1="100" y2="10"></line>
+<rect fill="none" height="18" stroke="var(--geo-deep)" stroke-width="1.5" width="18" x="20" y="80"></rect>
+</svg>
+<div class="value-card-row"><div class="value-card" onclick="eA(this,true)"><div class="big">Right angle</div></div><div class="value-card" onclick="eA(this,false)"><div class="big">Less than</div></div><div class="value-card" onclick="eA(this,false)"><div class="big">Greater than</div></div></div><div class="inline-feedback" id="eA-fb"></div>
+</div>
+<div class="q-block"><p class="q-text"><span class="q-num">B</span>This angle is ___.</p>
+<svg height="120" style="display:block;margin:6px auto;" viewbox="0 0 160 120" width="160">
+<circle cx="20" cy="100" fill="var(--geo-deep)" r="3"></circle>
+<line stroke="var(--geo)" stroke-width="3" x1="20" x2="150" y1="100" y2="100"></line>
+<line stroke="var(--geo)" stroke-width="3" x1="20" x2="50" y1="100" y2="10"></line>
+<path d="M 50 100 A 30 30 0 0 0 30 72" fill="none" stroke="var(--geo-mid)" stroke-width="2.5"></path>
+</svg>
+<div class="value-card-row"><div class="value-card" onclick="eB(this,false)"><div class="big">Right angle</div></div><div class="value-card" onclick="eB(this,false)"><div class="big">Less than</div></div><div class="value-card" onclick="eB(this,true)"><div class="big">Greater than</div></div></div><div class="inline-feedback" id="eB-fb"></div>
+</div>
+</div></div>
+<div class="activity bl-navy"><div class="activity-head"><div class="activity-num" style="background:#0E1C42;">📬</div><div><div class="activity-title">Show What You Know</div></div></div><div class="activity-body">
+<div class="q-block"><p class="q-text"><span class="q-num">1</span><strong>Fluency.</strong> Draw or describe an angle that is less than a right angle. What does it look like?</p><div class="journal-label">✏️ <span class="saved-dot" id="da1"></span></div><textarea class="journal-box" data-label="SWYK 1" id="j-a101" oninput="autoSave(this,'da1')" placeholder=""></textarea></div>
+<div class="q-block"><p class="q-text"><span class="q-num">2</span><strong>Transfer.</strong> Atlas says the corner of his book is a right angle. Felix says the hands on a clock at 3:00 make a right angle. Are they both correct? Explain.</p><div class="journal-label">✏️ <span class="saved-dot" id="da2"></span></div><textarea class="journal-box" data-label="SWYK 2" id="j-a201" oninput="autoSave(this,'da2')" placeholder=""></textarea></div>
+
+<div class="activity bl-slate" style="margin-top:18px;border-left-color:#F5A36F;"><div class="activity-head"><div class="activity-num" style="background:#F5A36F;color:#0E1C42;">🗺️</div><div><div class="activity-title">Connection Forward</div><div class="activity-sub">Next: Lesson 3.12.03</div></div></div><div class="activity-body">
+<p>You can spot angles everywhere now. Next lesson: the right angle gets its own spotlight. We’ll learn to check corners and find right angles hiding in shapes.</p>
+</div></div>
+</div></div>
+<div class="gathered-box"><div class="gathered-head"><div class="gathered-head-icon">📋</div><div><div class="gathered-head-label">Math Journal</div><div class="gathered-head-title">All Answers</div></div></div><div class="gathered-body"><textarea class="gathered-output" id="gO" readonly="">Click “Gather” to collect.</textarea><div style="display:flex;gap:10px;margin-top:12px;"><button class="geo-btn" onclick="gather()">📋 Gather</button><button class="green-btn" onclick="copyA()">Copy</button><button class="check-btn" onclick="dl()">Download</button></div></div></div>
+<div class="turn-in-card"><div class="turn-in-header"><div class="turn-in-header-icon">✅</div><div><div class="turn-in-header-label">Turn-In</div><div class="turn-in-header-title">Ready?</div></div></div><div class="turn-in-body">
+<div class="turn-in-item" onclick="tg(this)"><span class="turn-in-check">✓</span><span>I completed Show What You Know.</span></div>
+<div class="turn-in-item" onclick="tg(this)"><span class="turn-in-check">✓</span><span>I can classify angles as less than, equal to, or greater than a right angle.</span></div>
+</div></div>
+</div>
+<div class="footer"><div class="footer-main">🏫 <span>Optima Academy Online</span></div><div class="footer-sub">Math · Grade 3 · 3.12.02 · U2 Connect</div><div class="footer-copy">© 2025 Optima Academy Online</div></div>
+</div>
+<script>
+var LS='g3-3-12-02-';
+function mini(el){if(!el)return;var em=['&#x2B50;','&#x2728;','&#x1F389;','&#x1F9E9;'];for(var i=0;i<8;i++){var s=document.createElement('span');s.textContent=em[Math.floor(Math.random()*em.length)];s.style.cssText='position:absolute;font-size:'+(16+Math.random()*14)+'px;pointer-events:none;z-index:999;animation:mini .7s ease-out forwards;left:'+(20+Math.random()*60)+'%;top:'+(Math.random()*40)+'%;';el.style.position='relative';el.style.overflow='visible';el.appendChild(s);setTimeout(function(x){x.remove()}.bind(null,s),800);}}
+function switchTab(t){document.querySelectorAll('.tab-panel').forEach(function(p){p.classList.remove('active');});document.getElementById('tab-'+t).classList.add('active');document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active');if(b.dataset.tab===t){b.classList.add('active');b.classList.add('visited');}});var bs=[].slice.call(document.querySelectorAll('.tab-btn'));var i=bs.findIndex(function(b){return b.classList.contains('active');});var p=Math.round(((i+1)/bs.length)*100);document.getElementById('pf').style.width=p+'%';document.getElementById('pp').textContent=p+'%';window.scrollTo({top:0,behavior:'smooth'});}
+function autoSave(el,d){try{localStorage.setItem(LS+el.id,el.value);}catch(e){}var dt=document.getElementById(d);if(dt){dt.classList.add('saved');setTimeout(function(){dt.classList.remove('saved')},900);}}
+function restore(){document.querySelectorAll('textarea.journal-box').forEach(function(t){try{var v=localStorage.getItem(LS+t.id);if(v)t.value=v;}catch(e){}});}
+function showBranch(id){document.getElementById(id).classList.add('show');}
+function hideBranches(p){['pass','retry'].forEach(function(x){var e=document.getElementById(p+'-'+x);if(e)e.classList.remove('show');});}
+
+/* Warm-Up */
+function rA(c,ok){c.parentElement.querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});var f=document.getElementById('rA-fb');if(ok){c.classList.add('good');f.className='inline-feedback show good';f.innerHTML='<strong>&#x2705;</strong> Diameter = 2 &times; radius. Always.';mini(c);}else{c.classList.add('bad');f.className='inline-feedback show think';f.innerHTML='The diameter stretches all the way across. It&#8217;s always 2 &times; the radius.';}}
+function rT(c,ok){c.parentElement.querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});var f=document.getElementById('rT-fb');if(ok){c.classList.add('good');f.className='inline-feedback show good';f.innerHTML='<strong>&#x2705;</strong> The angle changes how steep the ramp is. A bigger angle = steeper ramp.';mini(c);}else{c.classList.add('bad');f.className='inline-feedback show think';f.innerHTML='Think about tilting a board. What changes &#8212; how long it is, or how steep the opening is?';}}
+
+/* ========== ANGLE OPENER ========== */
+var ao={deg:90,dragging:false};
+function aoRender(){
+  var svg=document.getElementById('ao-svg');
+  var cx=170,cy=200,len=140;
+  var rad=ao.deg*Math.PI/180;
+  var ex=cx+len,ey=cy;
+  var mx=cx+Math.cos(rad)*len,my=cy-Math.sin(rad)*len;
+  var html='';
+  // arc
+  var arcR=50;
+  var ax1=cx+arcR,ay1=cy;
+  var ax2=cx+Math.cos(rad)*arcR,ay2=cy-Math.sin(rad)*arcR;
+  var lf=ao.deg>180?1:0;
+  html+='<path d="M '+ax1+' '+ay1+' A '+arcR+' '+arcR+' 0 '+lf+' 0 '+ax2+' '+ay2+'" fill="rgba(91,82,168,.15)" stroke="var(--geo-mid)" stroke-width="2.5"/>';
+  // fixed ray
+  html+='<line x1="'+cx+'" y1="'+cy+'" x2="'+ex+'" y2="'+ey+'" stroke="#7A88A8" stroke-width="3"/>';
+  // movable ray
+  html+='<line x1="'+cx+'" y1="'+cy+'" x2="'+mx+'" y2="'+my+'" stroke="var(--geo)" stroke-width="3.5"/>';
+  // vertex dot
+  html+='<circle cx="'+cx+'" cy="'+cy+'" r="6" fill="var(--geo-deep)"/>';
+  html+='<text x="'+cx+'" y="'+(cy+20)+'" text-anchor="middle" font-size="11" font-weight="800" fill="var(--geo-deep)">vertex</text>';
+  // drag handle
+  html+='<circle cx="'+mx+'" cy="'+my+'" r="10" fill="var(--geo)" opacity=".7" style="cursor:grab;"/>';
+  html+='<text x="'+mx+'" y="'+(my-14)+'" text-anchor="middle" font-size="11" font-weight="800" fill="var(--geo-deep)">drag me</text>';
+  // right-angle square if ~90
+  if(Math.abs(ao.deg-90)<5){
+    html+='<rect x="'+cx+'" y="'+(cy-20)+'" width="20" height="20" fill="none" stroke="var(--geo-deep)" stroke-width="1.5"/>';
+  }
+  svg.innerHTML=html;
+  // readout
+  var label='';
+  if(ao.deg<85) label='Less than a right angle';
+  else if(ao.deg<=95) label='A right angle';
+  else label='Greater than a right angle';
+  document.getElementById('ao-readout').textContent=label;
+}
+function aoSnap(){ao.deg=90;aoRender();}
+function aoReset(){ao.deg=90;aoRender();}
+(function(){
+  var svg;
+  function getAngle(e){
+    svg=document.getElementById('ao-svg');
+    var r=svg.getBoundingClientRect();
+    var cx=170,cy=200;
+    var scaleX=r.width/340,scaleY=r.height/340;
+    var px,py;
+    if(e.touches){px=e.touches[0].clientX;py=e.touches[0].clientY;}
+    else{px=e.clientX;py=e.clientY;}
+    var x=(px-r.left)/scaleX-cx;
+    var y=cy-(py-r.top)/scaleY;
+    var a=Math.atan2(y,x)*180/Math.PI;
+    if(a<5) a=5;if(a>175) a=175;
+    return Math.round(a);
+  }
+  document.addEventListener('mousedown',function(e){
+    if(!e.target.closest('#ao-svg'))return;
+    ao.dragging=true;ao.deg=getAngle(e);aoRender();
+  });
+  document.addEventListener('mousemove',function(e){if(!ao.dragging)return;ao.deg=getAngle(e);aoRender();});
+  document.addEventListener('mouseup',function(){ao.dragging=false;});
+  document.addEventListener('touchstart',function(e){
+    if(!e.target.closest('#ao-svg'))return;
+    ao.dragging=true;ao.deg=getAngle(e);aoRender();
+  },{passive:false});
+  document.addEventListener('touchmove',function(e){if(!ao.dragging)return;e.preventDefault();ao.deg=getAngle(e);aoRender();},{passive:false});
+  document.addEventListener('touchend',function(){ao.dragging=false;});
+})();
+
+/* Practice */
+function p1(c,ok){c.parentElement.querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});if(ok){c.classList.add('good');showBranch('p1-pass');mini(c);}else{c.classList.add('bad');showBranch('p1-retry');}}
+function p2(c,ok){c.parentElement.querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});if(ok){c.classList.add('good');showBranch('p2-pass');mini(c);}else{c.classList.add('bad');showBranch('p2-retry');}}
+function p3(c,ok){c.parentElement.querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});if(ok){c.classList.add('good');showBranch('p3-pass');mini(c);}else{c.classList.add('bad');showBranch('p3-retry');}}
+function resetP(n){
+  var tabs=document.querySelectorAll('#tab-practice .activity');
+  if(tabs[n-1]){tabs[n-1].querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});}
+  hideBranches('p'+n);
+}
+
+/* Ready Check */
+function eA(c,ok){c.parentElement.querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});var f=document.getElementById('eA-fb');if(ok){c.classList.add('good');f.className='inline-feedback show good';f.innerHTML='<strong>&#x2705;</strong> The square in the corner tells you it&#8217;s a right angle.';mini(c);}else{c.classList.add('bad');f.className='inline-feedback show think';f.innerHTML='Look at the little square in the corner &#8212; that symbol means right angle.';}}
+function eB(c,ok){c.parentElement.querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});var f=document.getElementById('eB-fb');if(ok){c.classList.add('good');f.className='inline-feedback show good';f.innerHTML='<strong>&#x2705;</strong> This angle opens wider than a square corner &#8212; greater than a right angle.';mini(c);}else{c.classList.add('bad');f.className='inline-feedback show think';f.innerHTML='Picture a square corner. Is this opening smaller, the same, or bigger?';}}
+
+/* Gather / Copy / Download */
+function gather(){var o='Lesson 3.12.02 — Angles\n\n';document.querySelectorAll('textarea.journal-box').forEach(function(t){o+=(t.dataset.label||t.id)+'\n'+((t.value||'').trim()||'[empty]')+'\n\n';});document.getElementById('gO').value=o;}
+function copyA(){gather();if(navigator.clipboard)navigator.clipboard.writeText(document.getElementById('gO').value);}
+function dl(){gather();var t=document.getElementById('gO').value;var w=window.open('','_blank');w.document.write('<title>3.12.02</title><pre>'+t.replace(/[&<>]/g,function(s){return{'&':'&amp;','<':'&lt;','>':'&gt;'}[s];})+'</pre>');w.document.close();w.print();}
+function tg(i){i.classList.toggle('checked');var c=i.querySelector('.turn-in-check');if(c)c.textContent=i.classList.contains('checked')?'✓':'';}
+
+async function loadVideoManifest(){try{var res=await fetch('video-manifest.md',{cache:'no-store'});if(!res.ok)return;var txt=await res.text();var map=parseManifest(txt);document.querySelectorAll('.video-wrap[data-video-slot]').forEach(function(w){var slot=w.dataset.videoSlot;if(map[slot]){var ratio=w.querySelector('.video-ratio');ratio.innerHTML=map[slot].trim();var iframe=ratio.querySelector('iframe');if(iframe){iframe.classList.add('video-iframe');iframe.setAttribute('allowfullscreen','');iframe.setAttribute('loading','lazy');}}});}catch(e){}}
+function parseManifest(txt){var map={};var lines=txt.split(/\r?\n/);var current=null,buf=[];function commit(){if(current&&buf.join('\n').trim()){map[current]=buf.join('\n').trim();}buf=[];}for(var i=0;i<lines.length;i++){var line=lines[i];var m=line.match(/^([A-Za-z0-9-]+):\s*$/);if(m){commit();current=m[1];}else if(current){buf.push(line);}}commit();return map;}
+
+window.addEventListener('DOMContentLoaded',function(){loadVideoManifest();restore();aoRender();});
+</script>
+<script id="fluencyScript">
+(function(){
+var FLUENCY_TIMED = false;
+var FLUENCY_TITLE = "Estimation Check (round to tens)";
+var fluencyInterval = null;
+var fluencySecondsLeft = 60;
+
+window.fluencyStart = function(){
+  if(!FLUENCY_TIMED) return;
+  var grid = document.getElementById('fluencyGrid');
+  if(!grid) return;
+  grid.querySelectorAll('.fluency-input').forEach(function(i){ i.disabled = false; });
+  var btn = document.getElementById('fluencyStartBtn');
+  if(btn){ btn.disabled = true; btn.textContent = 'Timer Running\u2026'; }
+  var checkBtn = document.getElementById('fluencyCheckBtn');
+  if(checkBtn) checkBtn.disabled = false;
+  fluencySecondsLeft = 60;
+  fluencyUpdateDisplay();
+  fluencyInterval = setInterval(function(){
+    fluencySecondsLeft--;
+    fluencyUpdateDisplay();
+    if(fluencySecondsLeft <= 0){
+      clearInterval(fluencyInterval);
+      grid.querySelectorAll('.fluency-input').forEach(function(i){ i.disabled = true; });
+      window.fluencyCheck();
+    }
+  }, 1000);
+};
+
+function fluencyUpdateDisplay(){
+  var el = document.getElementById('fluencyTimerDisplay');
+  if(el) el.textContent = fluencySecondsLeft + 's';
+}
+
+window.fluencyCheck = function(){
+  if(fluencyInterval){ clearInterval(fluencyInterval); fluencyInterval = null; }
+  var items = document.querySelectorAll('#fluencyGrid .fluency-item');
+  var correct = 0, attempted = 0, total = items.length;
+  var lines = [];
+  items.forEach(function(item){
+    var input = item.querySelector('.fluency-input');
+    var qText = item.querySelector('.fluency-q').textContent;
+    var given = (input.value || '').trim();
+    var ans = input.dataset.answer;
+    var ok = given !== '' && given === ans;
+    if(given !== '') attempted++;
+    item.classList.remove('fluency-correct','fluency-wrong');
+    if(ok){ correct++; item.classList.add('fluency-correct'); }
+    else if(given !== ''){ item.classList.add('fluency-wrong'); }
+    lines.push(qText + ' ' + ans + '   [answered: ' + (given || 'blank') + ']' + (ok ? ' \u2713' : (given ? ' \u2717' : '')));
+  });
+  var pct = total ? Math.round((correct/total)*100) : 0;
+  var timeStr = FLUENCY_TIMED ? (' in ' + (60 - fluencySecondsLeft) + ' seconds') : '';
+  var summary = 'Fluency Warm-Up \u2014 ' + FLUENCY_TITLE + '\n' + correct + ' / ' + total + ' correct (' + pct + '%)' + timeStr + '\n\n' + lines.join('\n');
+  var j = document.getElementById('fluencyJournal');
+  if(j) j.value = summary;
+  var resEl = document.getElementById('fluencyResult');
+  if(resEl) resEl.innerHTML = correct + ' / ' + total + ' correct (' + pct + '%)' + timeStr;
+  var checkBtn = document.getElementById('fluencyCheckBtn');
+  if(checkBtn) checkBtn.disabled = true;
+  var startBtn = document.getElementById('fluencyStartBtn');
+  if(startBtn) startBtn.textContent = 'Done';
+};
+})();
+</script>
+</body></html>

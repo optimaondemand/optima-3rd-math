@@ -1,3 +1,764 @@
 <!DOCTYPE html>
 
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Optima Academy Online — Grade 3 Math Lesson 3.01.03</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito:wght@400;600;700;800;900&display=swap');
+*{box-sizing:border-box;margin:0;padding:0} body{font-family:'Nunito','Century Gothic',Verdana,sans-serif;background:#F0F2F8;color:#0E1C42;line-height:1.6} .page-wrap{max-width:920px;margin:0 auto;background:#fff;box-shadow:0 0 40px rgba(14,28,66,.08)}
+.progress-wrap{position:sticky;top:0;z-index:200;background:#0E1C42;padding:8px 20px 10px;display:flex;align-items:center;gap:14px}.progress-label{font-size:12px;color:#F5C518;font-weight:800;text-transform:uppercase;letter-spacing:.8px;white-space:nowrap}.progress-track{flex:1;height:10px;background:rgba(255,255,255,.1);border-radius:10px;overflow:hidden}.progress-fill{height:100%;width:0%;background:linear-gradient(90deg,#6B3FA0,#2DB87A,#F5C518);border-radius:10px;transition:width .4s}.progress-pct{font-size:13px;color:#F5C518;font-weight:800;min-width:36px;text-align:right}
+.header{background:#0E1C42;border-bottom:6px solid #55C8E8;padding:20px 28px 18px;position:relative;overflow:hidden}.header::after{content:'';position:absolute;bottom:6px;left:0;right:0;height:3px;background:linear-gradient(90deg,#55C8E8,#7FD8F0,#55C8E8)}.header-brand{display:flex;align-items:center;gap:12px;margin-bottom:14px}.header-logo{width:52px;height:52px;border-radius:50%;background:#FFFFFF;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 2px 8px rgba(0,0,0,.15)}.header-logo img{width:48px;height:38px;display:block}.header-org{font-size:22px;color:#fff;font-weight:800;line-height:1.15}.header-sub{font-size:11px;color:#55C8E8;letter-spacing:.5px}.header-title{font-family:'Lora',Georgia,serif;font-size:28px;color:#fff;font-weight:700;line-height:1.2;margin-bottom:10px}.header-title em{color:#A0E8DA;font-style:italic}.header-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(85,200,232,.15);border:1.5px solid rgba(85,200,232,.35);border-radius:28px;padding:6px 16px}.header-badge-icon{font-size:22px}.header-badge-text{font-size:18px;color:#fff;font-weight:800}
+.quote-strip{background:linear-gradient(135deg,#FFF8F0,#FFF3DC);border-bottom:2px solid #F5E6C8;padding:14px 28px;text-align:center}.quote-strip-text{font-family:'Lora',Georgia,serif;font-size:16px;font-style:italic;color:#5A4A3A;line-height:1.6}.quote-strip-attr{font-size:11px;color:#7A88A8;font-weight:700;margin-top:4px;text-transform:uppercase;letter-spacing:.5px}.info-strip{display:flex;flex-wrap:wrap;background:#fff;border-bottom:2px solid #E2E8F4}.info-cell{flex:1;min-width:150px;padding:12px 16px;border-right:1px solid #E2E8F4;display:flex;align-items:center;gap:10px}.info-cell:last-child{border-right:none}.info-icon{width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}.info-label{font-size:10px;color:#7A88A8;text-transform:uppercase;letter-spacing:.5px;font-weight:700}.info-value{font-size:16px;color:#0E1C42;font-weight:800;line-height:1.2}.info-detail{font-size:11px;color:#3A4A6B;line-height:1.3}.explorer-strip{display:flex;align-items:center;gap:16px;padding:12px 28px;background:linear-gradient(135deg,#1A2340,#0E1C42);border-bottom:3px solid #6B3FA0}.explorer-compass{font-size:28px;flex-shrink:0}.explorer-mission-label{font-size:10px;color:#F5C518;text-transform:uppercase;letter-spacing:1px;font-weight:800;margin-bottom:2px}.explorer-mission-text{font-size:15px;color:#fff;font-weight:700;line-height:1.3}
+.intro-2col{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:20px 28px 4px}.intro-card{background:#fff;border:2px solid #E2E8F4;border-radius:18px;overflow:hidden;box-shadow:0 2px 10px rgba(14,28,66,.04)}.intro-card-head{display:flex;align-items:center;gap:10px;padding:14px 18px;border-bottom:2px solid}.intro-card-head-icon{width:40px;height:40px;border-radius:50%;color:#fff;font-size:20px;display:flex;align-items:center;justify-content:center;flex-shrink:0}.intro-card-head-label{font-size:10px;color:#7A88A8;text-transform:uppercase;letter-spacing:.8px;font-weight:700}.intro-card-head-title{font-size:18px;color:#0E1C42;font-weight:800;line-height:1.2}.intro-card-body{padding:14px 18px}.intro-card-body p{font-size:15px;color:#3A4A6B;line-height:1.65;margin-bottom:8px}.obj-line{display:flex;align-items:flex-start;gap:8px;font-size:15px;color:#0E1C42;line-height:1.55;margin-bottom:8px}.obj-icon{flex-shrink:0;font-size:17px}.theme-question .intro-card-head{background:#FFF8E6;border-color:#F5E6C8}.theme-question .intro-card-head-icon{background:#F5C518}.theme-objectives .intro-card-head{background:#F0E8FF;border-color:#D8CCF0}.theme-objectives .intro-card-head-icon{background:#6B3FA0}.need-strip{display:flex;align-items:center;flex-wrap:wrap;gap:8px;padding:12px 28px 18px}.need-strip-label{font-size:13px;color:#3A4A6B;font-weight:700;white-space:nowrap}.need-chip{display:inline-flex;align-items:center;gap:5px;background:#E3F8ED;border:1.5px solid #B8E8CF;border-radius:20px;padding:5px 12px;font-size:13px;color:#0E1C42;font-weight:700}
+.tab-bar{position:sticky;top:38px;z-index:100;background:#fff;border-bottom:3px solid #E2E8F4;display:flex;overflow-x:auto;box-shadow:0 -4px 0 0 #0E1C42}.tab-btn{flex:1;min-width:130px;padding:12px 8px 11px;background:transparent;border:none;border-bottom:4px solid transparent;font-family:'Nunito',sans-serif;font-size:13px;font-weight:700;color:#7A88A8;cursor:pointer;transition:all .2s;white-space:nowrap;line-height:1.3;text-align:center}.tab-btn:hover{color:#0E1C42;background:#F0E8FF}.tab-btn.active{color:#0E1C42;border-bottom-color:#6B3FA0;background:#fff}.tab-btn .tab-check{display:none;font-size:12px;color:#2DB87A;margin-left:4px;font-weight:800}.tab-btn.visited .tab-check{display:inline}.tab-panel{display:none;padding:24px 28px 36px}.tab-panel.active{display:block}
+.video-wrap{border-radius:18px;overflow:hidden;border:2px solid #E2E8F4;box-shadow:0 4px 20px rgba(14,28,66,.08);background:#000;margin:0 0 22px}.video-wrap-header{display:flex;align-items:center;gap:12px;padding:12px 18px;background:linear-gradient(135deg,#0E1C42,#1A2D5A);border-bottom:2px solid rgba(107,63,160,.3)}.video-wrap-type{font-size:10px;color:#F5C518;text-transform:uppercase;letter-spacing:1.5px;font-weight:800;margin-bottom:2px}.video-wrap-title{font-size:16px;color:#fff;font-weight:800;line-height:1.2}.video-ratio{position:relative;padding-bottom:56.25%;height:0;overflow:hidden}.video-placeholder,.video-iframe{position:absolute;top:0;left:0;width:100%;height:100%}.video-placeholder{background:linear-gradient(135deg,#0E1C42,#1A2D5A);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px}.video-placeholder-icon{font-size:44px;margin-bottom:10px;opacity:.55}.video-placeholder-text{font-size:14px;color:rgba(255,255,255,.78);font-weight:700;line-height:1.5;max-width:620px}.video-placeholder-id{font-size:11px;color:rgba(245,197,24,.85);font-family:monospace;margin-top:10px;letter-spacing:.5px}.record-note{margin-top:10px;background:rgba(255,255,255,.08);border:1px solid rgba(245,197,24,.28);border-radius:10px;padding:8px 10px;color:rgba(255,255,255,.82);font-size:12.5px;line-height:1.45;max-width:620px}
+.activity{background:#fff;border:2px solid #E2E8F4;border-radius:18px;margin-bottom:18px;overflow:hidden;box-shadow:0 2px 10px rgba(14,28,66,.04)}.activity.bl-violet{border-left:6px solid #6B3FA0}.activity.bl-green{border-left:6px solid #2DB87A}.activity.bl-yellow{border-left:6px solid #F5C518}.activity.bl-orange{border-left:6px solid #E07B39}.activity.bl-slate{border-left:6px solid #3A6B9A}.activity.bl-navy{border-left:6px solid #0E1C42}.activity-head{display:flex;align-items:center;gap:12px;padding:14px 20px 14px 18px;border-bottom:1.5px solid #E2E8F4}.activity-num{width:38px;height:38px;border-radius:14px;color:#fff;font-size:18px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0}.activity-title{font-size:19px;color:#0E1C42;font-weight:800;line-height:1.2}.activity-sub{font-size:12px;color:#7A88A8}.activity-time{display:inline-flex;align-items:center;gap:4px;padding:4px 12px;border-radius:20px;font-size:13px;font-weight:700;color:#fff;white-space:nowrap;margin-left:auto}.activity-body{padding:18px 22px}.activity-body p{font-size:17px;color:#3A4A6B;line-height:1.75;margin-bottom:12px}.callout{border-radius:14px;padding:16px 18px;display:flex;align-items:flex-start;gap:12px;margin-bottom:14px}.callout-icon{font-size:28px;flex-shrink:0;margin-top:2px}.callout p{font-size:16px;color:#0E1C42;line-height:1.65;margin:0}.callout-info{background:#EAF8FD;border:2px solid #D6F2FB}.callout-think{background:#FFF8E6;border:2px solid #F5E6C8}.callout-tip{background:#E3F8ED;border:2px solid #B8E8CF}.callout-vocab{background:#F0E8FF;border:2px solid #D8CCF0}.key-concept{background:#F0E8FF;border:2px solid #D8CCF0;border-radius:14px;padding:16px 18px;margin-bottom:14px}.key-concept-label{font-size:12px;color:#6B3FA0;text-transform:uppercase;letter-spacing:.5px;font-weight:800;margin-bottom:8px}.key-concept p{font-size:15px;color:#0E1C42;line-height:1.7;margin-bottom:6px}.socratic-box{background:linear-gradient(135deg,#F0E8FF,#E8DCFA);border:2px solid #D8CCF0;border-radius:14px;padding:16px 18px;margin-bottom:14px}.socratic-label{font-size:12px;color:#6B3FA0;text-transform:uppercase;letter-spacing:.5px;font-weight:800;margin-bottom:8px;display:flex;align-items:center;gap:6px}.socratic-q{font-size:16px;color:#0E1C42;line-height:1.7;font-style:italic;margin-bottom:8px}.journal-label{font-size:13px;color:#3A4A6B;font-weight:700;margin:10px 0 4px;display:flex;align-items:center;gap:6px}.journal-box{width:100%;min-height:80px;border:2px solid #E2E8F4;border-radius:12px;padding:12px 14px;font-family:'Nunito',sans-serif;font-size:15px;color:#0E1C42;resize:vertical;transition:border-color .2s;line-height:1.6}.journal-box:focus{outline:none;border-color:#6B3FA0;box-shadow:0 0 0 3px rgba(107,63,160,.1)}.saved-dot{width:8px;height:8px;border-radius:50%;background:#E2E8F4;display:inline-block;transition:background .3s}.saved-dot.saved{background:#2DB87A}.check-btn,.purple-btn,.green-btn,.orange-btn{display:inline-flex;align-items:center;gap:6px;color:#fff;border:none;border-radius:12px;padding:10px 20px;font-size:14px;font-weight:800;cursor:pointer;font-family:'Nunito',sans-serif;margin-top:10px}.check-btn{background:#3A6B9A}.purple-btn{background:#6B3FA0}.green-btn{background:#2DB87A}.orange-btn{background:#E07B39}.reveal-box{display:none;background:#E3F8ED;border:2px solid #B8E8CF;border-radius:12px;padding:14px 16px;margin-top:10px;font-size:15px;color:#0E1C42;line-height:1.6;font-weight:600}.reveal-box.show{display:block}.hint-callout{background:#FFF8E6;border:2px solid #F5C518;border-radius:10px;padding:10px 14px;margin:12px 0;font-size:14px;color:#5A4A00;font-weight:700}.task-box{background:#FAFBFF;border:2px solid #E2E8F4;border-radius:14px;padding:16px 18px;margin-bottom:14px}.task-label{font-size:12px;color:#6B3FA0;text-transform:uppercase;letter-spacing:.6px;font-weight:800;margin-bottom:10px}.feedback-branch{display:none;margin-top:16px;border-radius:14px;overflow:hidden;padding:16px}.feedback-branch.show{display:block}.feedback-pass{background:#E3F8ED;border:2px solid #B8E8CF}.feedback-retry{background:#FFF0E6;border:2px solid #F5C8A0}
+.value-card-row{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}.value-card{border:2px solid #E2E8F4;background:#fff;border-radius:14px;padding:10px 14px;min-width:110px;text-align:center;cursor:pointer;transition:.2s}.value-card:hover,.value-card.selected{border-color:#6B3FA0;background:#F0E8FF}.value-card.good{background:#E3F8ED;border-color:#2DB87A}.value-card.bad{background:#FFF0E6;border-color:#E07B39;animation:shake .25s}.value-card .big{font-size:24px;font-weight:900;color:#0E1C42}.value-card .small{font-size:12px;color:#3A4A6B;font-weight:800}
+.multi-check-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}.multi-card{background:#fff;border:2.5px solid #E2E8F4;border-radius:14px;padding:12px 14px;font-size:15px;font-weight:800;color:#0E1C42;cursor:pointer;transition:.2s;display:flex;align-items:center;gap:10px}.multi-card .mc-check{width:22px;height:22px;border-radius:6px;border:2px solid #B8C3D6;background:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#fff;font-weight:900;font-size:14px;transition:.2s}.multi-card.picked{border-color:#6B3FA0;background:#F0E8FF}.multi-card.picked .mc-check{background:#6B3FA0;border-color:#6B3FA0}.multi-card.good{border-color:#2DB87A;background:#E3F8ED}.multi-card.good .mc-check{background:#2DB87A;border-color:#2DB87A}.multi-card.bad{border-color:#E07B39;background:#FFF0E6;animation:shake .25s}.multi-card.bad .mc-check{background:#E07B39;border-color:#E07B39}
+.q-block{background:#FAFBFF;border:2px solid #E2E8F4;border-radius:14px;padding:14px 18px;margin-bottom:14px}.q-num{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#6B3FA0;color:#fff;font-weight:800;font-size:14px;margin-right:8px;vertical-align:middle}.q-text{font-size:16px;color:#0E1C42;line-height:1.65;margin-bottom:4px}.gathered-box{background:#fff;border:2px solid #E2E8F4;border-radius:18px;overflow:hidden;margin-top:24px}.gathered-head{display:flex;align-items:center;gap:14px;background:linear-gradient(135deg,#0E1C42,#1A2D5A);padding:18px 22px}.gathered-head-icon{font-size:32px}.gathered-head-label{font-size:11px;color:#F5C518;font-weight:800;text-transform:uppercase;letter-spacing:1px;margin-bottom:2px}.gathered-head-title{font-size:18px;color:#fff;font-weight:800}.gathered-body{padding:16px 22px}.gathered-output{width:100%;min-height:180px;border:2px solid #E2E8F4;border-radius:12px;padding:14px;font-family:'Courier New',monospace;font-size:13px;color:#0E1C42;resize:vertical;background:#FAFBFF}.gathered-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}.tab-next-wrap{text-align:center;padding:24px 0 8px}.tab-transition-voice{font-family:'Lora',Georgia,serif;font-size:15px;font-style:italic;color:#5A4A3A;margin-bottom:12px;line-height:1.6}.tab-next-btn{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#6B3FA0,#8B5FC0);color:#fff;border:none;border-radius:28px;padding:13px 28px;font-size:15px;font-weight:800;cursor:pointer;font-family:'Nunito',sans-serif;box-shadow:0 4px 14px rgba(107,63,160,.3);transition:all .2s}.turn-in-card{background:#fff;border:2px solid #E2E8F4;border-radius:18px;overflow:hidden;box-shadow:0 2px 10px rgba(14,28,66,.04);margin-top:18px}.turn-in-header{display:flex;align-items:center;gap:14px;background:#EAF8FD;padding:18px 22px;border-bottom:2px solid #D6F2FB}.turn-in-header-icon{font-size:36px}.turn-in-header-label{font-size:11px;color:#1A6B8E;font-weight:800;text-transform:uppercase;letter-spacing:1px;margin-bottom:3px}.turn-in-header-title{font-family:'Lora',Georgia,serif;font-size:22px;color:#0E1C42;font-weight:700}.turn-in-body{padding:18px 22px 20px}.turn-in-item{display:flex;align-items:center;gap:14px;padding:12px 16px;background:#FAFBFF;border:1.5px solid #E2E8F4;border-radius:12px;cursor:pointer;transition:.2s;margin-bottom:10px}.turn-in-item.checked{background:#E3F8ED;border-color:#B8E8CF}.turn-in-check{width:26px;height:26px;border-radius:8px;border:2px solid #D8CCF0;background:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px}.turn-in-item.checked .turn-in-check{background:#2DB87A;border-color:#2DB87A;color:#fff}@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}@keyframes pulseGlow{0%,100%{box-shadow:0 0 0 0 rgba(85,200,232,0)}50%{box-shadow:0 0 0 6px rgba(85,200,232,.18)}}.compare-pair.pulse{animation:pulseGlow 1.2s ease-out}@media(max-width:720px){.intro-2col,.multi-check-grid{grid-template-columns:1fr}.tab-panel{padding:20px 18px}.activity-head{align-items:flex-start}.activity-time{display:none}.header-title{font-size:24px}}
+.student-task-banner{background:#EAF8FD;border:2px solid #D6F2FB;border-left:6px solid #55C8E8;border-radius:14px;padding:14px 16px;margin:14px 0;font-size:16px;color:#0E1C42;line-height:1.55;font-weight:800}.student-task-banner .task-steps{display:block;font-size:14px;font-weight:700;color:#3A4A6B;margin-top:6px}
+#confettiCanvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:10000}
+.footer{background:#0E1C42;border-top:4px solid #55C8E8;padding:18px 28px;text-align:center}.footer-main{font-size:14px;color:#fff;margin-bottom:4px}.footer-main span{color:#55C8E8;font-weight:700}.footer-sub{font-size:12px;color:rgba(255,255,255,.5);margin-bottom:2px}.footer-copy{font-size:11px;color:rgba(255,255,255,.3)}
+.page-feedback{display:none;margin:12px 0;padding:12px 14px;border-radius:12px;border:2px solid #F5E6C8;background:#FFF8F0;color:#0E1C42;font-weight:800;line-height:1.45;box-shadow:0 2px 8px rgba(14,28,66,.06)}.page-feedback.show{display:block}.page-feedback.good{background:#E3F8ED;border-color:#B8E8CF}.page-feedback.warn{background:#FFF3DC;border-color:#F5E6C8}
+.number-talk-visual{background:linear-gradient(135deg,#FAFBFF,#EAF8FD);border:2px solid #D6F2FB;border-radius:16px;padding:16px;margin:14px 0}.number-talk-prompt{font-size:16px;color:#0E1C42;font-weight:800;margin-bottom:10px;line-height:1.5}.notice-wonder-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0}.notice-wonder-box{background:#fff;border:2px solid #E2E8F4;border-radius:14px;padding:12px 14px;min-height:98px}.notice-wonder-box h4{font-size:13px;color:#1A8A7D;text-transform:uppercase;letter-spacing:.7px;margin-bottom:6px}.strategy-chip-row{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}.strategy-chip{border:2px solid #E2E8F4;background:#fff;border-radius:999px;padding:10px 14px;font-family:'Nunito',sans-serif;font-weight:900;color:#0E1C42;cursor:pointer;transition:.18s}.strategy-chip:hover{border-color:#55C8E8;background:#EAF8FD;transform:translateY(-1px)}.strategy-chip.selected{border-color:#34B76F;background:#E3F8ED}.inline-feedback{display:none;margin:12px 0;border-radius:14px;padding:12px 14px;font-weight:800;line-height:1.5}.inline-feedback.show{display:block}.inline-feedback.good{background:#E3F8ED;border:2px solid #B8E8CF;color:#0E1C42}.inline-feedback.think{background:#FFF3DC;border:2px solid #F5E6C8;color:#5A4A3A}.inline-feedback.info{background:#EAF8FD;border:2px solid #D6F2FB;color:#0E1C42}
+@media(max-width:620px){.notice-wonder-grid{grid-template-columns:1fr}.strategy-chip{width:100%;justify-content:center}}
+.vocab-section{background:#fff;border:2px solid #D8CCF0;border-left:6px solid #6B3FA0;border-radius:18px;padding:18px 20px 20px;margin:0 0 20px;box-shadow:0 2px 10px rgba(14,28,66,.04)}.vocab-section-head{display:flex;align-items:flex-start;gap:12px;margin-bottom:14px}.vocab-section-icon{width:42px;height:42px;border-radius:50%;color:#fff;background:#6B3FA0;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}.vocab-section-label{font-size:11px;color:#6B3FA0;text-transform:uppercase;letter-spacing:.9px;font-weight:900;margin-bottom:3px}.vocab-section-title{font-size:21px;color:#0E1C42;font-weight:900;line-height:1.2}.vocab-section-directions{font-size:15px;color:#3A4A6B;line-height:1.55;font-weight:700;margin:0 0 14px}.vocab-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0 0}.flip-card{perspective:900px;height:180px;cursor:pointer}.flip-card-inner{position:relative;width:100%;height:100%;transition:transform .5s ease;transform-style:preserve-3d}.flip-card.flipped .flip-card-inner{transform:rotateY(180deg)}.flip-card-front,.flip-card-back{position:absolute;top:0;left:0;width:100%;height:100%;border-radius:16px;backface-visibility:hidden;-webkit-backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:14px 18px;text-align:center;border:2px solid #E2E8F4;box-shadow:0 2px 10px rgba(14,28,66,.06)}.flip-card-front{background:#FAFBFF;border-top:5px solid #6B3FA0}.flip-card-front .fc-emoji{font-size:30px;margin-bottom:8px}.flip-card-front .fc-word{font-size:22px;font-weight:900;color:#0E1C42;margin-bottom:6px;line-height:1.15}.flip-card-front .fc-tap{font-size:11px;color:#6B3FA0;font-weight:900;letter-spacing:.6px;text-transform:uppercase}.flip-card-back{background:linear-gradient(145deg,#0E1C42,#1A2D5A);border-color:#0E1C42;transform:rotateY(180deg)}.flip-card-back .fc-word-back{font-size:11px;color:#55C8E8;text-transform:uppercase;letter-spacing:1px;font-weight:900;margin-bottom:8px}.flip-card-back .fc-def{font-size:15px;color:#fff;line-height:1.5;font-weight:700}.flip-card-back .fc-tap-back{font-size:11px;color:rgba(255,255,255,.55);margin-top:9px;font-weight:800;letter-spacing:.4px;text-transform:uppercase}.fc-color-1 .flip-card-front{border-top-color:#3A6B9A}.fc-color-2 .flip-card-front{border-top-color:#2DB87A}.fc-color-3 .flip-card-front{border-top-color:#F5C518}.fc-color-4 .flip-card-front{border-top-color:#E07B39}@media(max-width:620px){.vocab-grid{grid-template-columns:1fr}.flip-card{height:165px}.flip-card-front .fc-word{font-size:20px}}
+@keyframes miniPop{0%{transform:translateY(0) scale(0);opacity:1}50%{transform:translateY(-30px) scale(1.2);opacity:1}100%{transform:translateY(-60px) scale(.6);opacity:0}}
+@keyframes progressShimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}.progress-fill{background:linear-gradient(90deg,#6B3FA0,#2DB87A,#F5C518,#6B3FA0);background-size:200% 100%;animation:progressShimmer 3s linear infinite}
+@keyframes gentleFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}.tab-next-btn{animation:gentleFloat 3s ease-in-out infinite}.tab-next-btn:hover{animation:none;transform:translateY(-2px) scale(1.03);box-shadow:0 8px 24px rgba(107,63,160,.35);transition:all .2s}
+@keyframes checkPop{0%{transform:scale(0)}60%{transform:scale(1.3)}100%{transform:scale(1)}}.turn-in-item.checked .turn-in-check{animation:checkPop .3s ease-out}
+@keyframes revealSlide{0%{opacity:0;transform:translateY(10px)}100%{opacity:1;transform:translateY(0)}}.reveal-box.show,.feedback-branch.show,.inline-feedback.show{animation:revealSlide .35s ease-out}
+.flip-card:not(.flipped):hover .flip-card-inner{transform:rotateY(8deg)}.flip-card.flipped:hover .flip-card-inner{transform:rotateY(172deg)}.flip-card{transition:transform .15s}.flip-card:hover{transform:translateY(-3px)}
+/* ─── OAO Math Crew thought bubbles ─── */
+.bubble-row{display:flex;gap:12px;flex-wrap:wrap;margin:14px 0;align-items:flex-start}.bubble{display:flex;gap:10px;align-items:flex-start;flex:1 1 260px;max-width:340px;background:#fff;border:2px solid #E2E8F4;border-radius:18px;padding:12px 14px;box-shadow:0 2px 10px rgba(14,28,66,.05);position:relative}.bubble.atlas{border-left:5px solid #6B3FA0;background:linear-gradient(135deg,#fff,#F8F4FF)}.bubble.hazel{border-left:5px solid #2DB87A;background:linear-gradient(135deg,#fff,#F4FBF7)}.bubble.felix{border-left:5px solid #F5C518;background:linear-gradient(135deg,#fff,#FEFBEB)}.bubble.cora{border-left:5px solid #3A6B9A;background:linear-gradient(135deg,#fff,#F4F8FC)}.bubble-avatar{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:900;color:#fff;flex-shrink:0;font-family:'Lora',Georgia,serif}.bubble.atlas .bubble-avatar{background:#6B3FA0}.bubble.hazel .bubble-avatar{background:#2DB87A}.bubble.felix .bubble-avatar{background:#F5C518;color:#0E1C42}.bubble.cora .bubble-avatar{background:#3A6B9A}.bubble-body{flex:1;min-width:0}.bubble-name{font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.7px;margin-bottom:3px;color:#6B3FA0}.bubble.hazel .bubble-name{color:#1A8A5A}.bubble.felix .bubble-name{color:#8A6D2B}.bubble.cora .bubble-name{color:#1A6B8E}.bubble-text{font-size:14.5px;color:#0E1C42;line-height:1.5;font-weight:600;font-family:'Lora',Georgia,serif;font-style:italic}@media(max-width:620px){.bubble{flex:1 1 100%;max-width:100%}}
+.callout{transition:transform .2s,box-shadow .2s}.callout:hover{transform:translateY(-1px);box-shadow:0 4px 14px rgba(14,28,66,.06)}.activity{transition:transform .2s,box-shadow .2s}.activity:hover{box-shadow:0 6px 24px rgba(14,28,66,.08)}.value-card{transition:transform .15s,border-color .2s,background .2s,box-shadow .2s}.value-card:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 6px 16px rgba(14,28,66,.08)}.need-chip{transition:transform .15s}.need-chip:hover{transform:translateY(-2px)}
+/* ─── COMPARATOR (lesson-specific) ─── */
+.compare-pair{background:#0E1C42;color:#fff;border-radius:18px;padding:18px;margin:14px 0;display:grid;grid-template-columns:1fr auto 1fr;gap:14px;align-items:center}
+.cmp-num{background:#1A2D5A;border:2px solid rgba(255,255,255,.1);border-radius:14px;padding:14px;text-align:center}
+.cmp-label{font-size:11px;color:#F5C518;text-transform:uppercase;letter-spacing:1px;font-weight:900;margin-bottom:8px}
+.cmp-digits{display:flex;gap:4px;justify-content:center}
+.cmp-digit{width:42px;height:54px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-family:'Lora',Georgia,serif;font-size:30px;font-weight:800;background:rgba(255,255,255,.08);border:2px solid rgba(255,255,255,.15);color:#fff;transition:all .35s ease}
+.cmp-digit.dim{opacity:.35}
+.cmp-digit.compared{background:rgba(85,200,232,.18);border-color:#55C8E8}
+.cmp-digit.winner{background:#2DB87A;border-color:#2DB87A;color:#fff;transform:scale(1.08);box-shadow:0 0 0 4px rgba(45,184,122,.3)}
+.cmp-digit.loser{background:rgba(224,123,57,.12);border-color:rgba(224,123,57,.35);color:rgba(255,255,255,.55)}
+.cmp-digit.k{font-family:'Lora',Georgia,serif}
+.cmp-symbol{font-family:'Lora',Georgia,serif;font-size:40px;font-weight:800;color:#F5C518;background:rgba(255,255,255,.08);border:2px solid rgba(245,197,24,.4);width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:all .4s ease}
+.cmp-symbol.revealed{color:#2DB87A;border-color:#2DB87A;background:rgba(45,184,122,.15);transform:scale(1.1)}
+.cmp-log{background:#FAFBFF;border:2px dashed #D8CCF0;border-radius:12px;padding:12px;margin-top:12px;font-size:14px;color:#3A4A6B;line-height:1.7;min-height:50px}
+.cmp-log .log-item{display:block;padding:4px 0;border-bottom:1px dashed #E2E8F4}
+.cmp-log .log-item:last-child{border-bottom:0}
+.cmp-log .log-item strong{color:#6B3FA0}
+.cmp-controls{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;align-items:center}
+.place-tags{display:flex;gap:6px;justify-content:center;margin-bottom:4px}
+.place-tag{font-size:9px;font-weight:900;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.5px;width:42px;text-align:center}
+.cmp-pair-mobile{display:none}
+@media(max-width:620px){.compare-pair{grid-template-columns:1fr;gap:8px;padding:14px}.cmp-symbol{margin:6px auto}.cmp-digit{width:38px;height:48px;font-size:24px}}
+/* Symbol picker for fill-in */
+.symbol-picker{display:inline-flex;gap:6px;margin:0 8px}
+.sym-btn{width:44px;height:44px;border-radius:10px;border:2.5px solid #D8CCF0;background:#fff;font-family:'Lora',Georgia,serif;font-size:22px;font-weight:800;color:#6B3FA0;cursor:pointer;transition:.18s}
+.sym-btn:hover{transform:translateY(-2px);box-shadow:0 4px 10px rgba(107,63,160,.18)}
+.sym-btn.picked{background:#6B3FA0;color:#fff;border-color:#6B3FA0}
+.sym-btn.good{background:#2DB87A;color:#fff;border-color:#2DB87A}
+.sym-btn.bad{background:#E07B39;color:#fff;border-color:#E07B39;animation:shake .25s}
+.sym-pair{display:flex;align-items:center;gap:8px;background:#FAFBFF;border:2px solid #E2E8F4;border-radius:12px;padding:12px 16px;margin:10px 0;font-size:22px;font-weight:900;color:#0E1C42;font-family:'Lora',Georgia,serif;flex-wrap:wrap}
+/* Order-the-numbers (Practice 2) */
+.order-bank{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}
+.order-chip{background:#fff;border:2.5px solid #D8CCF0;border-radius:14px;padding:10px 18px;font-family:'Lora',Georgia,serif;font-size:22px;font-weight:800;color:#0E1C42;cursor:pointer;transition:.18s;user-select:none}
+.order-chip.placed{visibility:hidden}
+.order-chip:hover:not(.placed){background:#F0E8FF;border-color:#6B3FA0;transform:translateY(-2px)}
+.order-slots{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin:10px 0}
+.order-slot{border:3px dashed #D8CCF0;background:#FAFBFF;border-radius:14px;padding:14px 12px;text-align:center;font-family:'Lora',Georgia,serif;font-size:22px;font-weight:800;color:#6B3FA0;cursor:pointer;min-height:60px;display:flex;align-items:center;justify-content:center;transition:.18s}
+.order-slot.filled{border-style:solid;background:#F0E8FF;color:#0E1C42}
+.order-slot.good{background:#E3F8ED;border-color:#2DB87A;color:#1A8A5A}
+.order-slot.bad{background:#FFF0E6;border-color:#E07B39;color:#B85A1F;animation:shake .25s}
+.order-label-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin:0;font-size:11px;font-weight:900;color:#7A88A8;text-transform:uppercase;letter-spacing:.6px;text-align:center}
+</style>
+<style id="fluencyStyles">
+.fluency-box{background:#fff;border:2px solid #F5C518;border-radius:18px;overflow:hidden;margin-bottom:22px;font-family:'Nunito',sans-serif}
+.fluency-head{display:flex;align-items:center;gap:12px;background:linear-gradient(135deg,#F5C518,#E8B723);padding:14px 20px;flex-wrap:wrap}
+.fluency-head-icon{font-size:26px;line-height:1}
+.fluency-head-label{font-size:10px;color:#0E1C42;font-weight:800;text-transform:uppercase;letter-spacing:0.5px}
+.fluency-head-title{font-size:15px;color:#0E1C42;font-weight:800}
+.fluency-timer-ui{margin-left:auto;display:flex;align-items:center;gap:10px}
+.fluency-timer-display{font-size:20px;font-weight:800;color:#0E1C42;min-width:46px;text-align:center}
+.fluency-start-btn{background:#0E1C42;color:#fff;border:none;border-radius:10px;padding:8px 14px;font-weight:700;font-size:12px;cursor:pointer}
+.fluency-start-btn:disabled{opacity:0.55;cursor:default}
+.fluency-body{padding:16px 20px}
+.fluency-instructions{font-size:13px;color:#4A5568;margin:0 0 12px}
+.fluency-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(128px,1fr));gap:10px;margin-bottom:14px}
+.fluency-item{display:flex;align-items:center;gap:6px;background:#FAFBFF;border:1.5px solid #E2E8F4;border-radius:10px;padding:8px 10px}
+.fluency-item.fluency-correct{border-color:#2DB87A;background:#EAFBF3}
+.fluency-item.fluency-wrong{border-color:#E07B39;background:#FDF1E9}
+.fluency-q{font-size:13px;font-weight:700;color:#0E1C42;white-space:nowrap}
+.fluency-input{width:46px;border:1.5px solid #CBD5E8;border-radius:6px;padding:4px;font-size:14px;text-align:center;font-family:'Nunito',sans-serif}
+.fluency-input:disabled{background:#F0F2F8}
+.fluency-check-btn{background:#2DB87A;color:#fff;border:none;border-radius:10px;padding:10px 18px;font-weight:800;font-size:13px;cursor:pointer}
+.fluency-check-btn:disabled{opacity:0.55;cursor:default}
+.fluency-result{margin-top:10px;font-size:14px;color:#0E1C42;font-weight:700}
+</style>
+</head>
+<body id="pageTop">
+<div class="page-wrap">
+<div class="progress-wrap"><span class="progress-label">📐 Lesson Progress</span><div class="progress-track"><div class="progress-fill" id="progressFill"></div></div><span class="progress-pct" id="progressPct">0%</span></div>
+<div class="header">
+<div class="header-brand">
+<div class="header-logo">
+<img alt="Optima Academy" src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png"/>
+</div>
+<div>
+<div class="header-org">Optima Academy Online</div>
+<div class="header-sub">An Education Experience Company</div>
+</div>
+</div>
+<div class="header-title"><em>Comparing Numbers</em></div>
+<div class="header-badge"><span class="header-badge-icon">🦉</span><span class="header-badge-text">Lesson 3.01.03</span></div>
+</div>
+<div class="quote-strip"><div class="quote-strip-text">"To compare two numbers, start at the left. The first place that differs decides which is greater."</div><div class="quote-strip-attr">Comparing big idea</div></div>
+<div class="info-strip">
+<div class="info-cell"><div class="info-icon" style="background:#F0E8FF;">🧭</div><div><div class="info-label">Unit</div><div class="info-value">Unit 1</div><div class="info-detail">Numbers to 10,000</div></div></div>
+<div class="info-cell"><div class="info-icon" style="background:#E3F8ED;">📅</div><div><div class="info-label">Lesson</div><div class="info-value">3.01.03</div><div class="info-detail">U3 Apply</div></div></div>
+<div class="info-cell"><div class="info-icon" style="background:#EAF0FF;">📐</div><div><div class="info-label">Standard</div><div class="info-value">MA.3.NSO.1.3</div><div class="info-detail">Plot, order, compare</div></div></div>
+<div class="info-cell"><div class="info-icon" style="background:#FFF8E6;">🔢</div><div><div class="info-label">Focus</div><div class="info-value">&gt;   &lt;   =</div><div class="info-detail">MTR.2.1 · MTR.5.1</div></div></div>
+</div>
+<div class="explorer-strip"><span class="explorer-compass">🧭</span><div><div class="explorer-mission-label">Today's Mission</div><div class="explorer-mission-text">Compare two four-digit numbers digit by digit — and decide which mountain is taller, which crowd is bigger, which number wins.</div></div></div>
+<div class="intro-2col">
+<div class="intro-card theme-question"><div class="intro-card-head"><div class="intro-card-head-icon">❓</div><div><div class="intro-card-head-label">Essential Question</div><div class="intro-card-head-title">How do you compare numbers when the digits look close?</div></div></div><div class="intro-card-body"><p>Some numbers are easy to compare. 8,000 is more than 200 — you can see it instantly.</p><p>But what about 3,998 and 4,008? The digit 9 looks bigger than 0. So which number is greater?</p></div></div>
+<div class="intro-card theme-objectives"><div class="intro-card-head"><div class="intro-card-head-icon">🎯</div><div><div class="intro-card-head-label">Today's Objectives</div><div class="intro-card-head-title">You will…</div></div></div><div class="intro-card-body">
+<div class="obj-line"><span class="obj-icon">⚖️</span><span><strong>Compare</strong> two whole numbers up to 10,000 using place value.</span></div>
+<div class="obj-line"><span class="obj-icon">🔣</span><span><strong>Use</strong> the symbols &gt;, &lt;, and = correctly.</span></div>
+<div class="obj-line"><span class="obj-icon">📊</span><span><strong>Order</strong> a small set of numbers from least to greatest.</span></div>
+</div></div>
+</div>
+<div class="need-strip"><span class="need-strip-label">You'll need:</span><span class="need-chip">📓 Math Journal</span><span class="need-chip">✏️ Pencil</span></div>
+<div class="tab-bar" id="tabBar">
+<button class="tab-btn active" data-tab="warmup" onclick="switchTab('warmup')">🔍 Warm-Up <span class="tab-check">✓</span></button>
+<button class="tab-btn" data-tab="learn" onclick="switchTab('learn')">📐 Learn <span class="tab-check">✓</span></button>
+<button class="tab-btn" data-tab="practice" onclick="switchTab('practice')">🧮 Practice <span class="tab-check">✓</span></button>
+<button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">🌟 Show What You Know <span class="tab-check">✓</span></button>
+</div>
+<!-- ═══════════ WARM-UP TAB ═══════════ -->
+<div class="tab-panel active" id="tab-warmup">
+<div class="fluency-box" data-timed="false">
+<div class="fluency-head">
+<div class="fluency-head-icon">✍️</div>
+<div><div class="fluency-head-label">FLUENCY WARM-UP</div><div class="fluency-head-title">Make-10 Facts</div></div>
+</div>
+<div class="fluency-body">
+<p class="fluency-instructions">Warm up your fact fluency before today’s lesson. Work through these, then check your answers.</p>
+<div class="fluency-grid" id="fluencyGrid">
+<div class="fluency-item"><span class="fluency-q">8 + 2 =</span><input autocomplete="off" class="fluency-input" data-answer="10" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">7 + 3 =</span><input autocomplete="off" class="fluency-input" data-answer="10" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">6 + 4 =</span><input autocomplete="off" class="fluency-input" data-answer="10" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">9 + 1 =</span><input autocomplete="off" class="fluency-input" data-answer="10" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">4 + 6 =</span><input autocomplete="off" class="fluency-input" data-answer="10" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">10 - 3 =</span><input autocomplete="off" class="fluency-input" data-answer="7" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">10 - 6 =</span><input autocomplete="off" class="fluency-input" data-answer="4" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">10 - 8 =</span><input autocomplete="off" class="fluency-input" data-answer="2" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">3 + 7 =</span><input autocomplete="off" class="fluency-input" data-answer="10" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">10 - 4 =</span><input autocomplete="off" class="fluency-input" data-answer="6" inputmode="numeric" type="text"/></div>
+</div>
+<button class="fluency-check-btn" id="fluencyCheckBtn" onclick="fluencyCheck()">Check My Answers</button>
+<div class="fluency-result" id="fluencyResult"></div>
+</div>
+<textarea class="journal-box" data-label="Fluency Warm-Up (Make-10 Facts)" id="fluencyJournal" readonly="" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;"></textarea>
+</div>
 
+<div class="activity bl-yellow"><div class="activity-head"><div class="activity-num" style="background:#F5C518;color:#0E1C42;">🔎</div><div><div class="activity-title">Warm-Up: A Quick Place-Value Check</div><div class="activity-sub">Make sure last lesson's work still feels solid.</div></div><span class="activity-time" style="background:#F5C518;color:#0E1C42;">~4 min</span></div><div class="activity-body">
+<p>Two numbers. One has more <strong>hundreds</strong> than the other. Which one?</p>
+<div class="value-card-row">
+<div class="value-card" onclick="checkReadiness(this,false)"><div class="big">4,300</div><div class="small">how many hundreds?</div></div>
+<div class="value-card" onclick="checkReadiness(this,true)"><div class="big">4,500</div><div class="small">how many hundreds?</div></div>
+</div>
+<div class="inline-feedback" id="readiness-fb"></div>
+<div class="hint-callout" style="margin-top:8px;">Tip: 4,500 has 45 hundreds; 4,300 has 43 hundreds. Same thousands, different hundreds.</div>
+</div></div>
+
+<div class="activity bl-yellow"><div class="activity-head"><div class="activity-num" style="background:#F5C518;color:#0E1C42;">🤔</div><div><div class="activity-title">Think About It: The Tricky Pair</div><div class="activity-sub">Look carefully — then take a guess.</div></div></div><div class="activity-body">
+<div class="callout callout-think"><span class="callout-icon">⛰️</span><p>Two climbers measured the height of two mountains. They came back with these readings: <strong>3,998 meters</strong> and <strong>4,008 meters</strong>. Which mountain is taller?</p></div>
+<div class="number-talk-visual">
+<div class="number-talk-prompt">Look at these two numbers carefully before you guess. What do you notice? What do you wonder?</div>
+<div style="display:flex;gap:14px;justify-content:center;margin:10px 0;flex-wrap:wrap;">
+<div style="background:#fff;border:2px solid #D8CCF0;border-radius:14px;padding:14px 22px;text-align:center;"><div style="font-size:11px;color:#6B3FA0;font-weight:900;letter-spacing:.6px;text-transform:uppercase;margin-bottom:6px;">Mountain A</div><div style="font-family:'Lora',Georgia,serif;font-size:30px;font-weight:800;color:#0E1C42;">3,998 m</div></div>
+<div style="background:#fff;border:2px solid #B8E8CF;border-radius:14px;padding:14px 22px;text-align:center;"><div style="font-size:11px;color:#1A8A5A;font-weight:900;letter-spacing:.6px;text-transform:uppercase;margin-bottom:6px;">Mountain B</div><div style="font-family:'Lora',Georgia,serif;font-size:30px;font-weight:800;color:#0E1C42;">4,008 m</div></div>
+</div>
+<div class="notice-wonder-grid">
+<div class="notice-wonder-box"><h4>🔍 I Notice…</h4><textarea class="journal-box" data-label="Warm-Up — Notice: 3,998 vs 4,008" id="journal-notice" oninput="autoSave(this,'dot-notice')" placeholder="" style="min-height:60px;"></textarea><span class="saved-dot" id="dot-notice"></span></div>
+<div class="notice-wonder-box"><h4>❓ I Wonder…</h4><textarea class="journal-box" data-label="Warm-Up — Wonder: 3,998 vs 4,008" id="journal-wonder" oninput="autoSave(this,'dot-wonder')" placeholder="" style="min-height:60px;"></textarea><span class="saved-dot" id="dot-wonder"></span></div>
+</div>
+</div>
+<p><strong>Guess first:</strong> Which is taller — Mountain A or Mountain B?</p>
+<div class="strategy-chip-row">
+<button class="strategy-chip" onclick="this.classList.toggle('selected')">Mountain A (3,998)</button>
+<button class="strategy-chip" onclick="this.classList.toggle('selected')">Mountain B (4,008)</button>
+<button class="strategy-chip" onclick="this.classList.toggle('selected')">They're the same</button>
+</div>
+<div class="callout callout-tip"><span class="callout-icon">🧠</span><p><strong>Before the next tab:</strong> Notice that 3,998 has BIGGER digits in some places (the 9s) — but Mountain B is taller anyway. Why might that be?</p></div>
+<div class="journal-label">✏️ My prediction <span class="saved-dot" id="dot-think"></span></div>
+<textarea class="journal-box" data-label="Warm-Up — Think Prompt: Which mountain is taller?" id="journal-think" oninput="autoSave(this,'dot-think')" placeholder="I think Mountain ___ is taller because…"></textarea>
+</div></div>
+<div class="tab-next-wrap"><p class="tab-transition-voice">Hold onto your guess. The Learn tab has a tool that compares two numbers one place at a time — and shows you exactly how the rule works.</p><button class="tab-next-btn" onclick="switchTab('learn')">Continue to 📐 Learn →</button></div>
+</div>
+<!-- ═══════════ LEARN TAB ═══════════ -->
+<div class="tab-panel" id="tab-learn">
+<div aria-label="Daily vocabulary flash cards" class="vocab-section">
+<div class="vocab-section-head"><div class="vocab-section-icon">📚</div><div><div class="vocab-section-label">Daily Vocabulary</div><div class="vocab-section-title">Tap to Build Today's Math Language</div></div></div>
+<p class="vocab-section-directions">Tap each card to flip it. Read the word, then read the meaning. You'll use these words to compare numbers today.</p>
+<div class="vocab-grid">
+<div class="flip-card fc-color-1" onclick="this.classList.toggle('flipped')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('flipped');}" role="button" tabindex="0">
+<div class="flip-card-inner">
+<div class="flip-card-front"><div class="fc-emoji">⚖️</div><div class="fc-word">compare</div><div class="fc-tap">tap to flip</div></div>
+<div class="flip-card-back"><div class="fc-word-back">compare</div><div class="fc-def">to look at two numbers and decide which is greater, which is less, or whether they are equal.</div><div class="fc-tap-back">tap to flip back</div></div>
+</div>
+</div>
+<div class="flip-card fc-color-2" onclick="this.classList.toggle('flipped')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('flipped');}" role="button" tabindex="0">
+<div class="flip-card-inner">
+<div class="flip-card-front"><div class="fc-emoji">▶️</div><div class="fc-word">greater than (&gt;)</div><div class="fc-tap">tap to flip</div></div>
+<div class="flip-card-back"><div class="fc-word-back">greater than</div><div class="fc-def">a symbol that means "more than." The open side points to the bigger number. 8 &gt; 3 means 8 is greater than 3.</div><div class="fc-tap-back">tap to flip back</div></div>
+</div>
+</div>
+<div class="flip-card fc-color-3" onclick="this.classList.toggle('flipped')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('flipped');}" role="button" tabindex="0">
+<div class="flip-card-inner">
+<div class="flip-card-front"><div class="fc-emoji">◀️</div><div class="fc-word">less than (&lt;)</div><div class="fc-tap">tap to flip</div></div>
+<div class="flip-card-back"><div class="fc-word-back">less than</div><div class="fc-def">a symbol that means "smaller than." The point of the symbol points to the smaller number. 3 &lt; 8 means 3 is less than 8.</div><div class="fc-tap-back">tap to flip back</div></div>
+</div>
+</div>
+<div class="flip-card fc-color-4" onclick="this.classList.toggle('flipped')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('flipped');}" role="button" tabindex="0">
+<div class="flip-card-inner">
+<div class="flip-card-front"><div class="fc-emoji">🟰</div><div class="fc-word">equal to (=)</div><div class="fc-tap">tap to flip</div></div>
+<div class="flip-card-back"><div class="fc-word-back">equal to</div><div class="fc-def">a symbol that means "the same value." 5 = 5 means the two sides have the same value.</div><div class="fc-tap-back">tap to flip back</div></div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="callout callout-info" style="margin-bottom:14px;"><span class="callout-icon">🤔</span><p>The Concept video showed the rule. The comparator below lets you do it yourself — one place at a time. Watch what happens to the symbol in the middle.</p></div>
+<!-- ───── INTERACTIVE COMPARATOR ───── -->
+<div class="activity bl-violet"><div class="activity-head"><div class="activity-num" style="background:#6B3FA0;">⚖️</div><div><div class="activity-title">The Comparator: Step Through Each Place</div><div class="activity-sub">Compare 3,998 and 4,008 — left to right.</div></div></div><div class="activity-body">
+<p>Tap <strong>Compare next place →</strong> to check each column from left to right. The first place where the digits differ decides which number is greater. Watch the symbol in the middle change.</p>
+<div class="compare-pair" id="comparePair-1">
+<div class="cmp-num">
+<div class="cmp-label">Mountain A</div>
+<div class="place-tags"><span class="place-tag">Th</span><span class="place-tag">H</span><span class="place-tag">T</span><span class="place-tag">O</span></div>
+<div class="cmp-digits" id="cmp-row-A-1">
+<span class="cmp-digit" data-place="k">3</span>
+<span class="cmp-digit" data-place="h">9</span>
+<span class="cmp-digit" data-place="t">9</span>
+<span class="cmp-digit" data-place="o">8</span>
+</div>
+</div>
+<div class="cmp-symbol" id="cmpSymbol-1">?</div>
+<div class="cmp-num">
+<div class="cmp-label">Mountain B</div>
+<div class="place-tags"><span class="place-tag">Th</span><span class="place-tag">H</span><span class="place-tag">T</span><span class="place-tag">O</span></div>
+<div class="cmp-digits" id="cmp-row-B-1">
+<span class="cmp-digit" data-place="k">4</span>
+<span class="cmp-digit" data-place="h">0</span>
+<span class="cmp-digit" data-place="t">0</span>
+<span class="cmp-digit" data-place="o">8</span>
+</div>
+</div>
+</div>
+<div class="cmp-controls">
+<button class="purple-btn" id="cmpNext-1" onclick="compareNextPlace(1)">Compare next place →</button>
+<button class="orange-btn" onclick="resetCompare(1)">↩ Reset</button>
+</div>
+<div class="cmp-log" id="cmpLog-1"><div class="log-item">Tap <strong>Compare next place →</strong> to begin. We always start at the thousands place — the leftmost.</div></div>
+<div class="journal-label">✏️ After the comparator finishes, write what happened in one sentence. <span class="saved-dot" id="dot-cmp"></span></div>
+<textarea class="journal-box" data-label="Learn — Comparator: What happened" id="journal-cmp" oninput="autoSave(this,'dot-cmp')" placeholder=""></textarea>
+</div></div>
+<div class="key-concept"><div class="key-concept-label">📐 Key Concept — What You Just Saw</div>
+<p><strong>To compare two numbers, look at the place-value digits from left to right.</strong></p>
+<p>Find the FIRST place where the two digits are different. The number with the bigger digit in that place is the greater number. You don't need to check the places after that — the comparison is already decided.</p>
+<p style="text-align:center;font-size:17px;background:#fff;border:2px solid #D8CCF0;border-radius:10px;padding:12px;margin:10px 0;"><strong>3,998 &lt; 4,008</strong>   ·   <strong>4,500 &gt; 4,300</strong>   ·   <strong>2,617 = 2,617</strong></p>
+<p style="font-style:italic;color:#6B3FA0;">The open side of &gt; or &lt; always points to the greater number. Some students remember it as "the alligator eats the bigger one."</p>
+</div>
+<!-- ───── EXAMPLES TABLE ───── -->
+<div class="activity bl-slate"><div class="activity-head"><div class="activity-num" style="background:#3A6B9A;">📋</div><div><div class="activity-title">Three Pairs, Three Reasons</div><div class="activity-sub">Each pair is decided at a different place.</div></div></div><div class="activity-body">
+<p>Read each row. Notice which place decided the comparison — sometimes it's thousands, sometimes hundreds, sometimes tens.</p>
+<table class="ways-table" style="margin:14px 0;width:100%;border-collapse:separate;border-spacing:0;background:#fff;border:2px solid #E2E8F4;border-radius:14px;overflow:hidden;">
+<thead><tr><th style="background:#0E1C42;color:#fff;font-size:12px;padding:12px;text-align:left;text-transform:uppercase;font-weight:900;letter-spacing:.4px;">Pair</th><th style="background:#0E1C42;color:#fff;font-size:12px;padding:12px;text-align:left;text-transform:uppercase;font-weight:900;letter-spacing:.4px;">What decides it</th><th style="background:#0E1C42;color:#fff;font-size:12px;padding:12px;text-align:center;text-transform:uppercase;font-weight:900;letter-spacing:.4px;">Result</th></tr></thead>
+<tbody>
+<tr><td style="padding:14px;border-top:1px solid #E2E8F4;font-family:'Lora',Georgia,serif;font-size:20px;font-weight:800;color:#0E1C42;">3,998  vs  4,008</td><td style="padding:14px;border-top:1px solid #E2E8F4;font-size:15px;color:#3A4A6B;">Thousands place — 3 vs 4. 4 is greater.</td><td style="padding:14px;border-top:1px solid #E2E8F4;text-align:center;font-family:'Lora',Georgia,serif;font-size:20px;font-weight:800;color:#1A8A5A;background:#FAFBFF;border-left:1px dashed #E2E8F4;">3,998 &lt; 4,008</td></tr>
+<tr><td style="padding:14px;border-top:1px solid #E2E8F4;font-family:'Lora',Georgia,serif;font-size:20px;font-weight:800;color:#0E1C42;">5,432  vs  5,418</td><td style="padding:14px;border-top:1px solid #E2E8F4;font-size:15px;color:#3A4A6B;">Thousands tie (5=5). Hundreds tie (4=4). Tens place — 3 vs 1. 3 is greater.</td><td style="padding:14px;border-top:1px solid #E2E8F4;text-align:center;font-family:'Lora',Georgia,serif;font-size:20px;font-weight:800;color:#1A8A5A;background:#FAFBFF;border-left:1px dashed #E2E8F4;">5,432 &gt; 5,418</td></tr>
+<tr><td style="padding:14px;border-top:1px solid #E2E8F4;font-family:'Lora',Georgia,serif;font-size:20px;font-weight:800;color:#0E1C42;">2,617  vs  2,617</td><td style="padding:14px;border-top:1px solid #E2E8F4;font-size:15px;color:#3A4A6B;">Every place ties. The numbers are equal.</td><td style="padding:14px;border-top:1px solid #E2E8F4;text-align:center;font-family:'Lora',Georgia,serif;font-size:20px;font-weight:800;color:#1A8A5A;background:#FAFBFF;border-left:1px dashed #E2E8F4;">2,617 = 2,617</td></tr>
+</tbody>
+</table>
+<p style="margin-top:18px;"><strong>Try the comparator on Pair 2.</strong> The middle row of the table (5,432 vs 5,418) doesn't get decided at the thousands place. Step through it yourself — notice how the tool waits past the ties before it lands on the deciding place.</p>
+<div class="compare-pair" id="comparePair-2">
+<div class="cmp-num">
+<div class="cmp-label">Number A</div>
+<div class="place-tags"><span class="place-tag">Th</span><span class="place-tag">H</span><span class="place-tag">T</span><span class="place-tag">O</span></div>
+<div class="cmp-digits" id="cmp-row-A-2">
+<span class="cmp-digit" data-place="k">5</span>
+<span class="cmp-digit" data-place="h">4</span>
+<span class="cmp-digit" data-place="t">3</span>
+<span class="cmp-digit" data-place="o">2</span>
+</div>
+</div>
+<div class="cmp-symbol" id="cmpSymbol-2">?</div>
+<div class="cmp-num">
+<div class="cmp-label">Number B</div>
+<div class="place-tags"><span class="place-tag">Th</span><span class="place-tag">H</span><span class="place-tag">T</span><span class="place-tag">O</span></div>
+<div class="cmp-digits" id="cmp-row-B-2">
+<span class="cmp-digit" data-place="k">5</span>
+<span class="cmp-digit" data-place="h">4</span>
+<span class="cmp-digit" data-place="t">1</span>
+<span class="cmp-digit" data-place="o">8</span>
+</div>
+</div>
+</div>
+<div class="cmp-controls">
+<button class="purple-btn" id="cmpNext-2" onclick="compareNextPlace(2)">Compare next place →</button>
+<button class="orange-btn" onclick="resetCompare(2)">↩ Reset</button>
+</div>
+<div class="cmp-log" id="cmpLog-2"><div class="log-item">Tap <strong>Compare next place →</strong> to begin. Thousands first, then hundreds, then tens — the tool keeps going past ties.</div></div>
+<div class="callout callout-tip" style="margin-top:14px;"><span class="callout-icon">🔍</span><p><strong>Look for the pattern:</strong> The "deciding place" can be ANY place. The rule is the same every time: start at the left, find the first difference, and that place picks the winner. Sometimes the tool decides at thousands, sometimes it has to walk all the way to tens or ones.</p></div>
+</div></div>
+<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">⛰️</div><div><div class="activity-title">Worked Example: Back to the Mountains</div><div class="activity-sub">Now we name the mountains and prove the answer.</div></div></div><div class="activity-body">
+<div class="task-box"><div class="task-label">Problem</div><p>The two mountains from the warm-up have real names: <strong>Mount Tyree</strong> in Antarctica is <strong>4,852 m</strong> and <strong>Pichu Pichu</strong> in Peru is <strong>5,664 m</strong>. Which is taller?</p></div>
+<p style="margin-bottom:8px;font-weight:700;color:#3A4A6B;">Watch how each of the Math Crew sees the comparison:</p>
+<div class="bubble-row">
+<div class="bubble atlas"><div class="bubble-avatar">A</div><div class="bubble-body"><div class="bubble-name">Atlas — concrete</div><div class="bubble-text">"Line up the discs. Tyree has 4 thousand-discs, Pichu Pichu has 5. Different at the very first column."</div></div></div>
+<div class="bubble hazel"><div class="bubble-avatar">H</div><div class="bubble-body"><div class="bubble-name">Hazel — pictorial</div><div class="bubble-text">"I stack them on a place-value chart. Thousands: 4 vs 5. The leftmost difference jumps out."</div></div></div>
+</div>
+<p style="font-family:'Lora',Georgia,serif;background:#FAFBFF;border:2px solid #E2E8F4;border-radius:12px;padding:10px;text-align:center;font-size:20px;font-weight:800;">Tyree: <strong>4</strong>,852  ·  Pichu Pichu: <strong>5</strong>,664  →  4,852 &lt; 5,664</p>
+<div class="bubble-row">
+<div class="bubble felix"><div class="bubble-avatar">F</div><div class="bubble-body"><div class="bubble-name">Felix — shortcut</div><div class="bubble-text">"Thousands differ — 5 wins. Done. I don't even need to look at the other places."</div></div></div>
+<div class="bubble cora"><div class="bubble-avatar">C</div><div class="bubble-body"><div class="bubble-name">Cora — checking</div><div class="bubble-text">"Sanity check: 5,664 − 4,852 = 812. Pichu Pichu really is 812 m taller. ✓ The hundreds digit 8 in Tyree looked big, but it couldn't beat the thousands."</div></div></div>
+</div>
+<div class="callout callout-tip"><span class="callout-icon">💡</span><p>The leftmost difference always wins. Bigger places overrule smaller ones — no exceptions.</p></div>
+</div></div>
+
+<div class="socratic-box"><div class="socratic-label">🔮 Think Like a Mathematician</div><p class="socratic-q">If two numbers both have the same digit in thousands, hundreds, AND tens, what is the only place left that can decide which is greater?</p><div class="journal-label">✏️ My reasoning <span class="saved-dot" id="dot-soc1"></span></div><textarea class="journal-box" data-label="Learn — Socratic: When thousands, hundreds, tens all match" id="journal-soc1" oninput="autoSave(this,'dot-soc1')" placeholder=""></textarea></div>
+<div class="tab-next-wrap"><p class="tab-transition-voice">You compared two numbers digit by digit. Now try some pairs on your own — and try ordering more than two numbers at once.</p><button class="tab-next-btn" onclick="switchTab('practice')">Continue to 🧮 Practice →</button></div>
+</div>
+<!-- ═══════════ PRACTICE TAB ═══════════ -->
+<div class="tab-panel" id="tab-practice">
+<div class="callout callout-info"><span class="callout-icon">🧭</span><p>You just compared <strong>3,998 and 4,008</strong> using the comparator. Practice now asks you to do the same kind of comparing with new pairs — and then to order a small group of numbers. Each problem changes <strong>one small thing</strong> from the last.</p></div>
+<div class="callout callout-think"><span class="callout-icon">🧠</span><p><strong>Before each problem, ask yourself:</strong> Where is the first place these digits differ? That place decides.</p></div>
+<div class="callout callout-tip"><span class="callout-icon">💡</span><p><strong>Stuck?</strong> Go back to the Learn tab and watch the comparator step through a pair — that's the same thinking these problems want.</p></div>
+<!-- Practice 1 — Choose the symbol -->
+<div class="activity bl-violet"><div class="activity-head"><div class="activity-num" style="background:#6B3FA0;">1</div><div><div class="activity-title">Choose the Symbol</div><div class="activity-sub">Pick &gt;, &lt;, or = for each pair.</div></div><span class="activity-time" style="background:#6B3FA0;">~5 min</span></div><div class="activity-body">
+<p>For each pair, tap the symbol that makes the comparison true. Remember: the open side of &gt; or &lt; points to the bigger number.</p>
+<div class="sym-pair"><span>3,521</span><span class="symbol-picker" data-key="p1a">
+<button class="sym-btn" onclick="pickSym('p1a',this,'&gt;')">&gt;</button>
+<button class="sym-btn" onclick="pickSym('p1a',this,'&lt;')">&lt;</button>
+<button class="sym-btn" onclick="pickSym('p1a',this,'=')">=</button>
+</span><span>3,512</span></div>
+<div class="sym-pair"><span>6,030</span><span class="symbol-picker" data-key="p1b">
+<button class="sym-btn" onclick="pickSym('p1b',this,'&gt;')">&gt;</button>
+<button class="sym-btn" onclick="pickSym('p1b',this,'&lt;')">&lt;</button>
+<button class="sym-btn" onclick="pickSym('p1b',this,'=')">=</button>
+</span><span>6,042</span></div>
+<div class="sym-pair"><span>4,748</span><span class="symbol-picker" data-key="p1c">
+<button class="sym-btn" onclick="pickSym('p1c',this,'&gt;')">&gt;</button>
+<button class="sym-btn" onclick="pickSym('p1c',this,'&lt;')">&lt;</button>
+<button class="sym-btn" onclick="pickSym('p1c',this,'=')">=</button>
+</span><span>4,698</span></div>
+<div class="sym-pair"><span>2,617</span><span class="symbol-picker" data-key="p1d">
+<button class="sym-btn" onclick="pickSym('p1d',this,'&gt;')">&gt;</button>
+<button class="sym-btn" onclick="pickSym('p1d',this,'&lt;')">&lt;</button>
+<button class="sym-btn" onclick="pickSym('p1d',this,'=')">=</button>
+</span><span>2,617</span></div>
+<button class="check-btn" onclick="checkP1()">Check My Symbols ✓</button>
+<div class="feedback-branch feedback-pass" id="p1-pass"><strong>✅ Yes — you found every "deciding place."</strong> 3,521 &gt; 3,512 (decided at tens), 6,030 &lt; 6,042 (decided at tens), 4,748 &gt; 4,698 (decided at hundreds), 2,617 = 2,617 (every place ties).
+      
+</div>
+<div class="feedback-branch feedback-retry" id="p1-retry"><strong>🔄 Let's check each pair carefully.</strong>
+<div class="hint-callout">For each pair, start at the leftmost place (thousands). If those digits are the same, move right to hundreds. Stop at the FIRST place where the digits differ. That place picks the winner. The open side of &gt; or &lt; points to the larger number.</div>
+
+<button class="orange-btn" onclick="resetP1()">↩ Reset and Try Again</button>
+</div>
+</div></div>
+<!-- Practice 2 — Order three numbers -->
+<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">2</div><div><div class="activity-title">Put Them in Order</div><div class="activity-sub">Three numbers, least to greatest.</div></div><span class="activity-time" style="background:#2DB87A;">~5 min</span></div><div class="activity-body">
+<div class="callout callout-tip"><span class="callout-icon">🔍</span><p><strong>What changed?</strong> In Problem 1, you compared <em>two</em> numbers at a time. Now you'll compare <em>three</em> — same rule, just done twice.</p></div>
+<div class="student-task-banner"><strong>Your task:</strong> Order these three numbers from <strong>least to greatest</strong>.<span class="task-steps">Tap a number, then tap the slot where it belongs. Use the rule: compare left-to-right, find the first difference.</span></div>
+<div class="order-bank" id="orderBank">
+<button class="order-chip" data-val="8657" onclick="selectOrderChip(this)">8,657</button>
+<button class="order-chip" data-val="8756" onclick="selectOrderChip(this)">8,756</button>
+<button class="order-chip" data-val="8675" onclick="selectOrderChip(this)">8,675</button>
+</div>
+<div class="order-label-row"><div>Least</div><div>Middle</div><div>Greatest</div></div>
+<div class="order-slots">
+<div class="order-slot" data-pos="0" onclick="placeOrderChip(this)">?</div>
+<div class="order-slot" data-pos="1" onclick="placeOrderChip(this)">?</div>
+<div class="order-slot" data-pos="2" onclick="placeOrderChip(this)">?</div>
+</div>
+<button class="check-btn" onclick="checkP2()">Check My Order ✓</button>
+<div class="feedback-branch feedback-pass" id="p2-pass"><strong>✅ In order: 8,657 &lt; 8,675 &lt; 8,756.</strong> Thousands all tie at 8. Hundreds tie at 6 for two of them. So tens decides: 5 &lt; 7 in 8,657 vs 8,675. Then 8,756 beats both because its hundreds place (7) is bigger than the other two (6).
+      
+</div>
+<div class="feedback-branch feedback-retry" id="p2-retry"><strong>🔄 Let's go slow and order them step by step.</strong>
+<div class="hint-callout">Look at thousands first (all 8 — tied). Now hundreds: 6, 7, 6. The 7 is biggest, so 8,756 is the greatest. Compare the remaining two using tens: 8,657 has 5 tens, 8,675 has 7 tens. 5 &lt; 7.</div>
+
+<button class="orange-btn" onclick="resetP2()">↩ Reset and Try Again</button>
+</div>
+</div></div>
+<!-- Practice 3 — Mystery number (clue judgment) -->
+<div class="activity bl-violet"><div class="activity-head"><div class="activity-num" style="background:#6B3FA0;">3</div><div><div class="activity-title">The Mystery Number</div><div class="activity-sub">Use the clues. Only one number works.</div></div></div><div class="activity-body">
+<div class="callout callout-tip"><span class="callout-icon">🔍</span><p><strong>What changed?</strong> Now the comparison is hidden inside clues. You have to figure out which number fits ALL of them.</p></div>
+<div class="task-box"><div class="task-label">Clues</div>
+<p style="margin-bottom:6px;"><strong>Clue 1:</strong> The digit 4 is in the <em>hundreds</em> place.</p>
+<p style="margin-bottom:6px;"><strong>Clue 2:</strong> The number has <em>more than 40 hundreds</em>.</p>
+<p style="margin-bottom:0;"><strong>Clue 3:</strong> The number has <em>less than 450 tens</em>.</p>
+</div>
+<div class="multi-check-grid" id="multiGrid">
+<div class="multi-card" data-ok="false" onclick="toggleMulti(this)"><span class="mc-check"></span><span>3,400</span></div>
+<div class="multi-card" data-ok="true" onclick="toggleMulti(this)"><span class="mc-check"></span><span>4,445</span></div>
+<div class="multi-card" data-ok="false" onclick="toggleMulti(this)"><span class="mc-check"></span><span>5,440</span></div>
+<div class="multi-card" data-ok="false" onclick="toggleMulti(this)"><span class="mc-check"></span><span>4,500</span></div>
+</div>
+<button class="check-btn" onclick="checkP3()">Reveal the Mystery Number ✓</button>
+<div class="feedback-branch feedback-pass" id="p3-pass"><strong>✅ The mystery number is 4,445.</strong> It has 4 in the hundreds place (Clue 1 ✓), it has 44 hundreds — more than 40 (Clue 2 ✓), and it has 444 tens — less than 450 (Clue 3 ✓). The others fail at least one clue: 3,400 has only 34 hundreds. 5,440 has 544 tens (too many). 4,500 has 5 in hundreds, not 4.
+      
+</div>
+<div class="feedback-branch feedback-retry" id="p3-retry"><strong>🔄 Use the clues one at a time to eliminate.</strong>
+<div class="hint-callout">Use each clue to eliminate. Clue 1 wants a 4 in the hundreds place. Clue 2 wants more than 40 hundreds total (review Lesson 1.02 if needed — count the hundreds inside the whole number). Clue 3 wants less than 450 tens (same idea, with tens). Whichever number passes ALL three is the mystery number.</div>
+
+<button class="orange-btn" onclick="resetP3()">↩ Reset and Try Again</button>
+</div>
+</div></div>
+<div class="socratic-box"><div class="socratic-label">🔮 Think Like a Mathematician</div><p class="socratic-q">A friend says, "9 is bigger than 4, so 3,998 must be bigger than 4,008." What's wrong with the friend's thinking?</p><div class="journal-label">✏️ My reasoning <span class="saved-dot" id="dot-soc2"></span></div><textarea class="journal-box" data-label="Practice — Socratic: Why 9 doesn't always win" id="journal-soc2" oninput="autoSave(this,'dot-soc2')" placeholder=""></textarea></div>
+<div class="tab-next-wrap"><p class="tab-transition-voice">You picked symbols, ordered numbers, and used clues. Time to show what you know.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
+</div>
+<!-- ═══════════ SHOW WHAT YOU KNOW TAB ═══════════ -->
+<div class="tab-panel" id="tab-assignment">
+<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">🎯</div><div><div class="activity-title">Ready Check</div><div class="activity-sub">Two quick questions before the main assignment.</div></div></div><div class="activity-body">
+<p>If you get both right, you're ready for the full assignment. If not, head back to the Learn tab — the comparator and the three-pairs table will help.</p>
+<div class="q-block"><p class="q-text"><span class="q-num">A</span>Which symbol makes this true?   <strong>6,365 ___ 7,390</strong></p>
+<div class="value-card-row">
+<div class="value-card" onclick="checkExitA(this,false)"><div class="big">&gt;</div><div class="small">greater than</div></div>
+<div class="value-card" onclick="checkExitA(this,true)"><div class="big">&lt;</div><div class="small">less than</div></div>
+<div class="value-card" onclick="checkExitA(this,false)"><div class="big">=</div><div class="small">equal to</div></div>
+</div>
+<div class="inline-feedback" id="exitA-fb"></div>
+</div>
+<div class="q-block"><p class="q-text"><span class="q-num">B</span>Which list is in order from <strong>least to greatest</strong>?</p>
+<div class="value-card-row">
+<div class="value-card" onclick="checkExitB(this,false)" style="min-width:240px;"><div class="big" style="font-size:16px;">5,009  ·  5,900  ·  5,090</div></div>
+<div class="value-card" onclick="checkExitB(this,true)" style="min-width:240px;"><div class="big" style="font-size:16px;">5,009  ·  5,090  ·  5,900</div></div>
+<div class="value-card" onclick="checkExitB(this,false)" style="min-width:240px;"><div class="big" style="font-size:16px;">5,900  ·  5,090  ·  5,009</div></div>
+</div>
+<div class="inline-feedback" id="exitB-fb"></div>
+</div>
+</div></div>
+<div class="activity bl-navy"><div class="activity-head"><div class="activity-num" style="background:#0E1C42;">📬</div><div><div class="activity-title">Show What You Know</div><div class="activity-sub">Use models, numbers, and words. Six problems.</div></div></div><div class="activity-body">
+<div class="callout callout-think"><span class="callout-icon">🧠</span><p><strong>For each problem, ask yourself:</strong> Where is the first place these digits differ? Which symbol points to the bigger number?</p></div>
+<div class="q-block"><p class="q-text"><span class="q-num">1</span>Write the correct symbol (&gt;, &lt;, or =) between each pair.<br/>(a) 4,000 + 100 + 40 ___ 1,000 + 40 + 600<br/>(b) 900 + 50 + 4,000 ___ 9 + 5 + 90</p><div class="journal-label">✏️ My answers <span class="saved-dot" id="dot-a1"></span></div><textarea class="journal-box" data-label="Show What You Know — Problem 1: Compare expanded forms" id="journal-a1" oninput="autoSave(this,'dot-a1')" placeholder=""></textarea></div>
+<div class="q-block"><p class="q-text"><span class="q-num">2</span>Arrange these numbers in order from <strong>greatest to least</strong>: <strong>5,900  ·  9,050  ·  5,009  ·  5,950</strong></p><div class="journal-label">✏️ My answer <span class="saved-dot" id="dot-a2"></span></div><textarea class="journal-box" data-label="Show What You Know — Problem 2: Greatest to least" id="journal-a2" oninput="autoSave(this,'dot-a2')" placeholder=""></textarea></div>
+<div class="q-block"><p class="q-text"><span class="q-num">3</span>Using the table of mountain heights, arrange the mountains from <strong>tallest to shortest</strong>:<br/><span style="font-family:'Lora',Georgia,serif;font-size:15px;display:block;margin:8px 0 4px;background:#FAFBFF;border:2px solid #E2E8F4;border-radius:10px;padding:10px;line-height:2;">Mount Everest (Nepal): 8,848 m  ·  Pichu Pichu (Peru): 5,664 m  ·  Mount Tyree (Antarctica): 4,852 m  ·  Mont Blanc (France): 4,810 m  ·  Castle Peak (USA): 4,348 m</span></p><div class="journal-label">✏️ My answer (tallest first) <span class="saved-dot" id="dot-a3"></span></div><textarea class="journal-box" data-label="Show What You Know — Problem 3: Mountain heights tallest to shortest" id="journal-a3" oninput="autoSave(this,'dot-a3')" placeholder=""></textarea></div>
+<div class="q-block"><p class="q-text"><span class="q-num">4</span>Using only the digits <strong>4, 0, 6, 8</strong> exactly once each, write the <strong>greatest</strong> 4-digit number and the <strong>least</strong> 4-digit number you can make.</p><div class="journal-label">✏️ My answer <span class="saved-dot" id="dot-a4"></span></div><textarea class="journal-box" data-label="Show What You Know — Problem 4: Greatest and least from digits 4,0,6,8" id="journal-a4" oninput="autoSave(this,'dot-a4')" placeholder="Greatest: ___. Least: ___."></textarea></div>
+<div class="q-block"><p class="q-text"><span class="q-num">5</span><strong>Mystery number.</strong> Use the clues to find the 4-digit number.<br/><em>Clue 1:</em> The thousands digit is 7.<br/><em>Clue 2:</em> The number is less than 7,500.<br/><em>Clue 3:</em> The hundreds digit equals the tens digit.<br/><em>Clue 4:</em> The ones digit is 0.</p><div class="journal-label">✏️ My answer + how I used each clue <span class="saved-dot" id="dot-a5"></span></div><textarea class="journal-box" data-label="Show What You Know — Problem 5: Mystery number with 4 clues" id="journal-a5" oninput="autoSave(this,'dot-a5')" placeholder=""></textarea></div>
+<div class="q-block"><p class="q-text"><span class="q-num">6</span><strong>Reflection:</strong> A friend says, "When you compare numbers, the bigger digit always wins." Is your friend right? Use one of today's vocabulary words (compare, greater than, less than, equal to) in your answer.</p><div class="journal-label">✏️ My reflection <span class="saved-dot" id="dot-a6"></span></div><textarea class="journal-box" data-label="Show What You Know — Problem 6: Reflection on 'bigger digit always wins'" id="journal-a6" oninput="autoSave(this,'dot-a6')" placeholder=""></textarea></div>
+<div class="activity bl-slate" style="margin-top:18px;border-left-color:#55C8E8;"><div class="activity-head"><div class="activity-num" style="background:#55C8E8;color:#0E1C42;">🗺️</div><div><div class="activity-title">Connection Forward: What Comes Next</div><div class="activity-sub">Preview Lesson 3.01.04 — The Number Line</div></div></div><div class="activity-body">
+<p>Today you compared numbers by lining them up on a place-value chart. Tomorrow you'll line them up on a different tool: a <strong>number line</strong>.</p>
+<p>A number line lets you SEE where a number sits between two landmarks. You'll learn to plot numbers like 4,852 on a line that runs from 4,000 to 5,000 — and that picture will help you compare and round in lessons coming up.</p>
+<p>Big question next time: <em>How do you know where a number lives on a number line?</em></p>
+</div></div>
+</div></div>
+
+<div class="gathered-box"><div class="gathered-head"><div class="gathered-head-icon">📋</div><div><div class="gathered-head-label">Your Math Journal</div><div class="gathered-head-title">All Answers from Today</div></div></div><div class="gathered-body"><textarea class="gathered-output" id="gatheredOutput" readonly="">Click "Gather My Answers" to collect your work.</textarea><div class="gathered-actions"><button class="purple-btn" onclick="gatherAnswers()">📋 Gather My Answers</button><button class="green-btn" onclick="copyAnswers()">Copy All Answers</button><button class="check-btn" onclick="downloadJournal()">Download My Math Journal</button></div></div></div>
+<div class="turn-in-card"><div class="turn-in-header"><div class="turn-in-header-icon">✅</div><div><div class="turn-in-header-label">Turn-In Checklist</div><div class="turn-in-header-title">Ready to Submit?</div></div></div><div class="turn-in-body">
+<div class="turn-in-item" onclick="toggleCheck(this)"><span class="turn-in-check">✓</span><span>I completed the Show What You Know problems on this lesson page.</span></div>
+<div class="turn-in-item" onclick="toggleCheck(this)"><span class="turn-in-check">✓</span><span>I used &gt;, &lt;, or = correctly in my answers.</span></div>
+<div class="turn-in-item" onclick="toggleCheck(this)"><span class="turn-in-check">✓</span><span>I checked that my orderings actually go from least to greatest (or greatest to least) as asked.</span></div>
+</div></div>
+</div>
+<div class="footer">
+<div class="footer-main">🏫 <span>Optima Academy Online</span></div>
+<div class="footer-sub">Math · Grade 3 · 3.01.03</div>
+<div class="footer-copy">© 2025 Optima Academy Online</div>
+</div>
+</div>
+<canvas id="confettiCanvas"></canvas>
+<script>
+/* ─── JS Framework ─── */
+var LS_PREFIX = 'g3-3-01-03-';
+
+function showPageFeedback(msg,type){var panel=document.querySelector('.tab-panel.active')||document.body;var box=panel.querySelector(':scope > .page-feedback');if(!box){box=document.createElement('div');box.className='page-feedback';panel.insertBefore(box,panel.firstChild);}box.className='page-feedback show '+(type||'warn');box.innerHTML=msg;box.scrollIntoView({behavior:'smooth',block:'nearest'});}
+function miniCelebrate(el){if(!el)return;var emojis=['⭐','✨','🎉','💫','🌟','⚖️'];for(var i=0;i<8;i++){var s=document.createElement('span');s.textContent=emojis[Math.floor(Math.random()*emojis.length)];s.style.cssText='position:absolute;font-size:'+(16+Math.random()*14)+'px;pointer-events:none;z-index:999;animation:miniPop .7s ease-out forwards;left:'+(20+Math.random()*60)+'%;top:'+(Math.random()*40)+'%;';el.style.position='relative';el.style.overflow='visible';el.appendChild(s);setTimeout(function(x){x.remove()}.bind(null,s),800);}}
+
+function switchTab(tab){
+  document.querySelectorAll('.tab-panel').forEach(function(p){ p.classList.remove('active'); });
+  document.getElementById('tab-'+tab).classList.add('active');
+  document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); if(b.dataset.tab===tab){ b.classList.add('active'); b.classList.add('visited'); } });
+  updateProgress(); window.scrollTo({top:0,behavior:'smooth'});
+}
+function updateProgress(){var btns=[].slice.call(document.querySelectorAll('.tab-btn'));var idx=btns.findIndex(function(b){return b.classList.contains('active');});var pct=Math.round(((idx+1)/btns.length)*100);document.getElementById('progressFill').style.width=pct+'%';document.getElementById('progressPct').textContent=pct+'%';}
+
+function autoSave(el,dotId){try{localStorage.setItem(LS_PREFIX+el.id,el.value);}catch(e){}var dot=document.getElementById(dotId);if(dot){dot.classList.add('saved');setTimeout(function(){dot.classList.remove('saved');},900);}}
+function restoreJournals(){document.querySelectorAll('textarea.journal-box').forEach(function(t){try{var v=localStorage.getItem(LS_PREFIX+t.id);if(v)t.value=v;}catch(e){}});}
+
+function showBranch(id){var el=document.getElementById(id);if(el)el.classList.add('show');}
+function hideBranches(prefix){['pass','retry'].forEach(function(x){var el=document.getElementById(prefix+'-'+x);if(el)el.classList.remove('show');});}
+
+/* ─── Warm-up readiness ─── */
+function checkReadiness(card,isCorrect){
+  document.querySelectorAll('#tab-warmup .value-card-row .value-card').forEach(function(c){c.classList.remove('good','bad','selected');});
+  var fb=document.getElementById('readiness-fb');
+  if(isCorrect){card.classList.add('good');fb.className='inline-feedback show good';fb.innerHTML='<strong>✅ Yes.</strong> 4,500 has 45 hundreds; 4,300 has 43 hundreds. The thousands tied, so the hundreds place decided.';miniCelebrate(card);}
+  else{card.classList.add('bad');fb.className='inline-feedback show think';fb.innerHTML='<strong>Not quite.</strong> Both numbers have 4 in the thousands place. Look at the hundreds place to decide.';}
+}
+
+/* ─── COMPARATOR (supports multiple instances by id) ─── */
+var CMP = {
+  1: { A:['3','9','9','8'], B:['4','0','0','8'], step:0, done:false, startMsg:'Tap <strong>Compare next place →</strong> to begin. We always start at the thousands place — the leftmost.' },
+  2: { A:['5','4','3','2'], B:['5','4','1','8'], step:0, done:false, startMsg:'Tap <strong>Compare next place →</strong> to begin. Thousands first, then hundreds, then tens — the tool keeps going past ties.' }
+};
+var CMP_LABELS = ['thousands','hundreds','tens','ones'];
+
+function compareNextPlace(id){
+  var c = CMP[id]; if(!c) return;
+  if(c.done) return;
+  if(c.step >= 4) return;
+  var idx = c.step;
+  var dA = parseInt(c.A[idx],10);
+  var dB = parseInt(c.B[idx],10);
+  var elA = document.querySelector('#cmp-row-A-'+id+' .cmp-digit:nth-child('+(idx+1)+')');
+  var elB = document.querySelector('#cmp-row-B-'+id+' .cmp-digit:nth-child('+(idx+1)+')');
+  var log = document.getElementById('cmpLog-'+id);
+  var li = document.createElement('div'); li.className = 'log-item';
+  elA.classList.add('compared'); elB.classList.add('compared');
+  if(dA === dB){
+    li.innerHTML = '<strong>'+CMP_LABELS[idx].charAt(0).toUpperCase()+CMP_LABELS[idx].slice(1)+' place:</strong> '+dA+' = '+dB+'. Tied — keep going.';
+    log.appendChild(li);
+    c.step++;
+    if(c.step === 4){
+      document.getElementById('cmpSymbol-'+id).textContent = '=';
+      document.getElementById('cmpSymbol-'+id).classList.add('revealed');
+      var done = document.createElement('div'); done.className = 'log-item'; done.innerHTML = '<strong>Every place tied.</strong> The numbers are equal.';
+      log.appendChild(done);
+      c.done = true;
+      document.getElementById('cmpNext-'+id).disabled = true;
+    }
+  } else {
+    if(dA > dB){
+      elA.classList.add('winner'); elB.classList.add('loser');
+      document.getElementById('cmpSymbol-'+id).textContent = '>';
+    } else {
+      elA.classList.add('loser'); elB.classList.add('winner');
+      document.getElementById('cmpSymbol-'+id).textContent = '<';
+    }
+    document.getElementById('cmpSymbol-'+id).classList.add('revealed');
+    li.innerHTML = '<strong>'+CMP_LABELS[idx].charAt(0).toUpperCase()+CMP_LABELS[idx].slice(1)+' place:</strong> '+dA+' vs '+dB+'. Different — '+(dA>dB?dA+' is greater':dB+' is greater')+'. <strong>Decided!</strong>';
+    log.appendChild(li);
+    for(var i = idx+1; i < 4; i++){
+      var laterA = document.querySelector('#cmp-row-A-'+id+' .cmp-digit:nth-child('+(i+1)+')');
+      var laterB = document.querySelector('#cmp-row-B-'+id+' .cmp-digit:nth-child('+(i+1)+')');
+      if(laterA) laterA.classList.add('dim');
+      if(laterB) laterB.classList.add('dim');
+    }
+    c.done = true;
+    document.getElementById('cmpNext-'+id).disabled = true;
+    var disp = document.getElementById('comparePair-'+id);
+    disp.classList.remove('pulse'); void disp.offsetWidth; disp.classList.add('pulse');
+    miniCelebrate(document.getElementById('cmpSymbol-'+id));
+  }
+}
+
+function resetCompare(id){
+  var c = CMP[id]; if(!c) return;
+  c.step = 0; c.done = false;
+  document.querySelectorAll('#comparePair-'+id+' .cmp-digit').forEach(function(d){ d.classList.remove('compared','winner','loser','dim'); });
+  var sym = document.getElementById('cmpSymbol-'+id); sym.textContent = '?'; sym.classList.remove('revealed');
+  document.getElementById('cmpLog-'+id).innerHTML = '<div class="log-item">'+c.startMsg+'</div>';
+  document.getElementById('cmpNext-'+id).disabled = false;
+}
+
+/* ─── PRACTICE 1: symbol picker ─── */
+var p1Picks = {p1a:null, p1b:null, p1c:null, p1d:null};
+var p1Correct = {p1a:'>', p1b:'<', p1c:'>', p1d:'='};
+function pickSym(key, btn, sym){
+  // clear other picks in this group
+  btn.parentElement.querySelectorAll('.sym-btn').forEach(function(b){ b.classList.remove('picked','good','bad'); });
+  btn.classList.add('picked');
+  p1Picks[key] = sym;
+}
+function checkP1(){
+  hideBranches('p1');
+  var allCorrect = true;
+  Object.keys(p1Correct).forEach(function(key){
+    var picker = document.querySelector('[data-key="'+key+'"]');
+    if(!picker) return;
+    var picked = p1Picks[key];
+    var pickedBtn = picker.querySelector('.sym-btn.picked');
+    picker.querySelectorAll('.sym-btn').forEach(function(b){ b.classList.remove('good','bad'); });
+    if(picked === p1Correct[key]){ if(pickedBtn) pickedBtn.classList.add('good'); }
+    else { if(pickedBtn) pickedBtn.classList.add('bad'); allCorrect = false; }
+  });
+  if(allCorrect){ showBranch('p1-pass'); window._p1Done = true; miniCelebrate(document.getElementById('p1-pass')); }
+  else { showBranch('p1-retry'); }
+}
+function resetP1(){
+  Object.keys(p1Picks).forEach(function(k){ p1Picks[k] = null; });
+  document.querySelectorAll('.sym-btn').forEach(function(b){ b.classList.remove('picked','good','bad'); });
+  hideBranches('p1');
+}
+
+/* ─── PRACTICE 2: order three numbers ─── */
+var orderSelected = null;
+var P2_CORRECT = ['8657','8675','8756'];  // least to greatest
+function selectOrderChip(btn){
+  if(btn.classList.contains('placed')) return;
+  document.querySelectorAll('.order-chip').forEach(function(c){ c.style.border = '2.5px solid #D8CCF0'; });
+  btn.style.border = '3px solid #6B3FA0';
+  orderSelected = btn;
+}
+function placeOrderChip(slot){
+  if(!orderSelected) return;
+  if(slot.dataset.val){
+    // Slot already has something — swap back
+    var oldVal = slot.dataset.val;
+    var oldChip = document.querySelector('.order-chip[data-val="'+oldVal+'"]');
+    if(oldChip){ oldChip.classList.remove('placed'); }
+  }
+  slot.textContent = orderSelected.textContent.trim();
+  slot.dataset.val = orderSelected.dataset.val;
+  slot.classList.add('filled');
+  slot.classList.remove('good','bad');
+  orderSelected.classList.add('placed');
+  orderSelected.style.border = '2.5px solid #D8CCF0';
+  orderSelected = null;
+}
+function checkP2(){
+  hideBranches('p2');
+  var slots = document.querySelectorAll('.order-slot');
+  var allCorrect = true;
+  slots.forEach(function(s, i){
+    s.classList.remove('good','bad');
+    if(s.dataset.val === P2_CORRECT[i]){ s.classList.add('good'); }
+    else { s.classList.add('bad'); allCorrect = false; }
+  });
+  if(allCorrect){ showBranch('p2-pass'); window._p2Done = true; miniCelebrate(document.getElementById('p2-pass')); }
+  else { showBranch('p2-retry'); }
+}
+function resetP2(){
+  document.querySelectorAll('.order-slot').forEach(function(s){ s.textContent='?'; delete s.dataset.val; s.classList.remove('filled','good','bad'); });
+  document.querySelectorAll('.order-chip').forEach(function(c){ c.classList.remove('placed'); c.style.border = '2.5px solid #D8CCF0'; });
+  orderSelected = null;
+  hideBranches('p2');
+}
+
+/* ─── PRACTICE 3: mystery number multi-select ─── */
+function toggleMulti(card){ if(card.classList.contains('good')||card.classList.contains('bad')) return; card.classList.toggle('picked'); }
+function checkP3(){
+  hideBranches('p3');
+  var cards = document.querySelectorAll('#multiGrid .multi-card');
+  var allCorrect = true;
+  cards.forEach(function(c){
+    var ok = (c.dataset.ok === 'true'); var picked = c.classList.contains('picked');
+    c.classList.remove('good','bad');
+    if(ok && picked) c.classList.add('good');
+    else if(!ok && picked){ c.classList.add('bad'); allCorrect = false; }
+    else if(ok && !picked) allCorrect = false;
+  });
+  if(allCorrect){ showBranch('p3-pass'); window._p3Done = true; miniCelebrate(document.getElementById('p3-pass')); }
+  else { showBranch('p3-retry'); }
+}
+function resetP3(){ document.querySelectorAll('#multiGrid .multi-card').forEach(function(c){ c.classList.remove('picked','good','bad'); }); hideBranches('p3'); }
+
+/* ─── EXIT TICKET ─── */
+function checkExitA(card,correct){
+  card.parentElement.querySelectorAll('.value-card').forEach(function(c){c.classList.remove('good','bad');});
+  var fb=document.getElementById('exitA-fb');
+  if(correct){card.classList.add('good');fb.className='inline-feedback show good';fb.innerHTML='<strong>✅ Yes.</strong> Thousands: 6 vs 7. Different. 7 is greater, so 6,365 &lt; 7,390.';miniCelebrate(card);}
+  else{card.classList.add('bad');fb.className='inline-feedback show think';fb.innerHTML='<strong>Not quite.</strong> Start at thousands. Which is bigger — 6 or 7? The open side of the symbol points to the bigger number.';}
+}
+function checkExitB(card,correct){
+  card.parentElement.querySelectorAll('.value-card').forEach(function(c){c.classList.remove('good','bad');});
+  var fb=document.getElementById('exitB-fb');
+  if(correct){card.classList.add('good');fb.className='inline-feedback show good';fb.innerHTML='<strong>✅ Yes.</strong> Thousands all tie at 5. Hundreds: 0, 0, 9. So 5,900 is greatest. Then compare 5,009 and 5,090 — tens decide: 0 &lt; 9, so 5,009 &lt; 5,090.';miniCelebrate(card);}
+  else{card.classList.add('bad');fb.className='inline-feedback show think';fb.innerHTML='<strong>Not quite.</strong> All three have 5 thousands — tied. Look at hundreds, then tens. Smallest goes first; biggest goes last.';}
+}
+
+/* ─── Gather + copy + download ─── */
+function gatherAnswers(){
+  var out = 'Lesson 3.01.03 — Comparing Numbers\n\n';
+  document.querySelectorAll('textarea.journal-box').forEach(function(t){ out += (t.dataset.label||t.id) + '\n' + ((t.value||'').trim() || '[No answer yet]') + '\n\n'; });
+  out += 'Practice results\n· Practice 1: ' + (window._p1Done?'Completed':'Not completed') + '\n· Practice 2: ' + (window._p2Done?'Completed':'Not completed') + '\n· Practice 3: ' + (window._p3Done?'Completed':'Not completed') + '\n';
+  document.getElementById('gatheredOutput').value = out;
+}
+function copyAnswers(){gatherAnswers();if(navigator.clipboard){navigator.clipboard.writeText(document.getElementById('gatheredOutput').value);}showPageFeedback('Your answers were copied to your clipboard.','good');}
+function downloadJournal(){gatherAnswers();var text=document.getElementById('gatheredOutput').value;var w=window.open('','_blank');w.document.write('<title>Lesson 3.01.03 Journal</title><pre style="font-family:Arial;white-space:pre-wrap;font-size:14px;line-height:1.5;">'+text.replace(/[&<>]/g,function(s){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[s];})+'</pre>');w.document.close();w.print();}
+
+/* ─── Turn-in + confetti ─── */
+function toggleCheck(item){item.classList.toggle('checked');var check=item.querySelector('.turn-in-check');if(check)check.textContent=item.classList.contains('checked')?'✓':'';var items=[].slice.call(document.querySelectorAll('.turn-in-item'));var allChecked=items.length>0&&items.every(function(x){return x.classList.contains('checked');});if(allChecked&&!window._turnInConfettiFired){window._turnInConfettiFired=true;fireConfetti();}if(!allChecked){window._turnInConfettiFired=false;}}
+function fireConfetti(){var canvas=document.getElementById('confettiCanvas');var ctx=canvas.getContext('2d');canvas.width=window.innerWidth;canvas.height=window.innerHeight;var particles=[];var colors=['#55C8E8','#6B3FA0','#2DB87A','#F5C518','#E07B39','#3A6B9A'];var emojis=['✨','⭐','🌟','💫'];for(var i=0;i<120;i++){particles.push({type:'rect',x:Math.random()*canvas.width,y:Math.random()*canvas.height-canvas.height,r:Math.random()*6+3,c:colors[Math.floor(Math.random()*colors.length)],vx:(Math.random()-0.5)*4,vy:Math.random()*3+2,rot:Math.random()*360,rv:(Math.random()-0.5)*8});}for(var j=0;j<18;j++){particles.push({type:'emoji',x:Math.random()*canvas.width,y:Math.random()*canvas.height-canvas.height,emoji:emojis[Math.floor(Math.random()*emojis.length)],size:Math.random()*14+26,vx:(Math.random()-0.5)*3,vy:Math.random()*2.5+1.5,rot:Math.random()*360,rv:(Math.random()-0.5)*5});}var frames=0;function animate(){ctx.clearRect(0,0,canvas.width,canvas.height);particles.forEach(function(p){ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.rot*Math.PI/180);if(p.type==='emoji'){ctx.font=p.size+'px serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(p.emoji,0,0);}else{ctx.fillStyle=p.c;ctx.fillRect(-p.r,-p.r/2,p.r*2,p.r);}ctx.restore();p.x+=p.vx;p.y+=p.vy;p.rot+=p.rv;p.vy+=0.04;});frames++;if(frames<300){if(frames>220){canvas.style.opacity=1-((frames-220)/80);}requestAnimationFrame(animate);}else{ctx.clearRect(0,0,canvas.width,canvas.height);canvas.style.opacity=1;}}animate();}
+async function loadVideoManifest(){try{var res=await fetch('video-manifest.md',{cache:'no-store'});if(!res.ok)return;var txt=await res.text();var map=parseManifest(txt);document.querySelectorAll('.video-wrap[data-video-slot]').forEach(function(w){var slot=w.dataset.videoSlot;if(map[slot]){var ratio=w.querySelector('.video-ratio');ratio.innerHTML=map[slot].trim();var iframe=ratio.querySelector('iframe');if(iframe){iframe.classList.add('video-iframe');iframe.setAttribute('allowfullscreen','');iframe.setAttribute('loading','lazy');}}});}catch(e){}}
+function parseManifest(txt){var map={};var lines=txt.split(/\r?\n/);var current=null,buf=[];function commit(){if(current&&buf.join('\n').trim()){map[current]=buf.join('\n').trim();}buf=[];}for(var i=0;i<lines.length;i++){var line=lines[i];var m=line.match(/^([A-Za-z0-9-]+):\s*$/);if(m){commit();current=m[1];}else if(current){buf.push(line);}}commit();return map;}
+
+window.addEventListener('DOMContentLoaded',function(){
+  restoreJournals(); updateProgress(); loadVideoManifest();
+});
+</script>
+<script id="fluencyScript">
+(function(){
+var FLUENCY_TIMED = false;
+var FLUENCY_TITLE = "Make-10 Facts";
+var fluencyInterval = null;
+var fluencySecondsLeft = 60;
+
+window.fluencyStart = function(){
+  if(!FLUENCY_TIMED) return;
+  var grid = document.getElementById('fluencyGrid');
+  if(!grid) return;
+  grid.querySelectorAll('.fluency-input').forEach(function(i){ i.disabled = false; });
+  var btn = document.getElementById('fluencyStartBtn');
+  if(btn){ btn.disabled = true; btn.textContent = 'Timer Running\u2026'; }
+  var checkBtn = document.getElementById('fluencyCheckBtn');
+  if(checkBtn) checkBtn.disabled = false;
+  fluencySecondsLeft = 60;
+  fluencyUpdateDisplay();
+  fluencyInterval = setInterval(function(){
+    fluencySecondsLeft--;
+    fluencyUpdateDisplay();
+    if(fluencySecondsLeft <= 0){
+      clearInterval(fluencyInterval);
+      grid.querySelectorAll('.fluency-input').forEach(function(i){ i.disabled = true; });
+      window.fluencyCheck();
+    }
+  }, 1000);
+};
+
+function fluencyUpdateDisplay(){
+  var el = document.getElementById('fluencyTimerDisplay');
+  if(el) el.textContent = fluencySecondsLeft + 's';
+}
+
+window.fluencyCheck = function(){
+  if(fluencyInterval){ clearInterval(fluencyInterval); fluencyInterval = null; }
+  var items = document.querySelectorAll('#fluencyGrid .fluency-item');
+  var correct = 0, attempted = 0, total = items.length;
+  var lines = [];
+  items.forEach(function(item){
+    var input = item.querySelector('.fluency-input');
+    var qText = item.querySelector('.fluency-q').textContent;
+    var given = (input.value || '').trim();
+    var ans = input.dataset.answer;
+    var ok = given !== '' && given === ans;
+    if(given !== '') attempted++;
+    item.classList.remove('fluency-correct','fluency-wrong');
+    if(ok){ correct++; item.classList.add('fluency-correct'); }
+    else if(given !== ''){ item.classList.add('fluency-wrong'); }
+    lines.push(qText + ' ' + ans + '   [answered: ' + (given || 'blank') + ']' + (ok ? ' \u2713' : (given ? ' \u2717' : '')));
+  });
+  var pct = total ? Math.round((correct/total)*100) : 0;
+  var timeStr = FLUENCY_TIMED ? (' in ' + (60 - fluencySecondsLeft) + ' seconds') : '';
+  var summary = 'Fluency Warm-Up \u2014 ' + FLUENCY_TITLE + '\n' + correct + ' / ' + total + ' correct (' + pct + '%)' + timeStr + '\n\n' + lines.join('\n');
+  var j = document.getElementById('fluencyJournal');
+  if(j) j.value = summary;
+  var resEl = document.getElementById('fluencyResult');
+  if(resEl) resEl.innerHTML = correct + ' / ' + total + ' correct (' + pct + '%)' + timeStr;
+  var checkBtn = document.getElementById('fluencyCheckBtn');
+  if(checkBtn) checkBtn.disabled = true;
+  var startBtn = document.getElementById('fluencyStartBtn');
+  if(startBtn) startBtn.textContent = 'Done';
+};
+})();
+</script>
+</body>
+</html>

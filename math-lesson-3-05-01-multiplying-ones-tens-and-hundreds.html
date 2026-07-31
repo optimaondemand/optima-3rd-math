@@ -1,3 +1,631 @@
 <!DOCTYPE html>
 
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Optima Academy Online — Grade 3 Math Lesson 3.05.01</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Nunito:wght@400;700;800;900&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Nunito',Verdana,sans-serif;background:#FAF6F2;color:#0E1C42;line-height:1.6}
+.page-wrap{max-width:920px;margin:0 auto;background:#fff;box-shadow:0 0 40px rgba(14,28,66,.08)}
+/* UNIT 5 ACCENT: BERRY */
+:root{--berry:#B5285E;--berry-light:#FCE7EF;--berry-mid:#F0B3CC;--berry-deep:#7A1A40}
+.progress-wrap{position:sticky;top:0;z-index:200;background:#0E1C42;padding:8px 20px 10px;display:flex;align-items:center;gap:14px}
+.progress-label{font-size:12px;color:#F5C518;font-weight:800;text-transform:uppercase}
+.progress-track{flex:1;height:10px;background:rgba(255,255,255,.1);border-radius:10px;overflow:hidden}
+.progress-fill{height:100%;width:0%;background:linear-gradient(90deg,var(--berry),#F0B3CC,#F5C518,var(--berry));background-size:200% 100%;animation:shimmer 3s linear infinite;border-radius:10px;transition:width .4s}
+.progress-pct{font-size:13px;color:#F5C518;font-weight:800;min-width:36px;text-align:right}
+@keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
+.header{background:#0E1C42;border-bottom:6px solid var(--berry);padding:20px 28px 18px}
+.header-brand{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.header-logo{width:52px;height:52px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center}
+.header-logo img{width:48px;height:38px}
+.header-org{font-size:22px;color:#fff;font-weight:800}
+.header-sub{font-size:11px;color:#F0B3CC}
+.header-title{font-family:'Lora',serif;font-size:28px;color:#fff;font-weight:700;margin-bottom:10px}
+.header-title em{color:#F0B3CC;font-style:italic}
+.header-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(181,40,94,.22);border:1.5px solid rgba(240,179,204,.5);border-radius:28px;padding:6px 16px}
+.header-badge-icon{font-size:22px}
+.header-badge-text{font-size:18px;color:#fff;font-weight:800}
+/* Unit-5 "step ribbon" — structural differentiator */
+.unit5-ribbon{background:linear-gradient(135deg,#FFFBE6,#FFEDF3);border-bottom:2px solid #F0B3CC;padding:10px 28px;display:flex;align-items:center;gap:14px;font-family:'Lora',serif}
+.unit5-ribbon-pill{background:var(--berry);color:#fff;font-family:'Nunito',sans-serif;font-weight:900;font-size:10px;text-transform:uppercase;letter-spacing:.6px;padding:4px 10px;border-radius:20px}
+.unit5-ribbon-text{font-size:14px;color:var(--berry-deep);font-weight:700;font-style:italic}
+.quote-strip{background:linear-gradient(135deg,#FCE7EF,#F8D5E1);border-bottom:2px solid #F0B3CC;padding:14px 28px;text-align:center}
+.quote-strip-text{font-family:'Lora',serif;font-size:16px;font-style:italic;color:#5A1830}
+.quote-strip-attr{font-size:11px;color:var(--berry);font-weight:700;margin-top:4px;text-transform:uppercase}
+.info-strip{display:flex;flex-wrap:wrap;background:#fff;border-bottom:2px solid #E2E8F4}
+.info-cell{flex:1;min-width:150px;padding:12px 16px;border-right:1px solid #E2E8F4;display:flex;align-items:center;gap:10px}
+.info-icon{width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px}
+.info-label{font-size:10px;color:#7A88A8;text-transform:uppercase;font-weight:700}
+.info-value{font-size:16px;color:#0E1C42;font-weight:800}
+.info-detail{font-size:11px;color:#3A4A6B}
+.explorer-strip{display:flex;align-items:center;gap:16px;padding:12px 28px;background:linear-gradient(135deg,#1A2340,#0E1C42);border-bottom:3px solid var(--berry)}
+.explorer-compass{font-size:28px}
+.explorer-mission-label{font-size:10px;color:#F5C518;text-transform:uppercase;font-weight:800}
+.explorer-mission-text{font-size:15px;color:#fff;font-weight:700}
+.intro-2col{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:20px 28px 4px}
+@media(max-width:720px){.intro-2col{grid-template-columns:1fr}}
+.intro-card{background:#fff;border:2px solid #E2E8F4;border-radius:18px;overflow:hidden}
+.intro-card-head{display:flex;align-items:center;gap:10px;padding:14px 18px;border-bottom:2px solid}
+.intro-card-head-icon{width:40px;height:40px;border-radius:50%;color:#fff;font-size:20px;display:flex;align-items:center;justify-content:center}
+.intro-card-head-label{font-size:10px;color:#7A88A8;text-transform:uppercase;font-weight:700}
+.intro-card-head-title{font-size:18px;color:#0E1C42;font-weight:800}
+.intro-card-body{padding:14px 18px}
+.intro-card-body p{font-size:15px;color:#3A4A6B;line-height:1.65;margin-bottom:8px}
+.obj-line{display:flex;gap:8px;font-size:15px;color:#0E1C42;line-height:1.55;margin-bottom:8px}
+.theme-question .intro-card-head{background:#FFF8E6;border-color:#F5E6C8}
+.theme-question .intro-card-head-icon{background:#F5C518}
+.theme-objectives .intro-card-head{background:var(--berry-light);border-color:var(--berry-mid)}
+.theme-objectives .intro-card-head-icon{background:var(--berry)}
+.need-strip{display:flex;flex-wrap:wrap;gap:8px;padding:12px 28px 18px}
+.need-strip-label{font-size:13px;color:#3A4A6B;font-weight:700}
+.need-chip{background:#E3F8ED;border:1.5px solid #B8E8CF;border-radius:20px;padding:5px 12px;font-size:13px;color:#0E1C42;font-weight:700}
+.tab-bar{position:sticky;top:38px;z-index:100;background:#fff;border-bottom:3px solid #E2E8F4;display:flex;overflow-x:auto;box-shadow:0 -4px 0 0 #0E1C42}
+.tab-btn{flex:1;min-width:130px;padding:12px 8px 11px;background:transparent;border:none;border-bottom:4px solid transparent;font-family:'Nunito',sans-serif;font-size:13px;font-weight:700;color:#7A88A8;cursor:pointer;text-align:center}
+.tab-btn.active{color:#0E1C42;border-bottom-color:var(--berry);background:#fff}
+.tab-btn .tab-check{display:none;color:#2DB87A;margin-left:4px;font-weight:800}
+.tab-btn.visited .tab-check{display:inline}
+.tab-panel{display:none;padding:24px 28px 36px}
+.tab-panel.active{display:block}
+.activity{background:#fff;border:2px solid #E2E8F4;border-radius:18px;margin-bottom:18px}
+.activity.bl-berry{border-left:6px solid var(--berry)}
+.activity.bl-green{border-left:6px solid #2DB87A}
+.activity.bl-yellow{border-left:6px solid #F5C518}
+.activity.bl-slate{border-left:6px solid #3A6B9A}
+.activity.bl-navy{border-left:6px solid #0E1C42}
+.activity-head{display:flex;align-items:center;gap:12px;padding:14px 20px 14px 18px;border-bottom:1.5px solid #E2E8F4}
+.activity-num{width:38px;height:38px;border-radius:14px;color:#fff;font-size:18px;font-weight:800;display:flex;align-items:center;justify-content:center}
+.activity-title{font-size:19px;color:#0E1C42;font-weight:800}
+.activity-sub{font-size:12px;color:#7A88A8}
+.activity-body{padding:18px 22px}
+.activity-body p{font-size:17px;color:#3A4A6B;line-height:1.75;margin-bottom:12px}
+.callout{border-radius:14px;padding:16px 18px;display:flex;gap:12px;margin-bottom:14px}
+.callout-icon{font-size:28px}
+.callout p{font-size:16px;color:#0E1C42;line-height:1.65;margin:0}
+.callout-info{background:var(--berry-light);border:2px solid var(--berry-mid)}
+.callout-think{background:#FFF8E6;border:2px solid #F5E6C8}
+.callout-tip{background:#E3F8ED;border:2px solid #B8E8CF}
+.key-concept{background:var(--berry-light);border:2px solid var(--berry-mid);border-radius:14px;padding:16px 18px;margin-bottom:14px}
+.key-concept-label{font-size:12px;color:var(--berry-deep);text-transform:uppercase;font-weight:800;margin-bottom:8px}
+.key-concept p{font-size:15px;color:#0E1C42;line-height:1.7}
+.socratic-box{background:linear-gradient(135deg,var(--berry-light),#F8D5E1);border:2px solid var(--berry-mid);border-radius:14px;padding:16px 18px;margin-bottom:14px}
+.socratic-label{font-size:12px;color:var(--berry-deep);text-transform:uppercase;font-weight:800;margin-bottom:8px}
+.socratic-q{font-size:16px;color:#0E1C42;font-style:italic}
+.journal-label{font-size:13px;color:#3A4A6B;font-weight:700;margin:10px 0 4px}
+.journal-box{width:100%;min-height:80px;border:2px solid #E2E8F4;border-radius:12px;padding:12px 14px;font-family:'Nunito',sans-serif;font-size:15px;color:#0E1C42;resize:vertical}
+.journal-box:focus{outline:none;border-color:var(--berry)}
+.saved-dot{width:8px;height:8px;border-radius:50%;background:#E2E8F4;display:inline-block;transition:.3s}
+.saved-dot.saved{background:#2DB87A}
+.check-btn,.berry-btn,.green-btn,.orange-btn{display:inline-flex;align-items:center;gap:6px;color:#fff;border:none;border-radius:12px;padding:10px 20px;font-size:14px;font-weight:800;cursor:pointer;font-family:'Nunito',sans-serif;margin-top:10px}
+.check-btn{background:#3A6B9A}
+.berry-btn{background:var(--berry)}
+.green-btn{background:#2DB87A}
+.orange-btn{background:#E07B39}
+.hint-callout{background:#FFF8E6;border:2px solid #F5C518;border-radius:10px;padding:10px 14px;margin:12px 0;font-size:14px;color:#5A4A00;font-weight:700}
+.task-box{background:#FAFBFF;border:2px solid #E2E8F4;border-radius:14px;padding:16px 18px;margin-bottom:14px}
+.task-label{font-size:12px;color:var(--berry-deep);text-transform:uppercase;font-weight:800;margin-bottom:10px}
+.feedback-branch{display:none;margin-top:16px;border-radius:14px;padding:16px}
+.feedback-branch.show{display:block;animation:reveal .35s}
+.feedback-pass{background:#E3F8ED;border:2px solid #B8E8CF}
+.feedback-retry{background:#FFF0E6;border:2px solid #F5C8A0}
+.value-card-row{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}
+.value-card{border:2px solid #E2E8F4;background:#fff;border-radius:14px;padding:10px 14px;min-width:110px;text-align:center;cursor:pointer;transition:.2s}
+.value-card:hover{border-color:var(--berry);background:var(--berry-light)}
+.value-card.good{background:#E3F8ED;border-color:#2DB87A}
+.value-card.bad{background:#FFF0E6;border-color:#E07B39;animation:shake .25s}
+.value-card .big{font-size:22px;font-weight:900;color:#0E1C42}
+.value-card .small{font-size:12px;color:#3A4A6B;font-weight:800}
+.fill-row{display:flex;align-items:center;gap:8px;background:#FAFBFF;border:2px solid #E2E8F4;border-radius:12px;padding:12px 14px;margin:10px 0;flex-wrap:wrap;font-size:18px;font-weight:800;color:#0E1C42}
+.fill-input{width:120px;padding:8px 10px;border:2.5px solid var(--berry-mid);border-radius:10px;font-size:18px;font-weight:900;color:var(--berry-deep);text-align:center;font-family:'Nunito',sans-serif;background:#fff}
+.fill-input:focus{outline:none;border-color:var(--berry)}
+.fill-input.good{border-color:#2DB87A;background:#E3F8ED;color:#1A8A5A}
+.fill-input.bad{border-color:#E07B39;background:#FFF0E6;animation:shake .25s}
+.q-block{background:#FAFBFF;border:2px solid #E2E8F4;border-radius:14px;padding:14px 18px;margin-bottom:14px}
+.q-num{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--berry);color:#fff;font-weight:800;font-size:14px;margin-right:8px;vertical-align:middle}
+.q-text{font-size:16px;color:#0E1C42;line-height:1.65}
+.gathered-box{background:#fff;border:2px solid #E2E8F4;border-radius:18px;overflow:hidden;margin-top:24px}
+.gathered-head{display:flex;align-items:center;gap:14px;background:linear-gradient(135deg,#0E1C42,#1A2D5A);padding:18px 22px}
+.gathered-head-icon{font-size:32px}
+.gathered-head-label{font-size:11px;color:#F5C518;font-weight:800;text-transform:uppercase}
+.gathered-head-title{font-size:18px;color:#fff;font-weight:800}
+.gathered-body{padding:16px 22px}
+.gathered-output{width:100%;min-height:160px;border:2px solid #E2E8F4;border-radius:12px;padding:14px;font-family:monospace;font-size:13px;background:#FAFBFF}
+.tab-next-wrap{text-align:center;padding:24px 0 8px}
+.tab-transition-voice{font-family:'Lora',serif;font-size:15px;font-style:italic;color:#5A1830;margin-bottom:12px}
+.tab-next-btn{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--berry),#D9568A);color:#fff;border:none;border-radius:28px;padding:13px 28px;font-size:15px;font-weight:800;cursor:pointer;box-shadow:0 4px 14px rgba(181,40,94,.3);animation:float 3s infinite}
+.turn-in-card{background:#fff;border:2px solid #E2E8F4;border-radius:18px;overflow:hidden;margin-top:18px}
+.turn-in-header{display:flex;align-items:center;gap:14px;background:var(--berry-light);padding:18px 22px;border-bottom:2px solid var(--berry-mid)}
+.turn-in-header-icon{font-size:36px}
+.turn-in-header-label{font-size:11px;color:var(--berry-deep);font-weight:800;text-transform:uppercase}
+.turn-in-header-title{font-family:'Lora',serif;font-size:22px;color:#0E1C42;font-weight:700}
+.turn-in-body{padding:18px 22px 20px}
+.turn-in-item{display:flex;align-items:center;gap:14px;padding:12px 16px;background:#FAFBFF;border:1.5px solid #E2E8F4;border-radius:12px;cursor:pointer;margin-bottom:10px}
+.turn-in-item.checked{background:#E3F8ED;border-color:#B8E8CF}
+.turn-in-check{width:26px;height:26px;border-radius:8px;border:2px solid var(--berry-mid);background:#fff;display:flex;align-items:center;justify-content:center;font-size:16px}
+.turn-in-item.checked .turn-in-check{background:#2DB87A;border-color:#2DB87A;color:#fff}
+.footer{background:#0E1C42;border-top:4px solid var(--berry);padding:18px 28px;text-align:center}
+.footer-main{font-size:14px;color:#fff;margin-bottom:4px}
+.footer-main span{color:#F0B3CC;font-weight:700}
+.footer-sub{font-size:12px;color:rgba(255,255,255,.5)}
+.footer-copy{font-size:11px;color:rgba(255,255,255,.3)}
+.inline-feedback{display:none;margin:12px 0;border-radius:14px;padding:12px 14px;font-weight:800;line-height:1.5}
+.inline-feedback.show{display:block;animation:reveal .3s}
+.inline-feedback.good{background:#E3F8ED;border:2px solid #B8E8CF;color:#0E1C42}
+.inline-feedback.think{background:#FFF3DC;border:2px solid #F5E6C8;color:#5A4A3A}
+.vocab-section{background:#fff;border:2px solid var(--berry-mid);border-left:6px solid var(--berry);border-radius:18px;padding:18px 20px 20px;margin:0 0 20px}
+.vocab-section-head{display:flex;gap:12px;margin-bottom:14px}
+.vocab-section-icon{width:42px;height:42px;border-radius:50%;color:#fff;background:var(--berry);display:flex;align-items:center;justify-content:center;font-size:22px}
+.vocab-section-label{font-size:11px;color:var(--berry-deep);text-transform:uppercase;font-weight:900}
+.vocab-section-title{font-size:21px;color:#0E1C42;font-weight:900}
+.vocab-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:14px 0 0}
+@media(max-width:720px){.vocab-grid{grid-template-columns:1fr}}
+.flip-card{perspective:900px;height:160px;cursor:pointer}
+.flip-card-inner{position:relative;width:100%;height:100%;transition:.5s;transform-style:preserve-3d}
+.flip-card.flipped .flip-card-inner{transform:rotateY(180deg)}
+.flip-card-front,.flip-card-back{position:absolute;top:0;left:0;width:100%;height:100%;border-radius:16px;backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:12px;text-align:center;border:2px solid #E2E8F4}
+.flip-card-front{background:#FAFBFF;border-top:5px solid var(--berry)}
+.flip-card-front .fc-emoji{font-size:26px;margin-bottom:6px}
+.flip-card-front .fc-word{font-size:17px;font-weight:900;color:#0E1C42}
+.flip-card-front .fc-tap{font-size:11px;color:var(--berry);font-weight:900;text-transform:uppercase;margin-top:6px}
+.flip-card-back{background:linear-gradient(145deg,#0E1C42,#1A2D5A);border-color:#0E1C42;transform:rotateY(180deg)}
+.flip-card-back .fc-word-back{font-size:11px;color:#F0B3CC;text-transform:uppercase;font-weight:900;margin-bottom:8px}
+.flip-card-back .fc-def{font-size:13.5px;color:#fff;line-height:1.5;font-weight:700}
+.fc-color-1 .flip-card-front{border-top-color:#3A6B9A}
+.fc-color-2 .flip-card-front{border-top-color:#2DB87A}
+.fc-color-3 .flip-card-front{border-top-color:#F5C518}
+.bubble-row{display:flex;gap:12px;flex-wrap:wrap;margin:14px 0}
+.bubble{display:flex;gap:10px;flex:1 1 260px;max-width:340px;background:#fff;border:2px solid #E2E8F4;border-radius:18px;padding:12px 14px}
+.bubble.atlas{border-left:5px solid #6B3FA0;background:linear-gradient(135deg,#fff,#F8F4FF)}
+.bubble.hazel{border-left:5px solid #2DB87A;background:linear-gradient(135deg,#fff,#F4FBF7)}
+.bubble.felix{border-left:5px solid #F5C518;background:linear-gradient(135deg,#fff,#FEFBEB)}
+.bubble.cora{border-left:5px solid #3A6B9A;background:linear-gradient(135deg,#fff,#F4F8FC)}
+.bubble-avatar{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:900;color:#fff;flex-shrink:0;font-family:'Lora',serif}
+.bubble.atlas .bubble-avatar{background:#6B3FA0}
+.bubble.hazel .bubble-avatar{background:#2DB87A}
+.bubble.felix .bubble-avatar{background:#F5C518;color:#0E1C42}
+.bubble.cora .bubble-avatar{background:#3A6B9A}
+.bubble-body{flex:1;min-width:0}
+.bubble-name{font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.7px;margin-bottom:3px;color:#6B3FA0}
+.bubble.hazel .bubble-name{color:#1A8A5A}
+.bubble.felix .bubble-name{color:#8A6D2B}
+.bubble.cora .bubble-name{color:#1A6B8E}
+.bubble-text{font-size:14.5px;color:#0E1C42;line-height:1.5;font-weight:600;font-family:'Lora',serif;font-style:italic}
+@keyframes reveal{0%{opacity:0;transform:translateY(10px)}100%{opacity:1;transform:translateY(0)}}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+@keyframes pop{0%{transform:scale(0)}70%{transform:scale(1.15)}100%{transform:scale(1)}}
+@keyframes mini{0%{transform:translateY(0) scale(0);opacity:1}50%{transform:translateY(-30px) scale(1.2)}100%{transform:translateY(-60px) scale(.6);opacity:0}}
+@keyframes spin-in{0%{transform:rotate(-180deg) scale(0);opacity:0}100%{transform:rotate(0) scale(1);opacity:1}}
 
+/* ============ PLACE-VALUE DISC MULTIPLIER (centerpiece) ============ */
+.pdm-frame{background:#fff;border:2px solid var(--berry-mid);border-radius:16px;padding:18px;margin:14px 0}
+.pdm-controls{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+@media(max-width:600px){.pdm-controls{grid-template-columns:1fr}}
+.pdm-pick{background:var(--berry-light);border:2px solid var(--berry-mid);border-radius:14px;padding:12px;text-align:center}
+.pdm-pick-label{font-size:11px;color:var(--berry-deep);font-weight:900;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
+.pdm-stepper{display:flex;align-items:center;justify-content:center;gap:10px}
+.pdm-btn{background:#fff;border:2.5px solid var(--berry);color:var(--berry);width:38px;height:38px;border-radius:50%;font-size:20px;font-weight:900;cursor:pointer}
+.pdm-btn:hover{background:var(--berry);color:#fff}
+.pdm-btn:disabled{opacity:.3;cursor:not-allowed}
+.pdm-val{font-family:'Lora',serif;font-size:32px;font-weight:900;color:#0E1C42;min-width:60px}
+.pdm-place-row{display:flex;gap:8px;justify-content:center;margin-top:6px}
+.pdm-place-btn{flex:1;background:#fff;border:2px solid #E2E8F4;border-radius:10px;padding:8px 6px;cursor:pointer;font-family:'Nunito',sans-serif;font-weight:800;font-size:13px;color:#3A4A6B;transition:.15s}
+.pdm-place-btn:hover{border-color:var(--berry);background:var(--berry-light)}
+.pdm-place-btn.chosen{background:var(--berry);color:#fff;border-color:var(--berry-deep)}
+.pdm-place-btn .pdm-tiny{display:block;font-size:10px;font-weight:700;opacity:.8}
+.pdm-stage{background:#FAFBFF;border:2px dashed var(--berry-mid);border-radius:14px;padding:18px 12px;min-height:200px;margin-bottom:14px}
+.pdm-group{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:10px;padding-bottom:10px;border-bottom:1px dashed #E2E8F4;animation:reveal .3s}
+.pdm-group:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.pdm-group-label{flex-basis:100%;text-align:center;font-family:'Lora',serif;font-size:13px;color:#7A1A40;font-weight:800;font-style:italic;margin-bottom:4px}
+/* Place-value discs — FIXED colors per skill spec */
+.pv-disc{display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:50%;font-family:'Lora',serif;font-size:14px;font-weight:900;color:#fff;border:3px solid;animation:spin-in .4s ease-out;box-shadow:0 3px 0 rgba(0,0,0,.15);position:relative}
+.pv-disc.ones{background:#E07B39;border-color:#B85A1F}
+.pv-disc.tens{background:#2DB87A;border-color:#1A8A5A}
+.pv-disc.hundreds{background:#3A6B9A;border-color:#1A4D7C}
+.pdm-summary{background:linear-gradient(135deg,var(--berry-light),#F8D5E1);border:2px solid var(--berry-mid);border-radius:12px;padding:14px 16px;text-align:center}
+.pdm-eq{font-family:'Lora',serif;font-size:22px;font-weight:900;color:#0E1C42;margin-bottom:6px}
+.pdm-eq .ans{color:#1A8A5A;background:#E3F8ED;padding:2px 14px;border-radius:8px;border:2px solid #B8E8CF;margin-left:6px}
+.pdm-narration{font-family:'Lora',serif;font-size:13.5px;color:#5A1830;font-style:italic}
+/* Pattern strip — three rows */
+.pdm-pattern{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin:14px 0;background:#fff;border:2px solid var(--berry-mid);border-radius:14px;padding:14px;overflow:hidden}
+@media(max-width:560px){.pdm-pattern{grid-template-columns:1fr}}
+.pdm-pattern-cell{text-align:center;padding:10px;border-radius:10px;background:#FAFBFF;border:2px solid #E2E8F4;animation:reveal .3s}
+.pdm-pattern-cell.ones-cell{border-left:5px solid #E07B39}
+.pdm-pattern-cell.tens-cell{border-left:5px solid #2DB87A}
+.pdm-pattern-cell.hundreds-cell{border-left:5px solid #3A6B9A}
+.pdm-pattern-eq{font-family:'Lora',serif;font-size:16px;font-weight:900;color:#0E1C42;margin-bottom:4px}
+.pdm-pattern-words{font-size:12px;color:#5A4A6B}
+.pdm-pattern-cell.active-cell{background:var(--berry-light);border-color:var(--berry);transform:scale(1.04)}
+
+.ex-tbl{width:100%;border-collapse:separate;border-spacing:0;margin:14px 0;background:#fff;border:2px solid #E2E8F4;border-radius:14px;overflow:hidden}
+.ex-tbl thead th{background:#0E1C42;color:#fff;font-size:12px;padding:12px;text-align:left;text-transform:uppercase;font-weight:900;letter-spacing:.4px}
+.ex-tbl tbody td{padding:12px 14px;border-top:1px solid #E2E8F4;font-size:14.5px;color:#0E1C42;line-height:1.5}
+.ex-tbl tbody td:first-child{font-family:'Lora',serif;font-weight:800;font-size:17px}
+.ex-tbl tbody td:last-child{text-align:center;font-family:'Lora',serif;font-weight:900;font-size:18px;background:#FAFBFF;border-left:1px dashed #E2E8F4;color:#1A8A5A}
+.video-wrap{border-radius:18px;overflow:hidden;border:2px solid #E2E8F4;box-shadow:0 4px 20px rgba(14,28,66,.08);background:#000;margin:0 0 22px}.video-wrap-header{display:flex;align-items:center;gap:12px;padding:12px 18px;background:linear-gradient(135deg,#0E1C42,#1A2D5A);border-bottom:2px solid rgba(181,40,94,.3)}.video-wrap-type{font-size:10px;color:#F5C518;text-transform:uppercase;letter-spacing:1.5px;font-weight:800;margin-bottom:2px}.video-wrap-title{font-size:16px;color:#fff;font-weight:800;line-height:1.2}.video-ratio{position:relative;padding-bottom:56.25%;height:0;overflow:hidden}.video-placeholder,.video-iframe{position:absolute;top:0;left:0;width:100%;height:100%}.video-placeholder{background:linear-gradient(135deg,#0E1C42,#1A2D5A);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px}.video-placeholder-icon{font-size:44px;margin-bottom:10px;opacity:.55}.video-placeholder-text{font-size:14px;color:rgba(255,255,255,.78);font-weight:700;line-height:1.5;max-width:620px}.video-placeholder-id{font-size:11px;color:rgba(245,197,24,.85);font-family:monospace;margin-top:10px;letter-spacing:.5px}.record-note{margin-top:10px;background:rgba(255,255,255,.08);border:1px solid rgba(245,197,24,.28);border-radius:10px;padding:8px 10px;color:rgba(255,255,255,.82);font-size:12.5px;line-height:1.45;max-width:620px}
+</style>
+<style id="fluencyStyles">
+.fluency-box{background:#fff;border:2px solid #F5C518;border-radius:18px;overflow:hidden;margin-bottom:22px;font-family:'Nunito',sans-serif}
+.fluency-head{display:flex;align-items:center;gap:12px;background:linear-gradient(135deg,#F5C518,#E8B723);padding:14px 20px;flex-wrap:wrap}
+.fluency-head-icon{font-size:26px;line-height:1}
+.fluency-head-label{font-size:10px;color:#0E1C42;font-weight:800;text-transform:uppercase;letter-spacing:0.5px}
+.fluency-head-title{font-size:15px;color:#0E1C42;font-weight:800}
+.fluency-timer-ui{margin-left:auto;display:flex;align-items:center;gap:10px}
+.fluency-timer-display{font-size:20px;font-weight:800;color:#0E1C42;min-width:46px;text-align:center}
+.fluency-start-btn{background:#0E1C42;color:#fff;border:none;border-radius:10px;padding:8px 14px;font-weight:700;font-size:12px;cursor:pointer}
+.fluency-start-btn:disabled{opacity:0.55;cursor:default}
+.fluency-body{padding:16px 20px}
+.fluency-instructions{font-size:13px;color:#4A5568;margin:0 0 12px}
+.fluency-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(128px,1fr));gap:10px;margin-bottom:14px}
+.fluency-item{display:flex;align-items:center;gap:6px;background:#FAFBFF;border:1.5px solid #E2E8F4;border-radius:10px;padding:8px 10px}
+.fluency-item.fluency-correct{border-color:#2DB87A;background:#EAFBF3}
+.fluency-item.fluency-wrong{border-color:#E07B39;background:#FDF1E9}
+.fluency-q{font-size:13px;font-weight:700;color:#0E1C42;white-space:nowrap}
+.fluency-input{width:46px;border:1.5px solid #CBD5E8;border-radius:6px;padding:4px;font-size:14px;text-align:center;font-family:'Nunito',sans-serif}
+.fluency-input:disabled{background:#F0F2F8}
+.fluency-check-btn{background:#2DB87A;color:#fff;border:none;border-radius:10px;padding:10px 18px;font-weight:800;font-size:13px;cursor:pointer}
+.fluency-check-btn:disabled{opacity:0.55;cursor:default}
+.fluency-result{margin-top:10px;font-size:14px;color:#0E1C42;font-weight:700}
+</style></head><body>
+<div class="page-wrap">
+<div class="progress-wrap"><span class="progress-label">📐 Lesson Progress</span><div class="progress-track"><div class="progress-fill" id="pf"></div></div><span class="progress-pct" id="pp">0%</span></div>
+<div class="header">
+<div class="header-brand"><div class="header-logo"><img alt="Optima" src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png"/></div><div><div class="header-org">Optima Academy Online</div><div class="header-sub">An Education Experience Company</div></div></div>
+<div class="header-title"><em>Multiplying Ones, Tens, and Hundreds</em></div>
+<div class="header-badge"><span class="header-badge-icon">🦉</span><span class="header-badge-text">Lesson 3.05.01 · Unit 5 Anchor</span></div>
+</div>
+<div class="unit5-ribbon">
+<span class="unit5-ribbon-pill">Unit 5 · Multiplication</span>
+<span class="unit5-ribbon-text">Build with place-value discs. The fact stays the same — only the place changes.</span>
+</div>
+<div class="quote-strip"><div class="quote-strip-text">"Three 2s are six. Three groups of 20 are sixty. Three groups of 200 are six hundred. Watch the discs move — the count keeps its shape."</div><div class="quote-strip-attr">Multiplying ones, tens, and hundreds</div></div>
+<div class="info-strip">
+<div class="info-cell"><div class="info-icon" style="background:var(--berry-light);">🧭</div><div><div class="info-label">Unit</div><div class="info-value">Unit 5</div><div class="info-detail">Multiplication</div></div></div>
+<div class="info-cell"><div class="info-icon" style="background:#E3F8ED;">📅</div><div><div class="info-label">Lesson</div><div class="info-value">3.05.01</div><div class="info-detail">U1 Anchor</div></div></div>
+<div class="info-cell"><div class="info-icon" style="background:#EAF0FF;">📐</div><div><div class="info-label">Standard</div><div class="info-value">MA.3.NSO.2</div><div class="info-detail">multiply by place</div></div></div>
+<div class="info-cell"><div class="info-icon" style="background:#FFF8E6;">⚪</div><div><div class="info-label">Tool</div><div class="info-value">Discs</div><div class="info-detail">ones · tens · hundreds</div></div></div>
+</div>
+<div class="explorer-strip"><span class="explorer-compass">🧭</span><div><div class="explorer-mission-label">Today's Mission</div><div class="explorer-mission-text">Multiply with place-value discs and find the pattern across ones, tens, and hundreds.</div></div></div>
+<div class="intro-2col">
+<div class="intro-card theme-question"><div class="intro-card-head"><div class="intro-card-head-icon">❓</div><div><div class="intro-card-head-label">Essential Question</div><div class="intro-card-head-title">Why is 3 × 2 the engine for 3 × 200?</div></div></div><div class="intro-card-body"><p>If you can find 3 × 2 = 6, you can find 3 × 20 and 3 × 200. The digits multiply the same way — only the place changes.</p></div></div>
+<div class="intro-card theme-objectives"><div class="intro-card-head"><div class="intro-card-head-icon">🎯</div><div><div class="intro-card-head-label">Today's Objectives</div><div class="intro-card-head-title">You will…</div></div></div><div class="intro-card-body">
+<div class="obj-line"><span style="flex-shrink:0">⚪</span><span><strong>Build</strong> products with place-value discs.</span></div>
+<div class="obj-line"><span style="flex-shrink:0">🔍</span><span><strong>Spot</strong> the pattern across ones, tens, and hundreds.</span></div>
+<div class="obj-line"><span style="flex-shrink:0">📝</span><span><strong>Write</strong> the equation for each disc picture.</span></div>
+</div></div>
+</div>
+<div class="need-strip"><span class="need-strip-label">You'll need:</span><span class="need-chip">📓 Math Journal</span><span class="need-chip">✏️ Pencil</span></div>
+<div class="tab-bar" id="tabBar">
+<button class="tab-btn active" data-tab="warmup" onclick="switchTab('warmup')">🔍 Warm-Up <span class="tab-check">✓</span></button>
+<button class="tab-btn" data-tab="learn" onclick="switchTab('learn')">📐 Learn <span class="tab-check">✓</span></button>
+<button class="tab-btn" data-tab="practice" onclick="switchTab('practice')">🧮 Practice <span class="tab-check">✓</span></button>
+<button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">🌟 Show What You Know <span class="tab-check">✓</span></button>
+</div>
+<div class="tab-panel active" id="tab-warmup">
+<div class="fluency-box" data-timed="false">
+<div class="fluency-head">
+<div class="fluency-head-icon">✍️</div>
+<div><div class="fluency-head-label">FLUENCY WARM-UP</div><div class="fluency-head-title">×0 and ×1 Facts</div></div>
+</div>
+<div class="fluency-body">
+<p class="fluency-instructions">Warm up your fact fluency before today’s lesson. Work through these, then check your answers.</p>
+<div class="fluency-grid" id="fluencyGrid">
+<div class="fluency-item"><span class="fluency-q">4 × 0 =</span><input autocomplete="off" class="fluency-input" data-answer="0" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">7 × 0 =</span><input autocomplete="off" class="fluency-input" data-answer="0" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">9 × 1 =</span><input autocomplete="off" class="fluency-input" data-answer="9" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">6 × 1 =</span><input autocomplete="off" class="fluency-input" data-answer="6" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">0 × 8 =</span><input autocomplete="off" class="fluency-input" data-answer="0" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">1 × 5 =</span><input autocomplete="off" class="fluency-input" data-answer="5" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">3 × 0 =</span><input autocomplete="off" class="fluency-input" data-answer="0" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">1 × 9 =</span><input autocomplete="off" class="fluency-input" data-answer="9" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">0 × 6 =</span><input autocomplete="off" class="fluency-input" data-answer="0" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">1 × 7 =</span><input autocomplete="off" class="fluency-input" data-answer="7" inputmode="numeric" type="text"/></div>
+</div>
+<button class="fluency-check-btn" id="fluencyCheckBtn" onclick="fluencyCheck()">Check My Answers</button>
+<div class="fluency-result" id="fluencyResult"></div>
+</div>
+<textarea class="journal-box" data-label="Fluency Warm-Up (×0 and ×1 Facts)" id="fluencyJournal" readonly="" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;"></textarea>
+</div>
+
+<div class="activity bl-yellow"><div class="activity-head"><div class="activity-num" style="background:#F5C518;color:#0E1C42;">🔎</div><div><div class="activity-title">Readiness Check</div><div class="activity-sub">Tap the card that matches.</div></div></div><div class="activity-body">
+<p><strong>Atlas put 2 crackers on each of 3 plates.</strong> How many crackers in all? Tap the card that shows the answer.</p>
+<div class="value-card-row">
+<div class="value-card" onclick="rA(this,false)"><div class="big">5</div><div class="small">3+2</div></div>
+<div class="value-card" onclick="rA(this,true)"><div class="big">6</div><div class="small">3 × 2</div></div>
+<div class="value-card" onclick="rA(this,false)"><div class="big">9</div><div class="small">3+3+3</div></div>
+</div>
+<div class="inline-feedback" id="rA-fb"></div>
+<div class="hint-callout">3 groups of 2 means 3 × 2 = 6. We'll use 3 × 2 as our engine all lesson.</div>
+</div></div>
+<div class="activity bl-yellow"><div class="activity-head"><div class="activity-num" style="background:#F5C518;color:#0E1C42;">🤔</div><div><div class="activity-title">Think About It: What If The Discs Are Bigger?</div></div></div><div class="activity-body">
+<div class="callout callout-think"><span class="callout-icon">🧠</span><p>Three groups of 2 ones = 6 ones (that's 6).<br/>Three groups of 2 tens = ___ tens (= ___ ).<br/>Three groups of 2 hundreds = ___ hundreds (= ___ ).</p></div>
+<p><strong>Predict:</strong> what will 3 × 200 equal?</p>
+<div class="value-card-row">
+<div class="value-card" onclick="rT(this,false)"><div class="big">60</div></div>
+<div class="value-card" onclick="rT(this,true)"><div class="big">600</div></div>
+<div class="value-card" onclick="rT(this,false)"><div class="big">6,000</div></div>
+</div>
+<div class="inline-feedback" id="rT-fb"></div>
+<div class="journal-label">✏️ How did you decide? <span class="saved-dot" id="dt"></span></div>
+<textarea class="journal-box" data-label="Warm-Up think" id="j-t" oninput="autoSave(this,'dt')" placeholder=""></textarea>
+</div></div>
+<div class="tab-next-wrap"><p class="tab-transition-voice">Hold that prediction. Time to build it with discs.</p><button class="tab-next-btn" onclick="switchTab('learn')">Continue to 📐 Learn →</button></div>
+</div>
+<div class="tab-panel" id="tab-learn">
+<div class="vocab-section"><div class="vocab-section-head"><div class="vocab-section-icon">📚</div><div><div class="vocab-section-label">Vocabulary</div><div class="vocab-section-title">Three Words for Today</div></div></div>
+<div class="vocab-grid">
+<div class="flip-card fc-color-1" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-card-front"><div class="fc-emoji">⚪</div><div class="fc-word">place-value disc</div><div class="fc-tap">tap</div></div><div class="flip-card-back"><div class="fc-word-back">place-value disc</div><div class="fc-def">a round counter that stands for 1, 10, or 100 depending on the number written on it.</div></div></div></div>
+<div class="flip-card fc-color-2" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-card-front"><div class="fc-emoji">×</div><div class="fc-word">factor</div><div class="fc-tap">tap</div></div><div class="flip-card-back"><div class="fc-word-back">factor</div><div class="fc-def">a number that is multiplied. In 3 × 200, the factors are 3 and 200.</div></div></div></div>
+<div class="flip-card fc-color-3" onclick="this.classList.toggle('flipped')"><div class="flip-card-inner"><div class="flip-card-front"><div class="fc-emoji">🧮</div><div class="fc-word">product</div><div class="fc-tap">tap</div></div><div class="flip-card-back"><div class="fc-word-back">product</div><div class="fc-def">the answer when you multiply two factors. 3 × 200 = 600. The product is 600.</div></div></div></div>
+</div>
+</div>
+
+<div class="callout callout-info"><span class="callout-icon">⚪</span><p>Below: the Place-Value Disc Multiplier. Pick how many groups, pick the disc size, watch the product appear. Try ones, tens, AND hundreds.</p></div>
+<div class="activity bl-berry"><div class="activity-head"><div class="activity-num" style="background:var(--berry);">⚪</div><div><div class="activity-title">Place-Value Disc Multiplier</div></div></div><div class="activity-body">
+<div class="pdm-frame">
+<div class="pdm-controls">
+<div class="pdm-pick">
+<div class="pdm-pick-label">Number of groups</div>
+<div class="pdm-stepper">
+<button class="pdm-btn" onclick="pdmGroups(-1)">−</button>
+<div class="pdm-val" id="pdm-g">3</div>
+<button class="pdm-btn" onclick="pdmGroups(1)">+</button>
+</div>
+</div>
+<div class="pdm-pick">
+<div class="pdm-pick-label">Discs per group</div>
+<div class="pdm-stepper">
+<button class="pdm-btn" onclick="pdmDiscs(-1)">−</button>
+<div class="pdm-val" id="pdm-d">2</div>
+<button class="pdm-btn" onclick="pdmDiscs(1)">+</button>
+</div>
+</div>
+</div>
+<div class="pdm-place-row">
+<button class="pdm-place-btn chosen" data-place="ones" onclick="pdmPlace('ones')">Ones <span class="pdm-tiny">disc = 1</span></button>
+<button class="pdm-place-btn" data-place="tens" onclick="pdmPlace('tens')">Tens <span class="pdm-tiny">disc = 10</span></button>
+<button class="pdm-place-btn" data-place="hundreds" onclick="pdmPlace('hundreds')">Hundreds <span class="pdm-tiny">disc = 100</span></button>
+</div>
+<div class="pdm-stage" id="pdm-stage"></div>
+<div class="pdm-summary">
+<div class="pdm-eq" id="pdm-eq">3 × 2 = <span class="ans" id="pdm-ans">6</span></div>
+<div class="pdm-narration" id="pdm-narr">3 groups of 2 ones = 6 ones.</div>
+</div>
+</div>
+<p style="font-size:13.5px;color:#5A1830;font-family:'Lora',serif;font-style:italic;text-align:center;margin-top:8px;">Try with 3 groups of 2 ones → 3 groups of 2 tens → 3 groups of 2 hundreds. The discs change. The count keeps its shape.</p>
+</div></div>
+<div class="activity bl-slate"><div class="activity-head"><div class="activity-num" style="background:#3A6B9A;">📋</div><div><div class="activity-title">The Pattern</div></div></div><div class="activity-body">
+<p>Lock the factors as 3 groups of 2. Switch the disc size. Watch what happens to the product.</p>
+<div class="pdm-pattern">
+<div class="pdm-pattern-cell ones-cell" id="pat-ones">
+<div class="pdm-pattern-eq">3 × 2 = 6</div>
+<div class="pdm-pattern-words">3 groups of 2 ones</div>
+</div>
+<div class="pdm-pattern-cell tens-cell" id="pat-tens">
+<div class="pdm-pattern-eq">3 × 20 = 60</div>
+<div class="pdm-pattern-words">3 groups of 2 tens</div>
+</div>
+<div class="pdm-pattern-cell hundreds-cell" id="pat-hundreds">
+<div class="pdm-pattern-eq">3 × 200 = 600</div>
+<div class="pdm-pattern-words">3 groups of 2 hundreds</div>
+</div>
+</div>
+<div class="journal-label">✏️ Notice + Wonder <span class="saved-dot" id="dn"></span></div>
+<textarea class="journal-box" data-label="Notice/Wonder pattern" id="j-n" oninput="autoSave(this,'dn')" placeholder=""></textarea>
+</div></div>
+<div class="key-concept"><div class="key-concept-label">📐 What You Just Saw</div>
+<p><strong>The fact is the same. The place changes.</strong></p>
+<p style="text-align:center;background:#fff;border:2px solid var(--berry-mid);border-radius:10px;padding:12px;margin:10px 0;font-size:16px;">3 × 2 = 6 ones   →   3 × 20 = 6 tens (60)   →   3 × 200 = 6 hundreds (600)</p>
+<p>To multiply ones, tens, or hundreds: <strong>multiply the digits</strong>, then attach the right place. The count of discs stays the same — it just shifts up one place when you go from ones to tens, and again to hundreds.</p>
+</div>
+<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">🧠</div><div><div class="activity-title">Worked Example: 4 × 30</div></div></div><div class="activity-body">
+<div class="task-box"><div class="task-label">Problem</div><p>Find 4 × 30 using place-value discs.</p></div>
+<div class="bubble-row">
+<div class="bubble atlas"><div class="bubble-avatar">A</div><div class="bubble-body"><div class="bubble-name">Atlas — set up the discs</div><div class="bubble-text">"30 is 3 tens. So I'll show 4 groups of 3 tens. That's 12 tens total."</div></div></div>
+<div class="bubble hazel"><div class="bubble-avatar">H</div><div class="bubble-body"><div class="bubble-name">Hazel — find the engine</div><div class="bubble-text">"The basic fact underneath is 4 × 3 = 12. Since the discs are tens, the answer is 12 tens = 120."</div></div></div>
+<div class="bubble cora"><div class="bubble-avatar">C</div><div class="bubble-body"><div class="bubble-name">Cora — check</div><div class="bubble-text">"4 × 30 = 120. Count: 30 + 30 + 30 + 30 = 120. ✓"</div></div></div>
+</div>
+<p style="font-family:'Lora',serif;background:#FAFBFF;border:2px solid #E2E8F4;border-radius:12px;padding:10px;text-align:center;font-size:18px;font-weight:800;margin-top:14px;">4 × 30 = <span style="color:#1A8A5A;">120</span></p>
+</div></div>
+
+<div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">Why does 4 × 30 come out to 120 and not 12? Use the discs in your answer.</p><div class="journal-label">✏️ <span class="saved-dot" id="ds1"></span></div><textarea class="journal-box" data-label="Learn socratic" id="j-s1" oninput="autoSave(this,'ds1')" placeholder=""></textarea></div>
+<div class="tab-next-wrap"><p class="tab-transition-voice">Same fact. Different discs. Time to practice.</p><button class="tab-next-btn" onclick="switchTab('practice')">Continue to 🧮 Practice →</button></div>
+</div>
+<div class="tab-panel" id="tab-practice">
+<div class="callout callout-info"><span class="callout-icon">🧭</span><p>For each problem, name the basic fact first. Then attach the right place.</p></div>
+<div class="activity bl-berry"><div class="activity-head"><div class="activity-num" style="background:var(--berry);">1</div><div><div class="activity-title">Quick Patterns</div></div></div><div class="activity-body">
+<p>Use 3 × 2 = 6 as the engine. Find:</p>
+<div class="fill-row"><strong>3 × 20 =</strong><input class="fill-input" id="p1-a" placeholder="?" type="number"/></div>
+<div class="fill-row"><strong>3 × 200 =</strong><input class="fill-input" id="p1-b" placeholder="?" type="number"/></div>
+<div class="fill-row"><strong>30 × 2 =</strong><input class="fill-input" id="p1-c" placeholder="?" type="number"/></div>
+<div class="fill-row"><strong>200 × 3 =</strong><input class="fill-input" id="p1-d" placeholder="?" type="number"/></div>
+<button class="check-btn" onclick="checkP1()">Check ✓</button>
+<div class="feedback-branch feedback-pass" id="p1-pass"><strong>✅</strong> 60, 600, 60, 600. The 6 keeps its shape — the place changes.</div>
+<div class="feedback-branch feedback-retry" id="p1-retry"><strong>🔄 Underneath each problem is 3 × 2 = 6.</strong>
+<div class="hint-callout">3 × 20 = 6 tens = 60.   3 × 200 = 6 hundreds = 600.</div>
+<button class="orange-btn" onclick="resetP1()">↩ Reset</button>
+</div>
+</div></div>
+<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">2</div><div><div class="activity-title">Build It</div></div></div><div class="activity-body">
+<div class="task-box"><div class="task-label">Problem</div><p>Find 4 × 30 using place-value discs. <strong>Sketch your discs</strong> in your journal, then write the equation and the product.</p></div>
+<div class="journal-label">✏️ My sketch + equation + product <span class="saved-dot" id="dp2"></span></div>
+<textarea class="journal-box" data-label="Practice 2" id="j-p2" oninput="autoSave(this,'dp2')" placeholder="" style="min-height:110px;"></textarea>
+<div class="callout callout-tip"><span class="callout-icon">💡</span><p><strong>Answer:</strong> 4 groups of 3 tens = 12 tens = 120. So 4 × 30 = 120.</p></div>
+</div></div>
+<div class="activity bl-berry"><div class="activity-head"><div class="activity-num" style="background:var(--berry);">3</div><div><div class="activity-title">Spot the Mistake</div></div></div><div class="activity-body">
+<div class="task-box"><div class="task-label">Hazel's claim</div><p>"5 × 40 = 20 because 5 × 4 = 20."</p></div>
+<p>Is Hazel correct? If not, fix it.</p>
+<div class="value-card-row">
+<div class="value-card" onclick="p3(this,false)"><div class="big">Correct</div><div class="small">5 × 40 = 20</div></div>
+<div class="value-card" onclick="p3(this,true)"><div class="big">Not correct</div><div class="small">5 × 40 = 200</div></div>
+</div>
+<div class="inline-feedback" id="p3-fb"></div>
+<div class="journal-label">✏️ Explain in one sentence. <span class="saved-dot" id="dp3"></span></div>
+<textarea class="journal-box" data-label="Practice 3 explanation" id="j-p3" oninput="autoSave(this,'dp3')" placeholder="" style="min-height:60px;"></textarea>
+</div></div>
+<div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">If you know 6 × 4 = 24, what's 6 × 400? How did you decide?</p><div class="journal-label">✏️ <span class="saved-dot" id="ds2"></span></div><textarea class="journal-box" data-label="Practice socratic" id="j-s2" oninput="autoSave(this,'ds2')" placeholder=""></textarea></div>
+<div class="tab-next-wrap"><p class="tab-transition-voice">Same fact. Different place. Now show what you know.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
+</div>
+<div class="tab-panel" id="tab-assignment">
+<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">🎯</div><div><div class="activity-title">Ready Check</div></div></div><div class="activity-body">
+<div class="q-block"><p class="q-text"><span class="q-num">A</span>3 × 20 = ?</p>
+<div class="value-card-row">
+<div class="value-card" onclick="eA(this,false)"><div class="big">6</div></div>
+<div class="value-card" onclick="eA(this,true)"><div class="big">60</div></div>
+<div class="value-card" onclick="eA(this,false)"><div class="big">600</div></div>
+</div>
+<div class="inline-feedback" id="eA-fb"></div>
+</div>
+<div class="q-block"><p class="q-text"><span class="q-num">B</span>5 × 400 = ?</p>
+<div class="value-card-row">
+<div class="value-card" onclick="eB(this,false)"><div class="big">200</div></div>
+<div class="value-card" onclick="eB(this,true)"><div class="big">2,000</div></div>
+<div class="value-card" onclick="eB(this,false)"><div class="big">20,000</div></div>
+</div>
+<div class="inline-feedback" id="eB-fb"></div>
+</div>
+</div></div>
+<div class="activity bl-navy"><div class="activity-head"><div class="activity-num" style="background:#0E1C42;">📬</div><div><div class="activity-title">Show What You Know</div></div></div><div class="activity-body">
+<div class="q-block"><p class="q-text"><span class="q-num">1</span>Fill in: 4 × 5 = ___  ·  4 × 50 = ___  ·  4 × 500 = ___ . What stays the same? What changes?</p><div class="journal-label">✏️ <span class="saved-dot" id="da1"></span></div><textarea class="journal-box" data-label="SWYK 1" id="j-a1" oninput="autoSave(this,'da1')" placeholder=""></textarea></div>
+<div class="q-block"><p class="q-text"><span class="q-num">2</span>Find: 6 × 3 = ___  ·  6 × 30 = ___  ·  6 × 300 = ___</p><div class="journal-label">✏️ <span class="saved-dot" id="da2"></span></div><textarea class="journal-box" data-label="SWYK 2" id="j-a2" oninput="autoSave(this,'da2')" placeholder=""></textarea></div>
+<div class="q-block"><p class="q-text"><span class="q-num">3</span>Find: 9 × 7 = ___  ·  9 × 70 = ___  ·  9 × 700 = ___</p><div class="journal-label">✏️ <span class="saved-dot" id="da3"></span></div><textarea class="journal-box" data-label="SWYK 3" id="j-a3" oninput="autoSave(this,'da3')" placeholder=""></textarea></div>
+<div class="q-block"><p class="q-text"><span class="q-num">4</span>A bag has 200 paper clips. How many in 4 bags? Show with place-value discs.</p><div class="journal-label">✏️ <span class="saved-dot" id="da4"></span></div><textarea class="journal-box" data-label="SWYK 4" id="j-a4" oninput="autoSave(this,'da4')" placeholder=""></textarea></div>
+<div class="q-block"><p class="q-text"><span class="q-num">5</span>Felix says 5 × 30 = 15. Is Felix right? If not, fix it and explain.</p><div class="journal-label">✏️ <span class="saved-dot" id="da5"></span></div><textarea class="journal-box" data-label="SWYK 5" id="j-a5" oninput="autoSave(this,'da5')" placeholder=""></textarea></div>
+<div class="q-block"><p class="q-text"><span class="q-num">6</span><strong>Reflection.</strong> How does knowing your basic facts (like 3 × 4) help you find a bigger product (like 3 × 400)?</p><div class="journal-label">✏️ <span class="saved-dot" id="da6"></span></div><textarea class="journal-box" data-label="SWYK 6" id="j-a6" oninput="autoSave(this,'da6')" placeholder=""></textarea></div>
+<div class="activity bl-slate" style="margin-top:18px;border-left-color:#F5A36F;"><div class="activity-head"><div class="activity-num" style="background:#F5A36F;color:#0E1C42;">🗺️</div><div><div class="activity-title">Connection Forward</div><div class="activity-sub">Preview Lesson 3.05.02 — Multiplication without Regrouping</div></div></div><div class="activity-body">
+<p>Next: we'll put the discs on a place-value mat and multiply a 2-digit number by 1 digit — no trades yet.</p>
+</div></div>
+</div></div>
+
+<div class="gathered-box"><div class="gathered-head"><div class="gathered-head-icon">📋</div><div><div class="gathered-head-label">Math Journal</div><div class="gathered-head-title">All Answers</div></div></div><div class="gathered-body"><textarea class="gathered-output" id="gO" readonly="">Click "Gather" to collect.</textarea><div style="display:flex;gap:10px;margin-top:12px;"><button class="berry-btn" onclick="gather()">📋 Gather</button><button class="green-btn" onclick="copyA()">Copy</button><button class="check-btn" onclick="dl()">Download</button></div></div></div>
+<div class="turn-in-card"><div class="turn-in-header"><div class="turn-in-header-icon">✅</div><div><div class="turn-in-header-label">Turn-In</div><div class="turn-in-header-title">Ready?</div></div></div><div class="turn-in-body">
+<div class="turn-in-item" onclick="tg(this)"><span class="turn-in-check">✓</span><span>I completed Show What You Know.</span></div>
+<div class="turn-in-item" onclick="tg(this)"><span class="turn-in-check">✓</span><span>I used place-value discs (in my head or on paper) for at least one problem.</span></div>
+</div></div>
+</div>
+<div class="footer"><div class="footer-main">🏫 <span>Optima Academy Online</span></div><div class="footer-sub">Math · Grade 3 · 3.05.01 · Unit 5 Anchor</div><div class="footer-copy">© 2025 Optima Academy Online</div></div>
+</div>
+<script>
+var LS='g3-3-05-01-';
+function mini(el){if(!el)return;var em=['⭐','✨','⚪','×'];for(var i=0;i<8;i++){var s=document.createElement('span');s.textContent=em[Math.floor(Math.random()*em.length)];s.style.cssText='position:absolute;font-size:'+(16+Math.random()*14)+'px;pointer-events:none;z-index:999;animation:mini .7s ease-out forwards;left:'+(20+Math.random()*60)+'%;top:'+(Math.random()*40)+'%;';el.style.position='relative';el.style.overflow='visible';el.appendChild(s);setTimeout(function(x){x.remove()}.bind(null,s),800);}}
+function switchTab(t){document.querySelectorAll('.tab-panel').forEach(function(p){p.classList.remove('active');});document.getElementById('tab-'+t).classList.add('active');document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active');if(b.dataset.tab===t){b.classList.add('active');b.classList.add('visited');}});var bs=[].slice.call(document.querySelectorAll('.tab-btn'));var i=bs.findIndex(function(b){return b.classList.contains('active');});var p=Math.round(((i+1)/bs.length)*100);document.getElementById('pf').style.width=p+'%';document.getElementById('pp').textContent=p+'%';window.scrollTo({top:0,behavior:'smooth'});}
+function autoSave(el,d){try{localStorage.setItem(LS+el.id,el.value);}catch(e){}var dt=document.getElementById(d);if(dt){dt.classList.add('saved');setTimeout(function(){dt.classList.remove('saved')},900);}}
+function restore(){document.querySelectorAll('textarea.journal-box').forEach(function(t){try{var v=localStorage.getItem(LS+t.id);if(v)t.value=v;}catch(e){}});}
+function showBranch(id){document.getElementById(id).classList.add('show');}function hideBranches(p){['pass','retry'].forEach(function(x){var e=document.getElementById(p+'-'+x);if(e)e.classList.remove('show');});}
+
+function rA(c,ok){c.parentElement.querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});var f=document.getElementById('rA-fb');if(ok){c.classList.add('good');f.className='inline-feedback show good';f.innerHTML='<strong>✅</strong> 3 × 2 = 6. That fact is the engine for the whole lesson.';mini(c);}else{c.classList.add('bad');f.className='inline-feedback show think';f.innerHTML='3 groups of 2 = 3 × 2 = 6.';}}
+function rT(c,ok){c.parentElement.querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});var f=document.getElementById('rT-fb');if(ok){c.classList.add('good');f.className='inline-feedback show good';f.innerHTML='<strong>✅</strong> 3 × 200 = 600. The 6 is still there — it lives in the hundreds place.';mini(c);}else{c.classList.add('bad');f.className='inline-feedback show think';f.innerHTML='3 groups of 2 hundreds = 6 hundreds = 600.';}}
+
+/* ============ Place-Value Disc Multiplier ============ */
+var pdmG=3, pdmD=2, pdmP='ones';
+function pdmGroups(d){var n=pdmG+d;if(n<1||n>5)return;pdmG=n;pdmRender();}
+function pdmDiscs(d){var n=pdmD+d;if(n<1||n>5)return;pdmD=n;pdmRender();}
+function pdmPlace(p){pdmP=p;document.querySelectorAll('.pdm-place-btn').forEach(function(b){b.classList.toggle('chosen',b.dataset.place===p);});pdmRender();}
+function pdmRender(){
+  document.getElementById('pdm-g').textContent=pdmG;
+  document.getElementById('pdm-d').textContent=pdmD;
+  var st=document.getElementById('pdm-stage');st.innerHTML='';
+  var lab=pdmP==='ones'?'1':(pdmP==='tens'?'10':'100');
+  var unit=pdmP;
+  for(var g=0;g<pdmG;g++){
+    var row=document.createElement('div');row.className='pdm-group';
+    var glab=document.createElement('div');glab.className='pdm-group-label';glab.textContent='Group '+(g+1)+': '+pdmD+' '+unit;
+    row.appendChild(glab);
+    for(var i=0;i<pdmD;i++){var dsc=document.createElement('div');dsc.className='pv-disc '+pdmP;dsc.textContent=lab;row.appendChild(dsc);}
+    st.appendChild(row);
+  }
+  var basic=pdmG*pdmD;
+  var mult=pdmP==='ones'?1:(pdmP==='tens'?10:100);
+  var prod=basic*mult;
+  var fac=pdmP==='ones'?String(pdmD):(pdmP==='tens'?String(pdmD)+'0':String(pdmD)+'00');
+  document.getElementById('pdm-eq').innerHTML=pdmG+' × '+fac+' = <span class="ans">'+prod.toLocaleString()+'</span>';
+  document.getElementById('pdm-narr').textContent=pdmG+' groups of '+pdmD+' '+unit+' = '+basic+' '+unit+(unit==='ones'?'':' ')+(unit!=='ones'?' = '+prod:'')+'.';
+  // highlight matching pattern cell
+  ['ones','tens','hundreds'].forEach(function(k){var el=document.getElementById('pat-'+k);if(el)el.classList.toggle('active-cell',k===pdmP);});
+}
+
+var p1A={'p1-a':60,'p1-b':600,'p1-c':60,'p1-d':600};
+function checkP1(){hideBranches('p1');var ok=true;Object.keys(p1A).forEach(function(id){var el=document.getElementById(id);el.classList.remove('good','bad');if(parseInt(el.value,10)===p1A[id]){el.classList.add('good');}else{el.classList.add('bad');ok=false;}});if(ok){showBranch('p1-pass');mini(document.getElementById('p1-pass'));}else{showBranch('p1-retry');}}
+function resetP1(){Object.keys(p1A).forEach(function(id){var el=document.getElementById(id);el.value='';el.classList.remove('good','bad');});hideBranches('p1');}
+
+function p3(c,ok){c.parentElement.querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});var f=document.getElementById('p3-fb');if(ok){c.classList.add('good');f.className='inline-feedback show good';f.innerHTML='<strong>✅</strong> 5 × 40 = 5 × 4 tens = 20 tens = 200. Hazel\'s product is missing one place.';mini(c);}else{c.classList.add('bad');f.className='inline-feedback show think';f.innerHTML='5 × 4 = 20. But 40 is 4 tens, so 5 × 40 = 20 tens = 200.';}}
+
+function eA(c,ok){c.parentElement.querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});var f=document.getElementById('eA-fb');if(ok){c.classList.add('good');f.className='inline-feedback show good';f.innerHTML='<strong>✅</strong> 3 × 2 tens = 6 tens = 60.';mini(c);}else{c.classList.add('bad');f.className='inline-feedback show think';f.innerHTML='3 × 2 = 6. Discs are tens → 60.';}}
+function eB(c,ok){c.parentElement.querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});var f=document.getElementById('eB-fb');if(ok){c.classList.add('good');f.className='inline-feedback show good';f.innerHTML='<strong>✅</strong> 5 × 4 hundreds = 20 hundreds = 2,000.';mini(c);}else{c.classList.add('bad');f.className='inline-feedback show think';f.innerHTML='5 × 4 = 20. Hundreds → 2,000.';}}
+
+function gather(){var o='Lesson 3.05.01\n\n';document.querySelectorAll('textarea.journal-box').forEach(function(t){o+=(t.dataset.label||t.id)+'\n'+((t.value||'').trim()||'[empty]')+'\n\n';});document.getElementById('gO').value=o;}
+function copyA(){gather();if(navigator.clipboard)navigator.clipboard.writeText(document.getElementById('gO').value);}
+function dl(){gather();var t=document.getElementById('gO').value;var w=window.open('','_blank');w.document.write('<title>3.05.01</title><pre>'+t.replace(/[&<>]/g,function(s){return{'&':'&amp;','<':'&lt;','>':'&gt;'}[s];})+'</pre>');w.document.close();w.print();}
+function tg(i){i.classList.toggle('checked');var c=i.querySelector('.turn-in-check');if(c)c.textContent=i.classList.contains('checked')?'✓':'';}
+
+
+async function loadVideoManifest(){try{var res=await fetch('video-manifest.md',{cache:'no-store'});if(!res.ok)return;var txt=await res.text();var map=parseManifest(txt);document.querySelectorAll('.video-wrap[data-video-slot]').forEach(function(w){var slot=w.dataset.videoSlot;if(map[slot]){var ratio=w.querySelector('.video-ratio');ratio.innerHTML=map[slot].trim();var iframe=ratio.querySelector('iframe');if(iframe){iframe.classList.add('video-iframe');iframe.setAttribute('allowfullscreen','');iframe.setAttribute('loading','lazy');}}});}catch(e){}}
+function parseManifest(txt){var map={};var lines=txt.split(/\r?\n/);var current=null,buf=[];function commit(){if(current&&buf.join('\n').trim()){map[current]=buf.join('\n').trim();}buf=[];}for(var i=0;i<lines.length;i++){var line=lines[i];var m=line.match(/^([A-Za-z0-9-]+):\s*$/);if(m){commit();current=m[1];}else if(current){buf.push(line);}}commit();return map;}
+
+window.addEventListener('DOMContentLoaded',function(){loadVideoManifest();restore();pdmRender();});
+</script>
+<script id="fluencyScript">
+(function(){
+var FLUENCY_TIMED = false;
+var FLUENCY_TITLE = "×0 and ×1 Facts";
+var fluencyInterval = null;
+var fluencySecondsLeft = 60;
+
+window.fluencyStart = function(){
+  if(!FLUENCY_TIMED) return;
+  var grid = document.getElementById('fluencyGrid');
+  if(!grid) return;
+  grid.querySelectorAll('.fluency-input').forEach(function(i){ i.disabled = false; });
+  var btn = document.getElementById('fluencyStartBtn');
+  if(btn){ btn.disabled = true; btn.textContent = 'Timer Running\u2026'; }
+  var checkBtn = document.getElementById('fluencyCheckBtn');
+  if(checkBtn) checkBtn.disabled = false;
+  fluencySecondsLeft = 60;
+  fluencyUpdateDisplay();
+  fluencyInterval = setInterval(function(){
+    fluencySecondsLeft--;
+    fluencyUpdateDisplay();
+    if(fluencySecondsLeft <= 0){
+      clearInterval(fluencyInterval);
+      grid.querySelectorAll('.fluency-input').forEach(function(i){ i.disabled = true; });
+      window.fluencyCheck();
+    }
+  }, 1000);
+};
+
+function fluencyUpdateDisplay(){
+  var el = document.getElementById('fluencyTimerDisplay');
+  if(el) el.textContent = fluencySecondsLeft + 's';
+}
+
+window.fluencyCheck = function(){
+  if(fluencyInterval){ clearInterval(fluencyInterval); fluencyInterval = null; }
+  var items = document.querySelectorAll('#fluencyGrid .fluency-item');
+  var correct = 0, attempted = 0, total = items.length;
+  var lines = [];
+  items.forEach(function(item){
+    var input = item.querySelector('.fluency-input');
+    var qText = item.querySelector('.fluency-q').textContent;
+    var given = (input.value || '').trim();
+    var ans = input.dataset.answer;
+    var ok = given !== '' && given === ans;
+    if(given !== '') attempted++;
+    item.classList.remove('fluency-correct','fluency-wrong');
+    if(ok){ correct++; item.classList.add('fluency-correct'); }
+    else if(given !== ''){ item.classList.add('fluency-wrong'); }
+    lines.push(qText + ' ' + ans + '   [answered: ' + (given || 'blank') + ']' + (ok ? ' \u2713' : (given ? ' \u2717' : '')));
+  });
+  var pct = total ? Math.round((correct/total)*100) : 0;
+  var timeStr = FLUENCY_TIMED ? (' in ' + (60 - fluencySecondsLeft) + ' seconds') : '';
+  var summary = 'Fluency Warm-Up \u2014 ' + FLUENCY_TITLE + '\n' + correct + ' / ' + total + ' correct (' + pct + '%)' + timeStr + '\n\n' + lines.join('\n');
+  var j = document.getElementById('fluencyJournal');
+  if(j) j.value = summary;
+  var resEl = document.getElementById('fluencyResult');
+  if(resEl) resEl.innerHTML = correct + ' / ' + total + ' correct (' + pct + '%)' + timeStr;
+  var checkBtn = document.getElementById('fluencyCheckBtn');
+  if(checkBtn) checkBtn.disabled = true;
+  var startBtn = document.getElementById('fluencyStartBtn');
+  if(startBtn) startBtn.textContent = 'Done';
+};
+})();
+</script>
+</body></html>

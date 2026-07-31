@@ -1,3 +1,623 @@
 <!DOCTYPE html>
 
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Optima Academy Online — Grade 3 Math Lesson 3.03.04</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito:wght@400;600;700;800;900&display=swap');
+*{box-sizing:border-box;margin:0;padding:0} body{font-family:'Nunito','Century Gothic',Verdana,sans-serif;background:#F0F2F8;color:#0E1C42;line-height:1.6} .page-wrap{max-width:920px;margin:0 auto;background:#fff;box-shadow:0 0 40px rgba(14,28,66,.08)}
+.progress-wrap{position:sticky;top:0;z-index:200;background:#0E1C42;padding:8px 20px 10px;display:flex;align-items:center;gap:14px}.progress-label{font-size:12px;color:#F5C518;font-weight:800;text-transform:uppercase;letter-spacing:.8px;white-space:nowrap}.progress-track{flex:1;height:10px;background:rgba(255,255,255,.1);border-radius:10px;overflow:hidden}.progress-fill{height:100%;width:0%;background:linear-gradient(90deg,#1A8A9A,#2DB87A,#F5C518);border-radius:10px;transition:width .4s}.progress-pct{font-size:13px;color:#F5C518;font-weight:800;min-width:36px;text-align:right}
+.header{background:#0E1C42;border-bottom:6px solid #1A8A9A;padding:20px 28px 18px;position:relative;overflow:hidden}.header::after{content:'';position:absolute;bottom:6px;left:0;right:0;height:3px;background:linear-gradient(90deg,#1A8A9A,#55C8E8,#1A8A9A)}.header-brand{display:flex;align-items:center;gap:12px;margin-bottom:14px}.header-logo{width:52px;height:52px;border-radius:50%;background:#FFFFFF;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 2px 8px rgba(0,0,0,.15)}.header-logo img{width:48px;height:38px;display:block}.header-org{font-size:22px;color:#fff;font-weight:800;line-height:1.15}.header-sub{font-size:11px;color:#55C8E8;letter-spacing:.5px}.header-title{font-family:'Lora',Georgia,serif;font-size:28px;color:#fff;font-weight:700;line-height:1.2;margin-bottom:10px}.header-title em{color:#A0E8DA;font-style:italic}.header-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(26,138,154,.18);border:1.5px solid rgba(26,138,154,.45);border-radius:28px;padding:6px 16px}.header-badge-icon{font-size:22px}.header-badge-text{font-size:18px;color:#fff;font-weight:800}
+.quote-strip{background:linear-gradient(135deg,#E8F5F8,#D6EEF3);border-bottom:2px solid #B5DBE3;padding:14px 28px;text-align:center}.quote-strip-text{font-family:'Lora',Georgia,serif;font-size:16px;font-style:italic;color:#1A4A55;line-height:1.6}.quote-strip-attr{font-size:11px;color:#1A8A9A;font-weight:700;margin-top:4px;text-transform:uppercase;letter-spacing:.5px}.info-strip{display:flex;flex-wrap:wrap;background:#fff;border-bottom:2px solid #E2E8F4}.info-cell{flex:1;min-width:150px;padding:12px 16px;border-right:1px solid #E2E8F4;display:flex;align-items:center;gap:10px}.info-cell:last-child{border-right:none}.info-icon{width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}.info-label{font-size:10px;color:#7A88A8;text-transform:uppercase;letter-spacing:.5px;font-weight:700}.info-value{font-size:16px;color:#0E1C42;font-weight:800;line-height:1.2}.info-detail{font-size:11px;color:#3A4A6B;line-height:1.3}.explorer-strip{display:flex;align-items:center;gap:16px;padding:12px 28px;background:linear-gradient(135deg,#1A2340,#0E1C42);border-bottom:3px solid #1A8A9A}.explorer-compass{font-size:28px;flex-shrink:0}.explorer-mission-label{font-size:10px;color:#F5C518;text-transform:uppercase;letter-spacing:1px;font-weight:800;margin-bottom:2px}.explorer-mission-text{font-size:15px;color:#fff;font-weight:700;line-height:1.3}
+.intro-2col{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:20px 28px 4px}.intro-card{background:#fff;border:2px solid #E2E8F4;border-radius:18px;overflow:hidden;box-shadow:0 2px 10px rgba(14,28,66,.04)}.intro-card-head{display:flex;align-items:center;gap:10px;padding:14px 18px;border-bottom:2px solid}.intro-card-head-icon{width:40px;height:40px;border-radius:50%;color:#fff;font-size:20px;display:flex;align-items:center;justify-content:center;flex-shrink:0}.intro-card-head-label{font-size:10px;color:#7A88A8;text-transform:uppercase;letter-spacing:.8px;font-weight:700}.intro-card-head-title{font-size:18px;color:#0E1C42;font-weight:800;line-height:1.2}.intro-card-body{padding:14px 18px}.intro-card-body p{font-size:15px;color:#3A4A6B;line-height:1.65;margin-bottom:8px}.obj-line{display:flex;align-items:flex-start;gap:8px;font-size:15px;color:#0E1C42;line-height:1.55;margin-bottom:8px}.obj-icon{flex-shrink:0;font-size:17px}.theme-question .intro-card-head{background:#FFF8E6;border-color:#F5E6C8}.theme-question .intro-card-head-icon{background:#F5C518}.theme-objectives .intro-card-head{background:#E8F5F8;border-color:#B5DBE3}.theme-objectives .intro-card-head-icon{background:#1A8A9A}.need-strip{display:flex;align-items:center;flex-wrap:wrap;gap:8px;padding:12px 28px 18px}.need-strip-label{font-size:13px;color:#3A4A6B;font-weight:700;white-space:nowrap}.need-chip{display:inline-flex;align-items:center;gap:5px;background:#E3F8ED;border:1.5px solid #B8E8CF;border-radius:20px;padding:5px 12px;font-size:13px;color:#0E1C42;font-weight:700}
+.tab-bar{position:sticky;top:38px;z-index:100;background:#fff;border-bottom:3px solid #E2E8F4;display:flex;overflow-x:auto;box-shadow:0 -4px 0 0 #0E1C42}.tab-btn{flex:1;min-width:130px;padding:12px 8px 11px;background:transparent;border:none;border-bottom:4px solid transparent;font-family:'Nunito',sans-serif;font-size:13px;font-weight:700;color:#7A88A8;cursor:pointer;transition:all .2s;white-space:nowrap;line-height:1.3;text-align:center}.tab-btn:hover{color:#0E1C42;background:#E8F5F8}.tab-btn.active{color:#0E1C42;border-bottom-color:#1A8A9A;background:#fff}.tab-btn .tab-check{display:none;font-size:12px;color:#2DB87A;margin-left:4px;font-weight:800}.tab-btn.visited .tab-check{display:inline}.tab-panel{display:none;padding:24px 28px 36px}.tab-panel.active{display:block}
+.video-wrap{border-radius:18px;overflow:hidden;border:2px solid #E2E8F4;box-shadow:0 4px 20px rgba(14,28,66,.08);background:#000;margin:0 0 22px}.video-wrap-header{display:flex;align-items:center;gap:12px;padding:12px 18px;background:linear-gradient(135deg,#0E1C42,#1A2D5A);border-bottom:2px solid rgba(26,138,154,.3)}.video-wrap-type{font-size:10px;color:#F5C518;text-transform:uppercase;letter-spacing:1.5px;font-weight:800;margin-bottom:2px}.video-wrap-title{font-size:16px;color:#fff;font-weight:800;line-height:1.2}.video-ratio{position:relative;padding-bottom:56.25%;height:0;overflow:hidden}.video-placeholder,.video-iframe{position:absolute;top:0;left:0;width:100%;height:100%}.video-placeholder{background:linear-gradient(135deg,#0E1C42,#1A2D5A);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px}.video-placeholder-icon{font-size:44px;margin-bottom:10px;opacity:.55}.video-placeholder-text{font-size:14px;color:rgba(255,255,255,.78);font-weight:700;line-height:1.5;max-width:620px}.video-placeholder-id{font-size:11px;color:rgba(245,197,24,.85);font-family:monospace;margin-top:10px;letter-spacing:.5px}.record-note{margin-top:10px;background:rgba(255,255,255,.08);border:1px solid rgba(245,197,24,.28);border-radius:10px;padding:8px 10px;color:rgba(255,255,255,.82);font-size:12.5px;line-height:1.45;max-width:620px}
+.activity{background:#fff;border:2px solid #E2E8F4;border-radius:18px;margin-bottom:18px;overflow:hidden;box-shadow:0 2px 10px rgba(14,28,66,.04)}.activity.bl-teal{border-left:6px solid #1A8A9A}.activity.bl-green{border-left:6px solid #2DB87A}.activity.bl-yellow{border-left:6px solid #F5C518}.activity.bl-orange{border-left:6px solid #E07B39}.activity.bl-slate{border-left:6px solid #3A6B9A}.activity.bl-navy{border-left:6px solid #0E1C42}.activity-head{display:flex;align-items:center;gap:12px;padding:14px 20px 14px 18px;border-bottom:1.5px solid #E2E8F4}.activity-num{width:38px;height:38px;border-radius:14px;color:#fff;font-size:18px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0}.activity-title{font-size:19px;color:#0E1C42;font-weight:800;line-height:1.2}.activity-sub{font-size:12px;color:#7A88A8}.activity-time{display:inline-flex;align-items:center;gap:4px;padding:4px 12px;border-radius:20px;font-size:13px;font-weight:700;color:#fff;white-space:nowrap;margin-left:auto}.activity-body{padding:18px 22px}.activity-body p{font-size:17px;color:#3A4A6B;line-height:1.75;margin-bottom:12px}.callout{border-radius:14px;padding:16px 18px;display:flex;align-items:flex-start;gap:12px;margin-bottom:14px}.callout-icon{font-size:28px;flex-shrink:0;margin-top:2px}.callout p{font-size:16px;color:#0E1C42;line-height:1.65;margin:0}.callout-info{background:#E8F5F8;border:2px solid #B5DBE3}.callout-think{background:#FFF8E6;border:2px solid #F5E6C8}.callout-tip{background:#E3F8ED;border:2px solid #B8E8CF}.callout-vocab{background:#F0E8FF;border:2px solid #D8CCF0}.key-concept{background:#E8F5F8;border:2px solid #B5DBE3;border-radius:14px;padding:16px 18px;margin-bottom:14px}.key-concept-label{font-size:12px;color:#1A8A9A;text-transform:uppercase;letter-spacing:.5px;font-weight:800;margin-bottom:8px}.key-concept p{font-size:15px;color:#0E1C42;line-height:1.7;margin-bottom:6px}.socratic-box{background:linear-gradient(135deg,#E8F5F8,#D6EEF3);border:2px solid #B5DBE3;border-radius:14px;padding:16px 18px;margin-bottom:14px}.socratic-label{font-size:12px;color:#1A8A9A;text-transform:uppercase;letter-spacing:.5px;font-weight:800;margin-bottom:8px;display:flex;align-items:center;gap:6px}.socratic-q{font-size:16px;color:#0E1C42;line-height:1.7;font-style:italic;margin-bottom:8px}.journal-label{font-size:13px;color:#3A4A6B;font-weight:700;margin:10px 0 4px;display:flex;align-items:center;gap:6px}.journal-box{width:100%;min-height:80px;border:2px solid #E2E8F4;border-radius:12px;padding:12px 14px;font-family:'Nunito',sans-serif;font-size:15px;color:#0E1C42;resize:vertical;transition:border-color .2s;line-height:1.6}.journal-box:focus{outline:none;border-color:#1A8A9A;box-shadow:0 0 0 3px rgba(26,138,154,.12)}.saved-dot{width:8px;height:8px;border-radius:50%;background:#E2E8F4;display:inline-block;transition:background .3s}.saved-dot.saved{background:#2DB87A}.check-btn,.teal-btn,.green-btn,.orange-btn{display:inline-flex;align-items:center;gap:6px;color:#fff;border:none;border-radius:12px;padding:10px 20px;font-size:14px;font-weight:800;cursor:pointer;font-family:'Nunito',sans-serif;margin-top:10px}.check-btn{background:#3A6B9A}.teal-btn{background:#1A8A9A}.green-btn{background:#2DB87A}.orange-btn{background:#E07B39}.hint-callout{background:#FFF8E6;border:2px solid #F5C518;border-radius:10px;padding:10px 14px;margin:12px 0;font-size:14px;color:#5A4A00;font-weight:700}.task-box{background:#FAFBFF;border:2px solid #E2E8F4;border-radius:14px;padding:16px 18px;margin-bottom:14px}.task-label{font-size:12px;color:#1A8A9A;text-transform:uppercase;letter-spacing:.6px;font-weight:800;margin-bottom:10px}.feedback-branch{display:none;margin-top:16px;border-radius:14px;overflow:hidden;padding:16px}.feedback-branch.show{display:block}.feedback-pass{background:#E3F8ED;border:2px solid #B8E8CF}.feedback-retry{background:#FFF0E6;border:2px solid #F5C8A0}
+.value-card-row{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}.value-card{border:2px solid #E2E8F4;background:#fff;border-radius:14px;padding:10px 14px;min-width:110px;text-align:center;cursor:pointer;transition:.2s}.value-card:hover,.value-card.selected{border-color:#1A8A9A;background:#E8F5F8}.value-card.good{background:#E3F8ED;border-color:#2DB87A}.value-card.bad{background:#FFF0E6;border-color:#E07B39;animation:shake .25s}.value-card .big{font-size:22px;font-weight:900;color:#0E1C42}.value-card .small{font-size:12px;color:#3A4A6B;font-weight:800}
+.fill-row{display:flex;align-items:center;gap:8px;background:#FAFBFF;border:2px solid #E2E8F4;border-radius:12px;padding:12px 14px;margin:10px 0;flex-wrap:wrap;font-size:18px;font-weight:800;color:#0E1C42}.fill-input{width:130px;padding:8px 10px;border:2.5px solid #B5DBE3;border-radius:10px;font-size:18px;font-weight:900;color:#1A8A9A;text-align:center;font-family:'Nunito',sans-serif;background:#fff}.fill-input:focus{outline:none;border-color:#1A8A9A;box-shadow:0 0 0 3px rgba(26,138,154,.15)}.fill-input.good{border-color:#2DB87A;background:#E3F8ED;color:#1A8A5A}.fill-input.bad{border-color:#E07B39;background:#FFF0E6;color:#B85A1F;animation:shake .25s}
+.q-block{background:#FAFBFF;border:2px solid #E2E8F4;border-radius:14px;padding:14px 18px;margin-bottom:14px}.q-num{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#1A8A9A;color:#fff;font-weight:800;font-size:14px;margin-right:8px;vertical-align:middle}.q-text{font-size:16px;color:#0E1C42;line-height:1.65;margin-bottom:4px}.gathered-box{background:#fff;border:2px solid #E2E8F4;border-radius:18px;overflow:hidden;margin-top:24px}.gathered-head{display:flex;align-items:center;gap:14px;background:linear-gradient(135deg,#0E1C42,#1A2D5A);padding:18px 22px}.gathered-head-icon{font-size:32px}.gathered-head-label{font-size:11px;color:#F5C518;font-weight:800;text-transform:uppercase;letter-spacing:1px;margin-bottom:2px}.gathered-head-title{font-size:18px;color:#fff;font-weight:800}.gathered-body{padding:16px 22px}.gathered-output{width:100%;min-height:180px;border:2px solid #E2E8F4;border-radius:12px;padding:14px;font-family:'Courier New',monospace;font-size:13px;color:#0E1C42;resize:vertical;background:#FAFBFF}.gathered-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}.tab-next-wrap{text-align:center;padding:24px 0 8px}.tab-transition-voice{font-family:'Lora',Georgia,serif;font-size:15px;font-style:italic;color:#1A4A55;margin-bottom:12px;line-height:1.6}.tab-next-btn{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#1A8A9A,#2BABBD);color:#fff;border:none;border-radius:28px;padding:13px 28px;font-size:15px;font-weight:800;cursor:pointer;font-family:'Nunito',sans-serif;box-shadow:0 4px 14px rgba(26,138,154,.3);transition:all .2s}.turn-in-card{background:#fff;border:2px solid #E2E8F4;border-radius:18px;overflow:hidden;box-shadow:0 2px 10px rgba(14,28,66,.04);margin-top:18px}.turn-in-header{display:flex;align-items:center;gap:14px;background:#E8F5F8;padding:18px 22px;border-bottom:2px solid #B5DBE3}.turn-in-header-icon{font-size:36px}.turn-in-header-label{font-size:11px;color:#1A6B8E;font-weight:800;text-transform:uppercase;letter-spacing:1px;margin-bottom:3px}.turn-in-header-title{font-family:'Lora',Georgia,serif;font-size:22px;color:#0E1C42;font-weight:700}.turn-in-body{padding:18px 22px 20px}.turn-in-item{display:flex;align-items:center;gap:14px;padding:12px 16px;background:#FAFBFF;border:1.5px solid #E2E8F4;border-radius:12px;cursor:pointer;transition:.2s;margin-bottom:10px}.turn-in-item.checked{background:#E3F8ED;border-color:#B8E8CF}.turn-in-check{width:26px;height:26px;border-radius:8px;border:2px solid #B5DBE3;background:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px}.turn-in-item.checked .turn-in-check{background:#2DB87A;border-color:#2DB87A;color:#fff}@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}@media(max-width:720px){.intro-2col{grid-template-columns:1fr}.tab-panel{padding:20px 18px}.activity-time{display:none}.header-title{font-size:24px}}
+#confettiCanvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:10000}
+.footer{background:#0E1C42;border-top:4px solid #1A8A9A;padding:18px 28px;text-align:center}.footer-main{font-size:14px;color:#fff;margin-bottom:4px}.footer-main span{color:#55C8E8;font-weight:700}.footer-sub{font-size:12px;color:rgba(255,255,255,.5);margin-bottom:2px}.footer-copy{font-size:11px;color:rgba(255,255,255,.3)}
+.page-feedback{display:none;margin:12px 0;padding:12px 14px;border-radius:12px;border:2px solid #F5E6C8;background:#FFF8F0;color:#0E1C42;font-weight:800;line-height:1.45}.page-feedback.show{display:block}.page-feedback.good{background:#E3F8ED;border-color:#B8E8CF}.page-feedback.warn{background:#FFF3DC;border-color:#F5E6C8}
+.inline-feedback{display:none;margin:12px 0;border-radius:14px;padding:12px 14px;font-weight:800;line-height:1.5}.inline-feedback.show{display:block}.inline-feedback.good{background:#E3F8ED;border:2px solid #B8E8CF;color:#0E1C42}.inline-feedback.think{background:#FFF3DC;border:2px solid #F5E6C8;color:#5A4A3A}
+.vocab-section{background:#fff;border:2px solid #B5DBE3;border-left:6px solid #1A8A9A;border-radius:18px;padding:18px 20px 20px;margin:0 0 20px;box-shadow:0 2px 10px rgba(14,28,66,.04)}.vocab-section-head{display:flex;align-items:flex-start;gap:12px;margin-bottom:14px}.vocab-section-icon{width:42px;height:42px;border-radius:50%;color:#fff;background:#1A8A9A;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}.vocab-section-label{font-size:11px;color:#1A8A9A;text-transform:uppercase;letter-spacing:.9px;font-weight:900;margin-bottom:3px}.vocab-section-title{font-size:21px;color:#0E1C42;font-weight:900;line-height:1.2}.vocab-section-directions{font-size:15px;color:#3A4A6B;line-height:1.55;font-weight:700;margin:0 0 14px}.vocab-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:14px 0 0}.flip-card{perspective:900px;height:160px;cursor:pointer}.flip-card-inner{position:relative;width:100%;height:100%;transition:transform .5s ease;transform-style:preserve-3d}.flip-card.flipped .flip-card-inner{transform:rotateY(180deg)}.flip-card-front,.flip-card-back{position:absolute;top:0;left:0;width:100%;height:100%;border-radius:16px;backface-visibility:hidden;-webkit-backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:12px 14px;text-align:center;border:2px solid #E2E8F4;box-shadow:0 2px 10px rgba(14,28,66,.06)}.flip-card-front{background:#FAFBFF;border-top:5px solid #1A8A9A}.flip-card-front .fc-emoji{font-size:26px;margin-bottom:6px}.flip-card-front .fc-word{font-size:18px;font-weight:900;color:#0E1C42;margin-bottom:4px;line-height:1.15}.flip-card-front .fc-tap{font-size:11px;color:#1A8A9A;font-weight:900;letter-spacing:.6px;text-transform:uppercase}.flip-card-back{background:linear-gradient(145deg,#0E1C42,#1A2D5A);border-color:#0E1C42;transform:rotateY(180deg)}.flip-card-back .fc-word-back{font-size:11px;color:#55C8E8;text-transform:uppercase;letter-spacing:1px;font-weight:900;margin-bottom:8px}.flip-card-back .fc-def{font-size:14px;color:#fff;line-height:1.5;font-weight:700}.flip-card-back .fc-tap-back{font-size:11px;color:rgba(255,255,255,.55);margin-top:9px;font-weight:800;letter-spacing:.4px;text-transform:uppercase}.fc-color-1 .flip-card-front{border-top-color:#3A6B9A}.fc-color-2 .flip-card-front{border-top-color:#2DB87A}.fc-color-3 .flip-card-front{border-top-color:#F5C518}@media(max-width:720px){.vocab-grid{grid-template-columns:1fr}.flip-card{height:140px}}
+@keyframes miniPop{0%{transform:translateY(0) scale(0);opacity:1}50%{transform:translateY(-30px) scale(1.2);opacity:1}100%{transform:translateY(-60px) scale(.6);opacity:0}}
+@keyframes progressShimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}.progress-fill{background:linear-gradient(90deg,#1A8A9A,#2DB87A,#F5C518,#1A8A9A);background-size:200% 100%;animation:progressShimmer 3s linear infinite}
+@keyframes gentleFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}.tab-next-btn{animation:gentleFloat 3s ease-in-out infinite}
+@keyframes checkPop{0%{transform:scale(0)}60%{transform:scale(1.3)}100%{transform:scale(1)}}.turn-in-item.checked .turn-in-check{animation:checkPop .3s ease-out}
+@keyframes revealSlide{0%{opacity:0;transform:translateY(10px)}100%{opacity:1;transform:translateY(0)}}.reveal-box.show,.feedback-branch.show,.inline-feedback.show{animation:revealSlide .35s ease-out}
+.flip-card{transition:transform .15s}.flip-card:hover{transform:translateY(-3px)}
+.callout{transition:transform .2s,box-shadow .2s}.callout:hover{transform:translateY(-1px);box-shadow:0 4px 14px rgba(14,28,66,.06)}.activity{transition:transform .2s,box-shadow .2s}.activity:hover{box-shadow:0 6px 24px rgba(14,28,66,.08)}.value-card{transition:transform .15s,border-color .2s,background .2s,box-shadow .2s}.value-card:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 6px 16px rgba(14,28,66,.08)}
+.bubble-row{display:flex;gap:12px;flex-wrap:wrap;margin:14px 0;align-items:flex-start}
+.bubble{display:flex;gap:10px;align-items:flex-start;flex:1 1 260px;max-width:340px;background:#fff;border:2px solid #E2E8F4;border-radius:18px;padding:12px 14px;box-shadow:0 2px 10px rgba(14,28,66,.05);position:relative}
+.bubble.atlas{border-left:5px solid #6B3FA0;background:linear-gradient(135deg,#fff,#F8F4FF)}
+.bubble.hazel{border-left:5px solid #2DB87A;background:linear-gradient(135deg,#fff,#F4FBF7)}
+.bubble.felix{border-left:5px solid #F5C518;background:linear-gradient(135deg,#fff,#FEFBEB)}
+.bubble.cora{border-left:5px solid #3A6B9A;background:linear-gradient(135deg,#fff,#F4F8FC)}
+.bubble-avatar{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:900;color:#fff;flex-shrink:0;font-family:'Lora',Georgia,serif}
+.bubble.atlas .bubble-avatar{background:#6B3FA0}
+.bubble.hazel .bubble-avatar{background:#2DB87A}
+.bubble.felix .bubble-avatar{background:#F5C518;color:#0E1C42}
+.bubble.cora .bubble-avatar{background:#3A6B9A}
+.bubble-body{flex:1;min-width:0}
+.bubble-name{font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.7px;margin-bottom:3px;color:#6B3FA0}
+.bubble.hazel .bubble-name{color:#1A8A5A}
+.bubble.felix .bubble-name{color:#8A6D2B}
+.bubble.cora .bubble-name{color:#1A6B8E}
+.bubble-text{font-size:14.5px;color:#0E1C42;line-height:1.5;font-weight:600;font-family:'Lora',Georgia,serif;font-style:italic}
+@media(max-width:620px){.bubble{flex:1 1 100%;max-width:100%}}
 
+/* ═══ ESTIMATION LAB (centerpiece — construction widget) ═══ */
+.elab-frame{background:#fff;border:2px solid #B5DBE3;border-radius:16px;padding:20px;margin:14px 0}
+.elab-equation{text-align:center;font-family:'Lora',Georgia,serif;font-size:30px;font-weight:900;color:#0E1C42;margin-bottom:14px;letter-spacing:1px}
+.elab-equation .num{display:inline-block;background:#0E1C42;color:#fff;padding:3px 16px;border-radius:8px;margin:0 4px}
+.elab-equation .op{display:inline-block;color:#1A8A9A;margin:0 6px}
+.elab-panels{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+@media(max-width:580px){.elab-panels{grid-template-columns:1fr}}
+.elab-panel{background:#FAFBFF;border:2px solid #B5DBE3;border-radius:14px;padding:14px}
+.elab-panel-label{font-size:11px;color:#1A8A9A;font-weight:900;text-transform:uppercase;letter-spacing:.7px;margin-bottom:6px;text-align:center}
+.elab-panel-target{font-family:'Lora',Georgia,serif;font-size:24px;font-weight:900;color:#0E1C42;text-align:center;margin-bottom:10px}
+.elab-rbtns{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:10px}
+.elab-rbtn{background:#fff;border:2.5px solid #D8CCF0;border-radius:999px;padding:8px 16px;font-family:'Nunito',sans-serif;font-weight:900;font-size:13px;color:#3A4A6B;cursor:pointer;transition:.2s}
+.elab-rbtn:hover{border-color:#1A8A9A;background:#E8F5F8;transform:translateY(-1px)}
+.elab-rbtn.chosen{background:#1A8A9A;border-color:#0E5B68;color:#fff}
+.elab-result{text-align:center;font-family:'Lora',Georgia,serif;font-size:22px;font-weight:900;color:#1A8A5A;background:#E3F8ED;border:2px solid #B8E8CF;border-radius:10px;padding:8px;display:none}
+.elab-result.show{display:block;animation:revealSlide .3s ease-out}
+.elab-result .placeholder{color:#7A88A8}
+.elab-estimate{margin-top:14px;background:linear-gradient(135deg,#E8F5F8,#D6EEF3);border:2px solid #1A8A9A;border-radius:14px;padding:16px;text-align:center;font-family:'Lora',Georgia,serif;font-size:24px;font-weight:900;color:#0E1C42;min-height:60px;display:flex;align-items:center;justify-content:center}
+.elab-estimate.placeholder{background:#FAFBFF;border-color:#E2E8F4;border-style:dashed;color:#7A88A8;font-size:16px;font-weight:700;font-style:italic}
+.elab-estimate .est{color:#1A8A9A;font-size:28px}
+.elab-controls{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:12px}
+.elab-reveal{display:none;margin-top:14px;padding:16px;border-radius:14px;background:#FFF8E6;border:2px solid #F5E6C8;font-family:'Lora',Georgia,serif}
+.elab-reveal.show{display:block;animation:revealSlide .4s ease-out}
+.elab-reveal-label{font-size:11px;color:#8A6D2B;font-weight:900;text-transform:uppercase;letter-spacing:.7px;margin-bottom:8px;text-align:center}
+.elab-reveal-row{display:flex;justify-content:space-around;font-size:18px;font-weight:800;color:#0E1C42;margin-bottom:8px;flex-wrap:wrap;gap:10px}
+.elab-reveal-row .lbl{font-size:10px;color:#7A88A8;text-transform:uppercase;letter-spacing:.4px;font-weight:900;font-family:'Nunito';display:block;margin-bottom:3px}
+.elab-reveal-row .val{font-size:24px;font-weight:900}
+.elab-reveal-row .val.est{color:#1A8A9A}
+.elab-reveal-row .val.actual{color:#0E1C42}
+.elab-reveal-row .val.diff{color:#E07B39}
+.elab-reveal-row .val.diff.tight{color:#1A8A5A}
+.elab-verdict{text-align:center;font-size:16px;font-weight:800;color:#0E1C42;margin-top:8px;font-style:italic}
+.ex-tbl{width:100%;border-collapse:separate;border-spacing:0;margin:14px 0;background:#fff;border:2px solid #E2E8F4;border-radius:14px;overflow:hidden}
+.ex-tbl thead th{background:#0E1C42;color:#fff;font-size:12px;padding:12px;text-align:left;text-transform:uppercase;font-weight:900;letter-spacing:.4px}
+.ex-tbl tbody td{padding:14px;border-top:1px solid #E2E8F4;font-size:14.5px;color:#0E1C42;vertical-align:middle;line-height:1.5}
+.ex-tbl tbody td:first-child{font-family:'Lora',Georgia,serif;font-weight:800;font-size:17px}
+.ex-tbl tbody td:last-child{text-align:center;font-family:'Lora',Georgia,serif;font-weight:800;font-size:19px;background:#FAFBFF;border-left:1px dashed #E2E8F4;color:#1A8A5A}
+</style>
+<style id="fluencyStyles">
+.fluency-box{background:#fff;border:2px solid #F5C518;border-radius:18px;overflow:hidden;margin-bottom:22px;font-family:'Nunito',sans-serif}
+.fluency-head{display:flex;align-items:center;gap:12px;background:linear-gradient(135deg,#F5C518,#E8B723);padding:14px 20px;flex-wrap:wrap}
+.fluency-head-icon{font-size:26px;line-height:1}
+.fluency-head-label{font-size:10px;color:#0E1C42;font-weight:800;text-transform:uppercase;letter-spacing:0.5px}
+.fluency-head-title{font-size:15px;color:#0E1C42;font-weight:800}
+.fluency-timer-ui{margin-left:auto;display:flex;align-items:center;gap:10px}
+.fluency-timer-display{font-size:20px;font-weight:800;color:#0E1C42;min-width:46px;text-align:center}
+.fluency-start-btn{background:#0E1C42;color:#fff;border:none;border-radius:10px;padding:8px 14px;font-weight:700;font-size:12px;cursor:pointer}
+.fluency-start-btn:disabled{opacity:0.55;cursor:default}
+.fluency-body{padding:16px 20px}
+.fluency-instructions{font-size:13px;color:#4A5568;margin:0 0 12px}
+.fluency-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(128px,1fr));gap:10px;margin-bottom:14px}
+.fluency-item{display:flex;align-items:center;gap:6px;background:#FAFBFF;border:1.5px solid #E2E8F4;border-radius:10px;padding:8px 10px}
+.fluency-item.fluency-correct{border-color:#2DB87A;background:#EAFBF3}
+.fluency-item.fluency-wrong{border-color:#E07B39;background:#FDF1E9}
+.fluency-q{font-size:13px;font-weight:700;color:#0E1C42;white-space:nowrap}
+.fluency-input{width:46px;border:1.5px solid #CBD5E8;border-radius:6px;padding:4px;font-size:14px;text-align:center;font-family:'Nunito',sans-serif}
+.fluency-input:disabled{background:#F0F2F8}
+.fluency-check-btn{background:#2DB87A;color:#fff;border:none;border-radius:10px;padding:10px 18px;font-weight:800;font-size:13px;cursor:pointer}
+.fluency-check-btn:disabled{opacity:0.55;cursor:default}
+.fluency-result{margin-top:10px;font-size:14px;color:#0E1C42;font-weight:700}
+</style>
+</head>
+<body id="pageTop">
+<div class="page-wrap">
+<div class="progress-wrap"><span class="progress-label">📐 Lesson Progress</span><div class="progress-track"><div class="progress-fill" id="progressFill"></div></div><span class="progress-pct" id="progressPct">0%</span></div>
+<div class="header">
+<div class="header-brand"><div class="header-logo"><img alt="Optima Academy" src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png"/></div><div><div class="header-org">Optima Academy Online</div><div class="header-sub">An Education Experience Company</div></div></div>
+<div class="header-title"><em>Estimating Sums and Differences — Part 1</em></div>
+<div class="header-badge"><span class="header-badge-icon">🦉</span><span class="header-badge-text">Lesson 3.03.04</span></div>
+</div>
+<div class="quote-strip"><div class="quote-strip-text">"You don't always need the exact answer — sometimes you just need to know about how big it is."</div><div class="quote-strip-attr">Estimating with rounding</div></div>
+<div class="info-strip">
+<div class="info-cell"><div class="info-icon" style="background:#E8F5F8;">🧭</div><div><div class="info-label">Unit</div><div class="info-value">Unit 3</div><div class="info-detail">Add &amp; Subtract Part 2</div></div></div>
+<div class="info-cell"><div class="info-icon" style="background:#E3F8ED;">📅</div><div><div class="info-label">Lesson</div><div class="info-value">3.03.04</div><div class="info-detail">U3 Apply</div></div></div>
+<div class="info-cell"><div class="info-icon" style="background:#EAF0FF;">📐</div><div><div class="info-label">Standard</div><div class="info-value">MA.3.NSO.2.1</div><div class="info-detail">Estimate</div></div></div>
+<div class="info-cell"><div class="info-icon" style="background:#FFF8E6;">🎯</div><div><div class="info-label">Focus</div><div class="info-value">Estimation</div><div class="info-detail">round &amp; compute</div></div></div>
+</div>
+<div class="explorer-strip"><span class="explorer-compass">🧭</span><div><div class="explorer-mission-label">Today's Mission</div><div class="explorer-mission-text">Round each number to a friendly place. Add or subtract the rounded numbers. Find an estimate that's close to the actual answer.</div></div></div>
+<div class="intro-2col">
+<div class="intro-card theme-question"><div class="intro-card-head"><div class="intro-card-head-icon">❓</div><div><div class="intro-card-head-label">Essential Question</div><div class="intro-card-head-title">Close enough — what counts?</div></div></div><div class="intro-card-body"><p>An ESTIMATE doesn't have to be exact. It just has to be close enough to be useful. To estimate, you round each number to a friendly place — then do the easy math with the rounded numbers.</p><p>The choice you make: which place to round to.</p></div></div>
+<div class="intro-card theme-objectives"><div class="intro-card-head"><div class="intro-card-head-icon">🎯</div><div><div class="intro-card-head-label">Today's Objectives</div><div class="intro-card-head-title">You will…</div></div></div><div class="intro-card-body">
+<div class="obj-line"><span class="obj-icon">🔄</span><span><strong>Round</strong> each number to the nearest ten or hundred.</span></div>
+<div class="obj-line"><span class="obj-icon">➕</span><span><strong>Add or subtract</strong> the rounded numbers to get an estimate.</span></div>
+<div class="obj-line"><span class="obj-icon">🎯</span><span><strong>Compare</strong> different rounding choices to find a close estimate.</span></div>
+</div></div>
+</div>
+<div class="need-strip"><span class="need-strip-label">You'll need:</span><span class="need-chip">📓 Math Journal</span><span class="need-chip">✏️ Pencil</span></div>
+<div class="tab-bar" id="tabBar">
+<button class="tab-btn active" data-tab="warmup" onclick="switchTab('warmup')">🔍 Warm-Up <span class="tab-check">✓</span></button>
+<button class="tab-btn" data-tab="learn" onclick="switchTab('learn')">📐 Learn <span class="tab-check">✓</span></button>
+<button class="tab-btn" data-tab="practice" onclick="switchTab('practice')">🧮 Practice <span class="tab-check">✓</span></button>
+<button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">🌟 Show What You Know <span class="tab-check">✓</span></button>
+</div>
+<!-- ═══════════ WARM-UP ═══════════ -->
+<div class="tab-panel active" id="tab-warmup">
+<div class="fluency-box" data-timed="false">
+<div class="fluency-head">
+<div class="fluency-head-icon">✍️</div>
+<div><div class="fluency-head-label">FLUENCY WARM-UP</div><div class="fluency-head-title">Near Doubles</div></div>
+</div>
+<div class="fluency-body">
+<p class="fluency-instructions">Warm up your fact fluency before today’s lesson. Work through these, then check your answers.</p>
+<div class="fluency-grid" id="fluencyGrid">
+<div class="fluency-item"><span class="fluency-q">6 + 7 =</span><input autocomplete="off" class="fluency-input" data-answer="13" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">7 + 8 =</span><input autocomplete="off" class="fluency-input" data-answer="15" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">8 + 9 =</span><input autocomplete="off" class="fluency-input" data-answer="17" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">5 + 6 =</span><input autocomplete="off" class="fluency-input" data-answer="11" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">4 + 5 =</span><input autocomplete="off" class="fluency-input" data-answer="9" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">9 + 8 =</span><input autocomplete="off" class="fluency-input" data-answer="17" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">6 + 5 =</span><input autocomplete="off" class="fluency-input" data-answer="11" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">7 + 6 =</span><input autocomplete="off" class="fluency-input" data-answer="13" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">8 + 7 =</span><input autocomplete="off" class="fluency-input" data-answer="15" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">5 + 4 =</span><input autocomplete="off" class="fluency-input" data-answer="9" inputmode="numeric" type="text"/></div>
+</div>
+<button class="fluency-check-btn" id="fluencyCheckBtn" onclick="fluencyCheck()">Check My Answers</button>
+<div class="fluency-result" id="fluencyResult"></div>
+</div>
+<textarea class="journal-box" data-label="Fluency Warm-Up (Near Doubles)" id="fluencyJournal" readonly="" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;"></textarea>
+</div>
+
+<div class="activity bl-yellow"><div class="activity-head"><div class="activity-num" style="background:#F5C518;color:#0E1C42;">🔎</div><div><div class="activity-title">Warm-Up: Rounding Refresh</div><div class="activity-sub">Two quick roundings.</div></div><span class="activity-time" style="background:#F5C518;color:#0E1C42;">~3 min</span></div><div class="activity-body">
+<p><strong>(a) Round 87 to the NEAREST TEN.</strong></p>
+<div class="value-card-row">
+<div class="value-card" onclick="checkReadinessA(this,false)"><div class="big">80</div></div>
+<div class="value-card" onclick="checkReadinessA(this,false)"><div class="big">85</div></div>
+<div class="value-card" onclick="checkReadinessA(this,true)"><div class="big">90</div></div>
+<div class="value-card" onclick="checkReadinessA(this,false)"><div class="big">100</div></div>
+</div>
+<div class="inline-feedback" id="readiness-fb-a"></div>
+<p style="margin-top:14px;"><strong>(b) Round 642 to the NEAREST HUNDRED.</strong></p>
+<div class="value-card-row">
+<div class="value-card" onclick="checkReadinessB(this,false)"><div class="big">500</div></div>
+<div class="value-card" onclick="checkReadinessB(this,true)"><div class="big">600</div></div>
+<div class="value-card" onclick="checkReadinessB(this,false)"><div class="big">640</div></div>
+<div class="value-card" onclick="checkReadinessB(this,false)"><div class="big">700</div></div>
+</div>
+<div class="inline-feedback" id="readiness-fb-b"></div>
+<div class="hint-callout" style="margin-top:12px;">When rounding, look at the digit to the RIGHT of the place you're rounding to. 5 or more → round UP. Less than 5 → round DOWN.</div>
+</div></div>
+<!-- Think About It -->
+<div class="activity bl-yellow"><div class="activity-head"><div class="activity-num" style="background:#F5C518;color:#0E1C42;">🤔</div><div><div class="activity-title">Think About It: Two Ways to Estimate</div><div class="activity-sub">Same problem, different rounding.</div></div></div><div class="activity-body">
+<div class="callout callout-think"><span class="callout-icon">🧠</span><p>You're estimating <strong>642 − 87</strong>. Two students try different rounding choices:</p></div>
+<div class="elab-panels">
+<div class="elab-panel" style="background:#FFF8E6;border-color:#F5E6C8;">
+<div class="elab-panel-label" style="color:#8A6D2B;">Student A</div>
+<div class="elab-panel-target">"I'll round to the nearest hundred."</div>
+<div style="text-align:center;font-family:'Lora',Georgia,serif;font-size:18px;font-weight:800;color:#0E1C42;">642 → 600<br/>87 → 100<br/>Estimate: <strong style="color:#1A8A9A;">500</strong></div>
+</div>
+<div class="elab-panel" style="background:#E3F8ED;border-color:#B8E8CF;">
+<div class="elab-panel-label" style="color:#1A8A5A;">Student B</div>
+<div class="elab-panel-target">"I'll round to the nearest ten."</div>
+<div style="text-align:center;font-family:'Lora',Georgia,serif;font-size:18px;font-weight:800;color:#0E1C42;">642 → 640<br/>87 → 90<br/>Estimate: <strong style="color:#1A8A9A;">550</strong></div>
+</div>
+</div>
+<p style="margin-top:14px;"><strong>Without solving exactly, which estimate do you think is CLOSER to the actual answer?</strong></p>
+<div class="value-card-row">
+<div class="value-card" onclick="checkTA(this,false,'A')"><div class="big">Student A (500)</div></div>
+<div class="value-card" onclick="checkTA(this,true,'B')"><div class="big">Student B (550)</div></div>
+<div class="value-card" onclick="checkTA(this,false,'same')"><div class="big">They're equally close</div></div>
+</div>
+<div class="inline-feedback" id="ta-fb"></div>
+<div class="journal-label">✏️ Why would rounding to a smaller place (tens) give a closer estimate? <span class="saved-dot" id="dot-think"></span></div>
+<textarea class="journal-box" data-label="Warm-Up — Think Prompt: two rounding choices" id="journal-think" oninput="autoSave(this,'dot-think')" placeholder=""></textarea>
+</div></div>
+<div class="tab-next-wrap"><p class="tab-transition-voice">Round, then add or subtract. Different rounding choices give different estimates. Time to experiment.</p><button class="tab-next-btn" onclick="switchTab('learn')">Continue to 📐 Learn →</button></div>
+</div>
+<!-- ═══════════ LEARN ═══════════ -->
+<div class="tab-panel" id="tab-learn">
+<div class="vocab-section">
+<div class="vocab-section-head"><div class="vocab-section-icon">📚</div><div><div class="vocab-section-label">Daily Vocabulary</div><div class="vocab-section-title">Three Words for Today</div></div></div>
+<p class="vocab-section-directions">Tap each card to flip it.</p>
+<div class="vocab-grid">
+<div class="flip-card fc-color-1" onclick="this.classList.toggle('flipped')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('flipped');}" role="button" tabindex="0"><div class="flip-card-inner">
+<div class="flip-card-front"><div class="fc-emoji">🎯</div><div class="fc-word">estimate</div><div class="fc-tap">tap to flip</div></div>
+<div class="flip-card-back"><div class="fc-word-back">estimate</div><div class="fc-def">an answer that's close to the exact answer — usually quicker to find and good enough for the question being asked.</div><div class="fc-tap-back">tap to flip back</div></div>
+</div></div>
+<div class="flip-card fc-color-2" onclick="this.classList.toggle('flipped')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('flipped');}" role="button" tabindex="0"><div class="flip-card-inner">
+<div class="flip-card-front"><div class="fc-emoji">🟢</div><div class="fc-word">friendly place</div><div class="fc-tap">tap to flip</div></div>
+<div class="flip-card-back"><div class="fc-word-back">friendly place</div><div class="fc-def">a place value like tens or hundreds that makes the math easy. Rounding to a friendly place gives you a friendlier number to work with.</div><div class="fc-tap-back">tap to flip back</div></div>
+</div></div>
+<div class="flip-card fc-color-3" onclick="this.classList.toggle('flipped')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('flipped');}" role="button" tabindex="0"><div class="flip-card-inner">
+<div class="flip-card-front"><div class="fc-emoji">≈</div><div class="fc-word">about</div><div class="fc-tap">tap to flip</div></div>
+<div class="flip-card-back"><div class="fc-word-back">about</div><div class="fc-def">a word that says "this isn't exact, but close." Used with estimates. The symbol ≈ also means "is about equal to."</div><div class="fc-tap-back">tap to flip back</div></div>
+</div></div>
+</div>
+</div>
+
+<div class="callout callout-info" style="margin-bottom:14px;"><span class="callout-icon">🤔</span><p>Below: the Estimation Lab. Pick a rounding place for EACH number. Watch your estimate update. Then reveal the actual answer to see how close you came.</p></div>
+<!-- ═══ ESTIMATION LAB (centerpiece) ═══ -->
+<div class="activity bl-teal"><div class="activity-head"><div class="activity-num" style="background:#1A8A9A;">🎯</div><div><div class="activity-title">Estimation Lab</div><div class="activity-sub">Build an estimate for 642 − 87.</div></div></div><div class="activity-body">
+<div class="elab-frame">
+<div class="elab-equation"><span class="num">642</span><span class="op">−</span><span class="num">87</span></div>
+<div class="elab-panels">
+<div class="elab-panel">
+<div class="elab-panel-label">First number</div>
+<div class="elab-panel-target">642</div>
+<div class="elab-rbtns">
+<button class="elab-rbtn" onclick="elabPick('A','ten')">Round to nearest TEN</button>
+<button class="elab-rbtn" onclick="elabPick('A','hundred')">Round to nearest HUNDRED</button>
+</div>
+<div class="elab-result" id="elab-result-A">642 → <strong id="elab-A-val">?</strong></div>
+</div>
+<div class="elab-panel">
+<div class="elab-panel-label">Second number</div>
+<div class="elab-panel-target">87</div>
+<div class="elab-rbtns">
+<button class="elab-rbtn" onclick="elabPick('B','ten')">Round to nearest TEN</button>
+<button class="elab-rbtn" onclick="elabPick('B','hundred')">Round to nearest HUNDRED</button>
+</div>
+<div class="elab-result" id="elab-result-B">87 → <strong id="elab-B-val">?</strong></div>
+</div>
+</div>
+<div class="elab-estimate placeholder" id="elab-estimate">Pick a rounding place for each number above.</div>
+<div class="elab-controls">
+<button class="teal-btn" disabled="" id="elab-reveal-btn" onclick="elabRevealActual()" style="opacity:.5;">Compare to the actual answer →</button>
+<button class="orange-btn" onclick="elabReset()">↩ Reset</button>
+</div>
+<div class="elab-reveal" id="elab-reveal">
+<div class="elab-reveal-label">How close was your estimate?</div>
+<div class="elab-reveal-row">
+<div><span class="lbl">Your estimate</span><span class="val est" id="reveal-est">—</span></div>
+<div><span class="lbl">Actual answer</span><span class="val actual">555</span></div>
+<div><span class="lbl">Off by</span><span class="val diff" id="reveal-diff">—</span></div>
+</div>
+<div class="elab-verdict" id="reveal-verdict"></div>
+</div>
+</div>
+<div class="journal-label">✏️ Which rounding choice gave the closest estimate? Why? <span class="saved-dot" id="dot-elab"></span></div>
+<textarea class="journal-box" data-label="Learn — Estimation Lab: 642-87" id="journal-elab" oninput="autoSave(this,'dot-elab')" placeholder=""></textarea>
+</div></div>
+<div class="key-concept"><div class="key-concept-label">📐 Key Concept</div>
+<p><strong>The estimation recipe:</strong></p>
+<p style="text-align:center;font-size:16px;background:#fff;border:2px solid #B5DBE3;border-radius:10px;padding:12px;margin:10px 0;">1. Round each number to a friendly place.   2. Add or subtract the rounded numbers.   3. That's your estimate.</p>
+<p>Rounding to a SMALLER place (like tens) keeps your estimate close to the actual answer. Rounding to a BIGGER place (like hundreds) is faster but less precise. Pick whichever fits your need.</p>
+</div>
+<div class="activity bl-slate"><div class="activity-head"><div class="activity-num" style="background:#3A6B9A;">📋</div><div><div class="activity-title">Three Quick Estimates</div><div class="activity-sub">Different problems, same recipe.</div></div></div><div class="activity-body">
+<p>For each row, see what rounding was used and how close the estimate is.</p>
+<table class="ex-tbl">
+<thead><tr><th>Problem</th><th>Rounding + estimate</th><th>Actual</th></tr></thead>
+<tbody>
+<tr><td>642 − 87</td><td>Tens: 640 − 90 = 550 (off by 5)</td><td>555</td></tr>
+<tr><td>895 + 756</td><td>Hundreds: 900 + 800 = 1,700 (off by 49)</td><td>1,651</td></tr>
+<tr><td>674 − 439</td><td>Hundreds: 700 − 400 = 300 (off by 65)  OR  Tens: 670 − 440 = 230 (off by 5)</td><td>235</td></tr>
+</tbody>
+</table>
+<div class="callout callout-tip" style="margin-top:14px;"><span class="callout-icon">🔍</span><p>Notice how rounding to TENS in row 3 gave a way closer estimate (off by 5) than rounding to HUNDREDS (off by 65). Smaller-place rounding = closer.</p></div>
+</div></div>
+<!-- WORKED EXAMPLE -->
+<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">🧠</div><div><div class="activity-title">Worked Example: 895 + 756</div><div class="activity-sub">Estimate two ways, then compare.</div></div></div><div class="activity-body">
+<div class="task-box"><div class="task-label">Problem</div><p>Estimate <strong>895 + 756</strong> two different ways. Compare to the actual answer.</p></div>
+<div class="bubble-row">
+<div class="bubble atlas"><div class="bubble-avatar">A</div><div class="bubble-body"><div class="bubble-name">Atlas — quick way (hundreds)</div><div class="bubble-text">"Round each to the nearest HUNDRED. 895 is closer to 900 (95 ≥ 50). 756 is closer to 800 (56 ≥ 50). 900 + 800 = 1,700. That's my quick estimate."</div></div></div>
+<div class="bubble hazel"><div class="bubble-avatar">H</div><div class="bubble-body"><div class="bubble-name">Hazel — closer way (tens)</div><div class="bubble-text">"For a closer estimate, I'll round to the nearest TEN instead. 895 rounds to 900 (the 5 in the ones makes it round up). 756 rounds to 760. 900 + 760 = 1,660. A bit more careful, but tighter."</div></div></div>
+</div>
+<!-- WE comparison table -->
+<div style="background:#fff;border:2px solid #B5DBE3;border-radius:14px;padding:14px;margin:12px 0;">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;font-family:'Lora',Georgia,serif;">
+<div style="background:#FFF8E6;border:2px solid #F5E6C8;border-radius:10px;padding:12px;text-align:center;">
+<div style="font-size:11px;color:#8A6D2B;font-weight:900;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px;">Round to hundred</div>
+<div style="font-size:20px;font-weight:800;color:#0E1C42;">900 + 800 = <span style="color:#1A8A9A;">1,700</span></div>
+<div style="font-size:13px;color:#7A88A8;font-weight:700;margin-top:4px;">off by 49</div>
+</div>
+<div style="background:#E3F8ED;border:2px solid #B8E8CF;border-radius:10px;padding:12px;text-align:center;">
+<div style="font-size:11px;color:#1A8A5A;font-weight:900;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px;">Round to ten</div>
+<div style="font-size:20px;font-weight:800;color:#0E1C42;">900 + 760 = <span style="color:#1A8A9A;">1,660</span></div>
+<div style="font-size:13px;color:#1A8A5A;font-weight:700;margin-top:4px;">off by 9 — much closer</div>
+</div>
+</div>
+</div>
+<div class="bubble-row">
+<div class="bubble felix"><div class="bubble-avatar">F</div><div class="bubble-body"><div class="bubble-name">Felix — actual</div><div class="bubble-text">"The actual answer is 895 + 756 = 1,651. The 'nearest ten' estimate (1,660) is only 9 away. The 'nearest hundred' estimate (1,700) is 49 away. Both are reasonable estimates, but tens is tighter."</div></div></div>
+<div class="bubble cora"><div class="bubble-avatar">C</div><div class="bubble-body"><div class="bubble-name">Cora — which to choose</div><div class="bubble-text">"For mental math, I might pick HUNDREDS — easier to do in my head. For a closer estimate, TENS. The right choice depends on whether I want speed or precision."</div></div></div>
+</div>
+<p style="font-family:'Lora',Georgia,serif;background:#FAFBFF;border:2px solid #E2E8F4;border-radius:12px;padding:10px;text-align:center;font-size:20px;font-weight:800;margin-top:14px;">895 + 756 ≈ <span style="color:#1A8A9A;">1,700</span> (hundreds)  or  <span style="color:#1A8A9A;">1,660</span> (tens) · Actual: <span style="color:#1A8A5A;">1,651</span></p>
+<div class="callout callout-tip" style="margin-top:8px;"><span class="callout-icon">💡</span><p>Both estimates are useful. The "best" rounding depends on what you need — fast and rough, or slower and closer.</p></div>
+</div></div>
+
+<div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">Why does rounding to the nearest TEN give a CLOSER estimate than rounding to the nearest HUNDRED? What's the math behind that?</p><div class="journal-label">✏️ My reasoning <span class="saved-dot" id="dot-soc1"></span></div><textarea class="journal-box" data-label="Learn — Socratic: why ten gives closer estimate" id="journal-soc1" oninput="autoSave(this,'dot-soc1')" placeholder=""></textarea></div>
+<div class="tab-next-wrap"><p class="tab-transition-voice">Round each number to a friendly place. Add or subtract. That's your estimate. Try a few.</p><button class="tab-next-btn" onclick="switchTab('practice')">Continue to 🧮 Practice →</button></div>
+</div>
+<!-- ═══════════ PRACTICE ═══════════ -->
+<div class="tab-panel" id="tab-practice">
+<div class="callout callout-info"><span class="callout-icon">🧭</span><p>You saw 895 + 756 ≈ 1,660 (tens) or ≈ 1,700 (hundreds). Practice: build estimates and check how close they are.</p></div>
+<div class="callout callout-think"><span class="callout-icon">🧠</span><p><strong>For each problem:</strong> round each number to the best place, then add or subtract the rounded numbers.</p></div>
+<div class="activity bl-teal"><div class="activity-head"><div class="activity-num" style="background:#1A8A9A;">1</div><div><div class="activity-title">Estimate to the Best Place</div><div class="activity-sub">Four problems. Round each to the NEAREST HUNDRED.</div></div><span class="activity-time" style="background:#1A8A9A;">~5 min</span></div><div class="activity-body">
+<div class="bubble-row">
+<div class="bubble felix"><div class="bubble-avatar">F</div><div class="bubble-body"><div class="bubble-name">Felix — shortcut</div><div class="bubble-text">"Round each number to the nearest 100, then do the easy mental math. Your answer is an estimate, not exact — that's the point."</div></div></div>
+</div>
+<div class="fill-row"><strong>838 − 72 ≈</strong><input class="fill-input" id="p1-a" placeholder="?" type="number"/></div>
+<div class="fill-row"><strong>584 + 47 ≈</strong><input class="fill-input" id="p1-b" placeholder="?" type="number"/></div>
+<div class="fill-row"><strong>972 − 356 ≈</strong><input class="fill-input" id="p1-c" placeholder="?" type="number"/></div>
+<div class="fill-row"><strong>784 + 562 ≈</strong><input class="fill-input" id="p1-d" placeholder="?" type="number"/></div>
+<button class="check-btn" onclick="checkP1()">Check My Answers ✓</button>
+<div class="feedback-branch feedback-pass" id="p1-pass"><strong>✅ Yes!</strong> 838→800, 72→100, est=700. 584→600, 47→0... wait, 47 rounds to 0 with hundreds! Use tens instead: 584→600, 47→50, est=650 (or even 630). 972→1000, 356→400, est=600. 784→800, 562→600, est=1,400.
+      <div class="bubble-row" style="margin-top:10px;"><div class="bubble cora"><div class="bubble-avatar">C</div><div class="bubble-body"><div class="bubble-name">Cora — checking the work</div><div class="bubble-text">"When one number is much smaller (like 47), rounding it to hundreds gives 0 — useless! That's a sign to round IT to TENS while still rounding the bigger number to hundreds. Mixing rounding places is a power move."</div></div></div></div>
+</div>
+<div class="feedback-branch feedback-retry" id="p1-retry"><strong>🔄 Round each number, then compute.</strong>
+<div class="hint-callout">(a) 838→800, 72→100 (or 70 if mixing) — 800−100=700 or 800−70=730.  ·  (b) 584→600, 47→50 — 600+50=650.  ·  (c) 972→1,000, 356→400 — 1,000−400=600.  ·  (d) 784→800, 562→600 — 800+600=1,400.</div>
+<button class="orange-btn" onclick="resetP1()">↩ Reset and Try Again</button>
+</div>
+</div></div>
+<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">2</div><div><div class="activity-title">Closer to Which?</div><div class="activity-sub">Quick check — which friendly number wins?</div></div><span class="activity-time" style="background:#2DB87A;">~4 min</span></div><div class="activity-body">
+<div class="bubble-row">
+<div class="bubble hazel"><div class="bubble-avatar">H</div><div class="bubble-body"><div class="bubble-name">Hazel — quick estimate trick</div><div class="bubble-text">"Round each number to hundreds quickly. The estimate tells you the neighborhood — close to 200 or close to 300?"</div></div></div>
+</div>
+<div class="task-box"><div class="task-label">Problem</div><p>Is the value of <strong>726 − 432</strong> closer to <strong>200</strong> or closer to <strong>300</strong>? Use rounding to decide WITHOUT doing the exact subtraction.</p></div>
+<div class="journal-label">✏️ My rounding + answer <span class="saved-dot" id="dot-p2"></span></div>
+<textarea class="journal-box" data-label="Practice 2 — 726-432 closer to 200 or 300" id="journal-p2" oninput="autoSave(this,'dot-p2')" placeholder="Round 726 to nearest 100: ___
+Round 432 to nearest 100: ___
+Estimate: ___ − ___ = ___
+Closer to: ___" style="min-height:130px;"></textarea>
+<div class="callout callout-tip" style="margin-top:10px;"><span class="callout-icon">💡</span><p><strong>Answer:</strong> 726→700, 432→400. Estimate: 700−400=300. Closer to <strong>300</strong>. (Actual: 294, which IS closer to 300 than 200.)</p></div>
+</div></div>
+<div class="activity bl-teal"><div class="activity-head"><div class="activity-num" style="background:#1A8A9A;">3</div><div><div class="activity-title">Carlos's Coin Collection</div><div class="activity-sub">A real-world estimate.</div></div></div><div class="activity-body">
+<div class="bubble-row">
+<div class="bubble atlas"><div class="bubble-avatar">A</div><div class="bubble-body"><div class="bubble-name">Atlas — concrete</div><div class="bubble-text">"For 'about how many' questions, rounding to hundreds gives a quick, friendly answer. Useful when you don't need the exact count."</div></div></div>
+</div>
+<div class="task-box"><div class="task-label">Word problem</div><p>Carlos has <strong>498 foreign coins</strong> and <strong>423 domestic coins</strong> in his collection. About how many coins does Carlos have in all?</p></div>
+<div class="fill-row"><strong>About how many coins:</strong><input class="fill-input" id="p3-a" placeholder="?" type="number"/></div>
+<button class="check-btn" onclick="checkP3()">Check My Answer ✓</button>
+<div class="feedback-branch feedback-pass" id="p3-pass"><strong>✅ Yes — about 900 coins.</strong> Round 498 to 500 and 423 to 400. 500 + 400 = 900. (Actual: 498+423=921, very close to 900.)
+      <div class="bubble-row" style="margin-top:10px;"><div class="bubble cora"><div class="bubble-avatar">C</div><div class="bubble-body"><div class="bubble-name">Cora — checking the work</div><div class="bubble-text">"If Carlos's family asks 'about how many coins?' he can confidently say 'about 900.' That's good estimation."</div></div></div></div>
+</div>
+<div class="feedback-branch feedback-retry" id="p3-retry"><strong>🔄 Round each number to the nearest hundred.</strong>
+<div class="hint-callout">498 is close to 500. 423 is close to 400. Add the rounded numbers.</div>
+<button class="orange-btn" onclick="resetP3()">↩ Reset and Try Again</button>
+</div>
+</div></div>
+<div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">When would you want an EXACT answer, and when is an estimate good enough? Give one example of each.</p><div class="journal-label">✏️ My reasoning <span class="saved-dot" id="dot-soc2"></span></div><textarea class="journal-box" data-label="Practice — Socratic: exact vs estimate" id="journal-soc2" oninput="autoSave(this,'dot-soc2')" placeholder=""></textarea></div>
+<div class="tab-next-wrap"><p class="tab-transition-voice">Round, then add or subtract. Pick the place that fits your need. Time to show what you know.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
+</div>
+<!-- ═══════════ SHOW WHAT YOU KNOW ═══════════ -->
+<div class="tab-panel" id="tab-assignment">
+<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">🎯</div><div><div class="activity-title">Ready Check</div><div class="activity-sub">Two quick questions.</div></div></div><div class="activity-body">
+<p>If both are right, you're ready for the assignment.</p>
+<div class="q-block"><p class="q-text"><span class="q-num">A</span>Estimate 642 − 87 by rounding each to the nearest TEN. What's your estimate?</p>
+<div class="value-card-row">
+<div class="value-card" onclick="checkExitA(this,false)"><div class="big">500</div></div>
+<div class="value-card" onclick="checkExitA(this,true)"><div class="big">550</div></div>
+<div class="value-card" onclick="checkExitA(this,false)"><div class="big">560</div></div>
+<div class="value-card" onclick="checkExitA(this,false)"><div class="big">555</div></div>
+</div>
+<div class="inline-feedback" id="exitA-fb"></div>
+</div>
+<div class="q-block"><p class="q-text"><span class="q-num">B</span>Estimate 895 + 756 by rounding each to the nearest HUNDRED.</p>
+<div class="value-card-row">
+<div class="value-card" onclick="checkExitB(this,false)"><div class="big">1,500</div></div>
+<div class="value-card" onclick="checkExitB(this,false)"><div class="big">1,600</div></div>
+<div class="value-card" onclick="checkExitB(this,true)"><div class="big">1,700</div></div>
+<div class="value-card" onclick="checkExitB(this,false)"><div class="big">1,800</div></div>
+</div>
+<div class="inline-feedback" id="exitB-fb"></div>
+</div>
+</div></div>
+<div class="activity bl-navy"><div class="activity-head"><div class="activity-num" style="background:#0E1C42;">📬</div><div><div class="activity-title">Show What You Know</div><div class="activity-sub">Five problems.</div></div></div><div class="activity-body">
+<div class="callout callout-think"><span class="callout-icon">🧠</span><p><strong>For each problem:</strong> round each number to a friendly place, then add or subtract the rounded numbers.</p></div>
+<div class="q-block"><p class="q-text"><span class="q-num">1</span><strong>Estimate two ways.</strong> Estimate <strong>642 − 87</strong>:<br/>(a) Round 642 to the nearest HUNDRED and 87 to the nearest TEN. Estimate = ____<br/>(b) Round BOTH to the nearest TEN. Estimate = ____<br/>Which is closer to the actual answer of 555?</p><div class="journal-label">✏️ My two estimates + comparison <span class="saved-dot" id="dot-a1"></span></div><textarea class="journal-box" data-label="SWYK — Problem 1: 642-87 two ways" id="journal-a1" oninput="autoSave(this,'dot-a1')" placeholder=""></textarea></div>
+<div class="q-block"><p class="q-text"><span class="q-num">2</span><strong>Estimate each by rounding each number to the best place.</strong><br/>(a) <strong>674 − 439</strong> ≈ ______<br/>(b) <strong>895 + 756</strong> ≈ ______</p><div class="journal-label">✏️ My estimates <span class="saved-dot" id="dot-a2"></span></div><textarea class="journal-box" data-label="SWYK — Problem 2: 674-439 and 895+756" id="journal-a2" oninput="autoSave(this,'dot-a2')" placeholder=""></textarea></div>
+<div class="q-block"><p class="q-text"><span class="q-num">3</span><strong>Match each problem to its best estimate.</strong> Draw lines or write the match.<br/>838 − 72  ·  584 + 47  ·  972 − 356  ·  784 + 562  ·  458 − 367<br/>Estimates: 100  ·  600  ·  630  ·  770  ·  1,340</p><div class="journal-label">✏️ My matches <span class="saved-dot" id="dot-a3"></span></div><textarea class="journal-box" data-label="SWYK — Problem 3: matching estimates" id="journal-a3" oninput="autoSave(this,'dot-a3')" placeholder=""></textarea></div>
+<div class="q-block"><p class="q-text"><span class="q-num">4</span><strong>Word problem.</strong> Carlos has <strong>498 foreign coins</strong> and <strong>423 domestic coins</strong>. Grace has <strong>968 foreign coins</strong> and <strong>75 domestic coins</strong>. About how many coins does each have in their collection?</p><div class="journal-label">✏️ My estimates <span class="saved-dot" id="dot-a4"></span></div><textarea class="journal-box" data-label="SWYK — Problem 4: Carlos and Grace coins" id="journal-a4" oninput="autoSave(this,'dot-a4')" placeholder="Carlos: about ______ coins
+Grace: about ______ coins"></textarea></div>
+<div class="q-block"><p class="q-text"><span class="q-num">5</span><strong>Reflection.</strong> When does rounding to a SMALLER place (like tens) help you most? When is rounding to a BIGGER place (like hundreds) better?</p><div class="journal-label">✏️ My reflection <span class="saved-dot" id="dot-a5"></span></div><textarea class="journal-box" data-label="SWYK — Problem 5: when smaller vs bigger rounding" id="journal-a5" oninput="autoSave(this,'dot-a5')" placeholder=""></textarea></div>
+<div class="activity bl-slate" style="margin-top:18px;border-left-color:#55C8E8;"><div class="activity-head"><div class="activity-num" style="background:#55C8E8;color:#0E1C42;">🗺️</div><div><div class="activity-title">Connection Forward: What Comes Next</div><div class="activity-sub">Preview Lesson 3.03.05 — Estimating with bigger numbers</div></div></div><div class="activity-body">
+<p>Today you estimated with 3-digit numbers. Next lesson, the same recipe scales up — to 4-digit numbers. You'll round to the nearest TEN, HUNDRED, or THOUSAND, and decide which place fits the question.</p>
+<p>Big question next time: <em>If a computer costs $2,413 with a $450 discount, about how much will it cost?</em></p>
+</div></div>
+</div></div>
+
+<div class="gathered-box"><div class="gathered-head"><div class="gathered-head-icon">📋</div><div><div class="gathered-head-label">Your Math Journal</div><div class="gathered-head-title">All Answers from Today</div></div></div><div class="gathered-body"><textarea class="gathered-output" id="gatheredOutput" readonly="">Click "Gather My Answers" to collect your work.</textarea><div class="gathered-actions"><button class="teal-btn" onclick="gatherAnswers()">📋 Gather My Answers</button><button class="green-btn" onclick="copyAnswers()">Copy All Answers</button><button class="check-btn" onclick="downloadJournal()">Download My Math Journal</button></div></div></div>
+<div class="turn-in-card"><div class="turn-in-header"><div class="turn-in-header-icon">✅</div><div><div class="turn-in-header-label">Turn-In Checklist</div><div class="turn-in-header-title">Ready to Submit?</div></div></div><div class="turn-in-body">
+<div class="turn-in-item" onclick="toggleCheck(this)"><span class="turn-in-check">✓</span><span>I completed the Show What You Know problems on this lesson page.</span></div>
+<div class="turn-in-item" onclick="toggleCheck(this)"><span class="turn-in-check">✓</span><span>I rounded each number before doing the math.</span></div>
+<div class="turn-in-item" onclick="toggleCheck(this)"><span class="turn-in-check">✓</span><span>I tried estimating one problem two different ways.</span></div>
+</div></div>
+</div>
+<div class="footer">
+<div class="footer-main">🏫 <span>Optima Academy Online</span></div>
+<div class="footer-sub">Math · Grade 3 · 3.03.04</div>
+<div class="footer-copy">© 2025 Optima Academy Online</div>
+</div>
+</div>
+<canvas id="confettiCanvas"></canvas>
+<script>
+var LS_PREFIX = 'g3-3-03-04-';
+function showPageFeedback(msg,type){var panel=document.querySelector('.tab-panel.active')||document.body;var box=panel.querySelector(':scope > .page-feedback');if(!box){box=document.createElement('div');box.className='page-feedback';panel.insertBefore(box,panel.firstChild);}box.className='page-feedback show '+(type||'warn');box.innerHTML=msg;box.scrollIntoView({behavior:'smooth',block:'nearest'});}
+function miniCelebrate(el){if(!el)return;var emojis=['⭐','✨','🎯','🌟','≈'];for(var i=0;i<8;i++){var s=document.createElement('span');s.textContent=emojis[Math.floor(Math.random()*emojis.length)];s.style.cssText='position:absolute;font-size:'+(16+Math.random()*14)+'px;pointer-events:none;z-index:999;animation:miniPop .7s ease-out forwards;left:'+(20+Math.random()*60)+'%;top:'+(Math.random()*40)+'%;';el.style.position='relative';el.style.overflow='visible';el.appendChild(s);setTimeout(function(x){x.remove()}.bind(null,s),800);}}
+function switchTab(tab){document.querySelectorAll('.tab-panel').forEach(function(p){p.classList.remove('active');});document.getElementById('tab-'+tab).classList.add('active');document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active');if(b.dataset.tab===tab){b.classList.add('active');b.classList.add('visited');}});updateProgress();window.scrollTo({top:0,behavior:'smooth'});}
+function updateProgress(){var btns=[].slice.call(document.querySelectorAll('.tab-btn'));var idx=btns.findIndex(function(b){return b.classList.contains('active');});var pct=Math.round(((idx+1)/btns.length)*100);document.getElementById('progressFill').style.width=pct+'%';document.getElementById('progressPct').textContent=pct+'%';}
+function autoSave(el,dotId){try{localStorage.setItem(LS_PREFIX+el.id,el.value);}catch(e){}var dot=document.getElementById(dotId);if(dot){dot.classList.add('saved');setTimeout(function(){dot.classList.remove('saved');},900);}}
+function restoreJournals(){document.querySelectorAll('textarea.journal-box').forEach(function(t){try{var v=localStorage.getItem(LS_PREFIX+t.id);if(v)t.value=v;}catch(e){}});}
+function showBranch(id){var el=document.getElementById(id);if(el)el.classList.add('show');}
+function hideBranches(prefix){['pass','retry'].forEach(function(x){var el=document.getElementById(prefix+'-'+x);if(el)el.classList.remove('show');});}
+
+function checkReadinessA(card,correct){card.parentElement.querySelectorAll('.value-card').forEach(function(c){c.classList.remove('good','bad','selected');});var fb=document.getElementById('readiness-fb-a');if(correct){card.classList.add('good');fb.className='inline-feedback show good';fb.innerHTML='<strong>✅ Yes.</strong> 87 → 90. The ones digit is 7 (≥5), so round up.';miniCelebrate(card);}else{card.classList.add('bad');fb.className='inline-feedback show think';fb.innerHTML='<strong>Not quite.</strong> Look at the ones digit. Is it 5 or more? Then round UP.';}}
+function checkReadinessB(card,correct){card.parentElement.querySelectorAll('.value-card').forEach(function(c){c.classList.remove('good','bad','selected');});var fb=document.getElementById('readiness-fb-b');if(correct){card.classList.add('good');fb.className='inline-feedback show good';fb.innerHTML='<strong>✅ Yes.</strong> 642 → 600. The tens digit is 4 (&lt;5), so round DOWN.';miniCelebrate(card);}else{card.classList.add('bad');fb.className='inline-feedback show think';fb.innerHTML='<strong>Not quite.</strong> Look at the tens digit (4). Is it 5 or more? Less? Decide up or down.';}}
+function checkTA(card,correct,which){card.parentElement.querySelectorAll('.value-card').forEach(function(c){c.classList.remove('good','bad','selected');});var fb=document.getElementById('ta-fb');if(correct){card.classList.add('good');fb.className='inline-feedback show good';fb.innerHTML='<strong>✅ Yes.</strong> Tens rounding stays closer to the original numbers, so the estimate stays closer to the actual answer.';miniCelebrate(card);}else{card.classList.add('bad');fb.className='inline-feedback show think';fb.innerHTML='<strong>Not quite.</strong> Smaller rounding place = numbers shift LESS = closer estimate.';}}
+
+/* ESTIMATION LAB */
+var elabState = { A: null, B: null };
+function elabPick(which, place){
+  elabState[which] = place;
+  // Highlight button
+  var panel = document.querySelector('#elab-result-' + which).closest('.elab-panel');
+  panel.querySelectorAll('.elab-rbtn').forEach(function(b){b.classList.remove('chosen')});
+  // Find the button that matches
+  panel.querySelectorAll('.elab-rbtn').forEach(function(b){
+    var txt = b.textContent.toLowerCase();
+    if((place==='ten' && txt.indexOf('ten')!==-1) || (place==='hundred' && txt.indexOf('hundred')!==-1)) b.classList.add('chosen');
+  });
+  // Compute rounded value
+  var orig = (which === 'A') ? 642 : 87;
+  var rounded;
+  if(place === 'ten') rounded = Math.round(orig/10)*10;
+  else rounded = Math.round(orig/100)*100;
+  // Show result
+  document.getElementById('elab-result-' + which).classList.add('show');
+  document.getElementById('elab-' + which + '-val').textContent = rounded;
+  elabState[which + '_val'] = rounded;
+  updateEstimate();
+}
+function updateEstimate(){
+  if(elabState.A_val !== undefined && elabState.B_val !== undefined){
+    var est = elabState.A_val - elabState.B_val;
+    var box = document.getElementById('elab-estimate');
+    box.classList.remove('placeholder');
+    box.innerHTML = elabState.A_val + ' − ' + elabState.B_val + ' = <span class="est">' + est + '</span>';
+    elabState.estimate = est;
+    var btn = document.getElementById('elab-reveal-btn');
+    btn.disabled = false;
+    btn.style.opacity = '1';
+  }
+}
+function elabRevealActual(){
+  var actual = 555;
+  var est = elabState.estimate;
+  var diff = Math.abs(actual - est);
+  document.getElementById('reveal-est').textContent = est;
+  document.getElementById('reveal-diff').textContent = diff;
+  var diffEl = document.getElementById('reveal-diff');
+  diffEl.classList.toggle('tight', diff <= 20);
+  var verdict = '';
+  if(diff <= 10) verdict = '🎯 Excellent estimate — within 10 of the actual answer!';
+  else if(diff <= 25) verdict = '✓ Close estimate — within 25 of the actual.';
+  else if(diff <= 60) verdict = 'A reasonable estimate. Try rounding to a SMALLER place for a closer one.';
+  else verdict = 'This estimate is far off. Try a smaller rounding place (tens) for more precision.';
+  document.getElementById('reveal-verdict').textContent = verdict;
+  document.getElementById('elab-reveal').classList.add('show');
+  miniCelebrate(document.getElementById('elab-reveal'));
+}
+function elabReset(){
+  elabState = { A: null, B: null };
+  document.querySelectorAll('.elab-rbtn').forEach(function(b){b.classList.remove('chosen')});
+  document.querySelectorAll('.elab-result').forEach(function(r){r.classList.remove('show')});
+  var box = document.getElementById('elab-estimate');
+  box.classList.add('placeholder');
+  box.textContent = 'Pick a rounding place for each number above.';
+  var btn = document.getElementById('elab-reveal-btn');
+  btn.disabled = true;
+  btn.style.opacity = '.5';
+  document.getElementById('elab-reveal').classList.remove('show');
+  document.getElementById('reveal-verdict').textContent = '';
+}
+
+/* Practice 1 — accept the most common best-estimate answers (loose check) */
+function checkP1(){
+  hideBranches('p1');
+  // Accept several reasonable estimates for each
+  var accept = { 'p1-a': [770, 730, 700, 760], 'p1-b': [630, 650, 600], 'p1-c': [600, 620, 610], 'p1-d': [1340, 1400, 1350] };
+  var allOk = true;
+  Object.keys(accept).forEach(function(id){
+    var el = document.getElementById(id);
+    el.classList.remove('good','bad');
+    var v = parseInt(el.value, 10);
+    if(!isNaN(v) && accept[id].indexOf(v) >= 0){ el.classList.add('good'); }
+    else { el.classList.add('bad'); allOk = false; }
+  });
+  if(allOk){ showBranch('p1-pass'); window._p1Done=true; miniCelebrate(document.getElementById('p1-pass')); }
+  else { showBranch('p1-retry'); }
+}
+function resetP1(){['p1-a','p1-b','p1-c','p1-d'].forEach(function(id){var el=document.getElementById(id);el.value='';el.classList.remove('good','bad');});hideBranches('p1');}
+
+var p3Answers = { 'p3-a': 900 };
+function checkP3(){
+  hideBranches('p3');
+  var allCorrect = true;
+  Object.keys(p3Answers).forEach(function(id){var el=document.getElementById(id);el.classList.remove('good','bad');var v=parseInt(el.value,10);if(v===900||v===920||v===921){el.classList.add('good');}else{el.classList.add('bad');allCorrect=false;}});
+  if(allCorrect){showBranch('p3-pass');window._p3Done=true;miniCelebrate(document.getElementById('p3-pass'));}else{showBranch('p3-retry');}
+}
+function resetP3(){Object.keys(p3Answers).forEach(function(id){var el=document.getElementById(id);el.value='';el.classList.remove('good','bad');});hideBranches('p3');}
+
+function checkExitA(card,correct){card.parentElement.querySelectorAll('.value-card').forEach(function(c){c.classList.remove('good','bad');});var fb=document.getElementById('exitA-fb');if(correct){card.classList.add('good');fb.className='inline-feedback show good';fb.innerHTML='<strong>✅ Yes.</strong> 642 → 640, 87 → 90. 640 − 90 = 550. Just 5 off from the actual 555.';miniCelebrate(card);}else{card.classList.add('bad');fb.className='inline-feedback show think';fb.innerHTML='<strong>Not quite.</strong> Round 642 to nearest 10 (640) and 87 to nearest 10 (90). Subtract.';}}
+function checkExitB(card,correct){card.parentElement.querySelectorAll('.value-card').forEach(function(c){c.classList.remove('good','bad');});var fb=document.getElementById('exitB-fb');if(correct){card.classList.add('good');fb.className='inline-feedback show good';fb.innerHTML='<strong>✅ Yes.</strong> 895 → 900, 756 → 800. 900 + 800 = 1,700.';miniCelebrate(card);}else{card.classList.add('bad');fb.className='inline-feedback show think';fb.innerHTML='<strong>Not quite.</strong> Round each to nearest 100 (900 and 800) and add.';}}
+
+function gatherAnswers(){var out='Lesson 3.03.04 — Estimating Sums and Differences Part 1\n\n';document.querySelectorAll('textarea.journal-box').forEach(function(t){out+=(t.dataset.label||t.id)+'\n'+((t.value||'').trim()||'[No answer yet]')+'\n\n';});out+='Practice results\n· Practice 1: '+(window._p1Done?'Completed':'Not completed')+'\n· Practice 3: '+(window._p3Done?'Completed':'Not completed')+'\n';document.getElementById('gatheredOutput').value=out;}
+function copyAnswers(){gatherAnswers();if(navigator.clipboard){navigator.clipboard.writeText(document.getElementById('gatheredOutput').value);}showPageFeedback('Your answers were copied to your clipboard.','good');}
+function downloadJournal(){gatherAnswers();var text=document.getElementById('gatheredOutput').value;var w=window.open('','_blank');w.document.write('<title>Lesson 3.03.04 Journal</title><pre style="font-family:Arial;white-space:pre-wrap;font-size:14px;line-height:1.5;">'+text.replace(/[&<>]/g,function(s){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[s];})+'</pre>');w.document.close();w.print();}
+
+function toggleCheck(item){item.classList.toggle('checked');var check=item.querySelector('.turn-in-check');if(check)check.textContent=item.classList.contains('checked')?'✓':'';var items=[].slice.call(document.querySelectorAll('.turn-in-item'));var allChecked=items.length>0&&items.every(function(x){return x.classList.contains('checked');});if(allChecked&&!window._turnInConfettiFired){window._turnInConfettiFired=true;fireConfetti();}if(!allChecked){window._turnInConfettiFired=false;}}
+function fireConfetti(){var canvas=document.getElementById('confettiCanvas');var ctx=canvas.getContext('2d');canvas.width=window.innerWidth;canvas.height=window.innerHeight;var particles=[];var colors=['#1A8A9A','#55C8E8','#2DB87A','#F5C518','#E07B39','#3A6B9A'];var emojis=['🎯','≈','✨','⭐'];for(var i=0;i<120;i++){particles.push({type:'rect',x:Math.random()*canvas.width,y:Math.random()*canvas.height-canvas.height,r:Math.random()*6+3,c:colors[Math.floor(Math.random()*colors.length)],vx:(Math.random()-0.5)*4,vy:Math.random()*3+2,rot:Math.random()*360,rv:(Math.random()-0.5)*8});}for(var j=0;j<18;j++){particles.push({type:'emoji',x:Math.random()*canvas.width,y:Math.random()*canvas.height-canvas.height,emoji:emojis[Math.floor(Math.random()*emojis.length)],size:Math.random()*14+26,vx:(Math.random()-0.5)*3,vy:Math.random()*2.5+1.5,rot:Math.random()*360,rv:(Math.random()-0.5)*5});}var frames=0;function animate(){ctx.clearRect(0,0,canvas.width,canvas.height);particles.forEach(function(p){ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.rot*Math.PI/180);if(p.type==='emoji'){ctx.font=p.size+'px serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(p.emoji,0,0);}else{ctx.fillStyle=p.c;ctx.fillRect(-p.r,-p.r/2,p.r*2,p.r);}ctx.restore();p.x+=p.vx;p.y+=p.vy;p.rot+=p.rv;p.vy+=0.04;});frames++;if(frames<300){if(frames>220){canvas.style.opacity=1-((frames-220)/80);}requestAnimationFrame(animate);}else{ctx.clearRect(0,0,canvas.width,canvas.height);canvas.style.opacity=1;}}animate();}
+
+async function loadVideoManifest(){try{var res=await fetch('video-manifest.md',{cache:'no-store'});if(!res.ok)return;var txt=await res.text();var map=parseManifest(txt);document.querySelectorAll('.video-wrap[data-video-slot]').forEach(function(w){var slot=w.dataset.videoSlot;if(map[slot]){var ratio=w.querySelector('.video-ratio');ratio.innerHTML=map[slot].trim();var iframe=ratio.querySelector('iframe');if(iframe){iframe.classList.add('video-iframe');iframe.setAttribute('allowfullscreen','');iframe.setAttribute('loading','lazy');}}});}catch(e){}}
+function parseManifest(txt){var map={};var lines=txt.split(/\r?\n/);var current=null,buf=[];function commit(){if(current&&buf.join('\n').trim()){map[current]=buf.join('\n').trim();}buf=[];}for(var i=0;i<lines.length;i++){var line=lines[i];var m=line.match(/^([A-Za-z0-9-]+):\s*$/);if(m){commit();current=m[1];}else if(current){buf.push(line);}}commit();return map;}
+
+window.addEventListener('DOMContentLoaded',function(){restoreJournals();updateProgress();loadVideoManifest();});
+</script>
+<script id="fluencyScript">
+(function(){
+var FLUENCY_TIMED = false;
+var FLUENCY_TITLE = "Near Doubles";
+var fluencyInterval = null;
+var fluencySecondsLeft = 60;
+
+window.fluencyStart = function(){
+  if(!FLUENCY_TIMED) return;
+  var grid = document.getElementById('fluencyGrid');
+  if(!grid) return;
+  grid.querySelectorAll('.fluency-input').forEach(function(i){ i.disabled = false; });
+  var btn = document.getElementById('fluencyStartBtn');
+  if(btn){ btn.disabled = true; btn.textContent = 'Timer Running\u2026'; }
+  var checkBtn = document.getElementById('fluencyCheckBtn');
+  if(checkBtn) checkBtn.disabled = false;
+  fluencySecondsLeft = 60;
+  fluencyUpdateDisplay();
+  fluencyInterval = setInterval(function(){
+    fluencySecondsLeft--;
+    fluencyUpdateDisplay();
+    if(fluencySecondsLeft <= 0){
+      clearInterval(fluencyInterval);
+      grid.querySelectorAll('.fluency-input').forEach(function(i){ i.disabled = true; });
+      window.fluencyCheck();
+    }
+  }, 1000);
+};
+
+function fluencyUpdateDisplay(){
+  var el = document.getElementById('fluencyTimerDisplay');
+  if(el) el.textContent = fluencySecondsLeft + 's';
+}
+
+window.fluencyCheck = function(){
+  if(fluencyInterval){ clearInterval(fluencyInterval); fluencyInterval = null; }
+  var items = document.querySelectorAll('#fluencyGrid .fluency-item');
+  var correct = 0, attempted = 0, total = items.length;
+  var lines = [];
+  items.forEach(function(item){
+    var input = item.querySelector('.fluency-input');
+    var qText = item.querySelector('.fluency-q').textContent;
+    var given = (input.value || '').trim();
+    var ans = input.dataset.answer;
+    var ok = given !== '' && given === ans;
+    if(given !== '') attempted++;
+    item.classList.remove('fluency-correct','fluency-wrong');
+    if(ok){ correct++; item.classList.add('fluency-correct'); }
+    else if(given !== ''){ item.classList.add('fluency-wrong'); }
+    lines.push(qText + ' ' + ans + '   [answered: ' + (given || 'blank') + ']' + (ok ? ' \u2713' : (given ? ' \u2717' : '')));
+  });
+  var pct = total ? Math.round((correct/total)*100) : 0;
+  var timeStr = FLUENCY_TIMED ? (' in ' + (60 - fluencySecondsLeft) + ' seconds') : '';
+  var summary = 'Fluency Warm-Up \u2014 ' + FLUENCY_TITLE + '\n' + correct + ' / ' + total + ' correct (' + pct + '%)' + timeStr + '\n\n' + lines.join('\n');
+  var j = document.getElementById('fluencyJournal');
+  if(j) j.value = summary;
+  var resEl = document.getElementById('fluencyResult');
+  if(resEl) resEl.innerHTML = correct + ' / ' + total + ' correct (' + pct + '%)' + timeStr;
+  var checkBtn = document.getElementById('fluencyCheckBtn');
+  if(checkBtn) checkBtn.disabled = true;
+  var startBtn = document.getElementById('fluencyStartBtn');
+  if(startBtn) startBtn.textContent = 'Done';
+};
+})();
+</script>
+</body>
+</html>

@@ -1,3 +1,471 @@
 <!DOCTYPE html>
 
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Optima Academy Online — Grade 3 Math Lesson 3.11.07</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Nunito:wght@400;700;800;900&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Nunito',Verdana,sans-serif;background:#F5F8FA;color:#0E1C42;line-height:1.6}.page-wrap{max-width:920px;margin:0 auto;background:#fff;box-shadow:0 0 40px rgba(14,28,66,.08)}
+:root{--ws:#B8602A;--ws-light:#FDF3E7;--ws-mid:#D4A574;--ws-deep:#5C3310}
+.progress-wrap{position:sticky;top:0;z-index:200;background:#0E1C42;padding:8px 20px 10px;display:flex;align-items:center;gap:14px}.progress-label{font-size:12px;color:#F5C518;font-weight:800;text-transform:uppercase}.progress-track{flex:1;height:10px;background:rgba(255,255,255,.1);border-radius:10px;overflow:hidden}.progress-fill{height:100%;width:0%;background:linear-gradient(90deg,var(--ws),#D4A574,#F5C518,var(--ws));background-size:200% 100%;animation:shimmer 3s linear infinite;border-radius:10px;transition:width .4s}.progress-pct{font-size:13px;color:#F5C518;font-weight:800;min-width:36px;text-align:right}@keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
+.header{background:#0E1C42;border-bottom:6px solid var(--ws);padding:20px 28px 18px}.header-brand{display:flex;align-items:center;gap:12px;margin-bottom:14px}.header-logo{width:52px;height:52px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center}.header-logo img{width:48px;height:38px}.header-org{font-size:22px;color:#fff;font-weight:800}.header-sub{font-size:11px;color:var(--ws-mid)}.header-title{font-family:'Lora',serif;font-size:28px;color:#fff;font-weight:700;margin-bottom:10px}.header-title em{color:var(--ws-mid);font-style:italic}.header-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(184,96,42,.25);border:1.5px solid rgba(212,165,116,.5);border-radius:28px;padding:6px 16px}.header-badge-icon{font-size:22px}.header-badge-text{font-size:18px;color:#fff;font-weight:800}
+.quote-strip{background:linear-gradient(135deg,var(--ws-light),var(--ws-mid));border-bottom:2px solid var(--ws-mid);padding:14px 28px;text-align:center}.quote-strip-text{font-family:'Lora',serif;font-size:16px;font-style:italic;color:var(--ws-deep)}.quote-strip-attr{font-size:11px;color:var(--ws);font-weight:700;margin-top:4px;text-transform:uppercase}
+.info-strip{display:flex;flex-wrap:wrap;background:#fff;border-bottom:2px solid #E2E8F4}.info-cell{flex:1;min-width:150px;padding:12px 16px;border-right:1px solid #E2E8F4;display:flex;align-items:center;gap:10px}.info-icon{width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px}.info-label{font-size:10px;color:#7A88A8;text-transform:uppercase;font-weight:700}.info-value{font-size:16px;color:#0E1C42;font-weight:800}.info-detail{font-size:11px;color:#3A4A6B}
+.explorer-strip{display:flex;align-items:center;gap:16px;padding:12px 28px;background:linear-gradient(135deg,#1A2340,#0E1C42);border-bottom:3px solid var(--ws)}.explorer-compass{font-size:28px}.explorer-mission-label{font-size:10px;color:#F5C518;text-transform:uppercase;font-weight:800}.explorer-mission-text{font-size:15px;color:#fff;font-weight:700}
+.intro-2col{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:20px 28px 4px}@media(max-width:720px){.intro-2col{grid-template-columns:1fr}}.intro-card{background:#fff;border:2px solid #E2E8F4;border-radius:18px;overflow:hidden}.intro-card-head{display:flex;align-items:center;gap:10px;padding:14px 18px;border-bottom:2px solid}.intro-card-head-icon{width:40px;height:40px;border-radius:50%;color:#fff;font-size:20px;display:flex;align-items:center;justify-content:center}.intro-card-head-label{font-size:10px;color:#7A88A8;text-transform:uppercase;font-weight:700}.intro-card-head-title{font-size:18px;color:#0E1C42;font-weight:800}.intro-card-body{padding:14px 18px}.intro-card-body p{font-size:15px;color:#3A4A6B;line-height:1.65;margin-bottom:8px}.obj-line{display:flex;gap:8px;font-size:15px;color:#0E1C42;line-height:1.55;margin-bottom:8px}.theme-question .intro-card-head{background:#FFF8E6;border-color:#F5E6C8}.theme-question .intro-card-head-icon{background:#F5C518}.theme-objectives .intro-card-head{background:var(--ws-light);border-color:var(--ws-mid)}.theme-objectives .intro-card-head-icon{background:var(--ws)}
+.need-strip{display:flex;flex-wrap:wrap;gap:8px;padding:12px 28px 18px}.need-strip-label{font-size:13px;color:#3A4A6B;font-weight:700}.need-chip{background:#E3F8ED;border:1.5px solid #B8E8CF;border-radius:20px;padding:5px 12px;font-size:13px;color:#0E1C42;font-weight:700}
+.tab-bar{position:sticky;top:38px;z-index:100;background:#fff;border-bottom:3px solid #E2E8F4;display:flex;overflow-x:auto;box-shadow:0 -4px 0 0 #0E1C42}.tab-btn{flex:1;min-width:130px;padding:12px 8px 11px;background:transparent;border:none;border-bottom:4px solid transparent;font-family:'Nunito',sans-serif;font-size:13px;font-weight:700;color:#7A88A8;cursor:pointer;text-align:center}.tab-btn.active{color:#0E1C42;border-bottom-color:var(--ws);background:#fff}.tab-btn .tab-check{display:none;color:#2DB87A;margin-left:4px;font-weight:800}.tab-btn.visited .tab-check{display:inline}.tab-panel{display:none;padding:24px 28px 36px}.tab-panel.active{display:block}
+.activity{background:#fff;border:2px solid #E2E8F4;border-radius:18px;margin-bottom:18px}.activity.bl-ws{border-left:6px solid var(--ws)}.activity.bl-green{border-left:6px solid #2DB87A}.activity.bl-yellow{border-left:6px solid #F5C518}.activity.bl-slate{border-left:6px solid #3A6B9A}.activity.bl-navy{border-left:6px solid #0E1C42}.activity-head{display:flex;align-items:center;gap:12px;padding:14px 20px 14px 18px;border-bottom:1.5px solid #E2E8F4}.activity-num{width:38px;height:38px;border-radius:14px;color:#fff;font-size:18px;font-weight:800;display:flex;align-items:center;justify-content:center}.activity-title{font-size:19px;color:#0E1C42;font-weight:800}.activity-sub{font-size:12px;color:#7A88A8}.activity-body{padding:18px 22px}.activity-body p{font-size:16px;color:#3A4A6B;line-height:1.7;margin-bottom:12px}
+.callout{border-radius:14px;padding:16px 18px;display:flex;gap:12px;margin-bottom:14px}.callout-icon{font-size:28px}.callout p{font-size:15.5px;color:#0E1C42;line-height:1.65;margin:0}.callout-info{background:var(--ws-light);border:2px solid var(--ws-mid)}.callout-think{background:#FFF8E6;border:2px solid #F5E6C8}.callout-tip{background:#E3F8ED;border:2px solid #B8E8CF}
+.key-concept{background:var(--ws-light);border:2px solid var(--ws-mid);border-radius:14px;padding:16px 18px;margin-bottom:14px}.key-concept-label{font-size:12px;color:var(--ws-deep);text-transform:uppercase;font-weight:800;margin-bottom:8px}.key-concept p{font-size:15px;color:#0E1C42;line-height:1.7}
+.socratic-box{background:linear-gradient(135deg,var(--ws-light),var(--ws-mid));border:2px solid var(--ws-mid);border-radius:14px;padding:16px 18px;margin-bottom:14px}.socratic-label{font-size:12px;color:var(--ws-deep);text-transform:uppercase;font-weight:800;margin-bottom:8px}.socratic-q{font-size:15.5px;color:#0E1C42;font-style:italic}
+.journal-label{font-size:13px;color:#3A4A6B;font-weight:700;margin:10px 0 4px}.journal-box{width:100%;min-height:80px;border:2px solid #E2E8F4;border-radius:12px;padding:12px 14px;font-family:'Nunito',sans-serif;font-size:15px;color:#0E1C42;resize:vertical}.journal-box:focus{outline:none;border-color:var(--ws)}.saved-dot{width:8px;height:8px;border-radius:50%;background:#E2E8F4;display:inline-block;transition:.3s}.saved-dot.saved{background:#2DB87A}
+.check-btn,.ws-btn,.green-btn,.orange-btn{display:inline-flex;align-items:center;gap:6px;color:#fff;border:none;border-radius:12px;padding:10px 20px;font-size:14px;font-weight:800;cursor:pointer;font-family:'Nunito',sans-serif;margin-top:10px}.check-btn{background:#3A6B9A}.ws-btn{background:var(--ws)}.green-btn{background:#2DB87A}.orange-btn{background:#E07B39}
+.hint-callout{background:#FFF8E6;border:2px solid #F5C518;border-radius:10px;padding:10px 14px;margin:12px 0;font-size:14px;color:#5A4A00;font-weight:700}
+.task-box{background:#FAFBFF;border:2px solid #E2E8F4;border-radius:14px;padding:16px 18px;margin-bottom:14px}.task-label{font-size:12px;color:var(--ws-deep);text-transform:uppercase;font-weight:800;margin-bottom:10px}
+.feedback-branch{display:none;margin-top:16px;border-radius:14px;padding:16px}.feedback-branch.show{display:block;animation:reveal .35s}.feedback-pass{background:#E3F8ED;border:2px solid #B8E8CF}.feedback-retry{background:#FFF0E6;border:2px solid #F5C8A0}
+.value-card-row{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}.value-card{border:2px solid #E2E8F4;background:#fff;border-radius:14px;padding:10px 14px;min-width:110px;text-align:center;cursor:pointer;transition:.2s}.value-card:hover{border-color:var(--ws);background:var(--ws-light)}.value-card.good{background:#E3F8ED;border-color:#2DB87A}.value-card.bad{background:#FFF0E6;border-color:#E07B39;animation:shake .25s}.value-card .big{font-size:22px;font-weight:900;color:#0E1C42}.value-card .small{font-size:12px;color:#3A4A6B;font-weight:800}
+.fill-row{display:flex;align-items:center;gap:8px;background:#FAFBFF;border:2px solid #E2E8F4;border-radius:12px;padding:12px 14px;margin:10px 0;flex-wrap:wrap;font-size:17px;font-weight:800;color:#0E1C42}.fill-input{width:100px;padding:8px 10px;border:2.5px solid var(--ws-mid);border-radius:10px;font-size:17px;font-weight:900;color:var(--ws-deep);text-align:center;font-family:'Nunito',sans-serif;background:#fff}.fill-input:focus{outline:none;border-color:var(--ws)}.fill-input.good{border-color:#2DB87A;background:#E3F8ED;color:#1A8A5A}.fill-input.bad{border-color:#E07B39;background:#FFF0E6;animation:shake .25s}
+.q-block{background:#FAFBFF;border:2px solid #E2E8F4;border-radius:14px;padding:14px 18px;margin-bottom:14px}.q-num{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--ws);color:#fff;font-weight:800;font-size:14px;margin-right:8px;vertical-align:middle}.q-text{font-size:15.5px;color:#0E1C42;line-height:1.65}
+.gathered-box{background:#fff;border:2px solid #E2E8F4;border-radius:18px;overflow:hidden;margin-top:24px}.gathered-head{display:flex;align-items:center;gap:14px;background:linear-gradient(135deg,#0E1C42,#1A2D5A);padding:18px 22px}.gathered-head-icon{font-size:32px}.gathered-head-label{font-size:11px;color:#F5C518;font-weight:800;text-transform:uppercase}.gathered-head-title{font-size:18px;color:#fff;font-weight:800}.gathered-body{padding:16px 22px}.gathered-output{width:100%;min-height:160px;border:2px solid #E2E8F4;border-radius:12px;padding:14px;font-family:monospace;font-size:13px;background:#FAFBFF}
+.tab-next-wrap{text-align:center;padding:24px 0 8px}.tab-transition-voice{font-family:'Lora',serif;font-size:15px;font-style:italic;color:var(--ws-deep);margin-bottom:12px}.tab-next-btn{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--ws),#8B4513);color:#fff;border:none;border-radius:28px;padding:13px 28px;font-size:15px;font-weight:800;cursor:pointer;box-shadow:0 4px 14px rgba(92,51,16,.3);animation:float 3s infinite}
+.turn-in-card{background:#fff;border:2px solid #E2E8F4;border-radius:18px;overflow:hidden;margin-top:18px}.turn-in-header{display:flex;align-items:center;gap:14px;background:var(--ws-light);padding:18px 22px;border-bottom:2px solid var(--ws-mid)}.turn-in-header-icon{font-size:36px}.turn-in-header-label{font-size:11px;color:var(--ws-deep);font-weight:800;text-transform:uppercase}.turn-in-header-title{font-family:'Lora',serif;font-size:22px;color:#0E1C42;font-weight:700}.turn-in-body{padding:18px 22px 20px}.turn-in-item{display:flex;align-items:center;gap:14px;padding:12px 16px;background:#FAFBFF;border:1.5px solid #E2E8F4;border-radius:12px;cursor:pointer;margin-bottom:10px}.turn-in-item.checked{background:#E3F8ED;border-color:#B8E8CF}.turn-in-check{width:26px;height:26px;border-radius:8px;border:2px solid var(--ws-mid);background:#fff;display:flex;align-items:center;justify-content:center;font-size:16px}.turn-in-item.checked .turn-in-check{background:#2DB87A;border-color:#2DB87A;color:#fff}
+.footer{background:#0E1C42;border-top:4px solid var(--ws);padding:18px 28px;text-align:center}.footer-main{font-size:14px;color:#fff;margin-bottom:4px}.footer-main span{color:var(--ws-mid);font-weight:700}.footer-sub{font-size:12px;color:rgba(255,255,255,.5)}.footer-copy{font-size:11px;color:rgba(255,255,255,.3)}
+.inline-feedback{display:none;margin:12px 0;border-radius:14px;padding:12px 14px;font-weight:800;line-height:1.5}.inline-feedback.show{display:block;animation:reveal .3s}.inline-feedback.good{background:#E3F8ED;border:2px solid #B8E8CF;color:#0E1C42}.inline-feedback.think{background:#FFF3DC;border:2px solid #F5E6C8;color:#5A4A3A}
+.vocab-section{background:#fff;border:2px solid var(--ws-mid);border-left:6px solid var(--ws);border-radius:18px;padding:14px 20px;margin:0 0 20px}.vocab-section-title{font-size:16px;color:#0E1C42;font-weight:900;margin-bottom:4px}
+.bubble-row{display:flex;gap:12px;flex-wrap:wrap;margin:14px 0}.bubble{display:flex;gap:10px;flex:1 1 260px;max-width:340px;background:#fff;border:2px solid #E2E8F4;border-radius:18px;padding:12px 14px}.bubble.atlas{border-left:5px solid #6B3FA0;background:linear-gradient(135deg,#fff,#F8F4FF)}.bubble.hazel{border-left:5px solid #2DB87A;background:linear-gradient(135deg,#fff,#F4FBF7)}.bubble.felix{border-left:5px solid #F5C518;background:linear-gradient(135deg,#fff,#FEFBEB)}.bubble.cora{border-left:5px solid #3A6B9A;background:linear-gradient(135deg,#fff,#F4F8FC)}.bubble-avatar{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:900;color:#fff;flex-shrink:0;font-family:'Lora',serif}.bubble.atlas .bubble-avatar{background:#6B3FA0}.bubble.hazel .bubble-avatar{background:#2DB87A}.bubble.felix .bubble-avatar{background:#F5C518;color:#0E1C42}.bubble.cora .bubble-avatar{background:#3A6B9A}.bubble-body{flex:1;min-width:0}.bubble-name{font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.7px;margin-bottom:3px;color:#6B3FA0}.bubble.hazel .bubble-name{color:#1A8A5A}.bubble.felix .bubble-name{color:#8A6D2B}.bubble.cora .bubble-name{color:#1A6B8E}.bubble-text{font-size:14.5px;color:#0E1C42;line-height:1.5;font-weight:600;font-family:'Lora',serif;font-style:italic}
+.video-wrap{border-radius:18px;overflow:hidden;border:2px solid #E2E8F4;box-shadow:0 4px 20px rgba(14,28,66,.08);background:#000;margin:0 0 22px}.video-wrap-header{display:flex;align-items:center;gap:12px;padding:12px 18px;background:linear-gradient(135deg,#0E1C42,#1A2D5A);border-bottom:2px solid rgba(184,96,42,.3)}.video-wrap-type{font-size:10px;color:#F5C518;text-transform:uppercase;letter-spacing:1.5px;font-weight:800;margin-bottom:2px}.video-wrap-title{font-size:16px;color:#fff;font-weight:800;line-height:1.2}.video-ratio{position:relative;padding-bottom:56.25%;height:0;overflow:hidden}.video-placeholder,.video-iframe{position:absolute;top:0;left:0;width:100%;height:100%}.video-placeholder{background:linear-gradient(135deg,#0E1C42,#1A2D5A);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px}.video-placeholder-icon{font-size:44px;margin-bottom:10px;opacity:.55}.video-placeholder-text{font-size:14px;color:rgba(255,255,255,.78);font-weight:700;line-height:1.5;max-width:620px}.video-placeholder-id{font-size:11px;color:rgba(245,197,24,.85);font-family:monospace;margin-top:10px;letter-spacing:.5px}.record-note{margin-top:10px;background:rgba(255,255,255,.08);border:1px solid rgba(245,197,24,.28);border-radius:10px;padding:8px 10px;color:rgba(255,255,255,.82);font-size:12.5px;line-height:1.45;max-width:620px}
 
+/* BAR MODEL BUILDER */
+.bm-frame{background:#fff;border:2px solid var(--ws-mid);border-radius:16px;padding:18px;margin:14px 0}
+.bm-controls{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:14px;align-items:flex-start}
+.bm-pick{background:var(--ws-light);border:2px solid var(--ws-mid);border-radius:14px;padding:10px 14px;text-align:center;min-width:140px}
+.bm-pick-label{font-size:11px;color:var(--ws-deep);font-weight:900;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.bm-unit-btns{display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
+.bm-unit-btn{background:#fff;border:2px solid var(--ws-mid);border-radius:10px;padding:6px 12px;font-size:13px;font-weight:800;cursor:pointer;font-family:'Nunito',sans-serif;color:var(--ws-deep)}.bm-unit-btn:hover{background:var(--ws-light)}.bm-unit-btn.active{background:var(--ws);color:#fff;border-color:var(--ws)}
+.bm-op-btns{display:flex;gap:6px;justify-content:center}
+.bm-op-btn{background:#fff;border:2px solid var(--ws-mid);border-radius:10px;padding:6px 16px;font-size:14px;font-weight:800;cursor:pointer;font-family:'Nunito',sans-serif;color:var(--ws-deep)}.bm-op-btn:hover{background:var(--ws-light)}.bm-op-btn.active{background:var(--ws);color:#fff;border-color:var(--ws)}
+.bm-stepper{display:flex;align-items:center;justify-content:center;gap:10px}
+.bm-btn{background:#fff;border:2.5px solid var(--ws);color:var(--ws);width:36px;height:36px;border-radius:50%;font-size:18px;font-weight:900;cursor:pointer;font-family:'Nunito',sans-serif}.bm-btn:hover{background:var(--ws);color:#fff}
+.bm-val{font-family:'Lora',serif;font-size:24px;font-weight:900;color:#0E1C42;min-width:60px;text-align:center}
+.bm-visual{background:#FAFBFF;border:2px dashed var(--ws-mid);border-radius:12px;padding:20px 14px;margin-bottom:14px;min-height:100px}
+.bm-bar-wrap{display:flex;align-items:center;margin-bottom:6px}
+.bm-bar{height:44px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;color:#fff;min-width:30px;transition:width .3s}
+.bm-bar-a{background:var(--ws)}.bm-bar-b{background:var(--ws-mid)}
+.bm-bar-hatched{background:repeating-linear-gradient(45deg,var(--ws-mid),var(--ws-mid) 4px,#FDF3E7 4px,#FDF3E7 8px)}
+.bm-bracket{border:3px solid var(--ws-deep);border-top:none;border-radius:0 0 8px 8px;margin:4px auto 8px;display:flex;align-items:flex-end;justify-content:center;padding-bottom:4px;font-size:16px;font-weight:900;color:var(--ws-deep)}
+.bm-equation{background:linear-gradient(135deg,var(--ws-light),var(--ws-mid));border:2px solid var(--ws-mid);border-radius:12px;padding:14px;text-align:center;font-family:'Lora',serif;font-weight:900;color:#0E1C42;font-size:20px;margin-bottom:8px}
+.bm-convert{font-family:'Lora',serif;font-size:14px;color:var(--ws-deep);font-style:italic;text-align:center;background:#fff;border-radius:10px;padding:8px 12px;border:1.5px solid var(--ws-mid);margin-bottom:8px}
+.bm-reset-btn{background:#7A88A8;color:#fff;border:none;border-radius:14px;padding:10px 18px;font-size:14px;font-weight:900;cursor:pointer;font-family:'Nunito',sans-serif;margin-top:6px}
+
+@keyframes reveal{0%{opacity:0;transform:translateY(10px)}100%{opacity:1;transform:translateY(0)}}@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}@keyframes mini{0%{transform:translateY(0) scale(0);opacity:1}50%{transform:translateY(-30px) scale(1.2)}100%{transform:translateY(-60px) scale(.6);opacity:0}}
+</style>
+<style id="fluencyStyles">
+.fluency-box{background:#fff;border:2px solid #F5C518;border-radius:18px;overflow:hidden;margin-bottom:22px;font-family:'Nunito',sans-serif}
+.fluency-head{display:flex;align-items:center;gap:12px;background:linear-gradient(135deg,#F5C518,#E8B723);padding:14px 20px;flex-wrap:wrap}
+.fluency-head-icon{font-size:26px;line-height:1}
+.fluency-head-label{font-size:10px;color:#0E1C42;font-weight:800;text-transform:uppercase;letter-spacing:0.5px}
+.fluency-head-title{font-size:15px;color:#0E1C42;font-weight:800}
+.fluency-timer-ui{margin-left:auto;display:flex;align-items:center;gap:10px}
+.fluency-timer-display{font-size:20px;font-weight:800;color:#0E1C42;min-width:46px;text-align:center}
+.fluency-start-btn{background:#0E1C42;color:#fff;border:none;border-radius:10px;padding:8px 14px;font-weight:700;font-size:12px;cursor:pointer}
+.fluency-start-btn:disabled{opacity:0.55;cursor:default}
+.fluency-body{padding:16px 20px}
+.fluency-instructions{font-size:13px;color:#4A5568;margin:0 0 12px}
+.fluency-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(128px,1fr));gap:10px;margin-bottom:14px}
+.fluency-item{display:flex;align-items:center;gap:6px;background:#FAFBFF;border:1.5px solid #E2E8F4;border-radius:10px;padding:8px 10px}
+.fluency-item.fluency-correct{border-color:#2DB87A;background:#EAFBF3}
+.fluency-item.fluency-wrong{border-color:#E07B39;background:#FDF1E9}
+.fluency-q{font-size:13px;font-weight:700;color:#0E1C42;white-space:nowrap}
+.fluency-input{width:46px;border:1.5px solid #CBD5E8;border-radius:6px;padding:4px;font-size:14px;text-align:center;font-family:'Nunito',sans-serif}
+.fluency-input:disabled{background:#F0F2F8}
+.fluency-check-btn{background:#2DB87A;color:#fff;border:none;border-radius:10px;padding:10px 18px;font-weight:800;font-size:13px;cursor:pointer}
+.fluency-check-btn:disabled{opacity:0.55;cursor:default}
+.fluency-result{margin-top:10px;font-size:14px;color:#0E1C42;font-weight:700}
+</style></head><body>
+<div class="page-wrap">
+<div class="progress-wrap"><span class="progress-label">Lesson Progress</span><div class="progress-track"><div class="progress-fill" id="pf"></div></div><span class="progress-pct" id="pp">0%</span></div>
+<div class="header">
+<div class="header-brand"><div class="header-logo"><img alt="Optima" src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png"/></div><div><div class="header-org">Optima Academy Online</div><div class="header-sub">An Education Experience Company</div></div></div>
+<div class="header-title"><em>Word Problems</em></div>
+<div class="header-badge"><span class="header-badge-icon">📊</span><span class="header-badge-text">Lesson 3.11.07 · U5 Fluency</span></div>
+</div>
+<div class="quote-strip"><div class="quote-strip-text">"Read the problem. Pick the unit. Choose the operation. Solve."</div><div class="quote-strip-attr">Measurement fact</div></div>
+<div class="info-strip">
+<div class="info-cell"><div class="info-icon" style="background:var(--ws-light);">📏</div><div><div class="info-label">Unit</div><div class="info-value">Unit 11</div><div class="info-detail">Measurement</div></div></div>
+<div class="info-cell"><div class="info-icon" style="background:#E3F8ED;">📅</div><div><div class="info-label">Lesson</div><div class="info-value">3.11.07</div><div class="info-detail">U5 Fluency</div></div></div>
+<div class="info-cell"><div class="info-icon" style="background:#EAF0FF;">📐</div><div><div class="info-label">Standard</div><div class="info-value">MA.3.M.1.2</div><div class="info-detail">measurement word problems</div></div></div>
+<div class="info-cell"><div class="info-icon" style="background:#FFF8E6;">🔧</div><div><div class="info-label">Tool</div><div class="info-value">Bar Model Builder</div><div class="info-detail">build word-problem models</div></div></div>
+</div>
+<div class="explorer-strip"><span class="explorer-compass">🧭</span><div><div class="explorer-mission-label">Today’s Mission</div><div class="explorer-mission-text">Solve measurement word problems using bar models.</div></div></div>
+<div class="intro-2col">
+<div class="intro-card theme-question"><div class="intro-card-head"><div class="intro-card-head-icon">❓</div><div><div class="intro-card-head-label">Essential Question</div><div class="intro-card-head-title">How do you solve word problems about measurement?</div></div></div><div class="intro-card-body"><p>Read the problem, find the unit, pick the operation, and let a bar model show you what’s happening.</p></div></div>
+<div class="intro-card theme-objectives"><div class="intro-card-head"><div class="intro-card-head-icon">🎯</div><div><div class="intro-card-head-label">Today’s Objectives</div><div class="intro-card-head-title">You will…</div></div></div><div class="intro-card-body">
+<div class="obj-line"><span style="flex-shrink:0">📖</span><span><strong>Read</strong> word problems and identify the unit type.</span></div>
+<div class="obj-line"><span style="flex-shrink:0">➖</span><span><strong>Decide</strong> whether to add or subtract.</span></div>
+<div class="obj-line"><span style="flex-shrink:0">📊</span><span><strong>Build</strong> bar models to solve.</span></div>
+</div></div>
+</div>
+<div class="need-strip"><span class="need-strip-label">You’ll need:</span><span class="need-chip">📓 Math Journal</span><span class="need-chip">✏️ Pencil</span></div>
+<div class="tab-bar" id="tabBar">
+<button class="tab-btn active" data-tab="warmup" onclick="switchTab('warmup')">🔍 Warm-Up <span class="tab-check">✓</span></button>
+<button class="tab-btn" data-tab="learn" onclick="switchTab('learn')">📐 Learn <span class="tab-check">✓</span></button>
+<button class="tab-btn" data-tab="practice" onclick="switchTab('practice')">🧮 Practice <span class="tab-check">✓</span></button>
+<button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">🌟 Show What You Know <span class="tab-check">✓</span></button>
+</div>
+<!-- WARM-UP TAB -->
+<div class="tab-panel active" id="tab-warmup">
+<div class="fluency-box" data-timed="true">
+<div class="fluency-head">
+<div class="fluency-head-icon">⏳</div>
+<div><div class="fluency-head-label">TIMED FLUENCY CHECK</div><div class="fluency-head-title">Mixed All-Operations Facts</div></div>
+<div class="fluency-timer-ui"><span class="fluency-timer-display" id="fluencyTimerDisplay">60s</span><button class="fluency-start-btn" id="fluencyStartBtn" onclick="fluencyStart()">Start 1-Minute Check</button></div>
+</div>
+<div class="fluency-body">
+<p class="fluency-instructions">Unit check — Quarter 4 timed fluency. Click Start, then answer as many as you can in 60 seconds. Answers lock in automatically when time is up.</p>
+<div class="fluency-grid" id="fluencyGrid">
+<div class="fluency-item"><span class="fluency-q">8 + 7 =</span><input autocomplete="off" class="fluency-input" data-answer="15" disabled="" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">16 - 9 =</span><input autocomplete="off" class="fluency-input" data-answer="7" disabled="" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">6 × 7 =</span><input autocomplete="off" class="fluency-input" data-answer="42" disabled="" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">54 ÷ 9 =</span><input autocomplete="off" class="fluency-input" data-answer="6" disabled="" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">9 + 8 =</span><input autocomplete="off" class="fluency-input" data-answer="17" disabled="" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">15 - 6 =</span><input autocomplete="off" class="fluency-input" data-answer="9" disabled="" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">7 × 8 =</span><input autocomplete="off" class="fluency-input" data-answer="56" disabled="" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">63 ÷ 7 =</span><input autocomplete="off" class="fluency-input" data-answer="9" disabled="" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">8 × 6 =</span><input autocomplete="off" class="fluency-input" data-answer="48" disabled="" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">48 ÷ 8 =</span><input autocomplete="off" class="fluency-input" data-answer="6" disabled="" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">9 × 7 =</span><input autocomplete="off" class="fluency-input" data-answer="63" disabled="" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">72 ÷ 8 =</span><input autocomplete="off" class="fluency-input" data-answer="9" disabled="" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">6 + 8 =</span><input autocomplete="off" class="fluency-input" data-answer="14" disabled="" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">14 - 8 =</span><input autocomplete="off" class="fluency-input" data-answer="6" disabled="" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">7 × 9 =</span><input autocomplete="off" class="fluency-input" data-answer="63" disabled="" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">56 ÷ 7 =</span><input autocomplete="off" class="fluency-input" data-answer="8" disabled="" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">9 × 8 =</span><input autocomplete="off" class="fluency-input" data-answer="72" disabled="" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">64 ÷ 8 =</span><input autocomplete="off" class="fluency-input" data-answer="8" disabled="" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">8 + 9 =</span><input autocomplete="off" class="fluency-input" data-answer="17" disabled="" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">17 - 8 =</span><input autocomplete="off" class="fluency-input" data-answer="9" disabled="" inputmode="numeric" type="text"/></div>
+</div>
+<button class="fluency-check-btn" disabled="" id="fluencyCheckBtn" onclick="fluencyCheck()">Check My Answers</button>
+<div class="fluency-result" id="fluencyResult"></div>
+</div>
+<textarea class="journal-box" data-label="Fluency Warm-Up (Mixed All-Operations Facts)" id="fluencyJournal" readonly="" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;"></textarea>
+</div>
+
+<div class="activity bl-yellow"><div class="activity-head"><div class="activity-num" style="background:#F5C518;color:#0E1C42;">🔎</div><div><div class="activity-title">Readiness Check</div><div class="activity-sub">Quick conversions.</div></div></div><div class="activity-body">
+<p>How well do you remember the big conversion facts?</p>
+<div class="q-block"><p class="q-text"><span class="q-num">1</span>1 km = ___ m</p>
+<div class="value-card-row">
+<div class="value-card" onclick="rQ(this,true,1)"><div class="big">1,000 m</div></div>
+<div class="value-card" onclick="rQ(this,false,1)"><div class="big">100 m</div></div>
+<div class="value-card" onclick="rQ(this,false,1)"><div class="big">10,000 m</div></div>
+</div>
+<div class="inline-feedback" id="rQ1-fb"></div></div>
+<div class="q-block"><p class="q-text"><span class="q-num">2</span>1 L = ___ mL</p>
+<div class="value-card-row">
+<div class="value-card" onclick="rQ(this,true,2)"><div class="big">1,000 mL</div></div>
+<div class="value-card" onclick="rQ(this,false,2)"><div class="big">100 mL</div></div>
+<div class="value-card" onclick="rQ(this,false,2)"><div class="big">500 mL</div></div>
+</div>
+<div class="inline-feedback" id="rQ2-fb"></div></div>
+<div class="q-block"><p class="q-text"><span class="q-num">3</span>1 kg = ___ g</p>
+<div class="value-card-row">
+<div class="value-card" onclick="rQ(this,true,3)"><div class="big">1,000 g</div></div>
+<div class="value-card" onclick="rQ(this,false,3)"><div class="big">100 g</div></div>
+<div class="value-card" onclick="rQ(this,false,3)"><div class="big">10,000 g</div></div>
+</div>
+<div class="inline-feedback" id="rQ3-fb"></div></div>
+</div></div>
+<div class="activity bl-yellow"><div class="activity-head"><div class="activity-num" style="background:#F5C518;color:#0E1C42;">🤔</div><div><div class="activity-title">Think About It</div></div></div><div class="activity-body">
+<div class="callout callout-think"><span class="callout-icon">🧠</span><p>Atlas walks 1 km 200 m to school and then 800 m to the library. How far did he walk in total?</p></div>
+<div class="journal-label">✏️ What’s your plan? <span class="saved-dot" id="dt"></span></div>
+<textarea class="journal-box" data-label="Warm-Up journal" id="j-t01" oninput="autoSave(this,'dt')" placeholder=""></textarea>
+</div></div>
+<div class="tab-next-wrap"><p class="tab-transition-voice">You know the units. Now let’s solve problems with them.</p><button class="tab-next-btn" onclick="switchTab('learn')">Continue to 📐 Learn →</button></div>
+</div>
+<!-- LEARN TAB -->
+<div class="tab-panel" id="tab-learn">
+<div class="vocab-section"><div class="vocab-section-title">Vocabulary</div>
+<p style="font-size:14px;color:#3A4A6B;font-family:'Lora',serif;font-style:italic;margin-bottom:10px;"><strong>Bar model</strong> — a diagram that shows the parts and the whole.</p>
+<p style="font-size:14px;color:#3A4A6B;font-family:'Lora',serif;font-style:italic;margin-bottom:10px;"><strong>Operation</strong> — add, subtract, multiply, or divide. The problem tells you which one.</p>
+<p style="font-size:14px;color:#3A4A6B;font-family:'Lora',serif;font-style:italic;"><strong>Estimate</strong> — a quick guess that helps you check if your answer makes sense.</p>
+</div>
+
+<div class="callout callout-info"><span class="callout-icon">🔧</span><p><strong>Try the Bar Model Builder.</strong> Pick a unit type, choose add or subtract, set two amounts, and watch the bar model draw itself.</p></div>
+<!-- CENTERPIECE: Bar Model Builder -->
+<div class="activity bl-ws"><div class="activity-head"><div class="activity-num" style="background:var(--ws);">📊</div><div><div class="activity-title">Bar Model Builder</div></div></div><div class="activity-body">
+<p style="font-family:'Lora',serif;font-size:14.5px;font-style:italic;color:var(--ws-deep);margin-bottom:8px;">Choose the unit, the operation, and two amounts. The bar model shows what’s happening.</p>
+<div class="bm-frame">
+<div class="bm-controls">
+<div class="bm-pick"><div class="bm-pick-label">Unit Type</div><div class="bm-unit-btns">
+<button class="bm-unit-btn active" onclick="bmUnit('m-cm',this)">m / cm</button>
+<button class="bm-unit-btn" onclick="bmUnit('km-m',this)">km / m</button>
+<button class="bm-unit-btn" onclick="bmUnit('L-mL',this)">L / mL</button>
+<button class="bm-unit-btn" onclick="bmUnit('kg-g',this)">kg / g</button>
+</div></div>
+<div class="bm-pick"><div class="bm-pick-label">Operation</div><div class="bm-op-btns">
+<button class="bm-op-btn active" onclick="bmOp('add',this)">Add +</button>
+<button class="bm-op-btn" onclick="bmOp('sub',this)">Subtract −</button>
+</div></div>
+</div>
+<div class="bm-controls">
+<div class="bm-pick"><div class="bm-pick-label">First Amount</div><div class="bm-stepper"><button class="bm-btn" onclick="bmStep('a',-100)">−100</button><button class="bm-btn" onclick="bmStep('a',-10)">−10</button><span class="bm-val" id="bm-val-a">130</span><button class="bm-btn" onclick="bmStep('a',10)">+10</button><button class="bm-btn" onclick="bmStep('a',100)">+100</button></div></div>
+<div class="bm-pick"><div class="bm-pick-label">Second Amount</div><div class="bm-stepper"><button class="bm-btn" onclick="bmStep('b',-100)">−100</button><button class="bm-btn" onclick="bmStep('b',-10)">−10</button><span class="bm-val" id="bm-val-b">70</span><button class="bm-btn" onclick="bmStep('b',10)">+10</button><button class="bm-btn" onclick="bmStep('b',100)">+100</button></div></div>
+</div>
+<div class="bm-visual" id="bm-visual"></div>
+<div class="bm-equation" id="bm-equation">130 cm + 70 cm = 200 cm</div>
+<div class="bm-convert" id="bm-convert">200 cm = 2 m</div>
+<div style="text-align:center;"><button class="bm-reset-btn" onclick="bmReset()">↩ Reset</button></div>
+</div>
+</div></div>
+<div class="key-concept"><div class="key-concept-label">📐 Key Concept — What You Just Saw</div>
+<p><strong>Measurement word problems work the same way no matter the unit.</strong> Convert to the same unit, do the math, convert back if needed.</p>
+</div>
+
+<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">🧠</div><div><div class="activity-title">Worked Example: Atlas’s Walk</div></div></div><div class="activity-body">
+<div class="task-box"><div class="task-label">Problem</div><p>Atlas walks 1 km 200 m to school and then 800 m to the library. How far did he walk in total?</p></div>
+<div class="bubble-row">
+<div class="bubble atlas"><div class="bubble-avatar">A</div><div class="bubble-body"><div class="bubble-name">Atlas</div><div class="bubble-text">“First, convert 1 km 200 m to meters. That’s 1,000 + 200 = 1,200 m.”</div></div></div>
+<div class="bubble hazel"><div class="bubble-avatar">H</div><div class="bubble-body"><div class="bubble-name">Hazel</div><div class="bubble-text">“Now add: 1,200 m + 800 m = 2,000 m.”</div></div></div>
+</div>
+<div class="bubble-row">
+<div class="bubble felix"><div class="bubble-avatar">F</div><div class="bubble-body"><div class="bubble-name">Felix</div><div class="bubble-text">“2,000 m — that’s exactly 2 km!”</div></div></div>
+<div class="bubble cora"><div class="bubble-avatar">C</div><div class="bubble-body"><div class="bubble-name">Cora</div><div class="bubble-text">“Convert, add, convert back. Same steps every time.”</div></div></div>
+</div>
+<p style="font-family:'Lora',serif;background:#FAFBFF;border:2px solid #E2E8F4;border-radius:12px;padding:10px;text-align:center;font-size:20px;font-weight:900;margin-top:14px;">1,200 m + 800 m = 2,000 m = 2 km</p>
+</div></div>
+<div class="socratic-box"><div class="socratic-label">🔮 Think Deeper</div><p class="socratic-q">How do you decide whether a word problem means add or subtract?</p><div class="journal-label">✏️ <span class="saved-dot" id="ds1"></span></div><textarea class="journal-box" data-label="Learn socratic" id="j-s101" oninput="autoSave(this,'ds1')" placeholder=""></textarea></div>
+<div class="tab-next-wrap"><p class="tab-transition-voice">Convert, compute, convert back. Now try it yourself.</p><button class="tab-next-btn" onclick="switchTab('practice')">Continue to 🧮 Practice →</button></div>
+</div>
+<!-- PRACTICE TAB -->
+<div class="tab-panel" id="tab-practice">
+<div class="callout callout-info"><span class="callout-icon">🧭</span><p>You just built bar models for measurement problems. Now solve three on your own.</p></div>
+<div class="callout callout-tip"><span class="callout-icon">💡</span><p><strong>Before each problem, ask yourself:</strong> “What unit am I working with? Am I putting together or taking apart?”</p></div>
+<div class="hint-callout">🔄 <strong>Stuck?</strong> Go back to Learn and try the Bar Model Builder again.</div>
+<!-- P1: addition, length -->
+<div class="activity bl-ws"><div class="activity-head"><div class="activity-num" style="background:var(--ws);">1</div><div><div class="activity-title">Addition — Length</div></div></div><div class="activity-body">
+<div class="task-box"><div class="task-label">Word Problem</div><p>Hazel has a ribbon that’s 1 m 30 cm. She ties on 70 cm more. How long is the ribbon now?</p></div>
+<div class="fill-row"><strong>Total length:</strong><input class="fill-input" id="p1-ans" placeholder="?" type="number"/><strong>cm</strong></div>
+<button class="check-btn" onclick="checkP1()">Check ✓</button>
+<div class="feedback-branch feedback-pass" id="p1-pass"><strong>✅</strong> 1 m 30 cm = 130 cm. 130 + 70 = 200 cm = 2 m.
+      
+</div>
+<div class="feedback-branch feedback-retry" id="p1-retry"><strong>🔄 First, convert 1 m 30 cm to centimeters. 1 m = 100 cm, so 1 m 30 cm = 130 cm. Now add 70.</strong>
+
+<button class="orange-btn" onclick="resetP(1)">↩ Reset</button>
+</div>
+</div></div>
+<!-- P2: subtraction, capacity -->
+<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">2</div><div><div class="activity-title">Subtraction — Capacity</div></div></div><div class="activity-body">
+<div class="task-box"><div class="task-label">Word Problem</div><p>Felix has a 3 L jug. He pours out 1,200 mL. How much is left?</p></div>
+<div class="fill-row"><strong>Left:</strong><input class="fill-input" id="p2-L" placeholder="? L" style="width:70px;" type="number"/><strong>L</strong><input class="fill-input" id="p2-mL" placeholder="? mL" style="width:90px;" type="number"/><strong>mL</strong></div>
+<button class="check-btn" onclick="checkP2()">Check ✓</button>
+<div class="feedback-branch feedback-pass" id="p2-pass"><strong>✅</strong> 3 L = 3,000 mL. 3,000 − 1,200 = 1,800 mL = 1 L 800 mL.
+      
+</div>
+<div class="feedback-branch feedback-retry" id="p2-retry"><strong>🔄 Convert 3 L to milliliters first. 1 L = 1,000 mL, so 3 L = 3,000 mL. Now subtract 1,200.</strong>
+
+<button class="orange-btn" onclick="resetP(2)">↩ Reset</button>
+</div>
+</div></div>
+<!-- P3: comparison, mass -->
+<div class="activity bl-slate"><div class="activity-head"><div class="activity-num" style="background:#3A6B9A;">3</div><div><div class="activity-title">Comparison — Mass</div></div></div><div class="activity-body">
+<div class="task-box"><div class="task-label">Word Problem</div><p>Cora’s backpack weighs 2 kg 100 g. Atlas’s weighs 1,850 g. Whose backpack is heavier? By how many grams?</p></div>
+<p><strong>Who has the heavier backpack?</strong></p>
+<div class="value-card-row">
+<div class="value-card" onclick="p3Who(this,true)"><div class="big">Cora</div><div class="small">2 kg 100 g</div></div>
+<div class="value-card" onclick="p3Who(this,false)"><div class="big">Atlas</div><div class="small">1,850 g</div></div>
+</div>
+<div class="inline-feedback" id="p3-who-fb"></div>
+<div class="fill-row"><strong>Difference:</strong><input class="fill-input" id="p3-diff" placeholder="?" type="number"/><strong>g</strong></div>
+<button class="check-btn" onclick="checkP3()">Check Difference ✓</button>
+<div class="feedback-branch feedback-pass" id="p3-pass"><strong>✅</strong> Cora: 2 kg 100 g = 2,100 g. Atlas: 1,850 g. 2,100 − 1,850 = 250 g heavier.
+      
+</div>
+<div class="feedback-branch feedback-retry" id="p3-retry"><strong>🔄 Convert Cora’s backpack: 2 kg = 2,000 g, plus 100 g = 2,100 g. Now subtract Atlas’s 1,850 g.</strong>
+
+<button class="orange-btn" onclick="resetP(3)">↩ Reset</button>
+</div>
+</div></div>
+<div class="socratic-box"><div class="socratic-label">🔮 Think Deeper</div><p class="socratic-q">Make up your own measurement word problem. Write it below.</p><div class="journal-label">✏️ <span class="saved-dot" id="ds2"></span></div><textarea class="journal-box" data-label="Practice socratic" id="j-s201" oninput="autoSave(this,'ds2')" placeholder=""></textarea></div>
+<div class="tab-next-wrap"><p class="tab-transition-voice">Convert, solve, convert back — every time.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
+</div>
+<!-- SHOW WHAT YOU KNOW TAB -->
+<div class="tab-panel" id="tab-assignment">
+<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">🎯</div><div><div class="activity-title">Ready Check</div></div></div><div class="activity-body">
+<div class="q-block"><p class="q-text"><span class="q-num">A</span>A pool holds 4,000 L. 1,500 L are drained. How much is left?</p>
+<div class="value-card-row">
+<div class="value-card" onclick="eA(this,true)"><div class="big">2,500 L</div></div>
+<div class="value-card" onclick="eA(this,false)"><div class="big">3,500 L</div></div>
+<div class="value-card" onclick="eA(this,false)"><div class="big">5,500 L</div></div>
+</div>
+<div class="inline-feedback" id="eA-fb"></div></div>
+<div class="q-block"><p class="q-text"><span class="q-num">B</span>A package weighs 2 kg 400 g. Another weighs 1,600 g. What’s the total weight in grams?</p>
+<div class="value-card-row">
+<div class="value-card" onclick="eB(this,true)"><div class="big">4,000 g</div></div>
+<div class="value-card" onclick="eB(this,false)"><div class="big">4,600 g</div></div>
+<div class="value-card" onclick="eB(this,false)"><div class="big">3,000 g</div></div>
+</div>
+<div class="inline-feedback" id="eB-fb"></div></div>
+</div></div>
+<div class="activity bl-navy"><div class="activity-head"><div class="activity-num" style="background:#0E1C42;">📬</div><div><div class="activity-title">Show What You Know</div></div></div><div class="activity-body">
+<div class="q-block"><p class="q-text"><span class="q-num">1</span><strong>Fluency.</strong> A board is 3 m long. You cut off 85 cm. How long is the remaining piece? Write your answer in meters and centimeters.</p><div class="journal-label">✏️ <span class="saved-dot" id="da1"></span></div><textarea class="journal-box" data-label="SWYK 1" id="j-a101" oninput="autoSave(this,'da1')" placeholder=""></textarea></div>
+<div class="q-block"><p class="q-text"><span class="q-num">2</span><strong>Transfer.</strong> Hazel mixes 1 L 200 mL of orange juice with 800 mL of sparkling water. How many liters of punch does she make?</p><div class="journal-label">✏️ <span class="saved-dot" id="da2"></span></div><textarea class="journal-box" data-label="SWYK 2" id="j-a201" oninput="autoSave(this,'da2')" placeholder=""></textarea></div>
+
+<div class="activity bl-slate" style="margin-top:18px;border-left-color:#F5A36F;"><div class="activity-head"><div class="activity-num" style="background:#F5A36F;color:#0E1C42;">🗺️</div><div><div class="activity-title">Connection Forward</div><div class="activity-sub">Next: Unit 12</div></div></div><div class="activity-body">
+<p>You’ve finished Unit 11 — Measurement! You measured length, capacity, and mass, and solved word problems with all of them. Next up: Unit 12.</p>
+</div></div>
+</div></div>
+<div class="gathered-box"><div class="gathered-head"><div class="gathered-head-icon">📋</div><div><div class="gathered-head-label">Math Journal</div><div class="gathered-head-title">All Answers</div></div></div><div class="gathered-body"><textarea class="gathered-output" id="gO" readonly="">Click “Gather” to collect.</textarea><div style="display:flex;gap:10px;margin-top:12px;"><button class="ws-btn" onclick="gather()">📋 Gather</button><button class="green-btn" onclick="copyA()">Copy</button><button class="check-btn" onclick="dl()">Download</button></div></div></div>
+<div class="turn-in-card"><div class="turn-in-header"><div class="turn-in-header-icon">✅</div><div><div class="turn-in-header-label">Turn-In</div><div class="turn-in-header-title">Ready?</div></div></div><div class="turn-in-body">
+<div class="turn-in-item" onclick="tg(this)"><span class="turn-in-check">✓</span><span>I completed Show What You Know.</span></div>
+<div class="turn-in-item" onclick="tg(this)"><span class="turn-in-check">✓</span><span>I can solve measurement word problems using bar models.</span></div>
+</div></div>
+</div>
+<div class="footer"><div class="footer-main">🏫 <span>Optima Academy Online</span></div><div class="footer-sub">Math · Grade 3 · 3.11.07 · U5 Fluency</div><div class="footer-copy">© 2025 Optima Academy Online</div></div>
+</div>
+<script>
+var LS='g3-3-11-07-';
+function mini(el){if(!el)return;var em=['&#x2B50;','&#x2728;','&#x1F389;','&#x1F9E9;'];for(var i=0;i<8;i++){var s=document.createElement('span');s.textContent=em[Math.floor(Math.random()*em.length)];s.style.cssText='position:absolute;font-size:'+(16+Math.random()*14)+'px;pointer-events:none;z-index:999;animation:mini .7s ease-out forwards;left:'+(20+Math.random()*60)+'%;top:'+(Math.random()*40)+'%;';el.style.position='relative';el.style.overflow='visible';el.appendChild(s);setTimeout(function(x){x.remove()}.bind(null,s),800);}}
+function switchTab(t){document.querySelectorAll('.tab-panel').forEach(function(p){p.classList.remove('active');});document.getElementById('tab-'+t).classList.add('active');document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active');if(b.dataset.tab===t){b.classList.add('active');b.classList.add('visited');}});var bs=[].slice.call(document.querySelectorAll('.tab-btn'));var i=bs.findIndex(function(b){return b.classList.contains('active');});var p=Math.round(((i+1)/bs.length)*100);document.getElementById('pf').style.width=p+'%';document.getElementById('pp').textContent=p+'%';window.scrollTo({top:0,behavior:'smooth'});}
+function autoSave(el,d){try{localStorage.setItem(LS+el.id,el.value);}catch(e){}var dt=document.getElementById(d);if(dt){dt.classList.add('saved');setTimeout(function(){dt.classList.remove('saved')},900);}}
+function restore(){document.querySelectorAll('textarea.journal-box').forEach(function(t){try{var v=localStorage.getItem(LS+t.id);if(v)t.value=v;}catch(e){}});}
+function showBranch(id){document.getElementById(id).classList.add('show');}
+function hideBranches(p){['pass','retry'].forEach(function(x){var e=document.getElementById(p+'-'+x);if(e)e.classList.remove('show');});}
+
+/* Warm-Up readiness */
+function rQ(c,ok,n){c.parentElement.querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});var f=document.getElementById('rQ'+n+'-fb');var facts={1:'1 km = 1,000 m.',2:'1 L = 1,000 mL.',3:'1 kg = 1,000 g.'};if(ok){c.classList.add('good');f.className='inline-feedback show good';f.innerHTML='<strong>&#x2705;</strong> '+facts[n];mini(c);}else{c.classList.add('bad');f.className='inline-feedback show think';f.innerHTML='Think about the conversion. Each bigger unit has 1,000 of the smaller one.';}}
+
+/* ========== BAR MODEL BUILDER ========== */
+var bm={unit:'m-cm',op:'add',a:130,b:70};
+var bmUnits={'m-cm':{small:'cm',big:'m',factor:100},'km-m':{small:'m',big:'km',factor:1000},'L-mL':{small:'mL',big:'L',factor:1000},'kg-g':{small:'g',big:'kg',factor:1000}};
+
+function bmUnit(u,btn){bm.unit=u;btn.parentElement.querySelectorAll('.bm-unit-btn').forEach(function(b){b.classList.remove('active');});btn.classList.add('active');bmRender();}
+function bmOp(o,btn){bm.op=o;btn.parentElement.querySelectorAll('.bm-op-btn').forEach(function(b){b.classList.remove('active');});btn.classList.add('active');bmRender();}
+function bmStep(which,d){if(which==='a'){bm.a=Math.max(0,Math.min(9999,bm.a+d));}else{bm.b=Math.max(0,Math.min(9999,bm.b+d));}document.getElementById('bm-val-'+which).textContent=bm[which];bmRender();}
+function bmReset(){bm={unit:'m-cm',op:'add',a:130,b:70};document.getElementById('bm-val-a').textContent=bm.a;document.getElementById('bm-val-b').textContent=bm.b;document.querySelectorAll('.bm-unit-btn').forEach(function(b,i){b.classList.toggle('active',i===0);});document.querySelectorAll('.bm-op-btn').forEach(function(b,i){b.classList.toggle('active',i===0);});bmRender();}
+
+function bmRender(){
+  var u=bmUnits[bm.unit];var sm=u.small;var bg=u.big;var f=u.factor;
+  var vis=document.getElementById('bm-visual');
+  var eq=document.getElementById('bm-equation');
+  var cv=document.getElementById('bm-convert');
+
+  if(bm.op==='add'){
+    var total=bm.a+bm.b;
+    /* bar widths proportional */
+    var maxW=100;var scale=maxW/Math.max(total,1);
+    var wA=Math.max(5,Math.round(bm.a*scale));
+    var wB=Math.max(5,Math.round(bm.b*scale));
+    vis.innerHTML='<div style="padding:0 10px;">'+
+      '<div class="bm-bar-wrap"><div class="bm-bar bm-bar-a" style="width:'+wA+'%;">'+bm.a+' '+sm+'</div><div class="bm-bar bm-bar-b" style="width:'+wB+'%;border-radius:0 8px 8px 0;">'+bm.b+' '+sm+'</div></div>'+
+      '<div class="bm-bracket" style="width:'+(wA+wB)+'%;height:24px;">'+total+' '+sm+'</div>'+
+      '</div>';
+    eq.textContent=bm.a+' '+sm+' + '+bm.b+' '+sm+' = '+total+' '+sm;
+    /* convert-back */
+    if(total>=f){var bigN=Math.floor(total/f);var leftover=total%f;if(leftover===0){cv.textContent=total+' '+sm+' = '+bigN+' '+bg;}else{cv.textContent=total+' '+sm+' = '+bigN+' '+bg+' '+leftover+' '+sm;}cv.style.display='block';}else{cv.style.display='none';}
+  } else {
+    /* subtraction: a must be >= b for sensible model */
+    var diff=bm.a-bm.b;
+    if(diff<0){vis.innerHTML='<p style="text-align:center;color:#E07B39;font-weight:800;">The first amount must be larger than the second for subtraction.</p>';eq.textContent='';cv.style.display='none';return;}
+    var maxW2=100;var scale2=maxW2/Math.max(bm.a,1);
+    var wWhole=Math.max(10,Math.round(bm.a*scale2));
+    var wRemove=Math.max(5,Math.round(bm.b*scale2));
+    var wKeep=Math.max(5,wWhole-wRemove);
+    vis.innerHTML='<div style="padding:0 10px;">'+
+      '<div class="bm-bar-wrap"><div class="bm-bar bm-bar-a" style="width:'+wKeep+'%;">'+diff+' '+sm+'</div><div class="bm-bar bm-bar-hatched" style="width:'+wRemove+'%;height:44px;border-radius:0 8px 8px 0;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;color:var(--ws-deep);">'+bm.b+' '+sm+'</div></div>'+
+      '<div class="bm-bracket" style="width:'+wWhole+'%;height:24px;">'+bm.a+' '+sm+' total</div>'+
+      '</div>';
+    eq.textContent=bm.a+' '+sm+' − '+bm.b+' '+sm+' = '+diff+' '+sm;
+    if(diff>=f){var bigN2=Math.floor(diff/f);var left2=diff%f;if(left2===0){cv.textContent=diff+' '+sm+' = '+bigN2+' '+bg;}else{cv.textContent=diff+' '+sm+' = '+bigN2+' '+bg+' '+left2+' '+sm;}cv.style.display='block';}else{cv.style.display='none';}
+  }
+}
+
+/* Practice */
+function checkP1(){hideBranches('p1');var v=parseInt(document.getElementById('p1-ans').value,10);var el=document.getElementById('p1-ans');el.classList.remove('good','bad');if(v===200){el.classList.add('good');showBranch('p1-pass');mini(el);}else{el.classList.add('bad');showBranch('p1-retry');}}
+function checkP2(){hideBranches('p2');var vL=parseInt(document.getElementById('p2-L').value,10);var vmL=parseInt(document.getElementById('p2-mL').value,10);var ok=vL===1&&vmL===800;['p2-L','p2-mL'].forEach(function(id){document.getElementById(id).classList.remove('good','bad');});if(ok){document.getElementById('p2-L').classList.add('good');document.getElementById('p2-mL').classList.add('good');showBranch('p2-pass');mini(document.getElementById('p2-L'));}else{document.getElementById('p2-L').classList.add('bad');document.getElementById('p2-mL').classList.add('bad');showBranch('p2-retry');}}
+function p3Who(c,ok){c.parentElement.querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});var f=document.getElementById('p3-who-fb');if(ok){c.classList.add('good');f.className='inline-feedback show good';f.innerHTML='<strong>&#x2705;</strong> Cora&#8217;s backpack is heavier. Now find the difference.';mini(c);}else{c.classList.add('bad');f.className='inline-feedback show think';f.innerHTML='Convert both to grams first. 2 kg 100 g = 2,100 g. Is 2,100 more or less than 1,850?';}}
+function checkP3(){hideBranches('p3');var v=parseInt(document.getElementById('p3-diff').value,10);var el=document.getElementById('p3-diff');el.classList.remove('good','bad');if(v===250){el.classList.add('good');showBranch('p3-pass');mini(el);}else{el.classList.add('bad');showBranch('p3-retry');}}
+function resetP(n){if(n===1){document.getElementById('p1-ans').value='';document.getElementById('p1-ans').classList.remove('good','bad');hideBranches('p1');}
+if(n===2){['p2-L','p2-mL'].forEach(function(id){var e=document.getElementById(id);e.value='';e.classList.remove('good','bad');});hideBranches('p2');}
+if(n===3){document.querySelectorAll('#tab-practice .value-card').forEach(function(x){x.classList.remove('good','bad');});document.getElementById('p3-who-fb').className='inline-feedback';document.getElementById('p3-diff').value='';document.getElementById('p3-diff').classList.remove('good','bad');hideBranches('p3');}}
+
+/* Ready Check */
+function eA(c,ok){c.parentElement.querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});var f=document.getElementById('eA-fb');if(ok){c.classList.add('good');f.className='inline-feedback show good';f.innerHTML='<strong>&#x2705;</strong> 4,000 − 1,500 = 2,500 L.';mini(c);}else{c.classList.add('bad');f.className='inline-feedback show think';f.innerHTML='Subtract: 4,000 − 1,500 = ?';}}
+function eB(c,ok){c.parentElement.querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});var f=document.getElementById('eB-fb');if(ok){c.classList.add('good');f.className='inline-feedback show good';f.innerHTML='<strong>&#x2705;</strong> 2 kg 400 g = 2,400 g. 2,400 + 1,600 = 4,000 g.';mini(c);}else{c.classList.add('bad');f.className='inline-feedback show think';f.innerHTML='Convert 2 kg 400 g to grams: 2,000 + 400 = 2,400 g. Now add 1,600.';}}
+
+/* Gather / Copy / Download */
+function gather(){var o='Lesson 3.11.07 — Word Problems\n\n';document.querySelectorAll('textarea.journal-box').forEach(function(t){o+=(t.dataset.label||t.id)+'\n'+((t.value||'').trim()||'[empty]')+'\n\n';});document.getElementById('gO').value=o;}
+function copyA(){gather();if(navigator.clipboard)navigator.clipboard.writeText(document.getElementById('gO').value);}
+function dl(){gather();var t=document.getElementById('gO').value;var w=window.open('','_blank');w.document.write('<title>3.11.07</title><pre>'+t.replace(/[&<>]/g,function(s){return{'&':'&amp;','<':'&lt;','>':'&gt;'}[s];})+'</pre>');w.document.close();w.print();}
+function tg(i){i.classList.toggle('checked');var c=i.querySelector('.turn-in-check');if(c)c.textContent=i.classList.contains('checked')?'✓':'';}
+
+async function loadVideoManifest(){try{var res=await fetch('video-manifest.md',{cache:'no-store'});if(!res.ok)return;var txt=await res.text();var map=parseManifest(txt);document.querySelectorAll('.video-wrap[data-video-slot]').forEach(function(w){var slot=w.dataset.videoSlot;if(map[slot]){var ratio=w.querySelector('.video-ratio');ratio.innerHTML=map[slot].trim();var iframe=ratio.querySelector('iframe');if(iframe){iframe.classList.add('video-iframe');iframe.setAttribute('allowfullscreen','');iframe.setAttribute('loading','lazy');}}});}catch(e){}}
+function parseManifest(txt){var map={};var lines=txt.split(/\r?\n/);var current=null,buf=[];function commit(){if(current&&buf.join('\n').trim()){map[current]=buf.join('\n').trim();}buf=[];}for(var i=0;i<lines.length;i++){var line=lines[i];var m=line.match(/^([A-Za-z0-9-]+):\s*$/);if(m){commit();current=m[1];}else if(current){buf.push(line);}}commit();return map;}
+
+window.addEventListener('DOMContentLoaded',function(){loadVideoManifest();restore();bmRender();});
+</script>
+<script id="fluencyScript">
+(function(){
+var FLUENCY_TIMED = true;
+var FLUENCY_TITLE = "Mixed All-Operations Facts";
+var fluencyInterval = null;
+var fluencySecondsLeft = 60;
+
+window.fluencyStart = function(){
+  if(!FLUENCY_TIMED) return;
+  var grid = document.getElementById('fluencyGrid');
+  if(!grid) return;
+  grid.querySelectorAll('.fluency-input').forEach(function(i){ i.disabled = false; });
+  var btn = document.getElementById('fluencyStartBtn');
+  if(btn){ btn.disabled = true; btn.textContent = 'Timer Running\u2026'; }
+  var checkBtn = document.getElementById('fluencyCheckBtn');
+  if(checkBtn) checkBtn.disabled = false;
+  fluencySecondsLeft = 60;
+  fluencyUpdateDisplay();
+  fluencyInterval = setInterval(function(){
+    fluencySecondsLeft--;
+    fluencyUpdateDisplay();
+    if(fluencySecondsLeft <= 0){
+      clearInterval(fluencyInterval);
+      grid.querySelectorAll('.fluency-input').forEach(function(i){ i.disabled = true; });
+      window.fluencyCheck();
+    }
+  }, 1000);
+};
+
+function fluencyUpdateDisplay(){
+  var el = document.getElementById('fluencyTimerDisplay');
+  if(el) el.textContent = fluencySecondsLeft + 's';
+}
+
+window.fluencyCheck = function(){
+  if(fluencyInterval){ clearInterval(fluencyInterval); fluencyInterval = null; }
+  var items = document.querySelectorAll('#fluencyGrid .fluency-item');
+  var correct = 0, attempted = 0, total = items.length;
+  var lines = [];
+  items.forEach(function(item){
+    var input = item.querySelector('.fluency-input');
+    var qText = item.querySelector('.fluency-q').textContent;
+    var given = (input.value || '').trim();
+    var ans = input.dataset.answer;
+    var ok = given !== '' && given === ans;
+    if(given !== '') attempted++;
+    item.classList.remove('fluency-correct','fluency-wrong');
+    if(ok){ correct++; item.classList.add('fluency-correct'); }
+    else if(given !== ''){ item.classList.add('fluency-wrong'); }
+    lines.push(qText + ' ' + ans + '   [answered: ' + (given || 'blank') + ']' + (ok ? ' \u2713' : (given ? ' \u2717' : '')));
+  });
+  var pct = total ? Math.round((correct/total)*100) : 0;
+  var timeStr = FLUENCY_TIMED ? (' in ' + (60 - fluencySecondsLeft) + ' seconds') : '';
+  var summary = 'Fluency Warm-Up \u2014 ' + FLUENCY_TITLE + '\n' + correct + ' / ' + total + ' correct (' + pct + '%)' + timeStr + '\n\n' + lines.join('\n');
+  var j = document.getElementById('fluencyJournal');
+  if(j) j.value = summary;
+  var resEl = document.getElementById('fluencyResult');
+  if(resEl) resEl.innerHTML = correct + ' / ' + total + ' correct (' + pct + '%)' + timeStr;
+  var checkBtn = document.getElementById('fluencyCheckBtn');
+  if(checkBtn) checkBtn.disabled = true;
+  var startBtn = document.getElementById('fluencyStartBtn');
+  if(startBtn) startBtn.textContent = 'Done';
+};
+})();
+</script>
+</body></html>

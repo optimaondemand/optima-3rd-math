@@ -1,2 +1,781 @@
 <!DOCTYPE html>
 
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Optima Academy Online — Grade 3 Math Lesson 3.01.01</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito:wght@400;600;700;800;900&display=swap');
+*{box-sizing:border-box;margin:0;padding:0} body{font-family:'Nunito','Century Gothic',Verdana,sans-serif;background:#F0F2F8;color:#0E1C42;line-height:1.6} .page-wrap{max-width:920px;margin:0 auto;background:#fff;box-shadow:0 0 40px rgba(14,28,66,.08)}
+.progress-wrap{position:sticky;top:0;z-index:200;background:#0E1C42;padding:8px 20px 10px;display:flex;align-items:center;gap:14px}.progress-label{font-size:12px;color:#F5C518;font-weight:800;text-transform:uppercase;letter-spacing:.8px;white-space:nowrap}.progress-track{flex:1;height:10px;background:rgba(255,255,255,.1);border-radius:10px;overflow:hidden}.progress-fill{height:100%;width:0%;background:linear-gradient(90deg,#6B3FA0,#2DB87A,#F5C518);border-radius:10px;transition:width .4s}.progress-pct{font-size:13px;color:#F5C518;font-weight:800;min-width:36px;text-align:right}
+.header{background:#0E1C42;border-bottom:6px solid #55C8E8;padding:20px 28px 18px;position:relative;overflow:hidden}.header::after{content:'';position:absolute;bottom:6px;left:0;right:0;height:3px;background:linear-gradient(90deg,#55C8E8,#7FD8F0,#55C8E8)}.header-brand{display:flex;align-items:center;gap:12px;margin-bottom:14px}.header-logo{width:52px;height:52px;border-radius:50%;background:#FFFFFF;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 2px 8px rgba(0,0,0,.15)}.header-logo img{width:48px;height:38px;display:block}.header-org{font-size:22px;color:#fff;font-weight:800;line-height:1.15}.header-sub{font-size:11px;color:#55C8E8;letter-spacing:.5px}.header-title{font-family:'Lora',Georgia,serif;font-size:28px;color:#fff;font-weight:700;line-height:1.2;margin-bottom:10px}.header-title em{color:#A0E8DA;font-style:italic}.header-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(85,200,232,.15);border:1.5px solid rgba(85,200,232,.35);border-radius:28px;padding:6px 16px}.header-badge-icon{font-size:22px}.header-badge-text{font-size:18px;color:#fff;font-weight:800}
+.quote-strip{background:linear-gradient(135deg,#FFF8F0,#FFF3DC);border-bottom:2px solid #F5E6C8;padding:14px 28px;text-align:center}.quote-strip-text{font-family:'Lora',Georgia,serif;font-size:16px;font-style:italic;color:#5A4A3A;line-height:1.6}.quote-strip-attr{font-size:11px;color:#7A88A8;font-weight:700;margin-top:4px;text-transform:uppercase;letter-spacing:.5px}.info-strip{display:flex;flex-wrap:wrap;background:#fff;border-bottom:2px solid #E2E8F4}.info-cell{flex:1;min-width:150px;padding:12px 16px;border-right:1px solid #E2E8F4;display:flex;align-items:center;gap:10px}.info-cell:last-child{border-right:none}.info-icon{width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}.info-label{font-size:10px;color:#7A88A8;text-transform:uppercase;letter-spacing:.5px;font-weight:700}.info-value{font-size:16px;color:#0E1C42;font-weight:800;line-height:1.2}.info-detail{font-size:11px;color:#3A4A6B;line-height:1.3}.explorer-strip{display:flex;align-items:center;gap:16px;padding:12px 28px;background:linear-gradient(135deg,#1A2340,#0E1C42);border-bottom:3px solid #6B3FA0}.explorer-compass{font-size:28px;flex-shrink:0}.explorer-mission-label{font-size:10px;color:#F5C518;text-transform:uppercase;letter-spacing:1px;font-weight:800;margin-bottom:2px}.explorer-mission-text{font-size:15px;color:#fff;font-weight:700;line-height:1.3}
+.intro-2col{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:20px 28px 4px}.intro-card{background:#fff;border:2px solid #E2E8F4;border-radius:18px;overflow:hidden;box-shadow:0 2px 10px rgba(14,28,66,.04)}.intro-card-head{display:flex;align-items:center;gap:10px;padding:14px 18px;border-bottom:2px solid}.intro-card-head-icon{width:40px;height:40px;border-radius:50%;color:#fff;font-size:20px;display:flex;align-items:center;justify-content:center;flex-shrink:0}.intro-card-head-label{font-size:10px;color:#7A88A8;text-transform:uppercase;letter-spacing:.8px;font-weight:700}.intro-card-head-title{font-size:18px;color:#0E1C42;font-weight:800;line-height:1.2}.intro-card-body{padding:14px 18px}.intro-card-body p{font-size:15px;color:#3A4A6B;line-height:1.65;margin-bottom:8px}.obj-line{display:flex;align-items:flex-start;gap:8px;font-size:15px;color:#0E1C42;line-height:1.55;margin-bottom:8px}.obj-icon{flex-shrink:0;font-size:17px}.theme-question .intro-card-head{background:#FFF8E6;border-color:#F5E6C8}.theme-question .intro-card-head-icon{background:#F5C518}.theme-objectives .intro-card-head{background:#F0E8FF;border-color:#D8CCF0}.theme-objectives .intro-card-head-icon{background:#6B3FA0}.need-strip{display:flex;align-items:center;flex-wrap:wrap;gap:8px;padding:12px 28px 18px}.need-strip-label{font-size:13px;color:#3A4A6B;font-weight:700;white-space:nowrap}.need-chip{display:inline-flex;align-items:center;gap:5px;background:#E3F8ED;border:1.5px solid #B8E8CF;border-radius:20px;padding:5px 12px;font-size:13px;color:#0E1C42;font-weight:700}
+.tab-bar{position:sticky;top:38px;z-index:100;background:#fff;border-bottom:3px solid #E2E8F4;display:flex;overflow-x:auto;box-shadow:0 -4px 0 0 #0E1C42}.tab-btn{flex:1;min-width:130px;padding:12px 8px 11px;background:transparent;border:none;border-bottom:4px solid transparent;font-family:'Nunito',sans-serif;font-size:13px;font-weight:700;color:#7A88A8;cursor:pointer;transition:all .2s;white-space:nowrap;line-height:1.3;text-align:center}.tab-btn:hover{color:#0E1C42;background:#F0E8FF}.tab-btn.active{color:#0E1C42;border-bottom-color:#6B3FA0;background:#fff}.tab-btn .tab-check{display:none;font-size:12px;color:#2DB87A;margin-left:4px;font-weight:800}.tab-btn.visited .tab-check{display:inline}.tab-panel{display:none;padding:24px 28px 36px}.tab-panel.active{display:block}
+.video-wrap{border-radius:18px;overflow:hidden;border:2px solid #E2E8F4;box-shadow:0 4px 20px rgba(14,28,66,.08);background:#000;margin:0 0 22px}.video-wrap-header{display:flex;align-items:center;gap:12px;padding:12px 18px;background:linear-gradient(135deg,#0E1C42,#1A2D5A);border-bottom:2px solid rgba(107,63,160,.3)}.video-wrap-type{font-size:10px;color:#F5C518;text-transform:uppercase;letter-spacing:1.5px;font-weight:800;margin-bottom:2px}.video-wrap-title{font-size:16px;color:#fff;font-weight:800;line-height:1.2}.video-ratio{position:relative;padding-bottom:56.25%;height:0;overflow:hidden}.video-placeholder,.video-iframe{position:absolute;top:0;left:0;width:100%;height:100%}.video-placeholder{background:linear-gradient(135deg,#0E1C42,#1A2D5A);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px}.video-placeholder-icon{font-size:44px;margin-bottom:10px;opacity:.55}.video-placeholder-text{font-size:14px;color:rgba(255,255,255,.78);font-weight:700;line-height:1.5;max-width:620px}.video-placeholder-id{font-size:11px;color:rgba(245,197,24,.85);font-family:monospace;margin-top:10px;letter-spacing:.5px}.record-note{margin-top:10px;background:rgba(255,255,255,.08);border:1px solid rgba(245,197,24,.28);border-radius:10px;padding:8px 10px;color:rgba(255,255,255,.82);font-size:12.5px;line-height:1.45;max-width:620px}
+.activity{background:#fff;border:2px solid #E2E8F4;border-radius:18px;margin-bottom:18px;overflow:hidden;box-shadow:0 2px 10px rgba(14,28,66,.04)}.activity.bl-violet{border-left:6px solid #6B3FA0}.activity.bl-green{border-left:6px solid #2DB87A}.activity.bl-yellow{border-left:6px solid #F5C518}.activity.bl-orange{border-left:6px solid #E07B39}.activity.bl-slate{border-left:6px solid #3A6B9A}.activity.bl-navy{border-left:6px solid #0E1C42}.activity-head{display:flex;align-items:center;gap:12px;padding:14px 20px 14px 18px;border-bottom:1.5px solid #E2E8F4}.activity-num{width:38px;height:38px;border-radius:14px;color:#fff;font-size:18px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0}.activity-title{font-size:19px;color:#0E1C42;font-weight:800;line-height:1.2}.activity-sub{font-size:12px;color:#7A88A8}.activity-time{display:inline-flex;align-items:center;gap:4px;padding:4px 12px;border-radius:20px;font-size:13px;font-weight:700;color:#fff;white-space:nowrap;margin-left:auto}.activity-body{padding:18px 22px}.activity-body p{font-size:17px;color:#3A4A6B;line-height:1.75;margin-bottom:12px}.callout{border-radius:14px;padding:16px 18px;display:flex;align-items:flex-start;gap:12px;margin-bottom:14px}.callout-icon{font-size:28px;flex-shrink:0;margin-top:2px}.callout p{font-size:16px;color:#0E1C42;line-height:1.65;margin:0}.callout-info{background:#EAF8FD;border:2px solid #D6F2FB}.callout-think{background:#FFF8E6;border:2px solid #F5E6C8}.callout-tip{background:#E3F8ED;border:2px solid #B8E8CF}.callout-vocab{background:#F0E8FF;border:2px solid #D8CCF0}.key-concept{background:#F0E8FF;border:2px solid #D8CCF0;border-radius:14px;padding:16px 18px;margin-bottom:14px}.key-concept-label{font-size:12px;color:#6B3FA0;text-transform:uppercase;letter-spacing:.5px;font-weight:800;margin-bottom:8px}.key-concept p{font-size:15px;color:#0E1C42;line-height:1.7;margin-bottom:6px}.socratic-box{background:linear-gradient(135deg,#F0E8FF,#E8DCFA);border:2px solid #D8CCF0;border-radius:14px;padding:16px 18px;margin-bottom:14px}.socratic-label{font-size:12px;color:#6B3FA0;text-transform:uppercase;letter-spacing:.5px;font-weight:800;margin-bottom:8px;display:flex;align-items:center;gap:6px}.socratic-q{font-size:16px;color:#0E1C42;line-height:1.7;font-style:italic;margin-bottom:8px}.journal-label{font-size:13px;color:#3A4A6B;font-weight:700;margin:10px 0 4px;display:flex;align-items:center;gap:6px}.journal-box{width:100%;min-height:80px;border:2px solid #E2E8F4;border-radius:12px;padding:12px 14px;font-family:'Nunito',sans-serif;font-size:15px;color:#0E1C42;resize:vertical;transition:border-color .2s;line-height:1.6}.journal-box:focus{outline:none;border-color:#6B3FA0;box-shadow:0 0 0 3px rgba(107,63,160,.1)}.saved-dot{width:8px;height:8px;border-radius:50%;background:#E2E8F4;display:inline-block;transition:background .3s}.saved-dot.saved{background:#2DB87A}.check-btn,.purple-btn,.green-btn,.orange-btn{display:inline-flex;align-items:center;gap:6px;color:#fff;border:none;border-radius:12px;padding:10px 20px;font-size:14px;font-weight:800;cursor:pointer;font-family:'Nunito',sans-serif;margin-top:10px}.check-btn{background:#3A6B9A}.purple-btn{background:#6B3FA0}.green-btn{background:#2DB87A}.orange-btn{background:#E07B39}.reveal-box{display:none;background:#E3F8ED;border:2px solid #B8E8CF;border-radius:12px;padding:14px 16px;margin-top:10px;font-size:15px;color:#0E1C42;line-height:1.6;font-weight:600}.reveal-box.show{display:block}.hint-callout{background:#FFF8E6;border:2px solid #F5C518;border-radius:10px;padding:10px 14px;margin:12px 0;font-size:14px;color:#5A4A00;font-weight:700}.task-box{background:#FAFBFF;border:2px solid #E2E8F4;border-radius:14px;padding:16px 18px;margin-bottom:14px}.task-label{font-size:12px;color:#6B3FA0;text-transform:uppercase;letter-spacing:.6px;font-weight:800;margin-bottom:10px}.feedback-branch{display:none;margin-top:16px;border-radius:14px;overflow:hidden;padding:16px}.feedback-branch.show{display:block}.feedback-pass{background:#E3F8ED;border:2px solid #B8E8CF}.feedback-retry{background:#FFF0E6;border:2px solid #F5C8A0}
+.pv-mat{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:14px 0}.pv-col{border:2px solid #E2E8F4;border-radius:16px;min-height:150px;background:#FAFBFF;overflow:hidden}.pv-col-head{padding:9px 8px;text-align:center;color:#fff;font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.6px}.thousands .pv-col-head{background:#6B3FA0}.hundreds .pv-col-head{background:#3A6B9A}.tens .pv-col-head{background:#2DB87A}.ones .pv-col-head{background:#E07B39}.pv-col-body{padding:10px;min-height:100px;display:flex;gap:6px;flex-wrap:wrap;align-content:flex-start;justify-content:center}.disk{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:900;color:#fff;box-shadow:inset 0 -3px 0 rgba(0,0,0,.16);user-select:none}.disk.k{background:#6B3FA0}.disk.h{background:#3A6B9A}.disk.t{background:#2DB87A}.disk.o{background:#E07B39}.pv-count{text-align:center;font-size:18px;font-weight:900;color:#0E1C42;margin:2px 0 8px}.pv-controls{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:8px}.mini-btn{border:none;border-radius:9px;padding:6px;font-weight:900;color:#fff;cursor:pointer}.mini-btn.add{background:#6B3FA0}.mini-btn.remove{background:#7A88A8}.number-display{background:#0E1C42;color:#fff;border-radius:16px;padding:14px;text-align:center;margin:14px 0}.number-display .digits{font-family:'Lora',Georgia,serif;font-size:34px;font-weight:800;letter-spacing:3px}.number-display .words{font-size:14px;color:#F5C518;font-weight:800;margin-top:4px}.value-card-row{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}.value-card{border:2px solid #E2E8F4;background:#fff;border-radius:14px;padding:10px 14px;min-width:110px;text-align:center;cursor:pointer;transition:.2s}.value-card:hover,.value-card.selected{border-color:#6B3FA0;background:#F0E8FF}.value-card.good{background:#E3F8ED;border-color:#2DB87A}.value-card.bad{background:#FFF0E6;border-color:#E07B39;animation:shake .25s}.value-card .big{font-size:24px;font-weight:900;color:#0E1C42}.value-card .small{font-size:12px;color:#3A4A6B;font-weight:800}.digit-strip{display:flex;justify-content:center;gap:8px;margin:14px 0}.digit-tile{width:56px;height:64px;border-radius:14px;border:3px solid #E2E8F4;background:#fff;font-size:30px;font-weight:900;display:flex;align-items:center;justify-content:center;cursor:pointer}.digit-tile.active{background:#F0E8FF;border-color:#6B3FA0;color:#6B3FA0}.place-bubble{font-size:15px;font-weight:800;color:#0E1C42;background:#FFF8E6;border:2px solid #F5E6C8;border-radius:12px;padding:12px;text-align:center;margin-top:8px}.match-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0}.match-card{padding:12px;border:2px solid #E2E8F4;border-radius:14px;background:#fff;cursor:pointer;font-size:15px;font-weight:800}.match-card.selected{border-color:#6B3FA0;background:#F0E8FF}.match-card.matched{border-color:#2DB87A;background:#E3F8ED}.sortable-row{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}.digit-bank-card{width:62px;height:62px;border-radius:14px;background:#fff;border:3px solid #E2E8F4;display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:900;cursor:pointer}.digit-bank-card.selected{border-color:#6B3FA0;background:#F0E8FF}.chart-slot{height:64px;border:3px dashed #D8CCF0;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:900;color:#6B3FA0;background:#FBF8FF;cursor:pointer}.chart-slot.filled{border-style:solid;background:#F0E8FF}.q-block{background:#FAFBFF;border:2px solid #E2E8F4;border-radius:14px;padding:14px 18px;margin-bottom:14px}.q-num{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#6B3FA0;color:#fff;font-weight:800;font-size:14px;margin-right:8px;vertical-align:middle}.q-text{font-size:16px;color:#0E1C42;line-height:1.65;margin-bottom:4px}.gathered-box{background:#fff;border:2px solid #E2E8F4;border-radius:18px;overflow:hidden;margin-top:24px}.gathered-head{display:flex;align-items:center;gap:14px;background:linear-gradient(135deg,#0E1C42,#1A2D5A);padding:18px 22px}.gathered-head-icon{font-size:32px}.gathered-head-label{font-size:11px;color:#F5C518;font-weight:800;text-transform:uppercase;letter-spacing:1px;margin-bottom:2px}.gathered-head-title{font-size:18px;color:#fff;font-weight:800}.gathered-body{padding:16px 22px}.gathered-output{width:100%;min-height:180px;border:2px solid #E2E8F4;border-radius:12px;padding:14px;font-family:'Courier New',monospace;font-size:13px;color:#0E1C42;resize:vertical;background:#FAFBFF}.gathered-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}.tab-next-wrap{text-align:center;padding:24px 0 8px}.tab-transition-voice{font-family:'Lora',Georgia,serif;font-size:15px;font-style:italic;color:#5A4A3A;margin-bottom:12px;line-height:1.6}.tab-next-btn{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#6B3FA0,#8B5FC0);color:#fff;border:none;border-radius:28px;padding:13px 28px;font-size:15px;font-weight:800;cursor:pointer;font-family:'Nunito',sans-serif;box-shadow:0 4px 14px rgba(107,63,160,.3);transition:all .2s}.turn-in-card{background:#fff;border:2px solid #E2E8F4;border-radius:18px;overflow:hidden;box-shadow:0 2px 10px rgba(14,28,66,.04);margin-top:18px}.turn-in-header{display:flex;align-items:center;gap:14px;background:#EAF8FD;padding:18px 22px;border-bottom:2px solid #D6F2FB}.turn-in-header-icon{font-size:36px}.turn-in-header-label{font-size:11px;color:#1A6B8E;font-weight:800;text-transform:uppercase;letter-spacing:1px;margin-bottom:3px}.turn-in-header-title{font-family:'Lora',Georgia,serif;font-size:22px;color:#0E1C42;font-weight:700}.turn-in-body{padding:18px 22px 20px}.turn-in-item{display:flex;align-items:center;gap:14px;padding:12px 16px;background:#FAFBFF;border:1.5px solid #E2E8F4;border-radius:12px;cursor:pointer;transition:.2s;margin-bottom:10px}.turn-in-item.checked{background:#E3F8ED;border-color:#B8E8CF}.turn-in-check{width:26px;height:26px;border-radius:8px;border:2px solid #D8CCF0;background:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px}.turn-in-item.checked .turn-in-check{background:#2DB87A;border-color:#2DB87A;color:#fff}@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}@media(max-width:720px){.intro-2col,.pv-mat,.match-grid{grid-template-columns:1fr}.tab-panel{padding:20px 18px}.activity-head{align-items:flex-start}.activity-time{display:none}.header-title{font-size:24px}.number-display .digits{font-size:28px}.pv-mat{gap:8px}.disk{width:32px;height:32px}}
+.student-task-banner{background:#EAF8FD;border:2px solid #D6F2FB;border-left:6px solid #55C8E8;border-radius:14px;padding:14px 16px;margin:14px 0;font-size:16px;color:#0E1C42;line-height:1.55;font-weight:800}.student-task-banner .task-steps{display:block;font-size:14px;font-weight:700;color:#3A4A6B;margin-top:6px}.student-task-banner strong{color:#0E1C42}
+#confettiCanvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:10000}
+
+
+/* ═══════════ HEADER ═══════════ */
+.header {
+  background: #0E1C42;
+  border-bottom: 6px solid #55C8E8;
+  padding: 20px 28px 18px;
+  position: relative;
+  overflow: hidden;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  bottom: 6px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #55C8E8, #7FD8F0, #55C8E8);
+}
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+.header-logo {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+.header-logo img { width: 48px; height: 38px; }
+.header-org { font-size: 22px; color: #fff; font-weight: 800; line-height: 1.15; }
+.header-sub { font-size: 11px; color: #55C8E8; letter-spacing: 0.5px; }
+.header-title {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 28px;
+  color: #fff;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+.header-title em { color: #A0E8DA; font-style: italic; }
+.header-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(85, 200, 232, 0.15);
+  border: 1.5px solid rgba(85, 200, 232, 0.35);
+  border-radius: 28px;
+  padding: 6px 16px;
+}
+.header-badge-icon { font-size: 22px; }
+.header-badge-text { font-size: 18px; color: #fff; font-weight: 800; }
+
+/* ═══════════ FOOTER ═══════════ */
+.footer {
+  background: #0E1C42;
+  border-top: 4px solid #55C8E8;
+  padding: 18px 28px;
+  text-align: center;
+}
+.footer-main { font-size: 14px; color: #fff; margin-bottom: 4px; }
+.footer-main span { color: #55C8E8; font-weight: 700; }
+.footer-sub { font-size: 12px; color: rgba(255,255,255,0.5); margin-bottom: 2px; }
+.footer-copy { font-size: 11px; color: rgba(255,255,255,0.3); }
+
+
+/* ═══════════ CONFETTI ═══════════ */
+#confettiCanvas {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 10000;
+}
+
+
+.page-feedback{display:none;margin:12px 0;padding:12px 14px;border-radius:12px;border:2px solid #F5E6C8;background:#FFF8F0;color:#0E1C42;font-weight:800;line-height:1.45;box-shadow:0 2px 8px rgba(14,28,66,.06)}.page-feedback.show{display:block}.page-feedback.good{background:#E3F8ED;border-color:#B8E8CF}.page-feedback.warn{background:#FFF3DC;border-color:#F5E6C8}.page-feedback .small{display:block;font-weight:700;color:#3A4A6B;margin-top:3px;font-size:13px}
+
+/* tactile number talk + inline feedback upgrades */
+.number-talk-visual{background:linear-gradient(135deg,#FAFBFF,#EAF8FD);border:2px solid #D6F2FB;border-radius:16px;padding:16px;margin:14px 0;box-shadow:inset 0 0 0 1px rgba(85,200,232,.08)}
+.number-talk-prompt{font-size:16px;color:#0E1C42;font-weight:800;margin-bottom:10px;line-height:1.5}.notice-wonder-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0}.notice-wonder-box{background:#fff;border:2px solid #E2E8F4;border-radius:14px;padding:12px 14px;min-height:98px}.notice-wonder-box h4{font-size:13px;color:#1A8A7D;text-transform:uppercase;letter-spacing:.7px;margin-bottom:6px}.visual-equation{font-size:28px;font-weight:900;text-align:center;color:#0E1C42;background:#fff;border:2px solid #E2E8F4;border-radius:14px;padding:12px;margin:10px 0}.open-number-line{position:relative;height:86px;margin:18px 8px 4px}.open-number-line::before{content:'';position:absolute;left:5%;right:5%;top:42px;height:6px;background:#0E1C42;border-radius:8px}.nt-tick{position:absolute;top:29px;width:18px;height:18px;background:#55C8E8;border:3px solid #fff;border-radius:50%;box-shadow:0 0 0 2px #0E1C42;transform:translateX(-50%)}.nt-tick-label{position:absolute;top:54px;transform:translateX(-50%);font-weight:900;font-size:13px;color:#0E1C42}.jump-arc{position:absolute;top:2px;height:50px;border:3px solid #D4943A;border-bottom:0;border-radius:60px 60px 0 0}.jump-label{position:absolute;top:3px;transform:translateX(-50%);background:#FFF3DC;border:2px solid #F5E6C8;border-radius:12px;padding:2px 8px;font-size:12px;font-weight:900;color:#5A4A3A}.ten-frame-row{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:12px 0}.ten-frame{display:grid;grid-template-columns:repeat(5,22px);gap:5px;background:#fff;border:2px solid #E2E8F4;border-radius:12px;padding:8px}.tf-dot{width:22px;height:22px;border-radius:50%;background:#55C8E8;border:2px solid #0E1C42}.tf-empty{width:22px;height:22px;border-radius:50%;background:#FAFBFF;border:2px dashed #B0B8CC}.bar-talk{display:flex;height:48px;border:3px solid #0E1C42;border-radius:12px;overflow:hidden;background:#fff;margin:12px 0}.bar-talk .seg{display:flex;align-items:center;justify-content:center;font-weight:900;color:#0E1C42;border-right:2px solid #0E1C42}.bar-talk .seg:last-child{border-right:0}.bar-talk .known{background:#EAF8FD}.bar-talk .unknown{background:#FFF3DC}.strategy-chip-row{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}.strategy-chip{border:2px solid #E2E8F4;background:#fff;border-radius:999px;padding:10px 14px;font-family:'Nunito',sans-serif;font-weight:900;color:#0E1C42;cursor:pointer;transition:.18s}.strategy-chip:hover{border-color:#55C8E8;background:#EAF8FD;transform:translateY(-1px)}.strategy-chip.selected{border-color:#34B76F;background:#E3F8ED}.inline-feedback,.page-feedback{display:none;margin:12px 0;border-radius:14px;padding:12px 14px;font-weight:800;line-height:1.5}.inline-feedback.show,.page-feedback.show{display:block}.inline-feedback.good,.page-feedback.good{background:#E3F8ED;border:2px solid #B8E8CF;color:#0E1C42}.inline-feedback.think,.page-feedback.think,.inline-feedback.try,.page-feedback.warn{background:#FFF3DC;border:2px solid #F5E6C8;color:#5A4A3A}.inline-feedback.info,.page-feedback.info{background:#EAF8FD;border:2px solid #D6F2FB;color:#0E1C42}
+@media(max-width:620px){.notice-wonder-grid{grid-template-columns:1fr}.visual-equation{font-size:22px}.open-number-line{margin-left:0;margin-right:0}.strategy-chip{width:100%;justify-content:center}}
+
+
+/* ═══════════ DAILY VOCABULARY ═══════════ */
+.daily-vocab {
+  margin: 14px 28px 18px;
+  background: #F0E8FF;
+  border: 2px solid #D8CCF0;
+  border-left: 6px solid #6B3FA0;
+  border-radius: 16px;
+  padding: 14px 18px;
+}
+.daily-vocab-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 18px;
+  font-weight: 900;
+  color: #0E1C42;
+  margin-bottom: 8px;
+}
+.daily-vocab-sub {
+  font-size: 13px;
+  color: #3A4A6B;
+  margin-bottom: 10px;
+}
+.daily-vocab-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+.daily-vocab-item {
+  background: #FFFFFF;
+  border: 1.5px solid #D8CCF0;
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-size: 14px;
+  color: #3A4A6B;
+  line-height: 1.45;
+}
+.daily-vocab-term {
+  display: block;
+  font-size: 15px;
+  color: #0E1C42;
+  font-weight: 900;
+  margin-bottom: 3px;
+}
+@media (max-width: 620px) { .daily-vocab-grid { grid-template-columns: 1fr; } }
+
+/* ═══════════ SPARKLE: ANIMATIONS & MICRO-INTERACTIONS ═══════════ */
+@keyframes diskPop { 0%{transform:scale(0) rotate(-45deg);opacity:0} 60%{transform:scale(1.25) rotate(5deg);opacity:1} 100%{transform:scale(1) rotate(0)} }
+.disk { animation: diskPop .35s cubic-bezier(.34,1.56,.64,1) both; }
+.disk:hover { transform:scale(1.15); box-shadow: 0 4px 12px rgba(0,0,0,.2), inset 0 -3px 0 rgba(0,0,0,.16); transition: transform .15s, box-shadow .15s; cursor:pointer; }
+
+@keyframes digitBump { 0%{transform:translateY(8px);opacity:.4} 100%{transform:translateY(0);opacity:1} }
+.number-display .digits.bumping { animation: digitBump .25s ease-out; }
+
+.mini-btn { transition: transform .12s, box-shadow .12s, filter .12s; }
+.mini-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 10px rgba(0,0,0,.15); }
+.mini-btn:active { transform: translateY(1px) scale(.95); }
+.mini-btn.add:hover { filter: brightness(1.15); }
+
+.check-btn,.purple-btn,.green-btn,.orange-btn { transition: transform .15s, box-shadow .15s, filter .12s; }
+.check-btn:hover,.purple-btn:hover,.green-btn:hover,.orange-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,.15); filter: brightness(1.1); }
+.check-btn:active,.purple-btn:active,.green-btn:active,.orange-btn:active { transform: translateY(1px) scale(.97); }
+
+@keyframes digitGlow { 0%{box-shadow:0 0 0 0 rgba(107,63,160,.5)} 70%{box-shadow:0 0 0 12px rgba(107,63,160,0)} 100%{box-shadow:none} }
+.digit-tile { transition: transform .15s, border-color .2s, background .2s; }
+.digit-tile:hover { transform: translateY(-3px) scale(1.05); }
+.digit-tile.active { animation: digitGlow .5s ease-out; }
+
+.pv-col { transition: transform .2s, box-shadow .2s; }
+.pv-col:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(14,28,66,.08); }
+
+@keyframes matchPulse { 0%{transform:scale(1)} 40%{transform:scale(1.06)} 100%{transform:scale(1)} }
+.match-card { transition: transform .15s, border-color .2s, background .2s, box-shadow .2s; }
+.match-card:hover:not(.matched) { transform: translateY(-2px); box-shadow: 0 4px 14px rgba(14,28,66,.1); }
+.match-card.matched { animation: matchPulse .35s ease-out; box-shadow: 0 0 0 3px rgba(45,184,122,.3); }
+
+.digit-bank-card { transition: transform .15s, border-color .2s, box-shadow .2s; }
+.digit-bank-card:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 6px 16px rgba(14,28,66,.1); }
+.digit-bank-card.selected { animation: digitGlow .5s ease-out; }
+
+@keyframes slotPulse { 0%,100%{border-color:#D8CCF0} 50%{border-color:#6B3FA0} }
+.chart-slot:not(.filled) { animation: slotPulse 2s ease-in-out infinite; }
+.chart-slot.filled { animation: matchPulse .3s ease-out; }
+
+@keyframes revealSlide { 0%{opacity:0;transform:translateY(10px)} 100%{opacity:1;transform:translateY(0)} }
+.reveal-box.show, .feedback-branch.show, .inline-feedback.show { animation: revealSlide .35s ease-out; }
+
+.tab-btn { transition: all .2s; position: relative; }
+@keyframes gentleFloat { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-3px)} }
+.tab-next-btn { animation: gentleFloat 3s ease-in-out infinite; }
+.tab-next-btn:hover { animation: none; transform: translateY(-2px) scale(1.03); box-shadow: 0 8px 24px rgba(107,63,160,.35); transition: all .2s; }
+
+.flip-card:not(.flipped):hover .flip-card-inner { transform: rotateY(8deg); }
+.flip-card.flipped:hover .flip-card-inner { transform: rotateY(172deg); }
+.flip-card { transition: transform .15s; }
+.flip-card:hover { transform: translateY(-3px); }
+
+@keyframes checkPop { 0%{transform:scale(0)} 60%{transform:scale(1.3)} 100%{transform:scale(1)} }
+.turn-in-item.checked .turn-in-check { animation: checkPop .3s ease-out; }
+
+@keyframes progressShimmer { 0%{background-position:-200% 0} 100%{background-position:200% 0} }
+.progress-fill { background: linear-gradient(90deg,#6B3FA0,#2DB87A,#F5C518,#6B3FA0); background-size: 200% 100%; animation: progressShimmer 3s linear infinite; }
+
+.journal-box:focus { border-color: #6B3FA0; box-shadow: 0 0 0 3px rgba(107,63,160,.12), 0 0 20px rgba(107,63,160,.06); }
+@keyframes savedPulse { 0%{transform:scale(1)} 50%{transform:scale(1.8)} 100%{transform:scale(1)} }
+.saved-dot.saved { animation: savedPulse .4s ease-out; }
+
+.callout { transition: transform .2s, box-shadow .2s; }
+.callout:hover { transform: translateY(-1px); box-shadow: 0 4px 14px rgba(14,28,66,.06); }
+.key-concept { transition: box-shadow .3s; }
+.key-concept:hover { box-shadow: 0 0 0 2px rgba(107,63,160,.15), 0 4px 16px rgba(107,63,160,.08); }
+.socratic-box { transition: box-shadow .3s; }
+.socratic-box:hover { box-shadow: 0 0 0 2px rgba(107,63,160,.12), 0 6px 20px rgba(107,63,160,.08); }
+.activity { transition: transform .2s, box-shadow .2s; }
+.activity:hover { box-shadow: 0 6px 24px rgba(14,28,66,.08); }
+.need-chip { transition: transform .15s; }
+.need-chip:hover { transform: translateY(-2px); }
+.explorer-strip:hover .explorer-compass { display:inline-block; animation: compassSpin 1.5s ease-in-out; }
+@keyframes compassSpin { 0%{transform:rotate(0)} 100%{transform:rotate(360deg)} }
+@keyframes miniPop { 0%{transform:translateY(0) scale(0);opacity:1} 50%{transform:translateY(-30px) scale(1.2);opacity:1} 100%{transform:translateY(-60px) scale(.6);opacity:0} }
+.value-card { transition: transform .15s, border-color .2s, background .2s, box-shadow .2s; }
+.value-card:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 6px 16px rgba(14,28,66,.08); }
+
+/* ═══════════ LEARN TAB VOCABULARY FLIP CARDS ═══════════ */
+.vocab-flip-section{
+  background:#F0E8FF;
+  border:2px solid #D8CCF0;
+  border-left:6px solid #6B3FA0;
+  border-radius:18px;
+  padding:16px 18px;
+  margin:0 0 18px;
+  box-shadow:0 2px 10px rgba(14,28,66,.04);
+}
+.vocab-flip-head{display:flex;align-items:flex-start;gap:12px;margin-bottom:12px;}
+.vocab-flip-icon{width:40px;height:40px;border-radius:14px;background:#6B3FA0;color:#fff;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+.vocab-flip-title{font-size:20px;font-weight:900;color:#0E1C42;line-height:1.2;}
+.vocab-flip-sub{font-size:13px;color:#3A4A6B;font-weight:700;margin-top:3px;line-height:1.45;}
+.vocab-flip-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;}
+.vocab-card{min-height:138px;border:0;background:transparent;perspective:900px;cursor:pointer;font-family:'Nunito',sans-serif;text-align:initial;padding:0;}
+.vocab-card-inner{position:relative;width:100%;height:100%;min-height:138px;transition:transform .45s ease;transform-style:preserve-3d;}
+.vocab-card.flipped .vocab-card-inner{transform:rotateY(180deg);}
+.vocab-card-face{position:absolute;inset:0;border-radius:16px;border:2px solid #D8CCF0;backface-visibility:hidden;-webkit-backface-visibility:hidden;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:16px;text-align:center;box-shadow:0 2px 8px rgba(14,28,66,.05);}
+.vocab-card-front{background:#fff;}
+.vocab-card-back{background:linear-gradient(135deg,#0E1C42,#1A2D5A);transform:rotateY(180deg);border-color:#0E1C42;}
+.vocab-card-term{font-size:22px;line-height:1.15;font-weight:900;color:#0E1C42;margin-bottom:8px;}
+.vocab-card-hint{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;color:#6B3FA0;}
+.vocab-card-def{font-size:15px;line-height:1.5;font-weight:800;color:#fff;}
+.vocab-card-term-small{font-size:11px;color:#55C8E8;text-transform:uppercase;letter-spacing:1px;font-weight:900;margin-bottom:8px;}
+@media(max-width:620px){.vocab-flip-grid{grid-template-columns:1fr}.vocab-card,.vocab-card-inner{min-height:120px}}
+
+
+/* Daily Vocabulary Flip Cards */
+.vocab-section { background:#fff; border:2px solid #D8CCF0; border-left:6px solid #6B3FA0; border-radius:18px; padding:18px 20px 20px; margin:0 0 20px; box-shadow:0 2px 10px rgba(14,28,66,.04); }
+.vocab-section-head { display:flex; align-items:flex-start; gap:12px; margin-bottom:14px; }
+.vocab-section-icon { width:42px; height:42px; border-radius:50%; color:#fff; background:#6B3FA0; display:flex; align-items:center; justify-content:center; font-size:22px; flex-shrink:0; }
+.vocab-section-label { font-size:11px; color:#6B3FA0; text-transform:uppercase; letter-spacing:.9px; font-weight:900; margin-bottom:3px; }
+.vocab-section-title { font-size:21px; color:#0E1C42; font-weight:900; line-height:1.2; }
+.vocab-section-directions { font-size:15px; color:#3A4A6B; line-height:1.55; font-weight:700; margin:0 0 14px; }
+.vocab-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:14px 0 0; }
+.flip-card { perspective:900px; height:180px; cursor:pointer; }
+.flip-card-inner { position:relative; width:100%; height:100%; transition:transform .5s ease; transform-style:preserve-3d; }
+.flip-card.flipped .flip-card-inner { transform:rotateY(180deg); }
+.flip-card-front, .flip-card-back { position:absolute; top:0; left:0; width:100%; height:100%; border-radius:16px; backface-visibility:hidden; -webkit-backface-visibility:hidden; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:14px 18px; text-align:center; border:2px solid #E2E8F4; box-shadow:0 2px 10px rgba(14,28,66,.06); }
+.flip-card-front { background:#FAFBFF; border-top:5px solid #6B3FA0; }
+.flip-card-front .fc-emoji { font-size:30px; margin-bottom:8px; }
+.flip-card-front .fc-word { font-size:22px; font-weight:900; color:#0E1C42; margin-bottom:6px; line-height:1.15; }
+.flip-card-front .fc-tap { font-size:11px; color:#6B3FA0; font-weight:900; letter-spacing:.6px; text-transform:uppercase; }
+.flip-card-back { background:linear-gradient(145deg,#0E1C42,#1A2D5A); border-color:#0E1C42; transform:rotateY(180deg); }
+.flip-card-back .fc-word-back { font-size:11px; color:#55C8E8; text-transform:uppercase; letter-spacing:1px; font-weight:900; margin-bottom:8px; }
+.flip-card-back .fc-def { font-size:15px; color:#fff; line-height:1.5; font-weight:700; }
+.flip-card-back .fc-tap-back { font-size:11px; color:rgba(255,255,255,.55); margin-top:9px; font-weight:800; letter-spacing:.4px; text-transform:uppercase; }
+.fc-color-1 .flip-card-front { border-top-color:#3A6B9A; }
+.fc-color-2 .flip-card-front { border-top-color:#2DB87A; }
+.fc-color-3 .flip-card-front { border-top-color:#F5C518; }
+.fc-color-4 .flip-card-front { border-top-color:#E07B39; }
+@media(max-width:620px){.vocab-grid{grid-template-columns:1fr}.flip-card{height:165px}.flip-card-front .fc-word{font-size:20px}}
+
+
+/* OAO Math Crew thought bubbles */
+.bubble-row{display:flex;gap:12px;flex-wrap:wrap;margin:14px 0;align-items:flex-start}
+.bubble{display:flex;gap:10px;align-items:flex-start;flex:1 1 260px;max-width:340px;background:#fff;border:2px solid #E2E8F4;border-radius:18px;padding:12px 14px;box-shadow:0 2px 10px rgba(14,28,66,.05);position:relative}
+.bubble.atlas{border-left:5px solid #6B3FA0;background:linear-gradient(135deg,#fff,#F8F4FF)}
+.bubble.hazel{border-left:5px solid #2DB87A;background:linear-gradient(135deg,#fff,#F4FBF7)}
+.bubble.felix{border-left:5px solid #F5C518;background:linear-gradient(135deg,#fff,#FEFBEB)}
+.bubble.cora{border-left:5px solid #3A6B9A;background:linear-gradient(135deg,#fff,#F4F8FC)}
+.bubble-avatar{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:900;color:#fff;flex-shrink:0;font-family:'Lora',Georgia,serif}
+.bubble.atlas .bubble-avatar{background:#6B3FA0}
+.bubble.hazel .bubble-avatar{background:#2DB87A}
+.bubble.felix .bubble-avatar{background:#F5C518;color:#0E1C42}
+.bubble.cora .bubble-avatar{background:#3A6B9A}
+.bubble-body{flex:1;min-width:0}
+.bubble-name{font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.7px;margin-bottom:3px;color:#6B3FA0}
+.bubble.hazel .bubble-name{color:#1A8A5A}
+.bubble.felix .bubble-name{color:#8A6D2B}
+.bubble.cora .bubble-name{color:#1A6B8E}
+.bubble-text{font-size:14.5px;color:#0E1C42;line-height:1.5;font-weight:600;font-family:'Lora',Georgia,serif;font-style:italic}
+@media(max-width:620px){.bubble{flex:1 1 100%;max-width:100%}}
+</style>
+<style id="fluencyStyles">
+.fluency-box{background:#fff;border:2px solid #F5C518;border-radius:18px;overflow:hidden;margin-bottom:22px;font-family:'Nunito',sans-serif}
+.fluency-head{display:flex;align-items:center;gap:12px;background:linear-gradient(135deg,#F5C518,#E8B723);padding:14px 20px;flex-wrap:wrap}
+.fluency-head-icon{font-size:26px;line-height:1}
+.fluency-head-label{font-size:10px;color:#0E1C42;font-weight:800;text-transform:uppercase;letter-spacing:0.5px}
+.fluency-head-title{font-size:15px;color:#0E1C42;font-weight:800}
+.fluency-timer-ui{margin-left:auto;display:flex;align-items:center;gap:10px}
+.fluency-timer-display{font-size:20px;font-weight:800;color:#0E1C42;min-width:46px;text-align:center}
+.fluency-start-btn{background:#0E1C42;color:#fff;border:none;border-radius:10px;padding:8px 14px;font-weight:700;font-size:12px;cursor:pointer}
+.fluency-start-btn:disabled{opacity:0.55;cursor:default}
+.fluency-body{padding:16px 20px}
+.fluency-instructions{font-size:13px;color:#4A5568;margin:0 0 12px}
+.fluency-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(128px,1fr));gap:10px;margin-bottom:14px}
+.fluency-item{display:flex;align-items:center;gap:6px;background:#FAFBFF;border:1.5px solid #E2E8F4;border-radius:10px;padding:8px 10px}
+.fluency-item.fluency-correct{border-color:#2DB87A;background:#EAFBF3}
+.fluency-item.fluency-wrong{border-color:#E07B39;background:#FDF1E9}
+.fluency-q{font-size:13px;font-weight:700;color:#0E1C42;white-space:nowrap}
+.fluency-input{width:46px;border:1.5px solid #CBD5E8;border-radius:6px;padding:4px;font-size:14px;text-align:center;font-family:'Nunito',sans-serif}
+.fluency-input:disabled{background:#F0F2F8}
+.fluency-check-btn{background:#2DB87A;color:#fff;border:none;border-radius:10px;padding:10px 18px;font-weight:800;font-size:13px;cursor:pointer}
+.fluency-check-btn:disabled{opacity:0.55;cursor:default}
+.fluency-result{margin-top:10px;font-size:14px;color:#0E1C42;font-weight:700}
+</style>
+</head>
+<body id="pageTop">
+<div class="page-wrap">
+<div class="progress-wrap"><span class="progress-label">📐 Lesson Progress</span><div class="progress-track"><div class="progress-fill" id="progressFill"></div></div><span class="progress-pct" id="progressPct">0%</span></div>
+<div class="header">
+<div class="header-brand">
+<div class="header-logo">
+<img alt="Optima Academy" src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png"/>
+</div>
+<div>
+<div class="header-org">Optima Academy Online</div>
+<div class="header-sub">An Education Experience Company</div>
+</div>
+</div>
+<div class="header-title"><em>Place Value, Part 1</em></div>
+<div class="header-badge">
+<span class="header-badge-icon">🦉</span>
+<span class="header-badge-text">Lesson 3.01.01</span>
+</div>
+</div>
+<div class="quote-strip"><div class="quote-strip-text">"A digit tells more than its name. Its place tells its value."</div><div class="quote-strip-attr">Place Value Big Idea</div></div>
+<div class="info-strip"><div class="info-cell"><div class="info-icon" style="background:#F0E8FF;">🧭</div><div><div class="info-label">Unit</div><div class="info-value">Unit 1</div><div class="info-detail">Numbers to 10,000</div></div></div><div class="info-cell"><div class="info-icon" style="background:#E3F8ED;">📅</div><div><div class="info-label">Lesson</div><div class="info-value">3.01.01</div><div class="info-detail">U1 Anchor</div></div></div><div class="info-cell"><div class="info-icon" style="background:#EAF0FF;">📐</div><div><div class="info-label">Standard</div><div class="info-value">MA.3.NSO.1.1</div><div class="info-detail">Read and write numbers</div></div></div><div class="info-cell"><div class="info-icon" style="background:#FFF8E6;">🔢</div><div><div class="info-label">Focus</div><div class="info-value">Place Value</div><div class="info-detail">MTR.2.1 · MTR.5.1</div></div></div></div>
+<div class="explorer-strip"><span class="explorer-compass">🧭</span><div><div class="explorer-mission-label">Today's Mission</div><div class="explorer-mission-text">Build four-digit numbers with place-value pieces, then read what each digit is really worth.</div></div></div>
+<div class="intro-2col"><div class="intro-card theme-question"><div class="intro-card-head"><div class="intro-card-head-icon">❓</div><div><div class="intro-card-head-label">Essential Question</div><div class="intro-card-head-title">How does a digit get its value?</div></div></div><div class="intro-card-body"><p>A digit can stand for ones, tens, hundreds, or thousands.</p><p>Today you will build numbers first. Then you will read them, write them, and explain them.</p></div></div><div class="intro-card theme-objectives"><div class="intro-card-head"><div class="intro-card-head-icon">🎯</div><div><div class="intro-card-head-label">Today's Objectives</div><div class="intro-card-head-title">You will…</div></div></div><div class="intro-card-body"><div class="obj-line"><span class="obj-icon">🔢</span><span><strong>Identify</strong> the value of each digit in a four-digit number.</span></div><div class="obj-line"><span class="obj-icon">📐</span><span><strong>Build</strong> numbers with a place-value model.</span></div><div class="obj-line"><span class="obj-icon">💬</span><span><strong>Explain</strong> how the model and number form match.</span></div></div></div></div>
+<div class="need-strip"><span class="need-strip-label">You'll need:</span><span class="need-chip">📓 Math Journal</span><span class="need-chip">✏️ Pencil</span><span class="need-chip">📏 Ruler or straight edge</span></div>
+<div class="tab-bar" id="tabBar"><button class="tab-btn active" data-tab="warmup" onclick="switchTab('warmup')">🔍 Warm-Up <span class="tab-check">✓</span></button><button class="tab-btn" data-tab="learn" onclick="switchTab('learn')">📐 Learn <span class="tab-check">✓</span></button><button class="tab-btn" data-tab="practice" onclick="switchTab('practice')">🧮 Practice <span class="tab-check">✓</span></button><button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">🌟 Show What You Know <span class="tab-check">✓</span></button></div>
+<div class="tab-panel active" id="tab-warmup">
+<div class="fluency-box" data-timed="false">
+<div class="fluency-head">
+<div class="fluency-head-icon">✍️</div>
+<div><div class="fluency-head-label">FLUENCY WARM-UP</div><div class="fluency-head-title">Add &amp; Subtract 0, 1, 2</div></div>
+</div>
+<div class="fluency-body">
+<p class="fluency-instructions">Warm up your fact fluency before today’s lesson. Work through these, then check your answers.</p>
+<div class="fluency-grid" id="fluencyGrid">
+<div class="fluency-item"><span class="fluency-q">5 + 0 =</span><input autocomplete="off" class="fluency-input" data-answer="5" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">5 + 1 =</span><input autocomplete="off" class="fluency-input" data-answer="6" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">5 + 2 =</span><input autocomplete="off" class="fluency-input" data-answer="7" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">9 - 0 =</span><input autocomplete="off" class="fluency-input" data-answer="9" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">9 - 1 =</span><input autocomplete="off" class="fluency-input" data-answer="8" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">9 - 2 =</span><input autocomplete="off" class="fluency-input" data-answer="7" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">7 + 1 =</span><input autocomplete="off" class="fluency-input" data-answer="8" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">7 - 2 =</span><input autocomplete="off" class="fluency-input" data-answer="5" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">4 + 2 =</span><input autocomplete="off" class="fluency-input" data-answer="6" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">10 - 1 =</span><input autocomplete="off" class="fluency-input" data-answer="9" inputmode="numeric" type="text"/></div>
+</div>
+<button class="fluency-check-btn" id="fluencyCheckBtn" onclick="fluencyCheck()">Check My Answers</button>
+<div class="fluency-result" id="fluencyResult"></div>
+</div>
+<textarea class="journal-box" data-label="Fluency Warm-Up (Add &amp; Subtract 0, 1, 2)" id="fluencyJournal" readonly="" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;"></textarea>
+</div>
+
+<div class="activity bl-violet"><div class="activity-head"><div class="activity-num" style="background:#6B3FA0;">👋</div><div><div class="activity-title">Meet the Math Crew</div><div class="activity-sub">Four students who'll think alongside you this year.</div></div></div><div class="activity-body">
+<p>From now on, you'll see thought bubbles from four students whenever we work an example together. Each one thinks a little differently. Watch how they solve the same problem in their own way.</p>
+<div class="bubble-row">
+<div class="bubble atlas"><div class="bubble-avatar">A</div><div class="bubble-body"><div class="bubble-name">Atlas — the builder</div><div class="bubble-text">"I like to start with place-value discs so I can see the pieces."</div></div></div>
+<div class="bubble hazel"><div class="bubble-avatar">H</div><div class="bubble-body"><div class="bubble-name">Hazel — the diagrammer</div><div class="bubble-text">"I draw it out — a number line or a chart helps me see."</div></div></div>
+</div>
+<div class="bubble-row">
+<div class="bubble felix"><div class="bubble-avatar">F</div><div class="bubble-body"><div class="bubble-name">Felix — the shortcutter</div><div class="bubble-text">"I look for the quickest way — sometimes I can do it in my head."</div></div></div>
+<div class="bubble cora"><div class="bubble-avatar">C</div><div class="bubble-body"><div class="bubble-name">Cora — the checker</div><div class="bubble-text">"And I make sure we're right. Does the answer actually check out?"</div></div></div>
+</div>
+<div class="callout callout-tip" style="margin-top:8px;"><span class="callout-icon">💡</span><p>You don't have to think like just one of them. Try all four ways at different times — the more strategies you have, the more flexible you become.</p></div>
+</div></div>
+<div class="activity bl-yellow"><div class="activity-head"><div class="activity-num" style="background:#F5C518;color:#0E1C42;">🔎</div><div><div class="activity-title">Warm-Up: Can You Build 342?</div><div class="activity-sub">Let's make sure hundreds, tens, and ones feel easy before we go bigger.</div></div><span class="activity-time" style="background:#F5C518;color:#0E1C42;">~6 min</span></div><div class="activity-body"><p>Before we get to thousands, let's make sure you're solid on hundreds, tens, and ones. Use the + and − buttons to build <strong>342</strong> on the mat below.</p><div class="number-display"><div class="digits" id="rNumber">0</div><div class="words" id="rWords">Build 342 with disks.</div></div><div class="pv-mat" id="readinessMat"></div><button class="check-btn" onclick="checkReadiness()">Check My Model ✓</button><div class="reveal-box" id="readinessReveal"><strong>342</strong> means 3 hundreds, 4 tens, and 2 ones. The digit 3 is worth 300 because it is in the hundreds place.</div><div class="journal-label">✏️ Explain your model <span class="saved-dot" id="dot-r1"></span></div><textarea class="journal-box" data-label="Warm-Up — Readiness: Explain the model for 342" id="journal-r1" oninput="autoSave(this,'dot-r1')" placeholder="342 has ___ hundreds, ___ tens, and ___ ones."></textarea></div></div>
+
+<div class="activity bl-yellow"><div class="activity-head"><div class="activity-num" style="background:#F5C518;color:#0E1C42;">🤔</div><div><div class="activity-title">Think About It</div><div class="activity-sub">Look closely, then take a guess.</div></div></div><div class="activity-body">
+<div class="callout callout-think"><span class="callout-icon">🗺️</span><p>A museum map says <strong>4,326</strong> people visited in one week. How could you build that number with thousands, hundreds, tens, and ones?</p></div>
+<div class="number-talk-visual">
+<div class="number-talk-prompt">Before you build 4,326, look at it carefully. What do you notice? What do you wonder?</div>
+<div class="visual-equation">4 , 3 2 6</div>
+<div class="notice-wonder-grid">
+<div class="notice-wonder-box"><h4>🔍 I Notice…</h4><textarea class="journal-box" data-label="Warm-Up — Notice: What I notice about 4,326" id="journal-notice" oninput="autoSave(this,'dot-notice')" placeholder="I notice that the number has ___ digits. The biggest digit is…" style="min-height:60px;"></textarea></div>
+<div class="notice-wonder-box"><h4>❓ I Wonder…</h4><textarea class="journal-box" data-label="Warm-Up — Wonder: What I wonder about 4,326" id="journal-wonder" oninput="autoSave(this,'dot-wonder')" placeholder="I wonder what the 4 is worth. I wonder why there is a comma…" style="min-height:60px;"></textarea></div>
+</div>
+</div>
+<p><strong>Guess first:</strong> Without counting, about how many thousands do you think 4,326 has? Tap your best guess.</p>
+<div class="strategy-chip-row">
+<button class="strategy-chip" onclick="this.classList.toggle('selected')">About 3 thousand</button>
+<button class="strategy-chip" onclick="this.classList.toggle('selected')">About 4 thousand</button>
+<button class="strategy-chip" onclick="this.classList.toggle('selected')">About 5 thousand</button>
+</div>
+<div class="callout callout-tip"><span class="callout-icon">🧠</span><p><strong>Stop and think before you start:</strong> What do I already know about this number? What am I trying to figure out? What tool might help me?</p></div>
+<div class="journal-label">✏️ My prediction: How would you build 4,326? <span class="saved-dot" id="dot-think"></span></div>
+<textarea class="journal-box" data-label="Warm-Up — Think Prompt: Build 4,326" id="journal-think" oninput="autoSave(this,'dot-think')" placeholder="I think 4,326 has ___ thousands, ___ hundreds, ___ tens, and ___ ones because…"></textarea>
+</div></div><div class="tab-next-wrap"><p class="tab-transition-voice">Nice — you warmed up with hundreds. Now let's add a brand new place: thousands.</p><button class="tab-next-btn" onclick="switchTab('learn')">Continue to 📐 Learn →</button></div>
+</div>
+<div class="tab-panel" id="tab-learn">
+<div aria-label="Daily vocabulary flash cards" class="vocab-section">
+<div class="vocab-section-head">
+<div class="vocab-section-icon">📚</div>
+<div>
+<div class="vocab-section-label">Daily Vocabulary</div>
+<div class="vocab-section-title">Tap to Build Today’s Math Language</div>
+</div>
+</div>
+<p class="vocab-section-directions">Tap each card to flip it. Read the word, then read the meaning. You will use these words in today’s models and explanations.</p>
+<div class="vocab-grid">
+<div aria-label="Vocabulary card for digit. Tap to flip." class="flip-card fc-color-1" onclick="this.classList.toggle('flipped')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('flipped');}" role="button" tabindex="0">
+<div class="flip-card-inner">
+<div class="flip-card-front"><div class="fc-emoji">🔢</div><div class="fc-word">digit</div><div class="fc-tap">tap to flip</div></div>
+<div class="flip-card-back"><div class="fc-word-back">digit</div><div class="fc-def">one symbol used to write a number, such as 0, 1, 2, or 3.</div><div class="fc-tap-back">tap to flip back</div></div>
+</div>
+</div>
+<div aria-label="Vocabulary card for place value. Tap to flip." class="flip-card fc-color-2" onclick="this.classList.toggle('flipped')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('flipped');}" role="button" tabindex="0">
+<div class="flip-card-inner">
+<div class="flip-card-front"><div class="fc-emoji">🧠</div><div class="fc-word">place value</div><div class="fc-tap">tap to flip</div></div>
+<div class="flip-card-back"><div class="fc-word-back">place value</div><div class="fc-def">the value a digit has because of its place in a number.</div><div class="fc-tap-back">tap to flip back</div></div>
+</div>
+</div>
+<div aria-label="Vocabulary card for standard form. Tap to flip." class="flip-card fc-color-3" onclick="this.classList.toggle('flipped')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('flipped');}" role="button" tabindex="0">
+<div class="flip-card-inner">
+<div class="flip-card-front"><div class="fc-emoji">🧮</div><div class="fc-word">standard form</div><div class="fc-tap">tap to flip</div></div>
+<div class="flip-card-back"><div class="fc-word-back">standard form</div><div class="fc-def">the usual way to write a number using digits.</div><div class="fc-tap-back">tap to flip back</div></div>
+</div>
+</div>
+<div aria-label="Vocabulary card for expanded form. Tap to flip." class="flip-card fc-color-4" onclick="this.classList.toggle('flipped')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('flipped');}" role="button" tabindex="0">
+<div class="flip-card-inner">
+<div class="flip-card-front"><div class="fc-emoji">✏️</div><div class="fc-word">expanded form</div><div class="fc-tap">tap to flip</div></div>
+<div class="flip-card-back"><div class="fc-word-back">expanded form</div><div class="fc-def">a way to write a number as the sum of the value of each digit.</div><div class="fc-tap-back">tap to flip back</div></div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="key-concept"><div class="key-concept-label">📐 Key Concept</div><p><strong>The value of a digit depends on its place.</strong></p><p>In 4,326, the digit 4 is worth 4,000 because it is in the thousands place. The digit 4 does not mean 4 ones here.</p></div>
+<div class="activity bl-slate"><div class="activity-head"><div class="activity-num" style="background:#3A6B9A;">🟣</div><div><div class="activity-title">Interactive Model: Tap to Build 4,326</div><div class="activity-sub">Build it, see it, write it.</div></div></div><div class="activity-body"><p>Now it's your turn. Use the + and − buttons to build <strong>4,326</strong> on the mat. Watch the number at the top change as you add disks.</p><div class="number-display"><div class="digits" id="learnNumber">0</div><div class="words" id="learnWords">Start building.</div></div><div class="pv-mat" id="learnMat"></div><button class="check-btn" onclick="checkLearnBuild()">Check My Build ✓</button><div class="reveal-box" id="learnReveal"><strong>Correct.</strong> 4 thousands + 3 hundreds + 2 tens + 6 ones = <strong>4,326</strong>. The model, chart, and equation all show the same number.</div>
+<div style="margin-top:16px;">
+<div class="key-concept"><div class="key-concept-label">🔗 Same Number, Three Ways</div>
+<p>You just built 4,326 with disks. Now look at the <strong>same number</strong> shown three different ways. This is a big idea: the way you write it changes, but the value stays the same.</p>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:12px 0;">
+<div style="background:#EAF8FD;border:2px solid #D6F2FB;border-radius:14px;padding:14px;text-align:center;">
+<div style="font-size:11px;color:#1A6B8E;font-weight:900;text-transform:uppercase;letter-spacing:.8px;margin-bottom:6px;">Touch It</div>
+<div style="font-size:28px;margin-bottom:4px;">🟣🟣🟣🟣</div>
+<div style="font-size:11px;color:#3A4A6B;font-weight:700;">4 thousand-disks<br/>3 hundred-disks<br/>2 ten-disks · 6 one-disks</div>
+</div>
+<div style="background:#F0E8FF;border:2px solid #D8CCF0;border-radius:14px;padding:14px;text-align:center;">
+<div style="font-size:11px;color:#6B3FA0;font-weight:900;text-transform:uppercase;letter-spacing:.8px;margin-bottom:6px;">See It</div>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:4px;margin-bottom:4px;">
+<div style="background:#6B3FA0;color:#fff;border-radius:6px;padding:4px;font-size:11px;font-weight:900;">Th<br/>4</div>
+<div style="background:#3A6B9A;color:#fff;border-radius:6px;padding:4px;font-size:11px;font-weight:900;">H<br/>3</div>
+<div style="background:#2DB87A;color:#fff;border-radius:6px;padding:4px;font-size:11px;font-weight:900;">T<br/>2</div>
+<div style="background:#E07B39;color:#fff;border-radius:6px;padding:4px;font-size:11px;font-weight:900;">O<br/>6</div>
+</div>
+<div style="font-size:11px;color:#3A4A6B;font-weight:700;">Place-value chart</div>
+</div>
+<div style="background:#E3F8ED;border:2px solid #B8E8CF;border-radius:14px;padding:14px;text-align:center;">
+<div style="font-size:11px;color:#1A6B5A;font-weight:900;text-transform:uppercase;letter-spacing:.8px;margin-bottom:6px;">Write It</div>
+<div style="font-size:15px;font-weight:900;color:#0E1C42;margin-bottom:4px;">4,326</div>
+<div style="font-size:13px;font-weight:800;color:#3A4A6B;">4,000 + 300 + 20 + 6</div>
+</div>
+</div>
+<p><strong>What stays the same?</strong> The value. <strong>What changes?</strong> The way we show it. All three say 4,326.</p>
+</div>
+</div>
+</div></div>
+<div class="activity bl-violet"><div class="activity-head"><div class="activity-num" style="background:#6B3FA0;">👆</div><div><div class="activity-title">Tap a Digit, See Its Value</div><div class="activity-sub">See it first, then explain.</div></div></div><div class="activity-body"><p>Tap each digit in <strong>4,326</strong>. Each tap will show the value of that digit in this number.</p><div class="digit-strip"><button class="digit-tile" onclick="showDigitValue(4,'thousands',4000,this)">4</button><button class="digit-tile" onclick="showDigitValue(3,'hundreds',300,this)">3</button><button class="digit-tile" onclick="showDigitValue(2,'tens',20,this)">2</button><button class="digit-tile" onclick="showDigitValue(6,'ones',6,this)">6</button></div><div class="place-bubble" id="digitExplain">Tap a digit to see what it is worth.</div><div class="journal-label">✏️ Which digit has the greatest value in 4,326? How do you know? <span class="saved-dot" id="dot-digit"></span></div><textarea class="journal-box" data-label="Learn — Digit Value: Greatest value" id="journal-digit" oninput="autoSave(this,'dot-digit')" placeholder="The digit ___ has the greatest value because it is in the ___ place, so it is worth ___."></textarea></div></div>
+<div class="activity bl-slate"><div class="activity-head"><div class="activity-num" style="background:#3A6B9A;">🔍</div><div><div class="activity-title">Worked Example</div><div class="activity-sub">Read, build, write.</div></div></div><div class="activity-body"><div class="task-box"><div class="task-label">Problem</div><p>Build and write the number with <strong>5 thousands, 1 hundred, 7 tens, and 9 ones</strong>.</p></div><p style="margin:8px 0;font-weight:700;color:#3A4A6B;">Watch how each of the Math Crew approaches building 5,179:</p>
+<div class="bubble-row">
+<div class="bubble atlas"><div class="bubble-avatar">A</div><div class="bubble-body"><div class="bubble-name">Atlas — concrete</div><div class="bubble-text">"Put 5 thousand-discs, 1 hundred-disc, 7 ten-discs, and 9 one-discs on the mat. Each disc lands in its own column."</div></div></div>
+<div class="bubble hazel"><div class="bubble-avatar">H</div><div class="bubble-body"><div class="bubble-name">Hazel — pictorial</div><div class="bubble-text">"Drop them into the place-value chart: thousands 5, hundreds 1, tens 7, ones 9. Reading left to right gives 5,179."</div></div></div>
+</div>
+<p style="font-family:'Lora',Georgia,serif;background:#FAFBFF;border:2px solid #E2E8F4;border-radius:12px;padding:10px;text-align:center;font-size:20px;font-weight:800;">5,179 = 5,000 + 100 + 70 + 9</p>
+<div class="bubble-row">
+<div class="bubble felix"><div class="bubble-avatar">F</div><div class="bubble-body"><div class="bubble-name">Felix — shortcut</div><div class="bubble-text">"Skip the discs once you see the pattern. The digit and its place tell you the value: 5 in thousands is 5,000."</div></div></div>
+<div class="bubble cora"><div class="bubble-avatar">C</div><div class="bubble-body"><div class="bubble-name">Cora — checking</div><div class="bubble-text">"Add up the expanded form: 5,000 + 100 + 70 + 9 = 5,179. ✓ Same number, two ways to write it."</div></div></div>
+</div>
+<div class="callout callout-tip"><span class="callout-icon">💡</span><p>Notice: every place has a digit, so no zero is needed. The chart shows it all at once.</p></div></div></div>
+
+<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">⚖️</div><div><div class="activity-title">Two Ways to Show 5,179</div><div class="activity-sub">Same number, different tools — which one helps you more?</div></div></div><div class="activity-body">
+<p>Two students showed the number <strong>5,179</strong> in different ways. Look at both, then decide which one helps you see the value of each digit more clearly.</p>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:12px 0;">
+<div style="background:#EAF8FD;border:2px solid #D6F2FB;border-radius:14px;padding:14px;">
+<div style="font-size:12px;color:#1A6B8E;font-weight:900;margin-bottom:6px;">STUDENT A — Place-Value Chart</div>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:4px;">
+<div style="background:#6B3FA0;color:#fff;border-radius:6px;padding:6px;font-size:12px;font-weight:900;text-align:center;">Th<br/>5</div>
+<div style="background:#3A6B9A;color:#fff;border-radius:6px;padding:6px;font-size:12px;font-weight:900;text-align:center;">H<br/>1</div>
+<div style="background:#2DB87A;color:#fff;border-radius:6px;padding:6px;font-size:12px;font-weight:900;text-align:center;">T<br/>7</div>
+<div style="background:#E07B39;color:#fff;border-radius:6px;padding:6px;font-size:12px;font-weight:900;text-align:center;">O<br/>9</div>
+</div>
+</div>
+<div style="background:#FFF8E6;border:2px solid #F5E6C8;border-radius:14px;padding:14px;">
+<div style="font-size:12px;color:#8A6D2B;font-weight:900;margin-bottom:6px;">STUDENT B — Expanded Form</div>
+<div style="font-size:18px;font-weight:900;color:#0E1C42;text-align:center;margin-top:10px;">5,000 + 100 + 70 + 9</div>
+</div>
+</div>
+<div class="journal-label">✏️ How are these the same? How are they different? Which helps you see the value of each digit more clearly? <span class="saved-dot" id="dot-compare"></span></div>
+<textarea class="journal-box" data-label="Learn — Strategy Comparison: Chart vs Expanded Form" id="journal-compare" oninput="autoSave(this,'dot-compare')" placeholder="Both show 5,179. The chart helps me see… The expanded form helps me see…"></textarea>
+</div></div>
+<div class="socratic-box"><div class="socratic-label">🔮 Think Like a Mathematician</div><p class="socratic-q">Why is the 5 in 5,179 worth more than the 9, even though 9 is a larger digit?</p><div class="journal-label">✏️ My reasoning <span class="saved-dot" id="dot-soc1"></span></div><textarea class="journal-box" data-label="Learn — Socratic: Why can 5 be worth more than 9?" id="journal-soc1" oninput="autoSave(this,'dot-soc1')" placeholder="The 5 is worth more because..."></textarea></div>
+<div class="tab-next-wrap"><p class="tab-transition-voice">You built numbers, read their places, and compared two ways to show the same value. Now try some new numbers on your own.</p><button class="tab-next-btn" onclick="switchTab('practice')">Continue to 🧮 Practice →</button></div>
+</div>
+<div class="tab-panel" id="tab-practice">
+<div class="callout callout-info"><span class="callout-icon">🧭</span><p>Each problem here changes <strong>one small thing</strong> from the last one. Pay attention to what's different — that's where the learning is.</p></div>
+<div class="callout callout-think"><span class="callout-icon">🧠</span><p><strong>Before each problem, stop and ask yourself:</strong> What do I know? What am I trying to figure out? What tool will help me?</p></div>
+<div class="callout callout-tip"><span class="callout-icon">💡</span><p><strong>Stuck?</strong> That's OK. You can always go back to the Learn tab and look at the "Three Ways" row or the worked example. Good mathematicians look back at their notes.</p></div>
+<div class="activity bl-violet"><div class="activity-head"><div class="activity-num" style="background:#6B3FA0;">1</div><div><div class="activity-title">Build It: 6,204</div><div class="activity-sub">This time, there's a zero hiding in the number.</div></div><span class="activity-time" style="background:#6B3FA0;">~5 min</span></div><div class="activity-body"><p>Build <strong>6,204</strong> on the mat. Here's the tricky part: one of the places has <em>zero</em> in it. Can you figure out which one?</p><div class="number-display"><div class="digits" id="p1Number">0</div><div class="words" id="p1Words">Build 6,204.</div></div><div class="pv-mat" id="p1Mat"></div><button class="check-btn" onclick="checkP1()">Submit Model ✓</button><div class="feedback-branch feedback-pass" id="p1-pass"><strong>✅ Yes.</strong> 6 thousands, 2 hundreds, 0 tens, and 4 ones makes 6,204.</div><div class="feedback-branch feedback-retry" id="p1-retry"><strong>🔄 Look again.</strong><div class="hint-callout">6,204 has zero tens. Leave the tens column empty.</div><button class="orange-btn" onclick="resetModel('p1')">↩ Reset and Try Again</button></div></div></div>
+<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">2</div><div><div class="activity-title">Place the Digit Cards: 7,085</div><div class="activity-sub">The zero moved! Can you find where it went?</div></div></div><div class="activity-body"><div class="callout callout-tip"><span class="callout-icon">🔍</span><p><strong>What changed?</strong> In Problem 1, the zero was in the <em>tens</em> place. Now it is in the <em>hundreds</em> place. What stays the same? You still read left to right.</p></div><div class="student-task-banner"><strong>Your task:</strong> Build <strong>7,085</strong> in the place-value chart.<span class="task-steps">Step 1: Tap one digit card. Step 2: Tap the matching place in the chart. Step 3: Check that the chart reads 7 thousands, 0 hundreds, 8 tens, and 5 ones.</span></div><div class="sortable-row" id="digitBank"><button class="digit-bank-card" onclick="selectDigitCard(this,'7')">7</button><button class="digit-bank-card" onclick="selectDigitCard(this,'0')">0</button><button class="digit-bank-card" onclick="selectDigitCard(this,'8')">8</button><button class="digit-bank-card" onclick="selectDigitCard(this,'5')">5</button></div><div class="pv-mat" style="grid-template-columns:repeat(4,1fr)"><div><div class="pv-col-head" style="background:#6B3FA0;border-radius:12px 12px 0 0;">Thousands</div><div class="chart-slot" data-place="thousands" onclick="placeDigit(this)">?</div></div><div><div class="pv-col-head" style="background:#3A6B9A;border-radius:12px 12px 0 0;">Hundreds</div><div class="chart-slot" data-place="hundreds" onclick="placeDigit(this)">?</div></div><div><div class="pv-col-head" style="background:#2DB87A;border-radius:12px 12px 0 0;">Tens</div><div class="chart-slot" data-place="tens" onclick="placeDigit(this)">?</div></div><div><div class="pv-col-head" style="background:#E07B39;border-radius:12px 12px 0 0;">Ones</div><div class="chart-slot" data-place="ones" onclick="placeDigit(this)">?</div></div></div><button class="check-btn" onclick="checkDigitChart()">Check Digit Chart ✓</button><div class="feedback-branch feedback-pass" id="p2-pass"><strong>✅ Yes!</strong> 7 thousands, 0 hundreds, 8 tens, 5 ones. The zero moved to hundreds, but the rule is the same: every place needs a digit.</div><div class="feedback-branch feedback-retry" id="p2-retry"><strong>🔄 Check each place carefully.</strong><div class="hint-callout">7,085 has 0 hundreds. The zero goes in the hundreds column, not tens.</div><button class="orange-btn" onclick="resetDigitChart()">↩ Reset and Try Again</button></div></div></div>
+<div class="activity bl-violet"><div class="activity-head"><div class="activity-num" style="background:#6B3FA0;">3</div><div><div class="activity-title">Match It Up</div><div class="activity-sub">Same number, different look — can you find the pairs?</div></div></div><div class="activity-body"><div class="callout callout-tip"><span class="callout-icon">🔍</span><p><strong>What changed?</strong> Now you see the <em>same number</em> written three different ways. Your job is to find the match — just like the "three ways" view you saw earlier.</p></div><p>Tap one card from the left, then the matching card from the right.</p><div class="match-grid"><div><div class="task-label">Number Form</div><div id="leftMatches"><div class="match-card" data-match="a" onclick="selectMatch(this)">3,000 + 400 + 50 + 2</div><div class="match-card" data-match="b" onclick="selectMatch(this)">8 thousands + 6 ones</div><div class="match-card" data-match="c" onclick="selectMatch(this)">5,000 + 90 + 1</div></div></div><div><div class="task-label">Standard Form</div><div id="rightMatches"><div class="match-card" data-match="c" onclick="selectMatch(this)">5,091</div><div class="match-card" data-match="a" onclick="selectMatch(this)">3,452</div><div class="match-card" data-match="b" onclick="selectMatch(this)">8,006</div></div></div></div><div class="feedback-branch feedback-pass" id="p3-pass"><strong>✅ All matched!</strong> You connected expanded form, word form, and standard form. The way you write a number can change, but the value stays the same.</div><div class="feedback-branch feedback-retry" id="p3-retry"><strong>🔄 One or more pairs didn't match.</strong><div class="hint-callout">Try reading the expanded form aloud and adding the values. For example: 3,000 + 400 + 50 + 2 = ?</div></div></div></div>
+<div class="socratic-box"><div class="socratic-label">🔮 Think Like a Mathematician</div><p class="socratic-q">A student writes 6,204 as 6,000 + 200 + 4. The value is correct. What should we remember about the tens place when we write 6,204 in a place-value chart or in standard form?</p><div class="journal-label">✏️ My reasoning <span class="saved-dot" id="dot-soc2"></span></div><textarea class="journal-box" data-label="Practice — Socratic: Zero tens" id="journal-soc2" oninput="autoSave(this,'dot-soc2')" placeholder="The tens place has 0 tens. I should remember to..."></textarea></div>
+<div class="tab-next-wrap"><p class="tab-transition-voice">You've built, sorted, and matched. Time to show what you know.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
+</div>
+<div class="tab-panel" id="tab-assignment">
+<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">🎯</div><div><div class="activity-title">Ready Check</div><div class="activity-sub">Two quick questions — see if you've got it.</div></div></div><div class="activity-body">
+<p>Try these two quick questions first. If you get them right, you're ready for the full assignment. If not, no worries — just go back to the Learn tab and review before you try again.</p>
+<div class="q-block"><p class="q-text"><span class="q-num">A</span>What is the value of the digit <strong>3</strong> in <strong>3,841</strong>?</p>
+<div class="value-card-row">
+<div class="value-card" onclick="checkExitA(this,false)"><div class="big">3</div><div class="small">three</div></div>
+<div class="value-card" onclick="checkExitA(this,false)"><div class="big">30</div><div class="small">thirty</div></div>
+<div class="value-card" onclick="checkExitA(this,false)"><div class="big">300</div><div class="small">three hundred</div></div>
+<div class="value-card" onclick="checkExitA(this,true)"><div class="big">3,000</div><div class="small">three thousand</div></div>
+</div>
+<div class="inline-feedback" id="exitA-fb"></div>
+</div>
+<div class="q-block"><p class="q-text"><span class="q-num">B</span>Which expanded form matches <strong>9,060</strong>?</p>
+<div class="value-card-row">
+<div class="value-card" onclick="checkExitB(this,false)" style="min-width:180px;"><div class="big" style="font-size:16px;">9,000 + 600</div></div>
+<div class="value-card" onclick="checkExitB(this,true)" style="min-width:180px;"><div class="big" style="font-size:16px;">9,000 + 60</div></div>
+<div class="value-card" onclick="checkExitB(this,false)" style="min-width:180px;"><div class="big" style="font-size:16px;">9,000 + 6</div></div>
+</div>
+<div class="inline-feedback" id="exitB-fb"></div>
+</div>
+</div></div>
+<div class="activity bl-navy"><div class="activity-head"><div class="activity-num" style="background:#0E1C42;">📬</div><div><div class="activity-title">Show What You Know</div><div class="activity-sub">Use models, numbers, and words.</div></div></div><div class="activity-body"><p>This is where you show what you've learned. Answer each problem below. You can use the place-value chart, expanded form, or whatever tool helps you think it through.</p>
+<div class="callout callout-think"><span class="callout-icon">🧠</span><p><strong>For each problem, stop and think:</strong> What do I know? What do I need to figure out? Which tool — the disk mat, the chart, or the expanded form — will help me see the answer?</p></div>
+<div class="q-block"><p class="q-text"><span class="q-num">1</span>Build or draw <strong>4,706</strong>. Write how many thousands, hundreds, tens, and ones it has.</p><div class="journal-label">✏️ My answer <span class="saved-dot" id="dot-a1"></span></div><textarea class="journal-box" data-label="Show What You Know — Problem 1: Build or draw 4,706" id="journal-a1" oninput="autoSave(this,'dot-a1')" placeholder="4,706 has..."></textarea></div><div class="q-block"><p class="q-text"><span class="q-num">2</span>Write <strong>2,000 + 500 + 30 + 8</strong> in standard form.</p><div class="journal-label">✏️ My answer <span class="saved-dot" id="dot-a2"></span></div><textarea class="journal-box" data-label="Show What You Know — Problem 2: Expanded to standard form" id="journal-a2" oninput="autoSave(this,'dot-a2')" placeholder="The number is..."></textarea></div><div class="q-block"><p class="q-text"><span class="q-num">3</span>What is the value of the digit 6 in <strong>6,481</strong>? How do you know?</p><div class="journal-label">✏️ My answer <span class="saved-dot" id="dot-a3"></span></div><textarea class="journal-box" data-label="Show What You Know — Problem 3: Value of 6 in 6,481" id="journal-a3" oninput="autoSave(this,'dot-a3')" placeholder="The 6 is worth... because..."></textarea></div><div class="q-block"><p class="q-text"><span class="q-num">4</span>True or false: <strong>7,050 = 7,000 + 500</strong>. Explain with place value.</p><div class="journal-label">✏️ My answer <span class="saved-dot" id="dot-a4"></span></div><textarea class="journal-box" data-label="Show What You Know — Problem 4: True or false 7,050" id="journal-a4" oninput="autoSave(this,'dot-a4')" placeholder="This is true/false because..."></textarea></div>
+<div class="q-block"><p class="q-text"><span class="q-num">5</span><strong>Reflection:</strong> Which model helped you the most today — the disk mat, the place-value chart, or the expanded form? Why?</p><div class="journal-label">✏️ My reflection <span class="saved-dot" id="dot-a5"></span></div><textarea class="journal-box" data-label="Show What You Know — Problem 5: Reflection on most helpful model" id="journal-a5" oninput="autoSave(this,'dot-a5')" placeholder="The model that helped me most was... because..."></textarea></div>
+<div class="activity bl-slate" style="margin-top:18px;border-left-color:#55C8E8;"><div class="activity-head"><div class="activity-num" style="background:#55C8E8;color:#0E1C42;">🗺️</div><div><div class="activity-title">Connection Forward: What Comes Next</div><div class="activity-sub">Preview Lesson 3.01.02 — Place Value, Part 2</div></div></div><div class="activity-body"><p>Today you built four-digit numbers one way: each digit sitting in its own place.</p><p>Next lesson, you'll discover something cool — you can break the <strong>same number</strong> apart in more than one way and it's still worth the same amount. For example, 4,326 could also be thought of as 43 hundreds and 26 ones. Same value, totally different grouping.</p><p>The big question next time: <em>How many ways can you break apart a number and keep the same value?</em></p></div></div>
+</div></div>
+
+<div class="gathered-box"><div class="gathered-head"><div class="gathered-head-icon">📋</div><div><div class="gathered-head-label">Your Math Journal</div><div class="gathered-head-title">All Answers from Today</div></div></div><div class="gathered-body"><textarea class="gathered-output" id="gatheredOutput" readonly="">Click "Gather My Answers" to collect your work.</textarea><div class="gathered-actions"><button class="purple-btn" onclick="gatherAnswers()">📋 Gather My Answers</button><button class="green-btn" onclick="copyAnswers()">Copy All Answers</button><button class="check-btn" onclick="downloadJournal()">Download My Math Journal</button></div></div></div>
+<div class="turn-in-card"><div class="turn-in-header"><div class="turn-in-header-icon">✅</div><div><div class="turn-in-header-label">Turn-In Checklist</div><div class="turn-in-header-title">Ready to Submit?</div></div></div><div class="turn-in-body"><div class="turn-in-item" onclick="toggleCheck(this)"><span class="turn-in-check">✓</span><span>I completed the Show What You Know problems on this lesson page.</span></div><div class="turn-in-item" onclick="toggleCheck(this)"><span class="turn-in-check">✓</span><span>I used place-value words in my explanations.</span></div><div class="turn-in-item" onclick="toggleCheck(this)"><span class="turn-in-check">✓</span><span>I reviewed my gathered Math Journal answers.</span></div></div></div>
+</div>
+<div class="footer">
+<div class="footer-main">🏫 <span>Optima Academy Online</span></div>
+<div class="footer-sub">Math · Grade 3 · 3.01.01</div>
+<div class="footer-copy">© 2025 Optima Academy Online</div>
+</div>
+</div>
+<canvas id="confettiCanvas"></canvas>
+<script>
+
+function showPageFeedback(message,type){var panel=document.querySelector('.tab-panel.active')||document.querySelector('.page-wrap')||document.body;var box=panel.querySelector(':scope > .page-feedback');if(!box){box=document.createElement('div');box.className='page-feedback';panel.insertBefore(box,panel.firstChild);}box.className='page-feedback show '+(type||'warn');box.innerHTML=message;box.scrollIntoView({behavior:'smooth',block:'nearest'});}
+
+/* tactile number talk helpers */
+function toggleNoticeCard(btn, feedbackId){
+  btn.classList.toggle('selected');
+  var fb = document.getElementById(feedbackId);
+  if(!fb) return;
+  var selected = [].slice.call(document.querySelectorAll('[data-feedback-target="'+feedbackId+'"].selected')).length;
+  if(selected===0){fb.className='inline-feedback info';fb.innerHTML='Choose one idea you noticed or wondered about. There is no single correct card here.';return;}
+  fb.className='inline-feedback show info';
+  fb.innerHTML='Good noticing. A number talk is not a quiz; it helps you collect useful ideas before the lesson model. Now write one notice, one wonder, or one mental strategy in your journal.';
+}
+document.addEventListener('click', function(e){
+  var card = e.target.closest('[data-feedback-target]');
+  if(card && !card.getAttribute('onclick')) toggleNoticeCard(card, card.getAttribute('data-feedback-target'));
+});
+
+
+const models={readiness:{counts:{k:0,h:0,t:0,o:0},target:{k:0,h:3,t:4,o:2},numId:'rNumber',wordsId:'rWords',matId:'readinessMat'},learn:{counts:{k:0,h:0,t:0,o:0},target:{k:4,h:3,t:2,o:6},numId:'learnNumber',wordsId:'learnWords',matId:'learnMat'},p1:{counts:{k:0,h:0,t:0,o:0},target:{k:6,h:2,t:0,o:4},numId:'p1Number',wordsId:'p1Words',matId:'p1Mat'}};
+const placeNames={k:'Thousands',h:'Hundreds',t:'Tens',o:'Ones'};const diskClass={k:'k',h:'h',t:'t',o:'o'};const placeOrder=['k','h','t','o'];
+function renderModel(key){const m=models[key];const mat=document.getElementById(m.matId);if(!mat)return;mat.innerHTML='';placeOrder.forEach(p=>{let col=document.createElement('div');col.className='pv-col '+({k:'thousands',h:'hundreds',t:'tens',o:'ones'}[p]);let head=document.createElement('div');head.className='pv-col-head';head.textContent=placeNames[p];let body=document.createElement('div');body.className='pv-col-body';for(let i=0;i<m.counts[p];i++){let d=document.createElement('div');d.className='disk '+diskClass[p];d.textContent={k:'1000',h:'100',t:'10',o:'1'}[p];body.appendChild(d)}let count=document.createElement('div');count.className='pv-count';count.textContent=m.counts[p];let controls=document.createElement('div');controls.className='pv-controls';controls.innerHTML=`<button class="mini-btn add" onclick="addDisk('${key}','${p}',1)">+ Add</button><button class="mini-btn remove" onclick="addDisk('${key}','${p}',-1)">− Take</button>`;col.append(head,body,count,controls);mat.appendChild(col)});updateNumber(key)}
+function addDisk(key,p,delta){const m=models[key];m.counts[p]=Math.max(0,Math.min(9,m.counts[p]+delta));renderModel(key)}
+function resetModel(key){models[key].counts={k:0,h:0,t:0,o:0};renderModel(key);hideFeedback(key)}
+function numberFromCounts(c){return c.k*1000+c.h*100+c.t*10+c.o}
+function updateNumber(key){const m=models[key],n=numberFromCounts(m.counts);const el=document.getElementById(m.numId);el.textContent=n.toLocaleString();el.classList.remove('bumping');void el.offsetWidth;el.classList.add('bumping');document.getElementById(m.wordsId).textContent=`${m.counts.k} thousands · ${m.counts.h} hundreds · ${m.counts.t} tens · ${m.counts.o} ones`}
+function sameCounts(a,b){return placeOrder.every(p=>a[p]===b[p])}
+function checkReadiness(){if(sameCounts(models.readiness.counts,models.readiness.target)){document.getElementById('readinessReveal').classList.add('show');miniCelebrate(document.getElementById('readinessReveal'))}else{showPageFeedback('Check the hundreds, tens, and ones columns. Build 3 hundreds, 4 tens, and 2 ones.')}}
+function checkLearnBuild(){if(sameCounts(models.learn.counts,models.learn.target)){document.getElementById('learnReveal').classList.add('show');miniCelebrate(document.getElementById('learnReveal'))}else{showPageFeedback('Look at each digit in 4,326. It needs 4 thousands, 3 hundreds, 2 tens, and 6 ones.')}}
+function checkP1(){hideFeedback('p1');if(sameCounts(models.p1.counts,models.p1.target)){showBranch('p1-pass');window._practice1Done=true;miniCelebrate(document.getElementById('p1-pass'))}else{showBranch('p1-retry')}}
+
+function miniCelebrate(el){if(!el)return;var emojis=['⭐','✨','🎉','💫','🌟'];for(var i=0;i<8;i++){var s=document.createElement('span');s.textContent=emojis[Math.floor(Math.random()*emojis.length)];s.style.cssText='position:absolute;font-size:'+(16+Math.random()*14)+'px;pointer-events:none;z-index:999;animation:miniPop .7s ease-out forwards;left:'+(20+Math.random()*60)+'%;top:'+(Math.random()*40)+'%;';el.style.position='relative';el.style.overflow='visible';el.appendChild(s);setTimeout(function(x){x.remove()}.bind(null,s),800)}}
+function hideFeedback(prefix){['pass','retry'].forEach(x=>{let el=document.getElementById(prefix+'-'+x);if(el)el.classList.remove('show')})}
+function showBranch(id){let el=document.getElementById(id);if(el)el.classList.add('show')}
+function showDigitValue(digit,place,value,btn){document.querySelectorAll('.digit-tile').forEach(b=>b.classList.remove('active'));btn.classList.add('active');document.getElementById('digitExplain').innerHTML=`The digit <strong>${digit}</strong> is in the <strong>${place}</strong> place, so it is worth <strong>${value.toLocaleString()}</strong>.`}
+let selectedDigit=null,selectedDigitButton=null;function selectDigitCard(btn,d){document.querySelectorAll('.digit-bank-card').forEach(b=>b.classList.remove('selected'));selectedDigit=d;selectedDigitButton=btn;btn.classList.add('selected')}
+function placeDigit(slot){if(selectedDigit===null)return;slot.textContent=selectedDigit;slot.dataset.digit=selectedDigit;slot.classList.add('filled');selectedDigitButton.style.visibility='hidden';selectedDigit=null;selectedDigitButton=null;document.querySelectorAll('.digit-bank-card').forEach(b=>b.classList.remove('selected'))}
+function checkDigitChart(){const expected={thousands:'7',hundreds:'0',tens:'8',ones:'5'};let ok=true;document.querySelectorAll('.chart-slot').forEach(s=>{if(s.dataset.digit!==expected[s.dataset.place])ok=false});['p2-pass','p2-retry'].forEach(x=>{let el=document.getElementById(x);if(el)el.classList.remove('show')});if(ok){showBranch('p2-pass');miniCelebrate(document.getElementById('p2-pass'))}else{showBranch('p2-retry')}}
+function resetDigitChart(){document.querySelectorAll('.chart-slot').forEach(s=>{s.textContent='?';s.classList.remove('filled');delete s.dataset.digit});document.querySelectorAll('.digit-bank-card').forEach(b=>{b.style.display='';b.classList.remove('selected')});selectedDigit=null;selectedDigitButton=null;['p2-pass','p2-retry'].forEach(x=>{let el=document.getElementById(x);if(el)el.classList.remove('show')})}
+let selectedMatch=null,matched=0;function selectMatch(card){if(card.classList.contains('matched'))return;if(!selectedMatch){selectedMatch=card;card.classList.add('selected');return} if(card===selectedMatch){card.classList.remove('selected');selectedMatch=null;return} if(card.dataset.match===selectedMatch.dataset.match && card.parentElement!==selectedMatch.parentElement){card.classList.add('matched');selectedMatch.classList.add('matched');card.classList.remove('selected');selectedMatch.classList.remove('selected');selectedMatch=null;matched++;if(matched===3){showBranch('p3-pass');miniCelebrate(document.getElementById('p3-pass'))}}else{card.classList.add('bad');selectedMatch.classList.add('bad');setTimeout(()=>{card.classList.remove('bad');selectedMatch&&selectedMatch.classList.remove('bad');if(selectedMatch)selectedMatch.classList.remove('selected');selectedMatch=null},350)}}
+function switchTab(tab){document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));document.getElementById('tab-'+tab).classList.add('active');document.querySelectorAll('.tab-btn').forEach(b=>{b.classList.remove('active');if(b.dataset.tab===tab){b.classList.add('active');b.classList.add('visited')}});updateProgress();window.scrollTo({top:0,behavior:'smooth'})}
+function updateProgress(){const tabs=['warmup','learn','practice','assignment'];let active=[...document.querySelectorAll('.tab-btn')].findIndex(b=>b.classList.contains('active'));let pct=Math.round(((active+1)/tabs.length)*100);document.getElementById('progressFill').style.width=pct+'%';document.getElementById('progressPct').textContent=pct+'%'}
+function autoSave(el,dotId){localStorage.setItem('g3-3-01-01-'+el.id,el.value);let dot=document.getElementById(dotId);if(dot){dot.classList.add('saved');setTimeout(()=>dot.classList.remove('saved'),900)}}
+function restoreJournals(){document.querySelectorAll('textarea.journal-box').forEach(t=>{let v=localStorage.getItem('g3-3-01-01-'+t.id);if(v)t.value=v})}
+function gatherAnswers(){let out='Lesson 3.01.01 — Place Value, Part 1\n\n';document.querySelectorAll('textarea.journal-box').forEach(t=>{out+=t.dataset.label+'\n'+(t.value.trim()||'[No answer yet]')+'\n\n'});out+='Practice results\nPractice 1 build: '+(window._practice1Done?'Completed':'Not completed')+'\n';document.getElementById('gatheredOutput').value=out}
+function copyAnswers(){gatherAnswers();navigator.clipboard&&navigator.clipboard.writeText(document.getElementById('gatheredOutput').value);showPageFeedback('Your answers were copied.');}
+function downloadJournal(){gatherAnswers();let text=document.getElementById('gatheredOutput').value;let w=window.open('','_blank');w.document.write('<pre style="font-family:Arial;white-space:pre-wrap;font-size:14px;line-height:1.5;">'+text.replace(/[&<>]/g,s=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[s]))+'</pre>');w.document.close();w.print()}
+function toggleCheck(item){
+  item.classList.toggle('checked');
+  const check=item.querySelector('.turn-in-check');
+  if(check) check.textContent=item.classList.contains('checked')?'✓':'';
+  const items=[...document.querySelectorAll('.turn-in-item')];
+  const allChecked=items.length>0 && items.every(x=>x.classList.contains('checked'));
+  if(allChecked && !window._turnInConfettiFired){
+    window._turnInConfettiFired=true;
+    fireConfetti();
+  }
+  if(!allChecked){window._turnInConfettiFired=false;}
+}
+
+function fireConfetti() {
+  var canvas = document.getElementById('confettiCanvas');
+  var ctx = canvas.getContext('2d');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  var particles = [];
+  var colors = ['#55C8E8','#D4943A','#1A8A7D','#34B76F','#8B6FC0','#FFD700','#E8636B'];
+  var emojis = ['✖️','➖','➗','🟰','➕','🧠','🤔','🧮'];
+
+  for (var i = 0; i < 120; i++) {
+    particles.push({
+      type: 'rect',
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height - canvas.height,
+      r: Math.random() * 6 + 3,
+      c: colors[Math.floor(Math.random() * colors.length)],
+      vx: (Math.random() - 0.5) * 4,
+      vy: Math.random() * 3 + 2,
+      rot: Math.random() * 360,
+      rv: (Math.random() - 0.5) * 8
+    });
+  }
+  for (var j = 0; j < 18; j++) {
+    particles.push({
+      type: 'emoji',
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height - canvas.height,
+      emoji: emojis[Math.floor(Math.random() * emojis.length)],
+      size: Math.random() * 14 + 26,
+      vx: (Math.random() - 0.5) * 3,
+      vy: Math.random() * 2.5 + 1.5,
+      rot: Math.random() * 360,
+      rv: (Math.random() - 0.5) * 5
+    });
+  }
+
+  var frames = 0;
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    particles.forEach(function(p) {
+      ctx.save();
+      ctx.translate(p.x, p.y);
+      ctx.rotate(p.rot * Math.PI / 180);
+      if (p.type === 'emoji') {
+        ctx.font = p.size + 'px serif';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText(p.emoji, 0, 0);
+      } else {
+        ctx.fillStyle = p.c;
+        ctx.fillRect(-p.r, -p.r / 2, p.r * 2, p.r);
+      }
+      ctx.restore();
+      p.x += p.vx;
+      p.y += p.vy;
+      p.rot += p.rv;
+      p.vy += 0.04;
+    });
+    frames++;
+    if (frames < 300) {
+      if (frames > 220) {
+        canvas.style.opacity = 1 - ((frames - 220) / 80);
+      }
+      requestAnimationFrame(animate);
+    } else {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      canvas.style.opacity = 1;
+    }
+  }
+  animate();
+}
+
+async function loadVideoManifest(){try{let res=await fetch('video-manifest.md',{cache:'no-store'});if(!res.ok)return;let txt=await res.text();let map=parseManifest(txt);document.querySelectorAll('.video-wrap[data-video-slot]').forEach(w=>{let slot=w.dataset.videoSlot;if(map[slot]){let ratio=w.querySelector('.video-ratio');ratio.innerHTML=map[slot].trim();let iframe=ratio.querySelector('iframe');if(iframe){iframe.classList.add('video-iframe');iframe.setAttribute('allowfullscreen','');iframe.setAttribute('loading','lazy')}}})}catch(e){}}
+function parseManifest(txt){let map={};let lines=txt.split(/\r?\n/);let current=null,buf=[];function commit(){if(current&&buf.join('\n').trim())map[current]=buf.join('\n').trim();buf=[]}for(let line of lines){let m=line.match(/^([A-Za-z0-9-]+):\s*$/);if(m){commit();current=m[1]}else if(current){buf.push(line)}}commit();return map}
+window.addEventListener('DOMContentLoaded',()=>{Object.keys(models).forEach(renderModel);restoreJournals();updateProgress();loadVideoManifest()});
+
+function flipVocabCard(card){card.classList.toggle('flipped');}
+
+function checkExitA(card,correct){document.querySelectorAll('#tab-assignment .q-block:first-of-type .value-card').forEach(c=>{c.classList.remove('good','bad','selected')});var fb=document.getElementById('exitA-fb');if(correct){card.classList.add('good');fb.className='inline-feedback show good';fb.innerHTML='<strong>✅ Yes!</strong> The 3 is in the thousands place, so it is worth 3,000.';miniCelebrate(card)}else{card.classList.add('bad');fb.className='inline-feedback show think';fb.innerHTML='<strong>Not quite.</strong> Think about which <em>place</em> the 3 sits in. Thousands? Hundreds? Tens? Ones?'}}
+function checkExitB(card,correct){document.querySelectorAll('#tab-assignment .q-block:nth-of-type(2) .value-card').forEach(c=>{c.classList.remove('good','bad','selected')});var fb=document.getElementById('exitB-fb');if(correct){card.classList.add('good');fb.className='inline-feedback show good';fb.innerHTML='<strong>✅ Yes!</strong> 9,060 = 9,000 + 0 hundreds + 60 + 0 ones. The 6 is in the tens place, so it is 60, not 600 or 6.';miniCelebrate(card)}else{card.classList.add('bad');fb.className='inline-feedback show think';fb.innerHTML='<strong>Not quite.</strong> Look at 9,060 — which place is the 6 in? Is it hundreds, tens, or ones?'}}
+</script>
+<script id="fluencyScript">
+(function(){
+var FLUENCY_TIMED = false;
+var FLUENCY_TITLE = "Add & Subtract 0, 1, 2";
+var fluencyInterval = null;
+var fluencySecondsLeft = 60;
+
+window.fluencyStart = function(){
+  if(!FLUENCY_TIMED) return;
+  var grid = document.getElementById('fluencyGrid');
+  if(!grid) return;
+  grid.querySelectorAll('.fluency-input').forEach(function(i){ i.disabled = false; });
+  var btn = document.getElementById('fluencyStartBtn');
+  if(btn){ btn.disabled = true; btn.textContent = 'Timer Running\u2026'; }
+  var checkBtn = document.getElementById('fluencyCheckBtn');
+  if(checkBtn) checkBtn.disabled = false;
+  fluencySecondsLeft = 60;
+  fluencyUpdateDisplay();
+  fluencyInterval = setInterval(function(){
+    fluencySecondsLeft--;
+    fluencyUpdateDisplay();
+    if(fluencySecondsLeft <= 0){
+      clearInterval(fluencyInterval);
+      grid.querySelectorAll('.fluency-input').forEach(function(i){ i.disabled = true; });
+      window.fluencyCheck();
+    }
+  }, 1000);
+};
+
+function fluencyUpdateDisplay(){
+  var el = document.getElementById('fluencyTimerDisplay');
+  if(el) el.textContent = fluencySecondsLeft + 's';
+}
+
+window.fluencyCheck = function(){
+  if(fluencyInterval){ clearInterval(fluencyInterval); fluencyInterval = null; }
+  var items = document.querySelectorAll('#fluencyGrid .fluency-item');
+  var correct = 0, attempted = 0, total = items.length;
+  var lines = [];
+  items.forEach(function(item){
+    var input = item.querySelector('.fluency-input');
+    var qText = item.querySelector('.fluency-q').textContent;
+    var given = (input.value || '').trim();
+    var ans = input.dataset.answer;
+    var ok = given !== '' && given === ans;
+    if(given !== '') attempted++;
+    item.classList.remove('fluency-correct','fluency-wrong');
+    if(ok){ correct++; item.classList.add('fluency-correct'); }
+    else if(given !== ''){ item.classList.add('fluency-wrong'); }
+    lines.push(qText + ' ' + ans + '   [answered: ' + (given || 'blank') + ']' + (ok ? ' \u2713' : (given ? ' \u2717' : '')));
+  });
+  var pct = total ? Math.round((correct/total)*100) : 0;
+  var timeStr = FLUENCY_TIMED ? (' in ' + (60 - fluencySecondsLeft) + ' seconds') : '';
+  var summary = 'Fluency Warm-Up \u2014 ' + FLUENCY_TITLE + '\n' + correct + ' / ' + total + ' correct (' + pct + '%)' + timeStr + '\n\n' + lines.join('\n');
+  var j = document.getElementById('fluencyJournal');
+  if(j) j.value = summary;
+  var resEl = document.getElementById('fluencyResult');
+  if(resEl) resEl.innerHTML = correct + ' / ' + total + ' correct (' + pct + '%)' + timeStr;
+  var checkBtn = document.getElementById('fluencyCheckBtn');
+  if(checkBtn) checkBtn.disabled = true;
+  var startBtn = document.getElementById('fluencyStartBtn');
+  if(startBtn) startBtn.textContent = 'Done';
+};
+})();
+</script>
+</body>
+</html>

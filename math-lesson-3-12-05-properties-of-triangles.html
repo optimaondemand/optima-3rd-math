@@ -1,3 +1,503 @@
 <!DOCTYPE html>
 
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Optima Academy Online — Grade 3 Math Lesson 3.12.05</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Nunito:wght@400;700;800;900&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Nunito',Verdana,sans-serif;background:#F5F8FA;color:#0E1C42;line-height:1.6}.page-wrap{max-width:920px;margin:0 auto;background:#fff;box-shadow:0 0 40px rgba(14,28,66,.08)}
+:root{--geo:#5B52A8;--geo-light:#EEEDFA;--geo-mid:#9A92D0;--geo-deep:#2D2A5E}
+.progress-wrap{position:sticky;top:0;z-index:200;background:#0E1C42;padding:8px 20px 10px;display:flex;align-items:center;gap:14px}.progress-label{font-size:12px;color:#F5C518;font-weight:800;text-transform:uppercase}.progress-track{flex:1;height:10px;background:rgba(255,255,255,.1);border-radius:10px;overflow:hidden}.progress-fill{height:100%;width:0%;background:linear-gradient(90deg,var(--geo),#9A92D0,#F5C518,var(--geo));background-size:200% 100%;animation:shimmer 3s linear infinite;border-radius:10px;transition:width .4s}.progress-pct{font-size:13px;color:#F5C518;font-weight:800;min-width:36px;text-align:right}@keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
+.header{background:#0E1C42;border-bottom:6px solid var(--geo);padding:20px 28px 18px}.header-brand{display:flex;align-items:center;gap:12px;margin-bottom:14px}.header-logo{width:52px;height:52px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center}.header-logo img{width:48px;height:38px}.header-org{font-size:22px;color:#fff;font-weight:800}.header-sub{font-size:11px;color:var(--geo-mid)}.header-title{font-family:'Lora',serif;font-size:28px;color:#fff;font-weight:700;margin-bottom:10px}.header-title em{color:var(--geo-mid);font-style:italic}.header-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(91,82,168,.25);border:1.5px solid rgba(154,146,208,.5);border-radius:28px;padding:6px 16px}.header-badge-icon{font-size:22px}.header-badge-text{font-size:18px;color:#fff;font-weight:800}
+.quote-strip{background:linear-gradient(135deg,var(--geo-light),var(--geo-mid));border-bottom:2px solid var(--geo-mid);padding:14px 28px;text-align:center}.quote-strip-text{font-family:'Lora',serif;font-size:16px;font-style:italic;color:var(--geo-deep)}.quote-strip-attr{font-size:11px;color:var(--geo);font-weight:700;margin-top:4px;text-transform:uppercase}
+.info-strip{display:flex;flex-wrap:wrap;background:#fff;border-bottom:2px solid #E2E8F4}.info-cell{flex:1;min-width:150px;padding:12px 16px;border-right:1px solid #E2E8F4;display:flex;align-items:center;gap:10px}.info-icon{width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px}.info-label{font-size:10px;color:#7A88A8;text-transform:uppercase;font-weight:700}.info-value{font-size:16px;color:#0E1C42;font-weight:800}.info-detail{font-size:11px;color:#3A4A6B}
+.explorer-strip{display:flex;align-items:center;gap:16px;padding:12px 28px;background:linear-gradient(135deg,#1A2340,#0E1C42);border-bottom:3px solid var(--geo)}.explorer-compass{font-size:28px}.explorer-mission-label{font-size:10px;color:#F5C518;text-transform:uppercase;font-weight:800}.explorer-mission-text{font-size:15px;color:#fff;font-weight:700}
+.intro-2col{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:20px 28px 4px}@media(max-width:720px){.intro-2col{grid-template-columns:1fr}}.intro-card{background:#fff;border:2px solid #E2E8F4;border-radius:18px;overflow:hidden}.intro-card-head{display:flex;align-items:center;gap:10px;padding:14px 18px;border-bottom:2px solid}.intro-card-head-icon{width:40px;height:40px;border-radius:50%;color:#fff;font-size:20px;display:flex;align-items:center;justify-content:center}.intro-card-head-label{font-size:10px;color:#7A88A8;text-transform:uppercase;font-weight:700}.intro-card-head-title{font-size:18px;color:#0E1C42;font-weight:800}.intro-card-body{padding:14px 18px}.intro-card-body p{font-size:15px;color:#3A4A6B;line-height:1.65;margin-bottom:8px}.obj-line{display:flex;gap:8px;font-size:15px;color:#0E1C42;line-height:1.55;margin-bottom:8px}.theme-question .intro-card-head{background:#FFF8E6;border-color:#F5E6C8}.theme-question .intro-card-head-icon{background:#F5C518}.theme-objectives .intro-card-head{background:var(--geo-light);border-color:var(--geo-mid)}.theme-objectives .intro-card-head-icon{background:var(--geo)}
+.need-strip{display:flex;flex-wrap:wrap;gap:8px;padding:12px 28px 18px}.need-strip-label{font-size:13px;color:#3A4A6B;font-weight:700}.need-chip{background:#E3F8ED;border:1.5px solid #B8E8CF;border-radius:20px;padding:5px 12px;font-size:13px;color:#0E1C42;font-weight:700}
+.tab-bar{position:sticky;top:38px;z-index:100;background:#fff;border-bottom:3px solid #E2E8F4;display:flex;overflow-x:auto;box-shadow:0 -4px 0 0 #0E1C42}.tab-btn{flex:1;min-width:130px;padding:12px 8px 11px;background:transparent;border:none;border-bottom:4px solid transparent;font-family:'Nunito',sans-serif;font-size:13px;font-weight:700;color:#7A88A8;cursor:pointer;text-align:center}.tab-btn.active{color:#0E1C42;border-bottom-color:var(--geo);background:#fff}.tab-btn .tab-check{display:none;color:#2DB87A;margin-left:4px;font-weight:800}.tab-btn.visited .tab-check{display:inline}.tab-panel{display:none;padding:24px 28px 36px}.tab-panel.active{display:block}
+.activity{background:#fff;border:2px solid #E2E8F4;border-radius:18px;margin-bottom:18px}.activity.bl-geo{border-left:6px solid var(--geo)}.activity.bl-green{border-left:6px solid #2DB87A}.activity.bl-yellow{border-left:6px solid #F5C518}.activity.bl-slate{border-left:6px solid #3A6B9A}.activity.bl-navy{border-left:6px solid #0E1C42}.activity-head{display:flex;align-items:center;gap:12px;padding:14px 20px 14px 18px;border-bottom:1.5px solid #E2E8F4}.activity-num{width:38px;height:38px;border-radius:14px;color:#fff;font-size:18px;font-weight:800;display:flex;align-items:center;justify-content:center}.activity-title{font-size:19px;color:#0E1C42;font-weight:800}.activity-sub{font-size:12px;color:#7A88A8}.activity-body{padding:18px 22px}.activity-body p{font-size:16px;color:#3A4A6B;line-height:1.7;margin-bottom:12px}
+.callout{border-radius:14px;padding:16px 18px;display:flex;gap:12px;margin-bottom:14px}.callout-icon{font-size:28px}.callout p{font-size:15.5px;color:#0E1C42;line-height:1.65;margin:0}.callout-info{background:var(--geo-light);border:2px solid var(--geo-mid)}.callout-think{background:#FFF8E6;border:2px solid #F5E6C8}.callout-tip{background:#E3F8ED;border:2px solid #B8E8CF}
+.key-concept{background:var(--geo-light);border:2px solid var(--geo-mid);border-radius:14px;padding:16px 18px;margin-bottom:14px}.key-concept-label{font-size:12px;color:var(--geo-deep);text-transform:uppercase;font-weight:800;margin-bottom:8px}.key-concept p{font-size:15px;color:#0E1C42;line-height:1.7}
+.socratic-box{background:linear-gradient(135deg,var(--geo-light),var(--geo-mid));border:2px solid var(--geo-mid);border-radius:14px;padding:16px 18px;margin-bottom:14px}.socratic-label{font-size:12px;color:var(--geo-deep);text-transform:uppercase;font-weight:800;margin-bottom:8px}.socratic-q{font-size:15.5px;color:#0E1C42;font-style:italic}
+.journal-label{font-size:13px;color:#3A4A6B;font-weight:700;margin:10px 0 4px}.journal-box{width:100%;min-height:80px;border:2px solid #E2E8F4;border-radius:12px;padding:12px 14px;font-family:'Nunito',sans-serif;font-size:15px;color:#0E1C42;resize:vertical}.journal-box:focus{outline:none;border-color:var(--geo)}.saved-dot{width:8px;height:8px;border-radius:50%;background:#E2E8F4;display:inline-block;transition:.3s}.saved-dot.saved{background:#2DB87A}
+.check-btn,.geo-btn,.green-btn,.orange-btn{display:inline-flex;align-items:center;gap:6px;color:#fff;border:none;border-radius:12px;padding:10px 20px;font-size:14px;font-weight:800;cursor:pointer;font-family:'Nunito',sans-serif;margin-top:10px}.check-btn{background:#3A6B9A}.geo-btn{background:var(--geo)}.green-btn{background:#2DB87A}.orange-btn{background:#E07B39}
+.hint-callout{background:#FFF8E6;border:2px solid #F5C518;border-radius:10px;padding:10px 14px;margin:12px 0;font-size:14px;color:#5A4A00;font-weight:700}
+.task-box{background:#FAFBFF;border:2px solid #E2E8F4;border-radius:14px;padding:16px 18px;margin-bottom:14px}.task-label{font-size:12px;color:var(--geo-deep);text-transform:uppercase;font-weight:800;margin-bottom:10px}
+.feedback-branch{display:none;margin-top:16px;border-radius:14px;padding:16px}.feedback-branch.show{display:block;animation:reveal .35s}.feedback-pass{background:#E3F8ED;border:2px solid #B8E8CF}.feedback-retry{background:#FFF0E6;border:2px solid #F5C8A0}
+.value-card-row{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}.value-card{border:2px solid #E2E8F4;background:#fff;border-radius:14px;padding:10px 14px;min-width:110px;text-align:center;cursor:pointer;transition:.2s}.value-card:hover{border-color:var(--geo);background:var(--geo-light)}.value-card.good{background:#E3F8ED;border-color:#2DB87A}.value-card.bad{background:#FFF0E6;border-color:#E07B39;animation:shake .25s}.value-card .big{font-size:22px;font-weight:900;color:#0E1C42}.value-card .small{font-size:12px;color:#3A4A6B;font-weight:800}
+.fill-row{display:flex;align-items:center;gap:8px;background:#FAFBFF;border:2px solid #E2E8F4;border-radius:12px;padding:12px 14px;margin:10px 0;flex-wrap:wrap;font-size:17px;font-weight:800;color:#0E1C42}.fill-input{width:100px;padding:8px 10px;border:2.5px solid var(--geo-mid);border-radius:10px;font-size:17px;font-weight:900;color:var(--geo-deep);text-align:center;font-family:'Nunito',sans-serif;background:#fff}.fill-input:focus{outline:none;border-color:var(--geo)}.fill-input.good{border-color:#2DB87A;background:#E3F8ED;color:#1A8A5A}.fill-input.bad{border-color:#E07B39;background:#FFF0E6;animation:shake .25s}
+.q-block{background:#FAFBFF;border:2px solid #E2E8F4;border-radius:14px;padding:14px 18px;margin-bottom:14px}.q-num{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--geo);color:#fff;font-weight:800;font-size:14px;margin-right:8px;vertical-align:middle}.q-text{font-size:15.5px;color:#0E1C42;line-height:1.65}
+.gathered-box{background:#fff;border:2px solid #E2E8F4;border-radius:18px;overflow:hidden;margin-top:24px}.gathered-head{display:flex;align-items:center;gap:14px;background:linear-gradient(135deg,#0E1C42,#1A2D5A);padding:18px 22px}.gathered-head-icon{font-size:32px}.gathered-head-label{font-size:11px;color:#F5C518;font-weight:800;text-transform:uppercase}.gathered-head-title{font-size:18px;color:#fff;font-weight:800}.gathered-body{padding:16px 22px}.gathered-output{width:100%;min-height:160px;border:2px solid #E2E8F4;border-radius:12px;padding:14px;font-family:monospace;font-size:13px;background:#FAFBFF}
+.tab-next-wrap{text-align:center;padding:24px 0 8px}.tab-transition-voice{font-family:'Lora',serif;font-size:15px;font-style:italic;color:var(--geo-deep);margin-bottom:12px}.tab-next-btn{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--geo),#2D2A5E);color:#fff;border:none;border-radius:28px;padding:13px 28px;font-size:15px;font-weight:800;cursor:pointer;box-shadow:0 4px 14px rgba(45,42,94,.3);animation:float 3s infinite}
+.turn-in-card{background:#fff;border:2px solid #E2E8F4;border-radius:18px;overflow:hidden;margin-top:18px}.turn-in-header{display:flex;align-items:center;gap:14px;background:var(--geo-light);padding:18px 22px;border-bottom:2px solid var(--geo-mid)}.turn-in-header-icon{font-size:36px}.turn-in-header-label{font-size:11px;color:var(--geo-deep);font-weight:800;text-transform:uppercase}.turn-in-header-title{font-family:'Lora',serif;font-size:22px;color:#0E1C42;font-weight:700}.turn-in-body{padding:18px 22px 20px}.turn-in-item{display:flex;align-items:center;gap:14px;padding:12px 16px;background:#FAFBFF;border:1.5px solid #E2E8F4;border-radius:12px;cursor:pointer;margin-bottom:10px}.turn-in-item.checked{background:#E3F8ED;border-color:#B8E8CF}.turn-in-check{width:26px;height:26px;border-radius:8px;border:2px solid var(--geo-mid);background:#fff;display:flex;align-items:center;justify-content:center;font-size:16px}.turn-in-item.checked .turn-in-check{background:#2DB87A;border-color:#2DB87A;color:#fff}
+.footer{background:#0E1C42;border-top:4px solid var(--geo);padding:18px 28px;text-align:center}.footer-main{font-size:14px;color:#fff;margin-bottom:4px}.footer-main span{color:var(--geo-mid);font-weight:700}.footer-sub{font-size:12px;color:rgba(255,255,255,.5)}.footer-copy{font-size:11px;color:rgba(255,255,255,.3)}
+.inline-feedback{display:none;margin:12px 0;border-radius:14px;padding:12px 14px;font-weight:800;line-height:1.5}.inline-feedback.show{display:block;animation:reveal .3s}.inline-feedback.good{background:#E3F8ED;border:2px solid #B8E8CF;color:#0E1C42}.inline-feedback.think{background:#FFF3DC;border:2px solid #F5E6C8;color:#5A4A3A}
+.vocab-section{background:#fff;border:2px solid var(--geo-mid);border-left:6px solid var(--geo);border-radius:18px;padding:14px 20px;margin:0 0 20px}.vocab-section-title{font-size:16px;color:#0E1C42;font-weight:900;margin-bottom:4px}
+.bubble-row{display:flex;gap:12px;flex-wrap:wrap;margin:14px 0}.bubble{display:flex;gap:10px;flex:1 1 260px;max-width:340px;background:#fff;border:2px solid #E2E8F4;border-radius:18px;padding:12px 14px}.bubble.atlas{border-left:5px solid #6B3FA0;background:linear-gradient(135deg,#fff,#F8F4FF)}.bubble.hazel{border-left:5px solid #2DB87A;background:linear-gradient(135deg,#fff,#F4FBF7)}.bubble.felix{border-left:5px solid #F5C518;background:linear-gradient(135deg,#fff,#FEFBEB)}.bubble.cora{border-left:5px solid #3A6B9A;background:linear-gradient(135deg,#fff,#F4F8FC)}.bubble-avatar{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:900;color:#fff;flex-shrink:0;font-family:'Lora',serif}.bubble.atlas .bubble-avatar{background:#6B3FA0}.bubble.hazel .bubble-avatar{background:#2DB87A}.bubble.felix .bubble-avatar{background:#F5C518;color:#0E1C42}.bubble.cora .bubble-avatar{background:#3A6B9A}.bubble-body{flex:1;min-width:0}.bubble-name{font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.7px;margin-bottom:3px;color:#6B3FA0}.bubble.hazel .bubble-name{color:#1A8A5A}.bubble.felix .bubble-name{color:#8A6D2B}.bubble.cora .bubble-name{color:#1A6B8E}.bubble-text{font-size:14.5px;color:#0E1C42;line-height:1.5;font-weight:600;font-family:'Lora',serif;font-style:italic}
+.video-wrap{border-radius:18px;overflow:hidden;border:2px solid #E2E8F4;box-shadow:0 4px 20px rgba(14,28,66,.08);background:#000;margin:0 0 22px}.video-wrap-header{display:flex;align-items:center;gap:12px;padding:12px 18px;background:linear-gradient(135deg,#0E1C42,#1A2D5A);border-bottom:2px solid rgba(91,82,168,.3)}.video-wrap-type{font-size:10px;color:#F5C518;text-transform:uppercase;letter-spacing:1.5px;font-weight:800;margin-bottom:2px}.video-wrap-title{font-size:16px;color:#fff;font-weight:800;line-height:1.2}.video-ratio{position:relative;padding-bottom:56.25%;height:0;overflow:hidden}.video-placeholder,.video-iframe{position:absolute;top:0;left:0;width:100%;height:100%}.video-placeholder{background:linear-gradient(135deg,#0E1C42,#1A2D5A);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px}.video-placeholder-icon{font-size:44px;margin-bottom:10px;opacity:.55}.video-placeholder-text{font-size:14px;color:rgba(255,255,255,.78);font-weight:700;line-height:1.5;max-width:620px}.video-placeholder-id{font-size:11px;color:rgba(245,197,24,.85);font-family:monospace;margin-top:10px;letter-spacing:.5px}.record-note{margin-top:10px;background:rgba(255,255,255,.08);border:1px solid rgba(245,197,24,.28);border-radius:10px;padding:8px 10px;color:rgba(255,255,255,.82);font-size:12.5px;line-height:1.45;max-width:620px}
 
+/* TRIANGLE SORTER */
+.tri-frame{background:#fff;border:2px solid var(--geo-mid);border-radius:16px;padding:18px;margin:14px 0}
+.tri-panels{display:grid;grid-template-columns:1fr 1fr;gap:16px}@media(max-width:720px){.tri-panels{grid-template-columns:1fr}}
+.tri-panel{background:#FAFBFF;border:2px solid #E2E8F4;border-radius:14px;padding:14px}
+.tri-panel-title{font-size:12px;color:var(--geo-deep);font-weight:900;text-transform:uppercase;margin-bottom:10px;letter-spacing:.5px}
+.tri-stepper-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:12px}
+.tri-stepper{text-align:center}
+.tri-stepper-label{font-size:11px;color:var(--geo-deep);font-weight:800;text-transform:uppercase;margin-bottom:4px}
+.tri-stepper-wrap{display:flex;align-items:center;gap:6px}
+.tri-btn{background:#fff;border:2.5px solid var(--geo);color:var(--geo);width:32px;height:32px;border-radius:50%;font-size:16px;font-weight:900;cursor:pointer;font-family:'Nunito',sans-serif}.tri-btn:hover{background:var(--geo);color:#fff}
+.tri-val{font-family:'Lora',serif;font-size:24px;font-weight:900;color:#0E1C42;min-width:30px;text-align:center}
+.tri-svg-wrap{background:#fff;border:2px dashed var(--geo-mid);border-radius:12px;padding:10px;margin-bottom:10px;text-align:center;min-height:200px;display:flex;align-items:center;justify-content:center}
+.tri-badge{display:inline-block;padding:5px 12px;border-radius:20px;font-size:14px;font-weight:800;margin:3px;color:#fff}
+.tri-badge.equi{background:#6B3FA0}.tri-badge.iso{background:#2DB87A}.tri-badge.scal{background:#E07B39}
+.tri-badge.right{background:#3A6B9A}.tri-badge.acute{background:#F5C518;color:#0E1C42}.tri-badge.obtuse{background:#C24B4B}
+.tri-badge.dim{opacity:.3}
+.tri-presets{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:10px}
+.tri-preset-btn{background:var(--geo-light);border:2px solid var(--geo-mid);border-radius:12px;padding:6px 12px;font-size:12px;font-weight:800;cursor:pointer;font-family:'Nunito',sans-serif;color:var(--geo-deep)}.tri-preset-btn:hover{background:var(--geo);color:#fff}
+.tri-counter{text-align:center;font-size:13px;color:var(--geo-deep);font-weight:800;margin-top:8px}
+.tri-reset-btn{background:#7A88A8;color:#fff;border:none;border-radius:14px;padding:8px 16px;font-size:13px;font-weight:900;cursor:pointer;font-family:'Nunito',sans-serif;margin-top:6px}
+.tri-error{text-align:center;font-size:15px;color:#C24B4B;font-weight:800;padding:20px}
+
+@keyframes reveal{0%{opacity:0;transform:translateY(10px)}100%{opacity:1;transform:translateY(0)}}@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}@keyframes mini{0%{transform:translateY(0) scale(0);opacity:1}50%{transform:translateY(-30px) scale(1.2)}100%{transform:translateY(-60px) scale(.6);opacity:0}}
+</style>
+<style id="fluencyStyles">
+.fluency-box{background:#fff;border:2px solid #F5C518;border-radius:18px;overflow:hidden;margin-bottom:22px;font-family:'Nunito',sans-serif}
+.fluency-head{display:flex;align-items:center;gap:12px;background:linear-gradient(135deg,#F5C518,#E8B723);padding:14px 20px;flex-wrap:wrap}
+.fluency-head-icon{font-size:26px;line-height:1}
+.fluency-head-label{font-size:10px;color:#0E1C42;font-weight:800;text-transform:uppercase;letter-spacing:0.5px}
+.fluency-head-title{font-size:15px;color:#0E1C42;font-weight:800}
+.fluency-timer-ui{margin-left:auto;display:flex;align-items:center;gap:10px}
+.fluency-timer-display{font-size:20px;font-weight:800;color:#0E1C42;min-width:46px;text-align:center}
+.fluency-start-btn{background:#0E1C42;color:#fff;border:none;border-radius:10px;padding:8px 14px;font-weight:700;font-size:12px;cursor:pointer}
+.fluency-start-btn:disabled{opacity:0.55;cursor:default}
+.fluency-body{padding:16px 20px}
+.fluency-instructions{font-size:13px;color:#4A5568;margin:0 0 12px}
+.fluency-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(128px,1fr));gap:10px;margin-bottom:14px}
+.fluency-item{display:flex;align-items:center;gap:6px;background:#FAFBFF;border:1.5px solid #E2E8F4;border-radius:10px;padding:8px 10px}
+.fluency-item.fluency-correct{border-color:#2DB87A;background:#EAFBF3}
+.fluency-item.fluency-wrong{border-color:#E07B39;background:#FDF1E9}
+.fluency-q{font-size:13px;font-weight:700;color:#0E1C42;white-space:nowrap}
+.fluency-input{width:46px;border:1.5px solid #CBD5E8;border-radius:6px;padding:4px;font-size:14px;text-align:center;font-family:'Nunito',sans-serif}
+.fluency-input:disabled{background:#F0F2F8}
+.fluency-check-btn{background:#2DB87A;color:#fff;border:none;border-radius:10px;padding:10px 18px;font-weight:800;font-size:13px;cursor:pointer}
+.fluency-check-btn:disabled{opacity:0.55;cursor:default}
+.fluency-result{margin-top:10px;font-size:14px;color:#0E1C42;font-weight:700}
+</style></head><body>
+<div class="page-wrap">
+<div class="progress-wrap"><span class="progress-label">Lesson Progress</span><div class="progress-track"><div class="progress-fill" id="pf"></div></div><span class="progress-pct" id="pp">0%</span></div>
+<div class="header">
+<div class="header-brand"><div class="header-logo"><img alt="Optima" src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png"/></div><div><div class="header-org">Optima Academy Online</div><div class="header-sub">An Education Experience Company</div></div></div>
+<div class="header-title"><em>Properties of Triangles</em></div>
+<div class="header-badge"><span class="header-badge-icon">🔺</span><span class="header-badge-text">Lesson 3.12.05 · U3 Apply</span></div>
+</div>
+<div class="quote-strip"><div class="quote-strip-text">“Triangles come in families — some with equal sides, some with right angles, each with its own name.”</div><div class="quote-strip-attr">Geometry fact</div></div>
+<div class="info-strip">
+<div class="info-cell"><div class="info-icon" style="background:var(--geo-light);">📐</div><div><div class="info-label">Unit</div><div class="info-value">Unit 12</div><div class="info-detail">Geometry</div></div></div>
+<div class="info-cell"><div class="info-icon" style="background:#E3F8ED;">📅</div><div><div class="info-label">Lesson</div><div class="info-value">3.12.05</div><div class="info-detail">U3 Apply</div></div></div>
+<div class="info-cell"><div class="info-icon" style="background:#EAF0FF;">📐</div><div><div class="info-label">Standards</div><div class="info-value">MA.3.GR.1.1–1.3</div><div class="info-detail">classify shapes</div></div></div>
+<div class="info-cell"><div class="info-icon" style="background:#FFF8E6;">🔧</div><div><div class="info-label">Tool</div><div class="info-value">Triangle Sorter</div><div class="info-detail">build &amp; classify</div></div></div>
+</div>
+<div class="explorer-strip"><span class="explorer-compass">🧭</span><div><div class="explorer-mission-label">Today’s Mission</div><div class="explorer-mission-text">Sort triangles by their sides and angles — every triangle belongs to a family.</div></div></div>
+<div class="intro-2col">
+<div class="intro-card theme-question"><div class="intro-card-head"><div class="intro-card-head-icon">❓</div><div><div class="intro-card-head-label">Essential Question</div><div class="intro-card-head-title">How do we sort triangles into different types?</div></div></div><div class="intro-card-body"><p>Some triangles have all sides the same. Others have a square corner. Each combination gets its own name.</p></div></div>
+<div class="intro-card theme-objectives"><div class="intro-card-head"><div class="intro-card-head-icon">🎯</div><div><div class="intro-card-head-label">Today’s Objectives</div><div class="intro-card-head-title">You will…</div></div></div><div class="intro-card-body">
+<div class="obj-line"><span style="flex-shrink:0">🔺</span><span><strong>Classify</strong> triangles by side lengths (equilateral, isosceles, scalene).</span></div>
+<div class="obj-line"><span style="flex-shrink:0">📐</span><span><strong>Classify</strong> triangles by angles (right, acute, obtuse).</span></div>
+<div class="obj-line"><span style="flex-shrink:0">🔧</span><span><strong>Build</strong> triangles on the Triangle Sorter and watch them get named.</span></div>
+</div></div>
+</div>
+<div class="need-strip"><span class="need-strip-label">You’ll need:</span><span class="need-chip">📓 Math Journal</span><span class="need-chip">✏️ Pencil</span></div>
+<div class="tab-bar" id="tabBar">
+<button class="tab-btn active" data-tab="warmup" onclick="switchTab('warmup')">🔍 Warm-Up <span class="tab-check">✓</span></button>
+<button class="tab-btn" data-tab="learn" onclick="switchTab('learn')">📐 Learn <span class="tab-check">✓</span></button>
+<button class="tab-btn" data-tab="practice" onclick="switchTab('practice')">🧮 Practice <span class="tab-check">✓</span></button>
+<button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">🌟 Show What You Know <span class="tab-check">✓</span></button>
+</div>
+<!-- WARM-UP TAB -->
+<div class="tab-panel active" id="tab-warmup">
+<div class="fluency-box" data-timed="false">
+<div class="fluency-head">
+<div class="fluency-head-icon">✍️</div>
+<div><div class="fluency-head-label">FLUENCY WARM-UP</div><div class="fluency-head-title">Mixed Division Facts</div></div>
+</div>
+<div class="fluency-body">
+<p class="fluency-instructions">Warm up your fact fluency before today’s lesson. Work through these, then check your answers.</p>
+<div class="fluency-grid" id="fluencyGrid">
+<div class="fluency-item"><span class="fluency-q">48 ÷ 6 =</span><input autocomplete="off" class="fluency-input" data-answer="8" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">63 ÷ 7 =</span><input autocomplete="off" class="fluency-input" data-answer="9" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">32 ÷ 4 =</span><input autocomplete="off" class="fluency-input" data-answer="8" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">54 ÷ 9 =</span><input autocomplete="off" class="fluency-input" data-answer="6" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">49 ÷ 7 =</span><input autocomplete="off" class="fluency-input" data-answer="7" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">64 ÷ 8 =</span><input autocomplete="off" class="fluency-input" data-answer="8" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">54 ÷ 6 =</span><input autocomplete="off" class="fluency-input" data-answer="9" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">36 ÷ 9 =</span><input autocomplete="off" class="fluency-input" data-answer="4" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">42 ÷ 7 =</span><input autocomplete="off" class="fluency-input" data-answer="6" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">72 ÷ 8 =</span><input autocomplete="off" class="fluency-input" data-answer="9" inputmode="numeric" type="text"/></div>
+</div>
+<button class="fluency-check-btn" id="fluencyCheckBtn" onclick="fluencyCheck()">Check My Answers</button>
+<div class="fluency-result" id="fluencyResult"></div>
+</div>
+<textarea class="journal-box" data-label="Fluency Warm-Up (Mixed Division Facts)" id="fluencyJournal" readonly="" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;"></textarea>
+</div>
+
+<div class="activity bl-yellow"><div class="activity-head"><div class="activity-num" style="background:#F5C518;color:#0E1C42;">🔎</div><div><div class="activity-title">Readiness Check</div><div class="activity-sub">Tap the card.</div></div></div><div class="activity-body">
+<p>Every triangle has exactly ___ sides and ___ angles.</p>
+<div class="value-card-row">
+<div class="value-card" onclick="rA(this,true)"><div class="big">3 and 3</div></div>
+<div class="value-card" onclick="rA(this,false)"><div class="big">4 and 4</div></div>
+<div class="value-card" onclick="rA(this,false)"><div class="big">2 and 3</div></div>
+</div>
+<div class="inline-feedback" id="rA-fb"></div>
+<div class="hint-callout">“Tri” means three. Three sides, three angles — always.</div>
+</div></div>
+
+<div class="activity bl-yellow"><div class="activity-head"><div class="activity-num" style="background:#F5C518;color:#0E1C42;">🤔</div><div><div class="activity-title">Think About It</div></div></div><div class="activity-body">
+<div class="callout callout-think"><span class="callout-icon">🧠</span><p>Atlas built two different triangles for his kite frame. One has all sides the same length. The other has all sides different. Can they both be triangles?</p></div>
+<div class="value-card-row">
+<div class="value-card" onclick="rT(this,true)"><div class="big">Yes</div></div>
+<div class="value-card" onclick="rT(this,false)"><div class="big">No</div></div>
+</div>
+<div class="inline-feedback" id="rT-fb"></div>
+<div class="journal-label">✏️ What’s different about these two triangles? <span class="saved-dot" id="dt"></span></div>
+<textarea class="journal-box" data-label="Warm-Up journal" id="j-t01" oninput="autoSave(this,'dt')" placeholder=""></textarea>
+</div></div>
+<div class="tab-next-wrap"><p class="tab-transition-voice">Same shape name, different properties — let’s sort them out.</p><button class="tab-next-btn" onclick="switchTab('learn')">Continue to 📐 Learn →</button></div>
+</div>
+<!-- LEARN TAB -->
+<div class="tab-panel" id="tab-learn">
+<div class="vocab-section"><div class="vocab-section-title">Vocabulary</div>
+<p style="font-size:14px;color:#3A4A6B;font-family:'Lora',serif;font-style:italic;margin-bottom:10px;"><strong>Equilateral triangle</strong> — all 3 sides are equal length.</p>
+<p style="font-size:14px;color:#3A4A6B;font-family:'Lora',serif;font-style:italic;margin-bottom:10px;"><strong>Isosceles triangle</strong> — exactly 2 sides are equal length.</p>
+<p style="font-size:14px;color:#3A4A6B;font-family:'Lora',serif;font-style:italic;margin-bottom:10px;"><strong>Scalene triangle</strong> — all 3 sides are different lengths.</p>
+<p style="font-size:14px;color:#3A4A6B;font-family:'Lora',serif;font-style:italic;margin-bottom:10px;"><strong>Acute triangle</strong> — all angles are less than a right angle.</p>
+<p style="font-size:14px;color:#3A4A6B;font-family:'Lora',serif;font-style:italic;margin-bottom:10px;"><strong>Obtuse triangle</strong> — one angle is greater than a right angle.</p>
+<p style="font-size:14px;color:#3A4A6B;font-family:'Lora',serif;font-style:italic;"><strong>Right triangle</strong> — one angle is exactly a right angle (a square corner).</p>
+</div>
+
+<div class="callout callout-info"><span class="callout-icon">🔧</span><p><strong>Try the Triangle Sorter.</strong> Set three side lengths and watch the triangle get classified.</p></div>
+<!-- CENTERPIECE: Triangle Sorter -->
+<div class="activity bl-geo"><div class="activity-head"><div class="activity-num" style="background:var(--geo);">🔺</div><div><div class="activity-title">Triangle Sorter</div></div></div><div class="activity-body">
+<p style="font-family:'Lora',serif;font-size:14.5px;font-style:italic;color:var(--geo-deep);margin-bottom:8px;">Set three side lengths. If they form a valid triangle, it draws and gets sorted.</p>
+<div class="tri-frame">
+<div class="tri-presets">
+<button class="tri-preset-btn" onclick="triPreset(4,4,4)">Equilateral (4,4,4)</button>
+<button class="tri-preset-btn" onclick="triPreset(3,4,5)">Right (3,4,5)</button>
+<button class="tri-preset-btn" onclick="triPreset(3,5,7)">Scalene (3,5,7)</button>
+<button class="tri-preset-btn" onclick="triPreset(5,5,3)">Isosceles (5,5,3)</button>
+</div>
+<div class="tri-stepper-row">
+<div class="tri-stepper"><div class="tri-stepper-label">Side A</div><div class="tri-stepper-wrap"><button class="tri-btn" onclick="triStep('a',-1)">−</button><span class="tri-val" id="tri-a">3</span><button class="tri-btn" onclick="triStep('a',1)">+</button></div></div>
+<div class="tri-stepper"><div class="tri-stepper-label">Side B</div><div class="tri-stepper-wrap"><button class="tri-btn" onclick="triStep('b',-1)">−</button><span class="tri-val" id="tri-b">4</span><button class="tri-btn" onclick="triStep('b',1)">+</button></div></div>
+<div class="tri-stepper"><div class="tri-stepper-label">Side C</div><div class="tri-stepper-wrap"><button class="tri-btn" onclick="triStep('c',-1)">−</button><span class="tri-val" id="tri-c">5</span><button class="tri-btn" onclick="triStep('c',1)">+</button></div></div>
+</div>
+<div class="tri-panels">
+<div class="tri-panel">
+<div class="tri-panel-title">Triangle</div>
+<div class="tri-svg-wrap" id="tri-svg-area"></div>
+</div>
+<div class="tri-panel">
+<div class="tri-panel-title">Classification</div>
+<div style="margin-bottom:8px;"><strong style="font-size:12px;color:var(--geo-deep);">BY SIDES:</strong><br/>
+<span class="tri-badge equi dim" id="badge-equi">Equilateral</span>
+<span class="tri-badge iso dim" id="badge-iso">Isosceles</span>
+<span class="tri-badge scal dim" id="badge-scal">Scalene</span>
+</div>
+<div><strong style="font-size:12px;color:var(--geo-deep);">BY ANGLES:</strong><br/>
+<span class="tri-badge right dim" id="badge-right">Right</span>
+<span class="tri-badge acute dim" id="badge-acute">Acute</span>
+<span class="tri-badge obtuse dim" id="badge-obtuse">Obtuse</span>
+</div>
+</div>
+</div>
+<div class="tri-counter" id="tri-counter">Triangles sorted: 0</div>
+<div style="text-align:center;"><button class="tri-reset-btn" onclick="triReset()">↩ Reset</button></div>
+</div>
+</div></div>
+<div class="key-concept"><div class="key-concept-label">📐 Key Concept — What You Just Saw</div>
+<p><strong>Triangles are classified two ways.</strong> By sides: equilateral (3 equal), isosceles (2 equal), scalene (0 equal). By angles: right (one square corner), acute (all angles less than a right angle), obtuse (one angle greater than a right angle). Every triangle fits one side-type AND one angle-type.</p>
+</div>
+
+<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">🧠</div><div><div class="activity-title">Worked Example: Atlas’s Kite Triangles</div></div></div><div class="activity-body">
+<div class="task-box"><div class="task-label">Problem</div><p>Atlas measures his two kite triangles. Triangle 1: sides 3, 4, 5 with one right angle. Triangle 2: sides 3, 3, 3 with all angles less than right angles.</p></div>
+<div class="bubble-row">
+<div class="bubble atlas"><div class="bubble-avatar">A</div><div class="bubble-body"><div class="bubble-name">Atlas</div><div class="bubble-text">“Triangle 1 has no equal sides — scalene. And it has a right angle — right triangle.”</div></div></div>
+<div class="bubble hazel"><div class="bubble-avatar">H</div><div class="bubble-body"><div class="bubble-name">Hazel</div><div class="bubble-text">“Triangle 2 has all sides equal — equilateral.”</div></div></div>
+</div>
+<div class="bubble-row">
+<div class="bubble felix"><div class="bubble-avatar">F</div><div class="bubble-body"><div class="bubble-name">Felix</div><div class="bubble-text">“And all its angles are less than a right angle — acute.”</div></div></div>
+<div class="bubble cora"><div class="bubble-avatar">C</div><div class="bubble-body"><div class="bubble-name">Cora</div><div class="bubble-text">“So Triangle 1 is a scalene right triangle. Triangle 2 is an equilateral acute triangle.”</div></div></div>
+</div>
+</div></div>
+<div class="socratic-box"><div class="socratic-label">🔮 Think Deeper</div><p class="socratic-q">Can a triangle be both equilateral and right? Why or why not?</p><div class="journal-label">✏️ <span class="saved-dot" id="ds1"></span></div><textarea class="journal-box" data-label="Learn socratic" id="j-s101" oninput="autoSave(this,'ds1')" placeholder=""></textarea></div>
+<div class="tab-next-wrap"><p class="tab-transition-voice">Equilateral, isosceles, scalene. Right, acute, obtuse. Every triangle has two names.</p><button class="tab-next-btn" onclick="switchTab('practice')">Continue to 🧮 Practice →</button></div>
+</div>
+<!-- PRACTICE TAB -->
+<div class="tab-panel" id="tab-practice">
+<div class="callout callout-info"><span class="callout-icon">🧭</span><p>You just sorted triangles on the Triangle Sorter. Now classify on your own.</p></div>
+<div class="callout callout-tip"><span class="callout-icon">💡</span><p><strong>Two questions every time:</strong> “What about the sides?” and “What about the angles?”</p></div>
+<!-- P1 -->
+<div class="activity bl-geo"><div class="activity-head"><div class="activity-num" style="background:var(--geo);">1</div><div><div class="activity-title">Classify by Sides</div></div></div><div class="activity-body">
+<div class="task-box"><div class="task-label">Classify</div><p>A triangle has sides 5, 5, and 5. Classify it by sides.</p>
+<svg style="display:block;margin:10px auto;" viewbox="0 0 200 180" width="200"><polygon fill="none" points="100,15 25,165 175,165" stroke="var(--geo)" stroke-width="3"></polygon><text fill="#0E1C42" font-family="Nunito" font-size="14" font-weight="800" x="55" y="100">5</text><text fill="#0E1C42" font-family="Nunito" font-size="14" font-weight="800" x="138" y="100">5</text><text fill="#0E1C42" font-family="Nunito" font-size="14" font-weight="800" x="95" y="182">5</text></svg>
+</div>
+<div class="value-card-row">
+<div class="value-card" onclick="p1(this,true)"><div class="big">Equilateral</div></div>
+<div class="value-card" onclick="p1(this,false)"><div class="big">Isosceles</div></div>
+<div class="value-card" onclick="p1(this,false)"><div class="big">Scalene</div></div>
+</div>
+<div class="feedback-branch feedback-pass" id="p1-pass"><strong>✅</strong> All 3 sides are 5 — that’s equilateral.
+      
+</div>
+<div class="feedback-branch feedback-retry" id="p1-retry"><strong>🔄 Count the equal sides. How many sides are the same length?</strong>
+
+<button class="orange-btn" onclick="resetP(1)">↩ Reset</button>
+</div>
+</div></div>
+<!-- P2 -->
+<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">2</div><div><div class="activity-title">Classify by Sides AND Angles</div></div></div><div class="activity-body">
+<div class="task-box"><div class="task-label">Classify</div><p>A triangle has sides 6, 6, 4 and one angle that’s greater than a right angle. Classify by sides AND by angles.</p></div>
+<p><strong>By sides:</strong></p>
+<div class="value-card-row" id="p2-sides">
+<div class="value-card" onclick="p2s(this,'iso')"><div class="big">Isosceles</div></div>
+<div class="value-card" onclick="p2s(this,'equi')"><div class="big">Equilateral</div></div>
+<div class="value-card" onclick="p2s(this,'scal')"><div class="big">Scalene</div></div>
+</div>
+<div class="inline-feedback" id="p2s-fb"></div>
+<p><strong>By angles:</strong></p>
+<div class="value-card-row" id="p2-angles">
+<div class="value-card" onclick="p2a(this,'obtuse')"><div class="big">Obtuse</div></div>
+<div class="value-card" onclick="p2a(this,'right')"><div class="big">Right</div></div>
+<div class="value-card" onclick="p2a(this,'acute')"><div class="big">Acute</div></div>
+</div>
+<div class="inline-feedback" id="p2a-fb"></div>
+<div class="feedback-branch feedback-pass" id="p2-pass"><strong>✅</strong> Two sides equal (6, 6) — isosceles. One angle greater than a right angle — obtuse. It’s an isosceles obtuse triangle.
+      
+</div>
+<div class="feedback-branch feedback-retry" id="p2-retry"><strong>🔄 Check again: how many sides are equal? And is the wide angle bigger or smaller than a square corner?</strong>
+
+<button class="orange-btn" onclick="resetP(2)">↩ Reset</button>
+</div>
+</div></div>
+<!-- P3 -->
+<div class="activity bl-slate"><div class="activity-head"><div class="activity-num" style="background:#3A6B9A;">3</div><div><div class="activity-title">Tricky Thinking</div></div></div><div class="activity-body">
+<div class="task-box"><div class="task-label">Judgment</div><p>Hazel says every equilateral triangle is also isosceles because it has at least 2 equal sides. Is she right?</p></div>
+<div class="value-card-row">
+<div class="value-card" onclick="p3(this,true)"><div class="big">Yes</div></div>
+<div class="value-card" onclick="p3(this,false)"><div class="big">No</div></div>
+</div>
+<div class="feedback-branch feedback-pass" id="p3-pass"><strong>✅</strong> She’s right! An equilateral triangle has 3 equal sides — which means it definitely has at least 2 equal sides. So it counts as isosceles too.
+      
+</div>
+<div class="feedback-branch feedback-retry" id="p3-retry"><strong>🔄 Think: if all 3 sides are equal, does it have at least 2 equal sides? Yes! So equilateral triangles ARE isosceles too.</strong>
+
+<button class="orange-btn" onclick="resetP(3)">↩ Reset</button>
+</div>
+</div></div>
+<div class="socratic-box"><div class="socratic-label">🔮 Think Deeper</div><p class="socratic-q">If you know a triangle is scalene, can you tell anything about its angles from that alone?</p><div class="journal-label">✏️ <span class="saved-dot" id="ds2"></span></div><textarea class="journal-box" data-label="Practice socratic" id="j-s201" oninput="autoSave(this,'ds2')" placeholder=""></textarea></div>
+<div class="tab-next-wrap"><p class="tab-transition-voice">Side-type plus angle-type — that’s the full name.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
+</div>
+<!-- SHOW WHAT YOU KNOW TAB -->
+<div class="tab-panel" id="tab-assignment">
+<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">🎯</div><div><div class="activity-title">Ready Check</div></div></div><div class="activity-body">
+<div class="q-block"><p class="q-text"><span class="q-num">A</span>A triangle has sides 7, 7, 4. Classify by sides.</p><div class="value-card-row"><div class="value-card" onclick="eA(this,false)"><div class="big">Equilateral</div></div><div class="value-card" onclick="eA(this,true)"><div class="big">Isosceles</div></div><div class="value-card" onclick="eA(this,false)"><div class="big">Scalene</div></div></div><div class="inline-feedback" id="eA-fb"></div></div>
+<div class="q-block"><p class="q-text"><span class="q-num">B</span>A triangle has one right angle marked. Classify by angles.</p><div class="value-card-row"><div class="value-card" onclick="eB(this,true)"><div class="big">Right</div></div><div class="value-card" onclick="eB(this,false)"><div class="big">Acute</div></div><div class="value-card" onclick="eB(this,false)"><div class="big">Obtuse</div></div></div><div class="inline-feedback" id="eB-fb"></div></div>
+</div></div>
+<div class="activity bl-navy"><div class="activity-head"><div class="activity-num" style="background:#0E1C42;">📬</div><div><div class="activity-title">Show What You Know</div></div></div><div class="activity-body">
+<div class="q-block"><p class="q-text"><span class="q-num">1</span><strong>Fluency.</strong> A triangle has sides of 6 cm, 6 cm, and 6 cm. Classify it by sides and by angles.</p><div class="journal-label">✏️ <span class="saved-dot" id="da1"></span></div><textarea class="journal-box" data-label="SWYK 1" id="j-a101" oninput="autoSave(this,'da1')" placeholder=""></textarea></div>
+<div class="q-block"><p class="q-text"><span class="q-num">2</span><strong>Transfer.</strong> Felix drew a triangle with one angle greater than a right angle. Can it also be isosceles? Draw or describe an example.</p><div class="journal-label">✏️ <span class="saved-dot" id="da2"></span></div><textarea class="journal-box" data-label="SWYK 2" id="j-a201" oninput="autoSave(this,'da2')" placeholder=""></textarea></div>
+
+<div class="activity bl-slate" style="margin-top:18px;border-left-color:#F5A36F;"><div class="activity-head"><div class="activity-num" style="background:#F5A36F;color:#0E1C42;">🗺️</div><div><div class="activity-title">Connection Forward</div><div class="activity-sub">Next: Lesson 3.12.06</div></div></div><div class="activity-body">
+<p>You’ve sorted triangles by sides and angles. Next lesson: four-sided shapes. They have their own families too — and more properties to discover.</p>
+</div></div>
+</div></div>
+<div class="gathered-box"><div class="gathered-head"><div class="gathered-head-icon">📋</div><div><div class="gathered-head-label">Math Journal</div><div class="gathered-head-title">All Answers</div></div></div><div class="gathered-body"><textarea class="gathered-output" id="gO" readonly="">Click “Gather” to collect.</textarea><div style="display:flex;gap:10px;margin-top:12px;"><button class="geo-btn" onclick="gather()">📋 Gather</button><button class="green-btn" onclick="copyA()">Copy</button><button class="check-btn" onclick="dl()">Download</button></div></div></div>
+<div class="turn-in-card"><div class="turn-in-header"><div class="turn-in-header-icon">✅</div><div><div class="turn-in-header-label">Turn-In</div><div class="turn-in-header-title">Ready?</div></div></div><div class="turn-in-body">
+<div class="turn-in-item" onclick="tg(this)"><span class="turn-in-check">✓</span><span>I completed Show What You Know.</span></div>
+<div class="turn-in-item" onclick="tg(this)"><span class="turn-in-check">✓</span><span>I can classify triangles by sides and by angles.</span></div>
+</div></div>
+</div>
+<div class="footer"><div class="footer-main">🏫 <span>Optima Academy Online</span></div><div class="footer-sub">Math · Grade 3 · 3.12.05 · U3 Apply</div><div class="footer-copy">© 2025 Optima Academy Online</div></div>
+</div>
+<script>
+var LS='g3-3-12-05-';
+function mini(el){if(!el)return;var em=['⭐','✨','🎉','🧩'];for(var i=0;i<8;i++){var s=document.createElement('span');s.textContent=em[Math.floor(Math.random()*em.length)];s.style.cssText='position:absolute;font-size:'+(16+Math.random()*14)+'px;pointer-events:none;z-index:999;animation:mini .7s ease-out forwards;left:'+(20+Math.random()*60)+'%;top:'+(Math.random()*40)+'%;';el.style.position='relative';el.style.overflow='visible';el.appendChild(s);setTimeout(function(x){x.remove()}.bind(null,s),800);}}
+function switchTab(t){document.querySelectorAll('.tab-panel').forEach(function(p){p.classList.remove('active');});document.getElementById('tab-'+t).classList.add('active');document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active');if(b.dataset.tab===t){b.classList.add('active');b.classList.add('visited');}});var bs=[].slice.call(document.querySelectorAll('.tab-btn'));var i=bs.findIndex(function(b){return b.classList.contains('active');});var p=Math.round(((i+1)/bs.length)*100);document.getElementById('pf').style.width=p+'%';document.getElementById('pp').textContent=p+'%';window.scrollTo({top:0,behavior:'smooth'});}
+function autoSave(el,d){try{localStorage.setItem(LS+el.id,el.value);}catch(e){}var dt=document.getElementById(d);if(dt){dt.classList.add('saved');setTimeout(function(){dt.classList.remove('saved')},900);}}
+function restore(){document.querySelectorAll('textarea.journal-box').forEach(function(t){try{var v=localStorage.getItem(LS+t.id);if(v)t.value=v;}catch(e){}});}
+function showBranch(id){document.getElementById(id).classList.add('show');}
+function hideBranches(p){['pass','retry'].forEach(function(x){var e=document.getElementById(p+'-'+x);if(e)e.classList.remove('show');});}
+
+/* Warm-Up */
+function rA(c,ok){c.parentElement.querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});var f=document.getElementById('rA-fb');if(ok){c.classList.add('good');f.className='inline-feedback show good';f.innerHTML='<strong>✅</strong> Three sides, three angles — that’s what makes it a triangle.';mini(c);}else{c.classList.add('bad');f.className='inline-feedback show think';f.innerHTML='“Tri” means three. Count the sides and angles of any triangle.';}}
+function rT(c,ok){c.parentElement.querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});var f=document.getElementById('rT-fb');if(ok){c.classList.add('good');f.className='inline-feedback show good';f.innerHTML='<strong>✅</strong> Yes! Both have 3 sides and 3 angles. They’re both triangles — just different types.';mini(c);}else{c.classList.add('bad');f.className='inline-feedback show think';f.innerHTML='A triangle only needs 3 straight sides that close up. The sides don’t have to match.';}}
+
+/* ========== TRIANGLE SORTER ========== */
+var tri={a:3,b:4,c:5,count:0};
+function triStep(side,d){tri[side]=Math.max(1,Math.min(10,tri[side]+d));triRender();}
+function triPreset(a,b,c){tri.a=a;tri.b=b;tri.c=c;triRender();}
+function triReset(){tri.a=3;tri.b=4;tri.c=5;tri.count=0;document.getElementById('tri-counter').textContent='Triangles sorted: 0';triRender();}
+function triRender(){
+  document.getElementById('tri-a').textContent=tri.a;
+  document.getElementById('tri-b').textContent=tri.b;
+  document.getElementById('tri-c').textContent=tri.c;
+  var a=tri.a,b=tri.b,c=tri.c;
+  var svgArea=document.getElementById('tri-svg-area');
+  // triangle inequality
+  if(a+b<=c||a+c<=b||b+c<=a){
+    svgArea.innerHTML='<div class="tri-error">Can’t form a triangle — the two shorter sides don’t reach!</div>';
+    ['equi','iso','scal','right','acute','obtuse'].forEach(function(k){document.getElementById('badge-'+k).classList.add('dim');});
+    return;
+  }
+  tri.count++;
+  document.getElementById('tri-counter').textContent='Triangles sorted: '+tri.count;
+  // compute angles using law of cosines
+  var cosA=(b*b+c*c-a*a)/(2*b*c);
+  var cosB=(a*a+c*c-b*b)/(2*a*c);
+  var cosC=(a*a+b*b-c*c)/(2*a*b);
+  var angA=Math.acos(Math.max(-1,Math.min(1,cosA)))*180/Math.PI;
+  var angB=Math.acos(Math.max(-1,Math.min(1,cosB)))*180/Math.PI;
+  var angC=Math.acos(Math.max(-1,Math.min(1,cosC)))*180/Math.PI;
+  // classify by sides
+  var sideType;
+  if(a===b&&b===c) sideType='equi';
+  else if(a===b||b===c||a===c) sideType='iso';
+  else sideType='scal';
+  // classify by angles
+  var maxAng=Math.max(angA,angB,angC);
+  var angleType;
+  if(Math.abs(maxAng-90)<1) angleType='right';
+  else if(maxAng>90) angleType='obtuse';
+  else angleType='acute';
+  // badges
+  ['equi','iso','scal'].forEach(function(k){document.getElementById('badge-'+k).classList.toggle('dim',k!==sideType);});
+  ['right','acute','obtuse'].forEach(function(k){document.getElementById('badge-'+k).classList.toggle('dim',k!==angleType);});
+  // draw triangle SVG
+  // place C at origin, B along x-axis at distance c, then A by angles
+  var Cx=0,Cy=0;
+  var Bx=c*20,By=0; // scale factor 20
+  var Ax=b*20*Math.cos(angC*Math.PI/180);
+  var Ay=-b*20*Math.sin(angC*Math.PI/180);
+  // normalize to fit in 240x200
+  var pts=[[Ax,Ay],[Bx,By],[Cx,Cy]];
+  var minX=Math.min(Ax,Bx,Cx),maxX=Math.max(Ax,Bx,Cx);
+  var minY=Math.min(Ay,By,Cy),maxY=Math.max(Ay,By,Cy);
+  var w=maxX-minX||1,h=maxY-minY||1;
+  var sc=Math.min(200/w,160/h);
+  var ox=(240-w*sc)/2-minX*sc;
+  var oy=(190-h*sc)/2-minY*sc+10;
+  var px=pts.map(function(p){return[(p[0]*sc+ox).toFixed(1),(p[1]*sc+oy).toFixed(1)];});
+  // side midpoints for labels
+  var mAB=[((+px[0][0]+ +px[1][0])/2),((+px[0][1]+ +px[1][1])/2)];
+  var mBC=[((+px[1][0]+ +px[2][0])/2),((+px[1][1]+ +px[2][1])/2)];
+  var mCA=[((+px[2][0]+ +px[0][0])/2),((+px[2][1]+ +px[0][1])/2)];
+  // right angle marker
+  var raMarker='';
+  if(angleType==='right'){
+    // find which angle is 90
+    var rIdx=0;
+    if(Math.abs(angB-90)<1) rIdx=1;
+    else if(Math.abs(angC-90)<1) rIdx=2;
+    var rv=px[rIdx];
+    raMarker='<rect x="'+(+rv[0]-2)+'" y="'+(+rv[1]-8)+'" width="8" height="8" fill="none" stroke="var(--geo-deep)" stroke-width="1.5"/>';
+  }
+  var svg='<svg viewBox="0 0 240 200" width="240" xmlns="http://www.w3.org/2000/svg">';
+  svg+='<polygon points="'+px.map(function(p){return p.join(',');}).join(' ')+'" fill="var(--geo-light)" stroke="var(--geo)" stroke-width="3" stroke-linejoin="round"/>';
+  svg+=raMarker;
+  svg+='<text x="'+mCA[0]+'" y="'+(mCA[1]-6)+'" font-size="13" fill="#0E1C42" font-weight="800" font-family="Nunito" text-anchor="middle">'+a+'</text>';
+  svg+='<text x="'+mAB[0]+'" y="'+(mAB[1]-6)+'" font-size="13" fill="#0E1C42" font-weight="800" font-family="Nunito" text-anchor="middle">'+c+'</text>';
+  svg+='<text x="'+mBC[0]+'" y="'+(+mBC[1]+16)+'" font-size="13" fill="#0E1C42" font-weight="800" font-family="Nunito" text-anchor="middle">'+b+'</text>';
+  svg+='</svg>';
+  svgArea.innerHTML=svg;
+}
+
+/* Practice */
+function p1(c,ok){c.parentElement.querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});hideBranches('p1');if(ok){c.classList.add('good');showBranch('p1-pass');mini(c);}else{c.classList.add('bad');showBranch('p1-retry');}}
+var p2state={s:false,a:false};
+function p2s(c,v){c.parentElement.querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});var f=document.getElementById('p2s-fb');if(v==='iso'){c.classList.add('good');f.className='inline-feedback show good';f.innerHTML='<strong>✅</strong> Two sides equal — isosceles.';p2state.s=true;}else{c.classList.add('bad');f.className='inline-feedback show think';f.innerHTML='Count: how many sides are equal? 6, 6, 4.';p2state.s=false;}checkP2();}
+function p2a(c,v){c.parentElement.querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});var f=document.getElementById('p2a-fb');if(v==='obtuse'){c.classList.add('good');f.className='inline-feedback show good';f.innerHTML='<strong>✅</strong> One angle greater than a right angle — obtuse.';p2state.a=true;}else{c.classList.add('bad');f.className='inline-feedback show think';f.innerHTML='The problem says one angle is greater than a right angle. What’s that called?';p2state.a=false;}checkP2();}
+function checkP2(){hideBranches('p2');if(p2state.s&&p2state.a){showBranch('p2-pass');mini(document.getElementById('p2-sides'));}else if(!p2state.s&&!p2state.a){/* wait */}else{/* partial, wait for both */}}
+function p3(c,ok){c.parentElement.querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});hideBranches('p3');if(ok){c.classList.add('good');showBranch('p3-pass');mini(c);}else{c.classList.add('bad');showBranch('p3-retry');}}
+function resetP(n){if(n===1){document.querySelectorAll('#p1-pass,#p1-retry').forEach(function(e){e.classList.remove('show');});document.querySelectorAll('#tab-practice .activity:nth-child(3) .value-card').forEach(function(x){x.classList.remove('good','bad');});}
+if(n===2){p2state={s:false,a:false};['p2s-fb','p2a-fb'].forEach(function(id){document.getElementById(id).className='inline-feedback';});document.querySelectorAll('#p2-sides .value-card, #p2-angles .value-card').forEach(function(x){x.classList.remove('good','bad');});hideBranches('p2');}
+if(n===3){hideBranches('p3');document.querySelectorAll('#tab-practice .activity:last-of-type .value-card').forEach(function(x){x.classList.remove('good','bad');});}}
+
+/* Ready Check */
+function eA(c,ok){c.parentElement.querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});var f=document.getElementById('eA-fb');if(ok){c.classList.add('good');f.className='inline-feedback show good';f.innerHTML='<strong>✅</strong> 7, 7, 4 — two sides equal. Isosceles.';mini(c);}else{c.classList.add('bad');f.className='inline-feedback show think';f.innerHTML='How many sides are the same length? 7, 7, and 4.';}}
+function eB(c,ok){c.parentElement.querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});var f=document.getElementById('eB-fb');if(ok){c.classList.add('good');f.className='inline-feedback show good';f.innerHTML='<strong>✅</strong> One right angle — right triangle.';mini(c);}else{c.classList.add('bad');f.className='inline-feedback show think';f.innerHTML='A right angle is a square corner. If a triangle has one, it’s a right triangle.';}}
+
+/* Gather / Copy / Download */
+function gather(){var o='Lesson 3.12.05 — Properties of Triangles\n\n';document.querySelectorAll('textarea.journal-box').forEach(function(t){o+=(t.dataset.label||t.id)+'\n'+((t.value||'').trim()||'[empty]')+'\n\n';});document.getElementById('gO').value=o;}
+function copyA(){gather();if(navigator.clipboard)navigator.clipboard.writeText(document.getElementById('gO').value);}
+function dl(){gather();var t=document.getElementById('gO').value;var w=window.open('','_blank');w.document.write('<title>3.12.05</title><pre>'+t.replace(/[&<>]/g,function(s){return{'&':'&amp;','<':'&lt;','>':'&gt;'}[s];})+'</pre>');w.document.close();w.print();}
+function tg(i){i.classList.toggle('checked');var c=i.querySelector('.turn-in-check');if(c)c.textContent=i.classList.contains('checked')?'✓':'';}
+
+async function loadVideoManifest(){try{var res=await fetch('video-manifest.md',{cache:'no-store'});if(!res.ok)return;var txt=await res.text();var map=parseManifest(txt);document.querySelectorAll('.video-wrap[data-video-slot]').forEach(function(w){var slot=w.dataset.videoSlot;if(map[slot]){var ratio=w.querySelector('.video-ratio');ratio.innerHTML=map[slot].trim();var iframe=ratio.querySelector('iframe');if(iframe){iframe.classList.add('video-iframe');iframe.setAttribute('allowfullscreen','');iframe.setAttribute('loading','lazy');}}});}catch(e){}}
+function parseManifest(txt){var map={};var lines=txt.split(/\r?\n/);var current=null,buf=[];function commit(){if(current&&buf.join('\n').trim()){map[current]=buf.join('\n').trim();}buf=[];}for(var i=0;i<lines.length;i++){var line=lines[i];var m=line.match(/^([A-Za-z0-9-]+):\s*$/);if(m){commit();current=m[1];}else if(current){buf.push(line);}}commit();return map;}
+
+window.addEventListener('DOMContentLoaded',function(){loadVideoManifest();restore();triRender();});
+</script>
+<script id="fluencyScript">
+(function(){
+var FLUENCY_TIMED = false;
+var FLUENCY_TITLE = "Mixed Division Facts";
+var fluencyInterval = null;
+var fluencySecondsLeft = 60;
+
+window.fluencyStart = function(){
+  if(!FLUENCY_TIMED) return;
+  var grid = document.getElementById('fluencyGrid');
+  if(!grid) return;
+  grid.querySelectorAll('.fluency-input').forEach(function(i){ i.disabled = false; });
+  var btn = document.getElementById('fluencyStartBtn');
+  if(btn){ btn.disabled = true; btn.textContent = 'Timer Running\u2026'; }
+  var checkBtn = document.getElementById('fluencyCheckBtn');
+  if(checkBtn) checkBtn.disabled = false;
+  fluencySecondsLeft = 60;
+  fluencyUpdateDisplay();
+  fluencyInterval = setInterval(function(){
+    fluencySecondsLeft--;
+    fluencyUpdateDisplay();
+    if(fluencySecondsLeft <= 0){
+      clearInterval(fluencyInterval);
+      grid.querySelectorAll('.fluency-input').forEach(function(i){ i.disabled = true; });
+      window.fluencyCheck();
+    }
+  }, 1000);
+};
+
+function fluencyUpdateDisplay(){
+  var el = document.getElementById('fluencyTimerDisplay');
+  if(el) el.textContent = fluencySecondsLeft + 's';
+}
+
+window.fluencyCheck = function(){
+  if(fluencyInterval){ clearInterval(fluencyInterval); fluencyInterval = null; }
+  var items = document.querySelectorAll('#fluencyGrid .fluency-item');
+  var correct = 0, attempted = 0, total = items.length;
+  var lines = [];
+  items.forEach(function(item){
+    var input = item.querySelector('.fluency-input');
+    var qText = item.querySelector('.fluency-q').textContent;
+    var given = (input.value || '').trim();
+    var ans = input.dataset.answer;
+    var ok = given !== '' && given === ans;
+    if(given !== '') attempted++;
+    item.classList.remove('fluency-correct','fluency-wrong');
+    if(ok){ correct++; item.classList.add('fluency-correct'); }
+    else if(given !== ''){ item.classList.add('fluency-wrong'); }
+    lines.push(qText + ' ' + ans + '   [answered: ' + (given || 'blank') + ']' + (ok ? ' \u2713' : (given ? ' \u2717' : '')));
+  });
+  var pct = total ? Math.round((correct/total)*100) : 0;
+  var timeStr = FLUENCY_TIMED ? (' in ' + (60 - fluencySecondsLeft) + ' seconds') : '';
+  var summary = 'Fluency Warm-Up \u2014 ' + FLUENCY_TITLE + '\n' + correct + ' / ' + total + ' correct (' + pct + '%)' + timeStr + '\n\n' + lines.join('\n');
+  var j = document.getElementById('fluencyJournal');
+  if(j) j.value = summary;
+  var resEl = document.getElementById('fluencyResult');
+  if(resEl) resEl.innerHTML = correct + ' / ' + total + ' correct (' + pct + '%)' + timeStr;
+  var checkBtn = document.getElementById('fluencyCheckBtn');
+  if(checkBtn) checkBtn.disabled = true;
+  var startBtn = document.getElementById('fluencyStartBtn');
+  if(startBtn) startBtn.textContent = 'Done';
+};
+})();
+</script>
+</body></html>

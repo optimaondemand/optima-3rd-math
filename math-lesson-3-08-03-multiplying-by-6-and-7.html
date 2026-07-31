@@ -1,3 +1,464 @@
 <!DOCTYPE html>
 
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Optima Academy Online — Grade 3 Math Lesson 3.08.03</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Nunito:wght@400;700;800;900&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Nunito',Verdana,sans-serif;background:#FAF6F2;color:#0E1C42;line-height:1.6}.page-wrap{max-width:920px;margin:0 auto;background:#fff;box-shadow:0 0 40px rgba(14,28,66,.08)}
+:root{--nav:#2A4D7C;--nav-light:#DDE4F0;--nav-mid:#A6B8D6;--nav-deep:#1A3052}
+.progress-wrap{position:sticky;top:0;z-index:200;background:#0E1C42;padding:8px 20px 10px;display:flex;align-items:center;gap:14px}.progress-label{font-size:12px;color:#F5C518;font-weight:800;text-transform:uppercase}.progress-track{flex:1;height:10px;background:rgba(255,255,255,.1);border-radius:10px;overflow:hidden}.progress-fill{height:100%;width:0%;background:linear-gradient(90deg,var(--nav),#A6B8D6,#F5C518,var(--nav));background-size:200% 100%;animation:shimmer 3s linear infinite;border-radius:10px;transition:width .4s}.progress-pct{font-size:13px;color:#F5C518;font-weight:800;min-width:36px;text-align:right}@keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
+.header{background:#0E1C42;border-bottom:6px solid var(--nav);padding:20px 28px 18px}.header-brand{display:flex;align-items:center;gap:12px;margin-bottom:14px}.header-logo{width:52px;height:52px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center}.header-logo img{width:48px;height:38px}.header-org{font-size:22px;color:#fff;font-weight:800}.header-sub{font-size:11px;color:#A6B8D6}.header-title{font-family:'Lora',serif;font-size:28px;color:#fff;font-weight:700;margin-bottom:10px}.header-title em{color:#A6B8D6;font-style:italic}.header-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(42,77,124,.25);border:1.5px solid rgba(166,184,214,.5);border-radius:28px;padding:6px 16px}.header-badge-icon{font-size:22px}.header-badge-text{font-size:18px;color:#fff;font-weight:800}
+.u8-ribbon{background:linear-gradient(135deg,#F0F4FA,#DDE4F0);border-bottom:2px solid #A6B8D6;padding:10px 28px;display:flex;align-items:center;gap:14px;font-family:'Lora',serif}.u8-pill{background:var(--nav);color:#fff;font-family:'Nunito',sans-serif;font-weight:900;font-size:10px;text-transform:uppercase;letter-spacing:.6px;padding:4px 10px;border-radius:20px}.u8-text{font-size:14px;color:var(--nav-deep);font-weight:700;font-style:italic}
+.quote-strip{background:linear-gradient(135deg,#DDE4F0,#A6B8D6);border-bottom:2px solid #A6B8D6;padding:14px 28px;text-align:center}.quote-strip-text{font-family:'Lora',serif;font-size:16px;font-style:italic;color:#1A3052}.quote-strip-attr{font-size:11px;color:var(--nav);font-weight:700;margin-top:4px;text-transform:uppercase}
+.info-strip{display:flex;flex-wrap:wrap;background:#fff;border-bottom:2px solid #E2E8F4}.info-cell{flex:1;min-width:150px;padding:12px 16px;border-right:1px solid #E2E8F4;display:flex;align-items:center;gap:10px}.info-icon{width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px}.info-label{font-size:10px;color:#7A88A8;text-transform:uppercase;font-weight:700}.info-value{font-size:16px;color:#0E1C42;font-weight:800}.info-detail{font-size:11px;color:#3A4A6B}
+.explorer-strip{display:flex;align-items:center;gap:16px;padding:12px 28px;background:linear-gradient(135deg,#1A2340,#0E1C42);border-bottom:3px solid var(--nav)}.explorer-compass{font-size:28px}.explorer-mission-label{font-size:10px;color:#F5C518;text-transform:uppercase;font-weight:800}.explorer-mission-text{font-size:15px;color:#fff;font-weight:700}
+.intro-2col{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:20px 28px 4px}@media(max-width:720px){.intro-2col{grid-template-columns:1fr}}.intro-card{background:#fff;border:2px solid #E2E8F4;border-radius:18px;overflow:hidden}.intro-card-head{display:flex;align-items:center;gap:10px;padding:14px 18px;border-bottom:2px solid}.intro-card-head-icon{width:40px;height:40px;border-radius:50%;color:#fff;font-size:20px;display:flex;align-items:center;justify-content:center}.intro-card-head-label{font-size:10px;color:#7A88A8;text-transform:uppercase;font-weight:700}.intro-card-head-title{font-size:18px;color:#0E1C42;font-weight:800}.intro-card-body{padding:14px 18px}.intro-card-body p{font-size:15px;color:#3A4A6B;line-height:1.65;margin-bottom:8px}.obj-line{display:flex;gap:8px;font-size:15px;color:#0E1C42;line-height:1.55;margin-bottom:8px}.theme-question .intro-card-head{background:#FFF8E6;border-color:#F5E6C8}.theme-question .intro-card-head-icon{background:#F5C518}.theme-objectives .intro-card-head{background:var(--nav-light);border-color:var(--nav-mid)}.theme-objectives .intro-card-head-icon{background:var(--nav)}
+.need-strip{display:flex;flex-wrap:wrap;gap:8px;padding:12px 28px 18px}.need-strip-label{font-size:13px;color:#3A4A6B;font-weight:700}.need-chip{background:#E3F8ED;border:1.5px solid #B8E8CF;border-radius:20px;padding:5px 12px;font-size:13px;color:#0E1C42;font-weight:700}
+.tab-bar{position:sticky;top:38px;z-index:100;background:#fff;border-bottom:3px solid #E2E8F4;display:flex;overflow-x:auto;box-shadow:0 -4px 0 0 #0E1C42}.tab-btn{flex:1;min-width:130px;padding:12px 8px 11px;background:transparent;border:none;border-bottom:4px solid transparent;font-family:'Nunito',sans-serif;font-size:13px;font-weight:700;color:#7A88A8;cursor:pointer;text-align:center}.tab-btn.active{color:#0E1C42;border-bottom-color:var(--nav);background:#fff}.tab-btn .tab-check{display:none;color:#2DB87A;margin-left:4px;font-weight:800}.tab-btn.visited .tab-check{display:inline}.tab-panel{display:none;padding:24px 28px 36px}.tab-panel.active{display:block}
+.activity{background:#fff;border:2px solid #E2E8F4;border-radius:18px;margin-bottom:18px}.activity.bl-nav{border-left:6px solid var(--nav)}.activity.bl-green{border-left:6px solid #2DB87A}.activity.bl-yellow{border-left:6px solid #F5C518}.activity.bl-slate{border-left:6px solid #3A6B9A}.activity.bl-navy{border-left:6px solid #0E1C42}.activity-head{display:flex;align-items:center;gap:12px;padding:14px 20px 14px 18px;border-bottom:1.5px solid #E2E8F4}.activity-num{width:38px;height:38px;border-radius:14px;color:#fff;font-size:18px;font-weight:800;display:flex;align-items:center;justify-content:center}.activity-title{font-size:19px;color:#0E1C42;font-weight:800}.activity-sub{font-size:12px;color:#7A88A8}.activity-body{padding:18px 22px}.activity-body p{font-size:16px;color:#3A4A6B;line-height:1.7;margin-bottom:12px}
+.callout{border-radius:14px;padding:16px 18px;display:flex;gap:12px;margin-bottom:14px}.callout-icon{font-size:28px}.callout p{font-size:15.5px;color:#0E1C42;line-height:1.65;margin:0}.callout-info{background:var(--nav-light);border:2px solid var(--nav-mid)}.callout-think{background:#FFF8E6;border:2px solid #F5E6C8}.callout-tip{background:#E3F8ED;border:2px solid #B8E8CF}
+.key-concept{background:var(--nav-light);border:2px solid var(--nav-mid);border-radius:14px;padding:16px 18px;margin-bottom:14px}.key-concept-label{font-size:12px;color:var(--nav-deep);text-transform:uppercase;font-weight:800;margin-bottom:8px}.key-concept p{font-size:15px;color:#0E1C42;line-height:1.7}
+.socratic-box{background:linear-gradient(135deg,var(--nav-light),#A6B8D6);border:2px solid var(--nav-mid);border-radius:14px;padding:16px 18px;margin-bottom:14px}.socratic-label{font-size:12px;color:var(--nav-deep);text-transform:uppercase;font-weight:800;margin-bottom:8px}.socratic-q{font-size:15.5px;color:#0E1C42;font-style:italic}
+.journal-label{font-size:13px;color:#3A4A6B;font-weight:700;margin:10px 0 4px}.journal-box{width:100%;min-height:80px;border:2px solid #E2E8F4;border-radius:12px;padding:12px 14px;font-family:'Nunito',sans-serif;font-size:15px;color:#0E1C42;resize:vertical}.journal-box:focus{outline:none;border-color:var(--nav)}.saved-dot{width:8px;height:8px;border-radius:50%;background:#E2E8F4;display:inline-block;transition:.3s}.saved-dot.saved{background:#2DB87A}
+.check-btn,.nav-btn,.green-btn,.orange-btn{display:inline-flex;align-items:center;gap:6px;color:#fff;border:none;border-radius:12px;padding:10px 20px;font-size:14px;font-weight:800;cursor:pointer;font-family:'Nunito',sans-serif;margin-top:10px}.check-btn{background:#3A6B9A}.nav-btn{background:var(--nav)}.green-btn{background:#2DB87A}.orange-btn{background:#E07B39}
+.hint-callout{background:#FFF8E6;border:2px solid #F5C518;border-radius:10px;padding:10px 14px;margin:12px 0;font-size:14px;color:#5A4A00;font-weight:700}
+.task-box{background:#FAFBFF;border:2px solid #E2E8F4;border-radius:14px;padding:16px 18px;margin-bottom:14px}.task-label{font-size:12px;color:var(--nav-deep);text-transform:uppercase;font-weight:800;margin-bottom:10px}
+.feedback-branch{display:none;margin-top:16px;border-radius:14px;padding:16px}.feedback-branch.show{display:block;animation:reveal .35s}.feedback-pass{background:#E3F8ED;border:2px solid #B8E8CF}.feedback-retry{background:#FFF0E6;border:2px solid #F5C8A0}
+.value-card-row{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}.value-card{border:2px solid #E2E8F4;background:#fff;border-radius:14px;padding:10px 14px;min-width:110px;text-align:center;cursor:pointer;transition:.2s}.value-card:hover{border-color:var(--nav);background:var(--nav-light)}.value-card.good{background:#E3F8ED;border-color:#2DB87A}.value-card.bad{background:#FFF0E6;border-color:#E07B39;animation:shake .25s}.value-card .big{font-size:22px;font-weight:900;color:#0E1C42}.value-card .small{font-size:12px;color:#3A4A6B;font-weight:800}
+.fill-row{display:flex;align-items:center;gap:8px;background:#FAFBFF;border:2px solid #E2E8F4;border-radius:12px;padding:12px 14px;margin:10px 0;flex-wrap:wrap;font-size:17px;font-weight:800;color:#0E1C42}.fill-input{width:100px;padding:8px 10px;border:2.5px solid var(--nav-mid);border-radius:10px;font-size:17px;font-weight:900;color:var(--nav-deep);text-align:center;font-family:'Nunito',sans-serif;background:#fff}.fill-input:focus{outline:none;border-color:var(--nav)}.fill-input.good{border-color:#2DB87A;background:#E3F8ED;color:#1A8A5A}.fill-input.bad{border-color:#E07B39;background:#FFF0E6;animation:shake .25s}
+.q-block{background:#FAFBFF;border:2px solid #E2E8F4;border-radius:14px;padding:14px 18px;margin-bottom:14px}.q-num{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--nav);color:#fff;font-weight:800;font-size:14px;margin-right:8px;vertical-align:middle}.q-text{font-size:15.5px;color:#0E1C42;line-height:1.65}
+.gathered-box{background:#fff;border:2px solid #E2E8F4;border-radius:18px;overflow:hidden;margin-top:24px}.gathered-head{display:flex;align-items:center;gap:14px;background:linear-gradient(135deg,#0E1C42,#1A2D5A);padding:18px 22px}.gathered-head-icon{font-size:32px}.gathered-head-label{font-size:11px;color:#F5C518;font-weight:800;text-transform:uppercase}.gathered-head-title{font-size:18px;color:#fff;font-weight:800}.gathered-body{padding:16px 22px}.gathered-output{width:100%;min-height:160px;border:2px solid #E2E8F4;border-radius:12px;padding:14px;font-family:monospace;font-size:13px;background:#FAFBFF}
+.tab-next-wrap{text-align:center;padding:24px 0 8px}.tab-transition-voice{font-family:'Lora',serif;font-size:15px;font-style:italic;color:#1A3052;margin-bottom:12px}.tab-next-btn{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--nav),#3F5A8A);color:#fff;border:none;border-radius:28px;padding:13px 28px;font-size:15px;font-weight:800;cursor:pointer;box-shadow:0 4px 14px rgba(42,77,124,.3);animation:float 3s infinite}
+.turn-in-card{background:#fff;border:2px solid #E2E8F4;border-radius:18px;overflow:hidden;margin-top:18px}.turn-in-header{display:flex;align-items:center;gap:14px;background:var(--nav-light);padding:18px 22px;border-bottom:2px solid var(--nav-mid)}.turn-in-header-icon{font-size:36px}.turn-in-header-label{font-size:11px;color:var(--nav-deep);font-weight:800;text-transform:uppercase}.turn-in-header-title{font-family:'Lora',serif;font-size:22px;color:#0E1C42;font-weight:700}.turn-in-body{padding:18px 22px 20px}.turn-in-item{display:flex;align-items:center;gap:14px;padding:12px 16px;background:#FAFBFF;border:1.5px solid #E2E8F4;border-radius:12px;cursor:pointer;margin-bottom:10px}.turn-in-item.checked{background:#E3F8ED;border-color:#B8E8CF}.turn-in-check{width:26px;height:26px;border-radius:8px;border:2px solid var(--nav-mid);background:#fff;display:flex;align-items:center;justify-content:center;font-size:16px}.turn-in-item.checked .turn-in-check{background:#2DB87A;border-color:#2DB87A;color:#fff}
+.footer{background:#0E1C42;border-top:4px solid var(--nav);padding:18px 28px;text-align:center}.footer-main{font-size:14px;color:#fff;margin-bottom:4px}.footer-main span{color:#A6B8D6;font-weight:700}.footer-sub{font-size:12px;color:rgba(255,255,255,.5)}.footer-copy{font-size:11px;color:rgba(255,255,255,.3)}
+.inline-feedback{display:none;margin:12px 0;border-radius:14px;padding:12px 14px;font-weight:800;line-height:1.5}.inline-feedback.show{display:block;animation:reveal .3s}.inline-feedback.good{background:#E3F8ED;border:2px solid #B8E8CF;color:#0E1C42}.inline-feedback.think{background:#FFF3DC;border:2px solid #F5E6C8;color:#5A4A3A}
+.vocab-section{background:#fff;border:2px solid var(--nav-mid);border-left:6px solid var(--nav);border-radius:18px;padding:14px 20px;margin:0 0 20px}.vocab-section-title{font-size:16px;color:#0E1C42;font-weight:900;margin-bottom:4px}
+.bubble-row{display:flex;gap:12px;flex-wrap:wrap;margin:14px 0}.bubble{display:flex;gap:10px;flex:1 1 260px;max-width:340px;background:#fff;border:2px solid #E2E8F4;border-radius:18px;padding:12px 14px}.bubble.atlas{border-left:5px solid #6B3FA0;background:linear-gradient(135deg,#fff,#F8F4FF)}.bubble.hazel{border-left:5px solid #2DB87A;background:linear-gradient(135deg,#fff,#F4FBF7)}.bubble.felix{border-left:5px solid #F5C518;background:linear-gradient(135deg,#fff,#FEFBEB)}.bubble.cora{border-left:5px solid #3A6B9A;background:linear-gradient(135deg,#fff,#F4F8FC)}.bubble-avatar{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:900;color:#fff;flex-shrink:0;font-family:'Lora',serif}.bubble.atlas .bubble-avatar{background:#6B3FA0}.bubble.hazel .bubble-avatar{background:#2DB87A}.bubble.felix .bubble-avatar{background:#F5C518;color:#0E1C42}.bubble.cora .bubble-avatar{background:#3A6B9A}.bubble-body{flex:1;min-width:0}.bubble-name{font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.7px;margin-bottom:3px;color:#6B3FA0}.bubble.hazel .bubble-name{color:#1A8A5A}.bubble.felix .bubble-name{color:#8A6D2B}.bubble.cora .bubble-name{color:#1A6B8E}.bubble-text{font-size:14.5px;color:#0E1C42;line-height:1.5;font-weight:600;font-family:'Lora',serif;font-style:italic}
+.video-wrap{border-radius:18px;overflow:hidden;border:2px solid #E2E8F4;box-shadow:0 4px 20px rgba(14,28,66,.08);background:#000;margin:0 0 22px}.video-wrap-header{display:flex;align-items:center;gap:12px;padding:12px 18px;background:linear-gradient(135deg,#0E1C42,#1A2D5A);border-bottom:2px solid rgba(42,77,124,.3)}.video-wrap-type{font-size:10px;color:#F5C518;text-transform:uppercase;letter-spacing:1.5px;font-weight:800;margin-bottom:2px}.video-wrap-title{font-size:16px;color:#fff;font-weight:800;line-height:1.2}.video-ratio{position:relative;padding-bottom:56.25%;height:0;overflow:hidden}.video-placeholder,.video-iframe{position:absolute;top:0;left:0;width:100%;height:100%}.video-placeholder{background:linear-gradient(135deg,#0E1C42,#1A2D5A);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px}.video-placeholder-icon{font-size:44px;margin-bottom:10px;opacity:.55}.video-placeholder-text{font-size:14px;color:rgba(255,255,255,.78);font-weight:700;line-height:1.5;max-width:620px}.video-placeholder-id{font-size:11px;color:rgba(245,197,24,.85);font-family:monospace;margin-top:10px;letter-spacing:.5px}.record-note{margin-top:10px;background:rgba(255,255,255,.08);border:1px solid rgba(245,197,24,.28);border-radius:10px;padding:8px 10px;color:rgba(255,255,255,.82);font-size:12.5px;line-height:1.45;max-width:620px}
+@keyframes reveal{0%{opacity:0;transform:translateY(10px)}100%{opacity:1;transform:translateY(0)}}@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}@keyframes pop{0%{transform:scale(0)}70%{transform:scale(1.15)}100%{transform:scale(1)}}@keyframes mini{0%{transform:translateY(0) scale(0);opacity:1}50%{transform:translateY(-30px) scale(1.2)}100%{transform:translateY(-60px) scale(.6);opacity:0}}@keyframes dot-pop{0%{transform:scale(0);opacity:0}70%{transform:scale(1.2);opacity:1}100%{transform:scale(1);opacity:1}}@keyframes jump{0%{transform:translateX(0) translateY(0)}50%{transform:translateY(-12px)}100%{transform:translateX(var(--jx,0)) translateY(0)}}
+/* ARRAY BUILDER */
+.ab-frame{background:#fff;border:2px solid var(--nav-mid);border-radius:16px;padding:18px;margin:14px 0}
+.ab-task{background:linear-gradient(135deg,#FFFBE6,#FFF3DC);border:2px solid #F5E6C8;border-radius:14px;padding:14px 16px;margin-bottom:14px;font-family:'Lora',serif;font-size:16px;color:#0E1C42;font-weight:700;text-align:center}
+.ab-task strong{background:#F5C518;color:#0E1C42;padding:0 4px;border-radius:4px}
+.ab-controls{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:14px}
+.ab-pick{background:var(--nav-light);border:2px solid var(--nav-mid);border-radius:14px;padding:10px 14px;text-align:center;min-width:160px}
+.ab-pick-label{font-size:11px;color:var(--nav-deep);font-weight:900;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.ab-stepper{display:flex;align-items:center;justify-content:center;gap:10px}
+.ab-btn{background:#fff;border:2.5px solid var(--nav);color:var(--nav);width:36px;height:36px;border-radius:50%;font-size:18px;font-weight:900;cursor:pointer}
+.ab-btn:hover{background:var(--nav);color:#fff}
+.ab-val{font-family:'Lora',serif;font-size:30px;font-weight:900;color:#0E1C42;min-width:50px}
+.ab-array{background:#FAFBFF;border:2px solid var(--nav-mid);border-radius:12px;padding:14px;margin-bottom:14px}
+.ab-array-label{font-size:11px;color:var(--nav-deep);font-weight:900;text-transform:uppercase;text-align:center;margin-bottom:8px}
+.ab-grid{display:flex;flex-direction:column;align-items:center;gap:5px}
+.ab-row{display:flex;gap:5px;align-items:center}
+.ab-dot{width:24px;height:24px;border-radius:50%;background:var(--nav);border:2px solid var(--nav-deep);animation:dot-pop .25s ease-out;box-shadow:0 1.5px 0 rgba(0,0,0,.15)}
+.ab-row-count{font-family:'Lora',serif;font-size:11px;font-weight:800;color:var(--nav-deep);margin-left:8px;min-width:42px}
+.ab-eq{background:linear-gradient(135deg,var(--nav-light),#A6B8D6);border:2px solid var(--nav-mid);border-radius:12px;padding:14px 16px;text-align:center;font-family:'Lora',serif;font-size:24px;font-weight:900;color:#0E1C42;margin-bottom:14px}
+.ab-eq .ans{color:#1A8A5A;background:#E3F8ED;padding:2px 14px;border-radius:8px;border:2px solid #B8E8CF;margin-left:6px}
+.ab-numline{background:#FAFBFF;border:2px solid var(--nav-mid);border-radius:12px;padding:14px 8px 18px;margin-bottom:8px;overflow-x:auto}
+.ab-numline-label{font-size:11px;color:var(--nav-deep);font-weight:900;text-transform:uppercase;text-align:center;margin-bottom:10px}
+.ab-numline-svg{display:block;margin:0 auto;max-width:100%}
+.ab-table-toggle{display:flex;justify-content:center;margin:10px 0}
+.ab-table-btn{background:#fff;border:2.5px solid var(--nav);color:var(--nav);padding:8px 16px;border-radius:10px;font-family:'Nunito',sans-serif;font-weight:800;font-size:13px;cursor:pointer}
+.ab-table-btn:hover{background:var(--nav-light)}
+.ab-table-btn.shown{background:var(--nav);color:#fff}
+.ab-table{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;padding:12px;background:#fff;border:2px solid var(--nav-mid);border-radius:10px;margin-top:10px}
+.ab-table-cell{padding:8px 6px;background:var(--nav-light);border:1.5px solid var(--nav-mid);border-radius:6px;text-align:center;font-family:'Lora',serif;font-size:14px;font-weight:800;color:#0E1C42}
+.ab-table-cell.hl{background:#FFF8E6;border-color:#F5C518}
+.ex-tbl{width:100%;border-collapse:separate;border-spacing:0;margin:14px 0;background:#fff;border:2px solid #E2E8F4;border-radius:14px;overflow:hidden}.ex-tbl thead th{background:#0E1C42;color:#fff;font-size:12px;padding:12px;text-align:left;text-transform:uppercase;font-weight:900}.ex-tbl tbody td{padding:12px 14px;border-top:1px solid #E2E8F4;font-size:14.5px;color:#0E1C42;line-height:1.5}.ex-tbl tbody td:first-child{font-family:'Lora',serif;font-weight:800;font-size:17px}.ex-tbl tbody td:last-child{text-align:center;font-family:'Lora',serif;font-weight:900;font-size:18px;background:#FAFBFF;border-left:1px dashed #E2E8F4;color:#1A8A5A}
+</style>
+<style id="fluencyStyles">
+.fluency-box{background:#fff;border:2px solid #F5C518;border-radius:18px;overflow:hidden;margin-bottom:22px;font-family:'Nunito',sans-serif}
+.fluency-head{display:flex;align-items:center;gap:12px;background:linear-gradient(135deg,#F5C518,#E8B723);padding:14px 20px;flex-wrap:wrap}
+.fluency-head-icon{font-size:26px;line-height:1}
+.fluency-head-label{font-size:10px;color:#0E1C42;font-weight:800;text-transform:uppercase;letter-spacing:0.5px}
+.fluency-head-title{font-size:15px;color:#0E1C42;font-weight:800}
+.fluency-timer-ui{margin-left:auto;display:flex;align-items:center;gap:10px}
+.fluency-timer-display{font-size:20px;font-weight:800;color:#0E1C42;min-width:46px;text-align:center}
+.fluency-start-btn{background:#0E1C42;color:#fff;border:none;border-radius:10px;padding:8px 14px;font-weight:700;font-size:12px;cursor:pointer}
+.fluency-start-btn:disabled{opacity:0.55;cursor:default}
+.fluency-body{padding:16px 20px}
+.fluency-instructions{font-size:13px;color:#4A5568;margin:0 0 12px}
+.fluency-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(128px,1fr));gap:10px;margin-bottom:14px}
+.fluency-item{display:flex;align-items:center;gap:6px;background:#FAFBFF;border:1.5px solid #E2E8F4;border-radius:10px;padding:8px 10px}
+.fluency-item.fluency-correct{border-color:#2DB87A;background:#EAFBF3}
+.fluency-item.fluency-wrong{border-color:#E07B39;background:#FDF1E9}
+.fluency-q{font-size:13px;font-weight:700;color:#0E1C42;white-space:nowrap}
+.fluency-input{width:46px;border:1.5px solid #CBD5E8;border-radius:6px;padding:4px;font-size:14px;text-align:center;font-family:'Nunito',sans-serif}
+.fluency-input:disabled{background:#F0F2F8}
+.fluency-check-btn{background:#2DB87A;color:#fff;border:none;border-radius:10px;padding:10px 18px;font-weight:800;font-size:13px;cursor:pointer}
+.fluency-check-btn:disabled{opacity:0.55;cursor:default}
+.fluency-result{margin-top:10px;font-size:14px;color:#0E1C42;font-weight:700}
+</style></head><body>
+<div class="page-wrap">
+<div class="progress-wrap"><span class="progress-label">📐 Lesson Progress</span><div class="progress-track"><div class="progress-fill" id="pf"></div></div><span class="progress-pct" id="pp">0%</span></div>
+<div class="header">
+<div class="header-brand"><div class="header-logo"><img alt="Optima" src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png"/></div><div><div class="header-org">Optima Academy Online</div><div class="header-sub">An Education Experience Company</div></div></div>
+<div class="header-title"><em>Multiplying by 6 and 7</em></div>
+<div class="header-badge"><span class="header-badge-icon">🦉</span><span class="header-badge-text">Lesson 3.08.03</span></div>
+</div>
+<div class="u8-ribbon">
+<span class="u8-pill">Unit 8 · Times Tables</span>
+<span class="u8-text">Switch between 6s and 7s. Same array idea, two factors.</span>
+</div>
+<div class="quote-strip"><div class="quote-strip-text">"6s and 7s — same array idea. Pick the factor and stack the rows."</div><div class="quote-strip-attr">Multiplication table of 7</div></div>
+<div class="info-strip">
+<div class="info-cell"><div class="info-icon" style="background:var(--nav-light);">🧭</div><div><div class="info-label">Unit</div><div class="info-value">Unit 8</div><div class="info-detail">×÷ by 6,7,8,9</div></div></div>
+<div class="info-cell"><div class="info-icon" style="background:#E3F8ED;">📅</div><div><div class="info-label">Lesson</div><div class="info-value">3.08.03</div><div class="info-detail">U3 Apply</div></div></div>
+<div class="info-cell"><div class="info-icon" style="background:#EAF0FF;">📐</div><div><div class="info-label">Standard</div><div class="info-value">MA.3.AR.1</div><div class="info-detail">×7 facts</div></div></div>
+<div class="info-cell"><div class="info-icon" style="background:#FFF8E6;">🔢</div><div><div class="info-label">Tool</div><div class="info-value">Array</div><div class="info-detail">+ number line</div></div></div>
+</div>
+<div class="explorer-strip"><span class="explorer-compass">🧭</span><div><div class="explorer-mission-label">Today's Mission</div><div class="explorer-mission-text">Build arrays of 6 to learn the ×7 facts. Skip-count by 6s along a number line.</div></div></div>
+<div class="intro-2col">
+<div class="intro-card theme-question"><div class="intro-card-head"><div class="intro-card-head-icon">❓</div><div><div class="intro-card-head-label">Essential Question</div><div class="intro-card-head-title">When do you use ×6 versus ×7?</div></div></div><div class="intro-card-body"><p>Whatever the group size, multiplication still means equal rows. 6 dots per row means ×6 facts. 7 dots per row means ×7 facts. The total is the product. Knowing both tables means you can solve more problems.</p></div></div>
+<div class="intro-card theme-objectives"><div class="intro-card-head"><div class="intro-card-head-icon">🎯</div><div><div class="intro-card-head-label">Today's Objectives</div><div class="intro-card-head-title">You will…</div></div></div><div class="intro-card-body">
+<div class="obj-line"><span style="flex-shrink:0">🔢</span><span><strong>Build</strong> arrays of N rows × 7 dots.</span></div>
+<div class="obj-line"><span style="flex-shrink:0">🦘</span><span><strong>Skip-count</strong> by 7 on a number line.</span></div>
+<div class="obj-line"><span style="flex-shrink:0">📝</span><span><strong>Write</strong> the ×7 facts from 6×1 to 6×10.</span></div>
+</div></div>
+</div>
+<div class="need-strip"><span class="need-strip-label">You'll need:</span><span class="need-chip">📓 Math Journal</span><span class="need-chip">✏️ Pencil</span></div>
+<div class="tab-bar" id="tabBar">
+<button class="tab-btn active" data-tab="warmup" onclick="switchTab('warmup')">🔍 Warm-Up <span class="tab-check">✓</span></button>
+<button class="tab-btn" data-tab="learn" onclick="switchTab('learn')">📐 Learn <span class="tab-check">✓</span></button>
+<button class="tab-btn" data-tab="practice" onclick="switchTab('practice')">🧮 Practice <span class="tab-check">✓</span></button>
+<button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">🌟 Show What You Know <span class="tab-check">✓</span></button>
+</div>
+<div class="tab-panel active" id="tab-warmup">
+<div class="fluency-box" data-timed="false">
+<div class="fluency-head">
+<div class="fluency-head-icon">✍️</div>
+<div><div class="fluency-head-label">FLUENCY WARM-UP</div><div class="fluency-head-title">Missing-Factor Equations</div></div>
+</div>
+<div class="fluency-body">
+<p class="fluency-instructions">Warm up your fact fluency before today’s lesson. Work through these, then check your answers.</p>
+<div class="fluency-grid" id="fluencyGrid">
+<div class="fluency-item"><span class="fluency-q">8 × ___ = 48 =</span><input autocomplete="off" class="fluency-input" data-answer="6" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">___ × 6 = 48 =</span><input autocomplete="off" class="fluency-input" data-answer="8" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">48 ÷ ___ = 8 =</span><input autocomplete="off" class="fluency-input" data-answer="6" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">48 ÷ 8 = ___ =</span><input autocomplete="off" class="fluency-input" data-answer="6" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">7 × ___ = 63 =</span><input autocomplete="off" class="fluency-input" data-answer="9" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">___ × 9 = 63 =</span><input autocomplete="off" class="fluency-input" data-answer="7" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">9 × ___ = 54 =</span><input autocomplete="off" class="fluency-input" data-answer="6" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">___ × 7 = 56 =</span><input autocomplete="off" class="fluency-input" data-answer="8" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">6 × ___ = 36 =</span><input autocomplete="off" class="fluency-input" data-answer="6" inputmode="numeric" type="text"/></div>
+<div class="fluency-item"><span class="fluency-q">___ × 4 = 32 =</span><input autocomplete="off" class="fluency-input" data-answer="8" inputmode="numeric" type="text"/></div>
+</div>
+<button class="fluency-check-btn" id="fluencyCheckBtn" onclick="fluencyCheck()">Check My Answers</button>
+<div class="fluency-result" id="fluencyResult"></div>
+</div>
+<textarea class="journal-box" data-label="Fluency Warm-Up (Missing-Factor Equations)" id="fluencyJournal" readonly="" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;"></textarea>
+</div>
 
+<div class="activity bl-yellow"><div class="activity-head"><div class="activity-num" style="background:#F5C518;color:#0E1C42;">🔎</div><div><div class="activity-title">Readiness Check</div><div class="activity-sub">Tap the card.</div></div></div><div class="activity-body">
+<p><strong>3 rows of 7 dots — how many dots in all?</strong></p>
+<div class="value-card-row">
+<div class="value-card" onclick="rA(this,false)"><div class="big">14</div></div>
+<div class="value-card" onclick="rA(this,true)"><div class="big">21</div></div>
+<div class="value-card" onclick="rA(this,false)"><div class="big">24</div></div>
+</div>
+<div class="inline-feedback" id="rA-fb"></div>
+<div class="hint-callout">7 + 7 + 7 = 21. That's 3 × 7 = 21.</div>
+</div></div>
+<div class="activity bl-yellow"><div class="activity-head"><div class="activity-num" style="background:#F5C518;color:#0E1C42;">🤔</div><div><div class="activity-title">Think About It: A New Row</div></div></div><div class="activity-body">
+<div class="callout callout-think"><span class="callout-icon">🧠</span><p>You have an array with 4 rows of 7 (= 28 dots). You add one more row.</p></div>
+<p><strong>Predict:</strong> what's the new total?</p>
+<div class="value-card-row">
+<div class="value-card" onclick="rT(this,false)"><div class="big">29</div></div>
+<div class="value-card" onclick="rT(this,true)"><div class="big">35</div></div>
+<div class="value-card" onclick="rT(this,false)"><div class="big">42</div></div>
+</div>
+<div class="inline-feedback" id="rT-fb"></div>
+<div class="journal-label">✏️ Why? <span class="saved-dot" id="dt"></span></div>
+<textarea class="journal-box" data-label="Warm-Up think" id="j-t" oninput="autoSave(this,'dt')" placeholder=""></textarea>
+</div></div>
+<div class="tab-next-wrap"><p class="tab-transition-voice">Add a row of 7, add 7 to the total.</p><button class="tab-next-btn" onclick="switchTab('learn')">Continue to 📐 Learn →</button></div>
+</div>
+<div class="tab-panel" id="tab-learn">
+<div class="vocab-section"><div class="vocab-section-title">Key idea</div>
+<p style="font-size:14px;color:#3A4A6B;font-family:'Lora',serif;font-style:italic;">An <strong>array</strong> is a rectangle of dots in equal rows. Whatever the group size, multiplication still means equal rows. 6 dots per row means ×6 facts. 7 dots per row means ×7 facts. The total is the <strong>product</strong>. Skip-counting by 6 lands on the same product as multiplying.</p>
+</div>
+
+<div class="callout callout-info"><span class="callout-icon">🔢</span><p><strong>How the Array Builder works.</strong> Pick a factor (1 to 10). The widget builds an array with that many rows of 6 dots. The equation shows 6 × N = product. The number line below shows the same count as skip-count jumps of 6.</p></div>
+<div class="activity bl-nav"><div class="activity-head"><div class="activity-num" style="background:var(--nav);">🔢</div><div><div class="activity-title">Array Builder (×6)</div></div></div><div class="activity-body">
+<div class="ab-frame">
+<div class="ab-task">Build: 7 × <strong id="ab-n">4</strong></div>
+<div class="ab-controls">
+<div class="ab-pick">
+<div class="ab-pick-label">Factor (number of rows)</div>
+<div class="ab-stepper">
+<button class="ab-btn" onclick="abAdj(-1)">−</button>
+<div class="ab-val" id="ab-nVal">4</div>
+<button class="ab-btn" onclick="abAdj(1)">+</button>
+</div>
+</div>
+</div>
+<div class="ab-array">
+<div class="ab-array-label">Array — each row holds 6 dots</div>
+<div class="ab-grid" id="ab-grid"></div>
+</div>
+<div class="ab-eq" id="ab-eq">7 × 4 = <span class="ans" id="ab-ans">28</span></div>
+<div class="ab-numline">
+<div class="ab-numline-label">Skip-count by 6 on the number line</div>
+<svg class="ab-numline-svg" id="ab-svg" preserveaspectratio="xMidYMid meet" viewbox="0 0 660 80"></svg>
+</div>
+<div class="ab-table-toggle">
+<button class="ab-table-btn" id="ab-tbl-btn" onclick="abToggle()">Show full ×7 table</button>
+</div>
+<div class="ab-table" id="ab-table" style="display:none;"></div>
+</div>
+<p style="font-size:13px;color:#1A3052;font-family:'Lora',serif;font-style:italic;text-align:center;margin-top:8px;">Try factor 1, 2, 3 … all the way to 10. Notice each step adds another 6 to the total.</p>
+</div></div>
+<div class="activity bl-slate"><div class="activity-head"><div class="activity-num" style="background:#3A6B9A;">📋</div><div><div class="activity-title">The ×6 Facts</div></div></div><div class="activity-body">
+<table class="ex-tbl">
+<thead><tr><th>Equation</th><th>Skip-count</th><th>Product</th></tr></thead>
+<tbody>
+<tr><td>7 × 1</td><td>7</td><td>7</td></tr>
+<tr><td>7 × 2</td><td>7, 14</td><td>14</td></tr>
+<tr><td>7 × 3</td><td>7, 14, 21</td><td>21</td></tr>
+<tr><td>7 × 4</td><td>… 28</td><td>28</td></tr>
+<tr><td>7 × 5</td><td>… 35</td><td>35</td></tr>
+<tr><td>7 × 6</td><td>… 42</td><td>42</td></tr>
+<tr><td>7 × 7</td><td>… 49</td><td>49</td></tr>
+<tr><td>7 × 8</td><td>… 56</td><td>56</td></tr>
+<tr><td>7 × 9</td><td>… 63</td><td>63</td></tr>
+<tr><td>7 × 10</td><td>… 70</td><td>70</td></tr>
+</tbody>
+</table>
+</div></div>
+<div class="key-concept"><div class="key-concept-label">📐 What You Just Saw</div>
+<p><strong>Each new row adds 6 to the total.</strong></p>
+<p style="text-align:center;background:#fff;border:2px solid var(--nav-mid);border-radius:10px;padding:12px;margin:10px 0;font-size:15px;">7 × N = N rows of 7 = 7 + 7 + … (N times) = 7, 14, 21, … N skips on the number line.</p>
+</div>
+
+<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">🧠</div><div><div class="activity-title">Worked Example: 7 × 6</div></div></div><div class="activity-body">
+<div class="task-box"><div class="task-label">Problem</div><p>Hazel makes 6 friendship bracelets. Each one has 7 beads. How many beads does Hazel use?</p></div>
+<div class="bubble-row">
+<div class="bubble atlas"><div class="bubble-avatar">A</div><div class="bubble-body"><div class="bubble-name">Atlas — set up the array</div><div class="bubble-text">"6 bracelets is 6 rows. 7 beads per bracelet is 7 dots per row."</div></div></div>
+<div class="bubble hazel"><div class="bubble-avatar">H</div><div class="bubble-body"><div class="bubble-name">Hazel — skip-count</div><div class="bubble-text">"7, 14, 21, 28, 35, 42. 6 jumps of 7."</div></div></div>
+<div class="bubble cora"><div class="bubble-avatar">C</div><div class="bubble-body"><div class="bubble-name">Cora — write the fact</div><div class="bubble-text">"7 × 6 = 42 beads."</div></div></div>
+</div>
+<p style="font-family:'Lora',serif;background:#FAFBFF;border:2px solid #E2E8F4;border-radius:12px;padding:10px;text-align:center;font-size:18px;font-weight:800;margin-top:14px;">7 × 6 = <span style="color:#1A8A5A;">42</span></p>
+</div></div>
+<div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">Why does each step add exactly 6 to the total? Use the array picture in your answer.</p><div class="journal-label">✏️ <span class="saved-dot" id="ds1"></span></div><textarea class="journal-box" data-label="Learn socratic" id="j-s1" oninput="autoSave(this,'ds1')" placeholder=""></textarea></div>
+<div class="tab-next-wrap"><p class="tab-transition-voice">One more row = 7 more dots.</p><button class="tab-next-btn" onclick="switchTab('practice')">Continue to 🧮 Practice →</button></div>
+</div>
+<div class="tab-panel" id="tab-practice">
+<div class="callout callout-info"><span class="callout-icon">🧭</span><p>Use the array or the skip-count to find each product.</p></div>
+<div class="activity bl-nav"><div class="activity-head"><div class="activity-num" style="background:var(--nav);">1</div><div><div class="activity-title">Mixed ×6 and ×7 Facts</div></div></div><div class="activity-body">
+<div class="fill-row"><strong>6 × 3 =</strong><input class="fill-input" id="p1-a" placeholder="?" type="number"/></div>
+<div class="fill-row"><strong>7 × 5 =</strong><input class="fill-input" id="p1-b" placeholder="?" type="number"/></div>
+<div class="fill-row"><strong>6 × 8 =</strong><input class="fill-input" id="p1-c" placeholder="?" type="number"/></div>
+<div class="fill-row"><strong>7 × 10 =</strong><input class="fill-input" id="p1-d" placeholder="?" type="number"/></div>
+<button class="check-btn" onclick="checkP1()">Check ✓</button>
+<div class="feedback-branch feedback-pass" id="p1-pass"><strong>✅</strong> 18 · 35 · 48 · 70.</div>
+<div class="feedback-branch feedback-retry" id="p1-retry"><strong>🔄 Skip-count by 6 from 0.</strong><div class="hint-callout">7, 14, 21, 28, 35, 42, 49, 56, 63, 70.</div><button class="orange-btn" onclick="resetP1()">↩ Reset</button></div>
+</div></div>
+<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">2</div><div><div class="activity-title">Word problem</div></div></div><div class="activity-body">
+<div class="task-box"><div class="task-label">Problem</div><p>A week has 7 days. How many days are in 4 weeks?</p></div>
+<div class="fill-row"><strong>7 × 4 =</strong><input class="fill-input" id="p2" placeholder="?" type="number"/></div>
+<button class="check-btn" onclick="checkP2()">Check ✓</button>
+<div class="feedback-branch feedback-pass" id="p2-pass"><strong>✅</strong> 7 × 4 = 28 days.</div>
+<div class="feedback-branch feedback-retry" id="p2-retry"><strong>🔄 4 rows of 7.</strong><div class="hint-callout">7, 14, 21, 28.</div><button class="orange-btn" onclick="resetP2()">↩ Reset</button></div>
+</div></div>
+<div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">If you forget 7 × 8, what's a quick way to figure it out without starting over from 7?</p><div class="journal-label">✏️ <span class="saved-dot" id="ds2"></span></div><textarea class="journal-box" data-label="Practice socratic" id="j-s2" oninput="autoSave(this,'ds2')" placeholder=""></textarea></div>
+<div class="tab-next-wrap"><p class="tab-transition-voice">Array, skip-count, or the table. Three ways to land on the same product.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
+</div>
+<div class="tab-panel" id="tab-assignment">
+<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">🎯</div><div><div class="activity-title">Ready Check</div></div></div><div class="activity-body">
+<div class="q-block"><p class="q-text"><span class="q-num">A</span>7 × 6 = ?</p><div class="value-card-row"><div class="value-card" onclick="eA(this,false)"><div class="big">36</div></div><div class="value-card" onclick="eA(this,true)"><div class="big">42</div></div><div class="value-card" onclick="eA(this,false)"><div class="big">48</div></div></div><div class="inline-feedback" id="eA-fb"></div></div>
+<div class="q-block"><p class="q-text"><span class="q-num">B</span>7 × 9 = ?</p><div class="value-card-row"><div class="value-card" onclick="eB(this,false)"><div class="big">56</div></div><div class="value-card" onclick="eB(this,true)"><div class="big">63</div></div><div class="value-card" onclick="eB(this,false)"><div class="big">70</div></div></div><div class="inline-feedback" id="eB-fb"></div></div>
+</div></div>
+<div class="activity bl-navy"><div class="activity-head"><div class="activity-num" style="background:#0E1C42;">📬</div><div><div class="activity-title">Show What You Know</div></div></div><div class="activity-body">
+<div class="q-block"><p class="q-text"><span class="q-num">1</span><strong>Fluency.</strong> Write the ×7 facts from 6 × 1 to 6 × 10. Sketch an array for 6 × 6 in your journal.</p><div class="journal-label">✏️ <span class="saved-dot" id="da1"></span></div><textarea class="journal-box" data-label="SWYK 1" id="j-a1" oninput="autoSave(this,'da1')" placeholder=""></textarea></div>
+<div class="q-block"><p class="q-text"><span class="q-num">2</span><strong>Transfer.</strong> Hazel makes 8 bracelets, each with 7 beads. How many beads total?</p><div class="journal-label">✏️ <span class="saved-dot" id="da2"></span></div><textarea class="journal-box" data-label="SWYK 2" id="j-a2" oninput="autoSave(this,'da2')" placeholder=""></textarea></div>
+
+<div class="activity bl-slate" style="margin-top:18px;border-left-color:#F5A36F;"><div class="activity-head"><div class="activity-num" style="background:#F5A36F;color:#0E1C42;">🗺️</div><div><div class="activity-title">Connection Forward</div><div class="activity-sub">Preview Lesson 3.08.03 — Multiplying by 6 and 7</div></div></div><div class="activity-body">
+<p>Next: multiplying by 6 and 7. Same array idea, new factor.</p>
+</div></div>
+</div></div>
+<div class="gathered-box"><div class="gathered-head"><div class="gathered-head-icon">📋</div><div><div class="gathered-head-label">Math Journal</div><div class="gathered-head-title">All Answers</div></div></div><div class="gathered-body"><textarea class="gathered-output" id="gO" readonly="">Click "Gather" to collect.</textarea><div style="display:flex;gap:10px;margin-top:12px;"><button class="nav-btn" onclick="gather()">📋 Gather</button><button class="green-btn" onclick="copyA()">Copy</button><button class="check-btn" onclick="dl()">Download</button></div></div></div>
+<div class="turn-in-card"><div class="turn-in-header"><div class="turn-in-header-icon">✅</div><div><div class="turn-in-header-label">Turn-In</div><div class="turn-in-header-title">Ready?</div></div></div><div class="turn-in-body">
+<div class="turn-in-item" onclick="tg(this)"><span class="turn-in-check">✓</span><span>I completed Show What You Know.</span></div>
+<div class="turn-in-item" onclick="tg(this)"><span class="turn-in-check">✓</span><span>I wrote (or know) the ×7 facts from 6×1 to 6×10.</span></div>
+</div></div>
+</div>
+<div class="footer"><div class="footer-main">🏫 <span>Optima Academy Online</span></div><div class="footer-sub">Math · Grade 3 · 3.08.03 · Unit 8</div><div class="footer-copy">© 2025 Optima Academy Online</div></div>
+</div>
+<script>
+var LS='g3-3-08-03-';
+var FACTOR=7; // group size for this lesson (×6)
+function mini(el){if(!el)return;var em=['⭐','✨','🔢','×'];for(var i=0;i<8;i++){var s=document.createElement('span');s.textContent=em[Math.floor(Math.random()*em.length)];s.style.cssText='position:absolute;font-size:'+(16+Math.random()*14)+'px;pointer-events:none;z-index:999;animation:mini .7s ease-out forwards;left:'+(20+Math.random()*60)+'%;top:'+(Math.random()*40)+'%;';el.style.position='relative';el.style.overflow='visible';el.appendChild(s);setTimeout(function(x){x.remove()}.bind(null,s),800);}}
+function switchTab(t){document.querySelectorAll('.tab-panel').forEach(function(p){p.classList.remove('active');});document.getElementById('tab-'+t).classList.add('active');document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active');if(b.dataset.tab===t){b.classList.add('active');b.classList.add('visited');}});var bs=[].slice.call(document.querySelectorAll('.tab-btn'));var i=bs.findIndex(function(b){return b.classList.contains('active');});var p=Math.round(((i+1)/bs.length)*100);document.getElementById('pf').style.width=p+'%';document.getElementById('pp').textContent=p+'%';window.scrollTo({top:0,behavior:'smooth'});}
+function autoSave(el,d){try{localStorage.setItem(LS+el.id,el.value);}catch(e){}var dt=document.getElementById(d);if(dt){dt.classList.add('saved');setTimeout(function(){dt.classList.remove('saved')},900);}}
+function restore(){document.querySelectorAll('textarea.journal-box').forEach(function(t){try{var v=localStorage.getItem(LS+t.id);if(v)t.value=v;}catch(e){}});}
+function showBranch(id){document.getElementById(id).classList.add('show');}function hideBranches(p){['pass','retry'].forEach(function(x){var e=document.getElementById(p+'-'+x);if(e)e.classList.remove('show');});}
+
+function rA(c,ok){c.parentElement.querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});var f=document.getElementById('rA-fb');if(ok){c.classList.add('good');f.className='inline-feedback show good';f.innerHTML='<strong>✅</strong> 3 × 7 = 21. Three rows of 7.';mini(c);}else{c.classList.add('bad');f.className='inline-feedback show think';f.innerHTML='3 rows of 7 = 7 + 7 + 7 = 21.';}}
+function rT(c,ok){c.parentElement.querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});var f=document.getElementById('rT-fb');if(ok){c.classList.add('good');f.className='inline-feedback show good';f.innerHTML='<strong>✅</strong> 28 + 7 = 35. One more row of 7.';mini(c);}else{c.classList.add('bad');f.className='inline-feedback show think';f.innerHTML='One more row of 7 → add 7 to 28.';}}
+
+/* Array Builder */
+var abN=4;var abShowTbl=false;
+function abAdj(delta){var v=abN+delta;if(v<1||v>10)return;abN=v;abRender();}
+function abToggle(){abShowTbl=!abShowTbl;abRender();}
+function abRender(){
+  document.getElementById('ab-nVal').textContent=abN;
+  document.getElementById('ab-n').textContent=abN;
+  var prod=FACTOR*abN;
+  document.getElementById('ab-eq').innerHTML=FACTOR+' × '+abN+' = <span class="ans">'+prod+'</span>';
+  // grid
+  var grid=document.getElementById('ab-grid');grid.innerHTML='';
+  for(var r=0;r<abN;r++){
+    var row=document.createElement('div');row.className='ab-row';
+    for(var col=0;col<FACTOR;col++){var d=document.createElement('div');d.className='ab-dot';row.appendChild(d);}
+    var rc=document.createElement('div');rc.className='ab-row-count';rc.textContent='= '+(FACTOR*(r+1));row.appendChild(rc);
+    grid.appendChild(row);
+  }
+  // number line SVG
+  var svg=document.getElementById('ab-svg');svg.innerHTML='';
+  var maxProd=FACTOR*10;
+  var W=640,H=80,padL=20,padR=20;
+  var span=W-padL-padR;
+  // tick marks at every multiple of FACTOR from 0..maxProd
+  // axis
+  var axis=document.createElementNS('http://www.w3.org/2000/svg','line');
+  axis.setAttribute('x1',padL);axis.setAttribute('y1',55);axis.setAttribute('x2',W-padR);axis.setAttribute('y2',55);
+  axis.setAttribute('stroke','#0E1C42');axis.setAttribute('stroke-width','2');
+  svg.appendChild(axis);
+  // ticks + labels
+  for(var k=0;k<=10;k++){
+    var x=padL+(k/10)*span;
+    var tick=document.createElementNS('http://www.w3.org/2000/svg','line');
+    tick.setAttribute('x1',x);tick.setAttribute('y1',50);tick.setAttribute('x2',x);tick.setAttribute('y2',60);
+    tick.setAttribute('stroke','#0E1C42');tick.setAttribute('stroke-width','2');
+    svg.appendChild(tick);
+    var t=document.createElementNS('http://www.w3.org/2000/svg','text');
+    t.setAttribute('x',x);t.setAttribute('y',75);t.setAttribute('text-anchor','middle');
+    t.setAttribute('font-size','10');t.setAttribute('font-family','Nunito,sans-serif');t.setAttribute('font-weight','800');t.setAttribute('fill','#3A4A6B');
+    t.textContent=(FACTOR*k);
+    svg.appendChild(t);
+  }
+  // jump arcs
+  for(var k=0;k<abN;k++){
+    var x1=padL+(k/10)*span;var x2=padL+((k+1)/10)*span;
+    var midX=(x1+x2)/2;
+    var pathD='M '+x1+' 55 Q '+midX+' 15 '+x2+' 55';
+    var path=document.createElementNS('http://www.w3.org/2000/svg','path');
+    path.setAttribute('d',pathD);path.setAttribute('fill','none');
+    path.setAttribute('stroke','#2A4D7C');path.setAttribute('stroke-width','2.5');
+    path.setAttribute('stroke-linecap','round');
+    svg.appendChild(path);
+    // jump label
+    var lbl=document.createElementNS('http://www.w3.org/2000/svg','text');
+    lbl.setAttribute('x',midX);lbl.setAttribute('y',22);lbl.setAttribute('text-anchor','middle');
+    lbl.setAttribute('font-size','11');lbl.setAttribute('font-family','Nunito,sans-serif');lbl.setAttribute('font-weight','800');lbl.setAttribute('fill','#2A4D7C');
+    lbl.textContent='+'+FACTOR;
+    svg.appendChild(lbl);
+  }
+  // landing dot
+  var landX=padL+(abN/10)*span;
+  var dot=document.createElementNS('http://www.w3.org/2000/svg','circle');
+  dot.setAttribute('cx',landX);dot.setAttribute('cy',55);dot.setAttribute('r',6);
+  dot.setAttribute('fill','#1A8A5A');dot.setAttribute('stroke','#0F4A2B');dot.setAttribute('stroke-width','2');
+  svg.appendChild(dot);
+  // Table view
+  var tbl=document.getElementById('ab-table');
+  var btn=document.getElementById('ab-tbl-btn');
+  if(abShowTbl){
+    tbl.style.display='grid';btn.classList.add('shown');btn.textContent='Hide table';
+    tbl.innerHTML='';
+    for(var k=1;k<=10;k++){
+      var cell=document.createElement('div');cell.className='ab-table-cell'+(k===abN?' hl':'');
+      cell.textContent=FACTOR+'×'+k+' = '+(FACTOR*k);
+      tbl.appendChild(cell);
+    }
+  }else{tbl.style.display='none';btn.classList.remove('shown');btn.textContent='Show full ×7 table';}
+}
+
+var p1A={'p1-a':18,'p1-b':35,'p1-c':48,'p1-d':70};
+function checkP1(){hideBranches('p1');var ok=true;Object.keys(p1A).forEach(function(id){var el=document.getElementById(id);el.classList.remove('good','bad');if(parseInt(el.value,10)===p1A[id]){el.classList.add('good');}else{el.classList.add('bad');ok=false;}});if(ok){showBranch('p1-pass');mini(document.getElementById('p1-pass'));}else{showBranch('p1-retry');}}
+function resetP1(){Object.keys(p1A).forEach(function(id){var el=document.getElementById(id);el.value='';el.classList.remove('good','bad');});hideBranches('p1');}
+
+var p2A={'p2':28};
+function checkP2(){hideBranches('p2');var ok=true;Object.keys(p2A).forEach(function(id){var el=document.getElementById(id);el.classList.remove('good','bad');if(parseInt(el.value,10)===p2A[id]){el.classList.add('good');}else{el.classList.add('bad');ok=false;}});if(ok){showBranch('p2-pass');mini(document.getElementById('p2-pass'));}else{showBranch('p2-retry');}}
+function resetP2(){Object.keys(p2A).forEach(function(id){var el=document.getElementById(id);el.value='';el.classList.remove('good','bad');});hideBranches('p2');}
+
+function eA(c,ok){c.parentElement.querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});var f=document.getElementById('eA-fb');if(ok){c.classList.add('good');f.className='inline-feedback show good';f.innerHTML='<strong>✅</strong> 7 × 6 = 42. Seven rows of 6.';mini(c);}else{c.classList.add('bad');f.className='inline-feedback show think';f.innerHTML='7, 14, 21, 28, 35, 42, 49.';}}
+function eB(c,ok){c.parentElement.querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});var f=document.getElementById('eB-fb');if(ok){c.classList.add('good');f.className='inline-feedback show good';f.innerHTML='<strong>✅</strong> 7 × 9 = 63.';mini(c);}else{c.classList.add('bad');f.className='inline-feedback show think';f.innerHTML='7 × 10 = 70, so 7 × 9 = 70 − 7 = 63.';}}
+
+function gather(){var o='Lesson 3.08.03\n\n';document.querySelectorAll('textarea.journal-box').forEach(function(t){o+=(t.dataset.label||t.id)+'\n'+((t.value||'').trim()||'[empty]')+'\n\n';});document.getElementById('gO').value=o;}
+function copyA(){gather();if(navigator.clipboard)navigator.clipboard.writeText(document.getElementById('gO').value);}
+function dl(){gather();var t=document.getElementById('gO').value;var w=window.open('','_blank');w.document.write('<title>3.08.03</title><pre>'+t.replace(/[&<>]/g,function(s){return{'&':'&amp;','<':'&lt;','>':'&gt;'}[s];})+'</pre>');w.document.close();w.print();}
+function tg(i){i.classList.toggle('checked');var c=i.querySelector('.turn-in-check');if(c)c.textContent=i.classList.contains('checked')?'✓':'';}
+
+async function loadVideoManifest(){try{var res=await fetch('video-manifest.md',{cache:'no-store'});if(!res.ok)return;var txt=await res.text();var map=parseManifest(txt);document.querySelectorAll('.video-wrap[data-video-slot]').forEach(function(w){var slot=w.dataset.videoSlot;if(map[slot]){var ratio=w.querySelector('.video-ratio');ratio.innerHTML=map[slot].trim();var iframe=ratio.querySelector('iframe');if(iframe){iframe.classList.add('video-iframe');iframe.setAttribute('allowfullscreen','');iframe.setAttribute('loading','lazy');}}});}catch(e){}}
+function parseManifest(txt){var map={};var lines=txt.split(/\r?\n/);var current=null,buf=[];function commit(){if(current&&buf.join('\n').trim()){map[current]=buf.join('\n').trim();}buf=[];}for(var i=0;i<lines.length;i++){var line=lines[i];var m=line.match(/^([A-Za-z0-9-]+):\s*$/);if(m){commit();current=m[1];}else if(current){buf.push(line);}}commit();return map;}
+
+window.addEventListener('DOMContentLoaded',function(){loadVideoManifest();restore();abRender();});
+</script>
+<script id="fluencyScript">
+(function(){
+var FLUENCY_TIMED = false;
+var FLUENCY_TITLE = "Missing-Factor Equations";
+var fluencyInterval = null;
+var fluencySecondsLeft = 60;
+
+window.fluencyStart = function(){
+  if(!FLUENCY_TIMED) return;
+  var grid = document.getElementById('fluencyGrid');
+  if(!grid) return;
+  grid.querySelectorAll('.fluency-input').forEach(function(i){ i.disabled = false; });
+  var btn = document.getElementById('fluencyStartBtn');
+  if(btn){ btn.disabled = true; btn.textContent = 'Timer Running\u2026'; }
+  var checkBtn = document.getElementById('fluencyCheckBtn');
+  if(checkBtn) checkBtn.disabled = false;
+  fluencySecondsLeft = 60;
+  fluencyUpdateDisplay();
+  fluencyInterval = setInterval(function(){
+    fluencySecondsLeft--;
+    fluencyUpdateDisplay();
+    if(fluencySecondsLeft <= 0){
+      clearInterval(fluencyInterval);
+      grid.querySelectorAll('.fluency-input').forEach(function(i){ i.disabled = true; });
+      window.fluencyCheck();
+    }
+  }, 1000);
+};
+
+function fluencyUpdateDisplay(){
+  var el = document.getElementById('fluencyTimerDisplay');
+  if(el) el.textContent = fluencySecondsLeft + 's';
+}
+
+window.fluencyCheck = function(){
+  if(fluencyInterval){ clearInterval(fluencyInterval); fluencyInterval = null; }
+  var items = document.querySelectorAll('#fluencyGrid .fluency-item');
+  var correct = 0, attempted = 0, total = items.length;
+  var lines = [];
+  items.forEach(function(item){
+    var input = item.querySelector('.fluency-input');
+    var qText = item.querySelector('.fluency-q').textContent;
+    var given = (input.value || '').trim();
+    var ans = input.dataset.answer;
+    var ok = given !== '' && given === ans;
+    if(given !== '') attempted++;
+    item.classList.remove('fluency-correct','fluency-wrong');
+    if(ok){ correct++; item.classList.add('fluency-correct'); }
+    else if(given !== ''){ item.classList.add('fluency-wrong'); }
+    lines.push(qText + ' ' + ans + '   [answered: ' + (given || 'blank') + ']' + (ok ? ' \u2713' : (given ? ' \u2717' : '')));
+  });
+  var pct = total ? Math.round((correct/total)*100) : 0;
+  var timeStr = FLUENCY_TIMED ? (' in ' + (60 - fluencySecondsLeft) + ' seconds') : '';
+  var summary = 'Fluency Warm-Up \u2014 ' + FLUENCY_TITLE + '\n' + correct + ' / ' + total + ' correct (' + pct + '%)' + timeStr + '\n\n' + lines.join('\n');
+  var j = document.getElementById('fluencyJournal');
+  if(j) j.value = summary;
+  var resEl = document.getElementById('fluencyResult');
+  if(resEl) resEl.innerHTML = correct + ' / ' + total + ' correct (' + pct + '%)' + timeStr;
+  var checkBtn = document.getElementById('fluencyCheckBtn');
+  if(checkBtn) checkBtn.disabled = true;
+  var startBtn = document.getElementById('fluencyStartBtn');
+  if(startBtn) startBtn.textContent = 'Done';
+};
+})();
+</script>
+</body></html>
