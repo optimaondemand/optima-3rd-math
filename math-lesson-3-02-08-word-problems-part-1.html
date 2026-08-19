@@ -342,7 +342,7 @@
 <div class="tab-bar" id="tabBar">
 <button class="tab-btn active" data-tab="warmup" onclick="switchTab('warmup')">🔍 Warm-Up <span class="tab-check">✓</span></button>
 <button class="tab-btn" data-tab="learn" onclick="switchTab('learn')">📐 Learn <span class="tab-check">✓</span></button>
-<button class="tab-btn" data-tab="practice" onclick="switchTab('practice')">🧮 Practice <span class="tab-check">✓</span></button>
+
 <button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">🌟 Show What You Know <span class="tab-check">✓</span></button>
 </div>
 <!-- ═══════════ WARM-UP ═══════════ -->
@@ -542,61 +542,9 @@
 </div></div>
 
 <div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">If someone says "I read 12 fewer books than my sister and I read 30 books," how do you know whether to add or subtract to find your sister's total?</p><div class="journal-label">✏️ My reasoning <span class="saved-dot" id="dot-soc1"></span></div><textarea class="journal-box" data-label="Learn — Socratic: identify whose total is bigger" id="journal-soc1" oninput="autoSave(this,'dot-soc1')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Read it twice. Draw the bar. Pick the operation. Try a few.</p><button class="tab-next-btn" onclick="switchTab('practice')">Continue to 🧮 Practice →</button></div>
+<div class="tab-next-wrap"><p class="tab-transition-voice">Read it twice. Draw the bar. Pick the operation. Try a few.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
 </div>
 <!-- ═══════════ PRACTICE ═══════════ -->
-<div class="tab-panel" id="tab-practice">
-<div class="callout callout-info"><span class="callout-icon">🧭</span><p>You saw veggie crepes = 55 + 38 = 93 (where the word said "fewer" but the math was ADD). Practice mixes problems where the operation might surprise you.</p></div>
-<div class="callout callout-think"><span class="callout-icon">🧠</span><p><strong>For each problem:</strong> ask first — "is the unknown bigger or smaller?" Then add or subtract.</p></div>
-<div class="activity bl-violet"><div class="activity-head"><div class="activity-num" style="background:#6B3FA0;">1</div><div><div class="activity-title">Story to Number</div><div class="activity-sub">Four problems. Watch the language.</div></div><span class="activity-time" style="background:#6B3FA0;">~5 min</span></div><div class="activity-body">
-<div class="bubble-row">
-<div class="bubble felix"><div class="bubble-avatar">F</div><div class="bubble-body"><div class="bubble-name">Felix — shortcut</div><div class="bubble-text">"Ask: is the missing number the BIGGER one or the SMALLER one? Bigger → add. Smaller → subtract. That one question covers them all."</div></div></div>
-</div>
-<div class="fill-row"><strong>Sold 230 apple tarts and 180 pecan tarts. How many MORE apple? =</strong><input class="fill-input" id="p1-a" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>Hazel read 30 books. Atlas read 12 MORE. Atlas's books =</strong><input class="fill-input" id="p1-b" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>Cora scored 25 points, 10 FEWER than Felix. Felix's points =</strong><input class="fill-input" id="p1-c" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>The team won 17 games, 9 FEWER than they lost. Games lost =</strong><input class="fill-input" id="p1-d" placeholder="?" type="number"/></div>
-<button class="check-btn" onclick="checkP1()">Check My Answers ✓</button>
-<div class="feedback-branch feedback-pass" id="p1-pass"><strong>✅ Yes!</strong> Apple − pecan = 50. Atlas = 30 + 12 = 42. Felix = 25 + 10 = 35. Lost = 17 + 9 = 26.
-      <div class="bubble-row" style="margin-top:10px;"><div class="bubble cora"><div class="bubble-avatar">C</div><div class="bubble-body"><div class="bubble-name">Cora — checking the work</div><div class="bubble-text">"Let's check the tricky ones. Felix = 35. Was Cora 10 fewer? 35 − 25 = 10. ✓ Lost = 26. Was that 9 more than 17? 26 − 17 = 9. ✓ The bars work."</div></div></div></div>
-
-</div>
-<div class="feedback-branch feedback-retry" id="p1-retry"><strong>🔄 Ask: is the unknown the BIGGER or SMALLER amount?</strong>
-<div class="hint-callout">(a) Difference between 230 and 180 → SUBTRACT (230 − 180).  ·  (b) Atlas has MORE than Hazel → ADD (30 + 12).  ·  (c) Cora is FEWER than Felix → Felix is bigger → ADD (25 + 10).  ·  (d) Won is FEWER than lost → Lost is bigger → ADD (17 + 9).</div>
-<button class="orange-btn" onclick="resetP1()">↩ Reset and Try Again</button>
-</div>
-</div></div>
-<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">2</div><div><div class="activity-title">Draw and Solve</div><div class="activity-sub">Sketch the bar. Write the math.</div></div><span class="activity-time" style="background:#2DB87A;">~4 min</span></div><div class="activity-body">
-<div class="bubble-row">
-<div class="bubble hazel"><div class="bubble-avatar">H</div><div class="bubble-body"><div class="bubble-name">Hazel — sketch first</div><div class="bubble-text">"Two bars, side by side. Longer one on top. Label which is known, which is the difference, which is the unknown. THEN do the math."</div></div></div>
-</div>
-<div class="task-box"><div class="task-label">Problem</div><p>A bakery sold <strong>99 pesto chicken</strong> sandwiches. It sold <strong>24 MORE</strong> pesto chicken than caprese sandwiches. How many caprese sandwiches did it sell?</p></div>
-<div class="journal-label">✏️ My bar sketch + answer <span class="saved-dot" id="dot-p2"></span></div>
-<textarea class="journal-box" data-label="Practice 2 — Sandwich word problem" id="journal-p2" oninput="autoSave(this,'dot-p2')" placeholder="My bar:
-  Pesto chicken (longer): 99
-  Caprese (shorter): ?
-  Difference: 24
-Math: ___ − ___ = ___ caprese" style="min-height:130px;"></textarea>
-<div class="callout callout-tip" style="margin-top:10px;"><span class="callout-icon">💡</span><p><strong>Answer:</strong> Pesto chicken = 99 (longer). Caprese = unknown (shorter). Difference = 24. Caprese = 99 − 24 = 75.</p></div>
-</div></div>
-<div class="activity bl-violet"><div class="activity-head"><div class="activity-num" style="background:#6B3FA0;">3</div><div><div class="activity-title">The Two Soccer Games</div><div class="activity-sub">A "fewer" problem where you ADD.</div></div></div><div class="activity-body">
-<div class="bubble-row">
-<div class="bubble atlas"><div class="bubble-avatar">A</div><div class="bubble-body"><div class="bubble-name">Atlas — concrete</div><div class="bubble-text">"Ignore the word for a second. Just ask: which amount is bigger, and which is smaller? The picture takes care of the rest."</div></div></div>
-</div>
-<div class="task-box"><div class="task-label">Word problem</div><p>Cora scored <strong>25 points</strong> in the second soccer game. She scored <strong>17 FEWER points</strong> in the second game than in the first. How many points did Cora score in the <strong>first game</strong>?</p></div>
-<div class="fill-row"><strong>First game points:</strong><input class="fill-input" id="p3-a" placeholder="?" type="number"/></div>
-<button class="check-btn" onclick="checkP3()">Check My Answer ✓</button>
-<div class="feedback-branch feedback-pass" id="p3-pass"><strong>✅ Yes — 42 points.</strong> 2nd = 25 (the smaller one). 1st is BIGGER by 17. So 1st = 25 + 17 = 42.
-      <div class="bubble-row" style="margin-top:10px;"><div class="bubble cora"><div class="bubble-avatar">C</div><div class="bubble-body"><div class="bubble-name">Cora — checking the work</div><div class="bubble-text">"Let's check by reversing. 42 − 17 should equal 25. 42 − 17 = 25. ✓ The story holds."</div></div></div></div>
-</div>
-<div class="feedback-branch feedback-retry" id="p3-retry"><strong>🔄 The 2nd game is the SHORTER bar. The 1st is the LONGER bar.</strong>
-<div class="hint-callout">2nd game = 25. The 1st game is 17 MORE than that (because 2nd was 17 fewer). So 1st = 25 + 17.</div>
-<button class="orange-btn" onclick="resetP3()">↩ Reset and Try Again</button>
-</div>
-</div></div>
-<div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">Why do textbooks tell you to read a word problem TWICE? What does the second read catch that the first read missed?</p><div class="journal-label">✏️ My reasoning <span class="saved-dot" id="dot-soc2"></span></div><textarea class="journal-box" data-label="Practice — Socratic: why read twice" id="journal-soc2" oninput="autoSave(this,'dot-soc2')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Read twice. Draw the bar. Bigger or smaller? Then solve. Time to show what you know.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
-</div>
 <!-- ═══════════ SHOW WHAT YOU KNOW ═══════════ -->
 <div class="tab-panel" id="tab-assignment">
 <div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">🎯</div><div><div class="activity-title">Ready Check</div><div class="activity-sub">Two quick questions.</div></div></div><div class="activity-body">

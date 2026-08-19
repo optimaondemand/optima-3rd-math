@@ -334,7 +334,7 @@
 <div class="tab-bar" id="tabBar">
 <button class="tab-btn active" data-tab="warmup" onclick="switchTab('warmup')">🔍 Warm-Up <span class="tab-check">✓</span></button>
 <button class="tab-btn" data-tab="learn" onclick="switchTab('learn')">📐 Learn <span class="tab-check">✓</span></button>
-<button class="tab-btn" data-tab="practice" onclick="switchTab('practice')">🧮 Practice <span class="tab-check">✓</span></button>
+
 <button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">🌟 Show What You Know <span class="tab-check">✓</span></button>
 </div>
 <!-- ═══════════ WARM-UP ═══════════ -->
@@ -502,60 +502,9 @@
 </div></div>
 
 <div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">Why subtract the hundreds first and not the tens? Would the answer change if you did the tens first?</p><div class="journal-label">✏️ My reasoning <span class="saved-dot" id="dot-soc1"></span></div><textarea class="journal-box" data-label="Learn — Socratic: hundreds first or tens first" id="journal-soc1" oninput="autoSave(this,'dot-soc1')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Break apart, subtract the hundreds, subtract the tens. Three steps. Your turn.</p><button class="tab-next-btn" onclick="switchTab('practice')">Continue to 🧮 Practice →</button></div>
+<div class="tab-next-wrap"><p class="tab-transition-voice">Break apart, subtract the hundreds, subtract the tens. Three steps. Your turn.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
 </div>
 <!-- ═══════════ PRACTICE ═══════════ -->
-<div class="tab-panel" id="tab-practice">
-<div class="callout callout-info"><span class="callout-icon">🧭</span><p>You saw <strong>720 − 480 = 240</strong>. Practice gives you four more, then a bigger problem to write out, then a word problem.</p></div>
-<div class="callout callout-think"><span class="callout-icon">🧠</span><p><strong>For each problem:</strong> break the second number into hundreds and tens. Subtract the hundreds first. Then subtract the tens.</p></div>
-<div class="activity bl-violet"><div class="activity-head"><div class="activity-num" style="background:#6B3FA0;">1</div><div><div class="activity-title">Break Apart and Subtract</div><div class="activity-sub">Four problems. Same recipe each time.</div></div><span class="activity-time" style="background:#6B3FA0;">~5 min</span></div><div class="activity-body">
-<div class="bubble-row">
-<div class="bubble felix"><div class="bubble-avatar">F</div><div class="bubble-body"><div class="bubble-name">Felix — shortcut</div><div class="bubble-text">"Whisper the two steps as you go: 'Take the hundreds.' 'Take the tens.' Two whispers, you're done."</div></div></div>
-</div>
-<div class="fill-row"><strong>540 − 380 =</strong><input class="fill-input" id="p1-a" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>730 − 480 =</strong><input class="fill-input" id="p1-b" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>620 − 260 =</strong><input class="fill-input" id="p1-c" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>860 − 390 =</strong><input class="fill-input" id="p1-d" placeholder="?" type="number"/></div>
-<button class="check-btn" onclick="checkP1()">Check My Answers ✓</button>
-<div class="feedback-branch feedback-pass" id="p1-pass"><strong>✅ Yes!</strong> 540−380 = 160. 730−480 = 250. 620−260 = 360. 860−390 = 470.
-      <div class="bubble-row" style="margin-top:10px;"><div class="bubble cora"><div class="bubble-avatar">C</div><div class="bubble-body"><div class="bubble-name">Cora — checking the work</div><div class="bubble-text">"Let's check by adding. 160 + 380 = 540 ✓. 250 + 480 = 730 ✓. 360 + 260 = 620 ✓. 470 + 390 = 860 ✓. Four for four."</div></div></div></div>
-
-</div>
-<div class="feedback-branch feedback-retry" id="p1-retry"><strong>🔄 Try the recipe: break apart, hundreds first, then tens.</strong>
-<div class="hint-callout">540 − 380: break 380 into 300 + 80. 540 − 300 = ___. Then take 80 more.  ·  730 − 480: break 480 into 400 + 80. 730 − 400 = ___. Then take 80.  ·  620 − 260: break 260 into 200 + 60.  ·  860 − 390: break 390 into 300 + 90.</div>
-<button class="orange-btn" onclick="resetP1()">↩ Reset and Try Again</button>
-</div>
-</div></div>
-<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">2</div><div><div class="activity-title">Show Your Steps</div><div class="activity-sub">One bigger problem. Write out the recipe.</div></div><span class="activity-time" style="background:#2DB87A;">~4 min</span></div><div class="activity-body">
-<div class="bubble-row">
-<div class="bubble hazel"><div class="bubble-avatar">H</div><div class="bubble-body"><div class="bubble-name">Hazel — write it down</div><div class="bubble-text">"Sketch the three steps. Even if you can solve it in your head, writing each step helps catch mistakes."</div></div></div>
-</div>
-<div class="task-box"><div class="task-label">Problem</div><p>Find <strong>920 − 690</strong> by breaking apart. Show each step.</p></div>
-<div class="journal-label">✏️ My three steps <span class="saved-dot" id="dot-p2"></span></div>
-<textarea class="journal-box" data-label="Practice 2 — Show steps for 920 − 690" id="journal-p2" oninput="autoSave(this,'dot-p2')" placeholder="Step 1 — Break apart 690: 690 = ___ + ___
-Step 2 — Subtract the hundreds: 920 − ___ = ___
-Step 3 — Subtract the tens: ___ − ___ = ___
-Final answer: 920 − 690 = ___" style="min-height:140px;"></textarea>
-<div class="callout callout-tip" style="margin-top:10px;"><span class="callout-icon">💡</span><p><strong>Answer:</strong> 920 − 690 = 230. Steps: 690 = 600 + 90. 920 − 600 = 320. 320 − 90: split 90 into 20 + 70. 320 − 20 = 300. 300 − 70 = 230.</p></div>
-</div></div>
-<div class="activity bl-violet"><div class="activity-head"><div class="activity-num" style="background:#6B3FA0;">3</div><div><div class="activity-title">The Field Trip</div><div class="activity-sub">A word problem from the real world.</div></div></div><div class="activity-body">
-<div class="bubble-row">
-<div class="bubble atlas"><div class="bubble-avatar">A</div><div class="bubble-body"><div class="bubble-name">Atlas — concrete</div><div class="bubble-text">"Picture the numbers: start with the bigger one. Take away the smaller one piece by piece."</div></div></div>
-</div>
-<div class="task-box"><div class="task-label">Word problem</div><p>A school had <strong>340 lunches</strong> ready for the field trip. <strong>170 students</strong> took theirs at the museum. How many lunches are left for the second stop?</p></div>
-<div class="fill-row"><strong>Lunches left:</strong><input class="fill-input" id="p3-a" placeholder="?" type="number"/></div>
-<button class="check-btn" onclick="checkP3()">Check My Answer ✓</button>
-<div class="feedback-branch feedback-pass" id="p3-pass"><strong>✅ Yes — 170 lunches.</strong> 170 = 100 + 70. 340 − 100 = 240. 240 − 70 = 170.
-      <div class="bubble-row" style="margin-top:10px;"><div class="bubble cora"><div class="bubble-avatar">C</div><div class="bubble-body"><div class="bubble-name">Cora — checking the work</div><div class="bubble-text">"Let's check: 170 + 170 = 340 ✓. Half the lunches are gone, half are left."</div></div></div></div>
-</div>
-<div class="feedback-branch feedback-retry" id="p3-retry"><strong>🔄 Break 170 into 100 + 70.</strong>
-<div class="hint-callout">Take the hundreds first: 340 − 100 = ___. Then take the tens: that number − 70 = ___.</div>
-<button class="orange-btn" onclick="resetP3()">↩ Reset and Try Again</button>
-</div>
-</div></div>
-<div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">In yesterday's lesson, count-up worked best when the numbers were CLOSE. Today's break-apart works best when the numbers are FAR APART. How do you know which one to pick when you see a new subtraction problem?</p><div class="journal-label">✏️ My reasoning <span class="saved-dot" id="dot-soc2"></span></div><textarea class="journal-box" data-label="Practice — Socratic: when to pick count-up vs break-apart" id="journal-soc2" oninput="autoSave(this,'dot-soc2')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Break apart, hundreds, tens. Time to show what you know.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
-</div>
 <!-- ═══════════ SHOW WHAT YOU KNOW ═══════════ -->
 <div class="tab-panel" id="tab-assignment">
 <div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">🎯</div><div><div class="activity-title">Ready Check</div><div class="activity-sub">Two quick questions.</div></div></div><div class="activity-body">

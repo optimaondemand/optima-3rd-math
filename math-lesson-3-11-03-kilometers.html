@@ -307,7 +307,7 @@
 <div class="tab-bar" id="tabBar">
 <button class="tab-btn active" data-tab="warmup" onclick="switchTab('warmup')">🔍 Warm-Up <span class="tab-check">✓</span></button>
 <button class="tab-btn" data-tab="learn" onclick="switchTab('learn')">📐 Learn <span class="tab-check">✓</span></button>
-<button class="tab-btn" data-tab="practice" onclick="switchTab('practice')">🧮 Practice <span class="tab-check">✓</span></button>
+
 <button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">🌟 Show What You Know <span class="tab-check">✓</span></button>
 </div>
 <!-- WARM-UP TAB -->
@@ -398,58 +398,9 @@
 <p style="font-family:'Lora',serif;background:#FAFBFF;border:2px solid #E2E8F4;border-radius:12px;padding:10px;text-align:center;font-size:20px;font-weight:900;margin-top:14px;">1,500 m = 1 km 500 m</p>
 </div></div>
 <div class="socratic-box"><div class="socratic-label">🔮 Think Deeper</div><p class="socratic-q">Why do you think we use kilometers for long distances instead of just counting meters?</p><div class="journal-label">✏️ <span class="saved-dot" id="ds1"></span></div><textarea class="journal-box" data-label="Learn socratic" id="j-s101" oninput="autoSave(this,'ds1')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Meters become kilometers — just count by thousands.</p><button class="tab-next-btn" onclick="switchTab('practice')">Continue to 🧮 Practice →</button></div>
+<div class="tab-next-wrap"><p class="tab-transition-voice">Meters become kilometers — just count by thousands.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
 </div>
 <!-- PRACTICE TAB -->
-<div class="tab-panel" id="tab-practice">
-<div class="callout callout-info"><span class="callout-icon">🧭</span><p>You just built distances on the Distance Mapper. Now convert on your own.</p></div>
-<div class="callout callout-tip"><span class="callout-icon">💡</span><p><strong>Remember:</strong> 1 km = 1,000 m. Thousands become kilometers.</p></div>
-<div class="hint-callout">🔄 <strong>Stuck?</strong> Go back to Learn and try the Distance Mapper again.</div>
-<!-- P1: km → m (simplest) -->
-<div class="activity bl-ws"><div class="activity-head"><div class="activity-num" style="background:var(--ws);">1</div><div><div class="activity-title">Kilometers to Meters</div></div></div><div class="activity-body">
-<div class="task-box"><div class="task-label">Convert</div><p>3 km = ___ m</p></div>
-<div class="fill-row"><strong>3 km =</strong><input class="fill-input" id="p1-ans" placeholder="?" type="number"/><strong>m</strong></div>
-<button class="check-btn" onclick="checkP1()">Check ✓</button>
-<div class="feedback-branch feedback-pass" id="p1-pass"><strong>✅</strong> 3 × 1,000 = 3,000. So 3 km = 3,000 m.
-      
-</div>
-<div class="feedback-branch feedback-retry" id="p1-retry"><strong>🔄 Each kilometer has 1,000 meters. How many meters in 3 kilometers?</strong>
-
-<button class="orange-btn" onclick="resetP(1)">↩ Reset</button>
-</div>
-</div></div>
-<!-- P2: m → km + m (one feature varied) -->
-<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">2</div><div><div class="activity-title">Meters to Kilometers</div></div></div><div class="activity-body">
-<div class="task-box"><div class="task-label">Convert</div><p>2,500 m = ___ km ___ m</p></div>
-<div class="fill-row"><strong>2,500 m =</strong><input class="fill-input" id="p2-km" placeholder="? km" style="width:70px;" type="number"/><strong>km</strong><input class="fill-input" id="p2-m" placeholder="? m" style="width:80px;" type="number"/><strong>m</strong></div>
-<button class="check-btn" onclick="checkP2()">Check ✓</button>
-<div class="feedback-branch feedback-pass" id="p2-pass"><strong>✅</strong> 2,500 has 2 thousands and 500 left over. 2,500 m = 2 km 500 m.
-      
-</div>
-<div class="feedback-branch feedback-retry" id="p2-retry"><strong>🔄 Think: how many groups of 1,000 fit into 2,500? That’s the kilometers. The leftover is meters.</strong>
-
-<button class="orange-btn" onclick="resetP(2)">↩ Reset</button>
-</div>
-</div></div>
-<!-- P3: judgment task -->
-<div class="activity bl-slate"><div class="activity-head"><div class="activity-num" style="background:#3A6B9A;">3</div><div><div class="activity-title">Who Ran Farther?</div></div></div><div class="activity-body">
-<div class="task-box"><div class="task-label">Compare</div><p>Hazel ran 1 km 200 m. Felix ran 1,100 m. Who ran farther?</p></div>
-<div class="value-card-row">
-<div class="value-card" onclick="p3(this,true)"><div class="big">Hazel</div><div class="small">1 km 200 m</div></div>
-<div class="value-card" onclick="p3(this,false)"><div class="big">Felix</div><div class="small">1,100 m</div></div>
-</div>
-<div class="inline-feedback" id="p3-fb"></div>
-<div class="feedback-branch feedback-pass" id="p3-pass"><strong>✅</strong> Convert both to meters: 1 km 200 m = 1,200 m. 1,200 &gt; 1,100. Hazel ran farther.
-      
-</div>
-<div class="feedback-branch feedback-retry" id="p3-retry"><strong>🔄 Convert both to meters first. 1 km 200 m — that’s 1,000 + 200 = ? m.</strong>
-
-<button class="orange-btn" onclick="resetP(3)">↩ Reset</button>
-</div>
-</div></div>
-<div class="socratic-box"><div class="socratic-label">🔮 Think Deeper</div><p class="socratic-q">Is 1 km 500 m more or less than 2 km? How do you know?</p><div class="journal-label">✏️ <span class="saved-dot" id="ds2"></span></div><textarea class="journal-box" data-label="Practice socratic" id="j-s201" oninput="autoSave(this,'ds2')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Meters, kilometers — you know which is which.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
-</div>
 <!-- SHOW WHAT YOU KNOW TAB -->
 <div class="tab-panel" id="tab-assignment">
 <div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">🎯</div><div><div class="activity-title">Ready Check</div></div></div><div class="activity-body">
@@ -533,7 +484,7 @@ function checkP2(){hideBranches('p2');var km=parseInt(document.getElementById('p
 function p3(c,ok){c.parentElement.querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});if(ok){c.classList.add('good');showBranch('p3-pass');mini(c);}else{c.classList.add('bad');showBranch('p3-retry');}}
 function resetP(n){if(n===1){document.getElementById('p1-ans').value='';document.getElementById('p1-ans').classList.remove('good','bad');hideBranches('p1');}
 if(n===2){['p2-km','p2-m'].forEach(function(id){var e=document.getElementById(id);e.value='';e.classList.remove('good','bad');});hideBranches('p2');}
-if(n===3){document.querySelectorAll('#tab-practice .value-card').forEach(function(x){x.classList.remove('good','bad');});document.getElementById('p3-fb').className='inline-feedback';hideBranches('p3');}}
+if(n===3){document.querySelectorAll('.REMOVED-PRACTICE').forEach(function(x){x.classList.remove('good','bad');});document.getElementById('p3-fb').className='inline-feedback';hideBranches('p3');}}
 
 /* Ready Check */
 function eA(c,ok){c.parentElement.querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});var f=document.getElementById('eA-fb');if(ok){c.classList.add('good');f.className='inline-feedback show good';f.innerHTML='<strong>&#x2705;</strong> 4 &times; 1,000 = 4,000 m.';mini(c);}else{c.classList.add('bad');f.className='inline-feedback show think';f.innerHTML='Each kilometer = 1,000 m. 4 km = 4 &times; 1,000 = ?';}}

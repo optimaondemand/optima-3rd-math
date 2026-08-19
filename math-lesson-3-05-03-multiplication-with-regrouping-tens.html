@@ -342,7 +342,7 @@
 <div class="tab-bar" id="tabBar">
 <button class="tab-btn active" data-tab="warmup" onclick="switchTab('warmup')">🔍 Warm-Up <span class="tab-check">✓</span></button>
 <button class="tab-btn" data-tab="learn" onclick="switchTab('learn')">📐 Learn <span class="tab-check">✓</span></button>
-<button class="tab-btn" data-tab="practice" onclick="switchTab('practice')">🧮 Practice <span class="tab-check">✓</span></button>
+
 <button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">🌟 Show What You Know <span class="tab-check">✓</span></button>
 </div>
 <div class="tab-panel active" id="tab-warmup">
@@ -469,54 +469,7 @@
 </div></div>
 
 <div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">In the trade, why does the TOTAL value of the mat stay the same? Use the disc values to explain.</p><div class="journal-label">✏️ <span class="saved-dot" id="ds1"></span></div><textarea class="journal-box" data-label="Learn socratic" id="j-s1" oninput="autoSave(this,'ds1')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Multiply, check for overflow, trade if needed.</p><button class="tab-next-btn" onclick="switchTab('practice')">Continue to 🧮 Practice →</button></div>
-</div>
-<div class="tab-panel" id="tab-practice">
-<div class="callout callout-info"><span class="callout-icon">🧭</span><p>Multiply each column. If tens overflow (10+), trade.</p></div>
-<div class="activity bl-berry"><div class="activity-head"><div class="activity-num" style="background:var(--berry);">1</div><div><div class="activity-title">3 × 42</div></div></div><div class="activity-body">
-<div class="fill-row"><strong>3 × 2 ones =</strong><input class="fill-input" id="p1-o" placeholder="?" type="number"/><strong>ones</strong></div>
-<div class="fill-row"><strong>3 × 4 tens =</strong><input class="fill-input" id="p1-t" placeholder="?" type="number"/><strong>tens (overflow!)</strong></div>
-<div class="fill-row"><strong>After trade: hundreds =</strong><input class="fill-input" id="p1-h" placeholder="?" type="number"/><strong>tens =</strong><input class="fill-input" id="p1-tl" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>Total: 3 × 42 =</strong><input class="fill-input" id="p1-tot" placeholder="?" type="number"/></div>
-<button class="check-btn" onclick="checkP1()">Check ✓</button>
-<div class="feedback-branch feedback-pass" id="p1-pass"><strong>✅</strong> 6 ones · 12 tens · trade → 1 hundred + 2 tens · Total 126.</div>
-<div class="feedback-branch feedback-retry" id="p1-retry"><strong>🔄 Trade 10 tens for 1 hundred.</strong>
-<div class="hint-callout">3 × 2 = 6 ones. 3 × 4 = 12 tens. Trade: 10 tens → 1 hundred. Left: 2 tens. 100 + 20 + 6 = 126.</div>
-<button class="orange-btn" onclick="resetP1()">↩ Reset</button>
-</div>
-</div></div>
-<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">2</div><div><div class="activity-title">4 × 30</div></div></div><div class="activity-body">
-<div class="fill-row"><strong>4 × 0 ones =</strong><input class="fill-input" id="p2-o" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>4 × 3 tens =</strong><input class="fill-input" id="p2-t" placeholder="?" type="number"/><strong>tens</strong></div>
-<div class="fill-row"><strong>After trade: hundreds =</strong><input class="fill-input" id="p2-h" placeholder="?" type="number"/><strong>tens =</strong><input class="fill-input" id="p2-tl" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>Total: 4 × 30 =</strong><input class="fill-input" id="p2-tot" placeholder="?" type="number"/></div>
-<button class="check-btn" onclick="checkP2()">Check ✓</button>
-<div class="feedback-branch feedback-pass" id="p2-pass"><strong>✅</strong> 0 ones · 12 tens · trade → 1 hundred + 2 tens · Total 120.</div>
-<div class="feedback-branch feedback-retry" id="p2-retry"><strong>🔄 12 tens overflows — trade 10 for 1 hundred.</strong>
-<div class="hint-callout">4 × 3 = 12 tens. Trade 10 → 1 hundred. Left: 2 tens. 100 + 20 = 120.</div>
-<button class="orange-btn" onclick="resetP2()">↩ Reset</button>
-</div>
-</div></div>
-<div class="activity bl-berry"><div class="activity-head"><div class="activity-num" style="background:var(--berry);">3</div><div><div class="activity-title">Trade or No Trade?</div></div></div><div class="activity-body">
-<p>For each, decide if the tens column overflows. Tap your answer.</p>
-<div class="task-box"><div class="task-label">3 × 21</div><div class="value-card-row">
-<div class="value-card" onclick="p3a(this,true)"><div class="big">No trade</div></div>
-<div class="value-card" onclick="p3a(this,false)"><div class="big">Trade</div></div>
-</div></div>
-<div class="task-box"><div class="task-label">5 × 30</div><div class="value-card-row">
-<div class="value-card" onclick="p3b(this,false)"><div class="big">No trade</div></div>
-<div class="value-card" onclick="p3b(this,true)"><div class="big">Trade</div></div>
-</div></div>
-<div class="task-box"><div class="task-label">2 × 40</div><div class="value-card-row">
-<div class="value-card" onclick="p3c(this,true)"><div class="big">No trade</div></div>
-<div class="value-card" onclick="p3c(this,false)"><div class="big">Trade</div></div>
-</div></div>
-<div class="inline-feedback" id="p3-fb"></div>
-<div class="journal-label">✏️ For each, what's the product? <span class="saved-dot" id="dp3"></span></div>
-<textarea class="journal-box" data-label="Practice 3 products" id="j-p3" oninput="autoSave(this,'dp3')" placeholder="" style="min-height:80px;"></textarea>
-</div></div>
-<div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">For a tens-only trade like 3 × 50, how can you tell BEFORE multiplying that you'll need to trade?</p><div class="journal-label">✏️ <span class="saved-dot" id="ds2"></span></div><textarea class="journal-box" data-label="Practice socratic" id="j-s2" oninput="autoSave(this,'ds2')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">10 tens = 1 hundred. Always.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
+<div class="tab-next-wrap"><p class="tab-transition-voice">Multiply, check for overflow, trade if needed.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
 </div>
 <div class="tab-panel" id="tab-assignment">
 <div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">🎯</div><div><div class="activity-title">Ready Check</div></div></div><div class="activity-body">

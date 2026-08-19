@@ -346,7 +346,7 @@
 <div class="tab-bar" id="tabBar">
 <button class="tab-btn active" data-tab="warmup" onclick="switchTab('warmup')">🔍 Warm-Up <span class="tab-check">✓</span></button>
 <button class="tab-btn" data-tab="learn" onclick="switchTab('learn')">📐 Learn <span class="tab-check">✓</span></button>
-<button class="tab-btn" data-tab="practice" onclick="switchTab('practice')">🧮 Practice <span class="tab-check">✓</span></button>
+
 <button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">🌟 Show What You Know <span class="tab-check">✓</span></button>
 </div>
 <div class="tab-panel active" id="tab-warmup">
@@ -445,26 +445,7 @@
 <p style="font-family:'Lora',serif;background:#FAFBFF;border:2px solid #E2E8F4;border-radius:12px;padding:10px;text-align:center;font-size:22px;font-weight:900;margin-top:14px;"><span class="frac md" style="color:#1A8A5A;"><span class="num">1</span><span class="bar"></span><span class="den">3</span></span> = <span class="frac md" style="color:#1A8A5A;"><span class="num">2</span><span class="bar"></span><span class="den">6</span></span></p>
 </div></div>
 <div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">Why does cutting a piece in half not change how much is shaded?</p><div class="journal-label">✏️ <span class="saved-dot" id="ds1"></span></div><textarea class="journal-box" data-label="Learn socratic" id="j-s1" oninput="autoSave(this,'ds1')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Same length, new name. That's equivalence.</p><button class="tab-next-btn" onclick="switchTab('practice')">Continue to 🧮 Practice →</button></div>
-</div>
-<div class="tab-panel" id="tab-practice">
-<div class="callout callout-info"><span class="callout-icon">🧭</span><p>Use the Splitter above. Click "Split each piece in 2" to find equivalent fractions.</p></div>
-<div class="activity bl-mar"><div class="activity-head"><div class="activity-num" style="background:var(--mar);">1</div><div><div class="activity-title">Split one-half in 2</div></div></div><div class="activity-body">
-<p>Reset the Splitter so it shows one-half. Click "Split each piece in 2" one time. <strong>What equivalent fraction do you see?</strong> Fill in the new numerator and denominator.</p>
-<div class="fill-row"><strong>New numerator:</strong><input class="fill-input" id="p1-n" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>New denominator:</strong><input class="fill-input" id="p1-d" placeholder="?" type="number"/></div>
-<button class="check-btn" onclick="checkP1()">Check ✓</button>
-<div class="feedback-branch feedback-pass" id="p1-pass"><strong>✅</strong> <span class="frac"><span class="num">1</span><span class="bar"></span><span class="den">2</span></span> = <span class="frac"><span class="num">2</span><span class="bar"></span><span class="den">4</span></span>. Same shaded length, more cuts.</div>
-<div class="feedback-branch feedback-retry" id="p1-retry"><strong>🔄 Each piece got cut in half.</strong><div class="hint-callout">2 pieces became 4 pieces. 1 shaded piece became 2 shaded pieces. Top: 2. Bottom: 4.</div><button class="orange-btn" onclick="resetP1()">↩ Reset</button></div>
-</div></div>
-<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">2</div><div><div class="activity-title">Keep splitting</div></div></div><div class="activity-body">
-<div class="task-box"><div class="task-label">Problem</div><p>On the Splitter, click "Split each piece in 2" two more times (so you've split three times total). <strong>What equivalent fractions do you see now?</strong> Write the chain: 1/2 = ? = ? = ?</p></div>
-<div class="journal-label">✏️ <span class="saved-dot" id="dp2"></span></div>
-<textarea class="journal-box" data-label="Practice 2" id="j-p2" oninput="autoSave(this,'dp2')" placeholder="" style="min-height:70px;"></textarea>
-<div class="callout callout-tip"><span class="callout-icon">💡</span><p><strong>Answer:</strong> <span class="frac"><span class="num">1</span><span class="bar"></span><span class="den">2</span></span> = <span class="frac"><span class="num">2</span><span class="bar"></span><span class="den">4</span></span> = <span class="frac"><span class="num">4</span><span class="bar"></span><span class="den">8</span></span> = <span class="frac"><span class="num">8</span><span class="bar"></span><span class="den">16</span></span>. Same shaded length each time. Top and bottom double with every split.</p></div>
-</div></div>
-<div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">When you split each piece in 2, why do BOTH the numerator and the denominator double?</p><div class="journal-label">✏️ <span class="saved-dot" id="ds2"></span></div><textarea class="journal-box" data-label="Practice socratic" id="j-s2" oninput="autoSave(this,'ds2')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Two names for the same amount = equivalent.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
+<div class="tab-next-wrap"><p class="tab-transition-voice">Same length, new name. That's equivalence.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
 </div>
 <div class="tab-panel" id="tab-assignment">
 <div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">🎯</div><div><div class="activity-title">Ready Check</div></div></div><div class="activity-body">

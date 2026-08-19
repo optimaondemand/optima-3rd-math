@@ -306,7 +306,7 @@
 <div class="tab-bar" id="tabBar">
 <button class="tab-btn active" data-tab="warmup" onclick="switchTab('warmup')">🔍 Warm-Up <span class="tab-check">✓</span></button>
 <button class="tab-btn" data-tab="learn" onclick="switchTab('learn')">📐 Learn <span class="tab-check">✓</span></button>
-<button class="tab-btn" data-tab="practice" onclick="switchTab('practice')">🧮 Practice <span class="tab-check">✓</span></button>
+
 <button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">🌟 Show What You Know <span class="tab-check">✓</span></button>
 </div>
 <div class="tab-panel active" id="tab-warmup">
@@ -448,42 +448,7 @@
 </div></div>
 
 <div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">If you know 6 × 4 = 24, name TWO division facts you also know — without doing any new math.</p><div class="journal-label">✏️ My answer <span class="saved-dot" id="dot-s1"></span></div><textarea class="journal-box" data-label="Learn — Socratic" id="journal-s1" oninput="autoSave(this,'dot-s1')"></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Share or measure — same operation, different question.</p><button class="tab-next-btn" onclick="switchTab('practice')">Continue to 🧮 Practice →</button></div>
-</div>
-<div class="tab-panel" id="tab-practice">
-<div class="callout callout-info"><span class="callout-icon">🧭</span><p>You saw 35 ÷ 5 = 7. Try a few more divisions.</p></div>
-<div class="activity bl-coral"><div class="activity-head"><div class="activity-num" style="background:#E76F51;">1</div><div><div class="activity-title">Divide</div></div></div><div class="activity-body">
-<div class="fill-row"><strong>12 ÷ 4 =</strong><input class="fill-input" id="p1-a" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>12 ÷ 3 =</strong><input class="fill-input" id="p1-b" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>35 ÷ 5 =</strong><input class="fill-input" id="p1-c" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>18 ÷ 2 =</strong><input class="fill-input" id="p1-d" placeholder="?" type="number"/></div>
-<button class="check-btn" onclick="checkP1()">Check ✓</button>
-<div class="feedback-branch feedback-pass" id="p1-pass"><strong>✅ Yes!</strong> 12÷4=3, 12÷3=4, 35÷5=7, 18÷2=9.</div>
-<div class="feedback-branch feedback-retry" id="p1-retry"><strong>🔄 Use the multiplication fact.</strong>
-<div class="hint-callout">12÷4: 4×?=12. 12÷3: 3×?=12. 35÷5: 5×?=35. 18÷2: 2×?=18.</div>
-<button class="orange-btn" onclick="resetP1()">↩ Reset</button>
-</div>
-</div></div>
-<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">2</div><div><div class="activity-title">Both meanings, same equation</div></div></div><div class="activity-body">
-<div class="task-box"><div class="task-label">Problem</div><p>Write TWO division equations using 12 counters: one for "split into 3 equal groups" and one for "make groups of 3."</p></div>
-<div class="journal-label">✏️ Equations + answers <span class="saved-dot" id="dot-p2"></span></div>
-<textarea class="journal-box" data-label="Practice 2" id="journal-p2" oninput="autoSave(this,'dot-p2')" placeholder="Share into 3 groups: 12 ÷ 3 = ___
-Groups of 3: 12 ÷ 3 = ___
-(Same equation, different meaning of the answer!)" style="min-height:110px;"></textarea>
-<div class="callout callout-tip"><span class="callout-icon">💡</span><p><strong>Answer:</strong> Both write as 12 ÷ 3 = 4. In "share" mode, 4 means 4 per group. In "measure" mode, 4 means 4 groups fit.</p></div>
-</div></div>
-<div class="activity bl-coral"><div class="activity-head"><div class="activity-num" style="background:#E76F51;">3</div><div><div class="activity-title">35 Crayons, 5 Students</div></div></div><div class="activity-body">
-<div class="task-box"><div class="task-label">Word problem</div><p>5 students share 35 crayons equally. How many crayons does each student get?</p></div>
-<div class="fill-row"><strong>Each student gets:</strong><input class="fill-input" id="p3-a" placeholder="?" type="number"/></div>
-<button class="check-btn" onclick="checkP3()">Check ✓</button>
-<div class="feedback-branch feedback-pass" id="p3-pass"><strong>✅ Yes — 7 crayons each.</strong> 35 ÷ 5 = 7, because 5 × 7 = 35.</div>
-<div class="feedback-branch feedback-retry" id="p3-retry"><strong>🔄 35 ÷ 5 = ?</strong>
-<div class="hint-callout">5 × ? = 35. Skip-count by 5s: 5, 10, 15, 20, 25, 30, 35. How many counts?</div>
-<button class="orange-btn" onclick="resetP3()">↩ Reset</button>
-</div>
-</div></div>
-<div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">Why are multiplication and division called INVERSE operations? Use 6 × 4 = 24 to show what you mean.</p><div class="journal-label">✏️ My answer <span class="saved-dot" id="dot-s2"></span></div><textarea class="journal-box" data-label="Practice — Socratic" id="journal-s2" oninput="autoSave(this,'dot-s2')"></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Share or measure — both are ÷. Time to show what you know.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
+<div class="tab-next-wrap"><p class="tab-transition-voice">Share or measure — same operation, different question.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
 </div>
 <div class="tab-panel" id="tab-assignment">
 <div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">🎯</div><div><div class="activity-title">Ready Check</div></div></div><div class="activity-body">

@@ -349,7 +349,7 @@
 <div class="tab-bar" id="tabBar">
 <button class="tab-btn active" data-tab="warmup" onclick="switchTab('warmup')">🔍 Warm-Up <span class="tab-check">✓</span></button>
 <button class="tab-btn" data-tab="learn" onclick="switchTab('learn')">📐 Learn <span class="tab-check">✓</span></button>
-<button class="tab-btn" data-tab="practice" onclick="switchTab('practice')">🧮 Practice <span class="tab-check">✓</span></button>
+
 <button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">🌟 Show What You Know <span class="tab-check">✓</span></button>
 </div>
 <div class="tab-panel active" id="tab-warmup">
@@ -475,31 +475,7 @@
 <p style="font-family:'Lora',serif;background:#FAFBFF;border:2px solid #E2E8F4;border-radius:12px;padding:10px;text-align:center;font-size:18px;font-weight:800;margin-top:14px;">384 ÷ 2 = <span style="color:#1A8A5A;">192</span></p>
 </div></div>
 <div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">Why do we start with the hundreds column instead of the ones?</p><div class="journal-label">✏️ <span class="saved-dot" id="ds1"></span></div><textarea class="journal-box" data-label="Learn socratic" id="j-s1" oninput="autoSave(this,'ds1')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Left to right. Trade down. Read one row.</p><button class="tab-next-btn" onclick="switchTab('practice')">Continue to 🧮 Practice →</button></div>
-</div>
-<div class="tab-panel" id="tab-practice">
-<div class="callout callout-info"><span class="callout-icon">🧭</span><p>Share hundreds, then tens, then ones. Trade leftovers down.</p></div>
-<div class="activity bl-honey"><div class="activity-head"><div class="activity-num" style="background:var(--honey);">1</div><div><div class="activity-title">246 ÷ 2 (no trade)</div></div></div><div class="activity-body">
-<div class="fill-row"><strong>Hundreds per row:</strong><input class="fill-input" id="p1-h" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>Tens per row:</strong><input class="fill-input" id="p1-t" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>Ones per row:</strong><input class="fill-input" id="p1-o" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>246 ÷ 2 =</strong><input class="fill-input" id="p1-tot" placeholder="?" type="number"/></div>
-<button class="check-btn" onclick="checkP1()">Check ✓</button>
-<div class="feedback-branch feedback-pass" id="p1-pass"><strong>✅</strong> 1 H · 2 T · 3 O · 123. No trade.</div>
-<div class="feedback-branch feedback-retry" id="p1-retry"><strong>🔄 All three digits split cleanly.</strong><div class="hint-callout">2÷2=1, 4÷2=2, 6÷2=3. 1 hundred + 2 tens + 3 ones = 123.</div><button class="orange-btn" onclick="resetP1()">↩ Reset</button></div>
-</div></div>
-<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">2</div><div><div class="activity-title">524 ÷ 2 (with trade)</div></div></div><div class="activity-body">
-<div class="fill-row"><strong>Hundreds per row:</strong><input class="fill-input" id="p2-h" placeholder="?" type="number"/><strong>(leftover</strong><input class="fill-input" id="p2-hl" placeholder="?" type="number"/><strong>)</strong></div>
-<div class="fill-row"><strong>Trade: tens column =</strong><input class="fill-input" id="p2-t12" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>Tens per row:</strong><input class="fill-input" id="p2-t" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>Ones per row:</strong><input class="fill-input" id="p2-o" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>524 ÷ 2 =</strong><input class="fill-input" id="p2-tot" placeholder="?" type="number"/></div>
-<button class="check-btn" onclick="checkP2()">Check ✓</button>
-<div class="feedback-branch feedback-pass" id="p2-pass"><strong>✅</strong> 2 H (1 left) · tens = 12 · 6 T · 2 O · 262.</div>
-<div class="feedback-branch feedback-retry" id="p2-retry"><strong>🔄 Trade the leftover hundred down to tens.</strong><div class="hint-callout">5÷2=2 R 1. Trade → tens=10+2=12. 12÷2=6 tens. 4÷2=2 ones. 262.</div><button class="orange-btn" onclick="resetP2()">↩ Reset</button></div>
-</div></div>
-<div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">When the hundreds digit is odd, what does that mean for the rest of the work?</p><div class="journal-label">✏️ <span class="saved-dot" id="ds2"></span></div><textarea class="journal-box" data-label="Practice socratic" id="j-s2" oninput="autoSave(this,'ds2')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">3 columns. Same rule. Trade down when needed.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
+<div class="tab-next-wrap"><p class="tab-transition-voice">Left to right. Trade down. Read one row.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
 </div>
 <div class="tab-panel" id="tab-assignment">
 <div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">🎯</div><div><div class="activity-title">Ready Check</div></div></div><div class="activity-body">

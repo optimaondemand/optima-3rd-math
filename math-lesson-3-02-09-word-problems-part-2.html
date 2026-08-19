@@ -343,7 +343,7 @@
 <div class="tab-bar" id="tabBar">
 <button class="tab-btn active" data-tab="warmup" onclick="switchTab('warmup')">🔍 Warm-Up <span class="tab-check">✓</span></button>
 <button class="tab-btn" data-tab="learn" onclick="switchTab('learn')">📐 Learn <span class="tab-check">✓</span></button>
-<button class="tab-btn" data-tab="practice" onclick="switchTab('practice')">🧮 Practice <span class="tab-check">✓</span></button>
+
 <button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">🌟 Show What You Know <span class="tab-check">✓</span></button>
 </div>
 <!-- ═══════════ WARM-UP ═══════════ -->
@@ -518,60 +518,9 @@
 </div></div>
 
 <div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">Word problems sometimes include numbers you don't need. Why would a problem do that? What does it train you to do?</p><div class="journal-label">✏️ My reasoning <span class="saved-dot" id="dot-soc1"></span></div><textarea class="journal-box" data-label="Learn — Socratic: why include extra numbers" id="journal-soc1" oninput="autoSave(this,'dot-soc1')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Read like a detective. Skip extras. Sense-check the answer. Time to try a few.</p><button class="tab-next-btn" onclick="switchTab('practice')">Continue to 🧮 Practice →</button></div>
+<div class="tab-next-wrap"><p class="tab-transition-voice">Read like a detective. Skip extras. Sense-check the answer. Time to try a few.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
 </div>
 <!-- ═══════════ PRACTICE ═══════════ -->
-<div class="tab-panel" id="tab-practice">
-<div class="callout callout-info"><span class="callout-icon">🧭</span><p>You saw the bakery problem (with a sneaky extra fact). Practice mixes extra-info problems with sense-check moves.</p></div>
-<div class="callout callout-think"><span class="callout-icon">🧠</span><p><strong>For each problem:</strong> read twice. Cross out extras. Sense-check before you finish.</p></div>
-<div class="activity bl-violet"><div class="activity-head"><div class="activity-num" style="background:#6B3FA0;">1</div><div><div class="activity-title">Find &amp; Solve</div><div class="activity-sub">Four problems. Some have extra info.</div></div><span class="activity-time" style="background:#6B3FA0;">~6 min</span></div><div class="activity-body">
-<div class="bubble-row">
-<div class="bubble felix"><div class="bubble-avatar">F</div><div class="bubble-body"><div class="bubble-name">Felix — shortcut</div><div class="bubble-text">"Underline the question word. THEN scan the numbers — only the ones that match the question stay. Cross out the rest."</div></div></div>
-</div>
-<div class="fill-row"><strong>Hazel has 92 stickers and got 14 more. Last year she had 30. How many now? =</strong><input class="fill-input" id="p1-a" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>A library has 320 books on the top shelf and 175 on the bottom shelf. 48 books are due today. How many TOTAL books on those two shelves? =</strong><input class="fill-input" id="p1-b" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>Atlas walked 425 steps to school and 280 steps home. He wore his blue shoes (cost $25). How many steps total? =</strong><input class="fill-input" id="p1-c" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>Cora baked 140 cookies. She ate 5 and gave away 38. The recipe takes 45 minutes. How many cookies left? =</strong><input class="fill-input" id="p1-d" placeholder="?" type="number"/></div>
-<button class="check-btn" onclick="checkP1()">Check My Answers ✓</button>
-<div class="feedback-branch feedback-pass" id="p1-pass"><strong>✅ Yes!</strong> Hazel = 92 + 14 = 106 (skip the 30). Library = 320 + 175 = 495 (skip the 48). Atlas = 425 + 280 = 705 (skip the $25). Cora = 140 − 5 − 38 = 97 (skip the 45 minutes).
-      <div class="bubble-row" style="margin-top:10px;"><div class="bubble cora"><div class="bubble-avatar">C</div><div class="bubble-body"><div class="bubble-name">Cora — sense check</div><div class="bubble-text">"Sense check: Hazel got MORE, so answer &gt; 92 ✓. Library asked for TOTAL, so answer &gt; either shelf ✓. Atlas walked TWO trips, so total &gt; one trip ✓. Cora gave away cookies, so answer &lt; 140 ✓. All four pass the sense check."</div></div></div></div>
-
-</div>
-<div class="feedback-branch feedback-retry" id="p1-retry"><strong>🔄 Cross out the extra facts. Then solve.</strong>
-<div class="hint-callout">(a) The "30 last year" doesn't help today. 92 + 14 = ___.  ·  (b) "48 due today" doesn't affect the total on the shelves. 320 + 175 = ___.  ·  (c) "$25 shoes" doesn't affect steps. 425 + 280 = ___.  ·  (d) "45 minutes" is time, not cookies. 140 − 5 − 38 = ___.</div>
-<button class="orange-btn" onclick="resetP1()">↩ Reset and Try Again</button>
-</div>
-</div></div>
-<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">2</div><div><div class="activity-title">Spot the Mistake (Your Turn)</div><div class="activity-sub">A different student's work — what's wrong?</div></div><span class="activity-time" style="background:#2DB87A;">~4 min</span></div><div class="activity-body">
-<div class="bubble-row">
-<div class="bubble hazel"><div class="bubble-avatar">H</div><div class="bubble-body"><div class="bubble-name">Hazel — sense-check it</div><div class="bubble-text">"Look at the final answer first. Does it make sense in the story? If it doesn't pass that check, the math is wrong somewhere."</div></div></div>
-</div>
-<div class="task-box"><div class="task-label">A student's work</div><p><strong>Problem:</strong> "Cora's class collected 220 cans. The next class collected 165 cans. How many MORE cans did Cora's class collect than the next class?"<br/><br/><strong>The student wrote:</strong><br/>· Cora's class: 220<br/>· Next class: 165<br/>· 220 + 165 = 385<br/>· Answer: 385 more cans</p></div>
-<div class="journal-label">✏️ Where's the mistake? What's the correct answer? <span class="saved-dot" id="dot-p2"></span></div>
-<textarea class="journal-box" data-label="Practice 2 — Spot the Mistake: cans collection" id="journal-p2" oninput="autoSave(this,'dot-p2')" placeholder="The mistake is in: ___
-Sense check: 'how many MORE' asks for a ___ (bigger or smaller) number
-Correct math: ___
-Correct answer: ___" style="min-height:130px;"></textarea>
-<div class="callout callout-tip" style="margin-top:10px;"><span class="callout-icon">💡</span><p><strong>Mistake:</strong> Student added when the question asked for "how many more" (a difference). <strong>Correct math:</strong> 220 − 165 = 55. Cora's class collected 55 more cans. The sense check: 385 is bigger than the total of both classes — that can't be the difference between them.</p></div>
-</div></div>
-<div class="activity bl-violet"><div class="activity-head"><div class="activity-num" style="background:#6B3FA0;">3</div><div><div class="activity-title">The Mixed-Up Story</div><div class="activity-sub">Three facts. Find the right two.</div></div></div><div class="activity-body">
-<div class="bubble-row">
-<div class="bubble atlas"><div class="bubble-avatar">A</div><div class="bubble-body"><div class="bubble-name">Atlas — focus the question</div><div class="bubble-text">"Underline what the question is ASKING. Then circle only the numbers that match. The rest is decoration."</div></div></div>
-</div>
-<div class="task-box"><div class="task-label">Word problem</div><p>The school garden has <strong>175 plants</strong>. <strong>80 plants</strong> are sunflowers. <strong>30 students</strong> helped plant them last spring. How many plants in the garden are NOT sunflowers?</p></div>
-<div class="fill-row"><strong>Not-sunflower plants:</strong><input class="fill-input" id="p3-a" placeholder="?" type="number"/></div>
-<button class="check-btn" onclick="checkP3()">Check My Answer ✓</button>
-<div class="feedback-branch feedback-pass" id="p3-pass"><strong>✅ Yes — 95 plants.</strong> 175 (whole) − 80 (sunflowers) = 95. The "30 students" was extra info.
-      <div class="bubble-row" style="margin-top:10px;"><div class="bubble cora"><div class="bubble-avatar">C</div><div class="bubble-body"><div class="bubble-name">Cora — sense check</div><div class="bubble-text">"Sense check: the answer should be smaller than the total (175) because not-sunflowers is just a PART of the whole. 95 &lt; 175 ✓ — passes."</div></div></div></div>
-</div>
-<div class="feedback-branch feedback-retry" id="p3-retry"><strong>🔄 Skip the extra fact. Find the missing part.</strong>
-<div class="hint-callout">Whole garden = 175 plants. One part = 80 sunflowers. Other part = NOT sunflowers = ? Whole − one part = missing part: 175 − 80 = ___. The "30 students" is extra info.</div>
-<button class="orange-btn" onclick="resetP3()">↩ Reset and Try Again</button>
-</div>
-</div></div>
-<div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">When you've finished solving a word problem, what's the one quick check that catches the most mistakes?</p><div class="journal-label">✏️ My reasoning <span class="saved-dot" id="dot-soc2"></span></div><textarea class="journal-box" data-label="Practice — Socratic: best sense-check move" id="journal-soc2" oninput="autoSave(this,'dot-soc2')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Read like a detective. Skip what doesn't matter. Sense-check. Time to show what you know.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
-</div>
 <!-- ═══════════ SHOW WHAT YOU KNOW ═══════════ -->
 <div class="tab-panel" id="tab-assignment">
 <div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">🎯</div><div><div class="activity-title">Ready Check</div><div class="activity-sub">Two quick questions.</div></div></div><div class="activity-body">

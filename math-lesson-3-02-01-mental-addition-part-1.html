@@ -327,7 +327,7 @@
 <div class="tab-bar" id="tabBar">
 <button class="tab-btn active" data-tab="warmup" onclick="switchTab('warmup')">🔍 Warm-Up <span class="tab-check">✓</span></button>
 <button class="tab-btn" data-tab="learn" onclick="switchTab('learn')">📐 Learn <span class="tab-check">✓</span></button>
-<button class="tab-btn" data-tab="practice" onclick="switchTab('practice')">🧮 Practice <span class="tab-check">✓</span></button>
+
 <button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">🌟 Show What You Know <span class="tab-check">✓</span></button>
 </div>
 <!-- ═══════════ WARM-UP ═══════════ -->
@@ -491,64 +491,9 @@
 </div></div>
 
 <div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">If you know 40 + 30 = 70, does it help you with 41 + 32? Why or why not?</p><div class="journal-label">✏️ My reasoning <span class="saved-dot" id="dot-soc1"></span></div><textarea class="journal-box" data-label="Learn — Socratic: How does 40+30 help with 41+32" id="journal-soc1" oninput="autoSave(this,'dot-soc1')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Four steps, four bubbles, one answer. Practice now asks you to do it with new numbers.</p><button class="tab-next-btn" onclick="switchTab('practice')">Continue to 🧮 Practice →</button></div>
+<div class="tab-next-wrap"><p class="tab-transition-voice">Four steps, four bubbles, one answer. Practice now asks you to do it with new numbers.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
 </div>
 <!-- ═══════════ PRACTICE ═══════════ -->
-<div class="tab-panel" id="tab-practice">
-<div class="callout callout-info"><span class="callout-icon">🧭</span><p>You watched the Crew add <strong>42 + 28 = 70</strong> in four small steps. Practice gives you new sums. Same four steps. Done in your head.</p></div>
-<div class="callout callout-think"><span class="callout-icon">🧠</span><p><strong>For each problem, ask yourself:</strong> What are the tens? What are the ones? Add each piece, then combine.</p></div>
-<!-- Practice 1 — fill in the sum -->
-<div class="activity bl-violet"><div class="activity-head"><div class="activity-num" style="background:#6B3FA0;">1</div><div><div class="activity-title">Find the Sum</div><div class="activity-sub">Add each pair in your head.</div></div><span class="activity-time" style="background:#6B3FA0;">~5 min</span></div><div class="activity-body">
-<div class="bubble-row">
-<div class="bubble felix"><div class="bubble-avatar">F</div><div class="bubble-body"><div class="bubble-name">Felix — shortcut</div><div class="bubble-text">"Tens first. Then ones. Then combine. Whisper it to yourself as you go."</div></div></div>
-</div>
-<div class="fill-row"><strong>23 + 15 =</strong><input class="fill-input" id="p1-a" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>47 + 30 =</strong><input class="fill-input" id="p1-b" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>36 + 24 =</strong><input class="fill-input" id="p1-c" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>58 + 27 =</strong><input class="fill-input" id="p1-d" placeholder="?" type="number"/></div>
-<button class="check-btn" onclick="checkP1()">Check My Sums ✓</button>
-<div class="feedback-branch feedback-pass" id="p1-pass"><strong>✅ Yes!</strong> 23+15 = 38. 47+30 = 77. 36+24 = 60. 58+27 = 85. You broke each pair into tens and ones and combined them.
-      <div class="bubble-row" style="margin-top:10px;"><div class="bubble cora"><div class="bubble-avatar">C</div><div class="bubble-body"><div class="bubble-name">Cora — checking</div><div class="bubble-text">"58 + 27 was the trickiest — 8 + 7 = 15, which is a ten and a 5. The carried ten makes the tens 70 + 15 = 85."</div></div></div></div>
-
-</div>
-<div class="feedback-branch feedback-retry" id="p1-retry"><strong>🔄 Walk through one at a time.</strong>
-<div class="hint-callout">23 + 15: tens 20+10=30, ones 3+5=8, combine 30+8 → ?  ·  36+24: tens 30+20=50, ones 6+4=10, combine 50+10 → ?  ·  58+27: tens 50+20=70, ones 8+7=15, combine 70+15 → ?</div>
-<button class="orange-btn" onclick="resetP1()">↩ Reset and Try Again</button>
-</div>
-</div></div>
-<!-- Practice 2 — Strategy explanation -->
-<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">2</div><div><div class="activity-title">Show Your Thinking</div><div class="activity-sub">One problem. Write the four steps.</div></div><span class="activity-time" style="background:#2DB87A;">~4 min</span></div><div class="activity-body">
-<div class="bubble-row">
-<div class="bubble hazel"><div class="bubble-avatar">H</div><div class="bubble-body"><div class="bubble-name">Hazel — diagram it</div><div class="bubble-text">"Even in your head, you're using a plan. Try to write the plan you used — that helps you build the habit."</div></div></div>
-</div>
-<div class="task-box"><div class="task-label">Problem</div><p>Add <strong>53 + 29</strong> in your head. Then write down the four steps you used.</p></div>
-<div class="journal-label">✏️ My answer + the four steps <span class="saved-dot" id="dot-p2"></span></div>
-<textarea class="journal-box" data-label="Practice 2 — Show your thinking for 53 + 29" id="journal-p2" oninput="autoSave(this,'dot-p2')" placeholder="53 + 29 = ___
-Step 1 (break apart): ...
-Step 2 (add tens): ...
-Step 3 (add ones): ...
-Step 4 (combine): ..." style="min-height:140px;"></textarea>
-<div class="callout callout-tip" style="margin-top:10px;"><span class="callout-icon">💡</span><p><strong>Answer:</strong> 53 + 29 = 82. Tens: 50 + 20 = 70. Ones: 3 + 9 = 12. Combine: 70 + 12 = 82.</p></div>
-</div></div>
-<!-- Practice 3 — Word problem -->
-<div class="activity bl-violet"><div class="activity-head"><div class="activity-num" style="background:#6B3FA0;">3</div><div><div class="activity-title">The Classroom Library</div><div class="activity-sub">A real reason to add in your head.</div></div></div><div class="activity-body">
-<div class="bubble-row">
-<div class="bubble atlas"><div class="bubble-avatar">A</div><div class="bubble-body"><div class="bubble-name">Atlas — concrete</div><div class="bubble-text">"Picture two shelves. One has 36 books, the other has 45. How many books in the library?"</div></div></div>
-</div>
-<div class="task-box"><div class="task-label">Word problem</div><p>The 3rd grade classroom library has <strong>36 fiction books</strong> and <strong>45 nonfiction books</strong>. How many books are in the library? Try to solve it in your head, then write down your sum.</p></div>
-<div class="fill-row"><strong>Total books:</strong><input class="fill-input" id="p3-a" placeholder="?" type="number"/></div>
-<button class="check-btn" onclick="checkP3()">Check My Answer ✓</button>
-<div class="feedback-branch feedback-pass" id="p3-pass"><strong>✅ Yes — 81 books.</strong> Tens: 30+40 = 70. Ones: 6+5 = 11. Combine: 70+11 = 81. Mental math, no pencil needed.
-      <div class="bubble-row" style="margin-top:10px;"><div class="bubble cora"><div class="bubble-avatar">C</div><div class="bubble-body"><div class="bubble-name">Cora — checking</div><div class="bubble-text">"Quick sanity check: 36 is close to 40. 45 is close to 45. 40 + 45 = 85. My real answer (81) is close to that — feels right."</div></div></div></div>
-</div>
-<div class="feedback-branch feedback-retry" id="p3-retry"><strong>🔄 Four steps.</strong>
-<div class="hint-callout">36 = 30 + 6. 45 = 40 + 5. Add the tens: 30+40 = ? Add the ones: 6+5 = ? Combine.</div>
-<button class="orange-btn" onclick="resetP3()">↩ Reset and Try Again</button>
-</div>
-</div></div>
-<div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">A friend says, "I just count up — 36, 37, 38, 39…" until they reach the answer. Is that a good strategy? When might breaking apart be faster?</p><div class="journal-label">✏️ My reasoning <span class="saved-dot" id="dot-soc2"></span></div><textarea class="journal-box" data-label="Practice — Socratic: Counting up vs breaking apart" id="journal-soc2" oninput="autoSave(this,'dot-soc2')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">You added four ways. Time to show what you know.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
-</div>
 <!-- ═══════════ SHOW WHAT YOU KNOW ═══════════ -->
 <div class="tab-panel" id="tab-assignment">
 <div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">🎯</div><div><div class="activity-title">Ready Check</div><div class="activity-sub">Two quick questions.</div></div></div><div class="activity-body">

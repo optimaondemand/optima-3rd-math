@@ -324,7 +324,7 @@
 <div class="tab-bar" id="tabBar">
 <button class="tab-btn active" data-tab="warmup" onclick="switchTab('warmup')">🔍 Warm-Up <span class="tab-check">✓</span></button>
 <button class="tab-btn" data-tab="learn" onclick="switchTab('learn')">📐 Learn <span class="tab-check">✓</span></button>
-<button class="tab-btn" data-tab="practice" onclick="switchTab('practice')">🧮 Practice <span class="tab-check">✓</span></button>
+
 <button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">🌟 Show What You Know <span class="tab-check">✓</span></button>
 </div>
 <div class="tab-panel active" id="tab-warmup">
@@ -455,28 +455,7 @@
 <p style="font-family:'Lora',serif;background:#FAFBFF;border:2px solid #E2E8F4;border-radius:12px;padding:10px;text-align:center;font-size:18px;font-weight:800;margin-top:14px;">9 × 4 = <span style="color:#1A8A5A;">42</span></p>
 </div></div>
 <div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">Why does each step add exactly 6 to the total? Use the array picture in your answer.</p><div class="journal-label">✏️ <span class="saved-dot" id="ds1"></span></div><textarea class="journal-box" data-label="Learn socratic" id="j-s1" oninput="autoSave(this,'ds1')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">One more row = 9 more dots.</p><button class="tab-next-btn" onclick="switchTab('practice')">Continue to 🧮 Practice →</button></div>
-</div>
-<div class="tab-panel" id="tab-practice">
-<div class="callout callout-info"><span class="callout-icon">🧭</span><p>Use the array or the skip-count to find each product.</p></div>
-<div class="activity bl-nav"><div class="activity-head"><div class="activity-num" style="background:var(--nav);">1</div><div><div class="activity-title">Mixed ×8 and ×9 Facts</div></div></div><div class="activity-body">
-<div class="fill-row"><strong>8 × 3 =</strong><input class="fill-input" id="p1-a" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>9 × 5 =</strong><input class="fill-input" id="p1-b" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>8 × 8 =</strong><input class="fill-input" id="p1-c" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>9 × 10 =</strong><input class="fill-input" id="p1-d" placeholder="?" type="number"/></div>
-<button class="check-btn" onclick="checkP1()">Check ✓</button>
-<div class="feedback-branch feedback-pass" id="p1-pass"><strong>✅</strong> 24 · 45 · 64 · 90.</div>
-<div class="feedback-branch feedback-retry" id="p1-retry"><strong>🔄 Skip-count by 6 from 0.</strong><div class="hint-callout">9, 18, 27, 36, 45, 54, 63, 72, 81, 90.</div><button class="orange-btn" onclick="resetP1()">↩ Reset</button></div>
-</div></div>
-<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">2</div><div><div class="activity-title">Word problem</div></div></div><div class="activity-body">
-<div class="task-box"><div class="task-label">Problem</div><p>A baseball team has 9 players. How many players on 4 teams?</p></div>
-<div class="fill-row"><strong>9 × 4 =</strong><input class="fill-input" id="p2" placeholder="?" type="number"/></div>
-<button class="check-btn" onclick="checkP2()">Check ✓</button>
-<div class="feedback-branch feedback-pass" id="p2-pass"><strong>✅</strong> 9 × 4 = 36 players.</div>
-<div class="feedback-branch feedback-retry" id="p2-retry"><strong>🔄 4 rows of 9.</strong><div class="hint-callout">9, 18, 27, 36.</div><button class="orange-btn" onclick="resetP2()">↩ Reset</button></div>
-</div></div>
-<div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">If you forget 9 × 8, what's a quick way to figure it out without starting over from 9?</p><div class="journal-label">✏️ <span class="saved-dot" id="ds2"></span></div><textarea class="journal-box" data-label="Practice socratic" id="j-s2" oninput="autoSave(this,'ds2')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Array, skip-count, or the table. Three ways to land on the same product.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
+<div class="tab-next-wrap"><p class="tab-transition-voice">One more row = 9 more dots.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
 </div>
 <div class="tab-panel" id="tab-assignment">
 <div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">🎯</div><div><div class="activity-title">Ready Check</div></div></div><div class="activity-body">

@@ -333,7 +333,7 @@
 <div class="tab-bar" id="tabBar">
 <button class="tab-btn active" data-tab="warmup" onclick="switchTab('warmup')">🔍 Warm-Up <span class="tab-check">✓</span></button>
 <button class="tab-btn" data-tab="learn" onclick="switchTab('learn')">📐 Learn <span class="tab-check">✓</span></button>
-<button class="tab-btn" data-tab="practice" onclick="switchTab('practice')">🧮 Practice <span class="tab-check">✓</span></button>
+
 <button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">🌟 Show What You Know <span class="tab-check">✓</span></button>
 </div>
 <div class="tab-panel active" id="tab-warmup">
@@ -470,40 +470,7 @@
 </div></div>
 
 <div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">Why did we multiply the ones BEFORE the tens? Would the answer change if we did tens first?</p><div class="journal-label">✏️ <span class="saved-dot" id="ds1"></span></div><textarea class="journal-box" data-label="Learn socratic" id="j-s1" oninput="autoSave(this,'ds1')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Ones first. Tens next. Read the mat.</p><button class="tab-next-btn" onclick="switchTab('practice')">Continue to 🧮 Practice →</button></div>
-</div>
-<div class="tab-panel" id="tab-practice">
-<div class="callout callout-info"><span class="callout-icon">🧭</span><p>For each problem, multiply the ones first, then the tens. Add the parts.</p></div>
-<div class="activity bl-berry"><div class="activity-head"><div class="activity-num" style="background:var(--berry);">1</div><div><div class="activity-title">3 × 23</div></div></div><div class="activity-body">
-<div class="fill-row"><strong>3 × 3 ones =</strong><input class="fill-input" id="p1-o" placeholder="?" type="number"/><strong>ones</strong></div>
-<div class="fill-row"><strong>3 × 2 tens =</strong><input class="fill-input" id="p1-t" placeholder="?" type="number"/><strong>tens =</strong><input class="fill-input" id="p1-tv" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>Total: 3 × 23 =</strong><input class="fill-input" id="p1-tot" placeholder="?" type="number"/></div>
-<button class="check-btn" onclick="checkP1()">Check ✓</button>
-<div class="feedback-branch feedback-pass" id="p1-pass"><strong>✅</strong> 9 ones · 6 tens = 60 · Total 69.</div>
-<div class="feedback-branch feedback-retry" id="p1-retry"><strong>🔄 Multiply each column by 3.</strong>
-<div class="hint-callout">3 × 3 = 9 (ones). 3 × 2 = 6 (tens) = 60. 60 + 9 = 69.</div>
-<button class="orange-btn" onclick="resetP1()">↩ Reset</button>
-</div>
-</div></div>
-<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">2</div><div><div class="activity-title">4 × 12</div></div></div><div class="activity-body">
-<div class="fill-row"><strong>4 × 2 ones =</strong><input class="fill-input" id="p2-o" placeholder="?" type="number"/><strong>ones</strong></div>
-<div class="fill-row"><strong>4 × 1 ten =</strong><input class="fill-input" id="p2-t" placeholder="?" type="number"/><strong>tens =</strong><input class="fill-input" id="p2-tv" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>Total: 4 × 12 =</strong><input class="fill-input" id="p2-tot" placeholder="?" type="number"/></div>
-<button class="check-btn" onclick="checkP2()">Check ✓</button>
-<div class="feedback-branch feedback-pass" id="p2-pass"><strong>✅</strong> 8 ones · 4 tens = 40 · Total 48.</div>
-<div class="feedback-branch feedback-retry" id="p2-retry"><strong>🔄 Multiply each column by 4.</strong>
-<div class="hint-callout">4 × 2 = 8 (ones). 4 × 1 = 4 (tens) = 40. 40 + 8 = 48.</div>
-<button class="orange-btn" onclick="resetP2()">↩ Reset</button>
-</div>
-</div></div>
-<div class="activity bl-berry"><div class="activity-head"><div class="activity-num" style="background:var(--berry);">3</div><div><div class="activity-title">Sketch the Mat</div></div></div><div class="activity-body">
-<div class="task-box"><div class="task-label">Problem</div><p>Find 2 × 34. <strong>Sketch the mat</strong> in your journal: 2 rows of "3 tens + 4 ones." Multiply each column. Write the total.</p></div>
-<div class="journal-label">✏️ My mat + total <span class="saved-dot" id="dp3"></span></div>
-<textarea class="journal-box" data-label="Practice 3" id="j-p3" oninput="autoSave(this,'dp3')" placeholder="" style="min-height:110px;"></textarea>
-<div class="callout callout-tip"><span class="callout-icon">💡</span><p><strong>Answer:</strong> 2 × 4 = 8 ones. 2 × 3 = 6 tens = 60. Total = 68.</p></div>
-</div></div>
-<div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">When can you multiply this way without trading? What about the ones and tens digits would have to be true?</p><div class="journal-label">✏️ <span class="saved-dot" id="ds2"></span></div><textarea class="journal-box" data-label="Practice socratic" id="j-s2" oninput="autoSave(this,'ds2')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Ones, tens, total. Time to show what you know.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
+<div class="tab-next-wrap"><p class="tab-transition-voice">Ones first. Tens next. Read the mat.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
 </div>
 <div class="tab-panel" id="tab-assignment">
 <div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">🎯</div><div><div class="activity-title">Ready Check</div></div></div><div class="activity-body">

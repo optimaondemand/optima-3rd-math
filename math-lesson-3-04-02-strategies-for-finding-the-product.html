@@ -320,7 +320,7 @@
 <div class="tab-bar" id="tabBar">
 <button class="tab-btn active" data-tab="warmup" onclick="switchTab('warmup')">🔍 Warm-Up <span class="tab-check">✓</span></button>
 <button class="tab-btn" data-tab="learn" onclick="switchTab('learn')">📐 Learn <span class="tab-check">✓</span></button>
-<button class="tab-btn" data-tab="practice" onclick="switchTab('practice')">🧮 Practice <span class="tab-check">✓</span></button>
+
 <button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">🌟 Show What You Know <span class="tab-check">✓</span></button>
 </div>
 <div class="tab-panel active" id="tab-warmup">
@@ -462,40 +462,7 @@
 </div></div>
 
 <div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">If you know 4 × 6 = 24, you can find 8 × 6 by doubling. Why does doubling work? What happened to the array?</p><div class="journal-label">✏️ My reasoning <span class="saved-dot" id="dot-soc1"></span></div><textarea class="journal-box" data-label="Learn — Socratic: why doubling works" id="journal-soc1" oninput="autoSave(this,'dot-soc1')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Split, multiply, add. Or double a known fact. Two roads, one product.</p><button class="tab-next-btn" onclick="switchTab('practice')">Continue to 🧮 Practice →</button></div>
-</div>
-<div class="tab-panel" id="tab-practice">
-<div class="callout callout-info"><span class="callout-icon">🧭</span><p>You saw 7 × 8 = 56 two ways. Practice gives you four splits.</p></div>
-<div class="activity bl-coral"><div class="activity-head"><div class="activity-num" style="background:#E76F51;">1</div><div><div class="activity-title">Split and Find</div><div class="activity-sub">Use known facts.</div></div></div><div class="activity-body">
-<div class="fill-row"><strong>6 × 7 =</strong><input class="fill-input" id="p1-a" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>7 × 8 =</strong><input class="fill-input" id="p1-b" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>9 × 5 =</strong><input class="fill-input" id="p1-c" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>8 × 6 =</strong><input class="fill-input" id="p1-d" placeholder="?" type="number"/></div>
-<button class="check-btn" onclick="checkP1()">Check My Answers ✓</button>
-<div class="feedback-branch feedback-pass" id="p1-pass"><strong>✅ Yes!</strong> 6×7=42, 7×8=56, 9×5=45, 8×6=48.</div>
-<div class="feedback-branch feedback-retry" id="p1-retry"><strong>🔄 Try splitting.</strong>
-<div class="hint-callout">6×7 = (6×5)+(6×2)=30+12. 7×8 = (5×8)+(2×8)=40+16. 9×5 = (10×5)−5=50−5. 8×6 = double 4×6=24+24.</div>
-<button class="orange-btn" onclick="resetP1()">↩ Reset</button>
-</div>
-</div></div>
-<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">2</div><div><div class="activity-title">Show Your Split</div><div class="activity-sub">Write the split-and-add steps.</div></div></div><div class="activity-body">
-<div class="task-box"><div class="task-label">Problem</div><p>Find <strong>6 × 3</strong> using the distributive property: 6 × 3 = 3 × (4 + 2). Show the split and add.</p></div>
-<div class="journal-label">✏️ My split + answer <span class="saved-dot" id="dot-p2"></span></div>
-<textarea class="journal-box" data-label="Practice 2 — show split for 6×3" id="journal-p2" oninput="autoSave(this,'dot-p2')" placeholder="6 × 3 = 3 × (4 + 2) = (3×4) + (3×2) = ___ + ___ = ___" style="min-height:100px;"></textarea>
-<div class="callout callout-tip" style="margin-top:10px;"><span class="callout-icon">💡</span><p><strong>Answer:</strong> (3×4) + (3×2) = 12 + 6 = 18.</p></div>
-</div></div>
-<div class="activity bl-coral"><div class="activity-head"><div class="activity-num" style="background:#E76F51;">3</div><div><div class="activity-title">Bracelet Counts</div><div class="activity-sub">Word problem.</div></div></div><div class="activity-body">
-<div class="task-box"><div class="task-label">Word problem</div><p>Each bracelet has <strong>7 charms</strong>. How many charms are on <strong>6 bracelets</strong>?</p></div>
-<div class="fill-row"><strong>Total charms:</strong><input class="fill-input" id="p3-a" placeholder="?" type="number"/></div>
-<button class="check-btn" onclick="checkP3()">Check My Answer ✓</button>
-<div class="feedback-branch feedback-pass" id="p3-pass"><strong>✅ Yes — 42 charms.</strong> 6 × 7 = 42. Use split-and-add: (6×5)+(6×2)=30+12=42.</div>
-<div class="feedback-branch feedback-retry" id="p3-retry"><strong>🔄 6 groups of 7. Try splitting.</strong>
-<div class="hint-callout">6 × 7 = 6 × (5+2) = 30 + 12.</div>
-<button class="orange-btn" onclick="resetP3()">↩ Reset</button>
-</div>
-</div></div>
-<div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">Why is splitting a factor into TWO known facts faster than memorizing every multiplication?</p><div class="journal-label">✏️ My reasoning <span class="saved-dot" id="dot-soc2"></span></div><textarea class="journal-box" data-label="Practice — Socratic" id="journal-soc2" oninput="autoSave(this,'dot-soc2')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Split, multiply, add. Time to show what you know.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
+<div class="tab-next-wrap"><p class="tab-transition-voice">Split, multiply, add. Or double a known fact. Two roads, one product.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
 </div>
 <div class="tab-panel" id="tab-assignment">
 <div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">🎯</div><div><div class="activity-title">Ready Check</div><div class="activity-sub">Two quick questions.</div></div></div><div class="activity-body">

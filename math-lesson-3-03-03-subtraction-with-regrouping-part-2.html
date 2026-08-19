@@ -341,7 +341,7 @@
 <div class="tab-bar" id="tabBar">
 <button class="tab-btn active" data-tab="warmup" onclick="switchTab('warmup')">🔍 Warm-Up <span class="tab-check">✓</span></button>
 <button class="tab-btn" data-tab="learn" onclick="switchTab('learn')">📐 Learn <span class="tab-check">✓</span></button>
-<button class="tab-btn" data-tab="practice" onclick="switchTab('practice')">🧮 Practice <span class="tab-check">✓</span></button>
+
 <button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">🌟 Show What You Know <span class="tab-check">✓</span></button>
 </div>
 <!-- ═══════════ WARM-UP ═══════════ -->
@@ -576,65 +576,9 @@
 </div></div>
 
 <div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">Why does every zero in the cascade path become a 9 (not a 10)? What's happening to the "10" at each step?</p><div class="journal-label">✏️ My reasoning <span class="saved-dot" id="dot-soc1"></span></div><textarea class="journal-box" data-label="Learn — Socratic: why zeros become 9 not 10" id="journal-soc1" oninput="autoSave(this,'dot-soc1')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Borrow travels left. Zeros become 9s. Last column gets +10. Try a few.</p><button class="tab-next-btn" onclick="switchTab('practice')">Continue to 🧮 Practice →</button></div>
+<div class="tab-next-wrap"><p class="tab-transition-voice">Borrow travels left. Zeros become 9s. Last column gets +10. Try a few.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
 </div>
 <!-- ═══════════ PRACTICE ═══════════ -->
-<div class="tab-panel" id="tab-practice">
-<div class="callout callout-info"><span class="callout-icon">🧭</span><p>You saw <strong>9,005 − 3,397 = 5,608</strong> with a cascade through two zeros. Practice gives you four problems and one missing-number puzzle.</p></div>
-<div class="callout callout-think"><span class="callout-icon">🧠</span><p><strong>For each problem:</strong> stack, find the cascade path, then subtract column by column.</p></div>
-<div class="activity bl-teal"><div class="activity-head"><div class="activity-num" style="background:#1A8A9A;">1</div><div><div class="activity-title">Stack and Cascade</div><div class="activity-sub">Four problems with zeros in the top number.</div></div><span class="activity-time" style="background:#1A8A9A;">~7 min</span></div><div class="activity-body">
-<div class="bubble-row">
-<div class="bubble felix"><div class="bubble-avatar">F</div><div class="bubble-body"><div class="bubble-name">Felix — shortcut</div><div class="bubble-text">"When you spot zeros in the top number, anticipate the cascade. The first non-zero column to the left is your source — its digit drops by 1, and every zero in the path becomes a 9."</div></div></div>
-</div>
-<div class="fill-row"><strong>4,007 − 335 =</strong><input class="fill-input" id="p1-a" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>8,004 − 3,758 =</strong><input class="fill-input" id="p1-b" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>8,000 − 3,765 =</strong><input class="fill-input" id="p1-c" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>6,002 − 56 =</strong><input class="fill-input" id="p1-d" placeholder="?" type="number"/></div>
-<button class="check-btn" onclick="checkP1()">Check My Answers ✓</button>
-<div class="feedback-branch feedback-pass" id="p1-pass"><strong>✅ Yes!</strong> 4,007−335=3,672. 8,004−3,758=4,246. 8,000−3,765=4,235. 6,002−56=5,946.
-      <div class="bubble-row" style="margin-top:10px;"><div class="bubble cora"><div class="bubble-avatar">C</div><div class="bubble-body"><div class="bubble-name">Cora — checking the work</div><div class="bubble-text">"Add-check: 3,672 + 335 = 4,007 ✓. 4,246 + 3,758 = 8,004 ✓. 4,235 + 3,765 = 8,000 ✓. 5,946 + 56 = 6,002 ✓. Every cascade holds up under addition."</div></div></div></div>
-
-</div>
-<div class="feedback-branch feedback-retry" id="p1-retry"><strong>🔄 Find the cascade path first.</strong>
-<div class="hint-callout">4,007−335: tens 0 needs to borrow. Hundreds is 0 too. Cascade to thousands. Thousands 4→3, hundreds 0→9, tens 0→10.  ·  8,004−3,758: ones 4&lt;8 → cascade through tens 0 and hundreds 0 to thousands 8.  ·  8,000−3,765: cascade through three zeros.  ·  6,002−56: ones 2&lt;6 → cascade through tens 0 and hundreds 0 to thousands 6.</div>
-<button class="orange-btn" onclick="resetP1()">↩ Reset and Try Again</button>
-</div>
-</div></div>
-<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">2</div><div><div class="activity-title">Show Your Cascade</div><div class="activity-sub">Write out the path step by step.</div></div><span class="activity-time" style="background:#2DB87A;">~5 min</span></div><div class="activity-body">
-<div class="bubble-row">
-<div class="bubble hazel"><div class="bubble-avatar">H</div><div class="bubble-body"><div class="bubble-name">Hazel — write each move</div><div class="bubble-text">"Cross out every digit that changes. Write the new digit above. The picture itself shows you the cascade path."</div></div></div>
-</div>
-<div class="task-box"><div class="task-label">Problem</div><p>Find <strong>5,017 − 1,996</strong>. Show your cascade and every column step.</p></div>
-<div class="journal-label">✏️ My stack + cascade + difference <span class="saved-dot" id="dot-p2"></span></div>
-<textarea class="journal-box" data-label="Practice 2 — 5017-1996 show cascade" id="journal-p2" oninput="autoSave(this,'dot-p2')" placeholder="Stack:
-          5 , 0 1 7
-       − 1 , 9 9 6
-       ─────────
-Ones: 7 − 6 = ___ (no cascade needed)
-Tens: 1 − 9 → cascade?
-Hundreds: 0 − 9 → cascade from thousands
-After cascade: ___ , ___ , ___ , ___
-Difference: ___" style="min-height:170px;"></textarea>
-<div class="callout callout-tip" style="margin-top:10px;"><span class="callout-icon">💡</span><p><strong>Answer:</strong> 5,017 − 1,996 = 3,021. Ones 7−6=1 (no borrow). Tens: 1−9 → cascade. Hundreds 0 borrows from thousands. Thousands 5→4, hundreds 0→9, tens 1→11. 11−9=2. Hundreds 9−9=0. Thousands 4−1=3.</p></div>
-</div></div>
-<div class="activity bl-teal"><div class="activity-head"><div class="activity-num" style="background:#1A8A9A;">3</div><div><div class="activity-title">Missing Number</div><div class="activity-sub">Find the missing piece.</div></div></div><div class="activity-body">
-<div class="bubble-row">
-<div class="bubble atlas"><div class="bubble-avatar">A</div><div class="bubble-body"><div class="bubble-name">Atlas — concrete</div><div class="bubble-text">"6,003 minus what equals 4,128? Rearrange: the missing number is 6,003 minus 4,128."</div></div></div>
-</div>
-<div class="task-box"><div class="task-label">Problem</div><p>Find the missing number: <strong>6,003 − ______ = 4,128</strong></p></div>
-<div class="fill-row"><strong>Missing number:</strong><input class="fill-input" id="p3-a" placeholder="?" type="number"/></div>
-<button class="check-btn" onclick="checkP3()">Check My Answer ✓</button>
-<div class="feedback-branch feedback-pass" id="p3-pass"><strong>✅ Yes — 1,875.</strong> Missing = 6,003 − 4,128. Cascade through tens (0) and hundreds (0). Thousands 6→5, hundreds 0→9, tens 0→9, ones 3→13. 13−8=5, 9−2=7, 9−1=8, 5−4=1. Difference: 1,875.
-      <div class="bubble-row" style="margin-top:10px;"><div class="bubble cora"><div class="bubble-avatar">C</div><div class="bubble-body"><div class="bubble-name">Cora — checking the work</div><div class="bubble-text">"Reverse-check: 4,128 + 1,875 = 6,003 ✓. The missing number is 1,875."</div></div></div></div>
-</div>
-<div class="feedback-branch feedback-retry" id="p3-retry"><strong>🔄 Rearrange: missing = 6,003 − 4,128.</strong>
-<div class="hint-callout">Stack 6,003 over 4,128. Ones 3−8 → cascade through tens 0 and hundreds 0 to thousands 6. Then subtract column by column.</div>
-<button class="orange-btn" onclick="resetP3()">↩ Reset and Try Again</button>
-</div>
-</div></div>
-<div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">A friend says "subtraction with zeros is way harder than regular subtraction." Do you agree, or is it really the same idea? Use one example to argue your case.</p><div class="journal-label">✏️ My reasoning <span class="saved-dot" id="dot-soc2"></span></div><textarea class="journal-box" data-label="Practice — Socratic: is cascade really harder" id="journal-soc2" oninput="autoSave(this,'dot-soc2')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Stack, cascade through zeros, subtract column by column. Time to show what you know.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
-</div>
 <!-- ═══════════ SHOW WHAT YOU KNOW ═══════════ -->
 <div class="tab-panel" id="tab-assignment">
 <div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">🎯</div><div><div class="activity-title">Ready Check</div><div class="activity-sub">Two quick questions.</div></div></div><div class="activity-body">

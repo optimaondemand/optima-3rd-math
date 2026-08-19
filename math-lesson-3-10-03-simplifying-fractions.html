@@ -347,7 +347,7 @@
 <div class="tab-bar" id="tabBar">
 <button class="tab-btn active" data-tab="warmup" onclick="switchTab('warmup')">🔍 Warm-Up <span class="tab-check">✓</span></button>
 <button class="tab-btn" data-tab="learn" onclick="switchTab('learn')">📐 Learn <span class="tab-check">✓</span></button>
-<button class="tab-btn" data-tab="practice" onclick="switchTab('practice')">🧮 Practice <span class="tab-check">✓</span></button>
+
 <button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">🌟 Show What You Know <span class="tab-check">✓</span></button>
 </div>
 <div class="tab-panel active" id="tab-warmup">
@@ -457,26 +457,7 @@
 <p style="font-family:'Lora',serif;background:#FAFBFF;border:2px solid #E2E8F4;border-radius:12px;padding:10px;text-align:center;font-size:22px;font-weight:900;margin-top:14px;"><span class="frac md" style="color:#1A8A5A;"><span class="num">6</span><span class="bar"></span><span class="den">8</span></span>  ÷  <span class="frac md" style="color:#1A8A5A;"><span class="num">2</span><span class="bar"></span><span class="den">2</span></span>  =  <span class="frac md" style="color:#1A8A5A;"><span class="num">3</span><span class="bar"></span><span class="den">4</span></span></p>
 </div></div>
 <div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">How do you know when a fraction is in simplest form?</p><div class="journal-label">✏️ <span class="saved-dot" id="ds1"></span></div><textarea class="journal-box" data-label="Learn socratic" id="j-s1" oninput="autoSave(this,'ds1')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Same length. Fewer, bigger pieces.</p><button class="tab-next-btn" onclick="switchTab('practice')">Continue to 🧮 Practice →</button></div>
-</div>
-<div class="tab-panel" id="tab-practice">
-<div class="callout callout-info"><span class="callout-icon">🧭</span><p>Use the Grouper Mat above. Pick a fraction. Group its pieces until you can't any more.</p></div>
-<div class="activity bl-mar"><div class="activity-head"><div class="activity-num" style="background:var(--mar);">1</div><div><div class="activity-title">Simplify 4/6</div></div></div><div class="activity-body">
-<p>Simplify <span class="frac"><span class="num">4</span><span class="bar"></span><span class="den">6</span></span>. Both 4 and 6 are even, so divide both by 2. <strong>What is the simplest form?</strong></p>
-<div class="fill-row"><strong>Simplest numerator:</strong><input class="fill-input" id="p1-n" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>Simplest denominator:</strong><input class="fill-input" id="p1-d" placeholder="?" type="number"/></div>
-<button class="check-btn" onclick="checkP1()">Check ✓</button>
-<div class="feedback-branch feedback-pass" id="p1-pass"><strong>✅</strong> <span class="frac"><span class="num">4</span><span class="bar"></span><span class="den">6</span></span> ÷ <span class="frac"><span class="num">2</span><span class="bar"></span><span class="den">2</span></span> = <span class="frac"><span class="num">2</span><span class="bar"></span><span class="den">3</span></span>. Can't group further — 2 and 3 share no common factor.</div>
-<div class="feedback-branch feedback-retry" id="p1-retry"><strong>🔄 Divide BOTH the top AND the bottom by 2.</strong><div class="hint-callout">4 ÷ 2 = 2. 6 ÷ 2 = 3.</div><button class="orange-btn" onclick="resetP1()">↩ Reset</button></div>
-</div></div>
-<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">2</div><div><div class="activity-title">Simplify 8/12</div></div></div><div class="activity-body">
-<div class="task-box"><div class="task-label">Problem</div><p>Cora has <span class="frac"><span class="num">8</span><span class="bar"></span><span class="den">12</span></span> of a chocolate bar shaded. Group the pieces until you can't any more. <strong>Write the simplest form.</strong></p></div>
-<div class="journal-label">✏️ <span class="saved-dot" id="dp2"></span></div>
-<textarea class="journal-box" data-label="Practice 2" id="j-p2" oninput="autoSave(this,'dp2')" placeholder="" style="min-height:70px;"></textarea>
-<div class="callout callout-tip"><span class="callout-icon">💡</span><p><strong>Answer:</strong> <span class="frac"><span class="num">8</span><span class="bar"></span><span class="den">12</span></span> ÷ <span class="frac"><span class="num">4</span><span class="bar"></span><span class="den">4</span></span> = <span class="frac"><span class="num">2</span><span class="bar"></span><span class="den">3</span></span>. (Or: divide by 2 first → 4/6, then by 2 again → 2/3.) 2 and 3 share no factor. Simplest.</p></div>
-</div></div>
-<div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">Why does grouping pieces NOT change how much is shaded?</p><div class="journal-label">✏️ <span class="saved-dot" id="ds2"></span></div><textarea class="journal-box" data-label="Practice socratic" id="j-s2" oninput="autoSave(this,'ds2')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Group both. Simplest form.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
+<div class="tab-next-wrap"><p class="tab-transition-voice">Same length. Fewer, bigger pieces.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
 </div>
 <div class="tab-panel" id="tab-assignment">
 <div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">🎯</div><div><div class="activity-title">Ready Check</div></div></div><div class="activity-body">

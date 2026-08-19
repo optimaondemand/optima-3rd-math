@@ -340,7 +340,7 @@
 <div class="tab-bar" id="tabBar">
 <button class="tab-btn active" data-tab="warmup" onclick="switchTab('warmup')">🔍 Warm-Up <span class="tab-check">✓</span></button>
 <button class="tab-btn" data-tab="learn" onclick="switchTab('learn')">📐 Learn <span class="tab-check">✓</span></button>
-<button class="tab-btn" data-tab="practice" onclick="switchTab('practice')">🧮 Practice <span class="tab-check">✓</span></button>
+
 <button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">🌟 Show What You Know <span class="tab-check">✓</span></button>
 </div>
 <div class="tab-panel active" id="tab-warmup">
@@ -458,45 +458,7 @@
 <p style="font-family:'Lora',serif;background:#FAFBFF;border:2px solid #E2E8F4;border-radius:12px;padding:10px;text-align:center;font-size:18px;font-weight:800;margin-top:14px;">68 ÷ 2 = <span style="color:#1A8A5A;">34</span></p>
 </div></div>
 <div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">Why did we share the tens before the ones? Could we go the other way?</p><div class="journal-label">✏️ <span class="saved-dot" id="ds1"></span></div><textarea class="journal-box" data-label="Learn socratic" id="j-s1" oninput="autoSave(this,'ds1')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Share the tens. Share the ones. Read one row.</p><button class="tab-next-btn" onclick="switchTab('practice')">Continue to 🧮 Practice →</button></div>
-</div>
-<div class="tab-panel" id="tab-practice">
-<div class="callout callout-info"><span class="callout-icon">🧭</span><p>Build each number, share each column, read one row.</p></div>
-<div class="activity bl-honey"><div class="activity-head"><div class="activity-num" style="background:var(--honey);">1</div><div><div class="activity-title">48 ÷ 2</div></div></div><div class="activity-body">
-<div class="fill-row"><strong>Tens per row:</strong><input class="fill-input" id="p1-t" placeholder="?" type="number"/><strong>(4 ÷ 2)</strong></div>
-<div class="fill-row"><strong>Ones per row:</strong><input class="fill-input" id="p1-o" placeholder="?" type="number"/><strong>(8 ÷ 2)</strong></div>
-<div class="fill-row"><strong>48 ÷ 2 =</strong><input class="fill-input" id="p1-tot" placeholder="?" type="number"/></div>
-<button class="check-btn" onclick="checkP1()">Check ✓</button>
-<div class="feedback-branch feedback-pass" id="p1-pass"><strong>✅</strong> 2 tens · 4 ones · 24.</div>
-<div class="feedback-branch feedback-retry" id="p1-retry"><strong>🔄 Share each column on its own.</strong><div class="hint-callout">4 ÷ 2 = 2 tens. 8 ÷ 2 = 4 ones. 2 tens + 4 ones = 24.</div><button class="orange-btn" onclick="resetP1()">↩ Reset</button></div>
-</div></div>
-<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">2</div><div><div class="activity-title">86 ÷ 2</div></div></div><div class="activity-body">
-<div class="fill-row"><strong>Tens per row:</strong><input class="fill-input" id="p2-t" placeholder="?" type="number"/><strong>(8 ÷ 2)</strong></div>
-<div class="fill-row"><strong>Ones per row:</strong><input class="fill-input" id="p2-o" placeholder="?" type="number"/><strong>(6 ÷ 2)</strong></div>
-<div class="fill-row"><strong>86 ÷ 2 =</strong><input class="fill-input" id="p2-tot" placeholder="?" type="number"/></div>
-<button class="check-btn" onclick="checkP2()">Check ✓</button>
-<div class="feedback-branch feedback-pass" id="p2-pass"><strong>✅</strong> 4 tens · 3 ones · 43.</div>
-<div class="feedback-branch feedback-retry" id="p2-retry"><strong>🔄 Share each column on its own.</strong><div class="hint-callout">8 ÷ 2 = 4 tens. 6 ÷ 2 = 3 ones. 4 tens + 3 ones = 43.</div><button class="orange-btn" onclick="resetP2()">↩ Reset</button></div>
-</div></div>
-<div class="activity bl-honey"><div class="activity-head"><div class="activity-num" style="background:var(--honey);">3</div><div><div class="activity-title">Which Ones Split Cleanly?</div></div></div><div class="activity-body">
-<p>For each number ÷ 2, do BOTH columns split evenly?</p>
-<div class="task-box"><div class="task-label">42 ÷ 2</div><div class="value-card-row">
-<div class="value-card" onclick="p3a(this,true)"><div class="big">Yes</div></div>
-<div class="value-card" onclick="p3a(this,false)"><div class="big">No</div></div>
-</div></div>
-<div class="task-box"><div class="task-label">36 ÷ 2</div><div class="value-card-row">
-<div class="value-card" onclick="p3b(this,false)"><div class="big">Yes</div></div>
-<div class="value-card" onclick="p3b(this,true)"><div class="big">No</div></div>
-</div></div>
-<div class="task-box"><div class="task-label">68 ÷ 2</div><div class="value-card-row">
-<div class="value-card" onclick="p3c(this,true)"><div class="big">Yes</div></div>
-<div class="value-card" onclick="p3c(this,false)"><div class="big">No</div></div>
-</div></div>
-<div class="inline-feedback" id="p3-fb"></div>
-<div class="callout callout-tip"><span class="callout-icon">💡</span><p><strong>42:</strong> 4÷2=2, 2÷2=1 — yes.  ·  <strong>36:</strong> 3÷2 leaves a leftover ten — no (we'll fix that next lesson).  ·  <strong>68:</strong> 6÷2=3, 8÷2=4 — yes.</p></div>
-</div></div>
-<div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">If both digits are even, what do you know about the dividing by 2?</p><div class="journal-label">✏️ <span class="saved-dot" id="ds2"></span></div><textarea class="journal-box" data-label="Practice socratic" id="j-s2" oninput="autoSave(this,'ds2')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Even tens, even ones → clean split.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
+<div class="tab-next-wrap"><p class="tab-transition-voice">Share the tens. Share the ones. Read one row.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
 </div>
 <div class="tab-panel" id="tab-assignment">
 <div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">🎯</div><div><div class="activity-title">Ready Check</div></div></div><div class="activity-body">

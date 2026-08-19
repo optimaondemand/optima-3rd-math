@@ -327,7 +327,7 @@
 <div class="tab-bar" id="tabBar">
 <button class="tab-btn active" data-tab="warmup" onclick="switchTab('warmup')">🔍 Warm-Up <span class="tab-check">✓</span></button>
 <button class="tab-btn" data-tab="learn" onclick="switchTab('learn')">📐 Learn <span class="tab-check">✓</span></button>
-<button class="tab-btn" data-tab="practice" onclick="switchTab('practice')">🧮 Practice <span class="tab-check">✓</span></button>
+
 <button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">🌟 Show What You Know <span class="tab-check">✓</span></button>
 </div>
 <!-- ═══════════ WARM-UP ═══════════ -->
@@ -486,61 +486,9 @@
 </div></div>
 
 <div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">If 30 + 20 = 50, what does that tell you about 300 + 200? About 3,000 + 2,000? Why?</p><div class="journal-label">✏️ My reasoning <span class="saved-dot" id="dot-soc1"></span></div><textarea class="journal-box" data-label="Learn — Socratic: How facts scale by place" id="journal-soc1" oninput="autoSave(this,'dot-soc1')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Same four steps, bigger numbers, one new wrinkle. Practice now hands you the keys.</p><button class="tab-next-btn" onclick="switchTab('practice')">Continue to 🧮 Practice →</button></div>
+<div class="tab-next-wrap"><p class="tab-transition-voice">Same four steps, bigger numbers, one new wrinkle. Practice now hands you the keys.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
 </div>
 <!-- ═══════════ PRACTICE ═══════════ -->
-<div class="tab-panel" id="tab-practice">
-<div class="callout callout-info"><span class="callout-icon">🧭</span><p>You watched the Crew add <strong>390 + 250 = 640</strong>. Practice gives you new pairs in the same shape. Same four steps. Done in your head.</p></div>
-<div class="callout callout-think"><span class="callout-icon">🧠</span><p><strong>For each problem:</strong> hundreds first, tens second, combine. Watch for tens that add up to 100 or more — that's a carry.</p></div>
-<div class="activity bl-violet"><div class="activity-head"><div class="activity-num" style="background:#6B3FA0;">1</div><div><div class="activity-title">Find the Sum</div><div class="activity-sub">Mental math — four pairs.</div></div><span class="activity-time" style="background:#6B3FA0;">~5 min</span></div><div class="activity-body">
-<div class="bubble-row">
-<div class="bubble felix"><div class="bubble-avatar">F</div><div class="bubble-body"><div class="bubble-name">Felix — shortcut</div><div class="bubble-text">"Hundreds first. Tens second. Combine. Whisper as you go."</div></div></div>
-</div>
-<div class="fill-row"><strong>220 + 480 =</strong><input class="fill-input" id="p1-a" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>570 + 360 =</strong><input class="fill-input" id="p1-b" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>670 + 150 =</strong><input class="fill-input" id="p1-c" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>480 + 390 =</strong><input class="fill-input" id="p1-d" placeholder="?" type="number"/></div>
-<button class="check-btn" onclick="checkP1()">Check My Sums ✓</button>
-<div class="feedback-branch feedback-pass" id="p1-pass"><strong>✅ Yes!</strong> 220+480 = 700. 570+360 = 930. 670+150 = 820. 480+390 = 870.
-      <div class="bubble-row" style="margin-top:10px;"><div class="bubble cora"><div class="bubble-avatar">C</div><div class="bubble-body"><div class="bubble-name">Cora — checking</div><div class="bubble-text">"220 + 480 is a clean one — tens add to 100 exactly, so the carry is one whole hundred. 600 + 100 = 700."</div></div></div></div>
-
-</div>
-<div class="feedback-branch feedback-retry" id="p1-retry"><strong>🔄 Take them one at a time.</strong>
-<div class="hint-callout">220+480: hundreds 200+400=600, tens 20+80=100, combine 600+100 → ?  ·  570+360: hundreds 500+300=800, tens 70+60=130, combine 800+130 → ?  ·  670+150: hundreds 600+100=700, tens 70+50=120, combine 700+120 → ?  ·  480+390: hundreds 400+300=700, tens 80+90=170, combine 700+170 → ?</div>
-<button class="orange-btn" onclick="resetP1()">↩ Reset and Try Again</button>
-</div>
-</div></div>
-<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">2</div><div><div class="activity-title">Show Your Thinking</div><div class="activity-sub">Write the four steps.</div></div><span class="activity-time" style="background:#2DB87A;">~4 min</span></div><div class="activity-body">
-<div class="bubble-row">
-<div class="bubble hazel"><div class="bubble-avatar">H</div><div class="bubble-body"><div class="bubble-name">Hazel — diagram it</div><div class="bubble-text">"Even mental math has a plan. Writing the steps out helps the plan stick."</div></div></div>
-</div>
-<div class="task-box"><div class="task-label">Problem</div><p>Add <strong>520 + 290</strong> in your head. Write the four steps you used.</p></div>
-<div class="journal-label">✏️ My answer + the four steps <span class="saved-dot" id="dot-p2"></span></div>
-<textarea class="journal-box" data-label="Practice 2 — Show your thinking for 520 + 290" id="journal-p2" oninput="autoSave(this,'dot-p2')" placeholder="520 + 290 = ___
-Step 1 (break apart): ...
-Step 2 (add hundreds): ...
-Step 3 (add tens): ...
-Step 4 (combine): ..." style="min-height:140px;"></textarea>
-<div class="callout callout-tip" style="margin-top:10px;"><span class="callout-icon">💡</span><p><strong>Answer:</strong> 520 + 290 = 810. Hundreds: 500 + 200 = 700. Tens: 20 + 90 = 110. Combine: 700 + 110 = 810.</p></div>
-</div></div>
-<div class="activity bl-violet"><div class="activity-head"><div class="activity-num" style="background:#6B3FA0;">3</div><div><div class="activity-title">The Bake Sale</div><div class="activity-sub">A real reason to add big numbers in your head.</div></div></div><div class="activity-body">
-<div class="bubble-row">
-<div class="bubble atlas"><div class="bubble-avatar">A</div><div class="bubble-body"><div class="bubble-name">Atlas — concrete</div><div class="bubble-text">"Two bake sales. One raised some money, the other raised more. Total it up."</div></div></div>
-</div>
-<div class="task-box"><div class="task-label">Word problem</div><p>The 3rd-grade bake sale raised <strong>$370</strong>. The 4th-grade bake sale raised <strong>$280</strong>. How much money did the two sales raise together?</p></div>
-<div class="fill-row"><strong>Total raised: $</strong><input class="fill-input" id="p3-a" placeholder="?" type="number"/></div>
-<button class="check-btn" onclick="checkP3()">Check My Answer ✓</button>
-<div class="feedback-branch feedback-pass" id="p3-pass"><strong>✅ Yes — $650.</strong> Hundreds: 300 + 200 = 500. Tens: 70 + 80 = 150. Combine: 500 + 150 = 650. The bake sales raised $650 together.
-      <div class="bubble-row" style="margin-top:10px;"><div class="bubble cora"><div class="bubble-avatar">C</div><div class="bubble-body"><div class="bubble-name">Cora — checking</div><div class="bubble-text">"Quick estimate: 370 ≈ 400, 280 ≈ 280. 400 + 280 = 680. My answer 650 is close — that feels right."</div></div></div></div>
-</div>
-<div class="feedback-branch feedback-retry" id="p3-retry"><strong>🔄 Four steps.</strong>
-<div class="hint-callout">370 = 300 + 70. 280 = 200 + 80. Hundreds: 300 + 200 = ? Tens: 70 + 80 = ? Combine.</div>
-<button class="orange-btn" onclick="resetP3()">↩ Reset and Try Again</button>
-</div>
-</div></div>
-<div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">Would the break-apart strategy still work if we added a 3-digit number and a 2-digit number — like 350 + 60? Try it. What's different, and what's the same?</p><div class="journal-label">✏️ My reasoning <span class="saved-dot" id="dot-soc2"></span></div><textarea class="journal-box" data-label="Practice — Socratic: 350 + 60" id="journal-soc2" oninput="autoSave(this,'dot-soc2')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Same plan, bigger numbers, one carry. Time to show what you know.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
-</div>
 <!-- ═══════════ SHOW WHAT YOU KNOW ═══════════ -->
 <div class="tab-panel" id="tab-assignment">
 <div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">🎯</div><div><div class="activity-title">Ready Check</div><div class="activity-sub">Two quick questions.</div></div></div><div class="activity-body">

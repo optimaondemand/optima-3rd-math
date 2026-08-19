@@ -343,7 +343,7 @@
 <div class="tab-bar" id="tabBar">
 <button class="tab-btn active" data-tab="warmup" onclick="switchTab('warmup')">🔍 Warm-Up <span class="tab-check">✓</span></button>
 <button class="tab-btn" data-tab="learn" onclick="switchTab('learn')">📐 Learn <span class="tab-check">✓</span></button>
-<button class="tab-btn" data-tab="practice" onclick="switchTab('practice')">🧮 Practice <span class="tab-check">✓</span></button>
+
 <button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">🌟 Show What You Know <span class="tab-check">✓</span></button>
 </div>
 <!-- ═══════════ WARM-UP ═══════════ -->
@@ -548,59 +548,9 @@
 </div></div>
 
 <div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">If I show you a bar split into two parts with a "?" above the whole, do I add or subtract? What about a bar where the whole is labeled and one part is "?" — what then? How does the picture tell you?</p><div class="journal-label">✏️ My reasoning <span class="saved-dot" id="dot-soc1"></span></div><textarea class="journal-box" data-label="Learn — Socratic: how the picture tells you the operation" id="journal-soc1" oninput="autoSave(this,'dot-soc1')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Draw the bar. Spot the missing piece. Pick add or subtract. Try a few.</p><button class="tab-next-btn" onclick="switchTab('practice')">Continue to 🧮 Practice →</button></div>
+<div class="tab-next-wrap"><p class="tab-transition-voice">Draw the bar. Spot the missing piece. Pick add or subtract. Try a few.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
 </div>
 <!-- ═══════════ PRACTICE ═══════════ -->
-<div class="tab-panel" id="tab-practice">
-<div class="callout callout-info"><span class="callout-icon">🧭</span><p>You saw <strong>$640 = $397 + $243</strong>, with a difference of $154. Practice mixes "find the whole" and "find the missing part" — pay attention to which is asked.</p></div>
-<div class="callout callout-think"><span class="callout-icon">🧠</span><p><strong>For each problem:</strong> picture the bar in your head. Spot what's missing. Add or subtract.</p></div>
-<div class="activity bl-violet"><div class="activity-head"><div class="activity-num" style="background:#6B3FA0;">1</div><div><div class="activity-title">Find the Missing Piece</div><div class="activity-sub">Each one tells you the bar.</div></div><span class="activity-time" style="background:#6B3FA0;">~5 min</span></div><div class="activity-body">
-<div class="bubble-row">
-<div class="bubble felix"><div class="bubble-avatar">F</div><div class="bubble-body"><div class="bubble-name">Felix — shortcut</div><div class="bubble-text">"Whisper: 'Do I know the whole?' If yes, subtract. If no, add. That one question gets you started every time."</div></div></div>
-</div>
-<div class="fill-row"><strong>Parts 270 and 360. Whole =</strong><input class="fill-input" id="p1-a" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>Whole 120, part 70. Other part =</strong><input class="fill-input" id="p1-b" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>Whole 86, part 38. Other part =</strong><input class="fill-input" id="p1-c" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>Parts 150 and 180. Whole =</strong><input class="fill-input" id="p1-d" placeholder="?" type="number"/></div>
-<button class="check-btn" onclick="checkP1()">Check My Answers ✓</button>
-<div class="feedback-branch feedback-pass" id="p1-pass"><strong>✅ Yes!</strong> 270 + 360 = 630. 120 − 70 = 50. 86 − 38 = 48. 150 + 180 = 330.
-      <div class="bubble-row" style="margin-top:10px;"><div class="bubble cora"><div class="bubble-avatar">C</div><div class="bubble-body"><div class="bubble-name">Cora — checking the work</div><div class="bubble-text">"Let's check by reversing. 50 + 70 = 120 ✓. 38 + 48 = 86 ✓. 270 + 360 → 270 + 360 = 630 ✓. The parts always add to the whole."</div></div></div></div>
-
-</div>
-<div class="feedback-branch feedback-retry" id="p1-retry"><strong>🔄 Picture the bar first.</strong>
-<div class="hint-callout">Parts 270 and 360 → whole missing → ADD.  ·  Whole 120, part 70 → part missing → SUBTRACT (120 − 70).  ·  Whole 86, part 38 → SUBTRACT (86 − 38).  ·  Parts 150 and 180 → ADD.</div>
-<button class="orange-btn" onclick="resetP1()">↩ Reset and Try Again</button>
-</div>
-</div></div>
-<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">2</div><div><div class="activity-title">Build the Bar Yourself</div><div class="activity-sub">Draw the picture, then solve.</div></div><span class="activity-time" style="background:#2DB87A;">~4 min</span></div><div class="activity-body">
-<div class="bubble-row">
-<div class="bubble hazel"><div class="bubble-avatar">H</div><div class="bubble-body"><div class="bubble-name">Hazel — sketch first</div><div class="bubble-text">"Before any math, sketch the bar. Even a rough rectangle with two pieces helps you SEE what's whole and what's part."</div></div></div>
-</div>
-<div class="task-box"><div class="task-label">Problem</div><p>Two numbers have a sum of <strong>540</strong>. The greater number is <strong>350</strong>. Find the other number AND the difference between the two.</p></div>
-<div class="journal-label">✏️ My bar sketch + answers <span class="saved-dot" id="dot-p2"></span></div>
-<textarea class="journal-box" data-label="Practice 2 — Sum 540 greater 350 find other and difference" id="journal-p2" oninput="autoSave(this,'dot-p2')" placeholder="My bar: whole = ___, one part = ___, other part = ?
-Other number = ___ − ___ = ___
-Difference = greater − other = ___ − ___ = ___" style="min-height:130px;"></textarea>
-<div class="callout callout-tip" style="margin-top:10px;"><span class="callout-icon">💡</span><p><strong>Answer:</strong> Whole = 540. Greater = 350. Other = 540 − 350 = 190. Difference = 350 − 190 = 160.</p></div>
-</div></div>
-<div class="activity bl-violet"><div class="activity-head"><div class="activity-num" style="background:#6B3FA0;">3</div><div><div class="activity-title">The Garden Beds</div><div class="activity-sub">A word problem — start with the bar.</div></div></div><div class="activity-body">
-<div class="bubble-row">
-<div class="bubble atlas"><div class="bubble-avatar">A</div><div class="bubble-body"><div class="bubble-name">Atlas — concrete</div><div class="bubble-text">"Sketch the bar before doing any math. The shape of the bar tells you whether to add or subtract."</div></div></div>
-</div>
-<div class="task-box"><div class="task-label">Word problem</div><p>The school garden has two beds. Together they hold <strong>175 plants</strong>. The big bed has <strong>108 plants</strong>. How many plants are in the small bed?</p></div>
-<div class="fill-row"><strong>Plants in the small bed:</strong><input class="fill-input" id="p3-a" placeholder="?" type="number"/></div>
-<button class="check-btn" onclick="checkP3()">Check My Answer ✓</button>
-<div class="feedback-branch feedback-pass" id="p3-pass"><strong>✅ Yes — 67 plants.</strong> Whole = 175, one part = 108, missing part = 175 − 108 = 67.
-      <div class="bubble-row" style="margin-top:10px;"><div class="bubble cora"><div class="bubble-avatar">C</div><div class="bubble-body"><div class="bubble-name">Cora — checking the work</div><div class="bubble-text">"Let's check: 67 + 108 → 67 + 100 = 167, then 167 + 8 = 175 ✓. The small bed has 67 plants."</div></div></div></div>
-</div>
-<div class="feedback-branch feedback-retry" id="p3-retry"><strong>🔄 Picture the bar.</strong>
-<div class="hint-callout">Whole bar = 175 (total plants). One part = 108 (big bed). Other part = ? (small bed). Whole − known part = missing part. So 175 − 108 = ___.</div>
-<button class="orange-btn" onclick="resetP3()">↩ Reset and Try Again</button>
-</div>
-</div></div>
-<div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">If a word problem doesn't say "in all" or "left over" or "more than," how would you decide what to draw — and whether to add or subtract?</p><div class="journal-label">✏️ My reasoning <span class="saved-dot" id="dot-soc2"></span></div><textarea class="journal-box" data-label="Practice — Socratic: deciding the operation from a word problem" id="journal-soc2" oninput="autoSave(this,'dot-soc2')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Picture the bar. Find the missing piece. Time to show what you know.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
-</div>
 <!-- ═══════════ SHOW WHAT YOU KNOW ═══════════ -->
 <div class="tab-panel" id="tab-assignment">
 <div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">🎯</div><div><div class="activity-title">Ready Check</div><div class="activity-sub">Two quick questions.</div></div></div><div class="activity-body">

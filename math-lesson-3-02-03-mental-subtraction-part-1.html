@@ -331,7 +331,7 @@
 <div class="tab-bar" id="tabBar">
 <button class="tab-btn active" data-tab="warmup" onclick="switchTab('warmup')">🔍 Warm-Up <span class="tab-check">✓</span></button>
 <button class="tab-btn" data-tab="learn" onclick="switchTab('learn')">📐 Learn <span class="tab-check">✓</span></button>
-<button class="tab-btn" data-tab="practice" onclick="switchTab('practice')">🧮 Practice <span class="tab-check">✓</span></button>
+
 <button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">🌟 Show What You Know <span class="tab-check">✓</span></button>
 </div>
 <!-- ═══════════ WARM-UP ═══════════ -->
@@ -531,61 +531,9 @@
 </div></div>
 
 <div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">When two numbers are far apart (like 81 and 12), would you still use the count-up strategy? Why or why not?</p><div class="journal-label">✏️ My reasoning <span class="saved-dot" id="dot-soc1"></span></div><textarea class="journal-box" data-label="Learn — Socratic: when count-up works less well" id="journal-soc1" oninput="autoSave(this,'dot-soc1')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Count up, use a friendly number, add the jumps. Practice now hands you the strategy.</p><button class="tab-next-btn" onclick="switchTab('practice')">Continue to 🧮 Practice →</button></div>
+<div class="tab-next-wrap"><p class="tab-transition-voice">Count up, use a friendly number, add the jumps. Practice now hands you the strategy.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
 </div>
 <!-- ═══════════ PRACTICE ═══════════ -->
-<div class="tab-panel" id="tab-practice">
-<div class="callout callout-info"><span class="callout-icon">🧭</span><p>You watched <strong>81 − 67 = 14</strong> with friendly jumps. Practice gives you more — most with small gaps where counting up is fast.</p></div>
-<div class="callout callout-think"><span class="callout-icon">🧠</span><p><strong>For each problem:</strong> start at the small number. Jump to the next friendly number if needed. Add up the jumps.</p></div>
-<div class="activity bl-violet"><div class="activity-head"><div class="activity-num" style="background:#6B3FA0;">1</div><div><div class="activity-title">Find the Difference</div><div class="activity-sub">Count up in your head.</div></div><span class="activity-time" style="background:#6B3FA0;">~4 min</span></div><div class="activity-body">
-<div class="bubble-row">
-<div class="bubble felix"><div class="bubble-avatar">F</div><div class="bubble-body"><div class="bubble-name">Felix — shortcut</div><div class="bubble-text">"When the numbers are close, just whisper the count: 88, 89, 90. Three taps, two jumps. Done."</div></div></div>
-</div>
-<div class="fill-row"><strong>90 − 88 =</strong><input class="fill-input" id="p1-a" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>80 − 72 =</strong><input class="fill-input" id="p1-b" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>50 − 48 =</strong><input class="fill-input" id="p1-c" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>40 − 31 =</strong><input class="fill-input" id="p1-d" placeholder="?" type="number"/></div>
-<button class="check-btn" onclick="checkP1()">Check My Answers ✓</button>
-<div class="feedback-branch feedback-pass" id="p1-pass"><strong>✅ Yes!</strong> 90−88 = 2. 80−72 = 8. 50−48 = 2. 40−31 = 9. You counted up — fast.
-      <div class="bubble-row" style="margin-top:10px;"><div class="bubble cora"><div class="bubble-avatar">C</div><div class="bubble-body"><div class="bubble-name">Cora — checking the work</div><div class="bubble-text">"Let's check by adding. 88 + 2 = 90 ✓. 72 + 8 = 80 ✓. 48 + 2 = 50 ✓. 31 + 9 = 40 ✓. Every subtraction question is also an addition question in disguise."</div></div></div></div>
-
-</div>
-<div class="feedback-branch feedback-retry" id="p1-retry"><strong>🔄 Count up from the small number.</strong>
-<div class="hint-callout">90−88: start at 88, count to 90. How many counts?  ·  80−72: start at 72, count up to 80. (Or use the next friendly number.)  ·  50−48: start at 48, count to 50.  ·  40−31: start at 31, count up to 40.</div>
-<button class="orange-btn" onclick="resetP1()">↩ Reset and Try Again</button>
-</div>
-</div></div>
-<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">2</div><div><div class="activity-title">Show Your Jumps</div><div class="activity-sub">One bigger gap. Write the jumps you took.</div></div><span class="activity-time" style="background:#2DB87A;">~4 min</span></div><div class="activity-body">
-<div class="bubble-row">
-<div class="bubble hazel"><div class="bubble-avatar">H</div><div class="bubble-body"><div class="bubble-name">Hazel — diagram it</div><div class="bubble-text">"Sketch a tiny number line. Mark the start. Draw your jumps. Even a rough drawing helps the plan stick."</div></div></div>
-</div>
-<div class="task-box"><div class="task-label">Problem</div><p>Find <strong>53 − 38</strong> by counting up. Show each jump.</p></div>
-<div class="journal-label">✏️ My answer + the jumps I took <span class="saved-dot" id="dot-p2"></span></div>
-<textarea class="journal-box" data-label="Practice 2 — Show your jumps for 53 − 38" id="journal-p2" oninput="autoSave(this,'dot-p2')" placeholder="53 − 38 = ___
-Jump 1 (to friendly number): from 38 to ___ (+___)
-Jump 2 (by tens): from ___ to ___ (+___)
-Jump 3 (to the big number): from ___ to ___ (+___)
-Total jumps: ___" style="min-height:140px;"></textarea>
-<div class="callout callout-tip" style="margin-top:10px;"><span class="callout-icon">💡</span><p><strong>Answer:</strong> 53 − 38 = 15. Jumps: 38 → 40 (+2), 40 → 50 (+10), 50 → 53 (+3). Total: 2 + 10 + 3 = 15.</p></div>
-</div></div>
-<div class="activity bl-violet"><div class="activity-head"><div class="activity-num" style="background:#6B3FA0;">3</div><div><div class="activity-title">The Recess Counter</div><div class="activity-sub">A real reason to subtract in your head.</div></div></div><div class="activity-body">
-<div class="bubble-row">
-<div class="bubble atlas"><div class="bubble-avatar">A</div><div class="bubble-body"><div class="bubble-name">Atlas — concrete</div><div class="bubble-text">"Picture two numbers. Count up from one to the other. The difference is your answer."</div></div></div>
-</div>
-<div class="task-box"><div class="task-label">Word problem</div><p>Recess lasts <strong>30 minutes</strong>. Your class has already played for <strong>23 minutes</strong>. How many minutes are left?</p></div>
-<div class="fill-row"><strong>Minutes left:</strong><input class="fill-input" id="p3-a" placeholder="?" type="number"/></div>
-<button class="check-btn" onclick="checkP3()">Check My Answer ✓</button>
-<div class="feedback-branch feedback-pass" id="p3-pass"><strong>✅ Yes — 7 minutes.</strong> Start at 23, count up to 30. 23 → 30 is a jump of 7. So 30 − 23 = 7.
-      <div class="bubble-row" style="margin-top:10px;"><div class="bubble cora"><div class="bubble-avatar">C</div><div class="bubble-body"><div class="bubble-name">Cora — checking the work</div><div class="bubble-text">"Let's check: 23 + 7 = 30. ✓ Seven minutes left."</div></div></div></div>
-</div>
-<div class="feedback-branch feedback-retry" id="p3-retry"><strong>🔄 Count up from 23 to 30.</strong>
-<div class="hint-callout">Start at 23. The next number is 24. Then 25, 26... up to 30. How many numbers did you say after 23?</div>
-<button class="orange-btn" onclick="resetP3()">↩ Reset and Try Again</button>
-</div>
-</div></div>
-<div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">A friend says, "Subtraction is just adding the wrong way." Is your friend right? What do you think they mean?</p><div class="journal-label">✏️ My reasoning <span class="saved-dot" id="dot-soc2"></span></div><textarea class="journal-box" data-label="Practice — Socratic: Is subtraction just adding the wrong way" id="journal-soc2" oninput="autoSave(this,'dot-soc2')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Count up, use a friendly stop, add the jumps. Time to show what you know.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
-</div>
 <!-- ═══════════ SHOW WHAT YOU KNOW ═══════════ -->
 <div class="tab-panel" id="tab-assignment">
 <div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">🎯</div><div><div class="activity-title">Ready Check</div><div class="activity-sub">Two quick questions.</div></div></div><div class="activity-body">

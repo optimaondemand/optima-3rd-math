@@ -347,7 +347,7 @@
 <div class="tab-bar" id="tabBar">
 <button class="tab-btn active" data-tab="warmup" onclick="switchTab('warmup')">🔍 Warm-Up <span class="tab-check">✓</span></button>
 <button class="tab-btn" data-tab="learn" onclick="switchTab('learn')">📐 Learn <span class="tab-check">✓</span></button>
-<button class="tab-btn" data-tab="practice" onclick="switchTab('practice')">🧮 Practice <span class="tab-check">✓</span></button>
+
 <button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">🌟 Show What You Know <span class="tab-check">✓</span></button>
 </div>
 <div class="tab-panel active" id="tab-warmup">
@@ -467,47 +467,7 @@
 <p style="font-family:'Lora',serif;background:#FAFBFF;border:2px solid #E2E8F4;border-radius:12px;padding:10px;text-align:center;font-size:18px;font-weight:800;margin-top:14px;">52 ÷ 2 = <span style="color:#1A8A5A;">26</span></p>
 </div></div>
 <div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">When we trade 1 ten for 10 ones, why does the total value stay the same?</p><div class="journal-label">✏️ <span class="saved-dot" id="ds1"></span></div><textarea class="journal-box" data-label="Learn socratic" id="j-s1" oninput="autoSave(this,'ds1')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Share tens. Trade if needed. Share ones. Read.</p><button class="tab-next-btn" onclick="switchTab('practice')">Continue to 🧮 Practice →</button></div>
-</div>
-<div class="tab-panel" id="tab-practice">
-<div class="callout callout-info"><span class="callout-icon">🧭</span><p>Share each column. Trade the leftover ten when you need to.</p></div>
-<div class="activity bl-honey"><div class="activity-head"><div class="activity-num" style="background:var(--honey);">1</div><div><div class="activity-title">36 ÷ 2</div></div></div><div class="activity-body">
-<div class="fill-row"><strong>Tens per row:</strong><input class="fill-input" id="p1-t" placeholder="?" type="number"/><strong>(leftover</strong><input class="fill-input" id="p1-l" placeholder="?" type="number"/><strong>ten)</strong></div>
-<div class="fill-row"><strong>Trade: ones column now =</strong><input class="fill-input" id="p1-o" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>Ones per row:</strong><input class="fill-input" id="p1-op" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>36 ÷ 2 =</strong><input class="fill-input" id="p1-tot" placeholder="?" type="number"/></div>
-<button class="check-btn" onclick="checkP1()">Check ✓</button>
-<div class="feedback-branch feedback-pass" id="p1-pass"><strong>✅</strong> 1 ten (leftover 1) · ones become 16 · 8 ones per row · 18.</div>
-<div class="feedback-branch feedback-retry" id="p1-retry"><strong>🔄 Trade the leftover ten, then share the bigger ones column.</strong><div class="hint-callout">3 ÷ 2 = 1 R 1. Trade 1 ten → 10 ones. Ones = 6 + 10 = 16. 16 ÷ 2 = 8. 1 ten + 8 ones = 18.</div><button class="orange-btn" onclick="resetP1()">↩ Reset</button></div>
-</div></div>
-<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">2</div><div><div class="activity-title">74 ÷ 2</div></div></div><div class="activity-body">
-<div class="fill-row"><strong>Tens per row:</strong><input class="fill-input" id="p2-t" placeholder="?" type="number"/><strong>(leftover</strong><input class="fill-input" id="p2-l" placeholder="?" type="number"/><strong>ten)</strong></div>
-<div class="fill-row"><strong>Trade: ones column =</strong><input class="fill-input" id="p2-o" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>Ones per row:</strong><input class="fill-input" id="p2-op" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>74 ÷ 2 =</strong><input class="fill-input" id="p2-tot" placeholder="?" type="number"/></div>
-<button class="check-btn" onclick="checkP2()">Check ✓</button>
-<div class="feedback-branch feedback-pass" id="p2-pass"><strong>✅</strong> 3 tens (1 leftover) · ones = 14 · 7 ones per row · 37.</div>
-<div class="feedback-branch feedback-retry" id="p2-retry"><strong>🔄 7 tens ÷ 2 = 3 each, 1 left over.</strong><div class="hint-callout">Trade: ones = 4 + 10 = 14. 14 ÷ 2 = 7. 3 tens + 7 ones = 37.</div><button class="orange-btn" onclick="resetP2()">↩ Reset</button></div>
-</div></div>
-<div class="activity bl-honey"><div class="activity-head"><div class="activity-num" style="background:var(--honey);">3</div><div><div class="activity-title">Trade or No Trade?</div></div></div><div class="activity-body">
-<p>For each ÷ 2, will you need to trade a leftover ten?</p>
-<div class="task-box"><div class="task-label">48 ÷ 2</div><div class="value-card-row">
-<div class="value-card" onclick="p3a(this,true)"><div class="big">No trade</div></div>
-<div class="value-card" onclick="p3a(this,false)"><div class="big">Trade</div></div>
-</div></div>
-<div class="task-box"><div class="task-label">52 ÷ 2</div><div class="value-card-row">
-<div class="value-card" onclick="p3b(this,false)"><div class="big">No trade</div></div>
-<div class="value-card" onclick="p3b(this,true)"><div class="big">Trade</div></div>
-</div></div>
-<div class="task-box"><div class="task-label">96 ÷ 2</div><div class="value-card-row">
-<div class="value-card" onclick="p3c(this,true)"><div class="big">No trade</div></div>
-<div class="value-card" onclick="p3c(this,false)"><div class="big">Trade</div></div>
-</div></div>
-<div class="inline-feedback" id="p3-fb"></div>
-<div class="callout callout-tip"><span class="callout-icon">💡</span><p><strong>48 ÷ 2:</strong> 4 is even, no trade. <strong>52 ÷ 2:</strong> 5 is odd, trade needed. <strong>96 ÷ 2:</strong> 9 is odd, trade needed (9 tens ÷ 2 = 4 each with 1 left over).</p></div>
-</div></div>
-<div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">When you're dividing a 2-digit number by 2, what about the TENS digit tells you whether you'll need to trade?</p><div class="journal-label">✏️ <span class="saved-dot" id="ds2"></span></div><textarea class="journal-box" data-label="Practice socratic" id="j-s2" oninput="autoSave(this,'ds2')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Odd tens digit → trade. Even tens digit → no trade.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
+<div class="tab-next-wrap"><p class="tab-transition-voice">Share tens. Trade if needed. Share ones. Read.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
 </div>
 <div class="tab-panel" id="tab-assignment">
 <div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">🎯</div><div><div class="activity-title">Ready Check</div></div></div><div class="activity-body">

@@ -335,7 +335,7 @@
 <div class="tab-bar" id="tabBar">
 <button class="tab-btn active" data-tab="warmup" onclick="switchTab('warmup')">🔍 Warm-Up <span class="tab-check">✓</span></button>
 <button class="tab-btn" data-tab="learn" onclick="switchTab('learn')">📐 Learn <span class="tab-check">✓</span></button>
-<button class="tab-btn" data-tab="practice" onclick="switchTab('practice')">🧮 Practice <span class="tab-check">✓</span></button>
+
 <button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">🌟 Show What You Know <span class="tab-check">✓</span></button>
 </div>
 <!-- ═══════════ WARM-UP ═══════════ -->
@@ -513,60 +513,9 @@
 </div></div>
 
 <div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">If you know 73 + 27 = 100, you also know <em>100 − 73 = ?</em> and <em>100 − 27 = ?</em>. Why? What's the same pair doing three jobs?</p><div class="journal-label">✏️ My reasoning <span class="saved-dot" id="dot-soc1"></span></div><textarea class="journal-box" data-label="Learn — Socratic: one pair, three facts" id="journal-soc1" oninput="autoSave(this,'dot-soc1')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Two jumps. Add them. You've got the partner. Time to try a few more.</p><button class="tab-next-btn" onclick="switchTab('practice')">Continue to 🧮 Practice →</button></div>
+<div class="tab-next-wrap"><p class="tab-transition-voice">Two jumps. Add them. You've got the partner. Time to try a few more.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
 </div>
 <!-- ═══════════ PRACTICE ═══════════ -->
-<div class="tab-panel" id="tab-practice">
-<div class="callout callout-info"><span class="callout-icon">🧭</span><p>You saw the recipe: jump to the friendly number, then to 100 or 1,000. Add the jumps. Now try four pairs, then a bigger problem.</p></div>
-<div class="callout callout-think"><span class="callout-icon">🧠</span><p><strong>For each problem:</strong> find the partner that makes 100 or 1,000.</p></div>
-<div class="activity bl-violet"><div class="activity-head"><div class="activity-num" style="background:#6B3FA0;">1</div><div><div class="activity-title">Find the Partner</div><div class="activity-sub">Four problems. Two jumps each.</div></div><span class="activity-time" style="background:#6B3FA0;">~5 min</span></div><div class="activity-body">
-<div class="bubble-row">
-<div class="bubble felix"><div class="bubble-avatar">F</div><div class="bubble-body"><div class="bubble-name">Felix — shortcut</div><div class="bubble-text">"Whisper: jump to the friendly number, then jump to the target. Add. Two beats, done."</div></div></div>
-</div>
-<div class="fill-row"><strong>56 + ___ = 100</strong><input class="fill-input" id="p1-a" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>25 + ___ = 100</strong><input class="fill-input" id="p1-b" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>490 + ___ = 1,000</strong><input class="fill-input" id="p1-c" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>150 + ___ = 1,000</strong><input class="fill-input" id="p1-d" placeholder="?" type="number"/></div>
-<button class="check-btn" onclick="checkP1()">Check My Answers ✓</button>
-<div class="feedback-branch feedback-pass" id="p1-pass"><strong>✅ Yes!</strong> 56 + 44 = 100. 25 + 75 = 100. 490 + 510 = 1,000. 150 + 850 = 1,000.
-      <div class="bubble-row" style="margin-top:10px;"><div class="bubble cora"><div class="bubble-avatar">C</div><div class="bubble-body"><div class="bubble-name">Cora — checking the work</div><div class="bubble-text">"Let's check by adding. 56 + 44 → 56 + 4 = 60, 60 + 40 = 100 ✓. 25 + 75 = 100 ✓ (you might know that pair already). 490 + 510 → 490 + 10 = 500, 500 + 500 = 1,000 ✓. 150 + 850 → 150 + 50 = 200, 200 + 800 = 1,000 ✓."</div></div></div></div>
-
-</div>
-<div class="feedback-branch feedback-retry" id="p1-retry"><strong>🔄 Two jumps every time.</strong>
-<div class="hint-callout">56 + ___ = 100: 56 → 60 (+4), 60 → 100 (+40). Add 4 + 40.  ·  25 + ___: 25 → 30 (+5), 30 → 100 (+70).  ·  490 + ___ = 1,000: 490 → 500 (+10), 500 → 1,000 (+500).  ·  150 + ___: 150 → 200 (+50), 200 → 1,000 (+800).</div>
-<button class="orange-btn" onclick="resetP1()">↩ Reset and Try Again</button>
-</div>
-</div></div>
-<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">2</div><div><div class="activity-title">Subtract from 1,000</div><div class="activity-sub">The same skill, asked differently.</div></div><span class="activity-time" style="background:#2DB87A;">~4 min</span></div><div class="activity-body">
-<div class="bubble-row">
-<div class="bubble hazel"><div class="bubble-avatar">H</div><div class="bubble-body"><div class="bubble-name">Hazel — drawing it</div><div class="bubble-text">"1,000 − 490 is the same as 490 + ___ = 1,000. Same number bond, asked backward. Two jumps from 490 still gets you the answer."</div></div></div>
-</div>
-<div class="task-box"><div class="task-label">Problem</div><p>Find <strong>1,000 − 490</strong>. Show your two jumps from 490.</p></div>
-<div class="journal-label">✏️ My jumps + answer <span class="saved-dot" id="dot-p2"></span></div>
-<textarea class="journal-box" data-label="Practice 2 — Show jumps for 1,000 − 490" id="journal-p2" oninput="autoSave(this,'dot-p2')" placeholder="Jump 1: 490 to ___ (+___)
-Jump 2: ___ to 1,000 (+___)
-Add the jumps: ___
-So 1,000 − 490 = ___" style="min-height:130px;"></textarea>
-<div class="callout callout-tip" style="margin-top:10px;"><span class="callout-icon">💡</span><p><strong>Answer:</strong> 1,000 − 490 = 510. Jumps: 490 → 500 (+10), 500 → 1,000 (+500). Add: 10 + 500 = 510.</p></div>
-</div></div>
-<div class="activity bl-violet"><div class="activity-head"><div class="activity-num" style="background:#6B3FA0;">3</div><div><div class="activity-title">The Class Goal</div><div class="activity-sub">A word problem.</div></div></div><div class="activity-body">
-<div class="bubble-row">
-<div class="bubble atlas"><div class="bubble-avatar">A</div><div class="bubble-body"><div class="bubble-name">Atlas — concrete</div><div class="bubble-text">"Picture the pair: what's already there + what's missing = the goal. Find the missing piece."</div></div></div>
-</div>
-<div class="task-box"><div class="task-label">Word problem</div><p>Your class wants to read <strong>1,000 books</strong> this year. So far they've read <strong>730 books</strong>. How many more books does the class need to read to reach the goal?</p></div>
-<div class="fill-row"><strong>Books to go:</strong><input class="fill-input" id="p3-a" placeholder="?" type="number"/></div>
-<button class="check-btn" onclick="checkP3()">Check My Answer ✓</button>
-<div class="feedback-branch feedback-pass" id="p3-pass"><strong>✅ Yes — 270 books.</strong> Jump 1: 730 → 800 (+70). Jump 2: 800 → 1,000 (+200). Add: 70 + 200 = 270.
-      <div class="bubble-row" style="margin-top:10px;"><div class="bubble cora"><div class="bubble-avatar">C</div><div class="bubble-body"><div class="bubble-name">Cora — checking the work</div><div class="bubble-text">"Let's check by adding. 730 + 270 → 730 + 70 = 800, 800 + 200 = 1,000 ✓. 270 books to go."</div></div></div></div>
-</div>
-<div class="feedback-branch feedback-retry" id="p3-retry"><strong>🔄 Two jumps from 730 to 1,000.</strong>
-<div class="hint-callout">First, jump to the next hundred: 730 to 800. How many is that? Then jump from 800 to 1,000. How many is that? Add the two jumps.</div>
-<button class="orange-btn" onclick="resetP3()">↩ Reset and Try Again</button>
-</div>
-</div></div>
-<div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">If you know the pair 7 + 3 = 10, name three other facts you also know — without doing any extra math.</p><div class="journal-label">✏️ My reasoning <span class="saved-dot" id="dot-soc2"></span></div><textarea class="journal-box" data-label="Practice — Socratic: facts from one pair" id="journal-soc2" oninput="autoSave(this,'dot-soc2')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Two jumps. Add. Done. Time to show what you know.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
-</div>
 <!-- ═══════════ SHOW WHAT YOU KNOW ═══════════ -->
 <div class="tab-panel" id="tab-assignment">
 <div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">🎯</div><div><div class="activity-title">Ready Check</div><div class="activity-sub">Two quick questions.</div></div></div><div class="activity-body">

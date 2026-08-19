@@ -342,7 +342,7 @@
 <div class="tab-bar" id="tabBar">
 <button class="tab-btn active" data-tab="warmup" onclick="switchTab('warmup')">🔍 Warm-Up <span class="tab-check">✓</span></button>
 <button class="tab-btn" data-tab="learn" onclick="switchTab('learn')">📐 Learn <span class="tab-check">✓</span></button>
-<button class="tab-btn" data-tab="practice" onclick="switchTab('practice')">🧮 Practice <span class="tab-check">✓</span></button>
+
 <button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">🌟 Show What You Know <span class="tab-check">✓</span></button>
 </div>
 <!-- ═══════════ WARM-UP ═══════════ -->
@@ -530,59 +530,9 @@
 </div></div>
 
 <div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">Why does rounding to the nearest TEN give a CLOSER estimate than rounding to the nearest HUNDRED? What's the math behind that?</p><div class="journal-label">✏️ My reasoning <span class="saved-dot" id="dot-soc1"></span></div><textarea class="journal-box" data-label="Learn — Socratic: why ten gives closer estimate" id="journal-soc1" oninput="autoSave(this,'dot-soc1')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Round each number to a friendly place. Add or subtract. That's your estimate. Try a few.</p><button class="tab-next-btn" onclick="switchTab('practice')">Continue to 🧮 Practice →</button></div>
+<div class="tab-next-wrap"><p class="tab-transition-voice">Round each number to a friendly place. Add or subtract. That's your estimate. Try a few.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
 </div>
 <!-- ═══════════ PRACTICE ═══════════ -->
-<div class="tab-panel" id="tab-practice">
-<div class="callout callout-info"><span class="callout-icon">🧭</span><p>You saw 895 + 756 ≈ 1,660 (tens) or ≈ 1,700 (hundreds). Practice: build estimates and check how close they are.</p></div>
-<div class="callout callout-think"><span class="callout-icon">🧠</span><p><strong>For each problem:</strong> round each number to the best place, then add or subtract the rounded numbers.</p></div>
-<div class="activity bl-teal"><div class="activity-head"><div class="activity-num" style="background:#1A8A9A;">1</div><div><div class="activity-title">Estimate to the Best Place</div><div class="activity-sub">Four problems. Round each to the NEAREST HUNDRED.</div></div><span class="activity-time" style="background:#1A8A9A;">~5 min</span></div><div class="activity-body">
-<div class="bubble-row">
-<div class="bubble felix"><div class="bubble-avatar">F</div><div class="bubble-body"><div class="bubble-name">Felix — shortcut</div><div class="bubble-text">"Round each number to the nearest 100, then do the easy mental math. Your answer is an estimate, not exact — that's the point."</div></div></div>
-</div>
-<div class="fill-row"><strong>838 − 72 ≈</strong><input class="fill-input" id="p1-a" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>584 + 47 ≈</strong><input class="fill-input" id="p1-b" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>972 − 356 ≈</strong><input class="fill-input" id="p1-c" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>784 + 562 ≈</strong><input class="fill-input" id="p1-d" placeholder="?" type="number"/></div>
-<button class="check-btn" onclick="checkP1()">Check My Answers ✓</button>
-<div class="feedback-branch feedback-pass" id="p1-pass"><strong>✅ Yes!</strong> 838→800, 72→100, est=700. 584→600, 47→0... wait, 47 rounds to 0 with hundreds! Use tens instead: 584→600, 47→50, est=650 (or even 630). 972→1000, 356→400, est=600. 784→800, 562→600, est=1,400.
-      <div class="bubble-row" style="margin-top:10px;"><div class="bubble cora"><div class="bubble-avatar">C</div><div class="bubble-body"><div class="bubble-name">Cora — checking the work</div><div class="bubble-text">"When one number is much smaller (like 47), rounding it to hundreds gives 0 — useless! That's a sign to round IT to TENS while still rounding the bigger number to hundreds. Mixing rounding places is a power move."</div></div></div></div>
-</div>
-<div class="feedback-branch feedback-retry" id="p1-retry"><strong>🔄 Round each number, then compute.</strong>
-<div class="hint-callout">(a) 838→800, 72→100 (or 70 if mixing) — 800−100=700 or 800−70=730.  ·  (b) 584→600, 47→50 — 600+50=650.  ·  (c) 972→1,000, 356→400 — 1,000−400=600.  ·  (d) 784→800, 562→600 — 800+600=1,400.</div>
-<button class="orange-btn" onclick="resetP1()">↩ Reset and Try Again</button>
-</div>
-</div></div>
-<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">2</div><div><div class="activity-title">Closer to Which?</div><div class="activity-sub">Quick check — which friendly number wins?</div></div><span class="activity-time" style="background:#2DB87A;">~4 min</span></div><div class="activity-body">
-<div class="bubble-row">
-<div class="bubble hazel"><div class="bubble-avatar">H</div><div class="bubble-body"><div class="bubble-name">Hazel — quick estimate trick</div><div class="bubble-text">"Round each number to hundreds quickly. The estimate tells you the neighborhood — close to 200 or close to 300?"</div></div></div>
-</div>
-<div class="task-box"><div class="task-label">Problem</div><p>Is the value of <strong>726 − 432</strong> closer to <strong>200</strong> or closer to <strong>300</strong>? Use rounding to decide WITHOUT doing the exact subtraction.</p></div>
-<div class="journal-label">✏️ My rounding + answer <span class="saved-dot" id="dot-p2"></span></div>
-<textarea class="journal-box" data-label="Practice 2 — 726-432 closer to 200 or 300" id="journal-p2" oninput="autoSave(this,'dot-p2')" placeholder="Round 726 to nearest 100: ___
-Round 432 to nearest 100: ___
-Estimate: ___ − ___ = ___
-Closer to: ___" style="min-height:130px;"></textarea>
-<div class="callout callout-tip" style="margin-top:10px;"><span class="callout-icon">💡</span><p><strong>Answer:</strong> 726→700, 432→400. Estimate: 700−400=300. Closer to <strong>300</strong>. (Actual: 294, which IS closer to 300 than 200.)</p></div>
-</div></div>
-<div class="activity bl-teal"><div class="activity-head"><div class="activity-num" style="background:#1A8A9A;">3</div><div><div class="activity-title">Carlos's Coin Collection</div><div class="activity-sub">A real-world estimate.</div></div></div><div class="activity-body">
-<div class="bubble-row">
-<div class="bubble atlas"><div class="bubble-avatar">A</div><div class="bubble-body"><div class="bubble-name">Atlas — concrete</div><div class="bubble-text">"For 'about how many' questions, rounding to hundreds gives a quick, friendly answer. Useful when you don't need the exact count."</div></div></div>
-</div>
-<div class="task-box"><div class="task-label">Word problem</div><p>Carlos has <strong>498 foreign coins</strong> and <strong>423 domestic coins</strong> in his collection. About how many coins does Carlos have in all?</p></div>
-<div class="fill-row"><strong>About how many coins:</strong><input class="fill-input" id="p3-a" placeholder="?" type="number"/></div>
-<button class="check-btn" onclick="checkP3()">Check My Answer ✓</button>
-<div class="feedback-branch feedback-pass" id="p3-pass"><strong>✅ Yes — about 900 coins.</strong> Round 498 to 500 and 423 to 400. 500 + 400 = 900. (Actual: 498+423=921, very close to 900.)
-      <div class="bubble-row" style="margin-top:10px;"><div class="bubble cora"><div class="bubble-avatar">C</div><div class="bubble-body"><div class="bubble-name">Cora — checking the work</div><div class="bubble-text">"If Carlos's family asks 'about how many coins?' he can confidently say 'about 900.' That's good estimation."</div></div></div></div>
-</div>
-<div class="feedback-branch feedback-retry" id="p3-retry"><strong>🔄 Round each number to the nearest hundred.</strong>
-<div class="hint-callout">498 is close to 500. 423 is close to 400. Add the rounded numbers.</div>
-<button class="orange-btn" onclick="resetP3()">↩ Reset and Try Again</button>
-</div>
-</div></div>
-<div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">When would you want an EXACT answer, and when is an estimate good enough? Give one example of each.</p><div class="journal-label">✏️ My reasoning <span class="saved-dot" id="dot-soc2"></span></div><textarea class="journal-box" data-label="Practice — Socratic: exact vs estimate" id="journal-soc2" oninput="autoSave(this,'dot-soc2')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Round, then add or subtract. Pick the place that fits your need. Time to show what you know.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
-</div>
 <!-- ═══════════ SHOW WHAT YOU KNOW ═══════════ -->
 <div class="tab-panel" id="tab-assignment">
 <div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">🎯</div><div><div class="activity-title">Ready Check</div><div class="activity-sub">Two quick questions.</div></div></div><div class="activity-body">

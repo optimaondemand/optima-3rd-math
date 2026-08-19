@@ -346,7 +346,7 @@
 <div class="tab-bar" id="tabBar">
 <button class="tab-btn active" data-tab="warmup" onclick="switchTab('warmup')">🔍 Warm-Up <span class="tab-check">✓</span></button>
 <button class="tab-btn" data-tab="learn" onclick="switchTab('learn')">📐 Learn <span class="tab-check">✓</span></button>
-<button class="tab-btn" data-tab="practice" onclick="switchTab('practice')">🧮 Practice <span class="tab-check">✓</span></button>
+
 <button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">🌟 Show What You Know <span class="tab-check">✓</span></button>
 </div>
 <div class="tab-panel active" id="tab-warmup">
@@ -464,35 +464,7 @@
 <p style="font-family:'Lora',serif;background:#FAFBFF;border:2px solid #E2E8F4;border-radius:12px;padding:10px;text-align:center;font-size:18px;font-weight:800;margin-top:14px;">65 ÷ 5 = <span style="color:#1A8A5A;">13</span></p>
 </div></div>
 <div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">What changes when you divide by 5 instead of 2? What stays the same?</p><div class="journal-label">✏️ <span class="saved-dot" id="ds1"></span></div><textarea class="journal-box" data-label="Learn socratic" id="j-s1" oninput="autoSave(this,'ds1')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Same steps. New divisor. Same trade if needed.</p><button class="tab-next-btn" onclick="switchTab('practice')">Continue to 🧮 Practice →</button></div>
-</div>
-<div class="tab-panel" id="tab-practice">
-<div class="callout callout-info"><span class="callout-icon">🧭</span><p>Share the tens. Trade if any are left. Share the ones.</p></div>
-<div class="activity bl-honey"><div class="activity-head"><div class="activity-num" style="background:var(--honey);">1</div><div><div class="activity-title">72 ÷ 3</div></div></div><div class="activity-body">
-<div class="fill-row"><strong>Tens per row:</strong><input class="fill-input" id="p1-t" placeholder="?" type="number"/><strong>(leftover</strong><input class="fill-input" id="p1-l" placeholder="?" type="number"/><strong>ten)</strong></div>
-<div class="fill-row"><strong>Trade: ones column =</strong><input class="fill-input" id="p1-o" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>Ones per row:</strong><input class="fill-input" id="p1-op" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>72 ÷ 3 =</strong><input class="fill-input" id="p1-tot" placeholder="?" type="number"/></div>
-<button class="check-btn" onclick="checkP1()">Check ✓</button>
-<div class="feedback-branch feedback-pass" id="p1-pass"><strong>✅</strong> 2 tens · 1 leftover · ones = 12 · 4 each · 24.</div>
-<div class="feedback-branch feedback-retry" id="p1-retry"><strong>🔄 Same steps as before.</strong><div class="hint-callout">7 ÷ 3 = 2 R 1. Trade → ones = 12. 12 ÷ 3 = 4. 2 tens + 4 ones = 24.</div><button class="orange-btn" onclick="resetP1()">↩ Reset</button></div>
-</div></div>
-<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">2</div><div><div class="activity-title">84 ÷ 4 (no trade)</div></div></div><div class="activity-body">
-<div class="fill-row"><strong>Tens per row:</strong><input class="fill-input" id="p2-t" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>Ones per row:</strong><input class="fill-input" id="p2-o" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>84 ÷ 4 =</strong><input class="fill-input" id="p2-tot" placeholder="?" type="number"/></div>
-<button class="check-btn" onclick="checkP2()">Check ✓</button>
-<div class="feedback-branch feedback-pass" id="p2-pass"><strong>✅</strong> 2 tens · 1 one · 21. No trade.</div>
-<div class="feedback-branch feedback-retry" id="p2-retry"><strong>🔄 Both columns share evenly today.</strong><div class="hint-callout">8 ÷ 4 = 2 tens. 4 ÷ 4 = 1 one. 2 tens + 1 one = 21.</div><button class="orange-btn" onclick="resetP2()">↩ Reset</button></div>
-</div></div>
-<div class="activity bl-honey"><div class="activity-head"><div class="activity-num" style="background:var(--honey);">3</div><div><div class="activity-title">75 ÷ 5</div></div></div><div class="activity-body">
-<div class="task-box"><div class="task-label">Problem</div><p>Find 75 ÷ 5 on the share mat. Will you need to trade?</p></div>
-<div class="journal-label">✏️ Show your steps and the answer. <span class="saved-dot" id="dp3"></span></div>
-<textarea class="journal-box" data-label="Practice 3" id="j-p3" oninput="autoSave(this,'dp3')" placeholder="" style="min-height:80px;"></textarea>
-<div class="callout callout-tip"><span class="callout-icon">💡</span><p><strong>Answer:</strong> 7 tens ÷ 5 = 1 each + 2 left over. Trade → ones = 25. 25 ÷ 5 = 5. 1 ten + 5 ones = 15.</p></div>
-</div></div>
-<div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">How do you know when a tens column won't share evenly? Give one example.</p><div class="journal-label">✏️ <span class="saved-dot" id="ds2"></span></div><textarea class="journal-box" data-label="Practice socratic" id="j-s2" oninput="autoSave(this,'ds2')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Same mat. Different divisor. Same trade.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
+<div class="tab-next-wrap"><p class="tab-transition-voice">Same steps. New divisor. Same trade if needed.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
 </div>
 <div class="tab-panel" id="tab-assignment">
 <div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">🎯</div><div><div class="activity-title">Ready Check</div></div></div><div class="activity-body">

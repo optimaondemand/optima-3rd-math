@@ -333,7 +333,7 @@
 <div class="tab-bar" id="tabBar">
 <button class="tab-btn active" data-tab="warmup" onclick="switchTab('warmup')">🔍 Warm-Up <span class="tab-check">✓</span></button>
 <button class="tab-btn" data-tab="learn" onclick="switchTab('learn')">📐 Learn <span class="tab-check">✓</span></button>
-<button class="tab-btn" data-tab="practice" onclick="switchTab('practice')">🧮 Practice <span class="tab-check">✓</span></button>
+
 <button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">🌟 Show What You Know <span class="tab-check">✓</span></button>
 </div>
 <div class="tab-panel active" id="tab-warmup">
@@ -452,36 +452,7 @@
 </div></div>
 
 <div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">Why MUST we trade ones BEFORE tens? What goes wrong if we trade tens first?</p><div class="journal-label">✏️ <span class="saved-dot" id="ds1"></span></div><textarea class="journal-box" data-label="Learn socratic" id="j-s1" oninput="autoSave(this,'ds1')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Ones trade first. Tens trade next. Read the mat.</p><button class="tab-next-btn" onclick="switchTab('practice')">Continue to 🧮 Practice →</button></div>
-</div>
-<div class="tab-panel" id="tab-practice">
-<div class="callout callout-info"><span class="callout-icon">🧭</span><p>Multiply, trade ones if needed, multiply tens with the carry, trade tens if needed.</p></div>
-<div class="activity bl-berry"><div class="activity-head"><div class="activity-num" style="background:var(--berry);">1</div><div><div class="activity-title">4 × 38</div></div></div><div class="activity-body">
-<div class="fill-row"><strong>4 × 8 ones =</strong><input class="fill-input" id="p1-oprod" placeholder="?" type="number"/><strong>(carry</strong><input class="fill-input" id="p1-carry" placeholder="?" type="number"/><strong>tens, keep</strong><input class="fill-input" id="p1-oleft" placeholder="?" type="number"/><strong>ones)</strong></div>
-<div class="fill-row"><strong>4 × 3 tens + carry =</strong><input class="fill-input" id="p1-tprod" placeholder="?" type="number"/><strong>tens</strong></div>
-<div class="fill-row"><strong>Trade: hundreds =</strong><input class="fill-input" id="p1-h" placeholder="?" type="number"/><strong>tens =</strong><input class="fill-input" id="p1-tl" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>Total =</strong><input class="fill-input" id="p1-tot" placeholder="?" type="number"/></div>
-<button class="check-btn" onclick="checkP1()">Check ✓</button>
-<div class="feedback-branch feedback-pass" id="p1-pass"><strong>✅</strong> 32 (carry 3, keep 2) · 12+3=15 tens · trade → 1 hundred, 5 tens · 152.</div>
-<div class="feedback-branch feedback-retry" id="p1-retry"><strong>🔄 Two trades.</strong><div class="hint-callout">32 ones → carry 3, keep 2. Tens: 4×3=12, +3=15. Trade: 1 hundred + 5 tens. + 2 ones = 152.</div><button class="orange-btn" onclick="resetP1()">↩ Reset</button></div>
-</div></div>
-<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">2</div><div><div class="activity-title">3 × 28</div></div></div><div class="activity-body">
-<div class="fill-row"><strong>3 × 8 =</strong><input class="fill-input" id="p2-o" placeholder="?" type="number"/><strong>ones (carry</strong><input class="fill-input" id="p2-c" placeholder="?" type="number"/><strong>tens, keep</strong><input class="fill-input" id="p2-ol" placeholder="?" type="number"/><strong>)</strong></div>
-<div class="fill-row"><strong>3 × 2 + carry =</strong><input class="fill-input" id="p2-t" placeholder="?" type="number"/><strong>tens</strong></div>
-<div class="fill-row"><strong>Total: 3 × 28 =</strong><input class="fill-input" id="p2-tot" placeholder="?" type="number"/></div>
-<button class="check-btn" onclick="checkP2()">Check ✓</button>
-<div class="feedback-branch feedback-pass" id="p2-pass"><strong>✅</strong> 24 (carry 2, keep 4) · 6+2=8 tens · 84.</div>
-<div class="feedback-branch feedback-retry" id="p2-retry"><strong>🔄 Ones overflow only.</strong><div class="hint-callout">3×8=24. Carry 2, keep 4. 3×2=6 +2=8. Total 84.</div><button class="orange-btn" onclick="resetP2()">↩ Reset</button></div>
-</div></div>
-<div class="activity bl-berry"><div class="activity-head"><div class="activity-num" style="background:var(--berry);">3</div><div><div class="activity-title">One Trade or Two?</div></div></div><div class="activity-body">
-<p>For each, predict whether you'll need to trade ones, trade tens, both, or neither.</p>
-<div class="task-box"><div class="task-label">5 × 23</div><div class="value-card-row"><div class="value-card" onclick="p3(this,'one')"><div class="big">Ones only</div></div><div class="value-card" onclick="p3(this,'ten')"><div class="big">Tens only</div></div><div class="value-card" onclick="p3(this,'both')"><div class="big">Both</div></div><div class="value-card" onclick="p3(this,'none')"><div class="big">Neither</div></div></div></div>
-<div class="task-box"><div class="task-label">4 × 25</div><div class="value-card-row"><div class="value-card" onclick="p3b(this,'one')"><div class="big">Ones only</div></div><div class="value-card" onclick="p3b(this,'ten')"><div class="big">Tens only</div></div><div class="value-card" onclick="p3b(this,'both')"><div class="big">Both</div></div><div class="value-card" onclick="p3b(this,'none')"><div class="big">Neither</div></div></div></div>
-<div class="inline-feedback" id="p3-fb"></div>
-<div class="callout callout-tip"><span class="callout-icon">💡</span><p><strong>5 × 23:</strong> 5×3=15 ones (trade), 5×2+1=11 tens (trade). <strong>Both.</strong>  ·  <strong>4 × 25:</strong> 4×5=20 ones (trade), 4×2+2=10 tens (trade). <strong>Both.</strong></p></div>
-</div></div>
-<div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">Without computing, when will a problem need TWO trades? What about the digits tells you?</p><div class="journal-label">✏️ <span class="saved-dot" id="ds2"></span></div><textarea class="journal-box" data-label="Practice socratic" id="j-s2" oninput="autoSave(this,'ds2')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Ones first. Tens next. Two trades is normal.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
+<div class="tab-next-wrap"><p class="tab-transition-voice">Ones trade first. Tens trade next. Read the mat.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
 </div>
 <div class="tab-panel" id="tab-assignment">
 <div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">🎯</div><div><div class="activity-title">Ready Check</div></div></div><div class="activity-body">

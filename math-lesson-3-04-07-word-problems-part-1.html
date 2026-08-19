@@ -307,7 +307,7 @@
 <div class="tab-bar" id="tabBar">
 <button class="tab-btn active" data-tab="warmup" onclick="switchTab('warmup')">🔍 Warm-Up <span class="tab-check">✓</span></button>
 <button class="tab-btn" data-tab="learn" onclick="switchTab('learn')">📐 Learn <span class="tab-check">✓</span></button>
-<button class="tab-btn" data-tab="practice" onclick="switchTab('practice')">🧮 Practice <span class="tab-check">✓</span></button>
+
 <button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">🌟 Show What You Know <span class="tab-check">✓</span></button>
 </div>
 <div class="tab-panel active" id="tab-warmup">
@@ -415,42 +415,7 @@
 </div></div>
 
 <div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">"3 friends share $27 equally." Why is this division and not multiplication?</p><div class="journal-label">✏️ <span class="saved-dot" id="ds1"></span></div><textarea class="journal-box" data-label="Learn socratic" id="j-s1" oninput="autoSave(this,'ds1')"></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Read for parts, draw the bar, pick × or ÷.</p><button class="tab-next-btn" onclick="switchTab('practice')">Continue to 🧮 Practice →</button></div>
-</div>
-<div class="tab-panel" id="tab-practice">
-<div class="callout callout-info"><span class="callout-icon">🧭</span><p>Read each story carefully. Pick the operation, then solve.</p></div>
-<div class="activity bl-coral"><div class="activity-head"><div class="activity-num" style="background:#E76F51;">1</div><div><div class="activity-title">Solve Each Story</div></div></div><div class="activity-body">
-<div class="fill-row"><strong>28 children ÷ teams of 4 → number of teams:</strong><input class="fill-input" id="p1-a" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>$5 × 7 weeks → total saved: $</strong><input class="fill-input" id="p1-b" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>3 friends share $27 → each gets: $</strong><input class="fill-input" id="p1-c" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>6 boxes × 8 crayons → total crayons:</strong><input class="fill-input" id="p1-d" placeholder="?" type="number"/></div>
-<button class="check-btn" onclick="checkP1()">Check ✓</button>
-<div class="feedback-branch feedback-pass" id="p1-pass"><strong>✅</strong> 7 teams · $35 · $9 each · 48 crayons.</div>
-<div class="feedback-branch feedback-retry" id="p1-retry"><strong>🔄 Pick × or ÷ first.</strong>
-<div class="hint-callout">(a) 28÷4 (b) 5×7 (c) 27÷3 (d) 6×8.</div>
-<button class="orange-btn" onclick="resetP1()">↩ Reset</button>
-</div>
-</div></div>
-<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">2</div><div><div class="activity-title">Draw a Bar Model</div></div></div><div class="activity-body">
-<div class="task-box"><div class="task-label">Problem</div><p>Atlas saves $5 each week. How much did Atlas save in 7 weeks? <strong>Draw a bar model and write the equation.</strong></p></div>
-<div class="journal-label">✏️ My bar model + equation + answer <span class="saved-dot" id="dp2"></span></div>
-<textarea class="journal-box" data-label="Practice 2" id="j-p2" oninput="autoSave(this,'dp2')" placeholder="Bar model: 7 equal bars of $5 each
-Equation: 5 × 7 = ___
-Answer: $___" style="min-height:110px;"></textarea>
-<div class="callout callout-tip"><span class="callout-icon">💡</span><p><strong>Answer:</strong> 5 × 7 = 35. Atlas saved $35.</p></div>
-</div></div>
-<div class="activity bl-coral"><div class="activity-head"><div class="activity-num" style="background:#E76F51;">3</div><div><div class="activity-title">Sharing</div></div></div><div class="activity-body">
-<div class="task-box"><div class="task-label">Word problem</div><p>3 friends bought a birthday present for $27. They shared the cost equally. How much did each friend pay?</p></div>
-<div class="fill-row"><strong>Each friend paid: $</strong><input class="fill-input" id="p3-a" placeholder="?" type="number"/></div>
-<button class="check-btn" onclick="checkP3()">Check ✓</button>
-<div class="feedback-branch feedback-pass" id="p3-pass"><strong>✅</strong> $9 each. 27 ÷ 3 = 9.</div>
-<div class="feedback-branch feedback-retry" id="p3-retry"><strong>🔄 Total ÷ groups = each.</strong>
-<div class="hint-callout">27 ÷ 3 = ? (3 × ? = 27)</div>
-<button class="orange-btn" onclick="resetP3()">↩ Reset</button>
-</div>
-</div></div>
-<div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">What clue words in a story problem tell you it's multiplication? What clue words tell you it's division?</p><div class="journal-label">✏️ <span class="saved-dot" id="ds2"></span></div><textarea class="journal-box" data-label="Practice socratic" id="j-s2" oninput="autoSave(this,'ds2')"></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">× when you know per-group + groups. ÷ when total is given.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
+<div class="tab-next-wrap"><p class="tab-transition-voice">Read for parts, draw the bar, pick × or ÷.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
 </div>
 <div class="tab-panel" id="tab-assignment">
 <div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">🎯</div><div><div class="activity-title">Ready Check</div></div></div><div class="activity-body">

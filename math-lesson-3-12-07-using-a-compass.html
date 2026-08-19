@@ -304,7 +304,7 @@
 <div class="tab-bar" id="tabBar">
 <button class="tab-btn active" data-tab="warmup" onclick="switchTab('warmup')">🔍 Warm-Up <span class="tab-check">✓</span></button>
 <button class="tab-btn" data-tab="learn" onclick="switchTab('learn')">📐 Learn <span class="tab-check">✓</span></button>
-<button class="tab-btn" data-tab="practice" onclick="switchTab('practice')">🧮 Practice <span class="tab-check">✓</span></button>
+
 <button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">🌟 Show What You Know <span class="tab-check">✓</span></button>
 </div>
 <!-- WARM-UP TAB -->
@@ -413,56 +413,9 @@
 </div>
 </div></div>
 <div class="socratic-box"><div class="socratic-label">🔮 Think Deeper</div><p class="socratic-q">Why can’t you draw a perfect circle without a compass?</p><div class="journal-label">✏️ <span class="saved-dot" id="ds1"></span></div><textarea class="journal-box" data-label="Learn socratic" id="j-s101" oninput="autoSave(this,'ds1')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Point, radius, sweep — now use what you know.</p><button class="tab-next-btn" onclick="switchTab('practice')">Continue to 🧮 Practice →</button></div>
+<div class="tab-next-wrap"><p class="tab-transition-voice">Point, radius, sweep — now use what you know.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
 </div>
 <!-- PRACTICE TAB -->
-<div class="tab-panel" id="tab-practice">
-<div class="callout callout-info"><span class="callout-icon">🧭</span><p>You just drew circles on the Compass Tool. Now figure out radius and diameter on your own.</p></div>
-<div class="callout callout-tip"><span class="callout-icon">💡</span><p><strong>Key fact:</strong> diameter = 2 × radius. Radius = diameter ÷ 2.</p></div>
-<!-- P1 -->
-<div class="activity bl-geo"><div class="activity-head"><div class="activity-num" style="background:var(--geo);">1</div><div><div class="activity-title">Radius to Diameter</div></div></div><div class="activity-body">
-<div class="task-box"><div class="task-label">Calculate</div><p>You set your compass to 5 cm and draw a circle. What is the diameter of your circle?</p></div>
-<div class="fill-row"><strong>Diameter =</strong><input class="fill-input" id="p1-ans" placeholder="" type="number"/><strong>cm</strong></div>
-<button class="check-btn" onclick="checkP1()">Check ✓</button>
-<div class="feedback-branch feedback-pass" id="p1-pass"><strong>✅</strong> Radius 5 cm × 2 = diameter 10 cm.
-      
-</div>
-<div class="feedback-branch feedback-retry" id="p1-retry"><strong>🔄 The diameter is twice the radius. If the radius is 5, what’s 5 × 2?</strong>
-
-<button class="orange-btn" onclick="resetP(1)">↩ Reset</button>
-</div>
-</div></div>
-<!-- P2 -->
-<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">2</div><div><div class="activity-title">Diameter to Radius</div></div></div><div class="activity-body">
-<div class="task-box"><div class="task-label">Calculate</div><p>You draw a circle. You measure across the widest part: 12 cm. What radius setting did you use?</p></div>
-<div class="fill-row"><strong>Radius =</strong><input class="fill-input" id="p2-ans" placeholder="" type="number"/><strong>cm</strong></div>
-<button class="check-btn" onclick="checkP2()">Check ✓</button>
-<div class="feedback-branch feedback-pass" id="p2-pass"><strong>✅</strong> Diameter 12 ÷ 2 = radius 6 cm.
-      
-</div>
-<div class="feedback-branch feedback-retry" id="p2-retry"><strong>🔄 The widest part is the diameter. Radius is half the diameter. What’s 12 ÷ 2?</strong>
-
-<button class="orange-btn" onclick="resetP(2)">↩ Reset</button>
-</div>
-</div></div>
-<!-- P3 -->
-<div class="activity bl-slate"><div class="activity-head"><div class="activity-num" style="background:#3A6B9A;">3</div><div><div class="activity-title">Bigger Circle</div></div></div><div class="activity-body">
-<div class="task-box"><div class="task-label">Compare</div><p>Hazel draws a circle with her compass set to 4 cm. Cora draws a circle with her compass set to 7 cm. Without looking, who drew the bigger circle?</p></div>
-<div class="value-card-row">
-<div class="value-card" onclick="p3(this,true)"><div class="big">Cora</div><div class="small">radius 7 cm</div></div>
-<div class="value-card" onclick="p3(this,false)"><div class="big">Hazel</div><div class="small">radius 4 cm</div></div>
-</div>
-<div class="feedback-branch feedback-pass" id="p3-pass"><strong>✅</strong> Bigger radius = bigger circle. 7 &gt; 4, so Cora’s circle is bigger.
-      
-</div>
-<div class="feedback-branch feedback-retry" id="p3-retry"><strong>🔄 A bigger radius makes a bigger circle. Which radius is bigger: 4 cm or 7 cm?</strong>
-
-<button class="orange-btn" onclick="resetP(3)">↩ Reset</button>
-</div>
-</div></div>
-<div class="socratic-box"><div class="socratic-label">🔮 Think Deeper</div><p class="socratic-q">If you kept the center in the same spot but changed the radius each time, what pattern would you create?</p><div class="journal-label">✏️ <span class="saved-dot" id="ds2"></span></div><textarea class="journal-box" data-label="Practice socratic" id="j-s201" oninput="autoSave(this,'ds2')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Radius in, diameter out — the compass makes it all connect.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
-</div>
 <!-- SHOW WHAT YOU KNOW TAB -->
 <div class="tab-panel" id="tab-assignment">
 <div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">🎯</div><div><div class="activity-title">Ready Check</div></div></div><div class="activity-body">
@@ -559,7 +512,7 @@ function checkP2(){hideBranches('p2');var v=parseInt(document.getElementById('p2
 function p3(c,ok){c.parentElement.querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});hideBranches('p3');if(ok){c.classList.add('good');showBranch('p3-pass');mini(c);}else{c.classList.add('bad');showBranch('p3-retry');}}
 function resetP(n){if(n===1){document.getElementById('p1-ans').value='';document.getElementById('p1-ans').classList.remove('good','bad');hideBranches('p1');}
 if(n===2){document.getElementById('p2-ans').value='';document.getElementById('p2-ans').classList.remove('good','bad');hideBranches('p2');}
-if(n===3){document.querySelectorAll('#tab-practice .value-card').forEach(function(x){x.classList.remove('good','bad');});hideBranches('p3');}}
+if(n===3){document.querySelectorAll('.REMOVED-PRACTICE').forEach(function(x){x.classList.remove('good','bad');});hideBranches('p3');}}
 
 /* Ready Check */
 function eA(c,ok){c.parentElement.querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});var f=document.getElementById('eA-fb');if(ok){c.classList.add('good');f.className='inline-feedback show good';f.innerHTML='<strong>✅</strong> Radius 6 × 2 = diameter 12 cm.';mini(c);}else{c.classList.add('bad');f.className='inline-feedback show think';f.innerHTML='Diameter = 2 × radius. If radius is 6, what's 6 × 2?';}}

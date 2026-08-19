@@ -312,7 +312,7 @@
 <div class="tab-bar" id="tabBar">
 <button class="tab-btn active" data-tab="warmup" onclick="switchTab('warmup')">🔍 Warm-Up <span class="tab-check">✓</span></button>
 <button class="tab-btn" data-tab="learn" onclick="switchTab('learn')">📐 Learn <span class="tab-check">✓</span></button>
-<button class="tab-btn" data-tab="practice" onclick="switchTab('practice')">🧮 Practice <span class="tab-check">✓</span></button>
+
 <button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">🌟 Show What You Know <span class="tab-check">✓</span></button>
 </div>
 <!-- WARM-UP TAB -->
@@ -431,73 +431,9 @@
 </div>
 </div></div>
 <div class="socratic-box"><div class="socratic-label">🔮 Think Deeper</div><p class="socratic-q">Can a triangle be both equilateral and right? Why or why not?</p><div class="journal-label">✏️ <span class="saved-dot" id="ds1"></span></div><textarea class="journal-box" data-label="Learn socratic" id="j-s101" oninput="autoSave(this,'ds1')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Equilateral, isosceles, scalene. Right, acute, obtuse. Every triangle has two names.</p><button class="tab-next-btn" onclick="switchTab('practice')">Continue to 🧮 Practice →</button></div>
+<div class="tab-next-wrap"><p class="tab-transition-voice">Equilateral, isosceles, scalene. Right, acute, obtuse. Every triangle has two names.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
 </div>
 <!-- PRACTICE TAB -->
-<div class="tab-panel" id="tab-practice">
-<div class="callout callout-info"><span class="callout-icon">🧭</span><p>You just sorted triangles on the Triangle Sorter. Now classify on your own.</p></div>
-<div class="callout callout-tip"><span class="callout-icon">💡</span><p><strong>Two questions every time:</strong> “What about the sides?” and “What about the angles?”</p></div>
-<!-- P1 -->
-<div class="activity bl-geo"><div class="activity-head"><div class="activity-num" style="background:var(--geo);">1</div><div><div class="activity-title">Classify by Sides</div></div></div><div class="activity-body">
-<div class="task-box"><div class="task-label">Classify</div><p>A triangle has sides 5, 5, and 5. Classify it by sides.</p>
-<svg style="display:block;margin:10px auto;" viewbox="0 0 200 180" width="200"><polygon fill="none" points="100,15 25,165 175,165" stroke="var(--geo)" stroke-width="3"></polygon><text fill="#0E1C42" font-family="Nunito" font-size="14" font-weight="800" x="55" y="100">5</text><text fill="#0E1C42" font-family="Nunito" font-size="14" font-weight="800" x="138" y="100">5</text><text fill="#0E1C42" font-family="Nunito" font-size="14" font-weight="800" x="95" y="182">5</text></svg>
-</div>
-<div class="value-card-row">
-<div class="value-card" onclick="p1(this,true)"><div class="big">Equilateral</div></div>
-<div class="value-card" onclick="p1(this,false)"><div class="big">Isosceles</div></div>
-<div class="value-card" onclick="p1(this,false)"><div class="big">Scalene</div></div>
-</div>
-<div class="feedback-branch feedback-pass" id="p1-pass"><strong>✅</strong> All 3 sides are 5 — that’s equilateral.
-      
-</div>
-<div class="feedback-branch feedback-retry" id="p1-retry"><strong>🔄 Count the equal sides. How many sides are the same length?</strong>
-
-<button class="orange-btn" onclick="resetP(1)">↩ Reset</button>
-</div>
-</div></div>
-<!-- P2 -->
-<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">2</div><div><div class="activity-title">Classify by Sides AND Angles</div></div></div><div class="activity-body">
-<div class="task-box"><div class="task-label">Classify</div><p>A triangle has sides 6, 6, 4 and one angle that’s greater than a right angle. Classify by sides AND by angles.</p></div>
-<p><strong>By sides:</strong></p>
-<div class="value-card-row" id="p2-sides">
-<div class="value-card" onclick="p2s(this,'iso')"><div class="big">Isosceles</div></div>
-<div class="value-card" onclick="p2s(this,'equi')"><div class="big">Equilateral</div></div>
-<div class="value-card" onclick="p2s(this,'scal')"><div class="big">Scalene</div></div>
-</div>
-<div class="inline-feedback" id="p2s-fb"></div>
-<p><strong>By angles:</strong></p>
-<div class="value-card-row" id="p2-angles">
-<div class="value-card" onclick="p2a(this,'obtuse')"><div class="big">Obtuse</div></div>
-<div class="value-card" onclick="p2a(this,'right')"><div class="big">Right</div></div>
-<div class="value-card" onclick="p2a(this,'acute')"><div class="big">Acute</div></div>
-</div>
-<div class="inline-feedback" id="p2a-fb"></div>
-<div class="feedback-branch feedback-pass" id="p2-pass"><strong>✅</strong> Two sides equal (6, 6) — isosceles. One angle greater than a right angle — obtuse. It’s an isosceles obtuse triangle.
-      
-</div>
-<div class="feedback-branch feedback-retry" id="p2-retry"><strong>🔄 Check again: how many sides are equal? And is the wide angle bigger or smaller than a square corner?</strong>
-
-<button class="orange-btn" onclick="resetP(2)">↩ Reset</button>
-</div>
-</div></div>
-<!-- P3 -->
-<div class="activity bl-slate"><div class="activity-head"><div class="activity-num" style="background:#3A6B9A;">3</div><div><div class="activity-title">Tricky Thinking</div></div></div><div class="activity-body">
-<div class="task-box"><div class="task-label">Judgment</div><p>Hazel says every equilateral triangle is also isosceles because it has at least 2 equal sides. Is she right?</p></div>
-<div class="value-card-row">
-<div class="value-card" onclick="p3(this,true)"><div class="big">Yes</div></div>
-<div class="value-card" onclick="p3(this,false)"><div class="big">No</div></div>
-</div>
-<div class="feedback-branch feedback-pass" id="p3-pass"><strong>✅</strong> She’s right! An equilateral triangle has 3 equal sides — which means it definitely has at least 2 equal sides. So it counts as isosceles too.
-      
-</div>
-<div class="feedback-branch feedback-retry" id="p3-retry"><strong>🔄 Think: if all 3 sides are equal, does it have at least 2 equal sides? Yes! So equilateral triangles ARE isosceles too.</strong>
-
-<button class="orange-btn" onclick="resetP(3)">↩ Reset</button>
-</div>
-</div></div>
-<div class="socratic-box"><div class="socratic-label">🔮 Think Deeper</div><p class="socratic-q">If you know a triangle is scalene, can you tell anything about its angles from that alone?</p><div class="journal-label">✏️ <span class="saved-dot" id="ds2"></span></div><textarea class="journal-box" data-label="Practice socratic" id="j-s201" oninput="autoSave(this,'ds2')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Side-type plus angle-type — that’s the full name.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
-</div>
 <!-- SHOW WHAT YOU KNOW TAB -->
 <div class="tab-panel" id="tab-assignment">
 <div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">🎯</div><div><div class="activity-title">Ready Check</div></div></div><div class="activity-body">
@@ -619,9 +555,9 @@ function p2s(c,v){c.parentElement.querySelectorAll('.value-card').forEach(functi
 function p2a(c,v){c.parentElement.querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});var f=document.getElementById('p2a-fb');if(v==='obtuse'){c.classList.add('good');f.className='inline-feedback show good';f.innerHTML='<strong>✅</strong> One angle greater than a right angle — obtuse.';p2state.a=true;}else{c.classList.add('bad');f.className='inline-feedback show think';f.innerHTML='The problem says one angle is greater than a right angle. What’s that called?';p2state.a=false;}checkP2();}
 function checkP2(){hideBranches('p2');if(p2state.s&&p2state.a){showBranch('p2-pass');mini(document.getElementById('p2-sides'));}else if(!p2state.s&&!p2state.a){/* wait */}else{/* partial, wait for both */}}
 function p3(c,ok){c.parentElement.querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});hideBranches('p3');if(ok){c.classList.add('good');showBranch('p3-pass');mini(c);}else{c.classList.add('bad');showBranch('p3-retry');}}
-function resetP(n){if(n===1){document.querySelectorAll('#p1-pass,#p1-retry').forEach(function(e){e.classList.remove('show');});document.querySelectorAll('#tab-practice .activity:nth-child(3) .value-card').forEach(function(x){x.classList.remove('good','bad');});}
+function resetP(n){if(n===1){document.querySelectorAll('#p1-pass,#p1-retry').forEach(function(e){e.classList.remove('show');});document.querySelectorAll('.REMOVED-PRACTICE').forEach(function(x){x.classList.remove('good','bad');});}
 if(n===2){p2state={s:false,a:false};['p2s-fb','p2a-fb'].forEach(function(id){document.getElementById(id).className='inline-feedback';});document.querySelectorAll('#p2-sides .value-card, #p2-angles .value-card').forEach(function(x){x.classList.remove('good','bad');});hideBranches('p2');}
-if(n===3){hideBranches('p3');document.querySelectorAll('#tab-practice .activity:last-of-type .value-card').forEach(function(x){x.classList.remove('good','bad');});}}
+if(n===3){hideBranches('p3');document.querySelectorAll('.REMOVED-PRACTICE').forEach(function(x){x.classList.remove('good','bad');});}}
 
 /* Ready Check */
 function eA(c,ok){c.parentElement.querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});var f=document.getElementById('eA-fb');if(ok){c.classList.add('good');f.className='inline-feedback show good';f.innerHTML='<strong>✅</strong> 7, 7, 4 — two sides equal. Isosceles.';mini(c);}else{c.classList.add('bad');f.className='inline-feedback show think';f.innerHTML='How many sides are the same length? 7, 7, and 4.';}}

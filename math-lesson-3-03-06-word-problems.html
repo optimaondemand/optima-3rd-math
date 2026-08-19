@@ -340,7 +340,7 @@
 <div class="tab-bar" id="tabBar">
 <button class="tab-btn active" data-tab="warmup" onclick="switchTab('warmup')">🔍 Warm-Up <span class="tab-check">✓</span></button>
 <button class="tab-btn" data-tab="learn" onclick="switchTab('learn')">📐 Learn <span class="tab-check">✓</span></button>
-<button class="tab-btn" data-tab="practice" onclick="switchTab('practice')">🧮 Practice <span class="tab-check">✓</span></button>
+
 <button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">🌟 Show What You Know <span class="tab-check">✓</span></button>
 </div>
 <!-- ═══════════ WARM-UP ═══════════ -->
@@ -517,59 +517,9 @@
 </div></div>
 
 <div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">Why is it important to estimate your final answer AFTER doing the exact math — not before? What's the estimate actually checking for?</p><div class="journal-label">✏️ My reasoning <span class="saved-dot" id="dot-soc1"></span></div><textarea class="journal-box" data-label="Learn — Socratic: estimate before or after" id="journal-soc1" oninput="autoSave(this,'dot-soc1')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Read it twice. Plan two steps. Solve. Sense-check. Your turn.</p><button class="tab-next-btn" onclick="switchTab('practice')">Continue to 🧮 Practice →</button></div>
+<div class="tab-next-wrap"><p class="tab-transition-voice">Read it twice. Plan two steps. Solve. Sense-check. Your turn.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
 </div>
 <!-- ═══════════ PRACTICE ═══════════ -->
-<div class="tab-panel" id="tab-practice">
-<div class="callout callout-info"><span class="callout-icon">🧭</span><p>You walked through <strong>1,309 + (1,309 − 810) = 1,808</strong> (sofas) and <strong>3,408 + (3,408 − 1,275) = 5,541</strong> (lights). Practice gives you three more multi-step problems.</p></div>
-<div class="callout callout-think"><span class="callout-icon">🧠</span><p><strong>For each problem:</strong> find the hidden step, solve it, then solve the real question. Sense-check with an estimate.</p></div>
-<div class="activity bl-teal"><div class="activity-head"><div class="activity-num" style="background:#1A8A9A;">1</div><div><div class="activity-title">The Sofa Set</div><div class="activity-sub">Two steps, show both answers.</div></div><span class="activity-time" style="background:#1A8A9A;">~4 min</span></div><div class="activity-body">
-<div class="bubble-row">
-<div class="bubble felix"><div class="bubble-avatar">F</div><div class="bubble-body"><div class="bubble-name">Felix — shortcut</div><div class="bubble-text">"Whisper: 'What's missing that I need?' That's Step 1. Then 'How does that get me the final answer?' That's Step 2."</div></div></div>
-</div>
-<div class="task-box"><div class="task-label">Problem</div><p>A 4-seat sofa set costs <strong>$1,309</strong>. The 3-seat sofa set costs <strong>$810 less</strong>. How much do both sets cost altogether?</p></div>
-<div class="fill-row"><strong>Step 1 — 3-seat sofa price:  $</strong><input class="fill-input" id="p1-a" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>Step 2 — Total of both sets:  $</strong><input class="fill-input" id="p1-b" placeholder="?" type="number"/></div>
-<button class="check-btn" onclick="checkP1()">Check My Answers ✓</button>
-<div class="feedback-branch feedback-pass" id="p1-pass"><strong>✅ Yes!</strong> Step 1: $1,309 − $810 = $499. Step 2: $1,309 + $499 = $1,808.
-      <div class="bubble-row" style="margin-top:10px;"><div class="bubble cora"><div class="bubble-avatar">C</div><div class="bubble-body"><div class="bubble-name">Cora — sense check</div><div class="bubble-text">"Estimate: $1,300 + $500 = $1,800. My exact 1,808 lands right next to that. ✓"</div></div></div></div>
-
-</div>
-<div class="feedback-branch feedback-retry" id="p1-retry"><strong>🔄 Step 1 first — find the 3-seat price.</strong>
-<div class="hint-callout">Step 1: 1,309 minus 810 = ___. Step 2: Add the 4-seat price (1,309) to your step 1 answer.</div>
-<button class="orange-btn" onclick="resetP1()">↩ Reset and Try Again</button>
-</div>
-</div></div>
-<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">2</div><div><div class="activity-title">Show Your Work</div><div class="activity-sub">Build the equations for both steps.</div></div><span class="activity-time" style="background:#2DB87A;">~5 min</span></div><div class="activity-body">
-<div class="bubble-row">
-<div class="bubble hazel"><div class="bubble-avatar">H</div><div class="bubble-body"><div class="bubble-name">Hazel — name what each step finds</div><div class="bubble-text">"Label each step with what it's FINDING — not just the math. That keeps you clear on why you're doing it."</div></div></div>
-</div>
-<div class="task-box"><div class="task-label">Problem</div><p>A school sold <strong>2,418 cupcakes</strong> in the fall. They sold <strong>657 MORE</strong> in the spring than in the fall. How many cupcakes did the school sell ALTOGETHER (fall + spring)?</p></div>
-<div class="journal-label">✏️ Show both steps + final answer <span class="saved-dot" id="dot-p2"></span></div>
-<textarea class="journal-box" data-label="Practice 2 — cupcake fall + spring" id="journal-p2" oninput="autoSave(this,'dot-p2')" placeholder="Step 1 — Spring cupcakes: 2,418 + 657 = ___
-Step 2 — Total cupcakes: 2,418 + ___ = ___
-Sense-check estimate: ≈ ___" style="min-height:130px;"></textarea>
-<div class="callout callout-tip" style="margin-top:10px;"><span class="callout-icon">💡</span><p><strong>Answer:</strong> Step 1: 2,418 + 657 = 3,075 spring. Step 2: 2,418 + 3,075 = 5,493 total. Sense-check: 2,400 + 3,100 ≈ 5,500. ✓</p></div>
-</div></div>
-<div class="activity bl-teal"><div class="activity-head"><div class="activity-num" style="background:#1A8A9A;">3</div><div><div class="activity-title">The Mall Lights</div><div class="activity-sub">A trickier hidden step.</div></div></div><div class="activity-body">
-<div class="bubble-row">
-<div class="bubble atlas"><div class="bubble-avatar">A</div><div class="bubble-body"><div class="bubble-name">Atlas — concrete</div><div class="bubble-text">"Sometimes the hidden step is 'how many of THIS' before you can answer 'how many fewer of THAT.' Read carefully."</div></div></div>
-</div>
-<div class="task-box"><div class="task-label">Word problem</div><p>A mall used <strong>5,000 lights total</strong> for the holiday display. <strong>1,847 were red</strong>. The rest were purple. The mall used <strong>1,256 blue lights</strong> elsewhere (not part of the 5,000). How many FEWER blue lights than PURPLE lights did the mall use?</p></div>
-<div class="fill-row"><strong>Step 1 — Purple lights:</strong><input class="fill-input" id="p3-a" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>Step 2 — How many fewer blue than purple:</strong><input class="fill-input" id="p3-b" placeholder="?" type="number"/></div>
-<button class="check-btn" onclick="checkP3()">Check My Answers ✓</button>
-<div class="feedback-branch feedback-pass" id="p3-pass"><strong>✅ Yes!</strong> Step 1: Purple = 5,000 − 1,847 = 3,153 (cascade through zeros!). Step 2: Purple − Blue = 3,153 − 1,256 = 1,897 fewer blue.
-      <div class="bubble-row" style="margin-top:10px;"><div class="bubble cora"><div class="bubble-avatar">C</div><div class="bubble-body"><div class="bubble-name">Cora — sense check</div><div class="bubble-text">"Estimate-check S1: 5,000 − 1,800 = 3,200. My 3,153 ✓. S2: 3,200 − 1,300 = 1,900. My 1,897 ✓. Both pass the sense check."</div></div></div></div>
-</div>
-<div class="feedback-branch feedback-retry" id="p3-retry"><strong>🔄 Two steps. Find purple first.</strong>
-<div class="hint-callout">Step 1: Purple = Total − Red = 5,000 − 1,847 (cascade through zeros!). Step 2: Subtract blue from your step 1 answer to find "how many fewer blue than purple."</div>
-<button class="orange-btn" onclick="resetP3()">↩ Reset and Try Again</button>
-</div>
-</div></div>
-<div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">In one problem the hidden step was SUBTRACTION. In another it was ADDITION. How do you decide WHICH operation the hidden step needs?</p><div class="journal-label">✏️ My reasoning <span class="saved-dot" id="dot-soc2"></span></div><textarea class="journal-box" data-label="Practice — Socratic: which operation for hidden step" id="journal-soc2" oninput="autoSave(this,'dot-soc2')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Find the hidden step. Pick the tool. Solve. Estimate-check. Time to show what you know.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
-</div>
 <!-- ═══════════ SHOW WHAT YOU KNOW ═══════════ -->
 <div class="tab-panel" id="tab-assignment">
 <div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">🎯</div><div><div class="activity-title">Ready Check</div><div class="activity-sub">Two quick questions.</div></div></div><div class="activity-body">

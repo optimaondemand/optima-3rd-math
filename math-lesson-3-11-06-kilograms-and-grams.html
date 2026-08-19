@@ -314,7 +314,7 @@
 <div class="tab-bar" id="tabBar">
 <button class="tab-btn active" data-tab="warmup" onclick="switchTab('warmup')">🔍 Warm-Up <span class="tab-check">✓</span></button>
 <button class="tab-btn" data-tab="learn" onclick="switchTab('learn')">📐 Learn <span class="tab-check">✓</span></button>
-<button class="tab-btn" data-tab="practice" onclick="switchTab('practice')">🧮 Practice <span class="tab-check">✓</span></button>
+
 <button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">🌟 Show What You Know <span class="tab-check">✓</span></button>
 </div>
 <!-- WARM-UP TAB -->
@@ -416,58 +416,9 @@
 <p style="font-family:'Lora',serif;background:#FAFBFF;border:2px solid #E2E8F4;border-radius:12px;padding:10px;text-align:center;font-size:20px;font-weight:900;margin-top:14px;">2 kg = 2,000 g → 2,000 − 500 = 1,500 g = 1 kg 500 g</p>
 </div></div>
 <div class="socratic-box"><div class="socratic-label">🔮 Think Deeper</div><p class="socratic-q">What pattern do you notice between km/m, L/mL, and kg/g?</p><div class="journal-label">✏️ <span class="saved-dot" id="ds1"></span></div><textarea class="journal-box" data-label="Learn socratic" id="j-s101" oninput="autoSave(this,'ds1')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">One thousand grams. One kilogram. Same pattern, every time.</p><button class="tab-next-btn" onclick="switchTab('practice')">Continue to 🧮 Practice →</button></div>
+<div class="tab-next-wrap"><p class="tab-transition-voice">One thousand grams. One kilogram. Same pattern, every time.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
 </div>
 <!-- PRACTICE TAB -->
-<div class="tab-panel" id="tab-practice">
-<div class="callout callout-info"><span class="callout-icon">🧭</span><p>You just stacked weights on the Scale Builder. Now convert on your own.</p></div>
-<div class="callout callout-tip"><span class="callout-icon">💡</span><p><strong>Remember:</strong> 1 kg = 1,000 g. The bigger unit always holds 1,000 of the smaller one.</p></div>
-<div class="hint-callout">🔄 <strong>Stuck?</strong> Go back to Learn and try the Scale Builder again.</div>
-<!-- P1: kg → g (simplest) -->
-<div class="activity bl-ws"><div class="activity-head"><div class="activity-num" style="background:var(--ws);">1</div><div><div class="activity-title">Kilograms to Grams</div></div></div><div class="activity-body">
-<div class="task-box"><div class="task-label">Convert</div><p>2 kg = ___ g</p></div>
-<div class="fill-row"><strong>2 kg =</strong><input class="fill-input" id="p1-ans" placeholder="?" type="number"/><strong>g</strong></div>
-<button class="check-btn" onclick="checkP1()">Check ✓</button>
-<div class="feedback-branch feedback-pass" id="p1-pass"><strong>✅</strong> 2 × 1,000 = 2,000. So 2 kg = 2,000 g.
-      
-</div>
-<div class="feedback-branch feedback-retry" id="p1-retry"><strong>🔄 Each kilogram has 1,000 grams. How many grams in 2 kilograms?</strong>
-
-<button class="orange-btn" onclick="resetP(1)">↩ Reset</button>
-</div>
-</div></div>
-<!-- P2: g → kg + g -->
-<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">2</div><div><div class="activity-title">Grams to Kilograms</div></div></div><div class="activity-body">
-<div class="task-box"><div class="task-label">Convert</div><p>3,400 g = ___ kg ___ g</p></div>
-<div class="fill-row"><strong>3,400 g =</strong><input class="fill-input" id="p2-kg" placeholder="? kg" style="width:70px;" type="number"/><strong>kg</strong><input class="fill-input" id="p2-g" placeholder="? g" style="width:80px;" type="number"/><strong>g</strong></div>
-<button class="check-btn" onclick="checkP2()">Check ✓</button>
-<div class="feedback-branch feedback-pass" id="p2-pass"><strong>✅</strong> 3,400 has 3 thousands and 400 left over. 3,400 g = 3 kg 400 g.
-      
-</div>
-<div class="feedback-branch feedback-retry" id="p2-retry"><strong>🔄 Think: how many groups of 1,000 fit into 3,400? That’s the kilograms. The leftover is grams.</strong>
-
-<button class="orange-btn" onclick="resetP(2)">↩ Reset</button>
-</div>
-</div></div>
-<!-- P3: judgment task -->
-<div class="activity bl-slate"><div class="activity-head"><div class="activity-num" style="background:#3A6B9A;">3</div><div><div class="activity-title">Whose Cat Is Heavier?</div></div></div><div class="activity-body">
-<div class="task-box"><div class="task-label">Compare</div><p>Cora’s cat weighs 4 kg 200 g. Atlas’s cat weighs 3,900 g. Whose cat is heavier?</p></div>
-<div class="value-card-row">
-<div class="value-card" onclick="p3(this,true)"><div class="big">Cora’s</div><div class="small">4 kg 200 g</div></div>
-<div class="value-card" onclick="p3(this,false)"><div class="big">Atlas’s</div><div class="small">3,900 g</div></div>
-</div>
-<div class="inline-feedback" id="p3-fb"></div>
-<div class="feedback-branch feedback-pass" id="p3-pass"><strong>✅</strong> Convert both to grams: 4 kg 200 g = 4,200 g. 4,200 &gt; 3,900. Cora’s cat is heavier.
-      
-</div>
-<div class="feedback-branch feedback-retry" id="p3-retry"><strong>🔄 Convert both to grams first. 4 kg 200 g — that’s 4,000 + 200 = ? g.</strong>
-
-<button class="orange-btn" onclick="resetP(3)">↩ Reset</button>
-</div>
-</div></div>
-<div class="socratic-box"><div class="socratic-label">🔮 Think Deeper</div><p class="socratic-q">Would you measure the weight of an ant in grams or kilograms? Why?</p><div class="journal-label">✏️ <span class="saved-dot" id="ds2"></span></div><textarea class="journal-box" data-label="Practice socratic" id="j-s201" oninput="autoSave(this,'ds2')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Convert, compare, weigh — you’ve got the tools.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
-</div>
 <!-- SHOW WHAT YOU KNOW TAB -->
 <div class="tab-panel" id="tab-assignment">
 <div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">🎯</div><div><div class="activity-title">Ready Check</div></div></div><div class="activity-body">
@@ -554,7 +505,7 @@ function checkP2(){hideBranches('p2');var kg=parseInt(document.getElementById('p
 function p3(c,ok){c.parentElement.querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});if(ok){c.classList.add('good');showBranch('p3-pass');mini(c);}else{c.classList.add('bad');showBranch('p3-retry');}}
 function resetP(n){if(n===1){document.getElementById('p1-ans').value='';document.getElementById('p1-ans').classList.remove('good','bad');hideBranches('p1');}
 if(n===2){['p2-kg','p2-g'].forEach(function(id){var e=document.getElementById(id);e.value='';e.classList.remove('good','bad');});hideBranches('p2');}
-if(n===3){document.querySelectorAll('#tab-practice .value-card').forEach(function(x){x.classList.remove('good','bad');});document.getElementById('p3-fb').className='inline-feedback';hideBranches('p3');}}
+if(n===3){document.querySelectorAll('.REMOVED-PRACTICE').forEach(function(x){x.classList.remove('good','bad');});document.getElementById('p3-fb').className='inline-feedback';hideBranches('p3');}}
 
 /* Ready Check */
 function checkRCA(){var v=parseInt(document.getElementById('rcA-ans').value,10);var el=document.getElementById('rcA-ans');var f=document.getElementById('rcA-fb');el.classList.remove('good','bad');if(v===5000){el.classList.add('good');f.className='inline-feedback show good';f.innerHTML='<strong>✅</strong> 5 × 1,000 = 5,000 g.';mini(el);}else{el.classList.add('bad');f.className='inline-feedback show think';f.innerHTML='Each kilogram = 1,000 g. 5 kilograms = 5 × 1,000 = ?';}}

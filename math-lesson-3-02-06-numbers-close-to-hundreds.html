@@ -334,7 +334,7 @@
 <div class="tab-bar" id="tabBar">
 <button class="tab-btn active" data-tab="warmup" onclick="switchTab('warmup')">🔍 Warm-Up <span class="tab-check">✓</span></button>
 <button class="tab-btn" data-tab="learn" onclick="switchTab('learn')">📐 Learn <span class="tab-check">✓</span></button>
-<button class="tab-btn" data-tab="practice" onclick="switchTab('practice')">🧮 Practice <span class="tab-check">✓</span></button>
+
 <button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">🌟 Show What You Know <span class="tab-check">✓</span></button>
 </div>
 <!-- ═══════════ WARM-UP ═══════════ -->
@@ -502,59 +502,9 @@
 </div></div>
 
 <div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">In addition, you round up and then SUBTRACT to adjust. In subtraction, you round up and then ADD to adjust. Why are the directions opposite?</p><div class="journal-label">✏️ My reasoning <span class="saved-dot" id="dot-soc1"></span></div><textarea class="journal-box" data-label="Learn — Socratic: opposite adjustments" id="journal-soc1" oninput="autoSave(this,'dot-soc1')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Round it. Do the easy math. Fix the small extra. Three moves.</p><button class="tab-next-btn" onclick="switchTab('practice')">Continue to 🧮 Practice →</button></div>
+<div class="tab-next-wrap"><p class="tab-transition-voice">Round it. Do the easy math. Fix the small extra. Three moves.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
 </div>
 <!-- ═══════════ PRACTICE ═══════════ -->
-<div class="tab-panel" id="tab-practice">
-<div class="callout callout-info"><span class="callout-icon">🧭</span><p>You saw <strong>532 − 397 = 135</strong>. Practice mixes addition and subtraction — pay attention to which direction the adjustment goes.</p></div>
-<div class="callout callout-think"><span class="callout-icon">🧠</span><p><strong>For each problem:</strong> round the close number up to the friendly hundred. Do the easy math. Then adjust.</p></div>
-<div class="activity bl-violet"><div class="activity-head"><div class="activity-num" style="background:#6B3FA0;">1</div><div><div class="activity-title">Round and Adjust</div><div class="activity-sub">Four problems. Watch the adjustment direction.</div></div><span class="activity-time" style="background:#6B3FA0;">~5 min</span></div><div class="activity-body">
-<div class="bubble-row">
-<div class="bubble felix"><div class="bubble-avatar">F</div><div class="bubble-body"><div class="bubble-name">Felix — shortcut</div><div class="bubble-text">"Whisper: 'Added too much — give some back.' 'Subtracted too much — give some back the other way.' Same idea, opposite signs."</div></div></div>
-</div>
-<div class="fill-row"><strong>343 − 299 =</strong><input class="fill-input" id="p1-a" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>498 + 299 =</strong><input class="fill-input" id="p1-b" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>397 + 425 =</strong><input class="fill-input" id="p1-c" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>954 − 497 =</strong><input class="fill-input" id="p1-d" placeholder="?" type="number"/></div>
-<button class="check-btn" onclick="checkP1()">Check My Answers ✓</button>
-<div class="feedback-branch feedback-pass" id="p1-pass"><strong>✅ Yes!</strong> 343 − 299 = 44. 498 + 299 = 797. 397 + 425 = 822. 954 − 497 = 457.
-      <div class="bubble-row" style="margin-top:10px;"><div class="bubble cora"><div class="bubble-avatar">C</div><div class="bubble-body"><div class="bubble-name">Cora — checking the work</div><div class="bubble-text">"Let's check by reversing. 44 + 299 → 44 + 300 − 1 = 343 ✓. 797 + 3 = 800 = 498 + 302 − 1... actually we verify differently: 797 − 498 = 299 ✓. The numbers fit."</div></div></div></div>
-
-</div>
-<div class="feedback-branch feedback-retry" id="p1-retry"><strong>🔄 Round up, calculate, adjust — and watch the direction.</strong>
-<div class="hint-callout">343 − 299: pretend 299 = 300. 343 − 300 = 43. Took 1 too many → add 1.  ·  498 + 299: pretend both. 500 + 300 = 800. Added 3 too many → subtract 3.  ·  397 + 425: pretend 397 = 400. 400 + 425 = 825. Added 3 too many → subtract 3.  ·  954 − 497: pretend 497 = 500. 954 − 500 = 454. Took 3 too many → add 3.</div>
-<button class="orange-btn" onclick="resetP1()">↩ Reset and Try Again</button>
-</div>
-</div></div>
-<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">2</div><div><div class="activity-title">Show Your Steps</div><div class="activity-sub">Write out the recipe for one problem.</div></div><span class="activity-time" style="background:#2DB87A;">~4 min</span></div><div class="activity-body">
-<div class="bubble-row">
-<div class="bubble hazel"><div class="bubble-avatar">H</div><div class="bubble-body"><div class="bubble-name">Hazel — draw it</div><div class="bubble-text">"Sketch the three steps. Even if you can solve it mentally, writing each step keeps the adjustment direction clear."</div></div></div>
-</div>
-<div class="task-box"><div class="task-label">Problem</div><p>Find <strong>397 + 425</strong> using round-and-adjust. Show each step.</p></div>
-<div class="journal-label">✏️ My three steps <span class="saved-dot" id="dot-p2"></span></div>
-<textarea class="journal-box" data-label="Practice 2 — Show steps for 397 + 425" id="journal-p2" oninput="autoSave(this,'dot-p2')" placeholder="Step 1 — Spot: 397 is ___ away from ___
-Step 2 — Pretend &amp; calculate: ___ + 425 = ___
-Step 3 — Adjust: I added ___ too many, so subtract ___. Final: ___" style="min-height:130px;"></textarea>
-<div class="callout callout-tip" style="margin-top:10px;"><span class="callout-icon">💡</span><p><strong>Answer:</strong> 397 + 425 = 822. Steps: 397 is 3 away from 400. 400 + 425 = 825. Added 3 too many → subtract 3. 825 − 3 = 822.</p></div>
-</div></div>
-<div class="activity bl-violet"><div class="activity-head"><div class="activity-num" style="background:#6B3FA0;">3</div><div><div class="activity-title">The Reading Marathon</div><div class="activity-sub">A word problem.</div></div></div><div class="activity-body">
-<div class="bubble-row">
-<div class="bubble atlas"><div class="bubble-avatar">A</div><div class="bubble-body"><div class="bubble-name">Atlas — concrete</div><div class="bubble-text">"Spot the near-hundred number first. Round it up. Then ask yourself: am I adding or subtracting?"</div></div></div>
-</div>
-<div class="task-box"><div class="task-label">Word problem</div><p>The school library set a goal of <strong>555 books</strong> read during the marathon. Students have already finished <strong>96 books</strong>. How many books are left to reach the goal?</p></div>
-<div class="fill-row"><strong>Books left:</strong><input class="fill-input" id="p3-a" placeholder="?" type="number"/></div>
-<button class="check-btn" onclick="checkP3()">Check My Answer ✓</button>
-<div class="feedback-branch feedback-pass" id="p3-pass"><strong>✅ Yes — 459 books.</strong> 96 is 4 away from 100. Pretend 96 = 100. 555 − 100 = 455. Took 4 too many → add 4 back. 455 + 4 = 459.
-      <div class="bubble-row" style="margin-top:10px;"><div class="bubble cora"><div class="bubble-avatar">C</div><div class="bubble-body"><div class="bubble-name">Cora — checking the work</div><div class="bubble-text">"Let's check: 459 + 96 → 459 + 100 = 559, then 559 − 4 = 555 ✓. The marathon is on track."</div></div></div></div>
-</div>
-<div class="feedback-branch feedback-retry" id="p3-retry"><strong>🔄 96 is close to 100. Round, subtract, then adjust.</strong>
-<div class="hint-callout">96 is 4 away from 100. Pretend 96 = 100: 555 − 100 = ___. You took 4 too many books away (because 100 is 4 more than 96). So ADD 4 back.</div>
-<button class="orange-btn" onclick="resetP3()">↩ Reset and Try Again</button>
-</div>
-</div></div>
-<div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">When would round-and-adjust be a BAD strategy? Think of a subtraction problem where pretending one number is a friendly hundred would make things harder, not easier.</p><div class="journal-label">✏️ My reasoning <span class="saved-dot" id="dot-soc2"></span></div><textarea class="journal-box" data-label="Practice — Socratic: when round-and-adjust is wrong tool" id="journal-soc2" oninput="autoSave(this,'dot-soc2')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Round, calculate, adjust. Time to show what you know.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
-</div>
 <!-- ═══════════ SHOW WHAT YOU KNOW ═══════════ -->
 <div class="tab-panel" id="tab-assignment">
 <div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">🎯</div><div><div class="activity-title">Ready Check</div><div class="activity-sub">Two quick questions.</div></div></div><div class="activity-body">

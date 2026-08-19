@@ -337,7 +337,7 @@
 <div class="tab-bar" id="tabBar">
 <button class="tab-btn active" data-tab="warmup" onclick="switchTab('warmup')">🔍 Warm-Up <span class="tab-check">✓</span></button>
 <button class="tab-btn" data-tab="learn" onclick="switchTab('learn')">📐 Learn <span class="tab-check">✓</span></button>
-<button class="tab-btn" data-tab="practice" onclick="switchTab('practice')">🧮 Practice <span class="tab-check">✓</span></button>
+
 <button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">🌟 Show What You Know <span class="tab-check">✓</span></button>
 </div>
 <div class="tab-panel active" id="tab-warmup">
@@ -457,37 +457,7 @@
 <p style="font-family:'Lora',serif;background:#FAFBFF;border:2px solid #E2E8F4;border-radius:12px;padding:10px;text-align:center;font-size:18px;font-weight:800;margin-top:14px;">2 × 213 = <span style="color:#1A8A5A;">426</span></p>
 </div></div>
 <div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">What if a column has zero discs (like 4 × 102 — the tens column is empty)? What changes on the mat?</p><div class="journal-label">✏️ <span class="saved-dot" id="ds1"></span></div><textarea class="journal-box" data-label="Learn socratic" id="j-s1" oninput="autoSave(this,'ds1')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">3 columns. Multiply each. Trade up if needed.</p><button class="tab-next-btn" onclick="switchTab('practice')">Continue to 🧮 Practice →</button></div>
-</div>
-<div class="tab-panel" id="tab-practice">
-<div class="callout callout-info"><span class="callout-icon">🧭</span><p>Multiply each column. Trade up if any column overflows.</p></div>
-<div class="activity bl-berry"><div class="activity-head"><div class="activity-num" style="background:var(--berry);">1</div><div><div class="activity-title">3 × 124</div></div></div><div class="activity-body">
-<div class="fill-row"><strong>3 × 4 =</strong><input class="fill-input" id="p1-o" placeholder="?" type="number"/><strong>ones (overflow!)</strong></div>
-<div class="fill-row"><strong>Trade: keep</strong><input class="fill-input" id="p1-os" placeholder="?" type="number"/><strong>ones, carry</strong><input class="fill-input" id="p1-c" placeholder="?" type="number"/><strong>ten</strong></div>
-<div class="fill-row"><strong>3 × 2 + carry =</strong><input class="fill-input" id="p1-t" placeholder="?" type="number"/><strong>tens</strong></div>
-<div class="fill-row"><strong>3 × 1 =</strong><input class="fill-input" id="p1-h" placeholder="?" type="number"/><strong>hundreds</strong></div>
-<div class="fill-row"><strong>Total: 3 × 124 =</strong><input class="fill-input" id="p1-tot" placeholder="?" type="number"/></div>
-<button class="check-btn" onclick="checkP1()">Check ✓</button>
-<div class="feedback-branch feedback-pass" id="p1-pass"><strong>✅</strong> 12 → keep 2, carry 1 · 6+1=7 tens · 3 hundreds · Total 372.</div>
-<div class="feedback-branch feedback-retry" id="p1-retry"><strong>🔄 Trade the ones first, then add the carry to the tens.</strong><div class="hint-callout">3×4=12. Trade: keep 2 ones, carry 1 ten. 3×2+1=7 tens. 3×1=3 hundreds. 372.</div><button class="orange-btn" onclick="resetP1()">↩ Reset</button></div>
-</div></div>
-<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">2</div><div><div class="activity-title">2 × 213 (no trade)</div></div></div><div class="activity-body">
-<div class="fill-row"><strong>2 × 3 =</strong><input class="fill-input" id="p2-o" placeholder="?" type="number"/><strong>ones (fits)</strong></div>
-<div class="fill-row"><strong>2 × 1 =</strong><input class="fill-input" id="p2-t" placeholder="?" type="number"/><strong>tens</strong></div>
-<div class="fill-row"><strong>2 × 2 =</strong><input class="fill-input" id="p2-h" placeholder="?" type="number"/><strong>hundreds</strong></div>
-<div class="fill-row"><strong>Total: 2 × 213 =</strong><input class="fill-input" id="p2-tot" placeholder="?" type="number"/></div>
-<button class="check-btn" onclick="checkP2()">Check ✓</button>
-<div class="feedback-branch feedback-pass" id="p2-pass"><strong>✅</strong> 6 · 2 · 4 · Total 426. No trades needed.</div>
-<div class="feedback-branch feedback-retry" id="p2-retry"><strong>🔄 Multiply each column. No trades today.</strong><div class="hint-callout">2×3=6. 2×1=2. 2×2=4. 426.</div><button class="orange-btn" onclick="resetP2()">↩ Reset</button></div>
-</div></div>
-<div class="activity bl-berry"><div class="activity-head"><div class="activity-num" style="background:var(--berry);">3</div><div><div class="activity-title">4 × 102 — zero in the tens</div></div></div><div class="activity-body">
-<div class="task-box"><div class="task-label">Problem</div><p>4 × 102. The tens column is empty! Build it on the mat: 1 hundred + 0 tens + 2 ones. Multiply each column.</p></div>
-<div class="journal-label">✏️ Show ones, tens, hundreds, total <span class="saved-dot" id="dp3"></span></div>
-<textarea class="journal-box" data-label="Practice 3" id="j-p3" oninput="autoSave(this,'dp3')" placeholder="" style="min-height:90px;"></textarea>
-<div class="callout callout-tip"><span class="callout-icon">💡</span><p><strong>Answer:</strong> Ones: 4×2=8 (fits). Tens: 4×0=0. Hundreds: 4×1=4. Total = 408.</p></div>
-</div></div>
-<div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">When you build a 3-digit number on the mat, what tells you whether you'll need to trade?</p><div class="journal-label">✏️ <span class="saved-dot" id="ds2"></span></div><textarea class="journal-box" data-label="Practice socratic" id="j-s2" oninput="autoSave(this,'ds2')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">3 columns. Same trades. Read the mat.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
+<div class="tab-next-wrap"><p class="tab-transition-voice">3 columns. Multiply each. Trade up if needed.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
 </div>
 <div class="tab-panel" id="tab-assignment">
 <div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">🎯</div><div><div class="activity-title">Ready Check</div></div></div><div class="activity-body">

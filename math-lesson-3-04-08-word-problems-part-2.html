@@ -307,7 +307,7 @@
 <div class="tab-bar" id="tabBar">
 <button class="tab-btn active" data-tab="warmup" onclick="switchTab('warmup')">🔍 Warm-Up <span class="tab-check">✓</span></button>
 <button class="tab-btn" data-tab="learn" onclick="switchTab('learn')">📐 Learn <span class="tab-check">✓</span></button>
-<button class="tab-btn" data-tab="practice" onclick="switchTab('practice')">🧮 Practice <span class="tab-check">✓</span></button>
+
 <button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">🌟 Show What You Know <span class="tab-check">✓</span></button>
 </div>
 <div class="tab-panel active" id="tab-warmup">
@@ -415,40 +415,7 @@
 </div></div>
 
 <div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">Why does the difference equal 4 units (not 5)? Use the bar picture to explain.</p><div class="journal-label">✏️ <span class="saved-dot" id="ds1"></span></div><textarea class="journal-box" data-label="Learn socratic" id="j-s1" oninput="autoSave(this,'ds1')"></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Count units. Find one unit. Then anything else.</p><button class="tab-next-btn" onclick="switchTab('practice')">Continue to 🧮 Practice →</button></div>
-</div>
-<div class="tab-panel" id="tab-practice">
-<div class="callout callout-info"><span class="callout-icon">🧭</span><p>Use the unit method for each problem.</p></div>
-<div class="activity bl-coral"><div class="activity-head"><div class="activity-num" style="background:#E76F51;">1</div><div><div class="activity-title">Notebook &amp; Pen</div></div></div><div class="activity-body">
-<div class="task-box"><div class="task-label">Problem</div><p>A notebook costs 3 times as much as a pen. Together they cost $12. How much is the pen? How much is the notebook?</p></div>
-<div class="fill-row"><strong>One unit = $</strong><input class="fill-input" id="p1-u" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>Pen = $</strong><input class="fill-input" id="p1-p" placeholder="?" type="number"/><strong>  Notebook = $</strong><input class="fill-input" id="p1-n" placeholder="?" type="number"/></div>
-<button class="check-btn" onclick="checkP1()">Check ✓</button>
-<div class="feedback-branch feedback-pass" id="p1-pass"><strong>✅</strong> 4 units = $12, so 1 unit = $3. Pen $3, Notebook $9.</div>
-<div class="feedback-branch feedback-retry" id="p1-retry"><strong>🔄 Count the units.</strong>
-<div class="hint-callout">Pen = 1 unit, Notebook = 3 units. Total = 4 units = $12. 1 unit = $12 ÷ 4 = $3.</div>
-<button class="orange-btn" onclick="resetP1()">↩ Reset</button>
-</div>
-</div></div>
-<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">2</div><div><div class="activity-title">Sheep &amp; Goats</div></div></div><div class="activity-body">
-<div class="task-box"><div class="task-label">Problem</div><p>A farmer has 5 times as many sheep as goats. He has 40 more sheep than goats. How many goats? How many sheep?</p></div>
-<div class="fill-row"><strong>One unit =</strong><input class="fill-input" id="p2-u" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>Goats =</strong><input class="fill-input" id="p2-g" placeholder="?" type="number"/><strong>  Sheep =</strong><input class="fill-input" id="p2-s" placeholder="?" type="number"/></div>
-<button class="check-btn" onclick="checkP2()">Check ✓</button>
-<div class="feedback-branch feedback-pass" id="p2-pass"><strong>✅</strong> Difference = 4 units = 40, so 1 unit = 10. Goats 10, Sheep 50.</div>
-<div class="feedback-branch feedback-retry" id="p2-retry"><strong>🔄 The DIFFERENCE is 4 units, not 5.</strong>
-<div class="hint-callout">Sheep (5) − Goats (1) = 4 units. 4 units = 40. 1 unit = 10.</div>
-<button class="orange-btn" onclick="resetP2()">↩ Reset</button>
-</div>
-</div></div>
-<div class="activity bl-coral"><div class="activity-head"><div class="activity-num" style="background:#E76F51;">3</div><div><div class="activity-title">Twice as Many</div></div></div><div class="activity-body">
-<div class="task-box"><div class="task-label">Problem</div><p>Hazel has twice as many stickers as Atlas. Together they have 18 stickers. How many does each have?</p></div>
-<div class="journal-label">✏️ Atlas = ___   Hazel = ___ <span class="saved-dot" id="dp3"></span></div>
-<textarea class="journal-box" data-label="Practice 3" id="j-p3" oninput="autoSave(this,'dp3')" placeholder="Atlas = 1 unit, Hazel = 2 units. Total = 3 units = 18. 1 unit = 6. Atlas = 6, Hazel = 12." style="min-height:80px;"></textarea>
-<div class="callout callout-tip"><span class="callout-icon">💡</span><p><strong>Answer:</strong> Atlas = 6, Hazel = 12.</p></div>
-</div></div>
-<div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">When the problem says "X times as many," does that mean ADD X or MULTIPLY by X? Show with a picture.</p><div class="journal-label">✏️ <span class="saved-dot" id="ds2"></span></div><textarea class="journal-box" data-label="Practice socratic" id="j-s2" oninput="autoSave(this,'ds2')"></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Find one unit first. Everything else follows.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
+<div class="tab-next-wrap"><p class="tab-transition-voice">Count units. Find one unit. Then anything else.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
 </div>
 <div class="tab-panel" id="tab-assignment">
 <div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">🎯</div><div><div class="activity-title">Ready Check</div></div></div><div class="activity-body">

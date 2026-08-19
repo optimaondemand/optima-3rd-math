@@ -334,7 +334,7 @@
 <div class="tab-bar" id="tabBar">
 <button class="tab-btn active" data-tab="warmup" onclick="switchTab('warmup')">🔍 Warm-Up <span class="tab-check">✓</span></button>
 <button class="tab-btn" data-tab="learn" onclick="switchTab('learn')">📐 Learn <span class="tab-check">✓</span></button>
-<button class="tab-btn" data-tab="practice" onclick="switchTab('practice')">🧮 Practice <span class="tab-check">✓</span></button>
+
 <button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">🌟 Show What You Know <span class="tab-check">✓</span></button>
 </div>
 <!-- ═══════════ WARM-UP ═══════════ -->
@@ -540,58 +540,9 @@
 </div></div>
 
 <div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">If 9 × 4 = 36, what does 4 × 9 equal — without doing the math? Why is the swap rule helpful?</p><div class="journal-label">✏️ My reasoning <span class="saved-dot" id="dot-soc1"></span></div><textarea class="journal-box" data-label="Learn — Socratic: factor swap" id="journal-soc1" oninput="autoSave(this,'dot-soc1')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Equal groups, array, equation, repeated addition — all the same idea. Try a few.</p><button class="tab-next-btn" onclick="switchTab('practice')">Continue to 🧮 Practice →</button></div>
+<div class="tab-next-wrap"><p class="tab-transition-voice">Equal groups, array, equation, repeated addition — all the same idea. Try a few.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
 </div>
 <!-- ═══════════ PRACTICE ═══════════ -->
-<div class="tab-panel" id="tab-practice">
-<div class="callout callout-info"><span class="callout-icon">🧭</span><p>You saw <strong>9 × 4 = 36</strong> charms. Practice gives you more groups-to-equations work, then a word problem.</p></div>
-<div class="callout callout-think"><span class="callout-icon">🧠</span><p><strong>For each problem:</strong> picture the groups (or an array). Write the equation. Skip-count or use a known fact to find the product.</p></div>
-<div class="activity bl-coral"><div class="activity-head"><div class="activity-num" style="background:#E76F51;">1</div><div><div class="activity-title">Groups → Equation</div><div class="activity-sub">Find each product.</div></div><span class="activity-time" style="background:#E76F51;">~5 min</span></div><div class="activity-body">
-<div class="bubble-row">
-<div class="bubble felix"><div class="bubble-avatar">F</div><div class="bubble-body"><div class="bubble-name">Felix — shortcut</div><div class="bubble-text">"Skip-count the group size. '4 groups of 5': 5, 10, 15, 20. Done."</div></div></div>
-</div>
-<div class="fill-row"><strong>4 groups of 5 → 4 × 5 =</strong><input class="fill-input" id="p1-a" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>5 groups of 4 → 5 × 4 =</strong><input class="fill-input" id="p1-b" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>3 groups of 6 → 3 × 6 =</strong><input class="fill-input" id="p1-c" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>5 groups of 7 → 5 × 7 =</strong><input class="fill-input" id="p1-d" placeholder="?" type="number"/></div>
-<button class="check-btn" onclick="checkP1()">Check My Answers ✓</button>
-<div class="feedback-branch feedback-pass" id="p1-pass"><strong>✅ Yes!</strong> 4×5=20. 5×4=20 (same answer!). 3×6=18. 5×7=35.
-      <div class="bubble-row" style="margin-top:10px;"><div class="bubble cora"><div class="bubble-avatar">C</div><div class="bubble-body"><div class="bubble-name">Cora — pattern spotter</div><div class="bubble-text">"Look at (a) and (b): 4 × 5 and 5 × 4 both give 20. The factor swap works every time. Knowing ONE fact gives you another for free."</div></div></div></div>
-</div>
-<div class="feedback-branch feedback-retry" id="p1-retry"><strong>🔄 Skip-count the group size by the number of groups.</strong>
-<div class="hint-callout">4 × 5: count by 5s four times — 5, 10, 15, 20.  ·  5 × 4: count by 4s five times — 4, 8, 12, 16, 20.  ·  3 × 6: 6, 12, 18.  ·  5 × 7: 7, 14, 21, 28, 35.</div>
-<button class="orange-btn" onclick="resetP1()">↩ Reset and Try Again</button>
-</div>
-</div></div>
-<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">2</div><div><div class="activity-title">Write the Equation</div><div class="activity-sub">From picture to math.</div></div><span class="activity-time" style="background:#2DB87A;">~4 min</span></div><div class="activity-body">
-<div class="bubble-row">
-<div class="bubble hazel"><div class="bubble-avatar">H</div><div class="bubble-body"><div class="bubble-name">Hazel — read the picture</div><div class="bubble-text">"Count the rows. Count the columns. Write rows × columns = product. That's it."</div></div></div>
-</div>
-<div class="task-box"><div class="task-label">Problem</div><p>An array has <strong>3 rows</strong> and <strong>8 columns</strong>. Write two multiplication equations for the total — one starting with the rows, one with the columns. Find the product.</p></div>
-<div class="journal-label">✏️ My two equations + product <span class="saved-dot" id="dot-p2"></span></div>
-<textarea class="journal-box" data-label="Practice 2 — 3 rows 8 columns two equations" id="journal-p2" oninput="autoSave(this,'dot-p2')" placeholder="Equation 1 (rows first): ___ × ___ = ___
-Equation 2 (columns first): ___ × ___ = ___
-Both products are: ___" style="min-height:110px;"></textarea>
-<div class="callout callout-tip" style="margin-top:10px;"><span class="callout-icon">💡</span><p><strong>Answer:</strong> 3 × 8 = 24 (rows × columns) or 8 × 3 = 24 (columns × rows). Same product.</p></div>
-</div></div>
-<div class="activity bl-coral"><div class="activity-head"><div class="activity-num" style="background:#E76F51;">3</div><div><div class="activity-title">The Bracelet Order</div><div class="activity-sub">A word problem.</div></div></div><div class="activity-body">
-<div class="bubble-row">
-<div class="bubble atlas"><div class="bubble-avatar">A</div><div class="bubble-body"><div class="bubble-name">Atlas — concrete</div><div class="bubble-text">"Picture the groups. Number of bracelets × charms in each = total."</div></div></div>
-</div>
-<div class="task-box"><div class="task-label">Word problem</div><p>Each bracelet has <strong>4 charms</strong>. How many charms are on <strong>9 bracelets</strong>?</p></div>
-<div class="fill-row"><strong>Total charms:</strong><input class="fill-input" id="p3-a" placeholder="?" type="number"/></div>
-<button class="check-btn" onclick="checkP3()">Check My Answer ✓</button>
-<div class="feedback-branch feedback-pass" id="p3-pass"><strong>✅ Yes — 36 charms.</strong> 9 bracelets × 4 charms each = 36.
-      <div class="bubble-row" style="margin-top:10px;"><div class="bubble cora"><div class="bubble-avatar">C</div><div class="bubble-body"><div class="bubble-name">Cora — checking the work</div><div class="bubble-text">"Swap-check: 4 × 9 = 36 ✓. Or skip-count by 4: 4, 8, 12, 16, 20, 24, 28, 32, 36. Both confirm."</div></div></div></div>
-</div>
-<div class="feedback-branch feedback-retry" id="p3-retry"><strong>🔄 9 groups of 4 charms.</strong>
-<div class="hint-callout">Skip-count by 4 nine times: 4, 8, 12, 16, 20, ____, ____, ____, ____. Or use 9 × 4 = 4 × 9 to flip the count.</div>
-<button class="orange-btn" onclick="resetP3()">↩ Reset and Try Again</button>
-</div>
-</div></div>
-<div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">Why is an ARRAY a better picture than just drawing equal groups in a pile? What does the array show that loose groups don't?</p><div class="journal-label">✏️ My reasoning <span class="saved-dot" id="dot-soc2"></span></div><textarea class="journal-box" data-label="Practice — Socratic: why arrays beat piles" id="journal-soc2" oninput="autoSave(this,'dot-soc2')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Groups, arrays, equations, products — same idea, different views. Time to show what you know.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
-</div>
 <!-- ═══════════ SHOW WHAT YOU KNOW ═══════════ -->
 <div class="tab-panel" id="tab-assignment">
 <div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">🎯</div><div><div class="activity-title">Ready Check</div><div class="activity-sub">Two quick questions.</div></div></div><div class="activity-body">

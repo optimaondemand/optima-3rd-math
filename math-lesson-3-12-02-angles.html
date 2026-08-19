@@ -297,7 +297,7 @@
 <div class="tab-bar" id="tabBar">
 <button class="tab-btn active" data-tab="warmup" onclick="switchTab('warmup')">🔍 Warm-Up <span class="tab-check">✓</span></button>
 <button class="tab-btn" data-tab="learn" onclick="switchTab('learn')">📐 Learn <span class="tab-check">✓</span></button>
-<button class="tab-btn" data-tab="practice" onclick="switchTab('practice')">🧮 Practice <span class="tab-check">✓</span></button>
+
 <button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">🌟 Show What You Know <span class="tab-check">✓</span></button>
 </div>
 <!-- WARM-UP TAB -->
@@ -385,104 +385,9 @@
 <p style="font-family:'Lora',serif;background:#FAFBFF;border:2px solid #E2E8F4;border-radius:12px;padding:10px;text-align:center;font-size:18px;font-weight:900;margin-top:14px;">Ramp A: less than a right angle (gentle)  •  Ramp B: right angle (steep)</p>
 </div></div>
 <div class="socratic-box"><div class="socratic-label">🔮 Think Deeper</div><p class="socratic-q">Can you find a right angle in the room around you right now? Where is it?</p><div class="journal-label">✏️ <span class="saved-dot" id="ds1"></span></div><textarea class="journal-box" data-label="Learn socratic" id="j-s101" oninput="autoSave(this,'ds1')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Square corners everywhere — once you see them, you can’t stop.</p><button class="tab-next-btn" onclick="switchTab('practice')">Continue to 🧮 Practice →</button></div>
+<div class="tab-next-wrap"><p class="tab-transition-voice">Square corners everywhere — once you see them, you can’t stop.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
 </div>
 <!-- PRACTICE TAB -->
-<div class="tab-panel" id="tab-practice">
-<div class="callout callout-info"><span class="callout-icon">🧭</span><p>You just built angles with the Angle Opener. Now classify them on your own.</p></div>
-<div class="callout callout-tip"><span class="callout-icon">💡</span><p><strong>Before each problem, ask yourself:</strong> “Is this opening smaller than, equal to, or bigger than a square corner?”</p></div>
-<div class="hint-callout">🔄 <strong>Stuck?</strong> Go back to Learn and try the Angle Opener again.</div>
-<!-- P1: classify acute angle -->
-<div class="activity bl-geo"><div class="activity-head"><div class="activity-num" style="background:var(--geo);">1</div><div><div class="activity-title">Classify This Angle</div></div></div><div class="activity-body">
-<div class="task-box"><div class="task-label">Look at the angle</div>
-<svg height="140" style="display:block;margin:0 auto 10px;" viewbox="0 0 200 140" width="200">
-<circle cx="30" cy="110" fill="var(--geo-deep)" r="4"></circle>
-<line stroke="var(--geo)" stroke-width="3" x1="30" x2="180" y1="110" y2="110"></line>
-<line stroke="var(--geo)" stroke-width="3" x1="30" x2="140" y1="110" y2="20"></line>
-<path d="M 60 110 A 30 30 0 0 0 52 88" fill="none" stroke="var(--geo-mid)" stroke-width="2.5"></path>
-</svg>
-<p>Is this angle less than, equal to, or greater than a right angle?</p>
-</div>
-<div class="value-card-row">
-<div class="value-card" onclick="p1(this,true)"><div class="big">Less than</div></div>
-<div class="value-card" onclick="p1(this,false)"><div class="big">Equal to</div></div>
-<div class="value-card" onclick="p1(this,false)"><div class="big">Greater than</div></div>
-</div>
-<div class="inline-feedback" id="p1-fb"></div>
-<div class="feedback-branch feedback-pass" id="p1-pass"><strong>✅</strong> This angle is less than a right angle — the opening is smaller than a square corner.
-      
-</div>
-<div class="feedback-branch feedback-retry" id="p1-retry"><strong>🔄 Picture a square corner. Is this opening smaller or bigger than that?</strong>
-
-<button class="orange-btn" onclick="resetP(1)">↩ Reset</button>
-</div>
-</div></div>
-<!-- P2: classify obtuse angle -->
-<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">2</div><div><div class="activity-title">Classify This Angle</div></div></div><div class="activity-body">
-<div class="task-box"><div class="task-label">Look at the angle</div>
-<svg height="160" style="display:block;margin:0 auto 10px;" viewbox="0 0 200 160" width="200">
-<circle cx="30" cy="130" fill="var(--geo-deep)" r="4"></circle>
-<line stroke="var(--geo)" stroke-width="3" x1="30" x2="190" y1="130" y2="130"></line>
-<line stroke="var(--geo)" stroke-width="3" x1="30" x2="60" y1="130" y2="15"></line>
-<path d="M 60 130 A 30 30 0 0 0 38 102" fill="none" stroke="var(--geo-mid)" stroke-width="2.5"></path>
-</svg>
-<p>Is this angle less than, equal to, or greater than a right angle?</p>
-</div>
-<div class="value-card-row">
-<div class="value-card" onclick="p2(this,false)"><div class="big">Less than</div></div>
-<div class="value-card" onclick="p2(this,false)"><div class="big">Equal to</div></div>
-<div class="value-card" onclick="p2(this,true)"><div class="big">Greater than</div></div>
-</div>
-<div class="inline-feedback" id="p2-fb"></div>
-<div class="feedback-branch feedback-pass" id="p2-pass"><strong>✅</strong> This angle is greater than a right angle — the opening is wider than a square corner.
-      
-</div>
-<div class="feedback-branch feedback-retry" id="p2-retry"><strong>🔄 Imagine fitting a square corner into that opening. Would the corner fit, or is the angle wider?</strong>
-
-<button class="orange-btn" onclick="resetP(2)">↩ Reset</button>
-</div>
-</div></div>
-<!-- P3: compare two angles -->
-<div class="activity bl-slate"><div class="activity-head"><div class="activity-num" style="background:#3A6B9A;">3</div><div><div class="activity-title">Which Is Closer to a Right Angle?</div></div></div><div class="activity-body">
-<div class="task-box"><div class="task-label">Compare</div>
-<div style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap;">
-<div style="text-align:center;">
-<svg height="120" viewbox="0 0 140 120" width="140">
-<circle cx="20" cy="100" fill="var(--geo-deep)" r="3"></circle>
-<line stroke="var(--geo)" stroke-width="3" x1="20" x2="130" y1="100" y2="100"></line>
-<line stroke="var(--geo)" stroke-width="3" x1="20" x2="110" y1="100" y2="22"></line>
-<path d="M 45 100 A 25 25 0 0 0 40 82" fill="none" stroke="var(--geo-mid)" stroke-width="2"></path>
-</svg>
-<div style="font-weight:900;font-size:15px;">Angle A</div>
-</div>
-<div style="text-align:center;">
-<svg height="120" viewbox="0 0 140 120" width="140">
-<circle cx="20" cy="100" fill="var(--geo-deep)" r="3"></circle>
-<line stroke="var(--geo)" stroke-width="3" x1="20" x2="130" y1="100" y2="100"></line>
-<line stroke="var(--geo)" stroke-width="3" x1="20" x2="80" y1="100" y2="14"></line>
-<path d="M 45 100 A 25 25 0 0 0 34 78" fill="none" stroke="var(--geo-mid)" stroke-width="2"></path>
-</svg>
-<div style="font-weight:900;font-size:15px;">Angle B</div>
-</div>
-</div>
-<p style="margin-top:10px;">Which angle is closer to a right angle?</p>
-</div>
-<div class="value-card-row">
-<div class="value-card" onclick="p3(this,true)"><div class="big">Angle A</div></div>
-<div class="value-card" onclick="p3(this,false)"><div class="big">Angle B</div></div>
-</div>
-<div class="inline-feedback" id="p3-fb"></div>
-<div class="feedback-branch feedback-pass" id="p3-pass"><strong>✅</strong> Angle A opens wider — closer to a square corner. Angle B is much smaller.
-      
-</div>
-<div class="feedback-branch feedback-retry" id="p3-retry"><strong>🔄 A right angle makes a perfect L shape. Which opening is closer to that L?</strong>
-
-<button class="orange-btn" onclick="resetP(3)">↩ Reset</button>
-</div>
-</div></div>
-<div class="socratic-box"><div class="socratic-label">🔮 Think Deeper</div><p class="socratic-q">If you opened an angle wider and wider, what would eventually happen?</p><div class="journal-label">✏️ <span class="saved-dot" id="ds2"></span></div><textarea class="journal-box" data-label="Practice socratic" id="j-s201" oninput="autoSave(this,'ds2')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Less than, equal to, greater than — three ways to talk about every angle.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
-</div>
 <!-- SHOW WHAT YOU KNOW TAB -->
 <div class="tab-panel" id="tab-assignment">
 <div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">🎯</div><div><div class="activity-title">Ready Check</div></div></div><div class="activity-body">
@@ -608,7 +513,7 @@ function p1(c,ok){c.parentElement.querySelectorAll('.value-card').forEach(functi
 function p2(c,ok){c.parentElement.querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});if(ok){c.classList.add('good');showBranch('p2-pass');mini(c);}else{c.classList.add('bad');showBranch('p2-retry');}}
 function p3(c,ok){c.parentElement.querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});if(ok){c.classList.add('good');showBranch('p3-pass');mini(c);}else{c.classList.add('bad');showBranch('p3-retry');}}
 function resetP(n){
-  var tabs=document.querySelectorAll('#tab-practice .activity');
+  var tabs=document.querySelectorAll('.REMOVED-PRACTICE');
   if(tabs[n-1]){tabs[n-1].querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});}
   hideBranches('p'+n);
 }

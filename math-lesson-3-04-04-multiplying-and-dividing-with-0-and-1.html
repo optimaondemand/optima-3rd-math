@@ -304,7 +304,7 @@
 <div class="tab-bar" id="tabBar">
 <button class="tab-btn active" data-tab="warmup" onclick="switchTab('warmup')">🔍 Warm-Up <span class="tab-check">✓</span></button>
 <button class="tab-btn" data-tab="learn" onclick="switchTab('learn')">📐 Learn <span class="tab-check">✓</span></button>
-<button class="tab-btn" data-tab="practice" onclick="switchTab('practice')">🧮 Practice <span class="tab-check">✓</span></button>
+
 <button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">🌟 Show What You Know <span class="tab-check">✓</span></button>
 </div>
 <div class="tab-panel active" id="tab-warmup">
@@ -427,40 +427,7 @@
 </div></div>
 
 <div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">Why is 6 × 0 different from 6 × 1, even though 0 and 1 are right next to each other?</p><div class="journal-label">✏️ <span class="saved-dot" id="ds1"></span></div><textarea class="journal-box" data-label="Learn socratic" id="j-s1" oninput="autoSave(this,'ds1')"></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Zero, one, identity. Four rules to remember.</p><button class="tab-next-btn" onclick="switchTab('practice')">Continue to 🧮 Practice →</button></div>
-</div>
-<div class="tab-panel" id="tab-practice">
-<div class="callout callout-info"><span class="callout-icon">🧭</span><p>Four rules, lots of practice. Mix it up.</p></div>
-<div class="activity bl-coral"><div class="activity-head"><div class="activity-num" style="background:#E76F51;">1</div><div><div class="activity-title">Mixed × and ÷</div></div></div><div class="activity-body">
-<div class="fill-row"><strong>8 × 0 =</strong><input class="fill-input" id="p1-a" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>8 × 1 =</strong><input class="fill-input" id="p1-b" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>9 ÷ 1 =</strong><input class="fill-input" id="p1-c" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>9 ÷ 9 =</strong><input class="fill-input" id="p1-d" placeholder="?" type="number"/></div>
-<button class="check-btn" onclick="checkP1()">Check ✓</button>
-<div class="feedback-branch feedback-pass" id="p1-pass"><strong>✅ Yes!</strong> 0, 8, 9, 1. Each rule in action.</div>
-<div class="feedback-branch feedback-retry" id="p1-retry"><strong>🔄 Use the rules.</strong>
-<div class="hint-callout">8 × 0 = 0. 8 × 1 = 8. 9 ÷ 1 = 9. 9 ÷ 9 = 1.</div>
-<button class="orange-btn" onclick="resetP1()">↩ Reset</button>
-</div>
-</div></div>
-<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">2</div><div><div class="activity-title">Spot the Trick</div></div></div><div class="activity-body">
-<div class="task-box"><div class="task-label">Problem</div><p>Find each. Watch carefully — some have a 0 or 1.<br/>(a) 0 × 6 = ___  ·  (b) 1 × 12 = ___  ·  (c) 12 ÷ 12 = ___  ·  (d) 6 ÷ 1 = ___</p></div>
-<div class="journal-label">✏️ My answers <span class="saved-dot" id="dp2"></span></div>
-<textarea class="journal-box" data-label="Practice 2" id="j-p2" oninput="autoSave(this,'dp2')"></textarea>
-<div class="callout callout-tip"><span class="callout-icon">💡</span><p><strong>Answers:</strong> 0, 12, 1, 6.</p></div>
-</div></div>
-<div class="activity bl-coral"><div class="activity-head"><div class="activity-num" style="background:#E76F51;">3</div><div><div class="activity-title">Empty Boxes</div></div></div><div class="activity-body">
-<div class="task-box"><div class="task-label">Word problem</div><p>A shipment has 7 empty boxes. How many items in all the boxes together?</p></div>
-<div class="fill-row"><strong>Items in all:</strong><input class="fill-input" id="p3-a" placeholder="?" type="number"/></div>
-<button class="check-btn" onclick="checkP3()">Check ✓</button>
-<div class="feedback-branch feedback-pass" id="p3-pass"><strong>✅ Yes — 0 items.</strong> 7 × 0 = 0. Empty boxes hold nothing.</div>
-<div class="feedback-branch feedback-retry" id="p3-retry"><strong>🔄 Empty means 0 in each.</strong>
-<div class="hint-callout">7 boxes × 0 items each = ?</div>
-<button class="orange-btn" onclick="resetP3()">↩ Reset</button>
-</div>
-</div></div>
-<div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">If 8 ÷ 1 = 8 and 8 ÷ 8 = 1, what would 8 ÷ 0 equal? Why is this question different?</p><div class="journal-label">✏️ <span class="saved-dot" id="ds2"></span></div><textarea class="journal-box" data-label="Practice socratic" id="j-s2" oninput="autoSave(this,'ds2')"></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Four rules. Time to show what you know.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
+<div class="tab-next-wrap"><p class="tab-transition-voice">Zero, one, identity. Four rules to remember.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
 </div>
 <div class="tab-panel" id="tab-assignment">
 <div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">🎯</div><div><div class="activity-title">Ready Check</div></div></div><div class="activity-body">

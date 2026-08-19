@@ -500,7 +500,7 @@
 <div class="tab-bar" id="tabBar">
 <button class="tab-btn active" data-tab="warmup" onclick="switchTab('warmup')">🔍 Warm-Up <span class="tab-check">✓</span></button>
 <button class="tab-btn" data-tab="learn" onclick="switchTab('learn')">📐 Learn <span class="tab-check">✓</span></button>
-<button class="tab-btn" data-tab="practice" onclick="switchTab('practice')">🧮 Practice <span class="tab-check">✓</span></button>
+
 <button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">🌟 Show What You Know <span class="tab-check">✓</span></button>
 </div>
 <div class="tab-panel active" id="tab-warmup">
@@ -631,42 +631,7 @@
 </div></div>
 
 <div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">Why does 4 × 30 come out to 120 and not 12? Use the discs in your answer.</p><div class="journal-label">✏️ <span class="saved-dot" id="ds1"></span></div><textarea class="journal-box" data-label="Learn socratic" id="j-s1" oninput="autoSave(this,'ds1')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Same fact. Different discs. Time to practice.</p><button class="tab-next-btn" onclick="switchTab('practice')">Continue to 🧮 Practice →</button></div>
-</div>
-<div class="tab-panel" id="tab-practice">
-<div class="callout callout-info"><span class="callout-icon">🧭</span><p>For each problem, name the basic fact first. Then attach the right place.</p></div>
-<div class="activity bl-berry"><div class="activity-head"><div class="activity-num" style="background:var(--berry);">1</div><div><div class="activity-title">Quick Patterns</div></div></div><div class="activity-body">
-<p>Use 3 × 2 = 6 as the engine. Find:</p>
-<div class="fill-row"><strong>3 × 20 =</strong><input class="fill-input" id="p1-a" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>3 × 200 =</strong><input class="fill-input" id="p1-b" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>30 × 2 =</strong><input class="fill-input" id="p1-c" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>200 × 3 =</strong><input class="fill-input" id="p1-d" placeholder="?" type="number"/></div>
-<button class="check-btn" onclick="checkP1()">Check ✓</button>
-<div class="feedback-branch feedback-pass" id="p1-pass"><strong>✅</strong> 60, 600, 60, 600. The 6 keeps its shape — the place changes.</div>
-<div class="feedback-branch feedback-retry" id="p1-retry"><strong>🔄 Underneath each problem is 3 × 2 = 6.</strong>
-<div class="hint-callout">3 × 20 = 6 tens = 60.   3 × 200 = 6 hundreds = 600.</div>
-<button class="orange-btn" onclick="resetP1()">↩ Reset</button>
-</div>
-</div></div>
-<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">2</div><div><div class="activity-title">Build It</div></div></div><div class="activity-body">
-<div class="task-box"><div class="task-label">Problem</div><p>Find 4 × 30 using place-value discs. <strong>Sketch your discs</strong> in your journal, then write the equation and the product.</p></div>
-<div class="journal-label">✏️ My sketch + equation + product <span class="saved-dot" id="dp2"></span></div>
-<textarea class="journal-box" data-label="Practice 2" id="j-p2" oninput="autoSave(this,'dp2')" placeholder="" style="min-height:110px;"></textarea>
-<div class="callout callout-tip"><span class="callout-icon">💡</span><p><strong>Answer:</strong> 4 groups of 3 tens = 12 tens = 120. So 4 × 30 = 120.</p></div>
-</div></div>
-<div class="activity bl-berry"><div class="activity-head"><div class="activity-num" style="background:var(--berry);">3</div><div><div class="activity-title">Spot the Mistake</div></div></div><div class="activity-body">
-<div class="task-box"><div class="task-label">Hazel's claim</div><p>"5 × 40 = 20 because 5 × 4 = 20."</p></div>
-<p>Is Hazel correct? If not, fix it.</p>
-<div class="value-card-row">
-<div class="value-card" onclick="p3(this,false)"><div class="big">Correct</div><div class="small">5 × 40 = 20</div></div>
-<div class="value-card" onclick="p3(this,true)"><div class="big">Not correct</div><div class="small">5 × 40 = 200</div></div>
-</div>
-<div class="inline-feedback" id="p3-fb"></div>
-<div class="journal-label">✏️ Explain in one sentence. <span class="saved-dot" id="dp3"></span></div>
-<textarea class="journal-box" data-label="Practice 3 explanation" id="j-p3" oninput="autoSave(this,'dp3')" placeholder="" style="min-height:60px;"></textarea>
-</div></div>
-<div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">If you know 6 × 4 = 24, what's 6 × 400? How did you decide?</p><div class="journal-label">✏️ <span class="saved-dot" id="ds2"></span></div><textarea class="journal-box" data-label="Practice socratic" id="j-s2" oninput="autoSave(this,'ds2')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Same fact. Different place. Now show what you know.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
+<div class="tab-next-wrap"><p class="tab-transition-voice">Same fact. Different discs. Time to practice.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
 </div>
 <div class="tab-panel" id="tab-assignment">
 <div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">🎯</div><div><div class="activity-title">Ready Check</div></div></div><div class="activity-body">

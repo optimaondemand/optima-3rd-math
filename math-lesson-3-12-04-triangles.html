@@ -296,7 +296,7 @@
 <div class="tab-bar" id="tabBar">
 <button class="tab-btn active" data-tab="warmup" onclick="switchTab('warmup')">🔍 Warm-Up <span class="tab-check">✓</span></button>
 <button class="tab-btn" data-tab="learn" onclick="switchTab('learn')">📐 Learn <span class="tab-check">✓</span></button>
-<button class="tab-btn" data-tab="practice" onclick="switchTab('practice')">🧮 Practice <span class="tab-check">✓</span></button>
+
 <button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">🌟 Show What You Know <span class="tab-check">✓</span></button>
 </div>
 <!-- WARM-UP TAB -->
@@ -387,95 +387,9 @@
 <p style="font-family:'Lora',serif;background:#FAFBFF;border:2px solid #E2E8F4;border-radius:12px;padding:10px;text-align:center;font-size:20px;font-weight:900;margin-top:14px;">Both shapes are triangles: 3 sides, 3 angles, closed</p>
 </div></div>
 <div class="socratic-box"><div class="socratic-label">🔮 Think Deeper</div><p class="socratic-q">Can you make a triangle with 4 sides? Why or why not?</p><div class="journal-label">✏️ <span class="saved-dot" id="ds1"></span></div><textarea class="journal-box" data-label="Learn socratic" id="j-s101" oninput="autoSave(this,'ds1')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Three sides, three angles, closed — that’s all you need.</p><button class="tab-next-btn" onclick="switchTab('practice')">Continue to 🧮 Practice →</button></div>
+<div class="tab-next-wrap"><p class="tab-transition-voice">Three sides, three angles, closed — that’s all you need.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
 </div>
 <!-- PRACTICE TAB -->
-<div class="tab-panel" id="tab-practice">
-<div class="callout callout-info"><span class="callout-icon">🧭</span><p>You just built triangles on the grid. Now identify them on your own.</p></div>
-<div class="callout callout-tip"><span class="callout-icon">💡</span><p><strong>Before each problem, ask yourself:</strong> “Does it have exactly 3 straight sides? Is it closed?”</p></div>
-<div class="hint-callout">🔄 <strong>Stuck?</strong> Go back to Learn and build more triangles.</div>
-<!-- P1: simplest -->
-<div class="activity bl-geo"><div class="activity-head"><div class="activity-num" style="background:var(--geo);">1</div><div><div class="activity-title">Find the Triangle</div></div></div><div class="activity-body">
-<div class="task-box"><div class="task-label">Which shape is a triangle?</div>
-<div style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin:10px 0;">
-<div style="text-align:center;">
-<svg height="80" viewbox="0 0 100 100" width="80"><polygon fill="none" points="50,10 10,90 90,90" stroke="#5B52A8" stroke-width="3"></polygon></svg>
-<div style="font-size:12px;font-weight:800;">Shape 1</div>
-</div>
-<div style="text-align:center;">
-<svg height="80" viewbox="0 0 100 100" width="80"><rect fill="none" height="80" stroke="#5B52A8" stroke-width="3" width="80" x="10" y="10"></rect></svg>
-<div style="font-size:12px;font-weight:800;">Shape 2</div>
-</div>
-<div style="text-align:center;">
-<svg height="80" viewbox="0 0 100 100" width="80"><polygon fill="none" points="50,10 90,40 75,90 25,90 10,40" stroke="#5B52A8" stroke-width="3"></polygon></svg>
-<div style="font-size:12px;font-weight:800;">Shape 3</div>
-</div>
-<div style="text-align:center;">
-<svg height="80" viewbox="0 0 100 100" width="80"><circle cx="50" cy="50" fill="none" r="40" stroke="#5B52A8" stroke-width="3"></circle></svg>
-<div style="font-size:12px;font-weight:800;">Shape 4</div>
-</div>
-</div>
-</div>
-<div class="value-card-row">
-<div class="value-card" onclick="checkP1(this,true)"><div class="big">Shape 1</div></div>
-<div class="value-card" onclick="checkP1(this,false)"><div class="big">Shape 2</div></div>
-<div class="value-card" onclick="checkP1(this,false)"><div class="big">Shape 3</div></div>
-<div class="value-card" onclick="checkP1(this,false)"><div class="big">Shape 4</div></div>
-</div>
-<div class="inline-feedback" id="p1-fb"></div>
-<div class="feedback-branch feedback-pass" id="p1-pass"><strong>✅</strong> Shape 1 is the triangle — 3 straight sides, 3 angles, closed.
-      
-</div>
-<div class="feedback-branch feedback-retry" id="p1-retry"><strong>🔄 Count the sides on each shape. A triangle has exactly 3.</strong>
-
-<button class="orange-btn" onclick="resetP(1)">↩ Reset</button>
-</div>
-</div></div>
-<!-- P2: varied -->
-<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">2</div><div><div class="activity-title">Rotated Triangles</div></div></div><div class="activity-body">
-<div class="task-box"><div class="task-label">How many of these shapes are triangles?</div>
-<div style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin:10px 0;">
-<svg height="80" viewbox="0 0 100 100" width="80"><polygon fill="none" points="50,90 10,10 90,10" stroke="#5B52A8" stroke-width="3"></polygon></svg>
-<svg height="80" viewbox="0 0 100 100" width="80"><polygon fill="none" points="10,50 90,10 90,90" stroke="#5B52A8" stroke-width="3"></polygon></svg>
-<svg height="80" viewbox="0 0 100 100" width="80"><polygon fill="none" points="50,10 10,90 90,90" stroke="#5B52A8" stroke-width="3"></polygon></svg>
-</div>
-</div>
-<div class="fill-row"><strong>Number of triangles:</strong><input class="fill-input" id="p2-ans" placeholder="" type="number"/></div>
-<button class="check-btn" onclick="checkP2()">Check ✓</button>
-<div class="feedback-branch feedback-pass" id="p2-pass"><strong>✅</strong> All 3 are triangles! Turning a triangle upside-down or sideways doesn’t change what it is. Still 3 sides, still 3 angles, still closed.
-      
-</div>
-<div class="feedback-branch feedback-retry" id="p2-retry"><strong>🔄 Count the sides on each shape. Does rotating a triangle change how many sides it has?</strong>
-
-<button class="orange-btn" onclick="resetP(2)">↩ Reset</button>
-</div>
-</div></div>
-<!-- P3: judgment -->
-<div class="activity bl-slate"><div class="activity-head"><div class="activity-num" style="background:#3A6B9A;">3</div><div><div class="activity-title">Is This a Triangle?</div></div></div><div class="activity-body">
-<div class="task-box"><div class="task-label">Look carefully</div>
-<svg height="160" style="display:block;margin:10px auto;" viewbox="0 0 200 180" width="180">
-<line stroke="#5B52A8" stroke-width="3" x1="100" x2="20" y1="10" y2="170"></line>
-<line stroke="#5B52A8" stroke-width="3" x1="20" x2="160" y1="170" y2="170"></line>
-<line stroke="#5B52A8" stroke-dasharray="6,4" stroke-width="3" x1="160" x2="100" y1="170" y2="50"></line>
-</svg>
-<p>Is this a triangle? (Notice the gap between two sides.)</p>
-</div>
-<div class="value-card-row">
-<div class="value-card" onclick="p3(this,false)"><div class="big">Yes</div></div>
-<div class="value-card" onclick="p3(this,true)"><div class="big">No</div></div>
-</div>
-<div class="inline-feedback" id="p3-fb"></div>
-<div class="feedback-branch feedback-pass" id="p3-pass"><strong>✅</strong> Not a triangle — it’s not closed. The sides don’t connect completely. A triangle must be a closed shape.
-      
-</div>
-<div class="feedback-branch feedback-retry" id="p3-retry"><strong>🔄 Look at the dashed line — the sides don’t fully connect. A triangle must be closed.</strong>
-
-<button class="orange-btn" onclick="resetP(3)">↩ Reset</button>
-</div>
-</div></div>
-<div class="socratic-box"><div class="socratic-label">🔮 Think Deeper</div><p class="socratic-q">If all triangles have 3 sides, what makes one triangle different from another?</p><div class="journal-label">✏️ <span class="saved-dot" id="ds2"></span></div><textarea class="journal-box" data-label="Practice socratic" id="j-s201" oninput="autoSave(this,'ds2')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Three sides, three angles, closed — you’ve got the test.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
-</div>
 <!-- SHOW WHAT YOU KNOW TAB -->
 <div class="tab-panel" id="tab-assignment">
 <div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">🎯</div><div><div class="activity-title">Ready Check</div></div></div><div class="activity-body">
@@ -598,9 +512,9 @@ function tbDraw(){
 function checkP1(c,ok){c.parentElement.querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});hideBranches('p1');if(ok){c.classList.add('good');showBranch('p1-pass');mini(c);}else{c.classList.add('bad');showBranch('p1-retry');}}
 function checkP2(){hideBranches('p2');var v=parseInt(document.getElementById('p2-ans').value,10);var el=document.getElementById('p2-ans');el.classList.remove('good','bad');if(v===3){el.classList.add('good');showBranch('p2-pass');mini(el);}else{el.classList.add('bad');showBranch('p2-retry');}}
 function p3(c,ok){c.parentElement.querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});hideBranches('p3');if(ok){c.classList.add('good');showBranch('p3-pass');mini(c);}else{c.classList.add('bad');showBranch('p3-retry');}}
-function resetP(n){if(n===1){document.querySelectorAll('#tab-practice .activity:first-child .value-card').forEach(function(x){x.classList.remove('good','bad');});hideBranches('p1');}
+function resetP(n){if(n===1){document.querySelectorAll('.REMOVED-PRACTICE').forEach(function(x){x.classList.remove('good','bad');});hideBranches('p1');}
 if(n===2){document.getElementById('p2-ans').value='';document.getElementById('p2-ans').classList.remove('good','bad');hideBranches('p2');}
-if(n===3){var cards=document.querySelectorAll('#tab-practice .activity:last-of-type .value-card');if(cards)cards.forEach(function(x){x.classList.remove('good','bad');});document.getElementById('p3-fb').className='inline-feedback';hideBranches('p3');}}
+if(n===3){var cards=document.querySelectorAll('.REMOVED-PRACTICE');if(cards)cards.forEach(function(x){x.classList.remove('good','bad');});document.getElementById('p3-fb').className='inline-feedback';hideBranches('p3');}}
 
 /* Ready Check */
 function eA(c,ok){c.parentElement.querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});var f=document.getElementById('eA-fb');if(ok){c.classList.add('good');f.className='inline-feedback show good';f.innerHTML='<strong>&#x2705;</strong> Every triangle has exactly 3 sides.';mini(c);}else{c.classList.add('bad');f.className='inline-feedback show think';f.innerHTML='&#8220;Tri&#8221; means three. A triangle always has 3 sides.';}}

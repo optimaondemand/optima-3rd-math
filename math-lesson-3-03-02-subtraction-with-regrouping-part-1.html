@@ -341,7 +341,7 @@
 <div class="tab-bar" id="tabBar">
 <button class="tab-btn active" data-tab="warmup" onclick="switchTab('warmup')">🔍 Warm-Up <span class="tab-check">✓</span></button>
 <button class="tab-btn" data-tab="learn" onclick="switchTab('learn')">📐 Learn <span class="tab-check">✓</span></button>
-<button class="tab-btn" data-tab="practice" onclick="switchTab('practice')">🧮 Practice <span class="tab-check">✓</span></button>
+
 <button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">🌟 Show What You Know <span class="tab-check">✓</span></button>
 </div>
 <!-- ═══════════ WARM-UP ═══════════ -->
@@ -568,65 +568,9 @@
 </div></div>
 
 <div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">When you unbundle 1 ten into 10 ones, the TOTAL amount in the top number doesn't change. Why is that — even though the digits look different?</p><div class="journal-label">✏️ My reasoning <span class="saved-dot" id="dot-soc1"></span></div><textarea class="journal-box" data-label="Learn — Socratic: total amount stays the same" id="journal-soc1" oninput="autoSave(this,'dot-soc1')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Stack, subtract right to left, unbundle when too small. Your turn.</p><button class="tab-next-btn" onclick="switchTab('practice')">Continue to 🧮 Practice →</button></div>
+<div class="tab-next-wrap"><p class="tab-transition-voice">Stack, subtract right to left, unbundle when too small. Your turn.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
 </div>
 <!-- ═══════════ PRACTICE ═══════════ -->
-<div class="tab-panel" id="tab-practice">
-<div class="callout callout-info"><span class="callout-icon">🧭</span><p>You saw <strong>8,420 − 3,363 = 5,057</strong> with two unbundles. Practice gives you four problems and one word problem.</p></div>
-<div class="callout callout-think"><span class="callout-icon">🧠</span><p><strong>For each problem:</strong> stack, go right to left, unbundle when the top is too small.</p></div>
-<div class="activity bl-teal"><div class="activity-head"><div class="activity-num" style="background:#1A8A9A;">1</div><div><div class="activity-title">Stack and Subtract</div><div class="activity-sub">Four problems. Watch the unbundles.</div></div><span class="activity-time" style="background:#1A8A9A;">~6 min</span></div><div class="activity-body">
-<div class="bubble-row">
-<div class="bubble felix"><div class="bubble-avatar">F</div><div class="bubble-body"><div class="bubble-name">Felix — shortcut</div><div class="bubble-text">"Before each column, ask: 'Top minus bottom — can I do it?' If yes, subtract. If no, unbundle first, then subtract."</div></div></div>
-</div>
-<div class="fill-row"><strong>5,483 − 3,397 =</strong><input class="fill-input" id="p1-a" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>4,206 − 335 =</strong><input class="fill-input" id="p1-b" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>7,123 − 1,456 =</strong><input class="fill-input" id="p1-c" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>3,183 − 2,346 =</strong><input class="fill-input" id="p1-d" placeholder="?" type="number"/></div>
-<button class="check-btn" onclick="checkP1()">Check My Answers ✓</button>
-<div class="feedback-branch feedback-pass" id="p1-pass"><strong>✅ Yes!</strong> 5,483−3,397=2,086. 4,206−335=3,871. 7,123−1,456=5,667. 3,183−2,346=837.
-      <div class="bubble-row" style="margin-top:10px;"><div class="bubble cora"><div class="bubble-avatar">C</div><div class="bubble-body"><div class="bubble-name">Cora — checking the work</div><div class="bubble-text">"Add-check: 2,086+3,397=5,483 ✓. 3,871+335=4,206 ✓. 5,667+1,456=7,123 ✓. 837+2,346=3,183 ✓. Every subtraction has an addition that proves it."</div></div></div></div>
-
-</div>
-<div class="feedback-branch feedback-retry" id="p1-retry"><strong>🔄 Stack, subtract right to left, unbundle when needed.</strong>
-<div class="hint-callout">5,483−3,397: ones 3−7 unbundle. Tens 7−9 (after unbundle) unbundle again. Hundreds 3−3=0. Thousands 5−3=2.  ·  4,206−335: line up by ones. Tens 0−3 unbundle from hundreds.  ·  7,123−1,456: unbundles in ones and tens.  ·  3,183−2,346: ones 3−6 unbundle.</div>
-<button class="orange-btn" onclick="resetP1()">↩ Reset and Try Again</button>
-</div>
-</div></div>
-<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">2</div><div><div class="activity-title">Show Your Unbundles</div><div class="activity-sub">Write each column step.</div></div><span class="activity-time" style="background:#2DB87A;">~4 min</span></div><div class="activity-body">
-<div class="bubble-row">
-<div class="bubble hazel"><div class="bubble-avatar">H</div><div class="bubble-body"><div class="bubble-name">Hazel — show the marks</div><div class="bubble-text">"Cross out the original top digit when you unbundle it. Write the new digit above. That way you don't forget which column has been changed."</div></div></div>
-</div>
-<div class="task-box"><div class="task-label">Problem</div><p>Find <strong>4,444 − 888</strong>. Show your stack and every unbundle.</p></div>
-<div class="journal-label">✏️ My stack + difference <span class="saved-dot" id="dot-p2"></span></div>
-<textarea class="journal-box" data-label="Practice 2 — 4444-888 show unbundles" id="journal-p2" oninput="autoSave(this,'dot-p2')" placeholder="Stack:
-          4 , 4 4 4
-       −     8 8 8
-       ─────────
-Ones: 4 − 8 → unbundle. Tens 4 becomes ___, ones 4 becomes ___. ___ − 8 = ___
-Tens: ___ − 8 → unbundle? ___ − 8 = ___
-Hundreds: ___ − 8 → unbundle? ___ − 8 = ___
-Thousands: ___ − 0 = ___
-Difference: ___" style="min-height:170px;"></textarea>
-<div class="callout callout-tip" style="margin-top:10px;"><span class="callout-icon">💡</span><p><strong>Answer:</strong> 4,444 − 888 = 3,556. Three unbundles needed — one for each non-thousands column. Watch how the tops shrink each time.</p></div>
-</div></div>
-<div class="activity bl-teal"><div class="activity-head"><div class="activity-num" style="background:#1A8A9A;">3</div><div><div class="activity-title">Aki's Beads — How Many Left?</div><div class="activity-sub">A word problem using stacking.</div></div></div><div class="activity-body">
-<div class="bubble-row">
-<div class="bubble atlas"><div class="bubble-avatar">A</div><div class="bubble-body"><div class="bubble-name">Atlas — concrete</div><div class="bubble-text">"Subtraction word problems work the same way. Find the two numbers, stack them — bigger on top — and subtract."</div></div></div>
-</div>
-<div class="task-box"><div class="task-label">Word problem</div><p>Aki had <strong>6,302 beads</strong> for her art projects. She has already used <strong>1,847 beads</strong>. How many beads does Aki have left?</p></div>
-<div class="fill-row"><strong>Beads left:</strong><input class="fill-input" id="p3-a" placeholder="?" type="number"/></div>
-<button class="check-btn" onclick="checkP3()">Check My Answer ✓</button>
-<div class="feedback-branch feedback-pass" id="p3-pass"><strong>✅ Yes — 4,455 beads.</strong> Ones: 2 − 7 → unbundle (tens 0 becomes... wait, tens is already 0 — that's tomorrow's lesson!). For now: tens 0 borrows from hundreds 3 (now 2), then tens 0 becomes 10, lend 1 to ones (tens becomes 9), ones 2 becomes 12. 12−7=5. Tens 9−4=5. Hundreds 2−8 → unbundle from thousands 6 (now 5), hundreds 2 becomes 12. 12−8=4. Thousands 5−1=4.
-      <div class="bubble-row" style="margin-top:10px;"><div class="bubble cora"><div class="bubble-avatar">C</div><div class="bubble-body"><div class="bubble-name">Cora — checking the work</div><div class="bubble-text">"Add-check: 4,455 + 1,847 = 6,302 ✓. The math holds."</div></div></div></div>
-</div>
-<div class="feedback-branch feedback-retry" id="p3-retry"><strong>🔄 Stack 6,302 on top of 1,847.</strong>
-<div class="hint-callout">Ones: 2 − 7 — unbundle from tens. Be careful: tens digit is 0, so you'll need to unbundle the hundreds first to give the tens something to lend. (This is a sneak peek of tomorrow's lesson!)</div>
-<button class="orange-btn" onclick="resetP3()">↩ Reset and Try Again</button>
-</div>
-</div></div>
-<div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">When you unbundle a ten, the tens digit goes DOWN by 1 and the ones digit goes UP by 10. Why isn't that "cheating" — adding 10 to one side without adding it to the bottom number too?</p><div class="journal-label">✏️ My reasoning <span class="saved-dot" id="dot-soc2"></span></div><textarea class="journal-box" data-label="Practice — Socratic: why unbundling isn't cheating" id="journal-soc2" oninput="autoSave(this,'dot-soc2')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Stack, subtract right to left, unbundle when too small. Time to show what you know.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
-</div>
 <!-- ═══════════ SHOW WHAT YOU KNOW ═══════════ -->
 <div class="tab-panel" id="tab-assignment">
 <div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">🎯</div><div><div class="activity-title">Ready Check</div><div class="activity-sub">Two quick questions.</div></div></div><div class="activity-body">

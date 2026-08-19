@@ -337,7 +337,7 @@
 <div class="tab-bar" id="tabBar">
 <button class="tab-btn active" data-tab="warmup" onclick="switchTab('warmup')">🔍 Warm-Up <span class="tab-check">✓</span></button>
 <button class="tab-btn" data-tab="learn" onclick="switchTab('learn')">📐 Learn <span class="tab-check">✓</span></button>
-<button class="tab-btn" data-tab="practice" onclick="switchTab('practice')">🧮 Practice <span class="tab-check">✓</span></button>
+
 <button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">🌟 Show What You Know <span class="tab-check">✓</span></button>
 </div>
 <!-- ═══════════ WARM-UP ═══════════ -->
@@ -525,60 +525,9 @@
 </div></div>
 
 <div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">When numbers are very different in size (like 4,223 and 758), should you round BOTH to the same place — or each one separately? Why?</p><div class="journal-label">✏️ My reasoning <span class="saved-dot" id="dot-soc1"></span></div><textarea class="journal-box" data-label="Learn — Socratic: round both same or separately" id="journal-soc1" oninput="autoSave(this,'dot-soc1')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Same recipe, more rounding choices. Try a few.</p><button class="tab-next-btn" onclick="switchTab('practice')">Continue to 🧮 Practice →</button></div>
+<div class="tab-next-wrap"><p class="tab-transition-voice">Same recipe, more rounding choices. Try a few.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
 </div>
 <!-- ═══════════ PRACTICE ═══════════ -->
-<div class="tab-panel" id="tab-practice">
-<div class="callout callout-info"><span class="callout-icon">🧭</span><p>You saw two estimates for 4,223 + 758. Practice gives you more — estimate each one and compare.</p></div>
-<div class="callout callout-think"><span class="callout-icon">🧠</span><p><strong>For each problem:</strong> round each number to a good place, then add or subtract the rounded numbers.</p></div>
-<div class="activity bl-teal"><div class="activity-head"><div class="activity-num" style="background:#1A8A9A;">1</div><div><div class="activity-title">Estimate Each (Hundreds)</div><div class="activity-sub">Four problems. Round each to the nearest HUNDRED.</div></div><span class="activity-time" style="background:#1A8A9A;">~5 min</span></div><div class="activity-body">
-<div class="bubble-row">
-<div class="bubble felix"><div class="bubble-avatar">F</div><div class="bubble-body"><div class="bubble-name">Felix — shortcut</div><div class="bubble-text">"Round each number to nearest 100, then add or subtract the rounded numbers. You'll get an estimate in seconds."</div></div></div>
-</div>
-<div class="fill-row"><strong>5,986 + 76 ≈</strong><input class="fill-input" id="p1-a" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>3,008 − 754 ≈</strong><input class="fill-input" id="p1-b" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>9,721 − 4,907 ≈</strong><input class="fill-input" id="p1-c" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>4,589 + 5,125 ≈</strong><input class="fill-input" id="p1-d" placeholder="?" type="number"/></div>
-<button class="check-btn" onclick="checkP1()">Check My Answers ✓</button>
-<div class="feedback-branch feedback-pass" id="p1-pass"><strong>✅ Yes!</strong> Estimates accepted: 5,986+76 ≈ 6,000+100=6,100 (or 6,000+80=6,080). 3,008−754 ≈ 3,000−800=2,200. 9,721−4,907 ≈ 9,700−4,900=4,800. 4,589+5,125 ≈ 4,600+5,100=9,700.
-      <div class="bubble-row" style="margin-top:10px;"><div class="bubble cora"><div class="bubble-avatar">C</div><div class="bubble-body"><div class="bubble-name">Cora — checking the work</div><div class="bubble-text">"Actuals: 6,062. 2,254. 4,814. 9,714. The estimates are all close — a good sign your rounding was reasonable."</div></div></div></div>
-</div>
-<div class="feedback-branch feedback-retry" id="p1-retry"><strong>🔄 Round each to hundreds, then compute.</strong>
-<div class="hint-callout">(a) 5,986→6,000, 76→100 (or 80) → 6,100 (or 6,080).  ·  (b) 3,008→3,000, 754→800 → 2,200.  ·  (c) 9,721→9,700, 4,907→4,900 → 4,800.  ·  (d) 4,589→4,600, 5,125→5,100 → 9,700.</div>
-<button class="orange-btn" onclick="resetP1()">↩ Reset and Try Again</button>
-</div>
-</div></div>
-<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">2</div><div><div class="activity-title">Closer to Which Thousand?</div><div class="activity-sub">Use rounding to decide quickly.</div></div><span class="activity-time" style="background:#2DB87A;">~4 min</span></div><div class="activity-body">
-<div class="bubble-row">
-<div class="bubble hazel"><div class="bubble-avatar">H</div><div class="bubble-body"><div class="bubble-name">Hazel — round both first</div><div class="bubble-text">"Round each number to the nearest thousand first. The estimate tells you the right ballpark."</div></div></div>
-</div>
-<div class="task-box"><div class="task-label">Problem</div><p>Is the value of <strong>4,299 + 3,467</strong> closer to <strong>7,000</strong> or <strong>8,000</strong>? Show your rounding.</p></div>
-<div class="journal-label">✏️ My rounding + estimate + answer <span class="saved-dot" id="dot-p2"></span></div>
-<textarea class="journal-box" data-label="Practice 2 — closer to 7000 or 8000" id="journal-p2" oninput="autoSave(this,'dot-p2')" placeholder="Round 4,299 to nearest 1,000: ___
-Round 3,467 to nearest 1,000: ___
-Estimate: ___ + ___ = ___
-Closer to: ___" style="min-height:140px;"></textarea>
-<div class="callout callout-tip" style="margin-top:10px;"><span class="callout-icon">💡</span><p><strong>Answer:</strong> 4,299 rounds to 4,000. 3,467 rounds to 3,000. Estimate: 4,000 + 3,000 = 7,000. But actual is 7,766 — actually closer to <strong>8,000</strong>! That's because both numbers rounded DOWN, so the real sum is a bit bigger than the rounded sum. Estimating to a smaller place (hundreds) would give 4,300 + 3,500 = 7,800 — much closer.</p></div>
-</div></div>
-<div class="activity bl-teal"><div class="activity-head"><div class="activity-num" style="background:#1A8A9A;">3</div><div><div class="activity-title">Computer Sale (Apply It)</div><div class="activity-sub">A real-world estimate.</div></div></div><div class="activity-body">
-<div class="bubble-row">
-<div class="bubble atlas"><div class="bubble-avatar">A</div><div class="bubble-body"><div class="bubble-name">Atlas — concrete</div><div class="bubble-text">"For shopping math, round each price to make the comparison easy. The estimate tells you which is cheaper without exact math."</div></div></div>
-</div>
-<div class="task-box"><div class="task-label">Word problem</div><p>Computer A costs <strong>$2,413</strong>, on sale for <strong>$450 less</strong>. Computer B costs <strong>$3,183</strong>, on sale for <strong>$699 less</strong>.</p><p>About how much does each cost after the sale? Which is cheaper?</p></div>
-<div class="fill-row"><strong>Computer A ≈ $</strong><input class="fill-input" id="p3-a" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>Computer B ≈ $</strong><input class="fill-input" id="p3-b" placeholder="?" type="number"/></div>
-<button class="check-btn" onclick="checkP3()">Check My Answers ✓</button>
-<div class="feedback-branch feedback-pass" id="p3-pass"><strong>✅ Yes!</strong> Computer A ≈ $2,000 (2,400−500) or $1,950 (2,400−450). Computer B ≈ $2,500 (3,200−700). Computer A is cheaper. Actuals: A=$1,963, B=$2,484.
-      <div class="bubble-row" style="margin-top:10px;"><div class="bubble cora"><div class="bubble-avatar">C</div><div class="bubble-body"><div class="bubble-name">Cora — checking the work</div><div class="bubble-text">"Without exact math, you can tell Computer A is the cheaper option. That's the power of a good estimate."</div></div></div></div>
-</div>
-<div class="feedback-branch feedback-retry" id="p3-retry"><strong>🔄 Round each price, then subtract the discount.</strong>
-<div class="hint-callout">A: 2,413→2,400, 450→500 (or 450). 2,400−500=1,900.  ·  B: 3,183→3,200, 699→700. 3,200−700=2,500. Computer A is cheaper.</div>
-<button class="orange-btn" onclick="resetP3()">↩ Reset and Try Again</button>
-</div>
-</div></div>
-<div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">Estimating helps you check whether an exact answer "looks right." If you compute 4,223 + 758 by hand and get 12,981 — does the estimate (≈5,000) help you spot the mistake? How?</p><div class="journal-label">✏️ My reasoning <span class="saved-dot" id="dot-soc2"></span></div><textarea class="journal-box" data-label="Practice — Socratic: estimating to catch mistakes" id="journal-soc2" oninput="autoSave(this,'dot-soc2')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Round to the place that fits. Add or subtract. Use the estimate to check yourself.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
-</div>
 <!-- ═══════════ SHOW WHAT YOU KNOW ═══════════ -->
 <div class="tab-panel" id="tab-assignment">
 <div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">🎯</div><div><div class="activity-title">Ready Check</div><div class="activity-sub">Two quick questions.</div></div></div><div class="activity-body">

@@ -345,7 +345,7 @@
 <div class="tab-bar" id="tabBar">
 <button class="tab-btn active" data-tab="warmup" onclick="switchTab('warmup')">🔍 Warm-Up <span class="tab-check">✓</span></button>
 <button class="tab-btn" data-tab="learn" onclick="switchTab('learn')">📐 Learn <span class="tab-check">✓</span></button>
-<button class="tab-btn" data-tab="practice" onclick="switchTab('practice')">🧮 Practice <span class="tab-check">✓</span></button>
+
 <button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">🌟 Show What You Know <span class="tab-check">✓</span></button>
 </div>
 <!-- ═══════════ WARM-UP ═══════════ -->
@@ -573,65 +573,9 @@
 </div></div>
 
 <div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">Why do we add from RIGHT to LEFT instead of left to right? What would go wrong if you tried left to right?</p><div class="journal-label">✏️ My reasoning <span class="saved-dot" id="dot-soc1"></span></div><textarea class="journal-box" data-label="Learn — Socratic: why right to left" id="journal-soc1" oninput="autoSave(this,'dot-soc1')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Stack, add column by column, regroup when a column overflows. Your turn.</p><button class="tab-next-btn" onclick="switchTab('practice')">Continue to 🧮 Practice →</button></div>
+<div class="tab-next-wrap"><p class="tab-transition-voice">Stack, add column by column, regroup when a column overflows. Your turn.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
 </div>
 <!-- ═══════════ PRACTICE ═══════════ -->
-<div class="tab-panel" id="tab-practice">
-<div class="callout callout-info"><span class="callout-icon">🧭</span><p>You saw <strong>1,458 + 1,905 = 3,363</strong> with two regroups. Practice gives you four more problems and a word problem.</p></div>
-<div class="callout callout-think"><span class="callout-icon">🧠</span><p><strong>For each problem:</strong> stack the numbers, add right to left, regroup when a column overflows.</p></div>
-<div class="activity bl-teal"><div class="activity-head"><div class="activity-num" style="background:#1A8A9A;">1</div><div><div class="activity-title">Stack and Add</div><div class="activity-sub">Four problems. Watch where regrouping happens.</div></div><span class="activity-time" style="background:#1A8A9A;">~6 min</span></div><div class="activity-body">
-<div class="bubble-row">
-<div class="bubble felix"><div class="bubble-avatar">F</div><div class="bubble-body"><div class="bubble-name">Felix — shortcut</div><div class="bubble-text">"As you add each column, ask yourself: 'Did I hit 10 or more?' If yes, write the ones digit and carry a 1 up. Same dance, every column."</div></div></div>
-</div>
-<div class="fill-row"><strong>7,625 + 1,835 =</strong><input class="fill-input" id="p1-a" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>3,875 + 3,249 =</strong><input class="fill-input" id="p1-b" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>683 + 8,279 =</strong><input class="fill-input" id="p1-c" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>9,344 + 466 =</strong><input class="fill-input" id="p1-d" placeholder="?" type="number"/></div>
-<button class="check-btn" onclick="checkP1()">Check My Answers ✓</button>
-<div class="feedback-branch feedback-pass" id="p1-pass"><strong>✅ Yes!</strong> 7,625+1,835=9,460. 3,875+3,249=7,124. 683+8,279=8,962. 9,344+466=9,810.
-      <div class="bubble-row" style="margin-top:10px;"><div class="bubble cora"><div class="bubble-avatar">C</div><div class="bubble-body"><div class="bubble-name">Cora — checking the work</div><div class="bubble-text">"Estimate-check: 8,000+2,000=10,000 — my 9,460 is close ✓. 4,000+3,000=7,000 — my 7,124 is close ✓. 700+8,000=8,700 — my 8,962 is close ✓. 9,000+500=9,500 — my 9,810 is close ✓."</div></div></div></div>
-
-</div>
-<div class="feedback-branch feedback-retry" id="p1-retry"><strong>🔄 Stack, add right to left, regroup when needed.</strong>
-<div class="hint-callout">7,625+1,835: ones 5+5=10 → regroup. Tens 2+3+1=6. Hundreds 6+8=14 → regroup.  ·  3,875+3,249: ones 5+9=14, tens 7+4+1=12, hundreds 8+2+1=11, thousands 3+3+1=7.  ·  683+8,279: line up by ones. Thousands of 683 is empty.  ·  9,344+466: line up by ones. Hundreds of 466 is 4, thousands is empty.</div>
-<button class="orange-btn" onclick="resetP1()">↩ Reset and Try Again</button>
-</div>
-</div></div>
-<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">2</div><div><div class="activity-title">Build Your Own Stack</div><div class="activity-sub">Different lengths — line them up by ones.</div></div><span class="activity-time" style="background:#2DB87A;">~5 min</span></div><div class="activity-body">
-<div class="bubble-row">
-<div class="bubble hazel"><div class="bubble-avatar">H</div><div class="bubble-body"><div class="bubble-name">Hazel — line up by ones</div><div class="bubble-text">"When one number is shorter, line them up by the ones column on the right. Leave the unused places empty (or imagine a zero there)."</div></div></div>
-</div>
-<div class="task-box"><div class="task-label">Problem</div><p>Find <strong>78 + 6,159</strong>. Stack the numbers carefully, then add. Show your work column by column.</p></div>
-<div class="journal-label">✏️ My stack + sum <span class="saved-dot" id="dot-p2"></span></div>
-<textarea class="journal-box" data-label="Practice 2 — Stack 78+6,159" id="journal-p2" oninput="autoSave(this,'dot-p2')" placeholder="Stack the numbers:
-          6, 1 5 9
-       +     7 8
-       ─────────
-Ones: 9 + 8 = ___ → write ___, regroup ___
-Tens: ___ + ___ + ___ = ___
-Hundreds: ___ + 0 = ___
-Thousands: ___ = ___
-Sum: ___" style="min-height:160px;"></textarea>
-<div class="callout callout-tip" style="margin-top:10px;"><span class="callout-icon">💡</span><p><strong>Answer:</strong> 78 + 6,159 = 6,237. Ones: 9+8=17 → write 7, regroup 1. Tens: 5+7+1=13 → write 3, regroup 1. Hundreds: 1+0+1=2. Thousands: 6.</p></div>
-</div></div>
-<div class="activity bl-teal"><div class="activity-head"><div class="activity-num" style="background:#1A8A9A;">3</div><div><div class="activity-title">Aki's Beads</div><div class="activity-sub">A word problem using stacking.</div></div></div><div class="activity-body">
-<div class="bubble-row">
-<div class="bubble atlas"><div class="bubble-avatar">A</div><div class="bubble-body"><div class="bubble-name">Atlas — concrete</div><div class="bubble-text">"Word problems still use the same stack. Find the numbers, stack them by ones, add right to left."</div></div></div>
-</div>
-<div class="task-box"><div class="task-label">Word problem</div><p>Aki used <strong>2,486 beads</strong> on her wall art and <strong>1,758 beads</strong> on her sculpture. How many beads did Aki use in all?</p></div>
-<div class="fill-row"><strong>Total beads:</strong><input class="fill-input" id="p3-a" placeholder="?" type="number"/></div>
-<button class="check-btn" onclick="checkP3()">Check My Answer ✓</button>
-<div class="feedback-branch feedback-pass" id="p3-pass"><strong>✅ Yes — 4,244 beads.</strong> Ones: 6+8=14 → write 4, regroup 1. Tens: 8+5+1=14 → write 4, regroup 1. Hundreds: 4+7+1=12 → write 2, regroup 1. Thousands: 2+1+1=4.
-      <div class="bubble-row" style="margin-top:10px;"><div class="bubble cora"><div class="bubble-avatar">C</div><div class="bubble-body"><div class="bubble-name">Cora — checking the work</div><div class="bubble-text">"Estimate-check: 2,500 + 1,800 ≈ 4,300. My 4,244 is close to 4,300, so the answer is reasonable. ✓"</div></div></div></div>
-</div>
-<div class="feedback-branch feedback-retry" id="p3-retry"><strong>🔄 Stack 2,486 over 1,758 and add right to left.</strong>
-<div class="hint-callout">Ones: 6 + 8 = ___ (regroup needed?). Tens: 8 + 5 + carry = ___. Hundreds: 4 + 7 + carry = ___. Thousands: 2 + 1 + carry = ___.</div>
-<button class="orange-btn" onclick="resetP3()">↩ Reset and Try Again</button>
-</div>
-</div></div>
-<div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">When you regroup, the "1" you write at the top of the next column — is it really just a 1? Or does it stand for something bigger? Explain in your own words.</p><div class="journal-label">✏️ My reasoning <span class="saved-dot" id="dot-soc2"></span></div><textarea class="journal-box" data-label="Practice — Socratic: what does the regroup 1 really mean" id="journal-soc2" oninput="autoSave(this,'dot-soc2')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Stack, add right to left, regroup. Time to show what you know.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
-</div>
 <!-- ═══════════ SHOW WHAT YOU KNOW ═══════════ -->
 <div class="tab-panel" id="tab-assignment">
 <div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">🎯</div><div><div class="activity-title">Ready Check</div><div class="activity-sub">Two quick questions.</div></div></div><div class="activity-body">

@@ -308,7 +308,7 @@
 <div class="tab-bar" id="tabBar">
 <button class="tab-btn active" data-tab="warmup" onclick="switchTab('warmup')">🔍 Warm-Up <span class="tab-check">✓</span></button>
 <button class="tab-btn" data-tab="learn" onclick="switchTab('learn')">📐 Learn <span class="tab-check">✓</span></button>
-<button class="tab-btn" data-tab="practice" onclick="switchTab('practice')">🧮 Practice <span class="tab-check">✓</span></button>
+
 <button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">🌟 Show What You Know <span class="tab-check">✓</span></button>
 </div>
 <div class="tab-panel active" id="tab-warmup">
@@ -434,42 +434,7 @@
 </div></div>
 
 <div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">What happens if you mix up Step 1 and Step 2 — do them in the wrong order? Try it on the fruit problem.</p><div class="journal-label">✏️ <span class="saved-dot" id="ds1"></span></div><textarea class="journal-box" data-label="Learn socratic" id="j-s1" oninput="autoSave(this,'ds1')"></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Plan first. Compute second.</p><button class="tab-next-btn" onclick="switchTab('practice')">Continue to 🧮 Practice →</button></div>
-</div>
-<div class="tab-panel" id="tab-practice">
-<div class="callout callout-info"><span class="callout-icon">🧭</span><p>For each story, name Step 1 and Step 2 before solving.</p></div>
-<div class="activity bl-coral"><div class="activity-head"><div class="activity-num" style="background:#E76F51;">1</div><div><div class="activity-title">Crayons</div></div></div><div class="activity-body">
-<div class="task-box"><div class="task-label">Problem</div><p>Atlas bought 4 boxes of crayons. Each box had 8 crayons. He gave 12 to Hazel. How many does Atlas have left?</p></div>
-<div class="fill-row"><strong>Step 1: 4 × 8 =</strong><input class="fill-input" id="p1-m" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>Step 2: ___ − 12 =</strong><input class="fill-input" id="p1-f" placeholder="?" type="number"/></div>
-<button class="check-btn" onclick="checkP1()">Check ✓</button>
-<div class="feedback-branch feedback-pass" id="p1-pass"><strong>✅</strong> 32 then 20. Atlas has 20 crayons left.</div>
-<div class="feedback-branch feedback-retry" id="p1-retry"><strong>🔄 Step 1 = 32. Step 2 = 32 − 12.</strong>
-<div class="hint-callout">4 × 8 = 32 total. 32 − 12 = 20 left.</div>
-<button class="orange-btn" onclick="resetP1()">↩ Reset</button>
-</div>
-</div></div>
-<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">2</div><div><div class="activity-title">Fruit Bags</div></div></div><div class="activity-body">
-<div class="task-box"><div class="task-label">Problem</div><p>24 apples + 18 oranges packed equally into 6 bags. How many fruits per bag?</p></div>
-<div class="fill-row"><strong>Step 1: 24 + 18 =</strong><input class="fill-input" id="p2-m" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>Step 2: ___ ÷ 6 =</strong><input class="fill-input" id="p2-f" placeholder="?" type="number"/></div>
-<button class="check-btn" onclick="checkP2()">Check ✓</button>
-<div class="feedback-branch feedback-pass" id="p2-pass"><strong>✅</strong> 42 then 7. 7 fruits per bag.</div>
-<div class="feedback-branch feedback-retry" id="p2-retry"><strong>🔄 Step 1 = 42. Step 2 = 42 ÷ 6.</strong>
-<div class="hint-callout">Total first, then split into bags.</div>
-<button class="orange-btn" onclick="resetP2()">↩ Reset</button>
-</div>
-</div></div>
-<div class="activity bl-coral"><div class="activity-head"><div class="activity-num" style="background:#E76F51;">3</div><div><div class="activity-title">Stickers</div></div></div><div class="activity-body">
-<div class="task-box"><div class="task-label">Problem</div><p>Hazel has 3 packs of 5 stickers and 4 extra stickers. How many stickers in all?</p></div>
-<div class="journal-label">✏️ Step 1: ___ Step 2: ___ Answer: ___ <span class="saved-dot" id="dp3"></span></div>
-<textarea class="journal-box" data-label="Practice 3" id="j-p3" oninput="autoSave(this,'dp3')" placeholder="Step 1: 3 × 5 = 15
-Step 2: 15 + 4 = ___
-Hazel has ___ stickers." style="min-height:90px;"></textarea>
-<div class="callout callout-tip"><span class="callout-icon">💡</span><p><strong>Answer:</strong> 15 + 4 = 19 stickers.</p></div>
-</div></div>
-<div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">In a 2-step problem, what's a good way to check your answer makes sense at the end?</p><div class="journal-label">✏️ <span class="saved-dot" id="ds2"></span></div><textarea class="journal-box" data-label="Practice socratic" id="j-s2" oninput="autoSave(this,'ds2')"></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Plan, compute, check.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
+<div class="tab-next-wrap"><p class="tab-transition-voice">Plan first. Compute second.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
 </div>
 <div class="tab-panel" id="tab-assignment">
 <div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">🎯</div><div><div class="activity-title">Ready Check</div></div></div><div class="activity-body">

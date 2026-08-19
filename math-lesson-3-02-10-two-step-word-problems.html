@@ -348,7 +348,7 @@
 <div class="tab-bar" id="tabBar">
 <button class="tab-btn active" data-tab="warmup" onclick="switchTab('warmup')">🔍 Warm-Up <span class="tab-check">✓</span></button>
 <button class="tab-btn" data-tab="learn" onclick="switchTab('learn')">📐 Learn <span class="tab-check">✓</span></button>
-<button class="tab-btn" data-tab="practice" onclick="switchTab('practice')">🧮 Practice <span class="tab-check">✓</span></button>
+
 <button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">🌟 Show What You Know <span class="tab-check">✓</span></button>
 </div>
 <!-- ═══════════ WARM-UP ═══════════ -->
@@ -544,58 +544,9 @@
 </div></div>
 
 <div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">When you finish a two-step problem, your final answer comes from step 2. But step 1 is just as important — what would happen if you skipped it?</p><div class="journal-label">✏️ My reasoning <span class="saved-dot" id="dot-soc1"></span></div><textarea class="journal-box" data-label="Learn — Socratic: importance of step 1" id="journal-soc1" oninput="autoSave(this,'dot-soc1')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Find the hidden step. Solve it. Then solve the real one. Time to try a few.</p><button class="tab-next-btn" onclick="switchTab('practice')">Continue to 🧮 Practice →</button></div>
+<div class="tab-next-wrap"><p class="tab-transition-voice">Find the hidden step. Solve it. Then solve the real one. Time to try a few.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
 </div>
 <!-- ═══════════ PRACTICE ═══════════ -->
-<div class="tab-panel" id="tab-practice">
-<div class="callout callout-info"><span class="callout-icon">🧭</span><p>You saw <strong>600 − (280 + 195) = 125</strong> pages left, with a hidden step in the middle. Practice gives you three more — each with its own hidden middle.</p></div>
-<div class="callout callout-think"><span class="callout-icon">🧠</span><p><strong>For each problem:</strong> ask "what do I need to find first?" Then solve step 1, then step 2.</p></div>
-<div class="activity bl-violet"><div class="activity-head"><div class="activity-num" style="background:#6B3FA0;">1</div><div><div class="activity-title">Tree Farm Total</div><div class="activity-sub">The capstone anchor problem.</div></div><span class="activity-time" style="background:#6B3FA0;">~4 min</span></div><div class="activity-body">
-<div class="bubble-row">
-<div class="bubble felix"><div class="bubble-avatar">F</div><div class="bubble-body"><div class="bubble-name">Felix — shortcut</div><div class="bubble-text">"Whisper: 'What's missing that I need?' That's step 1. Then 'How does that get me the answer?' That's step 2."</div></div></div>
-</div>
-<div class="task-box"><div class="task-label">Problem</div><p>A tree farm planted <strong>380 spruce</strong> seedlings. It planted <strong>150 more fir</strong> seedlings than spruce. How many seedlings did the farm plant <strong>in all</strong>?</p></div>
-<div class="fill-row"><strong>Step 1 — fir seedlings:</strong><input class="fill-input" id="p1-a" placeholder="?" type="number"/></div>
-<div class="fill-row"><strong>Step 2 — total seedlings:</strong><input class="fill-input" id="p1-b" placeholder="?" type="number"/></div>
-<button class="check-btn" onclick="checkP1()">Check My Answers ✓</button>
-<div class="feedback-branch feedback-pass" id="p1-pass"><strong>✅ Yes!</strong> Step 1: 380 + 150 = 530 fir. Step 2: 380 + 530 = 910 total.
-      <div class="bubble-row" style="margin-top:10px;"><div class="bubble cora"><div class="bubble-avatar">C</div><div class="bubble-body"><div class="bubble-name">Cora — checking the work</div><div class="bubble-text">"Let's check: 910 total minus 380 spruce = 530 fir ✓. And 530 fir − 150 difference = 380 spruce ✓. The story holds."</div></div></div></div>
-
-</div>
-<div class="feedback-branch feedback-retry" id="p1-retry"><strong>🔄 Find fir first. Then add spruce + fir.</strong>
-<div class="hint-callout">Step 1: fir = 380 + 150 (more fir than spruce). Step 2: total = spruce + fir = 380 + (your answer from step 1).</div>
-<button class="orange-btn" onclick="resetP1()">↩ Reset and Try Again</button>
-</div>
-</div></div>
-<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">2</div><div><div class="activity-title">Write Out Both Steps</div><div class="activity-sub">Show your full work.</div></div><span class="activity-time" style="background:#2DB87A;">~5 min</span></div><div class="activity-body">
-<div class="bubble-row">
-<div class="bubble hazel"><div class="bubble-avatar">H</div><div class="bubble-body"><div class="bubble-name">Hazel — name the steps</div><div class="bubble-text">"Write step 1 and step 2 on separate lines. Label each with a sentence. That makes the hidden step VISIBLE."</div></div></div>
-</div>
-<div class="task-box"><div class="task-label">Problem</div><p>A bakery sold <strong>156 muffins</strong> on Friday. They sold <strong>89 more</strong> muffins on Saturday than on Friday. How many muffins did the bakery sell <strong>over the two days</strong>?</p></div>
-<div class="journal-label">✏️ Show both steps + final answer <span class="saved-dot" id="dot-p2"></span></div>
-<textarea class="journal-box" data-label="Practice 2 — Two-step bakery muffins" id="journal-p2" oninput="autoSave(this,'dot-p2')" placeholder="Step 1 — Saturday's muffins: 156 + 89 = ___
-Step 2 — Two-day total: 156 + ___ = ___
-Final answer: ___ muffins" style="min-height:130px;"></textarea>
-<div class="callout callout-tip" style="margin-top:10px;"><span class="callout-icon">💡</span><p><strong>Answer:</strong> Step 1: Saturday = 156 + 89 = 245. Step 2: total = 156 + 245 = 401 muffins.</p></div>
-</div></div>
-<div class="activity bl-violet"><div class="activity-head"><div class="activity-num" style="background:#6B3FA0;">3</div><div><div class="activity-title">How Many Are Left?</div><div class="activity-sub">A "leftover" two-step problem.</div></div></div><div class="activity-body">
-<div class="bubble-row">
-<div class="bubble atlas"><div class="bubble-avatar">A</div><div class="bubble-body"><div class="bubble-name">Atlas — concrete</div><div class="bubble-text">"Whenever 'left' shows up in a question with TWO take-aways, the hidden step is to combine the take-aways first."</div></div></div>
-</div>
-<div class="task-box"><div class="task-label">Word problem</div><p>Cora started with <strong>240 cookies</strong>. She gave <strong>85</strong> to her class and <strong>57</strong> to her neighbors. How many cookies does Cora have <strong>left</strong>?</p></div>
-<div class="fill-row"><strong>Cookies left:</strong><input class="fill-input" id="p3-a" placeholder="?" type="number"/></div>
-<button class="check-btn" onclick="checkP3()">Check My Answer ✓</button>
-<div class="feedback-branch feedback-pass" id="p3-pass"><strong>✅ Yes — 98 cookies.</strong> Step 1 (hidden): total given = 85 + 57 = 142. Step 2: left = 240 − 142 = 98.
-      <div class="bubble-row" style="margin-top:10px;"><div class="bubble cora"><div class="bubble-avatar">C</div><div class="bubble-body"><div class="bubble-name">Cora — checking the work</div><div class="bubble-text">"Let's check: 98 + 142 (given) should equal 240 (start). 98 + 142 → 100 + 140 = 240 ✓. Cora has 98 cookies left."</div></div></div></div>
-</div>
-<div class="feedback-branch feedback-retry" id="p3-retry"><strong>🔄 Add the give-aways first, then subtract from the start.</strong>
-<div class="hint-callout">Step 1: total given away = 85 + 57 = ___. Step 2: cookies left = 240 − (your step 1 answer).</div>
-<button class="orange-btn" onclick="resetP3()">↩ Reset and Try Again</button>
-</div>
-</div></div>
-<div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">You've spent a whole unit learning mental-math tools (count up, break apart, partner-to-100, round-and-adjust, bar models). Which of those tools showed up most often in today's two-step problems? Why?</p><div class="journal-label">✏️ My reasoning <span class="saved-dot" id="dot-soc2"></span></div><textarea class="journal-box" data-label="Practice — Socratic: which mental math tools matter most in two-step" id="journal-soc2" oninput="autoSave(this,'dot-soc2')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Find the hidden step. Solve it. Use it. You're ready to show what you know — for the whole unit.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
-</div>
 <!-- ═══════════ SHOW WHAT YOU KNOW ═══════════ -->
 <div class="tab-panel" id="tab-assignment">
 <div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">🎯</div><div><div class="activity-title">Ready Check</div><div class="activity-sub">Two quick questions.</div></div></div><div class="activity-body">

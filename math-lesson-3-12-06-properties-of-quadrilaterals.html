@@ -301,7 +301,7 @@
 <div class="tab-bar" id="tabBar">
 <button class="tab-btn active" data-tab="warmup" onclick="switchTab('warmup')">🔍 Warm-Up <span class="tab-check">✓</span></button>
 <button class="tab-btn" data-tab="learn" onclick="switchTab('learn')">📐 Learn <span class="tab-check">✓</span></button>
-<button class="tab-btn" data-tab="practice" onclick="switchTab('practice')">🧮 Practice <span class="tab-check">✓</span></button>
+
 <button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">🌟 Show What You Know <span class="tab-check">✓</span></button>
 </div>
 <!-- WARM-UP TAB -->
@@ -409,64 +409,9 @@
 </div>
 </div></div>
 <div class="socratic-box"><div class="socratic-label">🔮 Think Deeper</div><p class="socratic-q">Is a square also a rectangle? Is a rectangle also a square? Explain.</p><div class="journal-label">✏️ <span class="saved-dot" id="ds1"></span></div><textarea class="journal-box" data-label="Learn socratic" id="j-s101" oninput="autoSave(this,'ds1')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Four sides, many families — and squares belong to all of them.</p><button class="tab-next-btn" onclick="switchTab('practice')">Continue to 🧮 Practice →</button></div>
+<div class="tab-next-wrap"><p class="tab-transition-voice">Four sides, many families — and squares belong to all of them.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
 </div>
 <!-- PRACTICE TAB -->
-<div class="tab-panel" id="tab-practice">
-<div class="callout callout-info"><span class="callout-icon">🧭</span><p>You just built quadrilaterals. Now classify by their properties.</p></div>
-<div class="callout callout-tip"><span class="callout-icon">💡</span><p><strong>Check three things:</strong> parallel sides, equal sides, right angles.</p></div>
-<!-- P1 -->
-<div class="activity bl-geo"><div class="activity-head"><div class="activity-num" style="background:var(--geo);">1</div><div><div class="activity-title">Name That Shape</div></div></div><div class="activity-body">
-<div class="task-box"><div class="task-label">Classify</div><p>This shape has 4 right angles and 2 pairs of equal sides (2 long, 2 short). What is it?</p></div>
-<div class="value-card-row">
-<div class="value-card" onclick="p1(this,true)"><div class="big">Rectangle</div></div>
-<div class="value-card" onclick="p1(this,false)"><div class="big">Square</div></div>
-<div class="value-card" onclick="p1(this,false)"><div class="big">Trapezoid</div></div>
-</div>
-<div class="feedback-branch feedback-pass" id="p1-pass"><strong>✅</strong> 4 right angles, opposite sides equal but not ALL sides equal — rectangle.
-      
-</div>
-<div class="feedback-branch feedback-retry" id="p1-retry"><strong>🔄 It has 4 right angles — so it’s at least a rectangle. Are all sides equal? No (2 long, 2 short). So it’s a rectangle, not a square.</strong>
-
-<button class="orange-btn" onclick="resetP(1)">↩ Reset</button>
-</div>
-</div></div>
-<!-- P2 -->
-<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">2</div><div><div class="activity-title">No Right Angles</div></div></div><div class="activity-body">
-<div class="task-box"><div class="task-label">Classify</div><p>This shape has 4 equal sides but no right angles. What is it?</p></div>
-<div class="value-card-row">
-<div class="value-card" onclick="p2(this,false)"><div class="big">Square</div></div>
-<div class="value-card" onclick="p2(this,true)"><div class="big">Rhombus</div></div>
-<div class="value-card" onclick="p2(this,false)"><div class="big">Rectangle</div></div>
-</div>
-<div class="feedback-branch feedback-pass" id="p2-pass"><strong>✅</strong> 4 equal sides, no right angles — rhombus. Think of it as a “pushed-over square.”
-      
-</div>
-<div class="feedback-branch feedback-retry" id="p2-retry"><strong>🔄 A square needs both 4 equal sides AND 4 right angles. This one has equal sides but NO right angles. What’s that called?</strong>
-
-<button class="orange-btn" onclick="resetP(2)">↩ Reset</button>
-</div>
-</div></div>
-<!-- P3 -->
-<div class="activity bl-slate"><div class="activity-head"><div class="activity-num" style="background:#3A6B9A;">3</div><div><div class="activity-title">Who’s Right?</div></div></div><div class="activity-body">
-<div class="task-box"><div class="task-label">Judgment</div><p>Atlas says every square is a rectangle. Hazel says every rectangle is a square. Who is correct?</p></div>
-<div class="value-card-row">
-<div class="value-card" onclick="p3(this,'atlas')"><div class="big">Atlas</div></div>
-<div class="value-card" onclick="p3(this,'hazel')"><div class="big">Hazel</div></div>
-<div class="value-card" onclick="p3(this,'both')"><div class="big">Both</div></div>
-<div class="value-card" onclick="p3(this,'neither')"><div class="big">Neither</div></div>
-</div>
-<div class="feedback-branch feedback-pass" id="p3-pass"><strong>✅</strong> Atlas is right. Every square IS a rectangle (4 right angles, opposite sides equal). But not every rectangle is a square — a rectangle can have 2 long and 2 short sides.
-      
-</div>
-<div class="feedback-branch feedback-retry" id="p3-retry"><strong>🔄 A rectangle needs 4 right angles. Does a square have 4 right angles? Yes! So a square IS a rectangle. But does every rectangle have all sides equal? Not always.</strong>
-
-<button class="orange-btn" onclick="resetP(3)">↩ Reset</button>
-</div>
-</div></div>
-<div class="socratic-box"><div class="socratic-label">🔮 Think Deeper</div><p class="socratic-q">Why is a square considered the “most special” quadrilateral?</p><div class="journal-label">✏️ <span class="saved-dot" id="ds2"></span></div><textarea class="journal-box" data-label="Practice socratic" id="j-s201" oninput="autoSave(this,'ds2')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Rectangles, rhombi, squares — all part of the quadrilateral family.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
-</div>
 <!-- SHOW WHAT YOU KNOW TAB -->
 <div class="tab-panel" id="tab-assignment">
 <div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">🎯</div><div><div class="activity-title">Ready Check</div></div></div><div class="activity-body">
@@ -594,7 +539,7 @@ function qbRender(){
 function p1(c,ok){c.parentElement.querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});hideBranches('p1');if(ok){c.classList.add('good');showBranch('p1-pass');mini(c);}else{c.classList.add('bad');showBranch('p1-retry');}}
 function p2(c,ok){c.parentElement.querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});hideBranches('p2');if(ok){c.classList.add('good');showBranch('p2-pass');mini(c);}else{c.classList.add('bad');showBranch('p2-retry');}}
 function p3(c,v){c.parentElement.querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});hideBranches('p3');if(v==='atlas'){c.classList.add('good');showBranch('p3-pass');mini(c);}else{c.classList.add('bad');showBranch('p3-retry');}}
-function resetP(n){hideBranches('p'+n);document.querySelectorAll('#tab-practice .value-card').forEach(function(x){x.classList.remove('good','bad');});}
+function resetP(n){hideBranches('p'+n);document.querySelectorAll('.REMOVED-PRACTICE').forEach(function(x){x.classList.remove('good','bad');});}
 
 /* Ready Check */
 function eA(c,ok){c.parentElement.querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});var f=document.getElementById('eA-fb');if(ok){c.classList.add('good');f.className='inline-feedback show good';f.innerHTML='<strong>✅</strong> A trapezoid has exactly 1 pair of parallel sides.';mini(c);}else{c.classList.add('bad');f.className='inline-feedback show think';f.innerHTML='A trapezoid is special because it has just one pair of parallel sides — not two, not zero.';}}
