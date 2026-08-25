@@ -43,6 +43,8 @@
 .builder-reset-btn{background:#7A88A8;color:#fff;border:none;border-radius:14px;padding:10px 18px;font-size:14px;font-weight:900;cursor:pointer;font-family:'Nunito',sans-serif;margin-top:6px}
 
 @keyframes reveal{0%{opacity:0;transform:translateY(10px)}100%{opacity:1;transform:translateY(0)}}@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}@keyframes mini{0%{transform:translateY(0) scale(0);opacity:1}50%{transform:translateY(-30px) scale(1.2)}100%{transform:translateY(-60px) scale(.6);opacity:0}}
+
+.practice-note { font-size: 12px; color: #8899AA; text-align: center; margin: 6px 0 2px; font-style: italic; line-height: 1.4; }
 </style>
 <style id="fluencyStyles">
 .fluency-box{background:#fff;border:2px solid #F5C518;border-radius:18px;overflow:hidden;margin-bottom:22px;font-family:'Nunito',sans-serif}
@@ -92,6 +94,8 @@
     <div class="ora-kicker">&#128266; READ ALOUD &mdash; LISTEN TO THIS PAGE</div>
     <div class="ora-controls">
         <button id="ora-play" type="button" aria-label="Listen to this page">&#9654;&#65039; Listen</button>
+<p class="practice-note">Interactive practice tools on this page won't save if you leave — your written answers below are saved automatically.</p>
+
         <button id="ora-stop" type="button" aria-label="Stop reading" disabled>&#9632; Stop</button>
         <label class="ora-speed">Speed
             <select id="ora-rate" aria-label="Reading speed">

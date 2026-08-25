@@ -60,6 +60,9 @@
 .sb-reset-btn{background:#7A88A8;color:#fff;border:none;border-radius:14px;padding:10px 18px;font-size:14px;font-weight:900;cursor:pointer;font-family:'Nunito',sans-serif;margin-top:6px}
 
 @keyframes reveal{0%{opacity:0;transform:translateY(10px)}100%{opacity:1;transform:translateY(0)}}@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}@keyframes mini{0%{transform:translateY(0) scale(0);opacity:1}50%{transform:translateY(-30px) scale(1.2)}100%{transform:translateY(-60px) scale(.6);opacity:0}}
+
+.practice-note { font-size: 12px; color: #8899AA; text-align: center; margin: 6px 0 2px; font-style: italic; line-height: 1.4; }
+
 </style>
 <style id="fluencyStyles">
 .fluency-box{background:#fff;border:2px solid #F5C518;border-radius:18px;overflow:hidden;margin-bottom:22px;font-family:'Nunito',sans-serif}
@@ -423,7 +426,11 @@
 <div class="tab-panel" id="tab-assignment">
 <div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">🎯</div><div><div class="activity-title">Ready Check</div></div></div><div class="activity-body">
 <div class="q-block"><p class="q-text"><span class="q-num">A</span>5 kg = ___ g</p><div class="fill-row"><strong>5 kg =</strong><input class="fill-input" id="rcA-ans" placeholder="?" type="number"/><strong>g</strong></div><button class="check-btn" onclick="checkRCA()">Check ✓</button><div class="inline-feedback" id="rcA-fb"></div></div>
+<p class="practice-note">This interactive is a practice tool — your work here won't be saved if you leave the page. Your written answers below are saved automatically.</p>
+
 <div class="q-block"><p class="q-text"><span class="q-num">B</span>1,600 g = ___ kg ___ g</p><div class="fill-row"><strong>1,600 g =</strong><input class="fill-input" id="rcB-kg" placeholder="? kg" style="width:70px;" type="number"/><strong>kg</strong><input class="fill-input" id="rcB-g" placeholder="? g" style="width:80px;" type="number"/><strong>g</strong></div><button class="check-btn" onclick="checkRCB()">Check ✓</button><div class="inline-feedback" id="rcB-fb"></div></div>
+<p class="practice-note">This interactive is a practice tool — your work here won't be saved if you leave the page. Your written answers below are saved automatically.</p>
+
 </div></div>
 <div class="activity bl-navy"><div class="activity-head"><div class="activity-num" style="background:#0E1C42;">📬</div><div><div class="activity-title">Show What You Know</div></div></div><div class="activity-body">
 <div class="q-block"><p class="q-text"><span class="q-num">1</span><strong>Fluency.</strong> Convert: 3 kg = ___ g. Show your thinking.</p><div class="journal-label">✏️ <span class="saved-dot" id="da1"></span></div><textarea class="journal-box" data-label="SWYK 1" id="j-a101" oninput="autoSave(this,'da1')" placeholder=""></textarea></div>
