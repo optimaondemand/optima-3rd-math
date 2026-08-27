@@ -33,7 +33,34 @@
 .inline-feedback{display:none;margin:12px 0;border-radius:14px;padding:12px 14px;font-weight:800;line-height:1.5}.inline-feedback.show{display:block;animation:reveal .3s}.inline-feedback.good{background:#E3F8ED;border:2px solid #B8E8CF;color:#0E1C42}.inline-feedback.think{background:#FFF3DC;border:2px solid #F5E6C8;color:#5A4A3A}
 .vocab-section{background:#fff;border:2px solid var(--ws-mid);border-left:6px solid var(--ws);border-radius:18px;padding:14px 20px;margin:0 0 20px}.vocab-section-title{font-size:16px;color:#0E1C42;font-weight:900;margin-bottom:4px}
 .bubble-row{display:flex;gap:12px;flex-wrap:wrap;margin:14px 0}.bubble{display:flex;gap:10px;flex:1 1 260px;max-width:340px;background:#fff;border:2px solid #E2E8F4;border-radius:18px;padding:12px 14px}.bubble.atlas{border-left:5px solid #6B3FA0;background:linear-gradient(135deg,#fff,#F8F4FF)}.bubble.hazel{border-left:5px solid #2DB87A;background:linear-gradient(135deg,#fff,#F4FBF7)}.bubble.felix{border-left:5px solid #F5C518;background:linear-gradient(135deg,#fff,#FEFBEB)}.bubble.cora{border-left:5px solid #3A6B9A;background:linear-gradient(135deg,#fff,#F4F8FC)}.bubble-avatar{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:900;color:#fff;flex-shrink:0;font-family:'Lora',serif}.bubble.atlas .bubble-avatar{background:#6B3FA0}.bubble.hazel .bubble-avatar{background:#2DB87A}.bubble.felix .bubble-avatar{background:#F5C518;color:#0E1C42}.bubble.cora .bubble-avatar{background:#3A6B9A}.bubble-body{flex:1;min-width:0}.bubble-name{font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.7px;margin-bottom:3px;color:#6B3FA0}.bubble.hazel .bubble-name{color:#1A8A5A}.bubble.felix .bubble-name{color:#8A6D2B}.bubble.cora .bubble-name{color:#1A6B8E}.bubble-text{font-size:14.5px;color:#0E1C42;line-height:1.5;font-weight:600;font-family:'Lora',serif;font-style:italic}
-.video-wrap{border-radius:18px;overflow:hidden;border:2px solid #E2E8F4;box-shadow:0 4px 20px rgba(14,28,66,.08);background:#000;margin:0 0 22px}.video-wrap-header{display:flex;align-items:center;gap:12px;padding:12px 18px;background:linear-gradient(135deg,#0E1C42,#1A2D5A);border-bottom:2px solid rgba(184,96,42,.3)}.video-wrap-type{font-size:10px;color:#F5C518;text-transform:uppercase;letter-spacing:1.5px;font-weight:800;margin-bottom:2px}.video-wrap-title{font-size:16px;color:#fff;font-weight:800;line-height:1.2}.video-ratio{position:relative;padding-bottom:56.25%;height:0;overflow:hidden}.video-placeholder,.video-iframe{position:absolute;top:0;left:0;width:100%;height:100%}.video-placeholder{background:linear-gradient(135deg,#0E1C42,#1A2D5A);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px}.video-placeholder-icon{font-size:44px;margin-bottom:10px;opacity:.55}.video-placeholder-text{font-size:14px;color:rgba(255,255,255,.78);font-weight:700;line-height:1.5;max-width:620px}.video-placeholder-id{font-size:11px;color:rgba(245,197,24,.85);font-family:monospace;margin-top:10px;letter-spacing:.5px}.record-note{margin-top:10px;background:rgba(255,255,255,.08);border:1px solid rgba(245,197,24,.28);border-radius:10px;padding:8px 10px;color:rgba(255,255,255,.82);font-size:12.5px;line-height:1.45;max-width:620px}
+/* ═══ VIDEO PLACEHOLDER ═══ */
+.video-placeholder-wrap {
+  border-radius: 14px; overflow: hidden; margin: 0 0 18px;
+  border: 2px dashed rgba(107,63,160,0.4);
+  background: linear-gradient(135deg, #0E1C42, #1A2D5A);
+}
+.video-placeholder-inner {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; padding: 28px 20px;
+}
+.video-placeholder-inner .vp-icon { font-size: 34px; margin-bottom: 6px; }
+.video-placeholder-inner .vp-label {
+  font-size: 10px; color: #F5C518; text-transform: uppercase;
+  letter-spacing: 2px; font-weight: 800; margin-bottom: 4px;
+}
+.video-placeholder-inner .vp-title {
+  font-size: 16px; font-weight: 800; color: #fff; margin-bottom: 8px;
+}
+.video-placeholder-inner .vp-slot {
+  font-family: monospace; font-size: 11px; color: #6B3FA0;
+  background: rgba(107,63,160,0.15);
+  padding: 3px 10px; border-radius: 4px;
+}
+.video-placeholder-inner .vp-notes {
+  font-size: 12px; color: rgba(255,255,255,0.8); font-style: italic;
+  margin-top: 10px; text-align: left; padding: 10px 12px;
+  background: rgba(0,0,0,0.25); border-radius: 6px; border-left: 3px solid #6B3FA0;
+}
 
 /* METER CUTTER */
 .mc-frame{background:#fff;border:2px solid var(--ws-mid);border-radius:16px;padding:18px;margin:14px 0}
@@ -316,6 +343,20 @@
 </div>
 <!-- WARM-UP TAB -->
 <div class="tab-panel active" id="tab-warmup">
+<!-- ═══ INTRODUCTION VIDEO ═══ -->
+<div class="video-placeholder-wrap">
+<!-- slot: g3math-11-02 -->
+<div class="video-placeholder-inner">
+  <span class="vp-icon">&#x1F3AC;</span>
+  <div class="vp-label">Introduction Video</div>
+  <div class="vp-title">Optima Academy Online — Grade 3 Math Lesson 3.11.02</div>
+  <div class="vp-slot">g3math-11-02</div>
+  <div class="vp-notes">
+    <strong>Teacher recording notes:</strong> Welcome to today&#x27;s lesson: Optima Academy Online — Grade 3 Math Lesson 3.11.02. You&#x27;ll start with a fluency warm-up: Mixed Addition &amp; Subtraction Facts. Pay close attention to each step and use your math tools to work through the problems. Show your thinking in the journal boxes.
+  </div>
+</div>
+</div>
+
 <div class="fluency-box" data-timed="false">
 <div class="fluency-head">
 <div class="fluency-head-icon">✍️</div>
@@ -564,5 +605,32 @@ window.fluencyCheck = function(){
   if(startBtn) startBtn.textContent = 'Done';
 };
 })();
+</script>
+<!-- Video Manifest Loader -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetch('https://raw.githubusercontent.com/bbirchum1/optima-3rd-math/main/video-manifest.json?v=' + Date.now())
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      var manifest = data.videos || data;
+      document.querySelectorAll('.video-placeholder-wrap').forEach(function(wrap) {
+        var m = wrap.innerHTML.match(/<!--\s*slot:\s*([\w-]+)\s*-->/);
+        if (!m) return;
+        var entry = manifest[m[1]];
+        if (!entry || entry.status !== 'ready' || !entry.embed) return;
+        var temp = document.createElement('div');
+        temp.innerHTML = entry.embed;
+        var iframe = temp.querySelector('iframe');
+        if (!iframe) return;
+        iframe.removeAttribute('width');
+        iframe.removeAttribute('height');
+        iframe.style.cssText = 'display:block;width:100%;aspect-ratio:16/9;border:none;';
+        wrap.innerHTML = '';
+        wrap.style.cssText = 'border:none;background:#000;border-radius:14px;overflow:hidden;margin:0 0 18px;';
+        wrap.appendChild(iframe);
+      });
+    })
+    .catch(function(err) { console.warn('Video manifest load failed:', err); });
+});
 </script>
 </body></html>
