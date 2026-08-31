@@ -40,8 +40,8 @@
     "embed": ""
   },
   "g3math-03-01": {
-    "status": "pending",
-    "embed": ""
+    "status": "ready",
+    "embed": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/Ivb8Z2gMTMU?si=XZxtcdxYpPRPUGEY\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"
   },
   "g3math-03-02": {
     "status": "pending",
