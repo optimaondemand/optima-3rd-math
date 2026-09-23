@@ -447,14 +447,14 @@
 <p style="font-size:14px;color:#3A4A6B;font-family:'Lora',serif;font-style:italic;">Share from left to right. <strong>Hundreds → tens → ones.</strong> Trade leftovers down to the next column. The pattern is the same as 2-digit, just with one extra column to handle.</p>
 </div>
 
-<div class="callout callout-info"><span class="callout-icon">🍯</span><p><strong>How it works.</strong> Pick a 3-digit number and a divisor of 2. Share each column left to right. When a column leaves something over, trade it to the next column on the right (1 hundred = 10 tens; 1 ten = 10 ones).</p></div>
+<div class="callout callout-info"><span class="callout-icon">🍯</span><p><strong>How it works.</strong> Pick a divisor from 2 to 5 and a 3-digit number whose hundreds digit is smaller than the divisor, so the quotient has only 2 digits. Share each column left to right. When a column leaves something over, trade it to the next column on the right (1 hundred = 10 tens; 1 ten = 10 ones).</p></div>
 <div class="activity bl-honey"><div class="activity-head"><div class="activity-num" style="background:var(--honey);">🍯</div><div><div class="activity-title">3-Column Share Mat</div></div></div><div class="activity-body">
 <div class="sm-frame">
-<div class="sm-task">Share <strong id="sm-num">246</strong> ÷ <strong id="sm-div">2</strong></div>
+<div class="sm-task">Share <strong id="sm-num">156</strong> ÷ <strong id="sm-div">4</strong></div>
 <div class="sm-controls">
 <div class="sm-pick"><div class="sm-pick-label">Divisor</div><div class="sm-stepper"><button class="sm-btn" onclick="smAdj('d',-1)">−</button><div class="sm-val" id="sm-dVal">4</div><button class="sm-btn" onclick="smAdj('d',1)">+</button></div></div>
-<div class="sm-pick"><div class="sm-pick-label">Hundreds</div><div class="sm-stepper"><button class="sm-btn" onclick="smAdj('h',-1)">−</button><div class="sm-val" id="sm-hVal">2</div><button class="sm-btn" onclick="smAdj('h',1)">+</button></div></div>
-<div class="sm-pick"><div class="sm-pick-label">Tens</div><div class="sm-stepper"><button class="sm-btn" onclick="smAdj('t',-1)">−</button><div class="sm-val" id="sm-tVal">4</div><button class="sm-btn" onclick="smAdj('t',1)">+</button></div></div>
+<div class="sm-pick"><div class="sm-pick-label">Hundreds</div><div class="sm-stepper"><button class="sm-btn" onclick="smAdj('h',-1)">−</button><div class="sm-val" id="sm-hVal">1</div><button class="sm-btn" onclick="smAdj('h',1)">+</button></div></div>
+<div class="sm-pick"><div class="sm-pick-label">Tens</div><div class="sm-stepper"><button class="sm-btn" onclick="smAdj('t',-1)">−</button><div class="sm-val" id="sm-tVal">5</div><button class="sm-btn" onclick="smAdj('t',1)">+</button></div></div>
 <div class="sm-pick"><div class="sm-pick-label">Ones</div><div class="sm-stepper"><button class="sm-btn" onclick="smAdj('o',-1)">−</button><div class="sm-val" id="sm-oVal">6</div><button class="sm-btn" onclick="smAdj('o',1)">+</button></div></div>
 </div>
 <div class="sm-now" id="sm-now">👉 <strong>Next:</strong> Tap "Step 1 — Share the Hundreds".</div>
@@ -521,7 +521,7 @@
 </div>
 <div class="tab-panel" id="tab-assignment">
 <div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">🎯</div><div><div class="activity-title">Ready Check</div></div></div><div class="activity-body">
-<div class="q-block"><p class="q-text"><span class="q-num">A</span>525 ÷ 5 = ?</p><div class="value-card-row"><div class="value-card" onclick="eA(this,false)"><div class="big">29</div></div><div class="value-card" onclick="eA(this,true)"><div class="big">39</div></div><div class="value-card" onclick="eA(this,false)"><div class="big">139</div></div></div><div class="inline-feedback" id="eA-fb"></div></div>
+<div class="q-block"><p class="q-text"><span class="q-num">A</span>156 ÷ 4 = ?</p><div class="value-card-row"><div class="value-card" onclick="eA(this,false)"><div class="big">29</div></div><div class="value-card" onclick="eA(this,true)"><div class="big">39</div></div><div class="value-card" onclick="eA(this,false)"><div class="big">139</div></div></div><div class="inline-feedback" id="eA-fb"></div></div>
 <div class="q-block"><p class="q-text"><span class="q-num">B</span>175 ÷ 5 = ?</p><div class="value-card-row"><div class="value-card" onclick="eB(this,false)"><div class="big">25</div></div><div class="value-card" onclick="eB(this,true)"><div class="big">35</div></div><div class="value-card" onclick="eB(this,false)"><div class="big">135</div></div></div><div class="inline-feedback" id="eB-fb"></div></div>
 </div></div>
 <div class="activity bl-navy"><div class="activity-head"><div class="activity-num" style="background:#0E1C42;">📬</div><div><div class="activity-title">Show What You Know</div></div></div><div class="activity-body">
