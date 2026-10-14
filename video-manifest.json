@@ -208,8 +208,8 @@
     "embed": ""
   },
   "g3math-10-01": {
-    "status": "pending",
-    "embed": ""
+    "status": "ready",
+    "embed": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/IMvsoaIsScI?si=0DkJGzDGLLwQYX2n\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"
   },
   "g3math-10-02": {
     "status": "pending",
@@ -236,8 +236,8 @@
     "embed": ""
   },
   "g3math-11-01": {
-    "status": "pending",
-    "embed": ""
+    "status": "ready",
+    "embed": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/VVcSPfXePtU?si=7oPjv4e1jljBUoBM\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"
   },
   "g3math-11-02": {
     "status": "pending",
@@ -264,8 +264,8 @@
     "embed": ""
   },
   "g3math-12-01": {
-    "status": "pending",
-    "embed": ""
+    "status": "ready",
+    "embed": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/AHGeQ6YUBzg?si=7gv_uSNEPKX2GGjs\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>"
   },
   "g3math-12-02": {
     "status": "pending",
