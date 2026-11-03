@@ -419,7 +419,7 @@
 <button class="strategy-chip" onclick="this.classList.toggle('selected')">Both are correct</button>
 </div>
 <div class="callout callout-tip"><span class="callout-icon">🧠</span><p><strong>Stop and think before the next tab:</strong> If 1 thousand and 10 hundreds are worth the same amount, what does that tell you about how we can break apart bigger numbers?</p></div>
-<div class="journal-label">✏️ My prediction <span class="saved-dot" id="dot-think"></span></div>
+<div class="olt-nudge"><a href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=numberline&amp;st=1" target="_blank" rel="noopener" title="Open the Number Line to place, compare, or hop between the numbers."><span aria-hidden="true">🧮</span> Try the <b>Number Line</b> <span aria-hidden="true">↗</span></a></div><div class="journal-label">✏️ My prediction <span class="saved-dot" id="dot-think"></span></div>
 <textarea class="journal-box" data-label="Warm-Up — Think Prompt: Can 2,300 be packed two different ways?" id="journal-think" oninput="autoSave(this,'dot-think')" placeholder="I think ___ is correct because…"></textarea>
 </div></div>
 <div class="tab-next-wrap"><p class="tab-transition-voice">Hold onto that wondering. The Learn tab is going to show you what's really happening — and you'll get to do the trading yourself.</p><button class="tab-next-btn" onclick="switchTab('learn')">Continue to 📐 Learn →</button></div>
@@ -472,7 +472,7 @@
 </div>
 <div class="callout callout-info" style="margin-top:14px;"><span class="callout-icon">🪄</span><p>Every time you tap a trade button, the <strong>grouping</strong> changes — but the number at the top stays <strong>4,326</strong>. That's the big idea.</p></div>
 <div class="regroup-log" id="regroupLog"><div class="log-item"><strong>Start:</strong> 4 thousands · 3 hundreds · 2 tens · 6 ones  <span style="color:#7A88A8;">= 4,326</span></div></div>
-<div class="journal-label">✏️ After you trade a few times, write down one new way to break apart 4,326. Use words like <em>thousands, hundreds, tens, ones</em>. <span class="saved-dot" id="dot-trade"></span></div>
+<div class="olt-nudge"><a href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=discs&amp;st=1" target="_blank" rel="noopener" title="Open the Number Discs to build the number and trade between places."><span aria-hidden="true">🧮</span> Try the <b>Number Discs</b> <span aria-hidden="true">↗</span></a></div><div class="journal-label">✏️ After you trade a few times, write down one new way to break apart 4,326. Use words like <em>thousands, hundreds, tens, ones</em>. <span class="saved-dot" id="dot-trade"></span></div>
 <textarea class="journal-box" data-label="Learn — Regrouping Mat: A new way to write 4,326" id="journal-trade" oninput="autoSave(this,'dot-trade')" placeholder="I found a new way: ___ hundreds + ___ tens + ___ ones = 4,326."></textarea>
 </div></div>
 <div class="key-concept"><div class="key-concept-label">📐 Key Concept — What You Just Saw</div>
@@ -624,7 +624,7 @@
 </div></div>
 <div class="activity bl-navy"><div class="activity-head"><div class="activity-num" style="background:#0E1C42;">📬</div><div><div class="activity-title">Show What You Know</div><div class="activity-sub">Use models, numbers, and words. Six problems.</div></div></div><div class="activity-body">
 <div class="callout callout-think"><span class="callout-icon">🧠</span><p><strong>For each problem, stop and think:</strong> What do I know about this number's place value? Does the question want hundreds, tens, ones — or a mix?</p></div>
-<div class="q-block"><p class="q-text"><span class="q-num">1</span>Fill in the blank: <strong>4,800 = ____ hundreds.</strong></p><div class="journal-label">✏️ My answer <span class="saved-dot" id="dot-a1"></span></div><textarea class="journal-box" data-label="Show What You Know — Problem 1: 4,800 = __ hundreds" id="journal-a1" oninput="autoSave(this,'dot-a1')" placeholder="4,800 = ___ hundreds. I know because…"></textarea></div>
+<div class="q-block"><p class="q-text"><span class="q-num">1</span>Fill in the blank: <strong>4,800 = ____ hundreds.</strong></p><div class="olt-nudge"><a href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=pvcards&amp;st=1" target="_blank" rel="noopener" title="Open the Place-Value Cards to pull the digits apart and see each value."><span aria-hidden="true">🧮</span> Try the <b>Place-Value Cards</b> <span aria-hidden="true">↗</span></a></div><div class="journal-label">✏️ My answer <span class="saved-dot" id="dot-a1"></span></div><textarea class="journal-box" data-label="Show What You Know — Problem 1: 4,800 = __ hundreds" id="journal-a1" oninput="autoSave(this,'dot-a1')" placeholder="4,800 = ___ hundreds. I know because…"></textarea></div>
 <div class="q-block"><p class="q-text"><span class="q-num">2</span>Fill in the blank: <strong>5,029 = 5,000 + 20 + ____.</strong></p><div class="journal-label">✏️ My answer <span class="saved-dot" id="dot-a2"></span></div><textarea class="journal-box" data-label="Show What You Know — Problem 2: 5,029 = 5,000 + 20 + ?" id="journal-a2" oninput="autoSave(this,'dot-a2')" placeholder="The missing number is…"></textarea></div>
 <div class="q-block"><p class="q-text"><span class="q-num">3</span>Write <strong>2,540</strong> in two different ways. One way should use thousands. The other way should use only hundreds and tens.</p><div class="journal-label">✏️ My answer <span class="saved-dot" id="dot-a3"></span></div><textarea class="journal-box" data-label="Show What You Know — Problem 3: 2,540 in two ways" id="journal-a3" oninput="autoSave(this,'dot-a3')" placeholder="Way 1: ___ thousands + ___ hundreds + ___ tens.
 Way 2: ___ hundreds + ___ tens."></textarea></div>
@@ -976,5 +976,7 @@ document.addEventListener('DOMContentLoaded', function() {
     .catch(function(err) { console.warn('Video manifest load failed:', err); });
 });
 </script>
+<!-- OAO math tools for this lesson (manipulatives library) -->
+<script src="https://optimaondemand.github.io/optima-4th-math/manipulatives/lesson-tools.js" defer></script>
 </body>
 </html>

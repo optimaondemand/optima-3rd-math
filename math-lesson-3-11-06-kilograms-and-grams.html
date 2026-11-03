@@ -403,7 +403,7 @@
 <div class="value-card" onclick="rT(this,false)"><div class="big">No</div></div>
 </div>
 <div class="inline-feedback" id="rT-fb"></div>
-<div class="journal-label">✏️ How do you know? <span class="saved-dot" id="dt"></span></div>
+<div class="olt-nudge"><a href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=ruler&amp;st=1" target="_blank" rel="noopener" title="Open the Rulers to measure the length."><span aria-hidden="true">🧮</span> Try the <b>Rulers</b> <span aria-hidden="true">↗</span></a></div><div class="journal-label">✏️ How do you know? <span class="saved-dot" id="dt"></span></div>
 <textarea class="journal-box" data-label="Warm-Up journal" id="j-t01" oninput="autoSave(this,'dt')" placeholder=""></textarea>
 </div></div>
 <div class="tab-next-wrap"><p class="tab-transition-voice">Grams stack up. Kilograms appear. Let’s see how.</p><button class="tab-next-btn" onclick="switchTab('learn')">Continue to 📐 Learn →</button></div>
@@ -460,7 +460,7 @@
 </div>
 <p style="font-family:'Lora',serif;background:#FAFBFF;border:2px solid #E2E8F4;border-radius:12px;padding:10px;text-align:center;font-size:20px;font-weight:900;margin-top:14px;">2 kg = 2,000 g → 2,000 − 500 = 1,500 g = 1 kg 500 g</p>
 </div></div>
-<div class="socratic-box"><div class="socratic-label">🔮 Think Deeper</div><p class="socratic-q">What pattern do you notice between km/m, L/mL, and kg/g?</p><div class="journal-label">✏️ <span class="saved-dot" id="ds1"></span></div><textarea class="journal-box" data-label="Learn socratic" id="j-s101" oninput="autoSave(this,'ds1')" placeholder=""></textarea></div>
+<div class="socratic-box"><div class="socratic-label">🔮 Think Deeper</div><p class="socratic-q">What pattern do you notice between km/m, L/mL, and kg/g?</p><div class="olt-nudge"><a href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=scale&amp;st=1" target="_blank" rel="noopener" title="Open the Scale to balance the weights."><span aria-hidden="true">🧮</span> Try the <b>Scale</b> <span aria-hidden="true">↗</span></a></div><div class="journal-label">✏️ <span class="saved-dot" id="ds1"></span></div><textarea class="journal-box" data-label="Learn socratic" id="j-s101" oninput="autoSave(this,'ds1')" placeholder=""></textarea></div>
 <div class="tab-next-wrap"><p class="tab-transition-voice">One thousand grams. One kilogram. Same pattern, every time.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
 </div>
 <!-- PRACTICE TAB -->
@@ -475,7 +475,7 @@
 
 </div></div>
 <div class="activity bl-navy"><div class="activity-head"><div class="activity-num" style="background:#0E1C42;">📬</div><div><div class="activity-title">Show What You Know</div></div></div><div class="activity-body">
-<div class="q-block"><p class="q-text"><span class="q-num">1</span><strong>Fluency.</strong> Convert: 3 kg = ___ g. Show your thinking.</p><div class="journal-label">✏️ <span class="saved-dot" id="da1"></span></div><textarea class="journal-box" data-label="SWYK 1" id="j-a101" oninput="autoSave(this,'da1')" placeholder=""></textarea></div>
+<div class="q-block"><p class="q-text"><span class="q-num">1</span><strong>Fluency.</strong> Convert: 3 kg = ___ g. Show your thinking.</p><div class="olt-nudge"><a href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=bond&amp;st=1" target="_blank" rel="noopener" title="Open the Number Bond to split the whole into parts, or put parts together."><span aria-hidden="true">🧮</span> Try the <b>Number Bond</b> <span aria-hidden="true">↗</span></a></div><div class="journal-label">✏️ <span class="saved-dot" id="da1"></span></div><textarea class="journal-box" data-label="SWYK 1" id="j-a101" oninput="autoSave(this,'da1')" placeholder=""></textarea></div>
 <div class="q-block"><p class="q-text"><span class="q-num">2</span><strong>Transfer.</strong> Hazel buys 2 kg of apples and eats 350 g. How many grams of apples are left?</p><div class="journal-label">✏️ <span class="saved-dot" id="da2"></span></div><textarea class="journal-box" data-label="SWYK 2" id="j-a201" oninput="autoSave(this,'da2')" placeholder=""></textarea></div>
 
 <div class="activity bl-slate" style="margin-top:18px;border-left-color:#F5A36F;"><div class="activity-head"><div class="activity-num" style="background:#F5A36F;color:#0E1C42;">🗺️</div><div><div class="activity-title">Connection Forward</div><div class="activity-sub">Next lesson</div></div></div><div class="activity-body">
@@ -663,4 +663,6 @@ document.addEventListener('DOMContentLoaded', function() {
     .catch(function(err) { console.warn('Video manifest load failed:', err); });
 });
 </script>
+<!-- OAO math tools for this lesson (manipulatives library) -->
+<script src="https://optimaondemand.github.io/optima-4th-math/manipulatives/lesson-tools.js" defer></script>
 </body></html>

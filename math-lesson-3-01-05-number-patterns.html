@@ -417,7 +417,7 @@
 <button class="strategy-chip" onclick="this.classList.toggle('selected')">+1,000</button>
 </div>
 <div class="callout callout-tip"><span class="callout-icon">🧠</span><p><strong>Before the next tab:</strong> Compare two numbers in the row. How is 5,186 different from 5,176? That difference is the rule.</p></div>
-<div class="journal-label">✏️ My prediction <span class="saved-dot" id="dot-think"></span></div>
+<div class="olt-nudge"><a href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=pvcards&amp;st=1" target="_blank" rel="noopener" title="Open the Place-Value Cards to pull the digits apart and see each value."><span aria-hidden="true">🧮</span> Try the <b>Place-Value Cards</b> <span aria-hidden="true">↗</span></a></div><div class="journal-label">✏️ My prediction <span class="saved-dot" id="dot-think"></span></div>
 <textarea class="journal-box" data-label="Warm-Up — Think Prompt: What comes next?" id="journal-think" oninput="autoSave(this,'dot-think')" placeholder=""></textarea>
 </div></div>
 <div class="tab-next-wrap"><p class="tab-transition-voice">Hold your guess. The Learn tab has a tool that lets you pick a rule and watch any pattern unfold.</p><button class="tab-next-btn" onclick="switchTab('learn')">Continue to 📐 Learn →</button></div>
@@ -472,7 +472,7 @@
 </div>
 <div class="pattern-readout" id="patReadout">Tap a rule above to start the pattern.</div>
 </div>
-<div class="journal-label">✏️ Try two different rules. What surprised you? <span class="saved-dot" id="dot-pattern"></span></div>
+<div class="olt-nudge"><a href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=hundred&amp;st=1" target="_blank" rel="noopener" title="Open the Hundred Chart to skip-count and spot multiples and patterns."><span aria-hidden="true">🧮</span> Try the <b>Hundred Chart</b> <span aria-hidden="true">↗</span></a></div><div class="journal-label">✏️ Try two different rules. What surprised you? <span class="saved-dot" id="dot-pattern"></span></div>
 <textarea class="journal-box" data-label="Learn — Pattern Builder: Try two rules" id="journal-pattern" oninput="autoSave(this,'dot-pattern')" placeholder=""></textarea>
 </div></div>
 <div class="key-concept"><div class="key-concept-label">📐 Key Concept — What You Just Saw</div>
@@ -583,7 +583,7 @@
 <button class="orange-btn" onclick="resetP3()">↩ Reset and Try Again</button>
 </div>
 </div></div>
-<div class="socratic-box"><div class="socratic-label">🔮 Think Like a Mathematician</div><p class="socratic-q">If a pattern's rule is +100, will the ones digit ever change? Why or why not?</p><div class="journal-label">✏️ My reasoning <span class="saved-dot" id="dot-soc2"></span></div><textarea class="journal-box" data-label="Practice — Socratic: Does +100 change the ones digit?" id="journal-soc2" oninput="autoSave(this,'dot-soc2')" placeholder=""></textarea></div>
+<div class="socratic-box"><div class="socratic-label">🔮 Think Like a Mathematician</div><p class="socratic-q">If a pattern's rule is +100, will the ones digit ever change? Why or why not?</p><div class="olt-nudge"><a href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=discs&amp;st=1" target="_blank" rel="noopener" title="Open the Number Discs to build the number and trade between places."><span aria-hidden="true">🧮</span> Try the <b>Number Discs</b> <span aria-hidden="true">↗</span></a></div><div class="journal-label">✏️ My reasoning <span class="saved-dot" id="dot-soc2"></span></div><textarea class="journal-box" data-label="Practice — Socratic: Does +100 change the ones digit?" id="journal-soc2" oninput="autoSave(this,'dot-soc2')" placeholder=""></textarea></div>
 <div class="tab-next-wrap"><p class="tab-transition-voice">You named rules, filled in blanks, and turned a story into a pattern. Time to show what you know.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
 </div>
 <!-- ═══════════ SHOW WHAT YOU KNOW TAB ═══════════ -->
@@ -811,5 +811,7 @@ document.addEventListener('DOMContentLoaded', function() {
     .catch(function(err) { console.warn('Video manifest load failed:', err); });
 });
 </script>
+<!-- OAO math tools for this lesson (manipulatives library) -->
+<script src="https://optimaondemand.github.io/optima-4th-math/manipulatives/lesson-tools.js" defer></script>
 </body>
 </html>

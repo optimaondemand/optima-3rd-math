@@ -459,7 +459,7 @@
 <div class="value-card" onclick="checkTA(this,false,'same')"><div class="big">They're equally close</div></div>
 </div>
 <div class="inline-feedback" id="ta-fb"></div>
-<div class="journal-label">✏️ Why would rounding to a smaller place (tens) give a closer estimate? <span class="saved-dot" id="dot-think"></span></div>
+<div class="olt-nudge"><a href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=discs&amp;st=1" target="_blank" rel="noopener" title="Open the Number Discs to build the number and trade between places."><span aria-hidden="true">🧮</span> Try the <b>Number Discs</b> <span aria-hidden="true">↗</span></a></div><div class="journal-label">✏️ Why would rounding to a smaller place (tens) give a closer estimate? <span class="saved-dot" id="dot-think"></span></div>
 <textarea class="journal-box" data-label="Warm-Up — Think Prompt: two rounding choices" id="journal-think" oninput="autoSave(this,'dot-think')" placeholder=""></textarea>
 </div></div>
 <div class="tab-next-wrap"><p class="tab-transition-voice">Round, then add or subtract. Different rounding choices give different estimates. Time to experiment.</p><button class="tab-next-btn" onclick="switchTab('learn')">Continue to 📐 Learn →</button></div>
@@ -525,7 +525,7 @@
 <div class="elab-verdict" id="reveal-verdict"></div>
 </div>
 </div>
-<div class="journal-label">✏️ Which rounding choice gave the closest estimate? Why? <span class="saved-dot" id="dot-elab"></span></div>
+<div class="olt-nudge"><a href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=numberline&amp;st=1" target="_blank" rel="noopener" title="Open the Number Line to place, compare, or hop between the numbers."><span aria-hidden="true">🧮</span> Try the <b>Number Line</b> <span aria-hidden="true">↗</span></a></div><div class="journal-label">✏️ Which rounding choice gave the closest estimate? Why? <span class="saved-dot" id="dot-elab"></span></div>
 <textarea class="journal-box" data-label="Learn — Estimation Lab: 642-87" id="journal-elab" oninput="autoSave(this,'dot-elab')" placeholder=""></textarea>
 </div></div>
 <div class="key-concept"><div class="key-concept-label">📐 Key Concept</div>
@@ -575,7 +575,7 @@
 <div class="callout callout-tip" style="margin-top:8px;"><span class="callout-icon">💡</span><p>Both estimates are useful. The "best" rounding depends on what you need — fast and rough, or slower and closer.</p></div>
 </div></div>
 
-<div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">Why does rounding to the nearest TEN give a CLOSER estimate than rounding to the nearest HUNDRED? What's the math behind that?</p><div class="journal-label">✏️ My reasoning <span class="saved-dot" id="dot-soc1"></span></div><textarea class="journal-box" data-label="Learn — Socratic: why ten gives closer estimate" id="journal-soc1" oninput="autoSave(this,'dot-soc1')" placeholder=""></textarea></div>
+<div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">Why does rounding to the nearest TEN give a CLOSER estimate than rounding to the nearest HUNDRED? What's the math behind that?</p><div class="olt-nudge"><a href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=blocks&amp;st=1" target="_blank" rel="noopener" title="Open the Base-Ten Blocks to build the number and group or break apart."><span aria-hidden="true">🧮</span> Try the <b>Base-Ten Blocks</b> <span aria-hidden="true">↗</span></a></div><div class="journal-label">✏️ My reasoning <span class="saved-dot" id="dot-soc1"></span></div><textarea class="journal-box" data-label="Learn — Socratic: why ten gives closer estimate" id="journal-soc1" oninput="autoSave(this,'dot-soc1')" placeholder=""></textarea></div>
 <div class="tab-next-wrap"><p class="tab-transition-voice">Round each number to a friendly place. Add or subtract. That's your estimate. Try a few.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
 </div>
 <!-- ═══════════ PRACTICE ═══════════ -->
@@ -845,5 +845,7 @@ document.addEventListener('DOMContentLoaded', function() {
     .catch(function(err) { console.warn('Video manifest load failed:', err); });
 });
 </script>
+<!-- OAO math tools for this lesson (manipulatives library) -->
+<script src="https://optimaondemand.github.io/optima-4th-math/manipulatives/lesson-tools.js" defer></script>
 </body>
 </html>

@@ -435,7 +435,7 @@
 <div class="value-card" onclick="checkTA(this,true)"><div class="big">8,000</div></div>
 </div>
 <div class="inline-feedback" id="ta-fb"></div>
-<div class="journal-label">✏️ How did rounding help you decide? <span class="saved-dot" id="dot-think"></span></div>
+<div class="olt-nudge"><a href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=numberline&amp;st=1" target="_blank" rel="noopener" title="Open the Number Line to place, compare, or hop between the numbers."><span aria-hidden="true">🧮</span> Try the <b>Number Line</b> <span aria-hidden="true">↗</span></a></div><div class="journal-label">✏️ How did rounding help you decide? <span class="saved-dot" id="dot-think"></span></div>
 <textarea class="journal-box" data-label="Warm-Up — Think Prompt: closer to 7000 or 8000" id="journal-think" oninput="autoSave(this,'dot-think')" placeholder=""></textarea>
 </div></div>
 <div class="tab-next-wrap"><p class="tab-transition-voice">Same recipe as yesterday — just with bigger numbers and one more rounding choice. Let's try a real-world one.</p><button class="tab-next-btn" onclick="switchTab('learn')">Continue to 📐 Learn →</button></div>
@@ -520,7 +520,7 @@
 <button class="orange-btn" onclick="cseReset()">↩ Reset</button>
 </div>
 </div>
-<div class="journal-label">✏️ Which computer is cheaper after the sale? Did your rounding choice matter? <span class="saved-dot" id="dot-cse"></span></div>
+<div class="olt-nudge"><a href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=blocks&amp;st=1" target="_blank" rel="noopener" title="Open the Base-Ten Blocks to build the number and group or break apart."><span aria-hidden="true">🧮</span> Try the <b>Base-Ten Blocks</b> <span aria-hidden="true">↗</span></a></div><div class="journal-label">✏️ Which computer is cheaper after the sale? Did your rounding choice matter? <span class="saved-dot" id="dot-cse"></span></div>
 <textarea class="journal-box" data-label="Learn — Computer Sale Estimator" id="journal-cse" oninput="autoSave(this,'dot-cse')" placeholder=""></textarea>
 </div></div>
 <div class="key-concept"><div class="key-concept-label">📐 Key Concept</div>
@@ -601,7 +601,7 @@
 <div class="callout callout-think"><span class="callout-icon">🧠</span><p><strong>For each problem:</strong> round each number to a friendly place, then add or subtract.</p></div>
 <div class="q-block"><p class="q-text"><span class="q-num">1</span><strong>Estimate two ways.</strong> 4,223 + 758.<br/>(a) Round 4,223 to nearest THOUSAND and 758 to nearest HUNDRED. Estimate = ____<br/>(b) Round BOTH to nearest HUNDRED. Estimate = ____<br/>Which is closer to the actual answer of 4,981?</p><div class="journal-label">✏️ My two estimates + comparison <span class="saved-dot" id="dot-a1"></span></div><textarea class="journal-box" data-label="SWYK — Problem 1: 4223+758 two ways" id="journal-a1" oninput="autoSave(this,'dot-a1')" placeholder=""></textarea></div>
 <div class="q-block"><p class="q-text"><span class="q-num">2</span><strong>Estimate each by rounding to a good place.</strong><br/>(a) <strong>9,523 − 4,298</strong> ≈ ______<br/>(b) <strong>3,875 + 3,169</strong> ≈ ______</p><div class="journal-label">✏️ My estimates <span class="saved-dot" id="dot-a2"></span></div><textarea class="journal-box" data-label="SWYK — Problem 2: two estimates" id="journal-a2" oninput="autoSave(this,'dot-a2')" placeholder=""></textarea></div>
-<div class="q-block"><p class="q-text"><span class="q-num">3</span><strong>Closer to which?</strong> Is the value of <strong>4,299 + 3,467</strong> closer to 7,000 or 8,000? Show your work.</p><div class="journal-label">✏️ My answer + reasoning <span class="saved-dot" id="dot-a3"></span></div><textarea class="journal-box" data-label="SWYK — Problem 3: closer to 7000 or 8000" id="journal-a3" oninput="autoSave(this,'dot-a3')" placeholder=""></textarea></div>
+<div class="q-block"><p class="q-text"><span class="q-num">3</span><strong>Closer to which?</strong> Is the value of <strong>4,299 + 3,467</strong> closer to 7,000 or 8,000? Show your work.</p><div class="olt-nudge"><a href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=discs&amp;st=1" target="_blank" rel="noopener" title="Open the Number Discs to build the number and trade between places."><span aria-hidden="true">🧮</span> Try the <b>Number Discs</b> <span aria-hidden="true">↗</span></a></div><div class="journal-label">✏️ My answer + reasoning <span class="saved-dot" id="dot-a3"></span></div><textarea class="journal-box" data-label="SWYK — Problem 3: closer to 7000 or 8000" id="journal-a3" oninput="autoSave(this,'dot-a3')" placeholder=""></textarea></div>
 <div class="q-block"><p class="q-text"><span class="q-num">4</span><strong>Computer sale.</strong> Computer A costs <strong>$2,413</strong>, on sale for <strong>$450 less</strong>. Computer B costs <strong>$3,183</strong>, on sale for <strong>$699 less</strong>. About how much will each cost after the sale? Which is cheaper?</p><div class="journal-label">✏️ My estimates + cheaper computer <span class="saved-dot" id="dot-a4"></span></div><textarea class="journal-box" data-label="SWYK — Problem 4: computer sale" id="journal-a4" oninput="autoSave(this,'dot-a4')" placeholder="Computer A ≈ $___
 Computer B ≈ $___
 Cheaper: ___"></textarea></div>
@@ -893,5 +893,7 @@ document.addEventListener('DOMContentLoaded', function() {
     .catch(function(err) { console.warn('Video manifest load failed:', err); });
 });
 </script>
+<!-- OAO math tools for this lesson (manipulatives library) -->
+<script src="https://optimaondemand.github.io/optima-4th-math/manipulatives/lesson-tools.js" defer></script>
 </body>
 </html>

@@ -463,7 +463,7 @@
 <div class="value-card" onclick="checkTA(this,false)"><div class="big">None</div></div>
 </div>
 <div class="inline-feedback" id="ta-fb"></div>
-<div class="journal-label">✏️ Which columns will need unbundling and why? <span class="saved-dot" id="dot-think"></span></div>
+<div class="olt-nudge"><a href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=discs&amp;st=1" target="_blank" rel="noopener" title="Open the Number Discs to build the number and trade between places."><span aria-hidden="true">🧮</span> Try the <b>Number Discs</b> <span aria-hidden="true">↗</span></a></div><div class="journal-label">✏️ Which columns will need unbundling and why? <span class="saved-dot" id="dot-think"></span></div>
 <textarea class="journal-box" data-label="Warm-Up — Think Prompt: predict the unbundles" id="journal-think" oninput="autoSave(this,'dot-think')" placeholder=""></textarea>
 </div></div>
 <div class="tab-next-wrap"><p class="tab-transition-voice">Stack. Subtract right to left. Unbundle when the top is too small. Let's see it.</p><button class="tab-next-btn" onclick="switchTab('learn')">Continue to 📐 Learn →</button></div>
@@ -540,7 +540,7 @@
 </div>
 <div class="pvs-final" id="pvsFinal">✓ 524 − 286 = <strong>238</strong></div>
 </div>
-<div class="journal-label">✏️ Write the difference and explain what "unbundle" did. <span class="saved-dot" id="dot-pvs"></span></div>
+<div class="olt-nudge"><a href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=blocks&amp;st=1" target="_blank" rel="noopener" title="Open the Base-Ten Blocks to build the number and group or break apart."><span aria-hidden="true">🧮</span> Try the <b>Base-Ten Blocks</b> <span aria-hidden="true">↗</span></a></div><div class="journal-label">✏️ Write the difference and explain what "unbundle" did. <span class="saved-dot" id="dot-pvs"></span></div>
 <textarea class="journal-box" data-label="Learn — Subtraction Stacker: 524-286" id="journal-pvs" oninput="autoSave(this,'dot-pvs')" placeholder=""></textarea>
 </div></div>
 <div class="key-concept"><div class="key-concept-label">📐 Key Concept</div>
@@ -642,7 +642,7 @@
 </div></div>
 <div class="activity bl-navy"><div class="activity-head"><div class="activity-num" style="background:#0E1C42;">📬</div><div><div class="activity-title">Show What You Know</div><div class="activity-sub">Five problems.</div></div></div><div class="activity-body">
 <div class="callout callout-think"><span class="callout-icon">🧠</span><p><strong>For each problem:</strong> stack, go right to left, unbundle when the top is too small.</p></div>
-<div class="q-block"><p class="q-text"><span class="q-num">1</span>Find each difference. Show your stack and every unbundle.<br/>(a) <strong>5,483 − 3,397</strong>  ·  (b) <strong>4,206 − 335</strong>  ·  (c) <strong>7,123 − 1,456</strong>  ·  (d) <strong>6,912 − 54</strong></p><div class="journal-label">✏️ My answers <span class="saved-dot" id="dot-a1"></span></div><textarea class="journal-box" data-label="SWYK — Problem 1: four subtractions" id="journal-a1" oninput="autoSave(this,'dot-a1')" placeholder=""></textarea></div>
+<div class="q-block"><p class="q-text"><span class="q-num">1</span>Find each difference. Show your stack and every unbundle.<br/>(a) <strong>5,483 − 3,397</strong>  ·  (b) <strong>4,206 − 335</strong>  ·  (c) <strong>7,123 − 1,456</strong>  ·  (d) <strong>6,912 − 54</strong></p><div class="olt-nudge"><a href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=bar&amp;st=1" target="_blank" rel="noopener" title="Open the Bar Model to draw the problem and see the parts and the whole."><span aria-hidden="true">🧮</span> Try the <b>Bar Model</b> <span aria-hidden="true">↗</span></a></div><div class="journal-label">✏️ My answers <span class="saved-dot" id="dot-a1"></span></div><textarea class="journal-box" data-label="SWYK — Problem 1: four subtractions" id="journal-a1" oninput="autoSave(this,'dot-a1')" placeholder=""></textarea></div>
 <div class="q-block"><p class="q-text"><span class="q-num">2</span>Find <strong>4,444 − 888</strong>. Show your stack with every unbundle marked.</p><div class="journal-label">✏️ My stack + difference <span class="saved-dot" id="dot-a2"></span></div><textarea class="journal-box" data-label="SWYK — Problem 2: 4444-888 with marks" id="journal-a2" oninput="autoSave(this,'dot-a2')" placeholder=""></textarea></div>
 <div class="q-block"><p class="q-text"><span class="q-num">3</span><strong>Number pattern.</strong> Find the missing terms. Each step decreases by 456.<br/>3,279 → 2,823 → 2,367 → ____ → 1,455 → ____</p><div class="journal-label">✏️ My missing terms + rule check <span class="saved-dot" id="dot-a3"></span></div><textarea class="journal-box" data-label="SWYK — Problem 3: pattern decreases by 456" id="journal-a3" oninput="autoSave(this,'dot-a3')" placeholder=""></textarea></div>
 <div class="q-block"><p class="q-text"><span class="q-num">4</span><strong>Word problem.</strong> Aki had <strong>8,420 beads</strong>. She has already used <strong>3,363</strong>. How many beads does Aki have left?</p><div class="journal-label">✏️ My answer <span class="saved-dot" id="dot-a4"></span></div><textarea class="journal-box" data-label="SWYK — Problem 4: Aki word problem" id="journal-a4" oninput="autoSave(this,'dot-a4')" placeholder=""></textarea></div>
@@ -863,5 +863,7 @@ document.addEventListener('DOMContentLoaded', function() {
     .catch(function(err) { console.warn('Video manifest load failed:', err); });
 });
 </script>
+<!-- OAO math tools for this lesson (manipulatives library) -->
+<script src="https://optimaondemand.github.io/optima-4th-math/manipulatives/lesson-tools.js" defer></script>
 </body>
 </html>

@@ -394,7 +394,7 @@
 </div></div>
 <div class="activity bl-yellow"><div class="activity-head"><div class="activity-num" style="background:#F5C518;color:#0E1C42;">🤔</div><div><div class="activity-title">Think About It</div></div></div><div class="activity-body">
 <div class="callout callout-think"><span class="callout-icon">🧠</span><p>Felix has a 1-meter board. He cuts off 35 cm for a small shelf. How much board is left?</p></div>
-<div class="journal-label">✏️ What would you do first? <span class="saved-dot" id="dt"></span></div>
+<div class="olt-nudge"><a href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=ruler&amp;st=1" target="_blank" rel="noopener" title="Open the Rulers to measure the length."><span aria-hidden="true">🧮</span> Try the <b>Rulers</b> <span aria-hidden="true">↗</span></a></div><div class="journal-label">✏️ What would you do first? <span class="saved-dot" id="dt"></span></div>
 <textarea class="journal-box" data-label="Warm-Up journal" id="j-t02" oninput="autoSave(this,'dt')" placeholder=""></textarea>
 </div></div>
 <div class="tab-next-wrap"><p class="tab-transition-voice">Convert first, then cut.</p><button class="tab-next-btn" onclick="switchTab('learn')">Continue to 📐 Learn →</button></div>
@@ -441,7 +441,7 @@
 </div>
 <p style="font-family:'Lora',serif;background:#FAFBFF;border:2px solid #E2E8F4;border-radius:12px;padding:10px;text-align:center;font-size:20px;font-weight:900;margin-top:14px;">1 m − 35 cm = 100 cm − 35 cm = 65 cm</p>
 </div></div>
-<div class="socratic-box"><div class="socratic-label">🔮 Think Deeper</div><p class="socratic-q">Could you subtract 35 cm from 1 m without converting first? Why or why not?</p><div class="journal-label">✏️ <span class="saved-dot" id="ds1"></span></div><textarea class="journal-box" data-label="Learn socratic" id="j-s102" oninput="autoSave(this,'ds1')" placeholder=""></textarea></div>
+<div class="socratic-box"><div class="socratic-label">🔮 Think Deeper</div><p class="socratic-q">Could you subtract 35 cm from 1 m without converting first? Why or why not?</p><div class="olt-nudge"><a href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=trademat&amp;st=1" target="_blank" rel="noopener" title="Open the Trade Mat to add or take away and trade between units."><span aria-hidden="true">🧮</span> Try the <b>Trade Mat</b> <span aria-hidden="true">↗</span></a></div><div class="journal-label">✏️ <span class="saved-dot" id="ds1"></span></div><textarea class="journal-box" data-label="Learn socratic" id="j-s102" oninput="autoSave(this,'ds1')" placeholder=""></textarea></div>
 <div class="tab-next-wrap"><p class="tab-transition-voice">Convert. Subtract. Done.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
 </div>
 <!-- PRACTICE TAB -->
@@ -452,7 +452,7 @@
 <div class="q-block"><p class="q-text"><span class="q-num">B</span>3 m − 80 cm = ?</p><div class="value-card-row"><div class="value-card" onclick="eB(this,true)"><div class="big">2 m 20 cm</div></div><div class="value-card" onclick="eB(this,false)"><div class="big">2 m 80 cm</div></div><div class="value-card" onclick="eB(this,false)"><div class="big">3 m 80 cm</div></div></div><div class="inline-feedback" id="eB-fb"></div></div>
 </div></div>
 <div class="activity bl-navy"><div class="activity-head"><div class="activity-num" style="background:#0E1C42;">📬</div><div><div class="activity-title">Show What You Know</div></div></div><div class="activity-body">
-<div class="q-block"><p class="q-text"><span class="q-num">1</span><strong>Fluency.</strong> 4 m − 60 cm = ___ m ___ cm. Show your steps.</p><div class="journal-label">✏️ <span class="saved-dot" id="da1"></span></div><textarea class="journal-box" data-label="SWYK 1" id="j-a102" oninput="autoSave(this,'da1')" placeholder=""></textarea></div>
+<div class="q-block"><p class="q-text"><span class="q-num">1</span><strong>Fluency.</strong> 4 m − 60 cm = ___ m ___ cm. Show your steps.</p><div class="olt-nudge"><a href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=bond&amp;st=1" target="_blank" rel="noopener" title="Open the Number Bond to split the whole into parts, or put parts together."><span aria-hidden="true">🧮</span> Try the <b>Number Bond</b> <span aria-hidden="true">↗</span></a></div><div class="journal-label">✏️ <span class="saved-dot" id="da1"></span></div><textarea class="journal-box" data-label="SWYK 1" id="j-a102" oninput="autoSave(this,'da1')" placeholder=""></textarea></div>
 <div class="q-block"><p class="q-text"><span class="q-num">2</span><strong>Transfer.</strong> Hazel has 2 meters of ribbon. She uses 85 cm for a bow. How much ribbon is left? Give your answer in meters and centimeters.</p><div class="journal-label">✏️ <span class="saved-dot" id="da2"></span></div><textarea class="journal-box" data-label="SWYK 2" id="j-a202" oninput="autoSave(this,'da2')" placeholder=""></textarea></div>
 
 <div class="activity bl-slate" style="margin-top:18px;border-left-color:#F5A36F;"><div class="activity-head"><div class="activity-num" style="background:#F5A36F;color:#0E1C42;">🗺️</div><div><div class="activity-title">Connection Forward</div><div class="activity-sub">Next: Lesson 3.11.03</div></div></div><div class="activity-body">
@@ -634,4 +634,6 @@ document.addEventListener('DOMContentLoaded', function() {
     .catch(function(err) { console.warn('Video manifest load failed:', err); });
 });
 </script>
+<!-- OAO math tools for this lesson (manipulatives library) -->
+<script src="https://optimaondemand.github.io/optima-4th-math/manipulatives/lesson-tools.js" defer></script>
 </body></html>

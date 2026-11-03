@@ -440,7 +440,7 @@
 <div class="value-card" onclick="rT(this,false)"><div class="big">2,000</div></div>
 </div>
 <div class="inline-feedback" id="rT-fb"></div>
-<div class="journal-label">✏️ How did you decide? <span class="saved-dot" id="dt"></span></div>
+<div class="olt-nudge"><a href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=counters&amp;st=1" target="_blank" rel="noopener" title="Open Counters &amp; Arrays to make rows and columns or share into equal groups."><span aria-hidden="true">🧮</span> Try the <b>Counters &amp; Arrays</b> <span aria-hidden="true">↗</span></a></div><div class="journal-label">✏️ How did you decide? <span class="saved-dot" id="dt"></span></div>
 <textarea class="journal-box" data-label="Warm-Up think" id="j-t" oninput="autoSave(this,'dt')" placeholder=""></textarea>
 </div></div>
 <div class="tab-next-wrap"><p class="tab-transition-voice">Hold that prediction. Time to share it out with discs.</p><button class="tab-next-btn" onclick="switchTab('learn')">Continue to 📐 Learn →</button></div>
@@ -558,7 +558,7 @@
 <div class="q-block"><p class="q-text"><span class="q-num">1</span>Fill in: 8 ÷ 2 = ___  ·  80 ÷ 2 = ___  ·  800 ÷ 2 = ___ . What stays the same? What changes?</p><div class="journal-label">✏️ <span class="saved-dot" id="da1"></span></div><textarea class="journal-box" data-label="SWYK 1" id="j-a1" oninput="autoSave(this,'da1')" placeholder=""></textarea></div>
 <div class="q-block"><p class="q-text"><span class="q-num">2</span>Find: 9 ÷ 3 = ___  ·  90 ÷ 3 = ___  ·  900 ÷ 3 = ___</p><div class="journal-label">✏️ <span class="saved-dot" id="da2"></span></div><textarea class="journal-box" data-label="SWYK 2" id="j-a2" oninput="autoSave(this,'da2')" placeholder=""></textarea></div>
 <div class="q-block"><p class="q-text"><span class="q-num">3</span>Find: 12 ÷ 4 = ___  ·  120 ÷ 4 = ___  ·  1,200 ÷ 4 = ___</p><div class="journal-label">✏️ <span class="saved-dot" id="da3"></span></div><textarea class="journal-box" data-label="SWYK 3" id="j-a3" oninput="autoSave(this,'da3')" placeholder=""></textarea></div>
-<div class="q-block"><p class="q-text"><span class="q-num">4</span>800 paper clips shared equally among 4 bins. How many in each bin? Show with place-value discs.</p><div class="journal-label">✏️ <span class="saved-dot" id="da4"></span></div><textarea class="journal-box" data-label="SWYK 4" id="j-a4" oninput="autoSave(this,'da4')" placeholder=""></textarea></div>
+<div class="q-block"><p class="q-text"><span class="q-num">4</span>800 paper clips shared equally among 4 bins. How many in each bin? Show with place-value discs.</p><div class="olt-nudge"><a href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=discs&amp;st=1" target="_blank" rel="noopener" title="Open the Number Discs to build the number and trade between places."><span aria-hidden="true">🧮</span> Try the <b>Number Discs</b> <span aria-hidden="true">↗</span></a></div><div class="journal-label">✏️ <span class="saved-dot" id="da4"></span></div><textarea class="journal-box" data-label="SWYK 4" id="j-a4" oninput="autoSave(this,'da4')" placeholder=""></textarea></div>
 <div class="q-block"><p class="q-text"><span class="q-num">5</span>Felix says 50 ÷ 5 = 1. Is Felix right? If not, fix it and explain.</p><div class="journal-label">✏️ <span class="saved-dot" id="da5"></span></div><textarea class="journal-box" data-label="SWYK 5" id="j-a5" oninput="autoSave(this,'da5')" placeholder=""></textarea></div>
 <div class="q-block"><p class="q-text"><span class="q-num">6</span><strong>Reflection.</strong> How does knowing your basic facts (like 6 ÷ 3) help you find a bigger quotient (like 600 ÷ 3)?</p><div class="journal-label">✏️ <span class="saved-dot" id="da6"></span></div><textarea class="journal-box" data-label="SWYK 6" id="j-a6" oninput="autoSave(this,'da6')" placeholder=""></textarea></div>
 
@@ -742,4 +742,6 @@ document.addEventListener('DOMContentLoaded', function() {
     .catch(function(err) { console.warn('Video manifest load failed:', err); });
 });
 </script>
+<!-- OAO math tools for this lesson (manipulatives library) -->
+<script src="https://optimaondemand.github.io/optima-4th-math/manipulatives/lesson-tools.js" defer></script>
 </body></html>

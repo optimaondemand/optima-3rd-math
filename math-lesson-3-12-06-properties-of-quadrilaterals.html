@@ -392,7 +392,7 @@
 <div class="value-card" onclick="rT(this,false)"><div class="big">Curved edges</div></div>
 </div>
 <div class="inline-feedback" id="rT-fb"></div>
-<div class="journal-label">✏️ Name as many four-sided shapes as you can. <span class="saved-dot" id="dt"></span></div>
+<div class="olt-nudge"><a href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=geoboard&amp;st=1" target="_blank" rel="noopener" title="Open the Geoboard to stretch bands into shapes and check the sides."><span aria-hidden="true">🧮</span> Try the <b>Geoboard</b> <span aria-hidden="true">↗</span></a></div><div class="journal-label">✏️ Name as many four-sided shapes as you can. <span class="saved-dot" id="dt"></span></div>
 <textarea class="journal-box" data-label="Warm-Up journal" id="j-t01" oninput="autoSave(this,'dt')" placeholder=""></textarea>
 </div></div>
 <div class="tab-next-wrap"><p class="tab-transition-voice">Four sides, four angles — but so many different shapes.</p><button class="tab-next-btn" onclick="switchTab('learn')">Continue to 📐 Learn →</button></div>
@@ -450,7 +450,7 @@
 <div class="bubble felix"><div class="bubble-avatar">F</div><div class="bubble-body"><div class="bubble-name">Felix</div><div class="bubble-text">“They’re all parallelograms too — all have 2 pairs of parallel sides!”</div></div></div>
 </div>
 </div></div>
-<div class="socratic-box"><div class="socratic-label">🔮 Think Deeper</div><p class="socratic-q">Is a square also a rectangle? Is a rectangle also a square? Explain.</p><div class="journal-label">✏️ <span class="saved-dot" id="ds1"></span></div><textarea class="journal-box" data-label="Learn socratic" id="j-s101" oninput="autoSave(this,'ds1')" placeholder=""></textarea></div>
+<div class="socratic-box"><div class="socratic-label">🔮 Think Deeper</div><p class="socratic-q">Is a square also a rectangle? Is a rectangle also a square? Explain.</p><div class="olt-nudge"><a href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=tangram&amp;st=1" target="_blank" rel="noopener" title="Open the Tangrams to slide, turn, and flip the pieces into the shape."><span aria-hidden="true">🧮</span> Try the <b>Tangrams</b> <span aria-hidden="true">↗</span></a></div><div class="journal-label">✏️ <span class="saved-dot" id="ds1"></span></div><textarea class="journal-box" data-label="Learn socratic" id="j-s101" oninput="autoSave(this,'ds1')" placeholder=""></textarea></div>
 <div class="tab-next-wrap"><p class="tab-transition-voice">Four sides, many families — and squares belong to all of them.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
 </div>
 <!-- PRACTICE TAB -->
@@ -461,7 +461,7 @@
 <div class="q-block"><p class="q-text"><span class="q-num">B</span>A shape has 4 equal sides and 4 right angles. It is a ___.</p><div class="value-card-row"><div class="value-card" onclick="eB(this,true)"><div class="big">Square</div></div><div class="value-card" onclick="eB(this,false)"><div class="big">Rectangle</div></div><div class="value-card" onclick="eB(this,false)"><div class="big">Rhombus</div></div></div><div class="inline-feedback" id="eB-fb"></div></div>
 </div></div>
 <div class="activity bl-navy"><div class="activity-head"><div class="activity-num" style="background:#0E1C42;">📬</div><div><div class="activity-title">Show What You Know</div></div></div><div class="activity-body">
-<div class="q-block"><p class="q-text"><span class="q-num">1</span><strong>Fluency.</strong> Name the quadrilateral: 4 sides, 2 pairs of parallel sides, 4 right angles, sides not all equal.</p><div class="journal-label">✏️ <span class="saved-dot" id="da1"></span></div><textarea class="journal-box" data-label="SWYK 1" id="j-a101" oninput="autoSave(this,'da1')" placeholder=""></textarea></div>
+<div class="q-block"><p class="q-text"><span class="q-num">1</span><strong>Fluency.</strong> Name the quadrilateral: 4 sides, 2 pairs of parallel sides, 4 right angles, sides not all equal.</p><div class="olt-nudge"><a href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=compass&amp;st=1" target="_blank" rel="noopener" title="Open the Compass to set the radius and draw the circle."><span aria-hidden="true">🧮</span> Try the <b>Compass</b> <span aria-hidden="true">↗</span></a></div><div class="journal-label">✏️ <span class="saved-dot" id="da1"></span></div><textarea class="journal-box" data-label="SWYK 1" id="j-a101" oninput="autoSave(this,'da1')" placeholder=""></textarea></div>
 <div class="q-block"><p class="q-text"><span class="q-num">2</span><strong>Transfer.</strong> Cora says a rhombus is like a “pushed-over square.” Do you agree? What properties do they share, and what’s different?</p><div class="journal-label">✏️ <span class="saved-dot" id="da2"></span></div><textarea class="journal-box" data-label="SWYK 2" id="j-a201" oninput="autoSave(this,'da2')" placeholder=""></textarea></div>
 
 <div class="activity bl-slate" style="margin-top:18px;border-left-color:#F5A36F;"><div class="activity-head"><div class="activity-num" style="background:#F5A36F;color:#0E1C42;">🗺️</div><div><div class="activity-title">Connection Forward</div><div class="activity-sub">Next: Lesson 3.12.07</div></div></div><div class="activity-body">
@@ -690,4 +690,6 @@ document.addEventListener('DOMContentLoaded', function() {
     .catch(function(err) { console.warn('Video manifest load failed:', err); });
 });
 </script>
+<!-- OAO math tools for this lesson (manipulatives library) -->
+<script src="https://optimaondemand.github.io/optima-4th-math/manipulatives/lesson-tools.js" defer></script>
 </body></html>

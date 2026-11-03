@@ -411,7 +411,7 @@
 <div class="value-card" onclick="rT(this,false)"><div class="big">Find oranges ÷ 6</div><div class="small">18 ÷ 6</div></div>
 </div>
 <div class="inline-feedback" id="rT-fb"></div>
-<div class="journal-label">✏️ Now Step 2: ___ ÷ 6 = ___ <span class="saved-dot" id="dt"></span></div>
+<div class="olt-nudge"><a href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=bar&amp;st=1" target="_blank" rel="noopener" title="Open the Bar Model to draw the problem and see the parts and the whole."><span aria-hidden="true">🧮</span> Try the <b>Bar Model</b> <span aria-hidden="true">↗</span></a></div><div class="journal-label">✏️ Now Step 2: ___ ÷ 6 = ___ <span class="saved-dot" id="dt"></span></div>
 <textarea class="journal-box" data-label="Warm-Up think" id="j-t" oninput="autoSave(this,'dt')"></textarea>
 </div></div>
 <div class="tab-next-wrap"><p class="tab-transition-voice">Find the middle. Then finish.</p><button class="tab-next-btn" onclick="switchTab('learn')">Continue to 📐 Learn →</button></div>
@@ -499,10 +499,10 @@
 </div></div>
 <div class="activity bl-navy"><div class="activity-head"><div class="activity-num" style="background:#0E1C42;">📬</div><div><div class="activity-title">Show What You Know</div></div></div><div class="activity-body">
 <div class="q-block"><p class="q-text"><span class="q-num">1</span><strong>Crayons.</strong> 4 boxes × 8, then gave 12 away. Crayons left?</p><div class="journal-label">✏️ <span class="saved-dot" id="da1"></span></div><textarea class="journal-box" data-label="SWYK 1" id="j-a1" oninput="autoSave(this,'da1')"></textarea></div>
-<div class="q-block"><p class="q-text"><span class="q-num">2</span><strong>Fruit bags.</strong> 24 apples + 18 oranges ÷ 6 bags. Per bag?</p><div class="journal-label">✏️ <span class="saved-dot" id="da2"></span></div><textarea class="journal-box" data-label="SWYK 2" id="j-a2" oninput="autoSave(this,'da2')"></textarea></div>
+<div class="q-block"><p class="q-text"><span class="q-num">2</span><strong>Fruit bags.</strong> 24 apples + 18 oranges ÷ 6 bags. Per bag?</p><div class="olt-nudge"><a href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=counters&amp;st=1" target="_blank" rel="noopener" title="Open Counters &amp; Arrays to make rows and columns or share into equal groups."><span aria-hidden="true">🧮</span> Try the <b>Counters &amp; Arrays</b> <span aria-hidden="true">↗</span></a></div><div class="journal-label">✏️ <span class="saved-dot" id="da2"></span></div><textarea class="journal-box" data-label="SWYK 2" id="j-a2" oninput="autoSave(this,'da2')"></textarea></div>
 <div class="q-block"><p class="q-text"><span class="q-num">3</span><strong>Stickers.</strong> 3 packs of 5 + 4 extras. Total stickers?</p><div class="journal-label">✏️ <span class="saved-dot" id="da3"></span></div><textarea class="journal-box" data-label="SWYK 3" id="j-a3" oninput="autoSave(this,'da3')"></textarea></div>
 <div class="q-block"><p class="q-text"><span class="q-num">4</span><strong>Money.</strong> Felix earned $7 a week for 4 weeks. He spent $15. How much is left?</p><div class="journal-label">✏️ <span class="saved-dot" id="da4"></span></div><textarea class="journal-box" data-label="SWYK 4" id="j-a4" oninput="autoSave(this,'da4')"></textarea></div>
-<div class="q-block"><p class="q-text"><span class="q-num">5</span><strong>Plates.</strong> 30 cookies are arranged on plates of 6 cookies each. The teacher takes 2 plates for the office. How many cookies are still in the classroom?</p><div class="journal-label">✏️ <span class="saved-dot" id="da5"></span></div><textarea class="journal-box" data-label="SWYK 5" id="j-a5" oninput="autoSave(this,'da5')"></textarea></div>
+<div class="q-block"><p class="q-text"><span class="q-num">5</span><strong>Plates.</strong> 30 cookies are arranged on plates of 6 cookies each. The teacher takes 2 plates for the office. How many cookies are still in the classroom?</p><div class="olt-nudge"><a href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=counters&amp;st=1" target="_blank" rel="noopener" title="Open Counters &amp; Arrays to make rows and columns or share into equal groups."><span aria-hidden="true">🧮</span> Try the <b>Counters &amp; Arrays</b> <span aria-hidden="true">↗</span></a></div><div class="journal-label">✏️ <span class="saved-dot" id="da5"></span></div><textarea class="journal-box" data-label="SWYK 5" id="j-a5" oninput="autoSave(this,'da5')"></textarea></div>
 <div class="q-block"><p class="q-text"><span class="q-num">6</span><strong>Reflection.</strong> Why is planning Step 1 and Step 2 BEFORE you compute a smart habit?</p><div class="journal-label">✏️ <span class="saved-dot" id="da6"></span></div><textarea class="journal-box" data-label="SWYK 6" id="j-a6" oninput="autoSave(this,'da6')"></textarea></div>
 <div class="activity bl-slate" style="margin-top:18px;border-left-color:#F5A36F;"><div class="activity-head"><div class="activity-num" style="background:#F5A36F;color:#0E1C42;">🗺️</div><div><div class="activity-title">Connection Forward</div><div class="activity-sub">Preview Unit 5 — Division Strategies</div></div></div><div class="activity-body">
 <p>Up next: bigger numbers, more strategies, and dividing 2-digit and 3-digit numbers.</p>
@@ -648,4 +648,6 @@ document.addEventListener('DOMContentLoaded', function() {
     .catch(function(err) { console.warn('Video manifest load failed:', err); });
 });
 </script>
+<!-- OAO math tools for this lesson (manipulatives library) -->
+<script src="https://optimaondemand.github.io/optima-4th-math/manipulatives/lesson-tools.js" defer></script>
 </body></html>

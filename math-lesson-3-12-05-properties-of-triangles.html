@@ -406,7 +406,7 @@
 <div class="value-card" onclick="rT(this,false)"><div class="big">No</div></div>
 </div>
 <div class="inline-feedback" id="rT-fb"></div>
-<div class="journal-label">✏️ What’s different about these two triangles? <span class="saved-dot" id="dt"></span></div>
+<div class="olt-nudge"><a href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=geoboard&amp;st=1" target="_blank" rel="noopener" title="Open the Geoboard to stretch bands into shapes and check the sides."><span aria-hidden="true">🧮</span> Try the <b>Geoboard</b> <span aria-hidden="true">↗</span></a></div><div class="journal-label">✏️ What’s different about these two triangles? <span class="saved-dot" id="dt"></span></div>
 <textarea class="journal-box" data-label="Warm-Up journal" id="j-t01" oninput="autoSave(this,'dt')" placeholder=""></textarea>
 </div></div>
 <div class="tab-next-wrap"><p class="tab-transition-voice">Same shape name, different properties — let’s sort them out.</p><button class="tab-next-btn" onclick="switchTab('learn')">Continue to 📐 Learn →</button></div>
@@ -476,7 +476,7 @@
 <div class="bubble cora"><div class="bubble-avatar">C</div><div class="bubble-body"><div class="bubble-name">Cora</div><div class="bubble-text">“So Triangle 1 is a scalene right triangle. Triangle 2 is an equilateral acute triangle.”</div></div></div>
 </div>
 </div></div>
-<div class="socratic-box"><div class="socratic-label">🔮 Think Deeper</div><p class="socratic-q">Can a triangle be both equilateral and right? Why or why not?</p><div class="journal-label">✏️ <span class="saved-dot" id="ds1"></span></div><textarea class="journal-box" data-label="Learn socratic" id="j-s101" oninput="autoSave(this,'ds1')" placeholder=""></textarea></div>
+<div class="socratic-box"><div class="socratic-label">🔮 Think Deeper</div><p class="socratic-q">Can a triangle be both equilateral and right? Why or why not?</p><div class="olt-nudge"><a href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=tangram&amp;st=1" target="_blank" rel="noopener" title="Open the Tangrams to slide, turn, and flip the pieces into the shape."><span aria-hidden="true">🧮</span> Try the <b>Tangrams</b> <span aria-hidden="true">↗</span></a></div><div class="journal-label">✏️ <span class="saved-dot" id="ds1"></span></div><textarea class="journal-box" data-label="Learn socratic" id="j-s101" oninput="autoSave(this,'ds1')" placeholder=""></textarea></div>
 <div class="tab-next-wrap"><p class="tab-transition-voice">Equilateral, isosceles, scalene. Right, acute, obtuse. Every triangle has two names.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
 </div>
 <!-- PRACTICE TAB -->
@@ -487,7 +487,7 @@
 <div class="q-block"><p class="q-text"><span class="q-num">B</span>A triangle has one right angle marked. Classify by angles.</p><div class="value-card-row"><div class="value-card" onclick="eB(this,true)"><div class="big">Right</div></div><div class="value-card" onclick="eB(this,false)"><div class="big">Acute</div></div><div class="value-card" onclick="eB(this,false)"><div class="big">Obtuse</div></div></div><div class="inline-feedback" id="eB-fb"></div></div>
 </div></div>
 <div class="activity bl-navy"><div class="activity-head"><div class="activity-num" style="background:#0E1C42;">📬</div><div><div class="activity-title">Show What You Know</div></div></div><div class="activity-body">
-<div class="q-block"><p class="q-text"><span class="q-num">1</span><strong>Fluency.</strong> A triangle has sides of 6 cm, 6 cm, and 6 cm. Classify it by sides and by angles.</p><div class="journal-label">✏️ <span class="saved-dot" id="da1"></span></div><textarea class="journal-box" data-label="SWYK 1" id="j-a101" oninput="autoSave(this,'da1')" placeholder=""></textarea></div>
+<div class="q-block"><p class="q-text"><span class="q-num">1</span><strong>Fluency.</strong> A triangle has sides of 6 cm, 6 cm, and 6 cm. Classify it by sides and by angles.</p><div class="olt-nudge"><a href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=compass&amp;st=1" target="_blank" rel="noopener" title="Open the Compass to set the radius and draw the circle."><span aria-hidden="true">🧮</span> Try the <b>Compass</b> <span aria-hidden="true">↗</span></a></div><div class="journal-label">✏️ <span class="saved-dot" id="da1"></span></div><textarea class="journal-box" data-label="SWYK 1" id="j-a101" oninput="autoSave(this,'da1')" placeholder=""></textarea></div>
 <div class="q-block"><p class="q-text"><span class="q-num">2</span><strong>Transfer.</strong> Felix drew a triangle with one angle greater than a right angle. Can it also be isosceles? Draw or describe an example.</p><div class="journal-label">✏️ <span class="saved-dot" id="da2"></span></div><textarea class="journal-box" data-label="SWYK 2" id="j-a201" oninput="autoSave(this,'da2')" placeholder=""></textarea></div>
 
 <div class="activity bl-slate" style="margin-top:18px;border-left-color:#F5A36F;"><div class="activity-head"><div class="activity-num" style="background:#F5A36F;color:#0E1C42;">🗺️</div><div><div class="activity-title">Connection Forward</div><div class="activity-sub">Next: Lesson 3.12.06</div></div></div><div class="activity-body">
@@ -712,4 +712,6 @@ document.addEventListener('DOMContentLoaded', function() {
     .catch(function(err) { console.warn('Video manifest load failed:', err); });
 });
 </script>
+<!-- OAO math tools for this lesson (manipulatives library) -->
+<script src="https://optimaondemand.github.io/optima-4th-math/manipulatives/lesson-tools.js" defer></script>
 </body></html>

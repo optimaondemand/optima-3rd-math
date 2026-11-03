@@ -394,7 +394,7 @@
 <div class="value-card" onclick="rT(this,false)"><div class="big">The perimeter</div></div>
 </div>
 <div class="inline-feedback" id="rT-fb"></div>
-<div class="journal-label">✏️ How do you know? <span class="saved-dot" id="dt"></span></div>
+<div class="olt-nudge"><a href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=compass&amp;st=1" target="_blank" rel="noopener" title="Open the Compass to set the radius and draw the circle."><span aria-hidden="true">🧮</span> Try the <b>Compass</b> <span aria-hidden="true">↗</span></a></div><div class="journal-label">✏️ How do you know? <span class="saved-dot" id="dt"></span></div>
 <textarea class="journal-box" data-label="Warm-Up journal" id="j-t01" oninput="autoSave(this,'dt')" placeholder=""></textarea>
 </div></div>
 <div class="tab-next-wrap"><p class="tab-transition-voice">Round and even — every direction the same.</p><button class="tab-next-btn" onclick="switchTab('learn')">Continue to 📐 Learn →</button></div>
@@ -437,7 +437,7 @@
 </div>
 <p style="font-family:'Lora',serif;background:#FAFBFF;border:2px solid #E2E8F4;border-radius:12px;padding:10px;text-align:center;font-size:20px;font-weight:900;margin-top:14px;">Radius = 4 ft → Diameter = 8 ft</p>
 </div></div>
-<div class="socratic-box"><div class="socratic-label">🔮 Think Deeper</div><p class="socratic-q">If you doubled the radius, what would happen to the diameter?</p><div class="journal-label">✏️ <span class="saved-dot" id="ds1"></span></div><textarea class="journal-box" data-label="Learn socratic" id="j-s101" oninput="autoSave(this,'ds1')" placeholder=""></textarea></div>
+<div class="socratic-box"><div class="socratic-label">🔮 Think Deeper</div><p class="socratic-q">If you doubled the radius, what would happen to the diameter?</p><div class="olt-nudge"><a href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=geoboard&amp;st=1" target="_blank" rel="noopener" title="Open the Geoboard to stretch bands into shapes and check the sides."><span aria-hidden="true">🧮</span> Try the <b>Geoboard</b> <span aria-hidden="true">↗</span></a></div><div class="journal-label">✏️ <span class="saved-dot" id="ds1"></span></div><textarea class="journal-box" data-label="Learn socratic" id="j-s101" oninput="autoSave(this,'ds1')" placeholder=""></textarea></div>
 <div class="tab-next-wrap"><p class="tab-transition-voice">Center, radius, diameter — three parts, one round shape.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
 </div>
 <!-- PRACTICE TAB -->
@@ -448,7 +448,7 @@
 <div class="q-block"><p class="q-text"><span class="q-num">B</span>A circle has a diameter of 20 cm. What is its radius?</p><div class="value-card-row"><div class="value-card" onclick="eB(this,true)"><div class="big">10 cm</div></div><div class="value-card" onclick="eB(this,false)"><div class="big">40 cm</div></div><div class="value-card" onclick="eB(this,false)"><div class="big">5 cm</div></div></div><div class="inline-feedback" id="eB-fb"></div></div>
 </div></div>
 <div class="activity bl-navy"><div class="activity-head"><div class="activity-num" style="background:#0E1C42;">📬</div><div><div class="activity-title">Show What You Know</div></div></div><div class="activity-body">
-<div class="q-block"><p class="q-text"><span class="q-num">1</span><strong>Fluency.</strong> A circle has a radius of 7 inches. What is its diameter? Show your thinking.</p><div class="journal-label">✏️ <span class="saved-dot" id="da1"></span></div><textarea class="journal-box" data-label="SWYK 1" id="j-a101" oninput="autoSave(this,'da1')" placeholder=""></textarea></div>
+<div class="q-block"><p class="q-text"><span class="q-num">1</span><strong>Fluency.</strong> A circle has a radius of 7 inches. What is its diameter? Show your thinking.</p><div class="olt-nudge"><a href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=tangram&amp;st=1" target="_blank" rel="noopener" title="Open the Tangrams to slide, turn, and flip the pieces into the shape."><span aria-hidden="true">🧮</span> Try the <b>Tangrams</b> <span aria-hidden="true">↗</span></a></div><div class="journal-label">✏️ <span class="saved-dot" id="da1"></span></div><textarea class="journal-box" data-label="SWYK 1" id="j-a101" oninput="autoSave(this,'da1')" placeholder=""></textarea></div>
 <div class="q-block"><p class="q-text"><span class="q-num">2</span><strong>Transfer.</strong> Cora draws two circles. One has a radius of 8 cm. The other has a diameter of 8 cm. Are the circles the same size? Explain.</p><div class="journal-label">✏️ <span class="saved-dot" id="da2"></span></div><textarea class="journal-box" data-label="SWYK 2" id="j-a201" oninput="autoSave(this,'da2')" placeholder=""></textarea></div>
 
 <div class="activity bl-slate" style="margin-top:18px;border-left-color:#F5A36F;"><div class="activity-head"><div class="activity-num" style="background:#F5A36F;color:#0E1C42;">🗺️</div><div><div class="activity-title">Connection Forward</div><div class="activity-sub">Next: Lesson 3.12.02</div></div></div><div class="activity-body">
@@ -618,4 +618,6 @@ document.addEventListener('DOMContentLoaded', function() {
     .catch(function(err) { console.warn('Video manifest load failed:', err); });
 });
 </script>
+<!-- OAO math tools for this lesson (manipulatives library) -->
+<script src="https://optimaondemand.github.io/optima-4th-math/manipulatives/lesson-tools.js" defer></script>
 </body></html>

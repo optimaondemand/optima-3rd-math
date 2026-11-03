@@ -541,7 +541,7 @@
 <button class="orange-btn" onclick="bmReset()">↩ Reset</button>
 </div>
 </div>
-<div class="journal-label">✏️ What's the sum? What operation did the bar tell you to use? <span class="saved-dot" id="dot-bm"></span></div>
+<div class="olt-nudge"><a href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=bar&amp;st=1" target="_blank" rel="noopener" title="Open the Bar Model to draw the problem and see the parts and the whole."><span aria-hidden="true">🧮</span> Try the <b>Bar Model</b> <span aria-hidden="true">↗</span></a></div><div class="journal-label">✏️ What's the sum? What operation did the bar tell you to use? <span class="saved-dot" id="dot-bm"></span></div>
 <textarea class="journal-box" data-label="Learn — Bar Model Explorer: 270 + 360" id="journal-bm" oninput="autoSave(this,'dot-bm')" placeholder=""></textarea>
 </div></div>
 <div class="key-concept"><div class="key-concept-label">📐 Key Concept</div>
@@ -593,7 +593,7 @@
 <div class="callout callout-tip" style="margin-top:8px;"><span class="callout-icon">💡</span><p>One bar — two answers. The picture holds both the "missing part" and the "difference" at the same time.</p></div>
 </div></div>
 
-<div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">If I show you a bar split into two parts with a "?" above the whole, do I add or subtract? What about a bar where the whole is labeled and one part is "?" — what then? How does the picture tell you?</p><div class="journal-label">✏️ My reasoning <span class="saved-dot" id="dot-soc1"></span></div><textarea class="journal-box" data-label="Learn — Socratic: how the picture tells you the operation" id="journal-soc1" oninput="autoSave(this,'dot-soc1')" placeholder=""></textarea></div>
+<div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">If I show you a bar split into two parts with a "?" above the whole, do I add or subtract? What about a bar where the whole is labeled and one part is "?" — what then? How does the picture tell you?</p><div class="olt-nudge"><a href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=bond&amp;st=1" target="_blank" rel="noopener" title="Open the Number Bond to split the whole into parts, or put parts together."><span aria-hidden="true">🧮</span> Try the <b>Number Bond</b> <span aria-hidden="true">↗</span></a></div><div class="journal-label">✏️ My reasoning <span class="saved-dot" id="dot-soc1"></span></div><textarea class="journal-box" data-label="Learn — Socratic: how the picture tells you the operation" id="journal-soc1" oninput="autoSave(this,'dot-soc1')" placeholder=""></textarea></div>
 <div class="tab-next-wrap"><p class="tab-transition-voice">Draw the bar. Spot the missing piece. Pick add or subtract. Try a few.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
 </div>
 <!-- ═══════════ PRACTICE ═══════════ -->
@@ -620,7 +620,7 @@
 </div></div>
 <div class="activity bl-navy"><div class="activity-head"><div class="activity-num" style="background:#0E1C42;">📬</div><div><div class="activity-title">Show What You Know</div><div class="activity-sub">Five problems.</div></div></div><div class="activity-body">
 <div class="callout callout-think"><span class="callout-icon">🧠</span><p><strong>For each problem:</strong> picture the bar. Spot the missing piece. Add or subtract.</p></div>
-<div class="q-block"><p class="q-text"><span class="q-num">1</span>Find the answer using a bar model.<br/>(a) <strong>120 − 70</strong>  ·  (b) <strong>270 + 360</strong>  ·  (c) <strong>Whole 86, one part 38. Other part = ?</strong></p><div class="journal-label">✏️ My answers <span class="saved-dot" id="dot-a1"></span></div><textarea class="journal-box" data-label="Show What You Know — Problem 1: three bar-model problems" id="journal-a1" oninput="autoSave(this,'dot-a1')" placeholder=""></textarea></div>
+<div class="q-block"><p class="q-text"><span class="q-num">1</span>Find the answer using a bar model.<br/>(a) <strong>120 − 70</strong>  ·  (b) <strong>270 + 360</strong>  ·  (c) <strong>Whole 86, one part 38. Other part = ?</strong></p><div class="olt-nudge"><a href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=numberline&amp;st=1" target="_blank" rel="noopener" title="Open the Number Line to place, compare, or hop between the numbers."><span aria-hidden="true">🧮</span> Try the <b>Number Line</b> <span aria-hidden="true">↗</span></a></div><div class="journal-label">✏️ My answers <span class="saved-dot" id="dot-a1"></span></div><textarea class="journal-box" data-label="Show What You Know — Problem 1: three bar-model problems" id="journal-a1" oninput="autoSave(this,'dot-a1')" placeholder=""></textarea></div>
 <div class="q-block"><p class="q-text"><span class="q-num">2</span><strong>Draw and solve.</strong> The sum of two numbers is <strong>540</strong>. The greater number is <strong>350</strong>. Find (a) the other number and (b) the difference between them.</p><div class="journal-label">✏️ My bar + answers <span class="saved-dot" id="dot-a2"></span></div><textarea class="journal-box" data-label="Show What You Know — Problem 2: sum 540 greater 350" id="journal-a2" oninput="autoSave(this,'dot-a2')" placeholder="My bar: whole = 540, parts = 350 and ?
 Other = ___
 Difference = ___" style="min-height:110px;"></textarea></div>
@@ -820,5 +820,7 @@ document.addEventListener('DOMContentLoaded', function() {
     .catch(function(err) { console.warn('Video manifest load failed:', err); });
 });
 </script>
+<!-- OAO math tools for this lesson (manipulatives library) -->
+<script src="https://optimaondemand.github.io/optima-4th-math/manipulatives/lesson-tools.js" defer></script>
 </body>
 </html>

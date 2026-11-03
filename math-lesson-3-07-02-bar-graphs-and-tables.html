@@ -432,7 +432,7 @@
 <div class="value-card" onclick="rT(this,false)"><div class="big">8</div></div>
 </div>
 <div class="inline-feedback" id="rT-fb"></div>
-<div class="journal-label">✏️ How did you decide? <span class="saved-dot" id="dt"></span></div>
+<div class="olt-nudge"><a href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=whiteboard&amp;st=1" target="_blank" rel="noopener" title="Open the Grid Whiteboard to draw and show your thinking."><span aria-hidden="true">🧮</span> Try the <b>Grid Whiteboard</b> <span aria-hidden="true">↗</span></a></div><div class="journal-label">✏️ How did you decide? <span class="saved-dot" id="dt"></span></div>
 <textarea class="journal-box" data-label="Warm-Up think" id="j-t" oninput="autoSave(this,'dt')" placeholder=""></textarea>
 </div></div>
 <div class="tab-next-wrap"><p class="tab-transition-voice">Seven marks, seven cubes. Time to stack.</p><button class="tab-next-btn" onclick="switchTab('learn')">Continue to 📐 Learn →</button></div>
@@ -493,7 +493,7 @@
 </div>
 <p style="font-family:'Lora',serif;background:#FAFBFF;border:2px solid #E2E8F4;border-radius:12px;padding:10px;text-align:center;font-size:18px;font-weight:800;margin-top:14px;">Largest: <span style="color:#1A8A5A;">Art</span>  ·  Difference: <span style="color:#1A8A5A;">3</span></p>
 </div></div>
-<div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">If I gave you only the bar graph (no table), could you still find the count for each sport? How?</p><div class="journal-label">✏️ <span class="saved-dot" id="ds1"></span></div><textarea class="journal-box" data-label="Learn socratic" id="j-s1" oninput="autoSave(this,'ds1')" placeholder=""></textarea></div>
+<div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">If I gave you only the bar graph (no table), could you still find the count for each sport? How?</p><div class="olt-nudge"><a href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=tiles&amp;st=1" target="_blank" rel="noopener" title="Open the Color Tiles to lay out an array or cover the area."><span aria-hidden="true">🧮</span> Try the <b>Color Tiles</b> <span aria-hidden="true">↗</span></a></div><div class="journal-label">✏️ <span class="saved-dot" id="ds1"></span></div><textarea class="journal-box" data-label="Learn socratic" id="j-s1" oninput="autoSave(this,'ds1')" placeholder=""></textarea></div>
 <div class="tab-next-wrap"><p class="tab-transition-voice">Bars tell you the story without words.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
 </div>
 <div class="tab-panel" id="tab-assignment">
@@ -502,7 +502,7 @@
 <div class="q-block"><p class="q-text"><span class="q-num">B</span>If a bar graph shows Birds 2 and Fish 3, what is the total?</p><div class="value-card-row"><div class="value-card" onclick="eB(this,false)"><div class="big">1</div></div><div class="value-card" onclick="eB(this,true)"><div class="big">5</div></div><div class="value-card" onclick="eB(this,false)"><div class="big">6</div></div></div><div class="inline-feedback" id="eB-fb"></div></div>
 </div></div>
 <div class="activity bl-navy"><div class="activity-head"><div class="activity-num" style="background:#0E1C42;">📬</div><div><div class="activity-title">Show What You Know</div></div></div><div class="activity-body">
-<div class="q-block"><p class="q-text"><span class="q-num">1</span><strong>Fluency.</strong> Using Hazel's pet survey (Dogs 7, Cats 5, Fish 3, Birds 2): which pet was most popular, and how many more chose Dogs than Cats?</p><div class="journal-label">✏️ <span class="saved-dot" id="da1"></span></div><textarea class="journal-box" data-label="SWYK 1" id="j-a1" oninput="autoSave(this,'da1')" placeholder=""></textarea></div>
+<div class="q-block"><p class="q-text"><span class="q-num">1</span><strong>Fluency.</strong> Using Hazel's pet survey (Dogs 7, Cats 5, Fish 3, Birds 2): which pet was most popular, and how many more chose Dogs than Cats?</p><div class="olt-nudge"><a href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=dice&amp;st=1" target="_blank" rel="noopener" title="Open Dice &amp; Cards to make numbers and practice."><span aria-hidden="true">🧮</span> Try the <b>Dice &amp; Cards</b> <span aria-hidden="true">↗</span></a></div><div class="journal-label">✏️ <span class="saved-dot" id="da1"></span></div><textarea class="journal-box" data-label="SWYK 1" id="j-a1" oninput="autoSave(this,'da1')" placeholder=""></textarea></div>
 <div class="q-block"><p class="q-text"><span class="q-num">2</span><strong>Transfer.</strong> Felix's after-school club survey: Chess 4, Art 6, Drama 3, Robotics 5. Sketch a bar graph in your journal (one cube per vote). Which club is least popular?</p><div class="journal-label">✏️ <span class="saved-dot" id="da2"></span></div><textarea class="journal-box" data-label="SWYK 2" id="j-a2" oninput="autoSave(this,'da2')" placeholder=""></textarea></div>
 
 <div class="activity bl-slate" style="margin-top:18px;border-left-color:#F5A36F;"><div class="activity-head"><div class="activity-num" style="background:#F5A36F;color:#0E1C42;">🗺️</div><div><div class="activity-title">Connection Forward</div><div class="activity-sub">Preview Lesson 3.07 Summative Assessment</div></div></div><div class="activity-body">
@@ -680,4 +680,6 @@ document.addEventListener('DOMContentLoaded', function() {
     .catch(function(err) { console.warn('Video manifest load failed:', err); });
 });
 </script>
+<!-- OAO math tools for this lesson (manipulatives library) -->
+<script src="https://optimaondemand.github.io/optima-4th-math/manipulatives/lesson-tools.js" defer></script>
 </body></html>

@@ -453,7 +453,7 @@
 <button class="strategy-chip" onclick="this.classList.toggle('selected')">Exactly in the middle</button>
 </div>
 <div class="callout callout-tip"><span class="callout-icon">🧠</span><p><strong>Before the next tab:</strong> Yesterday the deciding digit was the hundreds digit. Today, where do you think the deciding digit lives?</p></div>
-<div class="journal-label">✏️ My prediction <span class="saved-dot" id="dot-think"></span></div>
+<div class="olt-nudge"><a href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=numberline&amp;st=1" target="_blank" rel="noopener" title="Open the Number Line to place, compare, or hop between the numbers."><span aria-hidden="true">🧮</span> Try the <b>Number Line</b> <span aria-hidden="true">↗</span></a></div><div class="journal-label">✏️ My prediction <span class="saved-dot" id="dot-think"></span></div>
 <textarea class="journal-box" data-label="Warm-Up — Think: round 4,852 to nearest hundred" id="journal-think" oninput="autoSave(this,'dot-think')" placeholder=""></textarea>
 </div></div>
 <div class="tab-next-wrap"><p class="tab-transition-voice">The Math Crew is waiting in the Learn tab — Atlas, Hazel, Felix, and Cora are going to walk through 4,852 with you.</p><button class="tab-next-btn" onclick="switchTab('learn')">Continue to 📐 Learn →</button></div>
@@ -555,7 +555,7 @@
 <div class="callout callout-tip"><span class="callout-icon">💡</span><p>So Mount Tyree is "about 4,900 meters" to the nearest hundred — a more precise headline than "about 5,000 meters."</p></div>
 </div></div>
 
-<div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">What is the smallest 4-digit number that rounds to 4,900 when rounded to the nearest hundred? What is the largest?</p><div class="journal-label">✏️ My reasoning <span class="saved-dot" id="dot-soc1"></span></div><textarea class="journal-box" data-label="Learn — Socratic: smallest and largest that round to 4,900" id="journal-soc1" oninput="autoSave(this,'dot-soc1')" placeholder=""></textarea></div>
+<div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">What is the smallest 4-digit number that rounds to 4,900 when rounded to the nearest hundred? What is the largest?</p><div class="olt-nudge"><a href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=discs&amp;st=1" target="_blank" rel="noopener" title="Open the Number Discs to build the number and trade between places."><span aria-hidden="true">🧮</span> Try the <b>Number Discs</b> <span aria-hidden="true">↗</span></a></div><div class="journal-label">✏️ My reasoning <span class="saved-dot" id="dot-soc1"></span></div><textarea class="journal-box" data-label="Learn — Socratic: smallest and largest that round to 4,900" id="journal-soc1" oninput="autoSave(this,'dot-soc1')" placeholder=""></textarea></div>
 <div class="tab-next-wrap"><p class="tab-transition-voice">You watched the crew round 4,852. Practice now hands you the same job with new numbers.</p><button class="tab-next-btn" onclick="switchTab('practice')">Continue to 🧮 Practice →</button></div>
 </div>
 <!-- ═══════════ PRACTICE TAB ═══════════ -->
@@ -623,7 +623,7 @@
 <button class="orange-btn" onclick="resetP3()">↩ Reset and Try Again</button>
 </div>
 </div></div>
-<div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">Yesterday the deciding digit was the hundreds digit. Today it's the tens digit. If we rounded to the nearest TEN, what would the deciding digit be? Why does it keep shifting?</p><div class="journal-label">✏️ My reasoning <span class="saved-dot" id="dot-soc2"></span></div><textarea class="journal-box" data-label="Practice — Socratic: where does the deciding digit go next" id="journal-soc2" oninput="autoSave(this,'dot-soc2')" placeholder=""></textarea></div>
+<div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">Yesterday the deciding digit was the hundreds digit. Today it's the tens digit. If we rounded to the nearest TEN, what would the deciding digit be? Why does it keep shifting?</p><div class="olt-nudge"><a href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=pvcards&amp;st=1" target="_blank" rel="noopener" title="Open the Place-Value Cards to pull the digits apart and see each value."><span aria-hidden="true">🧮</span> Try the <b>Place-Value Cards</b> <span aria-hidden="true">↗</span></a></div><div class="journal-label">✏️ My reasoning <span class="saved-dot" id="dot-soc2"></span></div><textarea class="journal-box" data-label="Practice — Socratic: where does the deciding digit go next" id="journal-soc2" oninput="autoSave(this,'dot-soc2')" placeholder=""></textarea></div>
 <div class="tab-next-wrap"><p class="tab-transition-voice">You rounded numbers with the crew. Time to show what you know.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
 </div>
 <!-- ═══════════ SHOW WHAT YOU KNOW TAB ═══════════ -->
@@ -883,5 +883,7 @@ document.addEventListener('DOMContentLoaded', function() {
     .catch(function(err) { console.warn('Video manifest load failed:', err); });
 });
 </script>
+<!-- OAO math tools for this lesson (manipulatives library) -->
+<script src="https://optimaondemand.github.io/optima-4th-math/manipulatives/lesson-tools.js" defer></script>
 </body>
 </html>

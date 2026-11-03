@@ -425,7 +425,7 @@
 <div class="value-card" onclick="rT(this,false)"><div class="big">40</div></div>
 </div>
 <div class="inline-feedback" id="rT-fb"></div>
-<div class="journal-label">✏️ Why? <span class="saved-dot" id="dt"></span></div>
+<div class="olt-nudge"><a href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=counters&amp;st=1" target="_blank" rel="noopener" title="Open Counters &amp; Arrays to make rows and columns or share into equal groups."><span aria-hidden="true">🧮</span> Try the <b>Counters &amp; Arrays</b> <span aria-hidden="true">↗</span></a></div><div class="journal-label">✏️ Why? <span class="saved-dot" id="dt"></span></div>
 <textarea class="journal-box" data-label="Warm-Up think" id="j-t" oninput="autoSave(this,'dt')" placeholder=""></textarea>
 </div></div>
 <div class="tab-next-wrap"><p class="tab-transition-voice">Same rows, one more dot in each row.</p><button class="tab-next-btn" onclick="switchTab('learn')">Continue to 📐 Learn →</button></div>
@@ -497,7 +497,7 @@
 </div>
 <p style="font-family:'Lora',serif;background:#FAFBFF;border:2px solid #E2E8F4;border-radius:12px;padding:10px;text-align:center;font-size:18px;font-weight:800;margin-top:14px;">9 × 6 = <span style="color:#1A8A5A;">54</span></p>
 </div></div>
-<div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">If you know 8 × 8 = 64, how can you find 9 × 8 without starting over? Use the array in your answer.</p><div class="journal-label">✏️ <span class="saved-dot" id="ds1"></span></div><textarea class="journal-box" data-label="Learn socratic" id="j-s1" oninput="autoSave(this,'ds1')" placeholder=""></textarea></div>
+<div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">If you know 8 × 8 = 64, how can you find 9 × 8 without starting over? Use the array in your answer.</p><div class="olt-nudge"><a href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=hundred&amp;st=1" target="_blank" rel="noopener" title="Open the Hundred Chart to skip-count and spot multiples and patterns."><span aria-hidden="true">🧮</span> Try the <b>Hundred Chart</b> <span aria-hidden="true">↗</span></a></div><div class="journal-label">✏️ <span class="saved-dot" id="ds1"></span></div><textarea class="journal-box" data-label="Learn socratic" id="j-s1" oninput="autoSave(this,'ds1')" placeholder=""></textarea></div>
 <div class="tab-next-wrap"><p class="tab-transition-voice">9 × N = 8 × N + N.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
 </div>
 <div class="tab-panel" id="tab-assignment">
@@ -506,7 +506,7 @@
 <div class="q-block"><p class="q-text"><span class="q-num">B</span>8 × 8 = 64, so 9 × 8 = ?</p><div class="value-card-row"><div class="value-card" onclick="eB(this,false)"><div class="big">70</div></div><div class="value-card" onclick="eB(this,true)"><div class="big">72</div></div><div class="value-card" onclick="eB(this,false)"><div class="big">73</div></div></div><div class="inline-feedback" id="eB-fb"></div></div>
 </div></div>
 <div class="activity bl-navy"><div class="activity-head"><div class="activity-num" style="background:#0E1C42;">📬</div><div><div class="activity-title">Show What You Know</div></div></div><div class="activity-body">
-<div class="q-block"><p class="q-text"><span class="q-num">1</span><strong>Fluency.</strong> Find 8 × 4 and 9 × 4. How much bigger is 9 × 4? Explain with an array.</p><div class="journal-label">✏️ <span class="saved-dot" id="da1"></span></div><textarea class="journal-box" data-label="SWYK 1" id="j-a1" oninput="autoSave(this,'da1')" placeholder=""></textarea></div>
+<div class="q-block"><p class="q-text"><span class="q-num">1</span><strong>Fluency.</strong> Find 8 × 4 and 9 × 4. How much bigger is 9 × 4? Explain with an array.</p><div class="olt-nudge"><a href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=dice&amp;st=1" target="_blank" rel="noopener" title="Open Dice &amp; Cards to make numbers and practice."><span aria-hidden="true">🧮</span> Try the <b>Dice &amp; Cards</b> <span aria-hidden="true">↗</span></a></div><div class="journal-label">✏️ <span class="saved-dot" id="da1"></span></div><textarea class="journal-box" data-label="SWYK 1" id="j-a1" oninput="autoSave(this,'da1')" placeholder=""></textarea></div>
 <div class="q-block"><p class="q-text"><span class="q-num">2</span><strong>Transfer.</strong> A tray holds 9 muffins. How many muffins are on 5 trays?</p><div class="journal-label">✏️ <span class="saved-dot" id="da2"></span></div><textarea class="journal-box" data-label="SWYK 2" id="j-a2" oninput="autoSave(this,'da2')" placeholder=""></textarea></div>
 
 <div class="activity bl-slate" style="margin-top:18px;border-left-color:#F5A36F;"><div class="activity-head"><div class="activity-num" style="background:#F5A36F;color:#0E1C42;">🗺️</div><div><div class="activity-title">Connection Forward</div><div class="activity-sub">Preview Unit 9 — Fractions</div></div></div><div class="activity-body">
@@ -725,4 +725,6 @@ document.addEventListener('DOMContentLoaded', function() {
     .catch(function(err) { console.warn('Video manifest load failed:', err); });
 });
 </script>
+<!-- OAO math tools for this lesson (manipulatives library) -->
+<script src="https://optimaondemand.github.io/optima-4th-math/manipulatives/lesson-tools.js" defer></script>
 </body></html>

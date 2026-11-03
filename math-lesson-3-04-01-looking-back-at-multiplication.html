@@ -444,7 +444,7 @@
 <div class="value-card" onclick="checkTA(this,false)"><div class="big">No, they're different</div></div>
 </div>
 <div class="inline-feedback" id="ta-fb"></div>
-<div class="journal-label">✏️ Why does it make sense that 4 × 5 = 5 × 4? <span class="saved-dot" id="dot-think"></span></div>
+<div class="olt-nudge"><a href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=counters&amp;st=1" target="_blank" rel="noopener" title="Open Counters &amp; Arrays to make rows and columns or share into equal groups."><span aria-hidden="true">🧮</span> Try the <b>Counters &amp; Arrays</b> <span aria-hidden="true">↗</span></a></div><div class="journal-label">✏️ Why does it make sense that 4 × 5 = 5 × 4? <span class="saved-dot" id="dot-think"></span></div>
 <textarea class="journal-box" data-label="Warm-Up — Think Prompt: why factors can swap" id="journal-think" oninput="autoSave(this,'dot-think')" placeholder=""></textarea>
 </div></div>
 <div class="tab-next-wrap"><p class="tab-transition-voice">Same dots, two ways to count. Let's build arrays ourselves.</p><button class="tab-next-btn" onclick="switchTab('learn')">Continue to 📐 Learn →</button></div>
@@ -501,7 +501,7 @@
 <div class="ab-rep repeated"><span class="lbl">As repeated addition</span><span class="add" id="rep-add">4 + 4 + 4 = 12</span></div>
 </div>
 </div>
-<div class="journal-label">✏️ Build a 5 × 3 array. What's the product? Now flip to 3 × 5 — does it change? <span class="saved-dot" id="dot-ab"></span></div>
+<div class="olt-nudge"><a href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=counters&amp;st=1" target="_blank" rel="noopener" title="Open Counters &amp; Arrays to make rows and columns or share into equal groups."><span aria-hidden="true">🧮</span> Try the <b>Counters &amp; Arrays</b> <span aria-hidden="true">↗</span></a></div><div class="journal-label">✏️ Build a 5 × 3 array. What's the product? Now flip to 3 × 5 — does it change? <span class="saved-dot" id="dot-ab"></span></div>
 <textarea class="journal-box" data-label="Learn — Array Builder" id="journal-ab" oninput="autoSave(this,'dot-ab')" placeholder=""></textarea>
 </div></div>
 <div class="key-concept"><div class="key-concept-label">📐 Key Concept</div>
@@ -580,7 +580,7 @@
 <div class="callout callout-tip" style="margin-top:8px;"><span class="callout-icon">💡</span><p>Skip-counting and multiplication go together. When you skip-count by 4 nine times, you've calculated 9 × 4.</p></div>
 </div></div>
 
-<div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">If 9 × 4 = 36, what does 4 × 9 equal — without doing the math? Why is the swap rule helpful?</p><div class="journal-label">✏️ My reasoning <span class="saved-dot" id="dot-soc1"></span></div><textarea class="journal-box" data-label="Learn — Socratic: factor swap" id="journal-soc1" oninput="autoSave(this,'dot-soc1')" placeholder=""></textarea></div>
+<div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">If 9 × 4 = 36, what does 4 × 9 equal — without doing the math? Why is the swap rule helpful?</p><div class="olt-nudge"><a href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=hundred&amp;st=1" target="_blank" rel="noopener" title="Open the Hundred Chart to skip-count and spot multiples and patterns."><span aria-hidden="true">🧮</span> Try the <b>Hundred Chart</b> <span aria-hidden="true">↗</span></a></div><div class="journal-label">✏️ My reasoning <span class="saved-dot" id="dot-soc1"></span></div><textarea class="journal-box" data-label="Learn — Socratic: factor swap" id="journal-soc1" oninput="autoSave(this,'dot-soc1')" placeholder=""></textarea></div>
 <div class="tab-next-wrap"><p class="tab-transition-voice">Equal groups, array, equation, repeated addition — all the same idea. Try a few.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
 </div>
 <!-- ═══════════ PRACTICE ═══════════ -->
@@ -824,5 +824,7 @@ document.addEventListener('DOMContentLoaded', function() {
     .catch(function(err) { console.warn('Video manifest load failed:', err); });
 });
 </script>
+<!-- OAO math tools for this lesson (manipulatives library) -->
+<script src="https://optimaondemand.github.io/optima-4th-math/manipulatives/lesson-tools.js" defer></script>
 </body>
 </html>
