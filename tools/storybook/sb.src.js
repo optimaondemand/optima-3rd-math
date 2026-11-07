@@ -388,7 +388,7 @@
       save();
     }
     allB.onclick = function () { var c = showBridges ? cuts() : [0, 1]; for (var i = 0; i < c.length - 1; i++) (function (i) { setTimeout(function () { var segs = $$('.seg path:first-of-type', svg); var xa = X0 + c[i] * L, xb = X0 + c[i + 1] * L; pluckSeg(i, $$('.seg', svg)[i].querySelector('path'), xa, xb); }, i * 650); })(i); };
-    function phase() { showBridges = stepDoneFor(box, 'whole'); allB.hidden = !showBridges; draw(); if (showBridges && stepDoneFor(box, 'equal')) { msg.className = 'sb-mono-msg ok'; msg.textContent = 'All ' + n + ' parts are the same length. They sing the same note.'; } else if (showBridges) msg.textContent = 'Slide the two bridges. Then pluck each part and listen.'; else msg.textContent = 'Tap the string to pluck it.'; }
+    function phase() { showBridges = stepDoneFor(box, 'whole'); allB.hidden = !showBridges; draw(); if (showBridges && stepDoneFor(box, 'equal')) { msg.className = 'sb-mono-msg ok'; msg.textContent = 'All ' + n + ' parts are the same length. They sing the same note.'; } else msg.textContent = ''; }
     document.addEventListener('sb:step', phase); phase();
   };
 
@@ -464,12 +464,12 @@
     function report() {
       var s = sum(), full = Math.abs(s - 1) < 1e-9, same = S.bt.every(function (t) { return t === S.bt[0]; });
       if (shadePhase()) { msg('The bar is full: ' + S.bt.length + ' equal tiles make 1 whole. Shaded: <b>' + S.sh.length + '</b> one-' + DNAME[d] + (S.sh.length === 1 ? '' : 's') + ' of <b>' + S.bt.length + '</b> equal parts'); var ok = S.sh.length === want; flag(box, 'shade', ok); if (ok) flag(box, 'shade'); return; }
-      if (!S.bt.length) msg('The bar is empty. Drag tiles from the tray to cover it.');
+      if (!S.bt.length) msg('The bar is empty.');
       else if (full && same && S.bt[0] === d) { msg('<span style="color:#1E7A4C">The bar is full: <b>' + S.bt.length + '</b> equal tiles make 1 whole.</span>'); flag(box, 'full'); }
       else if (full && !same) msg('The bar is full, but the tiles are <b>not all the same size</b>. A fraction needs equal parts. Drag the odd tiles back down.');
       else if (full) msg('The bar is full with <b>' + S.bt.length + '</b> equal tiles. But look at the string: it has ' + d + ' equal parts. Drag these back and try the other tiles.');
       else if (!same) msg('These tiles are not all the same size. Use just one kind of tile.');
-      else msg('<b>' + S.bt.length + '</b> tile' + (S.bt.length === 1 ? '' : 's') + ' on the bar. Keep going until the bar is as long as 1 whole.');
+      else msg('<b>' + S.bt.length + '</b> tile' + (S.bt.length === 1 ? '' : 's') + ' on the bar. It is not full yet.');
     }
     document.addEventListener('sb:step', draw); draw();
   };
@@ -680,8 +680,8 @@
       };
       var report = function () {
         if (S.k >= n) { msg('<b>' + n + ' ' + DNAME[n] + 's</b> is the whole string: ' + frac(n, n) + ' = 1. The start is 0. Each bridge left a tick mark. The string is now a number line!', true); flag(box, 'count'); }
-        else if (!S.k) msg('Tap the first bridge on the left. Say its name: one-' + DNAME[n] + '.');
-        else msg('You counted <b>' + S.k + '</b> ' + DNAME[n] + (S.k > 1 ? 's' : '') + '. Tap the next bridge.');
+        else if (!S.k) msg('No bridges counted yet.');
+        else msg('You counted <b>' + S.k + '</b> ' + DNAME[n] + (S.k > 1 ? 's' : '') + '.');
       };
       draw(); report(); return;
     }
@@ -704,7 +704,7 @@
         for (var q = 1; q < n; q++) NS('line', { x1: X(q / n), y1: LY2 - 11, x2: X(q / n), y2: LY2 + 11, stroke: NAVY, 'stroke-width': 2.5 }, sv);
         if (S2.k) { NS('line', { x1: X(0), y1: LY2, x2: X(S2.k / n), y2: LY2, stroke: col, 'stroke-width': 7, 'stroke-linecap': 'round', opacity: .85 }, sv); NS('circle', { cx: X(S2.k / n), cy: LY2, r: 10, fill: BAD, stroke: '#fff', 'stroke-width': 3 }, sv); }
         var ok = S2.k === want;
-        if (!S2.k) msg('Tap tiles to shade them, starting from the left (from 0).');
+        if (!S2.k) msg('No tiles shaded yet.');
         else msg('Shaded: <b>' + S2.k + '</b> of ' + n + ' equal tiles. The dot on the line is <b>' + S2.k + '</b> jump' + (S2.k > 1 ? 's' : '') + ' from 0.', ok);
         flag(box, 'shade', ok); if (ok) flag(box, 'shade');
       };
@@ -747,7 +747,7 @@
         })(i);
       };
       var report4 = function () { var ok = S4.seen.indexOf(0) > -1 && S4.seen.filter(function (v) { return v > 0; }).length >= 2; if (ok) flag(box, 'fix'); };
-      drawL(); msg('Tap a mark to count its jumps from 0. Start with 0.'); report4(); return;
+      drawL(); msg('No marks tapped yet.'); report4(); return;
     }
 
     /* even: uneven tick marks with a dot on the 4th; a friend's line below. Make it equal; pluck both. */
@@ -787,11 +787,11 @@
         save(); drawE(); reportE();
       };
       var reportE = function () {
-        if (isEven()) { flag(box, 'even'); msg(S5.a && S5.f ? 'Same spot, same note! Both dots are ' + tgt + ' jumps of one-' + DNAME[n] + ' from 0.' : 'All 7 spaces are equal now. Ben\'s dot moved to the same spot as Ana\'s. Pluck at both dots and listen.', true); if (S5.a && S5.f) flag(box, 'same'); }
-        else msg('The spaces on Ben\'s line are not equal. Red spaces are the wrong size. Drag the tick marks until every space turns green.');
+        if (isEven()) { flag(box, 'even'); msg(S5.a && S5.f ? 'Same spot, same note! Both dots are ' + tgt + ' jumps of one-' + DNAME[n] + ' from 0.' : 'All 7 spaces are equal now. Ben\'s dot moved to the same spot as Ana\'s.', true); if (S5.a && S5.f) flag(box, 'same'); }
+        else msg('Ben\'s spaces are not equal yet. Red bars are the wrong size.');
       };
-      $('.pa', box).onclick = function () { pluck(98 / S5.p[tgt - 1]); if (isEven()) { S5.a = 1; save(); reportE(); } else msg('Ben\'s note. Now pluck at Ana\'s dot. Do they match?'); };
-      $('.pf', box).onclick = function () { pluck(98 / (tgt / n)); if (isEven()) { S5.f = 1; save(); reportE(); } else msg('Ana\'s note. Did it match Ben\'s? Not yet: his dot is in a different spot.'); };
+      $('.pa', box).onclick = function () { pluck(98 / S5.p[tgt - 1]); if (isEven()) { S5.a = 1; save(); reportE(); } else msg('That was Ben\'s note.'); };
+      $('.pf', box).onclick = function () { pluck(98 / (tgt / n)); if (isEven()) { S5.f = 1; save(); reportE(); } else msg('That was Ana\'s note. It does not match Ben\'s yet: his dot is in a different spot.'); };
       drawE(); reportE(); return;
     }
 
@@ -847,12 +847,12 @@
         if (isEq()) { msg('<b>' + (n - 1) + '</b> tick marks make <b>' + n + '</b> equal spaces. The line is cut into ' + DNAME[n] + 's!', true); flag(box, 'cut'); return; }
         flag(box, 'cut', false);
         var sp = S6.p.length + 1;
-        msg(!S6.p.length ? 'Press <b>＋ Add a tick mark</b>. Then drag the tick marks to make equal spaces.' : sp < n ? sp + ' spaces. You need ' + n + ' equal spaces. Add more tick marks.' : sp > n ? sp + ' spaces. That\'s too many. Take one away.' : n + ' spaces, good! Now drag the tick marks until the spaces are all the same size.');
+        msg(!S6.p.length ? 'No tick marks yet: 1 space.' : sp < n ? sp + ' spaces. That\'s not enough for ' + n + '.' : sp > n ? sp + ' spaces. That\'s too many for ' + n + '.' : n + ' spaces, but they are not all the same size yet.');
         return;
       }
       if (S6.placed.length >= targets.length) { msg(targets.length > 1 ? 'Every dot is on its spot.' : 'The dot is on ' + frac(targets[0], n) + ': ' + targets[0] + ' jumps from 0.', true); flag(box, 'dot'); flag(box, 'dots'); return; }
       var t = targets[S6.placed.length];
-      msg('Put the red dot on ' + frac(t, n) + '. Drag it along the line, or tap a mark.' + (cur && cur !== t ? ' Now it is <b>' + cur + '</b> jump' + (cur > 1 ? 's' : '') + ' from 0.' : ''));
+      msg((targets.length > 1 ? 'Next spot: ' + frac(t, n) + '.' : '') + (cur && cur !== t ? ' The dot is <b>' + cur + '</b> jump' + (cur > 1 ? 's' : '') + ' from 0. That is not ' + frac(t, n) + '.' : ''));
     }
     document.addEventListener('sb:step', function () { if (mode === 'cut') { draw6(); report6(); } });
     draw6(); report6();
@@ -860,6 +860,8 @@
 
   $$('[data-mod]').forEach(function (b) { var f = MODS[b.dataset.mod]; if (f) try { f(b); } catch (e) { console.error('model', b.dataset.mod, e); } });
   $$('.sb-job').forEach(function (j) { if ($('.sb-steps', j)) $$('.sb-how', j).forEach(function (h) { h.hidden = true; }); });
+  // instructions never sit under a tool: a job's step list goes right above its model
+  $$('.sb-job').forEach(function (j) { var st = $('.sb-steps', j), m = $('[data-mod]', j); if (!st || !m || st.contains(m)) return; if (m.compareDocumentPosition(st) & Node.DOCUMENT_POSITION_FOLLOWING) m.parentNode.insertBefore(st, m); });
   $$('.sb-steps').forEach(stepsInit);
 
   /* payoffs: open when a job is done */
