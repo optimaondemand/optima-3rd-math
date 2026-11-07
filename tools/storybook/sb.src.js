@@ -54,11 +54,13 @@
 
   /* ── tabs ─────────────────────────────────────────────────── */
   var TABS = $$('.sb-tab');
+  // height of what stays stuck at the top (progress strip + tab bar), so a new tab or station starts just under it
+  function stickyH() { var h = 0, pr = $('.sb-prog'), tb = $('.sb-tabs'); if (pr) h += pr.offsetHeight; if (tb) h += tb.offsetHeight + 14; return h; }
   function switchTab(id, noScroll) {
     TABS.forEach(function (t) { var on = t.dataset.tab === id; t.setAttribute('aria-selected', on); t.tabIndex = on ? 0 : -1; });
     $$('.sb-panel').forEach(function (p) { p.classList.toggle('on', p.id === 'tab-' + id); });
     ST.tab = id; save(); stopAllVoice();
-    if (!noScroll) { var bar = $('.sb-tabs'); if (bar) window.scrollTo({ top: bar.getBoundingClientRect().top + window.scrollY - 34, behavior: reduced ? 'auto' : 'smooth' }); }
+    if (!noScroll) { var pan = $('#tab-' + id); if (pan) window.scrollTo({ top: Math.max(0, pan.getBoundingClientRect().top + window.scrollY - stickyH()), behavior: 'instant' }); }
     document.dispatchEvent(new CustomEvent('sb:tab', { detail: id }));
   }
   TABS.forEach(function (t, i) {
@@ -74,7 +76,7 @@
     STATIONS.forEach(function (s) { s.classList.toggle('on', +s.dataset.st === n); });
     PSTEPS.forEach(function (p) { if (+p.dataset.st === n) p.setAttribute('aria-current', 'step'); else p.removeAttribute('aria-current'); });
     ST.st = n; save(); stopAllVoice();
-    if (scroll) { var path = $('.sb-path'); if (path) window.scrollTo({ top: path.getBoundingClientRect().top + window.scrollY - 100, behavior: reduced ? 'auto' : 'smooth' }); }
+    if (scroll) { var path = $('.sb-path'); if (path) window.scrollTo({ top: Math.max(0, path.getBoundingClientRect().top + window.scrollY - stickyH()), behavior: 'instant' }); }
   }
   PSTEPS.forEach(function (p) { p.addEventListener('click', function () { station(+p.dataset.st, true); }); });
   $$('[data-next-st]').forEach(function (b) { b.addEventListener('click', function () { station(+b.dataset.nextSt, true); }); });
