@@ -330,3 +330,12 @@ html.sb-still *{animation:none!important;transition:none!important}
 @keyframes nlp{0%{opacity:.9;transform:scale(.6)}100%{opacity:0;transform:scale(1.5)}}
 .sb-still .nl-pulse{animation:none;opacity:.8}
 .sb-nl svg g:focus{outline:none}
+/* one step at a time: only the current step shows, and it reads as THE instruction */
+.sb-step.open{display:none}
+.sb-step.now{display:block}
+.sb-step.now:not(.right){border:3px solid var(--gold2,#E9A23B);background:#FFFDF6;box-shadow:0 4px 14px rgba(185,137,46,.15)}
+.sb-step.now:not(.right) h4{font-size:22px}
+.sb-step.now:not(.right) > p{font-size:18px;font-weight:700;color:var(--navy)}
+/* the context card is background info: quieter than the step */
+.sb-job .sb-ctx{background:transparent;border:none;border-left:4px solid #EAD9AE;border-radius:0;padding:4px 12px;font-size:15.5px;color:#4A4F5E}
+.sb-job .sb-ctx-h{font-size:12.5px;color:#8C7550}

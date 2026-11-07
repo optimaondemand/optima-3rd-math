@@ -132,10 +132,14 @@
     refreshSteps(box);
   }
   function refreshSteps(box) {
-    var steps = $$('.sb-step', box), open = true;
+    var steps = $$('.sb-step', box), open = true, cur = -1;
+    steps.forEach(function (s, i) { if (cur < 0 && !ST.steps[s.id]) cur = i; });
+    if (cur < 0) cur = steps.length - 1;
     steps.forEach(function (s, i) {
       var done = !!ST.steps[s.id];
       s.classList.toggle('open', open); s.classList.toggle('right', done);
+      s.classList.toggle('now', i === cur); // only the step being worked on shows
+      var nl = $('.sb-step-n', s); if (nl) nl.innerHTML = (i === cur && !done ? '👉 Do this now · ' : '') + 'Step ' + (i + 1) + ' of ' + steps.length;
       $$('.sb-dots i', s).forEach(function (d, k) { d.className = k < i ? 'd' : k === i ? 'on' : ''; });
       if (done && $$('.sb-ans', s).length) $$('.sb-ans', s).forEach(function (a) { if (isRight(a)) a.classList.add('right'); });
       open = open && done;
@@ -855,6 +859,7 @@
   };
 
   $$('[data-mod]').forEach(function (b) { var f = MODS[b.dataset.mod]; if (f) try { f(b); } catch (e) { console.error('model', b.dataset.mod, e); } });
+  $$('.sb-job').forEach(function (j) { if ($('.sb-steps', j)) $$('.sb-how', j).forEach(function (h) { h.hidden = true; }); });
   $$('.sb-steps').forEach(stepsInit);
 
   /* payoffs: open when a job is done */
