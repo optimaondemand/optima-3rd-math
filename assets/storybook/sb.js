@@ -54,12 +54,27 @@
 
   /* ── tabs ─────────────────────────────────────────────────── */
   var TABS = $$('.sb-tab');
+  /* the book + EQ/objectives: open on the first tab; a slim bar to show/hide it on every later tab */
+  var TOP = null, TOPBAR = null;
+  (function () {
+    var book = $('.sb-book'), intro = $('.sb-intro'); if (!book || !intro) return;
+    TOP = el('div', 'sb-topwrap'); TOP.id = 'sb-topwrap'; book.parentNode.insertBefore(TOP, book); TOP.appendChild(book); TOP.appendChild(intro);
+    var eq = $('.sb-eq h3', intro), chap = $('.sb-chap-t', book);
+    TOPBAR = el('button', 'sb-topbar'); TOPBAR.type = 'button'; TOPBAR.setAttribute('aria-controls', 'sb-topwrap');
+    TOPBAR.innerHTML = '<span class="ic">📖</span><span class="tx"><b>' + esc(chap ? chap.textContent : 'The book') + '</b><small>' + esc(eq ? eq.textContent : '') + ' · Today\'s objectives</small></span><span class="go"></span>';
+    TOP.parentNode.insertBefore(TOPBAR, TOP);
+    TOPBAR.addEventListener('click', function () { var t = ST.tab; ST.topOpen = ST.topOpen || {}; ST.topOpen[t] = !ST.topOpen[t]; save(); paintTop(); });
+  })();
+  function paintTop() {
+    if (!TOP) return; var first = TABS[0] && ST.tab === TABS[0].dataset.tab, open = first || !!(ST.topOpen && ST.topOpen[ST.tab]);
+    TOPBAR.hidden = first; TOP.hidden = !open; TOPBAR.setAttribute('aria-expanded', open); $('.go', TOPBAR).textContent = open ? 'Hide ▴' : 'Show ▾';
+  }
   // height of what stays stuck at the top (progress strip + tab bar), so a new tab or station starts just under it
   function stickyH() { var h = 0, pr = $('.sb-prog'), tb = $('.sb-tabs'); if (pr) h += pr.offsetHeight; if (tb) h += tb.offsetHeight + 14; return h; }
   function switchTab(id, noScroll) {
     TABS.forEach(function (t) { var on = t.dataset.tab === id; t.setAttribute('aria-selected', on); t.tabIndex = on ? 0 : -1; });
     $$('.sb-panel').forEach(function (p) { p.classList.toggle('on', p.id === 'tab-' + id); });
-    ST.tab = id; save(); stopAllVoice();
+    ST.tab = id; save(); stopAllVoice(); paintTop();
     if (!noScroll) { var pan = $('#tab-' + id); if (pan) window.scrollTo({ top: Math.max(0, pan.getBoundingClientRect().top + window.scrollY - stickyH()), behavior: 'instant' }); }
     document.dispatchEvent(new CustomEvent('sb:tab', { detail: id }));
   }

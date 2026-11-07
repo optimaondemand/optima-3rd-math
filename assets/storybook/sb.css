@@ -315,3 +315,9 @@ html.sb-still *{animation:none!important;transition:none!important}
 @media print{.sb-prog,.sb-tabs,.sb-path,.sb-chips,.sb-help,.sb-next,.sb-book,.sb-opti .ctl{display:none!important}.sb-panel,.sb-station,.sb-step{display:block!important}.sb-card{box-shadow:none;break-inside:avoid}}
 
 .sb-video.ready{display:block}
+.sb-topbar{display:flex;align-items:center;gap:12px;width:100%;margin:16px 0 0;padding:10px 16px;background:var(--card);border:1.5px solid var(--line);border-radius:14px;box-shadow:var(--sh);cursor:pointer;text-align:left;color:var(--ink);font:inherit}
+.sb-topbar:hover{border-color:var(--gold)}
+.sb-topbar .ic{font-size:24px}
+.sb-topbar .tx{flex:1;min-width:0}.sb-topbar .tx b{display:block;font-family:var(--serif);font-size:20px;color:#2C2010;line-height:1.1}
+.sb-topbar .tx small{display:block;font-size:14px;color:var(--mute);font-weight:700}
+.sb-topbar .go{font-weight:900;color:var(--navy);font-size:14px;background:var(--gold3);border-radius:99px;padding:4px 12px;white-space:nowrap}
