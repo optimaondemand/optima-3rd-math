@@ -1,0 +1,100 @@
+<!DOCTYPE html><html><head><meta charset="utf-8">
+<style>
+html,body{margin:0;width:1280px;height:720px;overflow:hidden;background:#FBF6EA;font-family:Nunito,Arial,sans-serif}
+#st{position:absolute;inset:0}
+.cap{position:absolute;left:90px;right:90px;bottom:26px;min-height:58px;background:rgba(14,28,66,.88);color:#fff;border-radius:14px;padding:12px 20px;font-size:27px;font-weight:800;line-height:1.3;text-align:center}
+.cap:empty{display:none}
+.hd{position:absolute;left:40px;top:26px;font-family:'Cormorant Garamond',Georgia,serif;font-size:34px;font-weight:700;color:#3A2A12}
+.hd small{display:block;font-family:Nunito,Arial;font-size:15px;letter-spacing:.18em;color:#B8892E;font-weight:900}
+.book{position:absolute;inset:0;display:none;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 40%,#FFF8E6,#EFE2C6)}
+.book.on{display:flex}
+.bk{display:grid;grid-template-columns:420px 420px;background:#E8DCC0;padding:12px;border-radius:10px;box-shadow:0 20px 40px rgba(60,40,10,.25)}
+.pg{background:#FFFBF1;height:380px;padding:24px;box-sizing:border-box}
+.pg img{width:100%;height:290px;object-fit:cover;border:8px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.2);box-sizing:border-box}
+.pg.r{display:flex;flex-direction:column;justify-content:center}
+.ch{font-family:Georgia,serif;letter-spacing:.2em;color:#B8892E;font-weight:700;font-size:16px}
+.tt{font-family:'Cormorant Garamond',Georgia,serif;font-size:42px;font-weight:700;color:#3A2A12;line-height:1.05;margin:8px 0}
+.q{font-size:22px;font-weight:800;color:#0E1C42;margin-top:10px}
+.owl{position:absolute;width:150px;right:150px;bottom:110px}
+</style></head><body>
+<div id="st"><svg id="sv" width="1280" height="720" viewBox="0 0 1280 720"></svg>
+<div class="hd"><small>CHAPTER 9 · PYTHAGORAS' SINGING STRING</small>Name a Fraction: How Many? Of What?</div></div>
+<div class="book" id="book"><div class="bk"><div class="pg"><img src="../repo/images/storybook/sb-athens-plate.jpg"></div><div class="pg r"><div class="ch">CHAPTER 9 · LESSON 1</div><div class="tt" id="btt">Name a Fraction</div><div class="q" id="bq">How Many? Of What?</div></div></div><img class="owl" src="../repo/images/storybook/opti-owl.png"></div>
+<div class="cap" id="cap"></div>
+<script>
+var TL=null, NS='http://www.w3.org/2000/svg';
+function S(tag,a,p){var e=document.createElementNS(NS,tag);for(var k in a){if(k==='text')e.textContent=a[k];else e.setAttribute(k,a[k]);}(p||sv).appendChild(e);return e;}
+var G='#4E7A1A', NAVY='#0E1C42', X0=110, BW=800, Y1=180, Y2=246, RH=58, TW=BW/5, TRY=420;
+function sec(s){return TL.secs[s];}
+// time of the nth word in a section matching re (searching from word index 'from')
+function wt(s,re,n,from){var W=sec(s).words,c=0;for(var i=from||0;i<W.length;i++){if(re.test(W[i].w.replace(/[^\w'-]/g,''))){if(c===(n||0))return W[i].t;c++;}}return null;}
+function wi(s,re,n){var W=sec(s).words,c=0;for(var i=0;i<W.length;i++){if(re.test(W[i].w.replace(/[^\w'-]/g,''))){if(c===(n||0))return i;c++;}}return 0;}
+function ease(x){x=Math.max(0,Math.min(1,x));return x<.5?2*x*x:1-Math.pow(-2*x+2,2)/2;}
+function caption(t){var all=[];['vid-open','vid-a','vid-b','vid-c','vid-d','vid-e','vid-close'].forEach(function(s){var W=sec(s).words,cur=[];W.forEach(function(w,i){cur.push(w);if(/[.!?]$/.test(w.w)||i===W.length-1){all.push(cur);cur=[];}});});
+  for(var i=0;i<all.length;i++){var a=all[i][0].t,b=all[i][all[i].length-1].e+0.35;if(t>=a-0.1&&t<=b)return all[i].map(function(w){return w.w;}).join(' ');}return '';}
+var K={};
+function setup(){
+  K.a=sec('vid-a').start; K.cut=wt('vid-a',/^cut$/); K.watch=wt('vid-a',/^Watch$/);
+  var wf=wi('vid-a',/^Watch$/);K.n=[wt('vid-a',/^One$/i,0,wf),wt('vid-a',/^two$/i,0,wf),wt('vid-a',/^three$/i,0,wf),wt('vid-a',/^four$/i,0,wf),wt('vid-a',/^five$/i,0,wf)];
+  K.same=wt('vid-a',/^same$/); K.onefifthA=wt('vid-a',/^one-fifth$/);
+  var b='vid-b';K.b=sec(b).start;
+  K.sh=[wt(b,/^Shade$/),wt(b,/^Two$/),wt(b,/^Three$/),wt(b,/^Four$/)];
+  K.sh[0]=wt(b,/^one$/,0)||K.sh[0];
+  K.write=wt(b,/^write$/); K.top=wt(b,/^top$/); K.bottom=wt(b,/^bottom$/); K.say=wt(b,/^four-fifths$/);
+  var c='vid-c';K.c=sec(c).start; K.howmany=wt(c,/^How$/); K.ofwhat=wt(c,/^of$/,0,wi(c,/^And$/)); K.topnum=wt(c,/^top$/); K.num=wt(c,/^numerator$/); K.botnum=wt(c,/^bottom$/); K.den=wt(c,/^denominator$/); K.watchout=wt(c,/^Watch$/); K.tells=wt(c,/^tells$/);
+  var d='vid-d';K.d=sec(d).start; K.left=wt(d,/^1$/); K.make=wt(d,/^make$/); K.whole=wt(d,/^whole$/);
+  var e='vid-e';K.e=sec(e).start; K.e1=wt(e,/^cut$/); K.e2=wt(e,/^Count$/); K.e3=wt(e,/^Write$/);
+  K.close=sec('vid-close').start; K.end=K.close+sec('vid-close').dur;
+}
+function tile(x,y,w,on,lab,glow){var g=S('g',{});S('rect',{x:x+2,y:y,width:w-4,height:RH,rx:7,fill:on?G:'#fff',stroke:G,'stroke-width':3},g);
+  if(lab){var c=on?'#fff':NAVY;S('text',{x:x+w/2,y:y+24,'text-anchor':'middle','font-size':20,'font-weight':900,fill:c,text:'1'},g);S('line',{x1:x+w/2-11,y1:y+31,x2:x+w/2+11,y2:y+31,stroke:c,'stroke-width':2.5},g);S('text',{x:x+w/2,y:y+52,'text-anchor':'middle','font-size':20,'font-weight':900,fill:c,text:'5'},g);}
+  if(glow)S('rect',{x:x-2,y:y-4,width:w+4,height:RH+8,rx:10,fill:'none',stroke:'#E9C46A','stroke-width':6},g);return g;}
+function frac(x,y,n,d,size,col){S('text',{x:x,y:y,'text-anchor':'middle','font-size':size,'font-weight':900,fill:col||NAVY,text:String(n)});S('line',{x1:x-size*0.45,y1:y+size*0.22,x2:x+size*0.45,y2:y+size*0.22,stroke:col||NAVY,'stroke-width':size/12});S('text',{x:x,y:y+size*1.05,'text-anchor':'middle','font-size':size,'font-weight':900,fill:col||NAVY,text:String(d)});}
+function cursor(x,y,press){var g=S('g',{transform:'translate('+x+','+y+')'});if(press)S('circle',{r:16,fill:'rgba(233,196,106,.55)'},g);S('path',{d:'M0 0 L0 30 L8 23 L14 36 L19 34 L13 21 L23 21 Z',fill:'#fff',stroke:'#111','stroke-width':2},g);}
+function render(t){
+  var book=document.getElementById('book'),cap=document.getElementById('cap');
+  cap.textContent=caption(t);
+  var inOpen=t<K.a-0.3, inClose=t>=K.close-0.3;
+  book.classList.toggle('on',inOpen||inClose);
+  if(inClose){document.getElementById('btt').textContent='Your turn first';document.getElementById('bq').textContent='If the whole were longer, would one-fifth still be one-fifth?';}
+  sv.innerHTML='';if(inOpen||inClose)return;
+  // whole
+  S('rect',{x:X0+2,y:Y1,width:BW-4,height:RH,rx:7,fill:NAVY});S('text',{x:X0+BW/2,y:Y1+38,'text-anchor':'middle','font-size':28,'font-weight':900,fill:'#fff',text:'1 whole'});
+  if(t>=K.cut-0.2){S('rect',{x:X0,y:Y2,width:BW,height:RH,rx:7,fill:'#F6F7FB',stroke:'#AEB6CC','stroke-width':2.5,'stroke-dasharray':'8 6'});}
+  // tray source tile
+  var trayOn=t>=K.cut-0.2&&t<K.n[4]+1.2;
+  if(trayOn){S('text',{x:X0,y:TRY-14,'font-size':18,'font-weight':900,fill:'#5B6478',text:'TRAY'});tile(X0,TRY,TW,false,true);}
+  var cur=null,press=false;
+  for(var k=0;k<5;k++){var te=K.n[k]+0.25,ts=te-0.75;if(t<ts){continue;}var p=ease((t-ts)/(te-ts));var x=X0+(X0+k*TW-X0)*p,y=TRY+(Y2-TRY)*p;
+    var on=false;if(t>=K.b){for(var j=0;j<4;j++)if(k===j&&t>=K.sh[j])on=true;}
+    var glow=(k===0&&t>=K.onefifthA-0.1&&t<K.b)||(k===4&&t>=K.left-0.3&&t<K.e);
+    tile(x,y,TW,on,true,glow);if(t<te+0.05&&t>=ts-0.3){cur=[x+TW/2,y+RH/2];press=t>=ts&&t<te;}}
+  if(!cur&&t>=K.cut-0.8&&t<K.n[0]-0.5)cur=[X0+TW/2+20,TRY+40];
+  if(t>=K.same-0.1&&t<K.b){for(var k2=0;k2<5;k2++){S('path',{d:'M'+(X0+k2*TW+8)+' '+(Y2+RH+16)+' q '+(TW/2-8)+' 14 '+(TW-16)+' 0',stroke:'#1E7A4C','stroke-width':3,fill:'none'});}S('text',{x:X0+BW/2,y:Y2+RH+58,'text-anchor':'middle','font-size':24,'font-weight':900,fill:'#1E7A4C',text:'5 equal parts · together they make 1 whole'});}
+  if(t>=K.onefifthA-0.1&&t<K.b){S('text',{x:X0+TW/2,y:Y2-14,'text-anchor':'middle','font-size':24,'font-weight':900,fill:'#B8892E',text:'one-fifth'});}
+  // shading B
+  if(t>=K.b){for(var j2=0;j2<4;j2++){var ts2=K.sh[j2];if(t>=ts2-0.6&&t<ts2+0.2){cur=[X0+j2*TW+TW/2,Y2+RH/2];press=t>=ts2-0.15;}}
+    var cnt=0;for(var j3=0;j3<4;j3++)if(t>=K.sh[j3])cnt++;
+    if(cnt&&t<K.c)S('text',{x:X0+BW/2,y:Y2+RH+52,'text-anchor':'middle','font-size':30,'font-weight':900,fill:G,text:cnt+' one-fifth'+(cnt>1?'s':'')+' shaded'});}
+  // big fraction
+  if(t>=K.write-0.1){var fx=1080,fy=230;frac(fx,fy,(t>=K.top-0.1?4:''),(t>=K.bottom-0.1?5:''),78,NAVY);
+    if(t>=K.say-0.1&&t<K.c)S('text',{x:fx,y:fy+130,'text-anchor':'middle','font-size':26,'font-weight':900,fill:'#5B4A2A',text:'four-fifths'});}
+  // C labels
+  if(t>=K.c){if(t>=K.topnum-0.1){S('rect',{x:930,y:150,width:110,height:44,rx:10,fill:'#FFF4D6',stroke:'#B8892E','stroke-width':2});S('text',{x:985,y:179,'text-anchor':'middle','font-size':20,'font-weight':900,fill:'#6B4A12',text:'how many?'});}
+    if(t>=K.num-0.1)S('text',{x:985,y:140,'text-anchor':'middle','font-size':18,'font-weight':900,fill:'#B8892E',text:'numerator'});
+    if(t>=K.botnum-0.1){S('rect',{x:930,y:262,width:110,height:44,rx:10,fill:'#E5EEF8',stroke:'#2E5480','stroke-width':2});S('text',{x:985,y:291,'text-anchor':'middle','font-size':20,'font-weight':900,fill:'#2E5480',text:'of what?'});S('text',{x:1080,y:345,'text-anchor':'middle','font-size':22,'font-weight':900,fill:'#2E5480',text:'fifths'});}
+    if(t>=K.den-0.1)S('text',{x:985,y:328,'text-anchor':'middle','font-size':18,'font-weight':900,fill:'#2E5480',text:'denominator'});
+    if(t>=K.watchout-0.1&&t<K.d){S('rect',{x:X0,y:TRY-10,width:BW,height:120,rx:14,fill:'#FBE7E4',stroke:'#B23A2E','stroke-width':3});S('text',{x:X0+24,y:TRY+30,'font-size':26,'font-weight':900,fill:'#B23A2E',text:'Watch out!'});S('text',{x:X0+24,y:TRY+66,'font-size':23,'font-weight':800,fill:'#5A1A12',text:'✗ The bottom number is NOT the parts you shaded.'});
+      if(t>=K.tells-0.1)S('text',{x:X0+24,y:TRY+98,'font-size':23,'font-weight':800,fill:'#1E7A4C',text:'✓ It tells how many equal parts make the whole.'});}}
+  // D
+  if(t>=K.d&&t<K.e){if(t>=K.left-0.2)S('text',{x:X0+4*TW+TW/2,y:Y2+RH+40,'text-anchor':'middle','font-size':24,'font-weight':900,fill:'#B8892E',text:'not shaded'});
+    if(t>=K.make-0.3){var y3=TRY+40;S('text',{x:X0+40,y:y3,'font-size':40,'font-weight':900,fill:NAVY,text:''});frac(X0+60,y3,4,5,44);S('text',{x:X0+120,y:y3+20,'font-size':44,'font-weight':900,fill:NAVY,text:'+'});frac(X0+190,y3,1,5,44);S('text',{x:X0+250,y:y3+20,'font-size':44,'font-weight':900,fill:NAVY,text:'='});frac(X0+320,y3,5,5,44);
+      if(t>=K.whole-0.3){S('text',{x:X0+380,y:y3+20,'font-size':44,'font-weight':900,fill:NAVY,text:'= 1 whole'});S('rect',{x:X0-4,y:Y1-6,width:BW+8,height:RH+12,rx:10,fill:'none',stroke:'#E9C46A','stroke-width':6});}}}
+  // E
+  if(t>=K.e){var items=[[K.e1,'1. Cut the whole into equal parts.'],[K.e2,'2. Count the parts you want.'],[K.e3,'3. Write how many on top, of what on the bottom.']];
+    S('rect',{x:X0,y:TRY-20,width:BW,height:150,rx:14,fill:'#FFFDF8',stroke:'#E4D8BF','stroke-width':2});
+    items.forEach(function(it,i){if(t>=it[0]-0.2)S('text',{x:X0+26,y:TRY+20+i*42,'font-size':25,'font-weight':900,fill:NAVY,text:it[1]});});}
+  if(cur)cursor(cur[0],cur[1],press);
+}
+window.init=function(tl){TL=tl;setup();};
+</script></body></html>

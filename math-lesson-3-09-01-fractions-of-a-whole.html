@@ -1,628 +1,408 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fractions of a Whole · Grade 3 Math Lesson 3.09.01</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/storybook/sb.css?v=9763e0a5">
+</head>
+<body class="sb">
+<div class="sb-prog" aria-label="Progress"><span class="k">📖 PYTHAGORAS' STRING</span><span class="bar"><i></i></span><span class="n">0 of 10 jobs</span></div>
+<div class="sb-wrap">
 
-<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Optima Academy Online — Grade 3 Math Lesson 3.09.01</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Nunito:wght@400;700;800;900&display=swap');
-*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Nunito',Verdana,sans-serif;background:#FAF6F2;color:#0E1C42;line-height:1.6}.page-wrap{max-width:920px;margin:0 auto;background:#fff;box-shadow:0 0 40px rgba(14,28,66,.08)}
-:root{--mar:#7A2D3F;--mar-light:#F2DDE3;--mar-mid:#D8A6B3;--mar-deep:#4A1A28}
-.progress-wrap{position:sticky;top:0;z-index:200;background:#0E1C42;padding:8px 20px 10px;display:flex;align-items:center;gap:14px}.progress-label{font-size:12px;color:#F5C518;font-weight:800;text-transform:uppercase}.progress-track{flex:1;height:10px;background:rgba(255,255,255,.1);border-radius:10px;overflow:hidden}.progress-fill{height:100%;width:0%;background:linear-gradient(90deg,var(--mar),#D8A6B3,#F5C518,var(--mar));background-size:200% 100%;animation:shimmer 3s linear infinite;border-radius:10px;transition:width .4s}.progress-pct{font-size:13px;color:#F5C518;font-weight:800;min-width:36px;text-align:right}@keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
-.header{background:#0E1C42;border-bottom:6px solid var(--mar);padding:20px 28px 18px}.header-brand{display:flex;align-items:center;gap:12px;margin-bottom:14px}.header-logo{width:52px;height:52px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center}.header-logo img{width:48px;height:38px}.header-org{font-size:22px;color:#fff;font-weight:800}.header-sub{font-size:11px;color:#D8A6B3}.header-title{font-family:'Lora',serif;font-size:28px;color:#fff;font-weight:700;margin-bottom:10px}.header-title em{color:#D8A6B3;font-style:italic}.header-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(122,45,63,.25);border:1.5px solid rgba(216,166,179,.5);border-radius:28px;padding:6px 16px}.header-badge-icon{font-size:22px}.header-badge-text{font-size:18px;color:#fff;font-weight:800}
-.u9-ribbon{background:linear-gradient(135deg,#F8EAEE,#F2DDE3);border-bottom:2px solid #D8A6B3;padding:10px 28px;display:flex;align-items:center;gap:14px;font-family:'Lora',serif}.u9-pill{background:var(--mar);color:#fff;font-family:'Nunito',sans-serif;font-weight:900;font-size:10px;text-transform:uppercase;letter-spacing:.6px;padding:4px 10px;border-radius:20px}.u9-text{font-size:14px;color:var(--mar-deep);font-weight:700;font-style:italic}
-.quote-strip{background:linear-gradient(135deg,#F2DDE3,#D8A6B3);border-bottom:2px solid #D8A6B3;padding:14px 28px;text-align:center}.quote-strip-text{font-family:'Lora',serif;font-size:16px;font-style:italic;color:#4A1A28}.quote-strip-attr{font-size:11px;color:var(--mar);font-weight:700;margin-top:4px;text-transform:uppercase}
-.info-strip{display:flex;flex-wrap:wrap;background:#fff;border-bottom:2px solid #E2E8F4}.info-cell{flex:1;min-width:150px;padding:12px 16px;border-right:1px solid #E2E8F4;display:flex;align-items:center;gap:10px}.info-icon{width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px}.info-label{font-size:10px;color:#7A88A8;text-transform:uppercase;font-weight:700}.info-value{font-size:16px;color:#0E1C42;font-weight:800}.info-detail{font-size:11px;color:#3A4A6B}
-.explorer-strip{display:flex;align-items:center;gap:16px;padding:12px 28px;background:linear-gradient(135deg,#1A2340,#0E1C42);border-bottom:3px solid var(--mar)}.explorer-compass{font-size:28px}.explorer-mission-label{font-size:10px;color:#F5C518;text-transform:uppercase;font-weight:800}.explorer-mission-text{font-size:15px;color:#fff;font-weight:700}
-.intro-2col{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:20px 28px 4px}@media(max-width:720px){.intro-2col{grid-template-columns:1fr}}.intro-card{background:#fff;border:2px solid #E2E8F4;border-radius:18px;overflow:hidden}.intro-card-head{display:flex;align-items:center;gap:10px;padding:14px 18px;border-bottom:2px solid}.intro-card-head-icon{width:40px;height:40px;border-radius:50%;color:#fff;font-size:20px;display:flex;align-items:center;justify-content:center}.intro-card-head-label{font-size:10px;color:#7A88A8;text-transform:uppercase;font-weight:700}.intro-card-head-title{font-size:18px;color:#0E1C42;font-weight:800}.intro-card-body{padding:14px 18px}.intro-card-body p{font-size:15px;color:#3A4A6B;line-height:1.65;margin-bottom:8px}.obj-line{display:flex;gap:8px;font-size:15px;color:#0E1C42;line-height:1.55;margin-bottom:8px}.theme-question .intro-card-head{background:#FFF8E6;border-color:#F5E6C8}.theme-question .intro-card-head-icon{background:#F5C518}.theme-objectives .intro-card-head{background:var(--mar-light);border-color:var(--mar-mid)}.theme-objectives .intro-card-head-icon{background:var(--mar)}
-.need-strip{display:flex;flex-wrap:wrap;gap:8px;padding:12px 28px 18px}.need-strip-label{font-size:13px;color:#3A4A6B;font-weight:700}.need-chip{background:#E3F8ED;border:1.5px solid #B8E8CF;border-radius:20px;padding:5px 12px;font-size:13px;color:#0E1C42;font-weight:700}
-.tab-bar{position:sticky;top:38px;z-index:100;background:#fff;border-bottom:3px solid #E2E8F4;display:flex;overflow-x:auto;box-shadow:0 -4px 0 0 #0E1C42}.tab-btn{flex:1;min-width:130px;padding:12px 8px 11px;background:transparent;border:none;border-bottom:4px solid transparent;font-family:'Nunito',sans-serif;font-size:13px;font-weight:700;color:#7A88A8;cursor:pointer;text-align:center}.tab-btn.active{color:#0E1C42;border-bottom-color:var(--mar);background:#fff}.tab-btn .tab-check{display:none;color:#2DB87A;margin-left:4px;font-weight:800}.tab-btn.visited .tab-check{display:inline}.tab-panel{display:none;padding:24px 28px 36px}.tab-panel.active{display:block}
-.activity{background:#fff;border:2px solid #E2E8F4;border-radius:18px;margin-bottom:18px}.activity.bl-mar{border-left:6px solid var(--mar)}.activity.bl-green{border-left:6px solid #2DB87A}.activity.bl-yellow{border-left:6px solid #F5C518}.activity.bl-slate{border-left:6px solid #3A6B9A}.activity.bl-navy{border-left:6px solid #0E1C42}.activity-head{display:flex;align-items:center;gap:12px;padding:14px 20px 14px 18px;border-bottom:1.5px solid #E2E8F4}.activity-num{width:38px;height:38px;border-radius:14px;color:#fff;font-size:18px;font-weight:800;display:flex;align-items:center;justify-content:center}.activity-title{font-size:19px;color:#0E1C42;font-weight:800}.activity-sub{font-size:12px;color:#7A88A8}.activity-body{padding:18px 22px}.activity-body p{font-size:16px;color:#3A4A6B;line-height:1.7;margin-bottom:12px}
-.callout{border-radius:14px;padding:16px 18px;display:flex;gap:12px;margin-bottom:14px}.callout-icon{font-size:28px}.callout p{font-size:15.5px;color:#0E1C42;line-height:1.65;margin:0}.callout-info{background:var(--mar-light);border:2px solid var(--mar-mid)}.callout-think{background:#FFF8E6;border:2px solid #F5E6C8}.callout-tip{background:#E3F8ED;border:2px solid #B8E8CF}
-.key-concept{background:var(--mar-light);border:2px solid var(--mar-mid);border-radius:14px;padding:16px 18px;margin-bottom:14px}.key-concept-label{font-size:12px;color:var(--mar-deep);text-transform:uppercase;font-weight:800;margin-bottom:8px}.key-concept p{font-size:15px;color:#0E1C42;line-height:1.7}
-.socratic-box{background:linear-gradient(135deg,var(--mar-light),#D8A6B3);border:2px solid var(--mar-mid);border-radius:14px;padding:16px 18px;margin-bottom:14px}.socratic-label{font-size:12px;color:var(--mar-deep);text-transform:uppercase;font-weight:800;margin-bottom:8px}.socratic-q{font-size:15.5px;color:#0E1C42;font-style:italic}
-.journal-label{font-size:13px;color:#3A4A6B;font-weight:700;margin:10px 0 4px}.journal-box{width:100%;min-height:80px;border:2px solid #E2E8F4;border-radius:12px;padding:12px 14px;font-family:'Nunito',sans-serif;font-size:15px;color:#0E1C42;resize:vertical}.journal-box:focus{outline:none;border-color:var(--mar)}.saved-dot{width:8px;height:8px;border-radius:50%;background:#E2E8F4;display:inline-block;transition:.3s}.saved-dot.saved{background:#2DB87A}
-.check-btn,.mar-btn,.green-btn,.orange-btn{display:inline-flex;align-items:center;gap:6px;color:#fff;border:none;border-radius:12px;padding:10px 20px;font-size:14px;font-weight:800;cursor:pointer;font-family:'Nunito',sans-serif;margin-top:10px}.check-btn{background:#3A6B9A}.mar-btn{background:var(--mar)}.green-btn{background:#2DB87A}.orange-btn{background:#E07B39}
-.hint-callout{background:#FFF8E6;border:2px solid #F5C518;border-radius:10px;padding:10px 14px;margin:12px 0;font-size:14px;color:#5A4A00;font-weight:700}
-.task-box{background:#FAFBFF;border:2px solid #E2E8F4;border-radius:14px;padding:16px 18px;margin-bottom:14px}.task-label{font-size:12px;color:var(--mar-deep);text-transform:uppercase;font-weight:800;margin-bottom:10px}
-.feedback-branch{display:none;margin-top:16px;border-radius:14px;padding:16px}.feedback-branch.show{display:block;animation:reveal .35s}.feedback-pass{background:#E3F8ED;border:2px solid #B8E8CF}.feedback-retry{background:#FFF0E6;border:2px solid #F5C8A0}
-.value-card-row{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}.value-card{border:2px solid #E2E8F4;background:#fff;border-radius:14px;padding:10px 14px;min-width:110px;text-align:center;cursor:pointer;transition:.2s}.value-card:hover{border-color:var(--mar);background:var(--mar-light)}.value-card.good{background:#E3F8ED;border-color:#2DB87A}.value-card.bad{background:#FFF0E6;border-color:#E07B39;animation:shake .25s}.value-card .big{font-size:22px;font-weight:900;color:#0E1C42}.value-card .small{font-size:12px;color:#3A4A6B;font-weight:800}
-.fill-row{display:flex;align-items:center;gap:8px;background:#FAFBFF;border:2px solid #E2E8F4;border-radius:12px;padding:12px 14px;margin:10px 0;flex-wrap:wrap;font-size:17px;font-weight:800;color:#0E1C42}.fill-input{width:100px;padding:8px 10px;border:2.5px solid var(--mar-mid);border-radius:10px;font-size:17px;font-weight:900;color:var(--mar-deep);text-align:center;font-family:'Nunito',sans-serif;background:#fff}.fill-input:focus{outline:none;border-color:var(--mar)}.fill-input.good{border-color:#2DB87A;background:#E3F8ED;color:#1A8A5A}.fill-input.bad{border-color:#E07B39;background:#FFF0E6;animation:shake .25s}
-.q-block{background:#FAFBFF;border:2px solid #E2E8F4;border-radius:14px;padding:14px 18px;margin-bottom:14px}.q-num{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--mar);color:#fff;font-weight:800;font-size:14px;margin-right:8px;vertical-align:middle}.q-text{font-size:15.5px;color:#0E1C42;line-height:1.65}
-.gathered-box{background:#fff;border:2px solid #E2E8F4;border-radius:18px;overflow:hidden;margin-top:24px}.gathered-head{display:flex;align-items:center;gap:14px;background:linear-gradient(135deg,#0E1C42,#1A2D5A);padding:18px 22px}.gathered-head-icon{font-size:32px}.gathered-head-label{font-size:11px;color:#F5C518;font-weight:800;text-transform:uppercase}.gathered-head-title{font-size:18px;color:#fff;font-weight:800}.gathered-body{padding:16px 22px}.gathered-output{width:100%;min-height:160px;border:2px solid #E2E8F4;border-radius:12px;padding:14px;font-family:monospace;font-size:13px;background:#FAFBFF}
-.tab-next-wrap{text-align:center;padding:24px 0 8px}.tab-transition-voice{font-family:'Lora',serif;font-size:15px;font-style:italic;color:#4A1A28;margin-bottom:12px}.tab-next-btn{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--mar),#A04A5E);color:#fff;border:none;border-radius:28px;padding:13px 28px;font-size:15px;font-weight:800;cursor:pointer;box-shadow:0 4px 14px rgba(122,45,63,.3);animation:float 3s infinite}
-.turn-in-card{background:#fff;border:2px solid #E2E8F4;border-radius:18px;overflow:hidden;margin-top:18px}.turn-in-header{display:flex;align-items:center;gap:14px;background:var(--mar-light);padding:18px 22px;border-bottom:2px solid var(--mar-mid)}.turn-in-header-icon{font-size:36px}.turn-in-header-label{font-size:11px;color:var(--mar-deep);font-weight:800;text-transform:uppercase}.turn-in-header-title{font-family:'Lora',serif;font-size:22px;color:#0E1C42;font-weight:700}.turn-in-body{padding:18px 22px 20px}.turn-in-item{display:flex;align-items:center;gap:14px;padding:12px 16px;background:#FAFBFF;border:1.5px solid #E2E8F4;border-radius:12px;cursor:pointer;margin-bottom:10px}.turn-in-item.checked{background:#E3F8ED;border-color:#B8E8CF}.turn-in-check{width:26px;height:26px;border-radius:8px;border:2px solid var(--mar-mid);background:#fff;display:flex;align-items:center;justify-content:center;font-size:16px}.turn-in-item.checked .turn-in-check{background:#2DB87A;border-color:#2DB87A;color:#fff}
-.footer{background:#0E1C42;border-top:4px solid var(--mar);padding:18px 28px;text-align:center}.footer-main{font-size:14px;color:#fff;margin-bottom:4px}.footer-main span{color:#D8A6B3;font-weight:700}.footer-sub{font-size:12px;color:rgba(255,255,255,.5)}.footer-copy{font-size:11px;color:rgba(255,255,255,.3)}
-.inline-feedback{display:none;margin:12px 0;border-radius:14px;padding:12px 14px;font-weight:800;line-height:1.5}.inline-feedback.show{display:block;animation:reveal .3s}.inline-feedback.good{background:#E3F8ED;border:2px solid #B8E8CF;color:#0E1C42}.inline-feedback.think{background:#FFF3DC;border:2px solid #F5E6C8;color:#5A4A3A}
-.vocab-section{background:#fff;border:2px solid var(--mar-mid);border-left:6px solid var(--mar);border-radius:18px;padding:14px 20px;margin:0 0 20px}.vocab-section-title{font-size:16px;color:#0E1C42;font-weight:900;margin-bottom:4px}
-.bubble-row{display:flex;gap:12px;flex-wrap:wrap;margin:14px 0}.bubble{display:flex;gap:10px;flex:1 1 260px;max-width:340px;background:#fff;border:2px solid #E2E8F4;border-radius:18px;padding:12px 14px}.bubble.atlas{border-left:5px solid #6B3FA0;background:linear-gradient(135deg,#fff,#F8F4FF)}.bubble.hazel{border-left:5px solid #2DB87A;background:linear-gradient(135deg,#fff,#F4FBF7)}.bubble.felix{border-left:5px solid #F5C518;background:linear-gradient(135deg,#fff,#FEFBEB)}.bubble.cora{border-left:5px solid #3A6B9A;background:linear-gradient(135deg,#fff,#F4F8FC)}.bubble-avatar{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:900;color:#fff;flex-shrink:0;font-family:'Lora',serif}.bubble.atlas .bubble-avatar{background:#6B3FA0}.bubble.hazel .bubble-avatar{background:#2DB87A}.bubble.felix .bubble-avatar{background:#F5C518;color:#0E1C42}.bubble.cora .bubble-avatar{background:#3A6B9A}.bubble-body{flex:1;min-width:0}.bubble-name{font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.7px;margin-bottom:3px;color:#6B3FA0}.bubble.hazel .bubble-name{color:#1A8A5A}.bubble.felix .bubble-name{color:#8A6D2B}.bubble.cora .bubble-name{color:#1A6B8E}.bubble-text{font-size:14.5px;color:#0E1C42;line-height:1.5;font-weight:600;font-family:'Lora',serif;font-style:italic}
-/* ═══ VIDEO PLACEHOLDER ═══ */
-.video-placeholder-wrap {
-  display: none;
-  border-radius: 14px; overflow: hidden; margin: 0 0 18px;
-  border: 2px dashed rgba(107,63,160,0.4);
-  background: linear-gradient(135deg, #0E1C42, #1A2D5A);
-}
-.video-placeholder-inner {
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-  text-align: center; padding: 28px 20px;
-}
-.video-placeholder-inner .vp-icon { font-size: 34px; margin-bottom: 6px; }
-.video-placeholder-inner .vp-label {
-  font-size: 10px; color: #F5C518; text-transform: uppercase;
-  letter-spacing: 2px; font-weight: 800; margin-bottom: 4px;
-}
-.video-placeholder-inner .vp-title {
-  font-size: 16px; font-weight: 800; color: #fff; margin-bottom: 8px;
-}
-.video-placeholder-inner .vp-slot {
-  font-family: monospace; font-size: 11px; color: #6B3FA0;
-  background: rgba(107,63,160,0.15);
-  padding: 3px 10px; border-radius: 4px;
-}
-.video-placeholder-inner .vp-notes {
-  font-size: 12px; color: rgba(255,255,255,0.8); font-style: italic;
-  margin-top: 10px; text-align: left; padding: 10px 12px;
-  background: rgba(0,0,0,0.25); border-radius: 6px; border-left: 3px solid #6B3FA0;
-}
-@keyframes reveal{0%{opacity:0;transform:translateY(10px)}100%{opacity:1;transform:translateY(0)}}@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}@keyframes mini{0%{transform:translateY(0) scale(0);opacity:1}50%{transform:translateY(-30px) scale(1.2)}100%{transform:translateY(-60px) scale(.6);opacity:0}}@keyframes fill-in{0%{background-color:transparent}100%{background-color:var(--mar)}}
-/* Vertical fraction component */
-.frac{display:inline-flex;flex-direction:column;align-items:center;vertical-align:middle;font-family:'Lora',serif;font-weight:900;line-height:1;margin:0 2px}
-.frac .num{padding:0 6px;font-size:1em}
-.frac .bar{border-top:2.5px solid currentColor;width:100%;min-width:18px;margin:2px 0}
-.frac .den{padding:0 6px;font-size:1em}
-.frac.lg{font-size:28px}.frac.md{font-size:20px}
-/* FRACTION STRIP BUILDER */
-.fs-frame{background:#fff;border:2px solid var(--mar-mid);border-radius:16px;padding:18px;margin:14px 0}
-.fs-task{background:linear-gradient(135deg,#FFFBE6,#FFF3DC);border:2px solid #F5E6C8;border-radius:14px;padding:14px 16px;margin-bottom:14px;font-family:'Lora',serif;font-size:16px;color:#0E1C42;font-weight:700;text-align:center}
-.fs-task strong{background:#F5C518;color:#0E1C42;padding:0 4px;border-radius:4px}
-.fs-controls{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:14px}
-.fs-pick{background:var(--mar-light);border:2px solid var(--mar-mid);border-radius:14px;padding:10px 14px;text-align:center;min-width:140px}
-.fs-pick-label{font-size:11px;color:var(--mar-deep);font-weight:900;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
-.fs-stepper{display:flex;align-items:center;justify-content:center;gap:10px}
-.fs-btn{background:#fff;border:2.5px solid var(--mar);color:var(--mar);width:36px;height:36px;border-radius:50%;font-size:18px;font-weight:900;cursor:pointer}
-.fs-btn:hover{background:var(--mar);color:#fff}
-.fs-val{font-family:'Lora',serif;font-size:28px;font-weight:900;color:#0E1C42;min-width:36px}
-.fs-strip-wrap{background:#FAFBFF;border:2px dashed var(--mar-mid);border-radius:12px;padding:16px;margin-bottom:14px}
-.fs-strip-label{font-size:11px;color:var(--mar-deep);font-weight:900;text-transform:uppercase;text-align:center;margin-bottom:10px}
-.fs-strip{display:flex;border:3px solid #0E1C42;border-radius:8px;overflow:hidden;height:64px;width:100%;max-width:600px;margin:0 auto;background:#fff}
-.fs-part{flex:1;border-right:2px solid #0E1C42;transition:background-color .25s}
-.fs-part:last-child{border-right:none}
-.fs-part.filled{background-color:var(--mar)}
-.fs-eq{background:linear-gradient(135deg,var(--mar-light),#D8A6B3);border:2px solid var(--mar-mid);border-radius:12px;padding:14px 16px;text-align:center;font-family:'Lora',serif;font-size:22px;font-weight:900;color:#0E1C42;margin-bottom:8px;display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap}
-.fs-eq .desc{font-size:14px;color:var(--mar-deep);font-style:italic}
-.fs-words{font-family:'Lora',serif;font-size:14px;color:var(--mar-deep);font-style:italic;text-align:center}
-.ex-tbl{width:100%;border-collapse:separate;border-spacing:0;margin:14px 0;background:#fff;border:2px solid #E2E8F4;border-radius:14px;overflow:hidden}.ex-tbl thead th{background:#0E1C42;color:#fff;font-size:12px;padding:12px;text-align:left;text-transform:uppercase;font-weight:900}.ex-tbl tbody td{padding:12px 14px;border-top:1px solid #E2E8F4;font-size:14.5px;color:#0E1C42;line-height:1.5}.ex-tbl tbody td:first-child{font-family:'Lora',serif;font-weight:800;font-size:17px}.ex-tbl tbody td:last-child{text-align:center;font-family:'Lora',serif;font-weight:900;font-size:18px;background:#FAFBFF;border-left:1px dashed #E2E8F4;color:#1A8A5A}
-</style>
-<style id="fluencyStyles">
-.fluency-box{background:#fff;border:2px solid #F5C518;border-radius:18px;overflow:hidden;margin-bottom:22px;font-family:'Nunito',sans-serif}
-.fluency-head{display:flex;align-items:center;gap:12px;background:linear-gradient(135deg,#F5C518,#E8B723);padding:14px 20px;flex-wrap:wrap}
-.fluency-head-icon{font-size:26px;line-height:1}
-.fluency-head-label{font-size:10px;color:#0E1C42;font-weight:800;text-transform:uppercase;letter-spacing:0.5px}
-.fluency-head-title{font-size:15px;color:#0E1C42;font-weight:800}
-.fluency-timer-ui{margin-left:auto;display:flex;align-items:center;gap:10px}
-.fluency-timer-display{font-size:20px;font-weight:800;color:#0E1C42;min-width:46px;text-align:center}
-.fluency-start-btn{background:#0E1C42;color:#fff;border:none;border-radius:10px;padding:8px 14px;font-weight:700;font-size:12px;cursor:pointer}
-.fluency-start-btn:disabled{opacity:0.55;cursor:default}
-.fluency-body{padding:16px 20px}
-.fluency-instructions{font-size:13px;color:#4A5568;margin:0 0 12px}
-.fluency-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(128px,1fr));gap:10px;margin-bottom:14px}
-.fluency-item{display:flex;align-items:center;gap:6px;background:#FAFBFF;border:1.5px solid #E2E8F4;border-radius:10px;padding:8px 10px}
-.fluency-item.fluency-correct{border-color:#2DB87A;background:#EAFBF3}
-.fluency-item.fluency-wrong{border-color:#E07B39;background:#FDF1E9}
-.fluency-q{font-size:13px;font-weight:700;color:#0E1C42;white-space:nowrap}
-.fluency-input{width:46px;border:1.5px solid #CBD5E8;border-radius:6px;padding:4px;font-size:14px;text-align:center;font-family:'Nunito',sans-serif}
-.fluency-input:disabled{background:#F0F2F8}
-.fluency-check-btn{background:#2DB87A;color:#fff;border:none;border-radius:10px;padding:10px 18px;font-weight:800;font-size:13px;cursor:pointer}
-.fluency-check-btn:disabled{opacity:0.55;cursor:default}
-.fluency-result{margin-top:10px;font-size:14px;color:#0E1C42;font-weight:700}
-</style></head><body>
-<div class="page-wrap">
+<header class="sb-head">
+  <div class="sb-brand"><img alt="" src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png"><div><b>Optima Academy Online</b><small>An Education Experience Company</small></div></div>
+  <h1 class="sb-title">Fractions of a Whole</h1>
+  <div class="sb-chips">
+    <span class="sb-chip lead">Lesson 3.09.01 · Unit 9 · Lesson 1</span>
+    <button type="button" class="sb-chip" id="sb-read">🔊 Read aloud</button>
+    <button type="button" class="sb-chip" data-pop="#sb-std" aria-expanded="false">Standards ▾</button>
+    <button type="button" class="sb-chip" id="sb-music" aria-pressed="false">🎵 Music: off</button>
+    <button type="button" class="sb-chip" id="sb-motion" aria-pressed="true">✨ Motion: on</button>
+  </div>
+  <div class="sb-pop" id="sb-std"><b>MA.3.FR.1.1</b> Represent and interpret unit fractions as the quantity formed by one part when a whole is partitioned into equal parts.<br><b>MA.3.FR.1.2</b> Represent and interpret fractions as the quantity formed when a part is partitioned into equal parts; count fractional parts.<br><small>Dimensions Math 3B, Chapter 9, Lesson 1 · Fractions of a Whole</small></div>
+</header>
 
-<!-- ═══════════════════════════════════════════════════════════════════════
-     OPTIMA READ-ALOUD PLAYER — drop-in snippet for GitHub-hosted lesson pages
-     ═══════════════════════════════════════════════════════════════════════ -->
-<div id="optima-read-aloud">
-<style>
-    #optima-read-aloud { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 14px 18px; margin: 0 0 20px 0; }
-    #optima-read-aloud .ora-kicker { font-size: 11px; color: #1B6A94; letter-spacing: 0.4px; margin-bottom: 10px; }
-    #optima-read-aloud .ora-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
-    #optima-read-aloud .ora-controls button { border-radius: 8px; padding: 8px 16px; font-size: 14px; cursor: pointer; font-family: inherit; transition: all 0.15s; }
-    #ora-play { background: #0E1C42; color: #FFFFFF; border: 1.5px solid #0E1C42; }
-    #ora-play:hover:enabled { background: #1B2D5E; }
-    #ora-play:disabled { background: #D0D9E8; border-color: #D0D9E8; color: #6b7a99; cursor: default; }
-    #ora-stop { background: #FFFFFF; color: #0E1C42; border: 1.5px solid #D0D9E8; }
-    #ora-stop:hover:enabled { background: #F4F6FA; border-color: #55C8E8; }
-    #ora-stop:disabled { color: #999; border-color: #E4E9F2; cursor: default; }
-    #optima-read-aloud .ora-speed { font-size: 12px; color: #6b7a99; display: flex; align-items: center; gap: 6px; }
-    #ora-rate { font-family: inherit; font-size: 13px; color: #0E1C42; border: 1.5px solid #D0D9E8; border-radius: 6px; padding: 5px 8px; background: #FFFFFF; }
-    #ora-status { font-size: 12px; color: #666; }
-    .ora-highlight { background: #FDF3E3 !important; box-shadow: inset 4px 0 0 #C7922C; border-radius: 4px; transition: background 0.2s; }
-</style>
-    <div class="ora-kicker">&#128266; READ ALOUD &mdash; LISTEN TO THIS PAGE</div>
-    <div class="ora-controls">
-        <button id="ora-play" type="button" aria-label="Listen to this page">&#9654;&#65039; Listen</button>
-        <button id="ora-stop" type="button" aria-label="Stop reading" disabled>&#9632; Stop</button>
-        <label class="ora-speed">Speed
-            <select id="ora-rate" aria-label="Reading speed">
-                <option value="0.8">Slower</option>
-                <option value="1" selected>Normal</option>
-                <option value="1.25">Faster</option>
-            </select>
-        </label>
-        <span id="ora-status" role="status" aria-live="polite"></span>
+<!-- the open book -->
+<div class="sb-book" aria-label="Opti's storybook, open to Chapter 9">
+  <div class="sb-book-in">
+    <div class="sb-pg">
+      <figure class="sb-plate"><img src="images/storybook/sb-athens-plate.jpg" alt="Part of The School of Athens, a wall painting by Raphael. Pythagoras sits writing in a book. A boy holds up a small slate for him."><figcaption>Pythagoras, as Raphael painted him about 500 years ago</figcaption></figure>
     </div>
-<script>
-(function () {
-    "use strict";
-    var playBtn  = document.getElementById("ora-play");
-    var stopBtn  = document.getElementById("ora-stop");
-    var rateSel  = document.getElementById("ora-rate");
-    var statusEl = document.getElementById("ora-status");
-
-    if (!("speechSynthesis" in window) || !("SpeechSynthesisUtterance" in window)) {
-        playBtn.disabled = true;
-        rateSel.disabled = true;
-        statusEl.textContent = "Read-aloud is not supported in this browser.";
-        return;
-    }
-
-    var LABEL_PLAY   = "▶️ Listen";
-    var LABEL_PAUSE  = "⏸️ Pause";
-    var LABEL_RESUME = "▶️ Resume";
-    var BLOCK_SEL = "p, li, h1, h2, h3, h4, h5, h6, blockquote, td, th, dt, dd, figcaption, div";
-    var SKIP_SEL  = "#optima-read-aloud, [data-ra-skip], button, script, style, select, noscript, iframe";
-
-    var queue = [];
-    var idx = 0;
-    var playing = false, paused = false, stopping = false;
-    var currentBlock = null;
-    var currentUtterance = null;
-
-    var voices = [];
-    function loadVoices() { voices = window.speechSynthesis.getVoices(); }
-    loadVoices();
-    if ("onvoiceschanged" in window.speechSynthesis) {
-        window.speechSynthesis.onvoiceschanged = loadVoices;
-    }
-    function pickVoice() {
-        if (!voices.length) loadVoices();
-        var en = voices.filter(function (v) { return /^en/i.test(v.lang); });
-        return en.filter(function (v) { return /natural/i.test(v.name); })[0]
-            || en.filter(function (v) { return /google us english/i.test(v.name); })[0]
-            || en.filter(function (v) { return v.default; })[0]
-            || en[0] || null;
-    }
-
-    function isVisible(el) {
-        return !!(el.offsetWidth || el.offsetHeight || el.getClientRects().length);
-    }
-
-    function collectQueue() {
-        var root = document.querySelector("[data-readaloud-root]")
-                || document.querySelector(".canvas-frame")
-                || document.body;
-        var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null, false);
-        var items = [];
-        var node;
-        while ((node = walker.nextNode())) {
-            if (!/\S/.test(node.textContent)) continue;
-            var el = node.parentElement;
-            if (!el || el.closest(SKIP_SEL)) continue;
-            if (!isVisible(el)) continue;
-            var block = el.closest(BLOCK_SEL) || root;
-            var last = items[items.length - 1];
-            if (last && last.el === block) last.text += " " + node.textContent;
-            else items.push({ el: block, text: node.textContent });
-        }
-        var q = [];
-        items.forEach(function (item) {
-            var clean = item.text.replace(/[\u{1F600}-\u{1F64F}\u{1F300}-\u{1F5FF}\u{1F680}-\u{1F6FF}\u{1F1E0}-\u{1F1FF}\u{1F900}-\u{1F9FF}\u{1FA00}-\u{1FA6F}\u{1FA70}-\u{1FAFF}\u{2600}-\u{27BF}\u{2300}-\u{23FF}\u{2B50}\u{2B55}\u{25A0}-\u{25FF}\u{2702}-\u{27B0}\u{FE00}-\u{FE0F}\u{200D}\u{20E3}\u{E0020}-\u{E007F}]/gu, "").replace(/\s+/g, " ").trim();
-            if (!clean) return;
-            var sentences = clean.match(/[^.!?]+[.!?]+["”’')\]]*\s*|[^.!?]+$/g) || [clean];
-            sentences.forEach(function (s) {
-                s = s.trim();
-                if (s) q.push({ el: item.el, text: s });
-            });
-        });
-        return q;
-    }
-
-    function highlight(el) {
-        if (el === currentBlock) return;
-        clearHighlight();
-        currentBlock = el;
-        if (el && el !== document.body) {
-            el.classList.add("ora-highlight");
-            try { el.scrollIntoView({ behavior: "smooth", block: "nearest" }); } catch (e) {}
-        }
-    }
-    function clearHighlight() {
-        if (currentBlock) currentBlock.classList.remove("ora-highlight");
-        currentBlock = null;
-    }
-
-    function speakNext() {
-        if (idx >= queue.length) { finish("Finished reading this page."); return; }
-        var item = queue[idx];
-        highlight(item.el);
-        var u = new SpeechSynthesisUtterance(item.text);
-        u.rate = parseFloat(rateSel.value) || 1;
-        var v = pickVoice();
-        if (v) u.voice = v;
-        u.onend = function () {
-            if (stopping) return;
-            idx++;
-            speakNext();
-        };
-        u.onerror = function (e) {
-            if (stopping || e.error === "canceled" || e.error === "interrupted") return;
-            idx++;
-            speakNext();
-        };
-        currentUtterance = u;
-        window.speechSynthesis.speak(u);
-        statusEl.textContent = "Reading… " + (idx + 1) + " / " + queue.length;
-    }
-
-    function finish(message) {
-        playing = false;
-        paused = false;
-        clearHighlight();
-        playBtn.textContent = LABEL_PLAY;
-        stopBtn.disabled = true;
-        statusEl.textContent = message || "";
-        currentUtterance = null;
-    }
-
-    playBtn.addEventListener("click", function () {
-        if (playing && !paused) {
-            window.speechSynthesis.pause();
-            paused = true;
-            playBtn.textContent = LABEL_RESUME;
-            statusEl.textContent = "Paused";
-            return;
-        }
-        if (playing && paused) {
-            window.speechSynthesis.resume();
-            paused = false;
-            playBtn.textContent = LABEL_PAUSE;
-            statusEl.textContent = "Reading… " + (idx + 1) + " / " + queue.length;
-            return;
-        }
-        queue = collectQueue();
-        if (!queue.length) { statusEl.textContent = "Nothing to read on this page."; return; }
-        idx = 0;
-        stopping = false;
-        playing = true;
-        paused = false;
-        window.speechSynthesis.cancel();
-        playBtn.textContent = LABEL_PAUSE;
-        stopBtn.disabled = false;
-        speakNext();
-    });
-
-    stopBtn.addEventListener("click", function () {
-        stopping = true;
-        window.speechSynthesis.cancel();
-        finish("");
-    });
-
-    rateSel.addEventListener("change", function () {
-        if (!playing || paused) return;
-        stopping = true;
-        window.speechSynthesis.cancel();
-        setTimeout(function () { stopping = false; speakNext(); }, 60);
-    });
-
-    window.addEventListener("pagehide", function () { window.speechSynthesis.cancel(); });
-})();
-</script>
+    <div class="sb-pg r">
+      <div class="sb-chap">Chapter 9</div>
+      <div class="sb-chap-t">Pythagoras' Singing String</div>
+      <div class="sb-orn" aria-hidden="true"></div>
+      <p class="sb-chap-s">Ancient Greece · more than 2,500 years ago</p>
+      <div class="sb-chap-l">Lesson 1 · Fractions of a Whole</div>
+    </div>
+  </div>
+  <img class="sb-owl" src="images/storybook/opti-owl.png" alt="Opti the owl, sitting on the open book">
 </div>
-<!-- ═══ END OPTIMA READ-ALOUD PLAYER ═══ -->
 
-<div class="progress-wrap"><span class="progress-label">📐 Lesson Progress</span><div class="progress-track"><div class="progress-fill" id="pf"></div></div><span class="progress-pct" id="pp">0%</span></div>
-<div class="header">
-<div class="header-brand"><div class="header-logo"><img alt="Optima" src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png"/></div><div><div class="header-org">Optima Academy Online</div><div class="header-sub">An Education Experience Company</div></div></div>
-<div class="header-title"><em>Fractions of a Whole</em></div>
-<div class="header-badge"><span class="header-badge-icon">🦉</span><span class="header-badge-text">Lesson 3.09.01 · Unit 9 Anchor</span></div>
-</div>
-<div class="u9-ribbon">
-<span class="u9-pill">Unit 9 · Fractions</span>
-<span class="u9-text">Cut the whole into equal parts. Shade some. Name the fraction.</span>
-</div>
-<div class="quote-strip"><div class="quote-strip-text">"A fraction names some equal parts of one whole. The bottom tells how many parts in all. The top tells how many you took."</div><div class="quote-strip-attr">Fractions of a whole</div></div>
-<div class="info-strip">
-<div class="info-cell"><div class="info-icon" style="background:var(--mar-light);">🧭</div><div><div class="info-label">Unit</div><div class="info-value">Unit 9</div><div class="info-detail">Fractions Pt 1</div></div></div>
-<div class="info-cell"><div class="info-icon" style="background:#E3F8ED;">📅</div><div><div class="info-label">Lesson</div><div class="info-value">3.09.01</div><div class="info-detail">U1 Anchor</div></div></div>
-<div class="info-cell"><div class="info-icon" style="background:#EAF0FF;">📐</div><div><div class="info-label">Standard</div><div class="info-value">MA.3.FR.1</div><div class="info-detail">parts of whole</div></div></div>
-<div class="info-cell"><div class="info-icon" style="background:#FFF8E6;">🍫</div><div><div class="info-label">Tool</div><div class="info-value">Strip</div><div class="info-detail">shade + name</div></div></div>
-</div>
-<div class="explorer-strip"><span class="explorer-compass">🧭</span><div><div class="explorer-mission-label">Today's Mission</div><div class="explorer-mission-text">Cut a strip into equal parts, shade some, and name the fraction.</div></div></div>
-<div class="intro-2col">
-<div class="intro-card theme-question"><div class="intro-card-head"><div class="intro-card-head-icon">❓</div><div><div class="intro-card-head-label">Essential Question</div><div class="intro-card-head-title">What is a fraction?</div></div></div><div class="intro-card-body"><p>A fraction names equal parts of one whole. The bottom number (denominator) tells how many parts the whole is cut into. The top number (numerator) tells how many of those parts you're talking about.</p></div></div>
-<div class="intro-card theme-objectives"><div class="intro-card-head"><div class="intro-card-head-icon">🎯</div><div><div class="intro-card-head-label">Today's Objectives</div><div class="intro-card-head-title">You will…</div></div></div><div class="intro-card-body">
-<div class="obj-line"><span style="flex-shrink:0">🍫</span><span><strong>Cut</strong> a whole into equal parts.</span></div>
-<div class="obj-line"><span style="flex-shrink:0">🎨</span><span><strong>Shade</strong> some of the parts.</span></div>
-<div class="obj-line"><span style="flex-shrink:0">📝</span><span><strong>Name</strong> the fraction in words and symbols.</span></div>
-</div></div>
-</div>
-<div class="need-strip"><span class="need-strip-label">You'll need:</span><span class="need-chip">📓 Math Journal</span><span class="need-chip">✏️ Pencil</span></div>
-<div class="tab-bar" id="tabBar">
-<button class="tab-btn active" data-tab="warmup" onclick="switchTab('warmup')">🔍 Warm-Up <span class="tab-check">✓</span></button>
-<button class="tab-btn" data-tab="learn" onclick="switchTab('learn')">📐 Learn <span class="tab-check">✓</span></button>
-
-<button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">🌟 Show What You Know <span class="tab-check">✓</span></button>
-</div>
-<div class="tab-panel active" id="tab-warmup">
-<!-- ═══ INTRODUCTION VIDEO ═══ -->
-<div class="video-placeholder-wrap">
-<!-- slot: g3math-09-01 -->
-<div class="video-placeholder-inner">
-  <span class="vp-icon">&#x1F3AC;</span>
-  <div class="vp-label">Introduction Video</div>
-  <div class="vp-title">Optima Academy Online — Grade 3 Math Lesson 3.09.01</div>
-  <div class="vp-slot">g3math-09-01</div>
-  <div class="vp-notes">
-    <strong>Teacher recording notes:</strong> Welcome to today&#x27;s lesson: Optima Academy Online — Grade 3 Math Lesson 3.09.01. You&#x27;ll start with a fluency warm-up: ×7 as Five Groups Plus Two. Pay close attention to each step and use your math tools to work through the problems. Show your thinking in the journal boxes.
+<div class="sb-intro">
+  <div class="sb-card sb-eq">
+    <span class="sb-k">Essential Question</span>
+    <h3>What does a fraction tell you?</h3>
+    <svg viewBox="0 0 330 92" role="img" aria-label="A strip cut into 3 equal parts. 2 parts are shaded.">
+      <rect x="4" y="10" width="106" height="46" rx="5" fill="#B05E09" stroke="#B05E09" stroke-width="2"/><rect x="112" y="10" width="106" height="46" rx="5" fill="#B05E09" stroke="#B05E09" stroke-width="2"/><rect x="220" y="10" width="106" height="46" rx="5" fill="#fff" stroke="#B05E09" stroke-width="2"/>
+      <text x="165" y="84" text-anchor="middle" font-size="16" font-weight="800" fill="#1F2A44">2 of 3 equal parts are shaded</text>
+    </svg>
+    <p style="margin:4px 0 0">A fraction uses two numbers to name part of one whole.</p>
+  </div>
+  <div class="sb-card sb-obj">
+    <span class="sb-k">Today's Objectives</span>
+    <h3>You will…</h3>
+    <ul>
+      <li><b>Cut</b> one whole into equal parts and name one part.</li>
+      <li><b>Name</b> a fraction by counting parts: how many? of what?</li>
+      <li><b>Find the part left.</b> The two parts make 1 whole.</li>
+    </ul>
   </div>
 </div>
-</div>
-<div class="fluency-box" data-timed="false">
-<div class="fluency-head">
-<div class="fluency-head-icon">✍️</div>
-<div><div class="fluency-head-label">FLUENCY WARM-UP</div><div class="fluency-head-title">×7 as Five Groups Plus Two</div></div>
-</div>
-<div class="fluency-body">
-<p class="fluency-instructions">Warm up your fact fluency before today’s lesson. Work through these, then check your answers.</p>
-<div class="fluency-grid" id="fluencyGrid">
-<div class="fluency-item"><span class="fluency-q">7 × 3 =</span><input autocomplete="off" class="fluency-input" data-answer="21" inputmode="numeric" type="text"/></div>
-<div class="fluency-item"><span class="fluency-q">7 × 6 =</span><input autocomplete="off" class="fluency-input" data-answer="42" inputmode="numeric" type="text"/></div>
-<div class="fluency-item"><span class="fluency-q">7 × 4 =</span><input autocomplete="off" class="fluency-input" data-answer="28" inputmode="numeric" type="text"/></div>
-<div class="fluency-item"><span class="fluency-q">7 × 8 =</span><input autocomplete="off" class="fluency-input" data-answer="56" inputmode="numeric" type="text"/></div>
-<div class="fluency-item"><span class="fluency-q">7 × 5 =</span><input autocomplete="off" class="fluency-input" data-answer="35" inputmode="numeric" type="text"/></div>
-<div class="fluency-item"><span class="fluency-q">7 × 9 =</span><input autocomplete="off" class="fluency-input" data-answer="63" inputmode="numeric" type="text"/></div>
-<div class="fluency-item"><span class="fluency-q">7 × 2 =</span><input autocomplete="off" class="fluency-input" data-answer="14" inputmode="numeric" type="text"/></div>
-<div class="fluency-item"><span class="fluency-q">7 × 7 =</span><input autocomplete="off" class="fluency-input" data-answer="49" inputmode="numeric" type="text"/></div>
-<div class="fluency-item"><span class="fluency-q">7 × 10 =</span><input autocomplete="off" class="fluency-input" data-answer="70" inputmode="numeric" type="text"/></div>
-<div class="fluency-item"><span class="fluency-q">7 × 1 =</span><input autocomplete="off" class="fluency-input" data-answer="7" inputmode="numeric" type="text"/></div>
-</div>
-<button class="fluency-check-btn" id="fluencyCheckBtn" onclick="fluencyCheck()">Check My Answers</button>
-<div class="fluency-result" id="fluencyResult"></div>
-</div>
-<textarea class="journal-box" data-label="Fluency Warm-Up (×7 as Five Groups Plus Two)" id="fluencyJournal" readonly="" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;"></textarea>
+
+<div class="sb-tabs" role="tablist" aria-label="Lesson sections">
+  <button class="sb-tab" role="tab" data-tab="warmup" aria-controls="tab-warmup">🔍 Warm-Up <span class="ck">✓</span></button>
+  <button class="sb-tab" role="tab" data-tab="learn" aria-controls="tab-learn">📐 Lesson <span class="ck">✓</span></button>
+  <button class="sb-tab" role="tab" data-tab="swyk" aria-controls="tab-swyk">🌟 Show What You Know <span class="ck">✓</span></button>
 </div>
 
-<div class="activity bl-yellow"><div class="activity-head"><div class="activity-num" style="background:#F5C518;color:#0E1C42;">🔎</div><div><div class="activity-title">Readiness Check</div><div class="activity-sub">Tap the card.</div></div></div><div class="activity-body">
-<p><strong>A pizza is cut into 4 equal slices. You eat 1 slice. What fraction did you eat?</strong></p>
-<div class="value-card-row">
-<div class="value-card" onclick="rA(this,false)"><div class="big"><span class="frac md"><span class="num">1</span><span class="bar"></span><span class="den">3</span></span></div></div>
-<div class="value-card" onclick="rA(this,true)"><div class="big"><span class="frac md"><span class="num">1</span><span class="bar"></span><span class="den">4</span></span></div></div>
-<div class="value-card" onclick="rA(this,false)"><div class="big"><span class="frac md"><span class="num">4</span><span class="bar"></span><span class="den">1</span></span></div></div>
-</div>
-<div class="inline-feedback" id="rA-fb"></div>
-<div class="hint-callout">1 slice out of 4 equal slices = <span class="frac"><span class="num">1</span><span class="bar"></span><span class="den">4</span></span>. The bottom number is the total parts.</div>
-</div></div>
-<div class="activity bl-yellow"><div class="activity-head"><div class="activity-num" style="background:#F5C518;color:#0E1C42;">🤔</div><div><div class="activity-title">Think About It: Equal Parts</div></div></div><div class="activity-body">
-<div class="callout callout-think"><span class="callout-icon">🧠</span><p>Hazel breaks a candy bar into 6 pieces, but the pieces are different sizes. Can she still call each piece "one-sixth"?</p></div>
-<div class="value-card-row">
-<div class="value-card" onclick="rT(this,false)"><div class="big">Yes</div></div>
-<div class="value-card" onclick="rT(this,true)"><div class="big">No</div></div>
-</div>
-<div class="inline-feedback" id="rT-fb"></div>
-<div class="olt-nudge"><a href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=fbars&amp;st=1" target="_blank" rel="noopener" title="Open the Fraction Tiles to compare fractions and find equal ones."><span aria-hidden="true">🧮</span> Try the <b>Fraction Tiles</b> <span aria-hidden="true">↗</span></a></div><div class="journal-label">✏️ Why? <span class="saved-dot" id="dt"></span></div>
-<textarea class="journal-box" data-label="Warm-Up think" id="j-t" oninput="autoSave(this,'dt')" placeholder=""></textarea>
-</div></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Equal parts only. Time to cut and shade.</p><button class="tab-next-btn" onclick="switchTab('learn')">Continue to 📐 Learn →</button></div>
-</div>
-<div class="tab-panel" id="tab-learn">
-<div class="vocab-section"><div class="vocab-section-title">Vocabulary</div>
-<p style="font-size:14px;color:#3A4A6B;font-family:'Lora',serif;font-style:italic;">A <strong>fraction</strong> names equal parts of a whole. The <strong>denominator</strong> (bottom) tells how many equal parts. The <strong>numerator</strong> (top) tells how many of those parts you mean. <span class="frac"><span class="num">3</span><span class="bar"></span><span class="den">4</span></span> = three-fourths = 3 out of 4 equal parts.</p>
+<!-- ══════════════ WARM-UP ══════════════ -->
+<section class="sb-panel tab-panel" id="tab-warmup" role="tabpanel">
+
+<div class="sb-opti" data-slot="warm-1">Hoo, hello! I'm Opti. Come sit with me and open this old book. Each chapter visits a real time and place where people used math. Today's chapter is Ancient Greece, more than 2,500 years ago. Meet Pythagoras. He loved numbers, and he loved music. Stories say he stretched one string over a long wooden box. Then he listened very carefully. Let's listen too.</div>
+
+<div class="sb-card">
+  <span class="sb-k">From the book</span>
+  <h3>Why Pythagoras?</h3>
+  <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>Two real pieces of art. On the left, a painter named Raphael shows Pythagoras writing. The boy holds up a slate with music numbers on it. On the right is a Greek vase from long ago. A woman is playing a lyre.</p></div>
+  <div class="sb-art">
+    <figure class="sb-fig"><img src="images/storybook/sb-pythagoras-tablet.jpg" alt="Pythagoras writing in a book while a boy holds up a slate with lines and numbers." style="object-position:50% 30%"><figcaption>Pythagoras and the slate of music numbers. Raphael painted this about 500 years ago, long after Pythagoras lived.<small>Raphael, The School of Athens (detail), 1509–1511, Vatican. Public domain.</small></figcaption></figure>
+    <figure class="sb-fig"><img src="images/storybook/sb-muse-lyre.jpg" alt="A Greek vase painting of a woman sitting on a rock and playing a lyre with many strings." style="object-position:50% 35%"><figcaption>A lyre has strings of different lengths. This vase was painted about 2,450 years ago in Greece.<small>Muse playing the lyre, Attic white-ground lekythos, 440–430 BC, Staatliche Antikensammlungen, Munich. Photo: Bibi Saint-Pol, public domain.</small></figcaption></figure>
+  </div>
+  <p style="margin:6px 0 0"><b>Today's math:</b> Pythagoras used <b>equal parts</b> of a string. Equal parts are what fractions are all about.</p>
 </div>
 
-<div class="callout callout-info"><span class="callout-icon">🍫</span><p><strong>How the Fraction Strip Builder works.</strong> Pick the denominator (how many equal parts the strip is cut into). Pick the numerator (how many parts to shade). Read the fraction below.</p></div>
-<div class="activity bl-mar"><div class="activity-head"><div class="activity-num" style="background:var(--mar);">🍫</div><div><div class="activity-title">Fraction Strip Builder</div></div></div><div class="activity-body">
-<div class="fs-frame">
-<div class="fs-task">Build: <span class="frac md" id="fs-display"><span class="num">3</span><span class="bar"></span><span class="den">4</span></span> of one whole</div>
-<div class="fs-controls">
-<div class="fs-pick">
-<div class="fs-pick-label">Denominator (equal parts)</div>
-<div class="fs-stepper">
-<button class="fs-btn" onclick="fsAdj('d',-1)">−</button>
-<div class="fs-val" id="fs-dVal">4</div>
-<button class="fs-btn" onclick="fsAdj('d',1)">+</button>
-</div>
-</div>
-<div class="fs-pick">
-<div class="fs-pick-label">Numerator (parts shaded)</div>
-<div class="fs-stepper">
-<button class="fs-btn" onclick="fsAdj('n',-1)">−</button>
-<div class="fs-val" id="fs-nVal">3</div>
-<button class="fs-btn" onclick="fsAdj('n',1)">+</button>
-</div>
-</div>
-</div>
-<div class="fs-strip-wrap">
-<div class="fs-strip-label">One whole, cut into equal parts</div>
-<div class="fs-strip" id="fs-strip"></div>
-</div>
-<div class="fs-eq" id="fs-eq">
-<span class="frac lg"><span class="num" id="fs-num">3</span><span class="bar"></span><span class="den" id="fs-den">4</span></span>
-<span class="desc" id="fs-desc">three-fourths</span>
-</div>
-<div class="fs-words" id="fs-words">3 parts shaded out of 4 equal parts.</div>
-</div>
-<p style="font-size:13px;color:#4A1A28;font-family:'Lora',serif;font-style:italic;text-align:center;margin-top:8px;">Try 1/2, 3/4, 5/8. Watch how the shaded part changes when you change either number.</p>
-</div></div>
-<div class="activity bl-slate"><div class="activity-head"><div class="activity-num" style="background:#3A6B9A;">📋</div><div><div class="activity-title">Reading Fractions</div></div></div><div class="activity-body">
-<table class="ex-tbl">
-<thead><tr><th>Fraction</th><th>Read as</th><th>Strip picture</th></tr></thead>
-<tbody>
-<tr><td><span class="frac"><span class="num">1</span><span class="bar"></span><span class="den">2</span></span></td><td>one-half</td><td>1 of 2 parts shaded</td></tr>
-<tr><td><span class="frac"><span class="num">1</span><span class="bar"></span><span class="den">4</span></span></td><td>one-fourth</td><td>1 of 4 parts shaded</td></tr>
-<tr><td><span class="frac"><span class="num">3</span><span class="bar"></span><span class="den">4</span></span></td><td>three-fourths</td><td>3 of 4 parts shaded</td></tr>
-<tr><td><span class="frac"><span class="num">5</span><span class="bar"></span><span class="den">8</span></span></td><td>five-eighths</td><td>5 of 8 parts shaded</td></tr>
-</tbody>
-</table>
-</div></div>
-<div class="key-concept"><div class="key-concept-label">📐 What You Just Saw</div>
-<p><strong>The denominator names the size of the pieces. The numerator names how many.</strong></p>
-<p style="text-align:center;background:#fff;border:2px solid var(--mar-mid);border-radius:10px;padding:12px;margin:10px 0;font-size:15px;"><span class="frac"><span class="num">numerator</span><span class="bar"></span><span class="den">denominator</span></span>  =  <span class="frac"><span class="num">parts shaded</span><span class="bar"></span><span class="den">total equal parts</span></span></p>
+<div class="video-placeholder-wrap">
+<!-- slot: g3math-09-01 -->
+<div class="video-placeholder-inner"><div class="vp-label">🎬 Welcome Video</div><div class="vp-slot">g3math-09-01</div><div class="vp-notes"><b>Teacher recording notes:</b> Welcome to Chapter 9! Start with the ×7 fact warm-up. Then meet Pythagoras and his string, and find out what a fraction tells you.</div></div>
 </div>
 
-<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">🧠</div><div><div class="activity-title">Worked Example: Five-Eighths</div></div></div><div class="activity-body">
-<div class="task-box"><div class="task-label">Problem</div><p>A candy bar is cut into 8 equal pieces. Atlas eats 5 of them. What fraction of the bar did he eat?</p></div>
-<div class="bubble-row">
-<div class="bubble atlas"><div class="bubble-avatar">A</div><div class="bubble-body"><div class="bubble-name">Atlas — count the parts</div><div class="bubble-text">"8 equal pieces in all. That's the denominator."</div></div></div>
-<div class="bubble hazel"><div class="bubble-avatar">H</div><div class="bubble-body"><div class="bubble-name">Hazel — count the shaded</div><div class="bubble-text">"I ate 5 pieces. That's the numerator."</div></div></div>
-<div class="bubble cora"><div class="bubble-avatar">C</div><div class="bubble-body"><div class="bubble-name">Cora — write it</div><div class="bubble-text">"Five-eighths: numerator 5, denominator 8."</div></div></div>
+<div class="fluency-box">
+  <div class="fluency-head"><div class="fluency-head-icon">✍️</div><div><div class="fluency-head-label">FACT WARM-UP</div><div class="fluency-head-title">×7 as Five Groups Plus Two</div></div></div>
+  <div class="fluency-body">
+    <p class="fluency-instructions">7 groups is 5 groups plus 2 more groups. Type each answer, then check. You can fix any answer and check again.</p>
+    <div class="fluency-grid" id="fluencyGrid">
+      <div class="fluency-item"><span class="fluency-q">7 × 3 =</span><input class="fluency-input" data-answer="21" inputmode="numeric" autocomplete="off" aria-label="7 times 3"></div>
+      <div class="fluency-item"><span class="fluency-q">7 × 6 =</span><input class="fluency-input" data-answer="42" inputmode="numeric" autocomplete="off" aria-label="7 times 6"></div>
+      <div class="fluency-item"><span class="fluency-q">7 × 4 =</span><input class="fluency-input" data-answer="28" inputmode="numeric" autocomplete="off" aria-label="7 times 4"></div>
+      <div class="fluency-item"><span class="fluency-q">7 × 8 =</span><input class="fluency-input" data-answer="56" inputmode="numeric" autocomplete="off" aria-label="7 times 8"></div>
+      <div class="fluency-item"><span class="fluency-q">7 × 5 =</span><input class="fluency-input" data-answer="35" inputmode="numeric" autocomplete="off" aria-label="7 times 5"></div>
+      <div class="fluency-item"><span class="fluency-q">7 × 9 =</span><input class="fluency-input" data-answer="63" inputmode="numeric" autocomplete="off" aria-label="7 times 9"></div>
+      <div class="fluency-item"><span class="fluency-q">7 × 2 =</span><input class="fluency-input" data-answer="14" inputmode="numeric" autocomplete="off" aria-label="7 times 2"></div>
+      <div class="fluency-item"><span class="fluency-q">7 × 7 =</span><input class="fluency-input" data-answer="49" inputmode="numeric" autocomplete="off" aria-label="7 times 7"></div>
+    </div>
+    <div class="sb-help"><button type="button" class="sb-btn check" data-fluency-check>Check my answers</button></div>
+    <div class="sb-fb" aria-live="polite"></div>
+  </div>
 </div>
-<p style="font-family:'Lora',serif;background:#FAFBFF;border:2px solid #E2E8F4;border-radius:12px;padding:10px;text-align:center;font-size:18px;font-weight:800;margin-top:14px;">Atlas ate <span class="frac md" style="color:#1A8A5A;"><span class="num">5</span><span class="bar"></span><span class="den">8</span></span> of the bar.</p>
-</div></div>
-<div class="socratic-box"><div class="socratic-label">🔮 Cora's Question</div><p class="socratic-q">If the parts of a strip aren't equal, can you still write a fraction? Why or why not?</p><div class="olt-nudge"><a href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=fcircles&amp;st=1" target="_blank" rel="noopener" title="Open the Fraction Circles to shade slices and show the fraction."><span aria-hidden="true">🧮</span> Try the <b>Fraction Circles</b> <span aria-hidden="true">↗</span></a></div><div class="journal-label">✏️ <span class="saved-dot" id="ds1"></span></div><textarea class="journal-box" data-label="Learn socratic" id="j-s1" oninput="autoSave(this,'ds1')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Cut into equal parts. Shade. Name.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
+
+<div class="sb-card sb-qgroup" data-done="review" data-ok="✓ Yes! One of 2 equal parts is one-half.">
+  <span class="sb-k">Remember from 2nd grade</span>
+  <h3>One of 2 equal parts</h3>
+  <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>A strip cut into 2 equal parts. One part is shaded.</p></div>
+  <svg viewBox="0 0 404 54" style="max-width:360px;display:block;margin:6px 0" role="img" aria-label="A strip cut into 2 equal parts. 1 part is shaded."><rect x="2" y="2" width="200" height="48" rx="6" fill="#6B46C1" stroke="#6B46C1" stroke-width="2"/><rect x="202" y="2" width="200" height="48" rx="6" fill="#fff" stroke="#6B46C1" stroke-width="2"/></svg>
+  <div class="sb-q">What do we call 1 of 2 equal parts? <input class="sb-ans word" data-a="one-half|one half|a half|half|1/2|1 half" aria-label="name of the shaded part" data-hint="Two equal parts are called halves. So one part is…"></div>
+  <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div>
+  <div class="sb-fb" aria-live="polite"></div>
 </div>
-<div class="tab-panel" id="tab-assignment">
-<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">🎯</div><div><div class="activity-title">Ready Check</div></div></div><div class="activity-body">
-<div class="q-block"><p class="q-text"><span class="q-num">A</span>A pizza is cut into 8 equal slices. You eat 3. What fraction did you eat?</p><div class="value-card-row"><div class="value-card" onclick="eA(this,false)"><div class="big"><span class="frac md"><span class="num">3</span><span class="bar"></span><span class="den">5</span></span></div></div><div class="value-card" onclick="eA(this,true)"><div class="big"><span class="frac md"><span class="num">3</span><span class="bar"></span><span class="den">8</span></span></div></div><div class="value-card" onclick="eA(this,false)"><div class="big"><span class="frac md"><span class="num">8</span><span class="bar"></span><span class="den">3</span></span></div></div></div><div class="inline-feedback" id="eA-fb"></div></div>
-<div class="q-block"><p class="q-text"><span class="q-num">B</span>In the fraction <span class="frac md"><span class="num">2</span><span class="bar"></span><span class="den">5</span></span>, which number is the denominator?</p><div class="value-card-row"><div class="value-card" onclick="eB(this,false)"><div class="big">2</div></div><div class="value-card" onclick="eB(this,true)"><div class="big">5</div></div></div><div class="inline-feedback" id="eB-fb"></div></div>
-</div></div>
-<div class="activity bl-navy"><div class="activity-head"><div class="activity-num" style="background:#0E1C42;">📬</div><div><div class="activity-title">Show What You Know</div></div></div><div class="activity-body">
-<div class="q-block"><p class="q-text"><span class="q-num">1</span><strong>Fluency.</strong> Sketch a strip cut into 6 equal parts. Shade 4 of them. Write the fraction (stacked) in your journal.</p><div class="olt-nudge"><a href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=numberline&amp;st=1" target="_blank" rel="noopener" title="Open the Number Line to place, compare, or hop between the numbers."><span aria-hidden="true">🧮</span> Try the <b>Number Line</b> <span aria-hidden="true">↗</span></a></div><div class="journal-label">✏️ <span class="saved-dot" id="da1"></span></div><textarea class="journal-box" data-label="SWYK 1" id="j-a1" oninput="autoSave(this,'da1')" placeholder=""></textarea></div>
-<div class="q-block"><p class="q-text"><span class="q-num">2</span><strong>Transfer.</strong> Hazel has a sandwich cut into 4 equal pieces. She eats 3 of them. Write the fraction she ate. Then write the fraction she has left.</p><div class="journal-label">✏️ <span class="saved-dot" id="da2"></span></div><textarea class="journal-box" data-label="SWYK 2" id="j-a2" oninput="autoSave(this,'da2')" placeholder=""></textarea></div>
 
-<div class="activity bl-slate" style="margin-top:18px;border-left-color:#F5A36F;"><div class="activity-head"><div class="activity-num" style="background:#F5A36F;color:#0E1C42;">🗺️</div><div><div class="activity-title">Connection Forward</div><div class="activity-sub">Preview Lesson 3.09.02 — Fractions on a Number Line</div></div></div><div class="activity-body">
-<p>Next: same fraction idea, on a number line. Mark where a fraction lives between 0 and 1.</p>
-</div></div>
-</div></div>
-<div class="gathered-box"><div class="gathered-head"><div class="gathered-head-icon">📋</div><div><div class="gathered-head-label">Math Journal</div><div class="gathered-head-title">All Answers</div></div></div><div class="gathered-body"><textarea class="gathered-output" id="gO" readonly="">Click "Gather" to collect.</textarea><div style="display:flex;gap:10px;margin-top:12px;"><button class="mar-btn" onclick="gather()">📋 Gather</button><button class="green-btn" onclick="copyA()">Copy</button><button class="check-btn" onclick="dl()">Download</button></div></div></div>
-<div class="turn-in-card"><div class="turn-in-header"><div class="turn-in-header-icon">✅</div><div><div class="turn-in-header-label">Turn-In</div><div class="turn-in-header-title">Ready?</div></div></div><div class="turn-in-body">
-<div class="turn-in-item" onclick="tg(this)"><span class="turn-in-check">✓</span><span>I completed Show What You Know.</span></div>
-<div class="turn-in-item" onclick="tg(this)"><span class="turn-in-check">✓</span><span>I sketched at least one fraction strip with equal parts.</span></div>
-</div></div>
+<!-- JOB 1 · THINK -->
+<section class="sb-card sb-job" data-job="1">
+  <div class="sb-jh"><span class="sb-jn">JOB 1</span><div><h3>Think: Cut the String into 3 Equal Parts</h3><span class="sb-kind">🔨 Do · try it your way first</span></div><span class="sb-donechip"></span></div>
+  <div class="sb-opti" data-slot="think-1">This is a string over a wooden box, like the one in the stories. First, pluck the whole string and listen. Then slide the two bridges to cut the string into 3 parts. Here's a secret: parts that are the same length sing the same note. Use your ears and your eyes.</div>
+  <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>A string stretched tight over a long wooden box. The whole string is <b>1 whole</b>. A bridge is a small wedge under the string. Each bridge cuts the string into parts you can pluck.</p>
+    <div class="sb-how"><div><b>What to do:</b> Pluck the whole string. Then slide the 2 bridges until all 3 parts sing the same note.</div></div></div>
+  <div data-mod="mono" data-parts="3" data-name="think"></div>
+    <div class="sb-steps">
+    <div class="sb-step" data-need="whole"><h4>Pluck the whole string</h4><p>Tap the string. Listen to its note.</p></div>
+    <div class="sb-step" data-need="equal"><h4>Cut it into 3 equal parts</h4><p>Slide the 2 bridges. Pluck each part. When all 3 parts sing the same note, the parts are equal.</p></div>
+    <div class="sb-step"><h4>Name one part</h4>
+      <div class="sb-q">The string is cut into <input class="sb-ans" data-a="3" inputmode="numeric" autocomplete="off" aria-label="number" data-hint="Count the parts between the start, the bridges and the end."> equal parts.</div>
+      <div class="sb-q">One part is <span class="sb-frac"><input class="sb-ans" data-a="1" inputmode="numeric" autocomplete="off" aria-label="top number" data-hint="The bottom number is how many equal parts make the whole string."><i></i><input class="sb-ans" data-a="3" inputmode="numeric" autocomplete="off" aria-label="bottom number" data-hint="The bottom number is how many equal parts make the whole string."></span> of the whole string.</div>
+      <label class="sb-write-l" for="w-think">How did you know the 3 parts were equal?</label>
+      <textarea class="sb-write" id="w-think" data-req data-label="How I knew the parts were equal" placeholder="I heard… I saw…"></textarea>
+      <div class="sb-chips2">Remember to tell: <span>what you heard</span><span>what you saw</span></div>
+      <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div>
+      <div class="sb-fb" aria-live="polite"></div>
+    </div>
+    <div class="sb-locked"></div>
+  </div>
+  <div class="sb-help"><button type="button" class="sb-btn ghost" data-hints='["Drag the little wedges (the bridges) left or right.","The 3 parts should look the same length. Press Pluck every part and listen.","Put one bridge a little before the middle and one a little after the middle."]'>💡 Need a hint?</button><a class="sb-tool" href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=fbars&amp;st=1#s=eyJibSI6ImJ1aWxkIiwiZCI6WzNdLCJidCI6W10sInNoIjp7fX0" target="_blank" rel="noopener" title="Try it with tiles: how many one-third tiles fill 1 whole?">🧮 Try the Fraction Tiles ↗</a><button type="button" class="sb-btn ghost sb-tipbtn" data-tip="#tip-1">💬 Felix has a tip</button></div>
+  <div class="sb-hintbox"></div>
+  <div class="sb-tip" id="tip-1" data-who="felix">Press <b>Pluck every part</b>. If one note sounds higher, that part is too short.</div>
+  <div class="sb-payoff" data-after-job="1">
+    <svg viewBox="0 0 604 112" role="img" aria-label="1 whole on top. Under it, 3 one-third tiles fill the same length." style="display:block;width:100%;max-width:560px">
+      <rect x="2" y="2" width="600" height="46" rx="6" fill="#0E1C42"/><text x="302" y="32" text-anchor="middle" font-size="20" font-weight="900" fill="#fff">1 whole string</text>
+      <g font-weight="900" font-size="15" fill="#fff" text-anchor="middle"><rect x="3" y="58" width="198" height="46" rx="6" fill="#B05E09"/><rect x="203" y="58" width="198" height="46" rx="6" fill="#B05E09"/><rect x="403" y="58" width="198" height="46" rx="6" fill="#B05E09"/>
+      <text x="102" y="78">1</text><line x1="94" y1="83" x2="110" y2="83" stroke="#fff" stroke-width="2"/><text x="102" y="99">3</text><text x="302" y="78">1</text><line x1="294" y1="83" x2="310" y2="83" stroke="#fff" stroke-width="2"/><text x="302" y="99">3</text><text x="502" y="78">1</text><line x1="494" y1="83" x2="510" y2="83" stroke="#fff" stroke-width="2"/><text x="502" y="99">3</text></g>
+    </svg>
+    <p style="margin:8px 0 0"><b>Each part is <span class="fr"><span>1</span><span>3</span></span> (one-third) of the whole string.</b> 3 one-thirds make 1 whole.</p>
+  </div>
+  <div class="sb-opti" data-slot="think-done" data-after="1">You did it! Three parts, all the same length, so they all sing the same note. Each part is one of 3 equal parts. In math, we call that one-third. Hold on to that idea. We'll use it all lesson long.</div>
+</section>
+
+<div class="sb-next"><button type="button" class="sb-btn gold" data-go-tab="learn" data-go-st="1">Next: the Lesson →</button></div>
+</section>
+
+<!-- ══════════════ LESSON ══════════════ -->
+<section class="sb-panel tab-panel" id="tab-learn" role="tabpanel">
+<div class="sb-path" role="list">
+  <button type="button" class="sb-pstep" data-st="1" role="listitem"><span class="num">1</span><span><b>Learn it</b><small>Learn + Your Turn</small></span></button>
+  <button type="button" class="sb-pstep" data-st="2" role="listitem"><span class="num">2</span><span><b>Practice together</b><small>Fix 3 mix-ups</small></span></button>
+  <button type="button" class="sb-pstep" data-st="3" role="listitem"><span class="num">3</span><span><b>On your own</b><small>1 job</small></span></button>
 </div>
-<div class="footer"><div class="footer-main">🏫 <span>Optima Academy Online</span></div><div class="footer-sub">Math · Grade 3 · 3.09.01 · Unit 9 Anchor</div><div class="footer-copy">© 2025 Optima Academy Online</div></div>
+
+<!-- STATION 1 -->
+<div class="sb-station" data-st="1">
+  <div class="sb-opti" data-slot="learn-1">Welcome to the Lesson. It has three stops. First, learn how to name a fraction. Next, we fix some mix-ups together. Then you try one on your own. Let's begin.</div>
+
+  <div class="sb-video pq-vslot" data-slot="learn">
+    <video controls preload="metadata" playsinline poster="assets/video/g3math-09-01-learn.jpg" src="assets/video/g3math-09-01-learn.mp4"></video>
+    <div class="cap">🎬 Name a Fraction: How Many? Of What?</div>
+  </div>
+
+  <div class="sb-card">
+    <span class="sb-k">Learn</span>
+    <h3>How many? Of what?</h3>
+    <div class="sb-row" style="gap:22px;align-items:center">
+      <div style="font-size:54px;font-weight:900;color:#0E1C42;line-height:1"><span class="fr"><span>2</span><span>3</span></span></div>
+      <div><p style="margin:2px 0">The <b>numerator</b> is on top. It answers <b>how many?</b> 2 parts.</p><p style="margin:2px 0">The <b>denominator</b> is on the bottom. It answers <b>of what?</b> Thirds, because 3 equal parts make the whole.</p></div>
+    </div>
+  </div>
+
+  <div class="sb-card">
+    <span class="sb-k">The Math Crew</span>
+    <h3>Four ways to see the string in thirds</h3>
+    <div class="sb-crew">
+      <div class="sb-mate" data-who="atlas"><span>3 equal parts. Each part is <span class="fr"><span>1</span><span>3</span></span>.</span></div>
+      <div class="sb-mate" data-who="felix"><span>Shade 2 parts: 2 one-thirds is <span class="fr"><span>2</span><span>3</span></span>.</span></div>
+      <div class="sb-mate" data-who="hazel"><span>Shade all 3: <span class="fr"><span>3</span><span>3</span></span> = 1 whole.</span></div>
+      <div class="sb-mate" data-who="cora"><span><span class="fr"><span>2</span><span>3</span></span> shaded and <span class="fr"><span>1</span><span>3</span></span> not shaded make 1 whole.</span></div>
+    </div>
+    <label class="sb-write-l" for="w-crew">Which Crew way is most like yours? Why?</label>
+    <textarea class="sb-write" id="w-crew" data-label="Which Crew way is most like mine" placeholder="I think like… because…"></textarea>
+  </div>
+
+  <!-- JOB 2 · YOUR TURN -->
+  <section class="sb-card sb-job" data-job="2">
+    <div class="sb-jh"><span class="sb-jn">JOB 2</span><div><h3>Your Turn: Build It with Tiles</h3><span class="sb-kind">🔨 Do</span></div><span class="sb-donechip"></span></div>
+    <p class="sb-story">One of Pythagoras's students marked a string into <b>8 equal parts</b>. She wrapped <b>6 parts</b> in gold thread. <b>What fraction of the string is gold?</b></p>
+    <svg viewBox="0 0 604 40" style="display:block;width:100%;max-width:560px;margin:4px 0 8px" role="img" aria-label="A string marked into 8 equal parts. 6 parts are wrapped in gold thread.">
+      <line x1="2" y1="20" x2="602" y2="20" stroke="#C9A24A" stroke-width="4"/>
+      <g fill="#E9C46A" stroke="#8A6A00" stroke-width="1.5"><rect x="4" y="12" width="71" height="16" rx="7"/><rect x="79" y="12" width="71" height="16" rx="7"/><rect x="154" y="12" width="71" height="16" rx="7"/><rect x="229" y="12" width="71" height="16" rx="7"/><rect x="304" y="12" width="71" height="16" rx="7"/><rect x="379" y="12" width="71" height="16" rx="7"/></g>
+      <g stroke="#5B4A2A" stroke-width="2"><line x1="2" y1="6" x2="2" y2="34"/><line x1="77" y1="8" x2="77" y2="32"/><line x1="152" y1="8" x2="152" y2="32"/><line x1="227" y1="8" x2="227" y2="32"/><line x1="302" y1="8" x2="302" y2="32"/><line x1="377" y1="8" x2="377" y2="32"/><line x1="452" y1="8" x2="452" y2="32"/><line x1="527" y1="8" x2="527" y2="32"/><line x1="602" y1="6" x2="602" y2="34"/></g>
+    </svg>
+    <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>Fraction tiles. The dark bar is <b>1 whole</b>. The empty bar under it is where you build. The tray holds tiles of 3 sizes.</p>
+      <div class="sb-how"><div><b>What to do:</b> Cover the empty bar with tiles that match the string. Then shade the gold parts.</div></div></div>
+    <div data-mod="tiles" data-d="8" data-tray="4,6,8" data-shade="6" data-name="yourturn"></div>
+    <div class="sb-steps">
+      <div class="sb-step" data-need="full"><h4>Cover the whole with equal tiles</h4><p>The string has 8 equal parts. Find the tile that fits 8 times. Drag tiles up until the bar is full.</p></div>
+      <div class="sb-step" data-need="shade"><h4>Shade the gold parts</h4><p>Tap tiles to shade the parts wrapped in gold.</p></div>
+      <div class="sb-step"><h4>Count the parts</h4><div class="sb-q"><input class="sb-ans" data-a="6" inputmode="numeric" autocomplete="off" aria-label="number"> one-eighths are shaded. That's <span class="sb-frac"><input class="sb-ans" data-a="6" inputmode="numeric" autocomplete="off" aria-label="top number" data-hint="Top: how many are shaded. Bottom: how many equal parts in all."><i></i><input class="sb-ans" data-a="8" inputmode="numeric" autocomplete="off" aria-label="bottom number" data-hint="Top: how many are shaded. Bottom: how many equal parts in all."></span></div><div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-step"><h4>How many? Of what?</h4><div class="sb-q">The numerator <input class="sb-ans" data-a="6" inputmode="numeric" autocomplete="off" aria-label="number" data-hint="The numerator is the top number."> tells how many. The denominator <input class="sb-ans" data-a="8" inputmode="numeric" autocomplete="off" aria-label="number" data-hint="The denominator is the bottom number."> tells of what: <input class="sb-ans word" data-a="eighths|eighth|8ths|8th|one-eighths|one eighths" autocomplete="off" aria-label="word" data-hint="What do we call 8 equal parts?">.</div><div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-step"><h4>The part that is left</h4><div class="sb-q">Not gold: <span class="sb-frac"><input class="sb-ans" data-a="2" inputmode="numeric" autocomplete="off" aria-label="top number" data-hint="Count the tiles that are not shaded."><i></i><input class="sb-ans" data-a="8" inputmode="numeric" autocomplete="off" aria-label="bottom number" data-hint="Count the tiles that are not shaded."></span></div><div class="sb-q">6 eighths and 2 eighths make <input class="sb-ans" data-a="8" inputmode="numeric" autocomplete="off" aria-label="number"> eighths. That is <input class="sb-ans" data-a="1" inputmode="numeric" autocomplete="off" aria-label="number"> whole string.</div><div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-locked"></div>
+    </div>
+    <div class="sb-help"><button type="button" class="sb-btn ghost" data-hints='["Try the tile with 8 on the bottom.","8 of those tiles fill the bar exactly. If the bar is full with different sizes, drag the odd tiles back down.","6 parts have gold thread. Tap 6 tiles."]'>💡 Need a hint?</button><a class="sb-tool" href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=fbars&amp;st=1#s=eyJibSI6ImJ1aWxkIiwiZCI6WzQsNiw4XSwiYnQiOltdLCJzaCI6e319" target="_blank" rel="noopener" title="This might be a good time to try the Fraction Tiles. Fill the bar with equal tiles, then shade some.">🧮 Try the Fraction Tiles ↗</a><button type="button" class="sb-btn ghost sb-tipbtn" data-tip="#tip-2">💬 Hazel has a tip</button></div>
+    <div class="sb-hintbox"></div>
+    <div class="sb-tip" id="tip-2" data-who="hazel">Say it out loud: "6 one-eighths." The 6 goes on top. The eighths go on the bottom.</div>
+  </section>
+  <div class="sb-next"><button type="button" class="sb-btn gold" data-next-st="2">Next station: Practice together →</button></div>
 </div>
-<script>
-var LS='g3-3-09-01-';
-function mini(el){if(!el)return;var em=['⭐','✨','🍫','🎨'];for(var i=0;i<8;i++){var s=document.createElement('span');s.textContent=em[Math.floor(Math.random()*em.length)];s.style.cssText='position:absolute;font-size:'+(16+Math.random()*14)+'px;pointer-events:none;z-index:999;animation:mini .7s ease-out forwards;left:'+(20+Math.random()*60)+'%;top:'+(Math.random()*40)+'%;';el.style.position='relative';el.style.overflow='visible';el.appendChild(s);setTimeout(function(x){x.remove()}.bind(null,s),800);}}
-function switchTab(t){document.querySelectorAll('.tab-panel').forEach(function(p){p.classList.remove('active');});document.getElementById('tab-'+t).classList.add('active');document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active');if(b.dataset.tab===t){b.classList.add('active');b.classList.add('visited');}});var bs=[].slice.call(document.querySelectorAll('.tab-btn'));var i=bs.findIndex(function(b){return b.classList.contains('active');});var p=Math.round(((i+1)/bs.length)*100);document.getElementById('pf').style.width=p+'%';document.getElementById('pp').textContent=p+'%';window.scrollTo({top:0,behavior:'smooth'});}
-function autoSave(el,d){try{localStorage.setItem(LS+el.id,el.value);}catch(e){}var dt=document.getElementById(d);if(dt){dt.classList.add('saved');setTimeout(function(){dt.classList.remove('saved')},900);}}
-function restore(){document.querySelectorAll('textarea.journal-box').forEach(function(t){try{var v=localStorage.getItem(LS+t.id);if(v)t.value=v;}catch(e){}});}
-function showBranch(id){document.getElementById(id).classList.add('show');}function hideBranches(p){['pass','retry'].forEach(function(x){var e=document.getElementById(p+'-'+x);if(e)e.classList.remove('show');});}
 
-function rA(c,ok){c.parentElement.querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});var f=document.getElementById('rA-fb');if(ok){c.classList.add('good');f.className='inline-feedback show good';f.innerHTML='<strong>✅</strong> 1 out of 4 equal slices = one-fourth.';mini(c);}else{c.classList.add('bad');f.className='inline-feedback show think';f.innerHTML='Top = how many you ate. Bottom = total slices.';}}
-function rT(c,ok){c.parentElement.querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});var f=document.getElementById('rT-fb');if(ok){c.classList.add('good');f.className='inline-feedback show good';f.innerHTML='<strong>✅</strong> Fractions name EQUAL parts. Unequal pieces aren\'t sixths.';mini(c);}else{c.classList.add('bad');f.className='inline-feedback show think';f.innerHTML='The parts must be equal to call them sixths.';}}
+<!-- STATION 2 -->
+<div class="sb-station" data-st="2">
+  <div class="sb-opti" data-slot="practice-1">These three jobs each have a mix-up that kids often make with fractions. Your job is to find it and fix it. Take your time, and look closely at every part.</div>
 
-/* Fraction Strip Builder */
-var fs={d:4,n:3};
-var fracWords={1:'one',2:'two',3:'three',4:'four',5:'five',6:'six',7:'seven',8:'eight',9:'nine',10:'ten'};
-var denWords={2:'half',3:'third',4:'fourth',5:'fifth',6:'sixth',7:'seventh',8:'eighth',9:'ninth',10:'tenth'};
-function fsAdj(k,delta){var v=fs[k]+delta;var min={d:2,n:0};var max={d:10,n:fs.d};if(k==='n')max.n=fs.d;if(v<min[k]||v>max[k])return;if(k==='d'){fs.d=v;if(fs.n>fs.d)fs.n=fs.d;}else{fs.n=v;}fsRender();}
-function fsRender(){
-  document.getElementById('fs-dVal').textContent=fs.d;
-  document.getElementById('fs-nVal').textContent=fs.n;
-  document.getElementById('fs-num').textContent=fs.n;
-  document.getElementById('fs-den').textContent=fs.d;
-  document.getElementById('fs-display').querySelector('.num').textContent=fs.n;
-  document.getElementById('fs-display').querySelector('.den').textContent=fs.d;
-  var strip=document.getElementById('fs-strip');strip.innerHTML='';
-  for(var i=0;i<fs.d;i++){var p=document.createElement('div');p.className='fs-part'+(i<fs.n?' filled':'');strip.appendChild(p);}
-  var desc;
-  if(fs.d===2 && fs.n===1) desc='one-half';
-  else {
-    var nw=fracWords[fs.n]||fs.n;
-    var dw=denWords[fs.d]||(fs.d+'th');
-    if(fs.n>1) dw=dw+'s';
-    desc=nw+'-'+dw;
-  }
-  if(fs.n===0) desc='zero';
-  if(fs.n===fs.d) desc='one whole';
-  document.getElementById('fs-desc').textContent=desc;
-  document.getElementById('fs-words').textContent=fs.n+' part'+(fs.n===1?'':'s')+' shaded out of '+fs.d+' equal parts.';
-}
+  <!-- JOB 3 -->
+  <section class="sb-card sb-job" data-job="3">
+    <div class="sb-jh"><span class="sb-jn">JOB 3</span><div><h3>Fix the Upside-Down Label</h3><span class="sb-kind">🔨 Do</span></div><span class="sb-donechip"></span></div>
+    <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>A square cut into equal parts, with some parts shaded. Its old label is wrong. The numbers are in the wrong places.</p>
+      <div class="sb-how"><div><b>What to do:</b> Drag each number into the new label. Or tap a number, then tap its box.</div></div></div>
+    <div data-mod="labelfix" data-n="9" data-shade="2" data-cols="3" data-name="label"></div>
+    <div class="sb-steps">
+      <div class="sb-step" data-need="fixed"><h4>Make a new label</h4><p>Top: how many parts are shaded? Bottom: how many equal parts in all?</p></div>
+      <div class="sb-step"><h4>Say what each number means</h4><div class="sb-q">There are <input class="sb-ans" data-a="9" inputmode="numeric" autocomplete="off" aria-label="number"> equal parts in all. <input class="sb-ans" data-a="2" inputmode="numeric" autocomplete="off" aria-label="number"> are shaded.</div><div class="sb-q">The bottom number is <input class="sb-ans" data-a="9" inputmode="numeric" autocomplete="off" aria-label="number" data-hint="The bottom number counts all the equal parts.">. It is the denominator.</div><div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-locked"></div>
+    </div>
+    <div class="sb-help"><button type="button" class="sb-btn ghost" data-hints='["Count all the squares. That number tells of what.","Count the shaded squares. That number tells how many.","How many goes on top. Of what goes on the bottom."]'>💡 Need a hint?</button><button type="button" class="sb-btn ghost sb-tipbtn" data-tip="#tip-3">💬 Atlas has a tip</button></div>
+    <div class="sb-hintbox"></div>
+    <div class="sb-tip" id="tip-3" data-who="atlas">The bottom number is never "the ones I shaded." It is how many equal parts make the whole.</div>
+  </section>
 
-var p1A={'p1-n':4,'p1-d':6};
-function checkP1(){hideBranches('p1');var ok=true;Object.keys(p1A).forEach(function(id){var el=document.getElementById(id);el.classList.remove('good','bad');if(parseInt(el.value,10)===p1A[id]){el.classList.add('good');}else{el.classList.add('bad');ok=false;}});if(ok){showBranch('p1-pass');mini(document.getElementById('p1-pass'));}else{showBranch('p1-retry');}}
-function resetP1(){Object.keys(p1A).forEach(function(id){var el=document.getElementById(id);el.value='';el.classList.remove('good','bad');});hideBranches('p1');}
+  <!-- JOB 4 -->
+  <section class="sb-card sb-job" data-job="4">
+    <div class="sb-jh"><span class="sb-jn">JOB 4</span><div><h3>Real Thirds or Not?</h3><span class="sb-kind">🔨 Do · ✏️ Write</span></div><span class="sb-donechip"></span></div>
+    <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>4 shapes. Each one is cut into 3 parts, and 1 part is shaded. Somebody called every shaded part "one-third."</p>
+      <div class="sb-how"><div><b>What to do:</b> Drag each shape into the right tray. Or tap a shape, then tap a tray.</div></div></div>
+    <div data-mod="sort" data-name="sort"></div>
+    <div class="sb-steps">
+      <div class="sb-step" data-need="sorted"><h4>Sort the shapes</h4><p>Real thirds have 3 <b>equal</b> parts.</p></div>
+      <div class="sb-step"><h4>Tell why</h4><label class="sb-write-l" for="w-sort">Why is Shape B not cut into thirds?</label><textarea class="sb-write" id="w-sort" data-req data-label="Why Shape B is not thirds" placeholder="Shape B is not thirds because…"></textarea><div class="sb-chips2">Remember to tell: <span>the size of the parts</span></div><div class="sb-help"><button type="button" class="sb-btn check">Done</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-locked"></div>
+    </div>
+    <div class="sb-help"><button type="button" class="sb-btn ghost" data-hints='["Look at each shaded part. Is it the same size as the other two parts?","Remember the string: unequal parts sing different notes.","Shapes A and D have 3 parts that are all the same size."]'>💡 Need a hint?</button><a class="sb-tool" href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=fcircles&amp;st=1#s=eyJjIjoxLCJuIjozfQ" target="_blank" rel="noopener" title="Try a circle cut into 3 equal slices. Shade 1 slice.">🧮 Try the Fraction Circles ↗</a></div>
+    <div class="sb-hintbox"></div>
+  </section>
 
-function eA(c,ok){c.parentElement.querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});var f=document.getElementById('eA-fb');if(ok){c.classList.add('good');f.className='inline-feedback show good';f.innerHTML='<strong>✅</strong> 3 of 8 = three-eighths.';mini(c);}else{c.classList.add('bad');f.className='inline-feedback show think';f.innerHTML='3 eaten, 8 total slices → top 3, bottom 8.';}}
-function eB(c,ok){c.parentElement.querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});var f=document.getElementById('eB-fb');if(ok){c.classList.add('good');f.className='inline-feedback show good';f.innerHTML='<strong>✅</strong> The bottom number is the denominator.';mini(c);}else{c.classList.add('bad');f.className='inline-feedback show think';f.innerHTML='Bottom = denominator (total parts). Top = numerator (parts taken).';}}
+  <!-- JOB 5 -->
+  <section class="sb-card sb-job" data-job="5">
+    <div class="sb-jh"><span class="sb-jn">JOB 5</span><div><h3>The Part That Is Left</h3><span class="sb-kind">🔨 Do</span></div><span class="sb-donechip"></span></div>
+    <p class="sb-story">A round loaf of bread is cut into <b>10 equal slices</b>. Pythagoras's students eat <b>4 slices</b>. <b>What fraction did they eat? What fraction is left?</b></p>
+    <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>The loaf on the left, cut into 10 equal slices. An empty plate on the right.</p>
+      <div class="sb-how"><div><b>What to do:</b> Drag the eaten slices onto the plate. Or tap a slice to move it.</div></div></div>
+    <div data-mod="circle" data-n="10" data-eat="4" data-name="loaf"></div>
+    <div class="sb-steps">
+      <div class="sb-step" data-need="eat"><h4>Eat 4 slices</h4><p>Move 4 slices to the plate.</p></div>
+      <div class="sb-step"><h4>Name both parts</h4><div class="sb-q">Eaten: <span class="sb-frac"><input class="sb-ans" data-a="4" inputmode="numeric" autocomplete="off" aria-label="top number" data-hint="Count the slices on the plate for the top. The bottom is all the slices in the loaf."><i></i><input class="sb-ans" data-a="10" inputmode="numeric" autocomplete="off" aria-label="bottom number" data-hint="Count the slices on the plate for the top. The bottom is all the slices in the loaf."></span></div><div class="sb-q">Left: <span class="sb-frac"><input class="sb-ans" data-a="6" inputmode="numeric" autocomplete="off" aria-label="top number" data-hint="Count the slices still in the loaf. The bottom stays the same: the whole loaf has 10 slices."><i></i><input class="sb-ans" data-a="10" inputmode="numeric" autocomplete="off" aria-label="bottom number" data-hint="Count the slices still in the loaf. The bottom stays the same: the whole loaf has 10 slices."></span></div><div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-step"><h4>Put them back together</h4><div class="sb-q">4 tenths and 6 tenths make <input class="sb-ans" data-a="10" inputmode="numeric" autocomplete="off" aria-label="number"> tenths. That is <input class="sb-ans" data-a="1" inputmode="numeric" autocomplete="off" aria-label="number"> whole loaf.</div><div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-locked"></div>
+    </div>
+    <div class="sb-help"><button type="button" class="sb-btn ghost" data-hints='["The whole loaf has 10 slices. That is the bottom number for both fractions.","Eaten plus left is every slice.","4 + 6 = 10, so 10 tenths: the whole loaf."]'>💡 Need a hint?</button><a class="sb-tool" href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=fcircles&amp;st=1#s=eyJjIjoxLCJuIjoxMH0" target="_blank" rel="noopener" title="Cut a circle into 10 equal slices. Take some away and name both parts.">🧮 Try the Fraction Circles ↗</a><button type="button" class="sb-btn ghost sb-tipbtn" data-tip="#tip-5">💬 Cora has a tip</button></div>
+    <div class="sb-hintbox"></div>
+    <div class="sb-tip" id="tip-5" data-who="cora">Don't forget the slices still in the loaf. They are a fraction too.</div>
+  </section>
+  <div class="sb-next"><button type="button" class="sb-btn gold" data-next-st="3">Next station: On your own →</button></div>
+</div>
 
-function gather(){var o='Lesson 3.09.01\n\n';document.querySelectorAll('textarea.journal-box').forEach(function(t){o+=(t.dataset.label||t.id)+'\n'+((t.value||'').trim()||'[empty]')+'\n\n';});document.getElementById('gO').value=o;}
-function copyA(){gather();var text=document.getElementById('gO').value;if(!text||text.indexOf('Click')===0){return;}try{var ta=document.createElement('textarea');ta.value=text;ta.style.position='fixed';ta.style.left='-9999px';document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);var btn=document.querySelector('.green-btn');if(btn){btn.textContent='\u2705 Copied!';setTimeout(function(){btn.textContent='Copy All Answers';},2000);}}catch(e){var btn2=document.querySelector('.green-btn');if(btn2){btn2.textContent='\u274c Could not copy';setTimeout(function(){btn2.textContent='Copy All Answers';},2000);}}}
-function dl(){gather();var text=document.getElementById('gO').value;if(!text||text.indexOf('Click')===0){return;}var blob=new Blob([text],{type:'text/plain'});var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=(window.lessonKey||'math-journal')+'.txt';document.body.appendChild(a);a.click();document.body.removeChild(a);URL.revokeObjectURL(a.href);}
-function tg(i){i.classList.toggle('checked');var c=i.querySelector('.turn-in-check');if(c)c.textContent=i.classList.contains('checked')?'✓':'';}
+<!-- STATION 3 -->
+<div class="sb-station" data-st="3">
+  <div class="sb-opti" data-slot="own-1">Now it's your turn to work on your own. Use what you learned: equal parts, how many, and of what. You've got this.</div>
 
-async function loadVideoManifest(){try{var res=await fetch('video-manifest.md',{cache:'no-store'});if(!res.ok)return;var txt=await res.text();var map=parseManifest(txt);document.querySelectorAll('.video-wrap[data-video-slot]').forEach(function(w){var slot=w.dataset.videoSlot;if(map[slot]){var ratio=w.querySelector('.video-ratio');ratio.innerHTML=map[slot].trim();var iframe=ratio.querySelector('iframe');if(iframe){iframe.classList.add('video-iframe');iframe.setAttribute('allowfullscreen','');iframe.setAttribute('loading','lazy');}}});}catch(e){}}
-function parseManifest(txt){var map={};var lines=txt.split(/\r?\n/);var current=null,buf=[];function commit(){if(current&&buf.join('\n').trim()){map[current]=buf.join('\n').trim();}buf=[];}for(var i=0;i<lines.length;i++){var line=lines[i];var m=line.match(/^([A-Za-z0-9-]+):\s*$/);if(m){commit();current=m[1];}else if(current){buf.push(line);}}commit();return map;}
+  <!-- JOB 6 -->
+  <section class="sb-card sb-job" data-job="6">
+    <div class="sb-jh"><span class="sb-jn">JOB 6</span><div><h3>Cut a Board into Equal Strips</h3><span class="sb-kind">🔨 Do · ✏️ Write</span></div><span class="sb-donechip"></span></div>
+    <p class="sb-story">A lyre maker cuts a wooden board into <b>7 equal strips</b>. He paints <b>2 strips</b> red, and he wants them <b>apart</b>, not side by side. <b>What fraction is painted? What fraction is not?</b></p>
+    <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>A rectangle, like the board. The − and + buttons change how many equal parts it is cut into.</p>
+      <div class="sb-how"><div><b>What to do:</b> Cut the board into 7 equal parts. Tap 2 parts that are not next to each other.</div></div></div>
+    <div class="sb-steps">
+      <div class="sb-step" data-need="made"><h4>Make the board</h4><p>7 equal parts. 2 painted parts, not side by side.</p></div>
+      <div class="sb-step"><h4>Name both parts</h4><div class="sb-q">Painted: <span class="sb-frac"><input class="sb-ans" data-a="2" inputmode="numeric" autocomplete="off" aria-label="top number"><i></i><input class="sb-ans" data-a="7" inputmode="numeric" autocomplete="off" aria-label="bottom number"></span> Not painted: <span class="sb-frac"><input class="sb-ans" data-a="5" inputmode="numeric" autocomplete="off" aria-label="top number" data-hint="7 parts in all, 2 are painted. How many are not?"><i></i><input class="sb-ans" data-a="7" inputmode="numeric" autocomplete="off" aria-label="bottom number" data-hint="7 parts in all, 2 are painted. How many are not?"></span></div><div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-step"><div class="sb-tip" data-who="cora">The red strips are not next to each other. So it can't be <span class="fr"><span>2</span><span>7</span></span>. Right?</div><h4>Is Cora right?</h4><label class="sb-write-l" for="w-cora">Is Cora right? Why or why not?</label><textarea class="sb-write" id="w-cora" data-req data-label="Is Cora right" placeholder="Cora is… because…"></textarea><div class="sb-chips2">Remember to tell: <span>equal parts</span><span>how many are painted</span></div><div class="sb-help"><button type="button" class="sb-btn check">Done</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-locked"></div>
+    </div>
+    <div data-mod="rect" data-n="7" data-shade="2" data-apart="1" data-name="board"></div>
+    <div class="sb-steps">
+      <div class="sb-step" data-need="made"><h4>Make the board</h4><p>7 equal parts, 2 painted.</p></div>
+      <div class="sb-step"><h4>Name both parts</h4><div class="sb-q">Painted: <span class="sb-frac"><input class="sb-ans" data-a="2" inputmode="numeric" autocomplete="off" aria-label="top number"><i></i><input class="sb-ans" data-a="7" inputmode="numeric" autocomplete="off" aria-label="bottom number"></span> Not painted: <span class="sb-frac"><input class="sb-ans" data-a="5" inputmode="numeric" autocomplete="off" aria-label="top number" data-hint="7 parts in all, 2 are painted. How many are not?"><i></i><input class="sb-ans" data-a="7" inputmode="numeric" autocomplete="off" aria-label="bottom number" data-hint="7 parts in all, 2 are painted. How many are not?"></span></div><div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-locked"></div>
+    </div>
+    <div class="sb-help"><button type="button" class="sb-btn ghost" data-hints='["Press + until the board shows 7 parts.","Tap 2 parts with a white part between them.","Painted parts can be anywhere. It is still 2 of 7 equal parts."]'>💡 Need a hint?</button><a class="sb-tool" href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=whiteboard&amp;st=1" target="_blank" rel="noopener" title="Draw a board with 7 equal parts on the Grid Whiteboard. Shade 2 that are apart.">🧮 Try the Grid Whiteboard ↗</a></div>
+    <div class="sb-hintbox"></div>
+  </section>
 
-window.addEventListener('DOMContentLoaded',function(){loadVideoManifest();restore();fsRender();});
-</script>
-<script id="fluencyScript">
-(function(){
-var FLUENCY_TIMED = false;
-var FLUENCY_TITLE = "×7 as Five Groups Plus Two";
-var fluencyInterval = null;
-var fluencySecondsLeft = 60;
+  <div class="sb-next"><button type="button" class="sb-btn gold" data-go-tab="swyk">Next: Show What You Know →</button></div>
+</div>
+</section>
 
-window.fluencyStart = function(){
-  if(!FLUENCY_TIMED) return;
-  var grid = document.getElementById('fluencyGrid');
-  if(!grid) return;
-  grid.querySelectorAll('.fluency-input').forEach(function(i){ i.disabled = false; });
-  var btn = document.getElementById('fluencyStartBtn');
-  if(btn){ btn.disabled = true; btn.textContent = 'Timer Running\u2026'; }
-  var checkBtn = document.getElementById('fluencyCheckBtn');
-  if(checkBtn) checkBtn.disabled = false;
-  fluencySecondsLeft = 60;
-  fluencyUpdateDisplay();
-  fluencyInterval = setInterval(function(){
-    fluencySecondsLeft--;
-    fluencyUpdateDisplay();
-    if(fluencySecondsLeft <= 0){
-      clearInterval(fluencyInterval);
-      grid.querySelectorAll('.fluency-input').forEach(function(i){ i.disabled = true; });
-      window.fluencyCheck();
-    }
-  }, 1000);
-};
+<!-- ══════════════ SHOW WHAT YOU KNOW ══════════════ -->
+<section class="sb-panel tab-panel" id="tab-swyk" role="tabpanel">
+<div class="sb-opti" data-slot="swyk-1">Last stop! Show what you know. Remember: a fraction needs equal parts. The bottom number tells how many equal parts make the whole. The top number tells how many parts you're counting.</div>
 
-function fluencyUpdateDisplay(){
-  var el = document.getElementById('fluencyTimerDisplay');
-  if(el) el.textContent = fluencySecondsLeft + 's';
-}
+<!-- JOB 7 -->
+<section class="sb-card sb-job" data-job="7">
+  <div class="sb-jh"><span class="sb-jn">JOB 7</span><div><h3>A Long String and a Short String</h3><span class="sb-kind">🔨 Do · ✏️ Write</span></div><span class="sb-donechip"></span></div>
+  <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>Two strings on two boxes. The long string and the short string are each cut into 5 equal parts.</p>
+    <div class="sb-how"><div><b>What to do:</b> Color 3 parts on each string. Tap a part to color it. Listen to the notes.</div></div></div>
+  <div data-mod="mono2" data-parts="5" data-shade="3" data-name="twostrings"></div>
+    <div class="sb-steps">
+    <div class="sb-step" data-need="shade"><h4>Color 3 parts on each string</h4><p>Tap 3 parts on the long string and 3 parts on the short string.</p></div>
+    <div class="sb-step"><h4>Name them</h4><div class="sb-q">Long string: <span class="sb-frac"><input class="sb-ans" data-a="3" inputmode="numeric" autocomplete="off" aria-label="top number"><i></i><input class="sb-ans" data-a="5" inputmode="numeric" autocomplete="off" aria-label="bottom number"></span> Short string: <span class="sb-frac"><input class="sb-ans" data-a="3" inputmode="numeric" autocomplete="off" aria-label="top number"><i></i><input class="sb-ans" data-a="5" inputmode="numeric" autocomplete="off" aria-label="bottom number"></span></div><div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+    <div class="sb-step"><h4>Same name, same size?</h4><label class="sb-write-l" for="w-size">Both are <span class="fr"><span>3</span><span>5</span></span>. Is <span class="fr"><span>3</span><span>5</span></span> of the long string as long as <span class="fr"><span>3</span><span>5</span></span> of the short string? Why?</label><textarea class="sb-write" id="w-size" data-req data-label="Same name, same size?" placeholder="No/Yes, because the whole…"></textarea><div class="sb-chips2">Remember to tell: <span>the size of each whole</span></div><div class="sb-help"><button type="button" class="sb-btn check">Done</button></div><div class="sb-fb" aria-live="polite"></div></div>
+    <div class="sb-locked"></div>
+  </div>
+</section>
 
-window.fluencyCheck = function(){
-  if(fluencyInterval){ clearInterval(fluencyInterval); fluencyInterval = null; }
-  var items = document.querySelectorAll('#fluencyGrid .fluency-item');
-  var correct = 0, attempted = 0, total = items.length;
-  var lines = [];
-  items.forEach(function(item){
-    var input = item.querySelector('.fluency-input');
-    var qText = item.querySelector('.fluency-q').textContent;
-    var given = (input.value || '').trim();
-    var ans = input.dataset.answer;
-    var ok = given !== '' && given === ans;
-    if(given !== '') attempted++;
-    item.classList.remove('fluency-correct','fluency-wrong');
-    if(ok){ correct++; item.classList.add('fluency-correct'); }
-    else if(given !== ''){ item.classList.add('fluency-wrong'); }
-    lines.push(qText + ' ' + ans + '   [answered: ' + (given || 'blank') + ']' + (ok ? ' \u2713' : (given ? ' \u2717' : '')));
-  });
-  var pct = total ? Math.round((correct/total)*100) : 0;
-  var timeStr = FLUENCY_TIMED ? (' in ' + (60 - fluencySecondsLeft) + ' seconds') : '';
-  var summary = 'Fluency Warm-Up \u2014 ' + FLUENCY_TITLE + '\n' + correct + ' / ' + total + ' correct (' + pct + '%)' + timeStr + '\n\n' + lines.join('\n');
-  var j = document.getElementById('fluencyJournal');
-  if(j) j.value = summary;
-  var resEl = document.getElementById('fluencyResult');
-  if(resEl) resEl.innerHTML = correct + ' / ' + total + ' correct (' + pct + '%)' + timeStr;
-  var checkBtn = document.getElementById('fluencyCheckBtn');
-  if(checkBtn) checkBtn.disabled = true;
-  var startBtn = document.getElementById('fluencyStartBtn');
-  if(startBtn) startBtn.textContent = 'Done';
-};
-})();
-</script>
-<!-- Video Manifest Loader -->
+<!-- JOB 8 -->
+<section class="sb-card sb-job" data-job="8">
+  <div class="sb-jh"><span class="sb-jn">JOB 8</span><div><h3>Show What You Know</h3><span class="sb-kind">🔨 Do · ✏️ Write</span></div><span class="sb-donechip"></span></div>
+  <div class="sb-steps">
+    <div class="sb-step" data-need="shade"><h4>Problem 1 · Shade a strip</h4><p>This strip is cut into 10 equal parts. Shade 9 parts. Sketch it in your math journal too.</p><div data-mod="strip" data-n="10" data-shade="9" data-name="swyk1"></div></div>
+    <div class="sb-step"><h4>Problem 1 · Name both parts</h4><div class="sb-q">Shaded: <span class="sb-frac"><input class="sb-ans" data-a="9" inputmode="numeric" autocomplete="off" aria-label="top number"><i></i><input class="sb-ans" data-a="10" inputmode="numeric" autocomplete="off" aria-label="bottom number"></span> Not shaded: <span class="sb-frac"><input class="sb-ans" data-a="1" inputmode="numeric" autocomplete="off" aria-label="top number"><i></i><input class="sb-ans" data-a="10" inputmode="numeric" autocomplete="off" aria-label="bottom number"></span></div><div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+    <div class="sb-step"><h4>Problem 2 · A honey cake</h4><p class="sb-story">Cora's family cuts a round honey cake into <b>12 equal pieces</b>. They eat <b>11 pieces</b>. You can sketch it in your journal.</p><div class="sb-q">Eaten: <span class="sb-frac"><input class="sb-ans" data-a="11" inputmode="numeric" autocomplete="off" aria-label="top number"><i></i><input class="sb-ans" data-a="12" inputmode="numeric" autocomplete="off" aria-label="bottom number"></span> Left: <span class="sb-frac"><input class="sb-ans" data-a="1" inputmode="numeric" autocomplete="off" aria-label="top number"><i></i><input class="sb-ans" data-a="12" inputmode="numeric" autocomplete="off" aria-label="bottom number"></span></div><div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+    <div class="sb-step"><h4>Prove It</h4><p>Look at your strip from Problem 1. What does each number in <span class="fr"><span>9</span><span>10</span></span> tell?</p><div class="sb-q">The <input class="sb-ans" data-a="10" inputmode="numeric" autocomplete="off" aria-label="number"> tells how many equal parts make the whole strip. The <input class="sb-ans" data-a="9" inputmode="numeric" autocomplete="off" aria-label="number"> tells how many parts are shaded.</div>
+      <label class="sb-write-l" for="w-prove">Explain what the numerator and the denominator in <span class="fr"><span>9</span><span>10</span></span> tell you, and why the parts must be equal.</label><textarea class="sb-write" id="w-prove" data-req data-label="Prove It" placeholder="The denominator 10 tells… The numerator 9 tells… The parts must be equal because…"></textarea><div class="sb-chips2">Remember to tell: <span>the denominator</span><span>the numerator</span><span>equal parts</span></div>
+      <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+    <div class="sb-locked"></div>
+  </div>
+</section>
+
+<div class="sb-card sb-qgroup" data-done="bonus" data-ok="✓ Yes! 3 sevenths and 4 sevenths make 7 sevenths, 1 whole.">
+  <span class="sb-k">Bonus · optional</span>
+  <h3>Make 1 Whole</h3>
+  <p>My part is <span class="fr"><span>3</span><span>7</span></span>. What part makes 1 whole with mine?</p>
+  <div class="sb-q">Your part: <span class="sb-frac"><input class="sb-ans" data-a="4" inputmode="numeric" autocomplete="off" aria-label="top number" data-hint="7 sevenths make 1 whole. 7 − 3 = ?"><i></i><input class="sb-ans" data-a="7" inputmode="numeric" autocomplete="off" aria-label="bottom number" data-hint="7 sevenths make 1 whole. 7 − 3 = ?"></span></div>
+  <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div>
+</div>
+
+<div class="sb-card">
+  <span class="sb-k">How to turn in</span>
+  <h3>Turn in your work</h3>
+  <ol class="sb-steps4">
+    <li>Check the list below. Jobs 1 to 8 are required. The Bonus is optional.</li>
+    <li>Press <b>📋 Gather my answers</b>, then <b>📋 Copy</b>. Or press <b>🖨️ Print or save as PDF</b>.</li>
+    <li>Open this lesson's assignment in Canvas.</li>
+    <li>Paste your answers (or upload your PDF and journal photo), then press <b>Submit</b>.</li>
+  </ol>
+</div>
+
+<div class="sb-card sb-journal">
+  <span class="sb-k">Math journal</span>
+  <h3>All my answers</h3>
+  <div class="sb-help"><button type="button" class="sb-btn" data-journal="gather">📋 Gather my answers</button><button type="button" class="sb-btn ghost" data-journal="copy">📋 Copy</button><button type="button" class="sb-btn ghost" data-journal="download">⬇️ Download as text</button><button type="button" class="sb-btn ghost" data-journal="print">🖨️ Print or save as PDF</button></div>
+  <textarea id="sb-journal-out" readonly aria-label="All my answers">Press Gather my answers to collect everything here.</textarea>
+  <p class="sb-saved">Your answers and your work on this page save on this device as you go.</p>
+</div>
+
+<div class="sb-card">
+  <span class="sb-k">Checklist</span>
+  <h3>Before you turn in</h3>
+  <ul class="sb-check">
+    <li><span class="bx"></span><span>I finished Jobs 1 to 8.</span></li>
+    <li><span class="bx"></span><span>I sketched the strip from Problem 1 in my math journal, with equal parts.</span></li>
+    <li><span class="bx"></span><span>I wrote my Prove It.</span></li>
+    <li><span class="bx"></span><span>I tried the Bonus. <span class="opt">(optional)</span></span></li>
+  </ul>
+</div>
+
+<div class="sb-card">
+  <span class="sb-k">Coming up next</span>
+  <h3>Lesson 3.09.02 · Fractions on a Number Line</h3>
+  <p>Pythagoras's string goes from a start to an end. Next time, that string becomes a number line from 0 to 1, and every fraction gets its own spot.</p>
+</div>
+
+<div class="sb-opti" data-slot="end-1">Before you go, listen to this. It's music by Johann Sebastian Bach, played on a cello. A cello has four strings. A player presses a string to make the part that plays shorter, and a shorter part sings a higher note. Just like Pythagoras's string. Press play, and press stop whenever you like.</div>
+<div class="sb-card sb-listen">
+  <img src="images/storybook/sb-muse-lyre-sm.jpg" alt="The Greek vase painting of a woman playing a lyre">
+  <div style="flex:1">
+    <span class="sb-k">Listening corner</span>
+    <h3>Bach · Cello Suite No. 1 · Prelude</h3>
+    <p style="margin:2px 0">Written about 300 years ago, for one cello. About 2½ minutes.</p>
+    <div class="meter"><i></i></div><div class="sb-row"><button type="button" class="sb-btn play">▶ Play the music</button><button type="button" class="sb-btn ghost stop">■ Stop</button><span class="time" style="font-weight:800;color:#5B6478">0:00</span></div>
+    <p class="sb-credits">Johann Sebastian Bach, Cello Suite No. 1 in G major, BWV 1007, Prélude. Public-domain recording, Wikimedia Commons.</p>
+  </div>
+</div>
+</section>
+
+<footer class="sb-foot footer"><b>🏫 Optima Academy Online</b><br>Math · Grade 3 · Lesson 3.09.01 · Unit 9<br><span style="font-size:12px">Art: Raphael, The School of Athens (1509–1511), public domain. Muse with lyre, Attic white-ground lekythos (440–430 BC), Staatliche Antikensammlungen, Munich; photo Bibi Saint-Pol, public domain. Music: Bach, Cello Suite No. 1, Prélude, public-domain recording.</span></footer>
+</div>
+
+<script type="application/json" id="sb-data">{"lesson": "3.09.01", "key": "g3sb-3-09-01", "title": "Fractions of a Whole", "audioBase": "audio/storybook/", "imgBase": "images/storybook/", "music": "bach-cello-suite-1-prelude.mp3", "audioReady": true, "glossary": [{"t": "fraction", "d": "A number that names equal parts of one whole, like one-third.", "key": true}, {"t": "equal parts", "d": "Parts that are all the same size.", "key": true}, {"t": "numerator", "d": "The top number of a fraction. It tells how many parts you are counting.", "key": true}, {"t": "denominator", "d": "The bottom number of a fraction. It tells how many equal parts make the whole.", "key": true}, {"t": "string", "d": "A thin cord pulled tight. When you pluck it, it shakes and makes a sound.", "key": true}, {"t": "note", "d": "One musical sound. A note can be high or low.", "key": true}, {"t": "unit fraction", "d": "A fraction with 1 on top, like one-third. It names one equal part."}, {"t": "whole", "d": "All of something. All the equal parts together make 1 whole."}, {"t": "bridge", "d": "A small wedge under a string. It holds the string up and cuts it into parts you can pluck."}, {"t": "lyre", "d": "A string instrument from ancient Greece. You pluck its strings."}], "cueWords": {"warm-1": [0, 0.64, 1.68, 1.92, 3.04, 3.28, 3.52, 3.68, 4, 4.16, 4.48, 4.64, 4.88, 6.08, 6.56, 6.8, 7.04, 7.44, 7.84, 7.92, 8.4, 8.64, 9.04, 9.44, 10, 10.88, 11.44, 11.76, 12.16, 12.68, 13.36, 13.6, 13.76, 15.36, 15.68, 16.8, 17.12, 18.32, 18.56, 19.36, 19.92, 20.08, 20.24, 20.88, 22.08, 22.32, 22.56, 22.64, 23.28, 23.76, 24.08, 24.16, 24.56, 24.8, 25.44, 26.24, 26.72, 26.88, 27.44, 27.76, 28.8, 29.2, 29.52], "think-1": [0, 0.24, 0.4, 0.64, 1.12, 1.52, 1.68, 2, 2.8, 3, 3.12, 3.28, 3.4, 3.52, 4.72, 5.68, 5.92, 6.08, 6.4, 6.96, 7.12, 8.24, 8.96, 9.36, 9.56, 9.76, 10.24, 10.4, 10.64, 10.88, 11.16, 11.36, 11.68, 12.96, 13.24, 13.36, 14.4, 14.8, 14.92, 15.04, 15.2, 15.52, 16.16, 16.4, 16.56, 16.88, 17.84, 18.08, 18.32, 18.96, 19.2, 19.44], "think-done": [0, 0.32, 0.56, 1.28, 1.68, 2.36, 2.56, 2.64, 2.96, 3.52, 3.72, 3.96, 4.16, 4.44, 4.56, 4.88, 5.84, 6.08, 6.56, 6.72, 6.88, 7.04, 7.52, 8, 8.96, 9.2, 9.84, 10.04, 10.28, 10.64, 12, 12.28, 12.4, 12.56, 12.72, 13.6, 13.84, 14.12, 14.36, 14.56, 14.96], "learn-1": [0, 0.56, 0.68, 0.8, 1.68, 1.84, 2.16, 2.48, 3.52, 4.4, 4.72, 4.96, 5.12, 5.44, 5.52, 6.72, 7.52, 7.68, 7.92, 8.16, 8.72, 9.84, 10.32, 10.6, 10.8, 10.96, 11.12, 11.28, 12.16, 12.52], "practice-1": [0, 0.4, 0.72, 1.2, 1.52, 1.68, 1.92, 2.4, 2.56, 2.88, 3.32, 3.52, 3.68, 5.04, 5.28, 5.68, 5.84, 6.12, 6.32, 6.76, 7, 7.2, 8.04, 8.24, 8.64, 9.07, 9.24, 9.44, 9.92, 10.16, 10.68], "own-1": [0, 0.32, 0.56, 0.8, 1.12, 1.28, 1.52, 1.68, 1.84, 2.64, 2.96, 3.08, 3.2, 4.32, 4.56, 5.36, 5.6, 6.24, 6.72, 6.96, 7.84, 8.16, 8.4], "swyk-1": [0, 0.48, 1.44, 1.68, 1.92, 2.16, 2.96, 3.96, 4.08, 4.8, 5.28, 5.68, 6.8, 7.04, 7.28, 7.68, 8, 8.24, 8.48, 8.88, 9.36, 9.6, 9.76, 10.64, 10.92, 11.12, 11.6, 12, 12.16, 12.4, 12.76, 13.04], "end-1": [0, 0.48, 0.64, 1.36, 1.68, 1.96, 2.8, 3.04, 3.6, 3.76, 4.24, 4.88, 5.6, 5.92, 6.05, 6.16, 7.36, 7.68, 8.24, 8.56, 9.2, 10, 10.4, 10.72, 10.96, 11.36, 11.52, 11.68, 11.84, 12.16, 12.32, 12.72, 13.04, 13.68, 13.84, 14.08, 14.56, 14.76, 15.04, 15.36, 15.68, 16.48, 16.72, 16.96, 17.92, 18.8, 19.2, 19.68, 19.92, 20.4, 20.64, 20.88, 21.2]}}</script>
+
+<script src="assets/storybook/sb.js?v=9763e0a5"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   fetch('https://raw.githubusercontent.com/bbirchum1/optima-3rd-math/main/video-manifest.json?v=' + Date.now())
@@ -634,15 +414,11 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!m) return;
         var entry = manifest[m[1]];
         if (!entry || entry.status !== 'ready' || !entry.embed) return;
-        var temp = document.createElement('div');
-        temp.innerHTML = entry.embed;
-        var iframe = temp.querySelector('iframe');
-        if (!iframe) return;
-        iframe.removeAttribute('width');
-        iframe.removeAttribute('height');
+        var temp = document.createElement('div'); temp.innerHTML = entry.embed;
+        var iframe = temp.querySelector('iframe'); if (!iframe) return;
+        iframe.removeAttribute('width'); iframe.removeAttribute('height');
         iframe.style.cssText = 'display:block;width:100%;aspect-ratio:16/9;border:none;';
-        wrap.innerHTML = '';
-        wrap.style.cssText = 'display:block;border:none;background:#000;border-radius:14px;overflow:hidden;margin:0 0 18px;';
+        wrap.innerHTML = ''; wrap.style.cssText = 'display:block;border:none;background:#000;border-radius:14px;overflow:hidden;margin:0 0 18px;';
         wrap.appendChild(iframe);
       });
     })
@@ -651,4 +427,5 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 <!-- OAO math tools for this lesson (manipulatives library) -->
 <script src="https://optimaondemand.github.io/optima-4th-math/manipulatives/lesson-tools.js" defer></script>
-</body></html>
+</body>
+</html>
