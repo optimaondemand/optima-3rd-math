@@ -321,3 +321,12 @@ html.sb-still *{animation:none!important;transition:none!important}
 .sb-topbar .tx{flex:1;min-width:0}.sb-topbar .tx b{display:block;font-family:var(--serif);font-size:20px;color:#2C2010;line-height:1.1}
 .sb-topbar .tx small{display:block;font-size:14px;color:var(--mute);font-weight:700}
 .sb-topbar .go{font-weight:900;color:var(--navy);font-size:14px;background:var(--gold3);border-radius:99px;padding:4px 12px;white-space:nowrap}
+/* nl: the number line model (3.09.02) */
+.sb-nl svg{display:block;width:100%;height:auto;touch-action:none;user-select:none}
+.sb-nl .drag,.sb-nl .nl-dot{cursor:grab}
+.sb-nl .bridge,.sb-nl .nl-tick,.sb-nl .tile,.sb-nl .nl-hit{cursor:pointer}
+.sb-nl .nl-tick:focus-visible,.sb-nl .nl-dot:focus-visible,.sb-nl .bridge:focus-visible,.sb-nl .tile:focus-visible{outline:3px solid #E9A23B;outline-offset:2px}
+.nl-pulse{animation:nlp 1.4s ease-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes nlp{0%{opacity:.9;transform:scale(.6)}100%{opacity:0;transform:scale(1.5)}}
+.sb-still .nl-pulse{animation:none;opacity:.8}
+.sb-nl svg g:focus{outline:none}

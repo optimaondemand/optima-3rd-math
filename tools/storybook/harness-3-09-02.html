@@ -1,0 +1,103 @@
+<!DOCTYPE html><html><head><meta charset="utf-8">
+<!-- 3.09.02 Learn video: "Draw It, Cut It, Count It". Frames rendered by render.js from timeline-3-09-02.json (Scribe word times). -->
+<style>
+html,body{margin:0;width:1280px;height:720px;overflow:hidden;background:#FBF6EA;font-family:Nunito,Arial,sans-serif}
+#st{position:absolute;inset:0}
+.cap{position:absolute;left:90px;right:90px;bottom:26px;min-height:58px;background:rgba(14,28,66,.88);color:#fff;border-radius:14px;padding:12px 20px;font-size:27px;font-weight:800;line-height:1.3;text-align:center}
+.cap:empty{display:none}
+.hd{position:absolute;left:40px;top:26px;font-family:'Cormorant Garamond',Georgia,serif;font-size:34px;font-weight:700;color:#3A2A12}
+.hd small{display:block;font-family:Nunito,Arial;font-size:15px;letter-spacing:.18em;color:#B8892E;font-weight:900}
+.book{position:absolute;inset:0;display:none;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 40%,#FFF8E6,#EFE2C6)}
+.book.on{display:flex}
+.bk{display:grid;grid-template-columns:420px 420px;background:#E8DCC0;padding:12px;border-radius:10px;box-shadow:0 20px 40px rgba(60,40,10,.25)}
+.pg{background:#FFFBF1;height:380px;padding:24px;box-sizing:border-box}
+.pg img{width:100%;height:290px;object-fit:cover;border:8px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.2);box-sizing:border-box}
+.pg.r{display:flex;flex-direction:column;justify-content:center}
+.ch{font-family:Georgia,serif;letter-spacing:.2em;color:#B8892E;font-weight:700;font-size:16px}
+.tt{font-family:'Cormorant Garamond',Georgia,serif;font-size:42px;font-weight:700;color:#3A2A12;line-height:1.05;margin:8px 0}
+.q{font-size:22px;font-weight:800;color:#0E1C42;margin-top:10px}
+.owl{position:absolute;width:150px;right:150px;bottom:110px}
+</style></head><body>
+<div id="st"><svg id="sv" width="1280" height="720" viewBox="0 0 1280 720"></svg>
+<div class="hd"><small>CHAPTER 9 · PYTHAGORAS' SINGING STRING</small>Draw It, Cut It, Count It</div></div>
+<div class="book" id="book"><div class="bk"><div class="pg"><img src="../repo/images/storybook/sb-athens-plate.jpg"></div><div class="pg r"><div class="ch">CHAPTER 9 · LESSON 2</div><div class="tt" id="btt">Fractions on a Number Line</div><div class="q" id="bq">Can a fraction be a number, just like 3 or 10?</div></div></div><img class="owl" src="../repo/images/storybook/opti-owl.png"></div>
+<div class="cap" id="cap"></div>
+<script>
+var TL=null, NSV='http://www.w3.org/2000/svg';
+function S(tag,a,p){var e=document.createElementNS(NSV,tag);for(var k in a){if(k==='text')e.textContent=a[k];else e.setAttribute(k,a[k]);}(p||sv).appendChild(e);return e;}
+var NAVY='#1F2A44', C7='#B03A2E', OK='#1E7A4C', GOLD='#B8892E', N=7, X0=150, UNIT=840, LY=300;
+function X(v){return X0+v*UNIT;}
+function sec(s){return TL.secs[s];}
+var M='vid-math';
+// time of the nth word (from word index 'from') whose text matches re
+function wt(re,n,from){var W=sec(M).words,c=0;for(var i=from||0;i<W.length;i++){if(re.test(W[i].w.replace(/[^\w'-]/g,''))){if(c===(n||0))return W[i].t;c++;}}return null;}
+function wi(re,n){var W=sec(M).words,c=0;for(var i=0;i<W.length;i++){if(re.test(W[i].w.replace(/[^\w'-]/g,''))){if(c===(n||0))return i;c++;}}return 0;}
+function ease(x){x=Math.max(0,Math.min(1,x));return x<.5?2*x*x:1-Math.pow(-2*x+2,2)/2;}
+function caption(t){var all=[];['vid-open',M,'vid-close'].forEach(function(s){var W=sec(s).words,cur=[];W.forEach(function(w,i){cur.push(w);if(/[.!?]$/.test(w.w)||i===W.length-1){all.push(cur);cur=[];}});});
+  for(var i=0;i<all.length;i++){var a=all[i][0].t,b=all[i][all[i].length-1].e+0.35;if(t>=a-0.1&&t<=b)return all[i].map(function(w){return w.w;}).join(' ');}return '';}
+var K={};
+function setup(){
+  K.a=sec(M).start; K.close=sec('vid-close').start;
+  K.draw=wt(/^draw$/); K.zero=wt(/^0$/); K.one=wt(/^1$/); K.whole=wt(/^whole$/);
+  K.six=wt(/^Six$/); K.cut=wt(/^cut$/); K.how=wt(/^How$/); K.only=wt(/^Only$/); K.spaces=wt(/^spaces$/); K.count=wt(/^Count$/); K.notm=wt(/^marks$/,0,wi(/^not$/));
+  K.each=wt(/^Each$/); K.unit=wt(/^unit$/); K.find=wt(/^find$/);
+  var j=wi(/^jump$/); K.j=[wt(/^One-seventh$/i,0,j),wt(/^two-sevenths$/i,0,j),wt(/^three-sevenths$/i,0,j),wt(/^four-sevenths$/i,0,j)];
+  K.dot=wt(/^dot$/); K.watch=wt(/^Watch$/); K.where=wt(/^where$/); K.first=wt(/^first$/);
+  var kc=wi(/^Keep$/); K.keep=wt(/^Keep$/); K.j.push(wt(/^Five-sevenths$/i,0,kc),wt(/^six-sevenths$/i,0,kc),wt(/^seven-sevenths$/i,0,kc)); K.lands=wt(/^lands$/,0,kc); K.stop=wt(/^stop$/); K.j.push(wt(/^eight-sevenths$/i)); K.more=wt(/^more$/,1);
+  K.ruler=wt(/^ruler$/); K.numbers=wt(/^Fractions$/); K.s1=wt(/^Cut$/,0,wi(/^spot$/)); K.s2=wt(/^count$/,0,wi(/^spot$/)); K.s3=wt(/^label$/,0,wi(/^spot$/));
+  K.end=K.close;
+}
+function fr(x,y,nu,de,size,col){col=col||NAVY;S('text',{x:x,y:y,'text-anchor':'middle','font-size':size,'font-weight':900,fill:col,text:String(nu)});S('line',{x1:x-size*0.5,y1:y+size*0.25,x2:x+size*0.5,y2:y+size*0.25,stroke:col,'stroke-width':Math.max(2,size/12)});S('text',{x:x,y:y+size*1.08,'text-anchor':'middle','font-size':size,'font-weight':900,fill:col,text:String(de)});}
+function cursor(x,y,press){var g=S('g',{transform:'translate('+x+','+y+')'});if(press)S('circle',{r:16,fill:'rgba(233,196,106,.55)'},g);S('path',{d:'M0 0 L0 30 L8 23 L14 36 L19 34 L13 21 L23 21 Z',fill:'#fff',stroke:'#111','stroke-width':2},g);}
+function arc(k,p,col){var xa=X(k/N),xb=X((k+1)/N),xm=(xa+xb)/2;var d='M'+(xa+4)+' '+(LY-8)+' Q '+xm+' '+(LY-78)+' '+(xb-4)+' '+(LY-8);var path=S('path',{d:d,stroke:col||C7,'stroke-width':4,fill:'none','stroke-linecap':'round'});if(p<1){var L=path.getTotalLength();path.setAttribute('stroke-dasharray',L);path.setAttribute('stroke-dashoffset',L*(1-p));}}
+function render(t){
+  var book=document.getElementById('book'),cap=document.getElementById('cap');
+  cap.textContent=caption(t);
+  var inOpen=t<K.a-0.3, inClose=t>=K.close-0.3;
+  book.classList.toggle('on',inOpen||inClose);
+  if(inClose){document.getElementById('btt').textContent='Your turn';document.getElementById('bq').textContent='If your friend draws the same number line, will four-sevenths land in the same spot?';}
+  sv.innerHTML='';if(inOpen||inClose)return;
+  var cur=null,press=false;
+  // the line: draws in, then (past 1) grows to 8/7
+  var ext=t>=K.stop-0.2?ease((t-K.stop+0.2)/0.9):0, end=1+ext*(1.18-1);
+  var dp=ease((t-K.draw)/0.9); if(t<K.draw-0.1)dp=0;
+  if(dp>0){S('line',{x1:X(0)-24,y1:LY,x2:X(0)-24+(X(end)+24-(X(0)-24))*dp,y2:LY,stroke:NAVY,'stroke-width':5,'stroke-linecap':'round'});if(dp<1)cur=[X(0)-24+(X(end)+48-X(0))*dp,LY+6];}
+  if(t>=K.zero-0.1){S('line',{x1:X(0),y1:LY-26,x2:X(0),y2:LY+26,stroke:NAVY,'stroke-width':6});S('text',{x:X(0),y:LY+66,'text-anchor':'middle','font-size':38,'font-weight':900,fill:NAVY,text:'0'});}
+  if(t>=K.one-0.1){S('line',{x1:X(1),y1:LY-26,x2:X(1),y2:LY+20,stroke:NAVY,'stroke-width':6});if(t<K.j[6]-0.1)S('text',{x:X(1),y:LY+66,'text-anchor':'middle','font-size':38,'font-weight':900,fill:NAVY,text:'1'});}
+  if(t>=K.whole-0.3&&t<K.cut){S('path',{d:'M'+X(0)+' '+(LY-50)+' L'+X(0)+' '+(LY-64)+' L'+X(1)+' '+(LY-64)+' L'+X(1)+' '+(LY-50),stroke:GOLD,'stroke-width':4,fill:'none'});S('text',{x:X(0.5),y:LY-80,'text-anchor':'middle','font-size':32,'font-weight':900,fill:GOLD,text:'1 whole'});}
+  // question: how many tick marks?
+  if(t>=K.how-0.1&&t<K.each){S('text',{x:640,y:150,'text-anchor':'middle','font-size':34,'font-weight':900,fill:NAVY,text:'7 equal parts: how many tick marks?'});}
+  // tick marks appear one by one between "Only" and "spaces"
+  var nt=0;if(t>=K.only-0.1){var span=Math.max(1.2,(K.six||K.spaces)-K.only+0.4);nt=Math.min(6,1+Math.floor((t-K.only)/(span/6)));}
+  for(var i=1;i<=nt;i++){S('line',{x1:X(i/N),y1:LY-18,x2:X(i/N),y2:LY+18,stroke:NAVY,'stroke-width':4});if(t<K.spaces)S('text',{x:X(i/N),y:LY+52,'text-anchor':'middle','font-size':24,'font-weight':900,fill:'#8C93A6',text:String(i)});}
+  if(t>=K.only-0.1&&t<K.spaces+0.3&&nt>0){cur=[X(nt/N)+8,LY+10];press=true;}
+  // spaces counted
+  if(t>=K.spaces-0.2&&t<K.each){for(var s=0;s<N;s++){var xa=X(s/N),xb=X((s+1)/N);S('rect',{x:xa+6,y:LY-64,width:xb-xa-12,height:36,rx:8,fill:s%2?'#F3EAD3':'#E7F0F7'});S('text',{x:(xa+xb)/2,y:LY-38,'text-anchor':'middle','font-size':24,'font-weight':900,fill:'#5B6478',text:String(s+1)});}
+    S('text',{x:640,y:LY+120,'text-anchor':'middle','font-size':30,'font-weight':900,fill:OK,text:'6 tick marks → 7 equal spaces'});
+    if(t>=K.count-0.1)S('text',{x:640,y:LY+164,'text-anchor':'middle','font-size':28,'font-weight':900,fill:C7,text:'Count the spaces, not the marks.'});}
+  // one space = one-seventh, a unit fraction
+  if(t>=K.each-0.1&&t<K.find){S('rect',{x:X(0)+4,y:LY-30,width:UNIT/N-8,height:60,rx:8,fill:'rgba(176,58,46,.14)',stroke:C7,'stroke-width':3});fr(X(0.5/N),LY-84,1,7,30,C7);
+    if(t>=K.unit-0.2){S('text',{x:X(1/N)+30,y:LY-90,'font-size':30,'font-weight':900,fill:C7,text:'← one jump = a unit fraction'});}}
+  // jumps 1..8
+  for(var k=0;k<8;k++){var tj=K.j[k];if(tj==null||t<tj-0.55)continue;var p=ease((t-(tj-0.55))/0.55);arc(k,p,k>=7?GOLD:C7);
+    if(p>=1){var col=k===6?OK:(k>=7?GOLD:C7);fr(X((k+1)/N),LY+54,k+1,7,28,col);}
+    if(t<tj+0.05){cur=[X((k+0.5+p*0.5)/N),LY-60+(1-p)*20];}}
+  if(t>=K.find-0.2&&t<K.j[0]-0.55)cur=[X(0)+6,LY+8];
+  // the dot at 4/7
+  if(t>=K.dot-0.1){S('circle',{cx:X(4/N),cy:LY,r:16,fill:C7,stroke:'#fff','stroke-width':4});if(t<K.watch){S('rect',{x:X(4/N)-70,y:LY-170,width:140,height:70,rx:12,fill:'#fff',stroke:C7,'stroke-width':3});S('text',{x:X(4/N),y:LY-124,'text-anchor':'middle','font-size':30,'font-weight':900,fill:C7,text:'4 jumps'});}}
+  // watch out
+  if(t>=K.watch-0.1&&t<K.keep-0.1){S('rect',{x:160,y:462,width:960,height:124,rx:16,fill:'#FBE7E4',stroke:'#B23A2E','stroke-width':3});S('text',{x:190,y:500,'font-size':30,'font-weight':900,fill:'#B23A2E',text:'Watch out!'});
+    S('text',{x:190,y:538,'font-size':26,'font-weight':800,fill:'#5A1A12',text:'✗ 0 is not one-seventh. 0 is where you start.'});
+    if(t>=K.first-0.1)S('text',{x:190,y:574,'font-size':26,'font-weight':800,fill:OK,text:'✓ The first jump lands on one-seventh.'});
+    S('circle',{cx:X(0),cy:LY,r:26,fill:'none',stroke:'#B23A2E','stroke-width':5});}
+  // 7/7 = 1
+  if(t>=K.lands-0.1){S('rect',{x:X(1)-46,y:LY+24,width:92,height:100,rx:12,fill:'none',stroke:OK,'stroke-width':4});S('text',{x:X(1),y:LY+116,'text-anchor':'middle','font-size':30,'font-weight':900,fill:OK,text:'= 1'});}
+  if(t>=K.more-0.1&&t<K.ruler){S('text',{x:X(8/N),y:LY-110,'text-anchor':'middle','font-size':28,'font-weight':900,fill:GOLD,text:'more than 1'});}
+  // summary
+  if(t>=K.ruler-0.2){S('rect',{x:160,y:462,width:960,height:124,rx:16,fill:'#FFFDF8',stroke:'#E4D8BF','stroke-width':2});
+    S('text',{x:190,y:504,'font-size':27,'font-weight':900,fill:NAVY,text:'A number line is like a ruler. Fractions are numbers.'});
+    [[K.s1,'1. Cut into equal parts.'],[K.s2,'2. Count the jumps from 0.'],[K.s3,'3. Label the spot.']].forEach(function(it,i){if(t>=it[0]-0.2)S('text',{x:190+i*300,y:556,'font-size':26,'font-weight':900,fill:C7,text:it[1]});});}
+  if(cur)cursor(cur[0],cur[1],press);
+}
+window.init=function(tl){TL=tl;setup();};
+</script></body></html>

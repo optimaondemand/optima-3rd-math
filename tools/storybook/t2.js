@@ -1,8 +1,8 @@
 const {chromium}=require('playwright');
 (async()=>{const b=await chromium.launch();const ctx=await b.newContext({viewport:{width:1150,height:900}});const p=await ctx.newPage();
 const errs=[];p.on('pageerror',e=>errs.push(e.message));
-await p.route(/googleapis|gstatic|githubusercontent/,r=>r.abort());await p.route(/github\.io\/optima-4th-math\/manipulatives\/(.*)/,r=>{const f=r.request().url().split('/manipulatives/')[1].split('?')[0];try{r.fulfill({path:'/mnt/user-data/uploads/optima-4th-math/manipulatives/'+f})}catch(e){r.abort()}});
-const URL='file:///home/claude/g3sb/build/g3-storybook-preview-3-09-01-v1.html';
+await p.route(/googleapis|gstatic|githubusercontent/,r=>r.abort());await p.route(/github\.io\/optima-4th-math\/manipulatives\/(.*)/,r=>{const f=r.request().url().split('/manipulatives/')[1].split('?')[0];const fp='/mnt/user-data/uploads/optima-4th-math/manipulatives/'+f;if(require('fs').existsSync(fp))r.fulfill({path:fp});else r.abort()});
+const URL='file:///home/claude/g3sb/build/g3-storybook-preview-3-09-01.html';
 await p.goto(URL);await p.addStyleTag({content:'html{scroll-behavior:auto!important}'});await p.waitForTimeout(1200);
 const shot=async(sel,n)=>{const e=await p.$(sel);await e.scrollIntoViewIfNeeded();await p.waitForTimeout(250);await e.screenshot({path:'shots/e-'+n+'.png'});};
 const fill=async(job,vals)=>{const ins=await p.$$(`section[data-job="${job}"] .sb-step.open:not(.right) .sb-ans`);for(let i=0;i<ins.length;i++)await ins[i].fill(String(vals[i]));};

@@ -7,7 +7,7 @@
    - one step at a time (gated), answer checks with mistake hints, hint ladders
    - Opti: voice + read-along; key-word glossary tooltips with a voiced word
    - string sound (plucked, made in the page), music switch, listening corner
-   - models: mono (Pythagoras' string), mono2, tiles, labelfix, sort, gather, circle, rect, strip
+   - models: mono (Pythagoras' string), mono2, tiles, labelfix, sort, gather, circle, rect, strip, nl (number line)
    - saving (this device), journal (gather / copy / download / print), checklist
    ═══════════════════════════════════════════════════════════════ */
 (function () {
@@ -613,6 +613,245 @@
       var ok = counts.every(function (c) { return c === sh; }) && !same; flag(box, 'shade', ok); if (ok) flag(box, 'shade');
     }
     draw();
+  };
+
+  /* ── nl: the number line (3.09.02). One model, several modes. ──
+     data-mode: count (string → number line, tap bridges in order) · cut (add + drag tick marks, then place a dot)
+       · ticks (− / + tick marks, count the spaces) · even (drag uneven ticks equal; pluck at the dot vs a friend's line)
+       · labels (tap a tick: count the jumps from 0) · dots (put dots on targets, 0 to b) · strip (tiles above the line)
+     data-n (equal parts in 1 whole), data-b (end number, default 1), data-target / data-targets "3,8,12" (numerators)
+     Flags: count · cut · dot · fixed · even · same · fix · dots · shade */
+  MODS.nl = function (box) {
+    var mode = box.dataset.mode || 'cut', n = +box.dataset.n || 5, b = +box.dataset.b || 1, name = box.dataset.name || 'nl';
+    var targets = (box.dataset.targets || box.dataset.target || '').split(',').filter(Boolean).map(Number);
+    var col = DCOL[n] || '#1F2A44', NAVY = '#1F2A44', OK = '#1E7A4C', BAD = '#B23A2E';
+    var X0 = 60, X1 = 740, LW = X1 - X0;
+    function X(v) { return X0 + v / b * LW; }
+    function V(x) { return (x - X0) / LW * b; }
+    var still = function () { return reduced || document.documentElement.classList.contains('sb-still'); };
+    function fr(g, x, y, nu, de, c, fs) { fs = fs || 16; var t = NS('g', { 'pointer-events': 'none' }, g); NS('text', { x: x, y: y, 'text-anchor': 'middle', 'font-size': fs, 'font-weight': 900, fill: c, text: String(nu) }, t); NS('line', { x1: x - fs * 0.55, y1: y + 5, x2: x + fs * 0.55, y2: y + 5, stroke: c, 'stroke-width': 2 }, t); NS('text', { x: x, y: y + fs + 6, 'text-anchor': 'middle', 'font-size': fs, 'font-weight': 900, fill: c, text: String(de) }, t); return t; }
+    function txt(g, x, y, s, c, fs, anchor) { return NS('text', { x: x, y: y, 'text-anchor': anchor || 'middle', 'font-size': fs || 16, 'font-weight': 900, fill: c || NAVY, text: s, 'pointer-events': 'none' }, g); }
+    function axis(g, y, opt) {
+      opt = opt || {};
+      NS('line', { x1: X0 - 18, y1: y, x2: X1 + 18, y2: y, stroke: NAVY, 'stroke-width': 3, 'stroke-linecap': 'round' }, g);
+      for (var w = 0; w <= b; w++) { NS('line', { x1: X(w), y1: y - 16, x2: X(w), y2: y + 16, stroke: NAVY, 'stroke-width': 3.5 }, g); if (!opt.noWholes) txt(g, X(w), y + 40, String(w), NAVY, 22); }
+    }
+    function arcs(g, y, k, c) { for (var i = 0; i < k; i++) { var xa = X(i / n), xb = X((i + 1) / n), h = Math.min(30, (xb - xa) * 0.55); NS('path', { d: 'M' + (xa + 3) + ' ' + (y - 6) + ' Q ' + (xa + xb) / 2 + ' ' + (y - 6 - h * 1.6) + ' ' + (xb - 3) + ' ' + (y - 6), stroke: c || col, 'stroke-width': 2.5, fill: 'none', 'pointer-events': 'none' }, g); } }
+    function dot(g, x, y, c) { var d = NS('g', { class: 'nl-dot', tabindex: 0, role: 'slider' }, g); NS('circle', { cx: x, cy: y, r: 22, fill: 'transparent' }, d); NS('circle', { cx: x, cy: y, r: 11, fill: c || BAD, stroke: '#fff', 'stroke-width': 3 }, d); return d; }
+    function snapK(x) { return Math.max(0, Math.min(n * b, Math.round(V(x) * n))); }
+    var out;
+    function msg(h, ok) { out.innerHTML = ok ? '<span style="color:' + OK + '">' + h + '</span>' : h; }
+    function shell(h, ctl) { box.innerHTML = '<div class="sb-stage sb-nl">' + (ctl || '') + '<svg viewBox="0 0 800 ' + h + '" role="group" aria-label="A number line"></svg></div><div class="sb-readout" aria-live="polite"></div>'; out = $('.sb-readout', box); return $('svg', box); }
+
+    /* count: Pythagoras' string in n equal parts; tap the bridges left to right; each leaves a tick mark */
+    if (mode === 'count') {
+      var S = mstate(name, { k: 0 }), svg = shell(300), Y = 70, LY = 214;
+      var draw = function () {
+        svg.innerHTML = '';
+        NS('rect', { x: 30, y: Y + 14, width: 740, height: 46, rx: 9, fill: '#A86A35', stroke: '#5E3818', 'stroke-width': 2 }, svg);
+        for (var g2 = 0; g2 < 3; g2++) NS('path', { d: 'M40 ' + (Y + 26 + g2 * 10) + ' C 260 ' + (Y + 20 + g2 * 11) + ', 520 ' + (Y + 34 + g2 * 9) + ', 760 ' + (Y + 24 + g2 * 10), stroke: 'rgba(60,30,10,.2)', fill: 'none', 'stroke-width': 1.5 }, svg);
+        NS('line', { x1: X0, y1: Y, x2: X1, y2: Y, stroke: '#D9B45A', 'stroke-width': 3.5, 'stroke-linecap': 'round' }, svg);
+        txt(svg, X0, Y - 26, S.k >= n ? '' : 'start', '#5B4A2A', 14);
+        axis(svg, LY, { noWholes: true });
+        if (S.k >= n) { txt(svg, X(0), LY + 40, '0', NAVY, 22); }
+        for (var i = 1; i <= n; i++) (function (i) {
+          var x = X(i / n), done = i <= S.k, br = NS('g', { class: 'bridge', tabindex: 0, role: 'button', 'aria-label': (i === n ? 'The end of the string' : 'Bridge ' + i) + (done ? ', counted' : '') }, svg);
+          NS('rect', { x: x - 26, y: Y - 30, width: 52, height: 70, fill: 'transparent' }, br);
+          NS('path', { d: 'M' + (x - 12) + ' ' + (Y + 18) + ' L' + x + ' ' + (Y - 1) + ' L' + (x + 12) + ' ' + (Y + 18) + ' Z', fill: done ? '#E9C46A' : '#F3E6C4', stroke: '#6B4A12', 'stroke-width': 2 }, br);
+          if (i === S.k + 1 && !still()) NS('circle', { class: 'nl-pulse', cx: x, cy: Y + 6, r: 20, fill: 'none', stroke: '#E9C46A', 'stroke-width': 3 }, br);
+          if (done) {
+            NS('line', { x1: x, y1: Y + 62, x2: x, y2: LY - 18, stroke: '#C9BFA5', 'stroke-width': 1.5, 'stroke-dasharray': '4 5', 'pointer-events': 'none' }, svg);
+            if (i < n) NS('line', { x1: x, y1: LY - 12, x2: x, y2: LY + 12, stroke: col, 'stroke-width': 3 }, svg);
+            fr(svg, x, LY + 34, i, n, i === n ? OK : col, 16);
+            if (i === n) txt(svg, x, LY + 82, '= 1', OK, 18);
+          }
+          function tap() {
+            if (i <= S.k) { pluck(98 / (i / n)); return; }
+            if (i !== S.k + 1) { msg('Count in order. Tap ' + (S.k ? 'the next bridge to the right.' : 'the first bridge on the left.')); return; }
+            S.k = i; save(); pluck(98 / (i / n)); draw(); report();
+          }
+          br.addEventListener('click', tap); br.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); tap(); } });
+        })(i);
+        arcs(svg, LY, S.k, col);
+      };
+      var report = function () {
+        if (S.k >= n) { msg('<b>' + n + ' ' + DNAME[n] + 's</b> is the whole string: ' + frac(n, n) + ' = 1. The start is 0. Each bridge left a tick mark. The string is now a number line!', true); flag(box, 'count'); }
+        else if (!S.k) msg('Tap the first bridge on the left. Say its name: one-' + DNAME[n] + '.');
+        else msg('You counted <b>' + S.k + '</b> ' + DNAME[n] + (S.k > 1 ? 's' : '') + '. Tap the next bridge.');
+      };
+      draw(); report(); return;
+    }
+
+    /* strip: fraction tiles sit on top of the number line; shade from the left */
+    if (mode === 'strip') {
+      var S2 = mstate(name, { k: 0 }), want = targets[0] || 0, sv = shell(270), RH = 46, TY = 64, LY2 = 196;
+      var drawS = function () {
+        sv.innerHTML = ''; var w = LW / n;
+        NS('rect', { x: X0, y: 8, width: LW, height: RH, rx: 6, fill: '#0E1C42' }, sv); txt(sv, X0 + LW / 2, 8 + RH / 2 + 7, '1 whole', '#fff', 20);
+        for (var i = 0; i < n; i++) (function (i) {
+          var on = i < S2.k, g = NS('g', { class: 'tile', tabindex: 0, role: 'button', 'aria-label': 'Tile ' + (i + 1) + (on ? ', shaded' : '') }, sv), x = X0 + i * w;
+          NS('rect', { x: x + 1, y: TY, width: w - 2, height: RH, rx: 5, fill: on ? col : '#fff', stroke: col, 'stroke-width': 2 }, g);
+          var c = on ? '#fff' : '#0E1C42', f = w >= 44 ? 14 : 12; txt(g, x + w / 2, TY + RH / 2 - 4, '1', c, f); NS('line', { x1: x + w / 2 - 7, y1: TY + RH / 2 + 1, x2: x + w / 2 + 7, y2: TY + RH / 2 + 1, stroke: c, 'stroke-width': 2, 'pointer-events': 'none' }, g); txt(g, x + w / 2, TY + RH / 2 + 4 + f, String(n), c, f);
+          function t() { S2.k = S2.k === i + 1 ? i : i + 1; save(); pluck(98 / Math.max(0.08, S2.k / n)); drawS(); }
+          g.addEventListener('click', t); g.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); t(); } });
+        })(i);
+        for (var j = 0; j <= n; j++) NS('line', { x1: X(j / n), y1: TY + RH + 4, x2: X(j / n), y2: LY2 - 16, stroke: '#C9BFA5', 'stroke-width': 1.5, 'stroke-dasharray': '4 5', 'pointer-events': 'none' }, sv);
+        axis(sv, LY2);
+        for (var q = 1; q < n; q++) NS('line', { x1: X(q / n), y1: LY2 - 11, x2: X(q / n), y2: LY2 + 11, stroke: NAVY, 'stroke-width': 2.5 }, sv);
+        if (S2.k) { NS('line', { x1: X(0), y1: LY2, x2: X(S2.k / n), y2: LY2, stroke: col, 'stroke-width': 7, 'stroke-linecap': 'round', opacity: .85 }, sv); NS('circle', { cx: X(S2.k / n), cy: LY2, r: 10, fill: BAD, stroke: '#fff', 'stroke-width': 3 }, sv); }
+        var ok = S2.k === want;
+        if (!S2.k) msg('Tap tiles to shade them, starting from the left (from 0).');
+        else msg('Shaded: <b>' + S2.k + '</b> of ' + n + ' equal tiles. The dot on the line is <b>' + S2.k + '</b> jump' + (S2.k > 1 ? 's' : '') + ' from 0.', ok);
+        flag(box, 'shade', ok); if (ok) flag(box, 'shade');
+      };
+      drawS(); return;
+    }
+
+    /* ticks: Mia wanted 10 equal parts. − / + tick marks; the spaces are counted above the line */
+    if (mode === 'ticks') {
+      var S3 = mstate(name, { m: +box.dataset.start || n }), st = shell(170, '<div class="sb-row" style="margin-bottom:6px"><b>Tick marks between 0 and 1:</b><button type="button" class="sb-btn sm ghost minus" aria-label="One fewer tick mark">−</button><b class="cnt" style="font-size:22px;min-width:30px;text-align:center"></b><button type="button" class="sb-btn sm ghost plus" aria-label="One more tick mark">+</button></div>'), LY3 = 96;
+      $('.minus', box).onclick = function () { if (S3.m > 1) { S3.m--; save(); drawT(); } };
+      $('.plus', box).onclick = function () { if (S3.m < 14) { S3.m++; save(); drawT(); } };
+      var drawT = function () {
+        $('.cnt', box).textContent = S3.m; st.innerHTML = ''; var sp = S3.m + 1;
+        axis(st, LY3);
+        for (var i = 1; i <= S3.m; i++) NS('line', { x1: X(i / sp), y1: LY3 - 12, x2: X(i / sp), y2: LY3 + 12, stroke: NAVY, 'stroke-width': 2.5 }, st);
+        for (var s = 0; s < sp; s++) { var xa = X(s / sp), xb = X((s + 1) / sp); NS('rect', { x: xa + 2, y: LY3 - 40, width: xb - xa - 4, height: 22, rx: 4, fill: s % 2 ? '#F3EAD3' : '#E7F0F7', 'pointer-events': 'none' }, st); txt(st, (xa + xb) / 2, LY3 - 24, String(s + 1), '#5B6478', 13); }
+        var ok = sp === n;
+        msg('<b>' + S3.m + '</b> tick marks make <b>' + sp + '</b> equal spaces.' + (ok ? ' That\'s ' + n + ' equal parts: ' + DNAME[n] + 's!' : sp > n ? ' Mia wants ' + n + ' spaces. Too many!' : ' Mia wants ' + n + ' spaces.'), ok);
+        flag(box, 'fixed', ok); if (ok) flag(box, 'fixed');
+      };
+      drawT(); return;
+    }
+
+    /* labels: Leo started counting at 0. Tap a tick mark to count the jumps from 0 */
+    if (mode === 'labels') {
+      X0 = 116; LW = X1 - X0;
+      var S4 = mstate(name, { seen: [] }), sl = shell(200), LY4 = 92;
+      var drawL = function () {
+        sl.innerHTML = ''; axis(sl, LY4, { noWholes: true });
+        txt(sl, X0 - 30, LY4 + 48, "Leo:", BAD, 14, 'end'); txt(sl, X0 - 30, LY4 + 98, 'Jumps:', OK, 14, 'end');
+        for (var i = 0; i <= n; i++) (function (i) {
+          var x = X(i / n), g = NS('g', { class: 'nl-tick', tabindex: 0, role: 'button', 'aria-label': (i === 0 ? 'The 0 mark' : i === n ? 'The 1 mark' : 'Tick mark ' + i) + '. Leo wrote ' + (i + 1) + ' ninths.' }, sl), on = S4.seen.indexOf(i) > -1;
+          NS('rect', { x: x - 24, y: LY4 - 40, width: 48, height: 140, fill: 'transparent' }, g);
+          if (i > 0 && i < n) NS('line', { x1: x, y1: LY4 - 12, x2: x, y2: LY4 + 12, stroke: NAVY, 'stroke-width': 2.5 }, g);
+          if (i === 0 || i === n) txt(g, x, LY4 - 26, i ? '1' : '0', NAVY, 18);
+          fr(g, x, LY4 + 32, i + 1, n, BAD, 14);
+          if (on) { if (i === 0) txt(g, x, LY4 + 104, '0', OK, 18); else fr(g, x, LY4 + 84, i, n, OK, 14); }
+          function t() { if (!on) { S4.seen.push(i); save(); } drawL(); var k = i; arcs(sl, LY4, k, OK); msg(i === 0 ? '0 is where you start. <b>0 jumps</b>, so nothing to count yet. Leo wrote ' + frac(1, n) + ' here. That\'s the mix-up!' : '<b>' + k + '</b> jump' + (k > 1 ? 's' : '') + ' from 0, so this mark is ' + frac(k, n) + '. Leo wrote ' + frac(k + 1, n) + '.'); report4(); }
+          g.addEventListener('click', t); g.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); t(); } });
+        })(i);
+      };
+      var report4 = function () { var ok = S4.seen.indexOf(0) > -1 && S4.seen.filter(function (v) { return v > 0; }).length >= 2; if (ok) flag(box, 'fix'); };
+      drawL(); msg('Tap a mark to count its jumps from 0. Start with 0.'); report4(); return;
+    }
+
+    /* even: uneven tick marks with a dot on the 4th; a friend's line below. Make it equal; pluck both. */
+    if (mode === 'even') {
+      var tgt = targets[0] || 4, start = JSON.parse(box.dataset.start || '[0.1,0.24,0.33,0.47,0.7,0.84]');
+      var S5 = mstate(name, { p: start.slice(), a: 0, f: 0 }), se = shell(330, ''), YA = 92, YB = 256, dragging = -1;
+      $('.sb-nl', box).insertAdjacentHTML('beforeend', '<div class="sb-row" style="justify-content:center;gap:10px;margin-top:6px"><button type="button" class="sb-btn sm ghost pa">🔊 Pluck at Ben\'s dot</button><button type="button" class="sb-btn sm ghost pf">🔊 Pluck at Ana\'s dot</button></div>');
+      var even = function () { var p = S5.p.slice().sort(function (a, c) { return a - c; }); return p.every(function (v, i) { return Math.abs(v - (i + 1) / n) < 0.32 / n; }); };
+      var isEven = function () { return S5.p.every(function (v, i) { return Math.abs(v - (i + 1) / n) < 1e-6; }); };
+      var drawE = function () {
+        se.innerHTML = '';
+        txt(se, 20, 24, "Ben's line (drag the tick marks)", NAVY, 15, 'start');
+        axis(se, YA); var p = S5.p;
+        p.forEach(function (v, k) {
+          var x = X(v), g = NS('g', { class: 'nl-tick drag', tabindex: 0, role: 'slider', 'aria-label': 'Tick mark ' + (k + 1), 'aria-valuenow': Math.round(v * 100) }, se);
+          NS('rect', { x: x - 18, y: YA - 30, width: 36, height: 60, fill: 'transparent' }, g);
+          NS('line', { x1: x, y1: YA - 14, x2: x, y2: YA + 14, stroke: dragging === k ? '#E9A23B' : NAVY, 'stroke-width': 4 }, g);
+          NS('circle', { cx: x, cy: YA - 20, r: 5, fill: '#E9C46A', stroke: NAVY, 'stroke-width': 1.5 }, g);
+          drag(g, se, function (pt) { dragging = k; var lo = k ? S5.p[k - 1] + 0.03 : 0.03, hi = k < S5.p.length - 1 ? S5.p[k + 1] - 0.03 : 0.97; S5.p[k] = Math.max(lo, Math.min(hi, V(pt.x))); g.setAttribute('transform', 'translate(' + (X(S5.p[k]) - x) + ',0)'); }, function () { dragging = -1; settleE(); }, null);
+          g.addEventListener('keydown', function (e) { var d = e.key === 'ArrowRight' ? 0.01 : e.key === 'ArrowLeft' ? -0.01 : 0; if (!d) return; e.preventDefault(); S5.p[k] = Math.max(0.03, Math.min(0.97, S5.p[k] + d)); settleE(); $$('.nl-tick', se)[k] && $$('.nl-tick', se)[k].focus(); });
+        });
+        var pa = p[tgt - 1], xa = X(pa);
+        NS('circle', { cx: xa, cy: YA, r: 10, fill: BAD, stroke: '#fff', 'stroke-width': 3, 'pointer-events': 'none' }, se);
+        fr(se, xa, YA - 52, tgt, n, BAD, 15);
+        // spaces: green when equal
+        var cuts = [0].concat(p).concat([1]);
+        for (var s = 0; s < cuts.length - 1; s++) { var ln = cuts[s + 1] - cuts[s]; NS('line', { x1: X(cuts[s]) + 4, y1: YA + 24, x2: X(cuts[s + 1]) - 4, y2: YA + 24, stroke: Math.abs(ln - 1 / n) < 0.32 / n ? OK : '#E0A79F', 'stroke-width': 4, 'stroke-linecap': 'round', 'pointer-events': 'none' }, se); }
+        txt(se, 20, YB - 66, "Ana's line (already in equal " + DNAME[n] + 's)', NAVY, 15, 'start');
+        axis(se, YB);
+        for (var q = 1; q < n; q++) NS('line', { x1: X(q / n), y1: YB - 12, x2: X(q / n), y2: YB + 12, stroke: NAVY, 'stroke-width': 2.5 }, se);
+        NS('circle', { cx: X(tgt / n), cy: YB, r: 10, fill: '#2F6FDE', stroke: '#fff', 'stroke-width': 3 }, se);
+        fr(se, X(tgt / n), YB - 60, tgt, n, '#2F6FDE', 15);
+        NS('line', { x1: xa, y1: YA + 30, x2: xa, y2: YB - 88, stroke: isEven() ? OK : '#E0A79F', 'stroke-width': 2, 'stroke-dasharray': '5 5', 'pointer-events': 'none' }, se);
+      };
+      var settleE = function () {
+        if (!isEven() && even()) { S5.p = S5.p.map(function (_, k) { return (k + 1) / n; }); S5.a = 0; S5.f = 0; }
+        save(); drawE(); reportE();
+      };
+      var reportE = function () {
+        if (isEven()) { flag(box, 'even'); msg(S5.a && S5.f ? 'Same spot, same note! Both dots are ' + tgt + ' jumps of one-' + DNAME[n] + ' from 0.' : 'All 7 spaces are equal now. Ben\'s dot moved to the same spot as Ana\'s. Pluck at both dots and listen.', true); if (S5.a && S5.f) flag(box, 'same'); }
+        else msg('The spaces on Ben\'s line are not equal. Red spaces are the wrong size. Drag the tick marks until every space turns green.');
+      };
+      $('.pa', box).onclick = function () { pluck(98 / S5.p[tgt - 1]); if (isEven()) { S5.a = 1; save(); reportE(); } else msg('Ben\'s note. Now pluck at Ana\'s dot. Do they match?'); };
+      $('.pf', box).onclick = function () { pluck(98 / (tgt / n)); if (isEven()) { S5.f = 1; save(); reportE(); } else msg('Ana\'s note. Did it match Ben\'s? Not yet: his dot is in a different spot.'); };
+      drawE(); reportE(); return;
+    }
+
+    /* cut + dots: tick marks you add and drag, then dots you place (snap to tick marks) */
+    var S6 = mstate(name, mode === 'dots' ? { placed: [] } : { p: [], placed: [] }), H = 210, LY6 = 120;
+    var sc = shell(H, mode === 'cut' ? '<div class="sb-row nl-ctl" style="margin-bottom:6px"><button type="button" class="sb-btn sm ghost add">＋ Add a tick mark</button><button type="button" class="sb-btn sm ghost rem">− Take one away</button><span class="nl-cnt" style="font-weight:800;color:#5B6478"></span></div>' : '');
+    var cur = S6.cur == null ? 0 : S6.cur, drag6 = -1;
+    function cutDone() { return mode === 'dots' || stepDoneFor(box, 'cut'); }
+    function isEq() { return S6.p.length === n - 1 && S6.p.every(function (v, i) { return Math.abs(v - (i + 1) / n) < 1e-6; }); }
+    function near() { var p = S6.p.slice().sort(function (a, c) { return a - c; }); return p.length === n - 1 && p.every(function (v, i) { return Math.abs(v - (i + 1) / n) < 0.3 / n; }); }
+    if (mode === 'cut') {
+      $('.add', box).onclick = function () { if (cutDone()) return; if (S6.p.length >= 14) return; var c = [0].concat(S6.p.slice().sort(function (a, d) { return a - d; })).concat([1]), best = 0, at = 0.5; for (var i = 0; i < c.length - 1; i++) if (c[i + 1] - c[i] > best) { best = c[i + 1] - c[i]; at = (c[i] + c[i + 1]) / 2; } S6.p.push(at); S6.p.sort(function (a, d) { return a - d; }); settle6(); };
+      $('.rem', box).onclick = function () { if (cutDone() || !S6.p.length) return; S6.p.pop(); settle6(); };
+    }
+    function settle6() { if (!isEq() && near()) S6.p = S6.p.map(function (_, k) { return (k + 1) / n; }); save(); draw6(); report6(); }
+    function draw6() {
+      sc.innerHTML = ''; axis(sc, LY6);
+      var cd = cutDone();
+      if (mode === 'dots') { for (var q = 1; q < n * b; q++) if (q % n) NS('line', { x1: X(q / n), y1: LY6 - 11, x2: X(q / n), y2: LY6 + 11, stroke: NAVY, 'stroke-width': 2.5 }, sc); }
+      else S6.p.forEach(function (v, k) {
+        var x = X(v), g = NS('g', { class: 'nl-tick' + (cd ? '' : ' drag'), tabindex: cd ? -1 : 0, role: 'slider', 'aria-label': 'Tick mark ' + (k + 1) }, sc);
+        NS('rect', { x: x - 16, y: LY6 - 30, width: 32, height: 60, fill: 'transparent' }, g);
+        NS('line', { x1: x, y1: LY6 - 13, x2: x, y2: LY6 + 13, stroke: drag6 === k ? '#E9A23B' : NAVY, 'stroke-width': 3.5 }, g);
+        if (!cd) {
+          NS('circle', { cx: x, cy: LY6 - 20, r: 5, fill: '#E9C46A', stroke: NAVY, 'stroke-width': 1.5 }, g);
+          drag(g, sc, function (pt) { drag6 = k; S6.p[k] = Math.max(0.02, Math.min(0.98, V(pt.x))); g.setAttribute('transform', 'translate(' + (X(S6.p[k]) - x) + ',0)'); }, function (pt) { drag6 = -1; if (pt && pt.y > LY6 + 60) S6.p.splice(k, 1); S6.p.sort(function (a, d) { return a - d; }); settle6(); }, null);
+          g.addEventListener('keydown', function (e) { var d = e.key === 'ArrowRight' ? 0.01 : e.key === 'ArrowLeft' ? -0.01 : 0; if (!d) return; e.preventDefault(); S6.p[k] = Math.max(0.02, Math.min(0.98, S6.p[k] + d)); settle6(); var t = $$('.nl-tick', sc)[k]; if (t) t.focus(); });
+        }
+      });
+      if (mode === 'cut' && !cd) { var c = [0].concat(S6.p.slice().sort(function (a, d) { return a - d; })).concat([1]); for (var s = 0; s < c.length - 1; s++) txt(sc, (X(c[s]) + X(c[s + 1])) / 2, LY6 - 40, String(s + 1), '#8C93A6', 13); }
+      if (!cd) return;
+      // dots
+      S6.placed.forEach(function (k) { NS('circle', { cx: X(k / n), cy: LY6, r: 10, fill: OK, stroke: '#fff', 'stroke-width': 3 }, sc); fr(sc, X(k / n), LY6 - 58, k, n, OK, 15); });
+      if (S6.placed.length >= targets.length) return;
+      var x = X(cur / n); arcs(sc, LY6, cur, col);
+      if (cur) txt(sc, x, LY6 + 74, cur + ' jump' + (cur > 1 ? 's' : ''), BAD, 14);
+      // tap a spot on the line: the dot goes to the nearest mark
+      var hit = NS('rect', { x: X0 - 20, y: LY6 - 30, width: LW + 40, height: 60, fill: 'transparent', class: 'nl-hit' }, sc);
+      hit.addEventListener('click', function (e) { cur = snapK(svgPt(sc, e).x); S6.cur = cur; draw6(); check6(); });
+      var d = dot(sc, x, LY6, BAD); d.setAttribute('aria-label', 'The dot. ' + cur + ' jumps from 0.');
+      drag(d, sc, function (pt) { var k = snapK(pt.x); cur = k; S6.cur = cur; d.setAttribute('transform', 'translate(' + (X(k / n) - x) + ',0)'); }, function () { draw6(); check6(); }, null);
+      d.addEventListener('keydown', function (e) { var dd = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0; if (!dd) return; e.preventDefault(); cur = Math.max(0, Math.min(n * b, cur + dd)); S6.cur = cur; draw6(); check6(); var nd = $('.nl-dot', sc); if (nd) nd.focus(); });
+    }
+    function check6() {
+      save(); var t = targets[S6.placed.length];
+      if (cur === t) { S6.placed.push(t); cur = 0; S6.cur = 0; pluck(98 / Math.max(0.1, t / n / Math.max(1, b))); save(); draw6(); }
+      report6();
+    }
+    function report6() {
+      var cd = cutDone();
+      if (mode === 'cut') { var cnt = $('.nl-cnt', box); if (cnt) cnt.textContent = cd ? '' : S6.p.length + ' tick mark' + (S6.p.length === 1 ? '' : 's') + ' · ' + (S6.p.length + 1) + (S6.p.length ? ' spaces' : ' space'); $('.nl-ctl', box).hidden = cd; }
+      if (mode === 'cut' && !cd) {
+        if (isEq()) { msg('<b>' + (n - 1) + '</b> tick marks make <b>' + n + '</b> equal spaces. The line is cut into ' + DNAME[n] + 's!', true); flag(box, 'cut'); return; }
+        flag(box, 'cut', false);
+        var sp = S6.p.length + 1;
+        msg(!S6.p.length ? 'Press <b>＋ Add a tick mark</b>. Then drag the tick marks to make equal spaces.' : sp < n ? sp + ' spaces. You need ' + n + ' equal spaces. Add more tick marks.' : sp > n ? sp + ' spaces. That\'s too many. Take one away.' : n + ' spaces, good! Now drag the tick marks until the spaces are all the same size.');
+        return;
+      }
+      if (S6.placed.length >= targets.length) { msg(targets.length > 1 ? 'Every dot is on its spot.' : 'The dot is on ' + frac(targets[0], n) + ': ' + targets[0] + ' jumps from 0.', true); flag(box, 'dot'); flag(box, 'dots'); return; }
+      var t = targets[S6.placed.length];
+      msg('Put the red dot on ' + frac(t, n) + '. Drag it along the line, or tap a mark.' + (cur && cur !== t ? ' Now it is <b>' + cur + '</b> jump' + (cur > 1 ? 's' : '') + ' from 0.' : ''));
+    }
+    document.addEventListener('sb:step', function () { if (mode === 'cut') { draw6(); report6(); } });
+    draw6(); report6();
   };
 
   $$('[data-mod]').forEach(function (b) { var f = MODS[b.dataset.mod]; if (f) try { f(b); } catch (e) { console.error('model', b.dataset.mod, e); } });
