@@ -295,8 +295,8 @@ body.sb{margin:0;font-family:var(--sans);font-size:18px;line-height:1.5;color:va
 .sb-check li .opt{font-size:13px;color:var(--mute);font-weight:800}
 .sb-journal textarea{width:100%;min-height:180px;font-family:ui-monospace,Consolas,monospace;font-size:14px;border-radius:12px;border:2px solid #C9BFA5;padding:10px}
 .sb-steps4{counter-reset:s;list-style:none;padding:0;margin:6px 0}
-.sb-steps4 li{counter-increment:s;display:flex;gap:10px;align-items:flex-start;margin:6px 0}
-.sb-steps4 li:before{content:counter(s);flex:0 0 28px;height:28px;border-radius:50%;background:var(--navy);color:#fff;font-weight:900;display:flex;align-items:center;justify-content:center}
+.sb-steps4 li{counter-increment:s;position:relative;padding-left:38px;min-height:28px;margin:6px 0}
+.sb-steps4 li:before{content:counter(s);position:absolute;left:0;top:0;width:28px;height:28px;border-radius:50%;background:var(--navy);color:#fff;font-weight:900;display:flex;align-items:center;justify-content:center}
 
 /* payoff */
 .sb-payoff{display:none;margin-top:12px;padding:12px 14px;border-radius:14px;background:var(--sage2);border:1.5px solid #A9CDBA}
@@ -339,3 +339,31 @@ html.sb-still *{animation:none!important;transition:none!important}
 /* the context card is background info: quieter than the step */
 .sb-job .sb-ctx{background:transparent;border:none;border-left:4px solid #EAD9AE;border-radius:0;padding:4px 12px;font-size:15.5px;color:#4A4F5E}
 .sb-job .sb-ctx-h{font-size:12.5px;color:#8C7550}
+
+/* ── 3.09.03: compare (sym), order ─────────────────────────── */
+.sb-sym{padding:14px}
+.sym-row{display:flex;align-items:center;justify-content:center;gap:18px;font-size:34px;color:var(--navy)}
+.sym-f .fr{font-size:1em}
+.sym-slot{width:86px;height:86px;border:3px dashed #AEB6CC;border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#F6F7FB;position:relative}
+.sym-slot small{font-size:12px;font-weight:800;color:var(--mute);line-height:1.1}
+.sym-slot.full{border-style:solid;background:#fff}
+.sym-slot.ok{border-color:var(--ok);background:var(--ok2)}
+.sym-slot.no{border-color:var(--no);background:var(--no2)}
+.sym-in{font-size:46px;font-weight:900;line-height:1}
+.sym-cards{display:flex;justify-content:center;gap:14px;margin-top:14px}
+.sym-card,.ord-card{touch-action:none;user-select:none;cursor:grab;font-family:var(--sans);font-weight:900;color:var(--navy);background:#fff;border:2px solid var(--navy);border-radius:12px;box-shadow:0 3px 0 rgba(14,28,66,.25)}
+.sym-card{width:62px;height:62px;font-size:34px;line-height:1}
+.sym-card.dragging,.ord-card.dragging{cursor:grabbing;position:relative;z-index:30;box-shadow:0 10px 22px rgba(14,28,66,.3)}
+.sb-order{padding:12px}
+.ord-tray{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;padding:8px;margin-bottom:10px;background:var(--paper2);border-radius:12px}
+.ord-slots{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap}
+.ord-slot{min-width:150px;min-height:118px;border:3px dashed #AEB6CC;border-radius:14px;background:#F6F7FB;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:4px 6px 8px;gap:4px}
+.ord-slot.full{border-style:solid;background:#fff}
+.ord-slot small{font-size:12px;font-weight:900;color:var(--mute);text-transform:uppercase;letter-spacing:.05em}
+.ord-arrow{font-size:26px;font-weight:900;color:var(--mute)}
+.ord-card{display:flex;flex-direction:column;align-items:center;gap:6px;padding:8px 10px;font-size:24px}
+.ord-card svg{width:120px;height:22px;display:block}
+.ord-card.sel{outline:3px solid var(--gold2);outline-offset:2px}
+.ord-card.ring{background:var(--gold3);transform:scale(1.06)}
+.ord-who{font-weight:800;color:var(--no);margin-left:8px}
+@media (max-width:560px){.ord-arrow{display:none}.ord-slot{min-width:0;flex:1 1 30%}.ord-card svg{width:84px}.ord-card{font-size:20px;padding:6px}.sym-row{font-size:28px;gap:10px}.sym-slot{width:72px;height:72px}}

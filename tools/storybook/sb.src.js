@@ -7,7 +7,7 @@
    - one step at a time (gated), answer checks with mistake hints, hint ladders
    - Opti: voice + read-along; key-word glossary tooltips with a voiced word
    - string sound (plucked, made in the page), music switch, listening corner
-   - models: mono (Pythagoras' string), mono2, tiles, labelfix, sort, gather, circle, rect, strip, nl (number line)
+   - models: mono (Pythagoras' string), mono2, tiles, labelfix, sort, gather, circle, rect, strip, nl (number line), cmp (two wholes, same parts), sym (< > =), order (least to greatest, a tune)
    - saving (this device), journal (gather / copy / download / print), checklist
    ═══════════════════════════════════════════════════════════════ */
 (function () {
@@ -146,7 +146,15 @@
     });
     var job = box.closest('.sb-job');
     if (job && steps.length && steps.every(function (s) { return ST.steps[s.id]; })) jobDone(job.dataset.job);
+    placeSteps(box);
     var lk = $('.sb-locked', box); if (lk) { var left = steps.filter(function (s) { return !ST.steps[s.id]; }).length; lk.textContent = left ? left + (left > 1 ? ' steps' : ' step') + ' to go. Each step opens when the one before is done.' : ''; }
+  }
+  // a job with several tools: the step list sits right above the tool the current step uses (data-for on the tool)
+  function placeSteps(box) {
+    var job = box.closest('.sb-job'), cur = $('.sb-step.now', box); if (!job || !cur) return;
+    var need = (cur.dataset.need || '').split(' ').filter(Boolean); if (!need.length) return;
+    var m = $$('[data-for]', job).filter(function (x) { return x.dataset.for.split(' ').some(function (f) { return need.indexOf(f) > -1; }); })[0];
+    if (m && m.previousElementSibling !== box) m.parentNode.insertBefore(box, m);
   }
   function stepDone(s) {
     if (ST.steps[s.id]) return; ST.steps[s.id] = 1; save();
@@ -856,6 +864,222 @@
     }
     document.addEventListener('sb:step', function () { if (mode === 'cut') { draw6(); report6(); } });
     draw6(); report6();
+  };
+
+  /* ── HTML drag (cards): drag a card onto a target; a tap works too ── */
+  function hdrag(node, onDrop, onTap) {
+    var d = null;
+    node.addEventListener('pointerdown', function (e) { if (e.button > 0) return; e.preventDefault(); d = { x: e.clientX, y: e.clientY, moved: false }; node.setPointerCapture(e.pointerId); });
+    node.addEventListener('pointermove', function (e) { if (!d) return; var dx = e.clientX - d.x, dy = e.clientY - d.y; if (Math.abs(dx) + Math.abs(dy) > 6) { d.moved = true; node.classList.add('dragging'); } if (d.moved) node.style.transform = 'translate(' + dx + 'px,' + dy + 'px)'; });
+    node.addEventListener('pointerup', function (e) {
+      if (!d) return; var m = d.moved; d = null; node.classList.remove('dragging'); node.style.transform = '';
+      if (!m) { if (onTap) onTap(); return; }
+      node.style.visibility = 'hidden'; var t = document.elementFromPoint(e.clientX, e.clientY); node.style.visibility = '';
+      onDrop(t);
+    });
+    node.addEventListener('pointercancel', function () { d = null; node.classList.remove('dragging'); node.style.transform = ''; });
+    node.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); if (onTap) onTap(); } });
+  }
+  function fracHTML(t) { var p = String(t).split('/'); return p.length > 1 ? frac(p[0], p[1]) : esc(t); }
+  var SYMW = { '<': 'is less than', '>': 'is greater than', '=': 'is equal to' };
+  var SYMF = { '<': 'less-than', '>': 'greater-than', '=': 'equal-to' };
+
+  /* ── cmp: two wholes cut into the same number of equal parts (3.09.03) ──
+     data-kind tiles (Fraction Tiles bars; tap or drag along a bar to shade) · strings (two strings; slide each bridge, pluck the part)
+     data-d, data-a / data-b (numerators to reach), data-lens "660,360" (strings of different lengths: fixed bridges, stretch the short one)
+     data-rows "Top bar,Bottom bar". Flags: a · b · shade (tiles) · pluck (strings) · heard · match · same (lens) */
+  MODS.cmp = function (box) {
+    var kind = box.dataset.kind || 'tiles', d = +box.dataset.d, A = +box.dataset.a, B = +box.dataset.b, name = box.dataset.name || 'cmp';
+    var rows = (box.dataset.rows || (kind === 'tiles' ? 'Top bar,Bottom bar' : 'String A,String B')).split(',');
+    var col = DCOL[d] || '#1F2A44', NAVY = '#0E1C42', OK = '#1E7A4C';
+    var lens = box.dataset.lens ? box.dataset.lens.split(',').map(Number) : null;
+    var S = mstate(name, kind === 'tiles' ? { k: [0, 0] } : lens ? { k: [A, B], w2: lens[1], pl: [0, 0], pl2: [0, 0] } : { k: [1, 1], pl: [0, 0] });
+    box.innerHTML = '<div class="sb-stage sb-cmp"><svg role="group" aria-label="Two wholes, each cut into ' + d + ' equal parts"></svg></div><div class="sb-readout" aria-live="polite"></div>';
+    var svg = $('svg', box), out = $('.sb-readout', box);
+    function msg(h, ok) { out.innerHTML = ok ? '<span style="color:' + OK + '">' + h + '</span>' : h; }
+    function txt(g, x, y, s, c, fs, an) { return NS('text', { x: x, y: y, 'text-anchor': an || 'start', 'font-size': fs || 15, 'font-weight': 900, fill: c || NAVY, text: s, 'pointer-events': 'none' }, g); }
+    function sfr(g, x, y, nu, de, c, fs) { fs = fs || 15; var t = NS('g', { 'pointer-events': 'none' }, g); txt(t, x, y, String(nu), c, fs, 'middle'); NS('line', { x1: x - fs * 0.55, y1: y + 5, x2: x + fs * 0.55, y2: y + 5, stroke: c, 'stroke-width': 2 }, t); txt(t, x, y + fs + 6, String(de), c, fs, 'middle'); return t; }
+
+    if (kind === 'tiles') {
+      var BW = 680, LX = 10, RH = 46, Y0 = 6, YS = [Y0 + RH + 34, Y0 + 2 * RH + 74];
+      svg.setAttribute('viewBox', '0 0 700 ' + (YS[1] + RH + 6));
+      var drawT = function () {
+        svg.innerHTML = '';
+        NS('rect', { x: LX + 1, y: Y0, width: BW - 2, height: RH, rx: 6, fill: NAVY }, svg); txt(svg, LX + BW / 2, Y0 + RH / 2 + 7, '1 whole', '#fff', 20, 'middle');
+        [0, 1].forEach(function (r) {
+          var y = YS[r], w = BW / d, row = NS('g', { class: 'cmp-row' }, svg);
+          var lab = txt(svg, LX, y - 9, rows[r] + ' · ' + S.k[r] + ' shaded', '#5B6478', 13);
+          for (var i = 0; i < d; i++) (function (i) {
+            var on = i < S.k[r], g = NS('g', { class: 'tile part', tabindex: 0, role: 'button', 'aria-label': rows[r] + ', tile ' + (i + 1) + (on ? ', shaded' : '') }, row);
+            NS('rect', { x: LX + i * w + 1, y: y, width: w - 2, height: RH, rx: 6, fill: on ? col : '#fff', stroke: col, 'stroke-width': 2 }, g);
+            var c = on ? '#fff' : NAVY, f = w >= 44 ? 15 : 12; txt(g, LX + i * w + w / 2, y + RH / 2 - 4, '1', c, f, 'middle'); NS('line', { x1: LX + i * w + w / 2 - 7, y1: y + RH / 2 + 1, x2: LX + i * w + w / 2 + 7, y2: y + RH / 2 + 1, stroke: c, 'stroke-width': 2, 'pointer-events': 'none' }, g); txt(g, LX + i * w + w / 2, y + RH / 2 + 4 + f, String(d), c, f, 'middle');
+            g.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); set(r, S.k[r] === i + 1 ? i : i + 1); } });
+          })(i);
+          // tap a tile: shade it and every tile before it. Drag along the bar: shade up to your finger.
+          var hit = NS('rect', { x: LX, y: y, width: BW, height: RH, fill: 'transparent', style: 'cursor:pointer' }, svg);
+          function at(pt) { return Math.max(0, Math.min(d, Math.ceil((pt.x - LX) / w))); }
+          // recolor in place while dragging (redrawing would drop the pointer)
+          function recolor() { [].forEach.call(row.children, function (g, i) { var on = i < S.k[r], c = on ? '#fff' : NAVY; g.querySelector('rect').setAttribute('fill', on ? col : '#fff'); [].forEach.call(g.querySelectorAll('text'), function (t) { t.setAttribute('fill', c); }); g.querySelector('line').setAttribute('stroke', c); }); lab.textContent = rows[r] + ' · ' + S.k[r] + ' shaded'; }
+          drag(hit, svg, function (pt) { var k = at(pt); if (k !== S.k[r]) { S.k[r] = k; recolor(); } }, function () { drawT(); }, function (e) { var k = at(svgPt(svg, e)); set(r, S.k[r] === k ? k - 1 : k); });
+        });
+        report();
+      };
+      var set = function (r, k) { S.k[r] = Math.max(0, k); save(); drawT(); };
+      var report = function () {
+        save();
+        var okA = S.k[0] === A, okB = S.k[1] === B;
+        flag(box, 'a', okA); if (okA) flag(box, 'a'); flag(box, 'b', okB); if (okB) flag(box, 'b');
+        if (okA && okB) { flag(box, 'shade'); msg(A + ' ' + DNAME[d] + (A === 1 ? '' : 's') + ' and ' + B + ' ' + DNAME[d] + (B === 1 ? '' : 's') + '. Every tile is the same size, so count the shaded tiles.', true); return; }
+        flag(box, 'shade', false);
+        var r = !okA ? 0 : 1, want = r ? B : A, k = S.k[r];
+        msg(k === 0 ? (okA ? rows[0] + ': <b>' + A + '</b> tile' + (A === 1 ? '' : 's') + ' shaded. ✓' : '') : rows[r] + ': <b>' + k + '</b> tile' + (k === 1 ? '' : 's') + ' shaded. ' + (k > want ? 'That is too many.' : 'That is not enough yet.'));
+      };
+      document.addEventListener('sb:step', drawT); drawT(); return;
+    }
+
+    /* strings */
+    var X0 = 70, LW = 640, F0 = 98, K = 1, Ys = [70, 222], H = 330;
+    function fit() { K = Math.max(1, Math.min(2.4, 740 / (box.clientWidth || 800))); Ys = [70 + (K - 1) * 10, 222 + (K - 1) * 70]; H = Ys[1] + 108 + (K - 1) * 40; svg.setAttribute('viewBox', '0 0 800 ' + H); }
+    fit();
+    function W(r) { return lens ? (r ? S.w2 : lens[0]) : LW; }
+    var drawS = function () {
+      fit(); svg.innerHTML = '';
+      [0, 1].forEach(function (r) {
+        var y = Ys[r], w = W(r), seg = w / d, k = S.k[r], xb = X0 + k * seg;
+        txt(svg, X0 - 40, y - 30 - 4 * K, rows[r], '#5B4A2A', 15 * K);
+        NS('rect', { x: X0 - 30, y: y + 12, width: w + 60, height: 38, rx: 8, fill: r ? '#B07A45' : '#A86A35', stroke: '#5E3818', 'stroke-width': 2 }, svg);
+        for (var q = 1; q < d; q++) NS('circle', { cx: X0 + q * seg, cy: y + 31, r: 3.2, fill: '#F3E6C4', opacity: .85, 'pointer-events': 'none' }, svg);
+        NS('rect', { x: X0 - 7, y: y - 2, width: 10, height: 16, rx: 2, fill: '#EDE3CC', stroke: '#8C7550' }, svg);
+        NS('rect', { x: X0 + w - 3, y: y - 2, width: 10, height: 16, rx: 2, fill: '#EDE3CC', stroke: '#8C7550' }, svg);
+        NS('line', { x1: xb, y1: y, x2: X0 + w, y2: y, stroke: '#B8A57A', 'stroke-width': 2, 'pointer-events': 'none' }, svg);
+        // the part you pluck: from the start to the bridge
+        var pg = NS('g', { class: 'seg', tabindex: 0, role: 'button', 'aria-label': 'Pluck ' + rows[r] + ': ' + k + ' ' + DNAME[d] + (k === 1 ? '' : 's') }, svg);
+        NS('rect', { x: X0, y: y - 24, width: Math.max(8, xb - X0), height: 40, fill: 'transparent' }, pg);
+        var sp = NS('path', { d: 'M' + X0 + ' ' + y + ' L' + xb + ' ' + y, stroke: '#D9A21B', 'stroke-width': 5, 'stroke-linecap': 'round', fill: 'none' }, pg);
+        pg.addEventListener('click', function () { pl(r, sp, xb); }); pg.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); pl(r, sp, xb); } });
+        // the bridge
+        var bg = NS('g', { class: 'bridge' + (lens ? '' : ' drag'), tabindex: lens ? -1 : 0, role: 'slider', 'aria-label': rows[r] + ' bridge', 'aria-valuenow': k, 'aria-valuemin': 1, 'aria-valuemax': d - 1 }, svg);
+        NS('rect', { x: xb - 22 * K, y: y - 10 * K, width: 44 * K, height: 52 * K, fill: 'transparent' }, bg);
+        NS('path', { d: 'M' + (xb - 12 * K) + ' ' + (y + 18 * K) + ' L' + xb + ' ' + (y - 1) + ' L' + (xb + 12 * K) + ' ' + (y + 18 * K) + ' Z', fill: '#F3E6C4', stroke: '#6B4A12', 'stroke-width': 2 }, bg);
+        sfr(svg, xb, y + 56 + 16 * K, k, d, '#5B4A2A', 15 * K);
+        if (!lens) {
+          drag(bg, svg, function (pt) { var nk = Math.max(1, Math.min(d - 1, Math.round((pt.x - X0) / seg))); bg.setAttribute('transform', 'translate(' + (X0 + nk * seg - xb) + ',0)'); bg.__k = nk; }, function () { if (bg.__k) { S.k[r] = bg.__k; S.pl = [0, 0]; } save(); drawS(); report(); }, null);
+          bg.addEventListener('keydown', function (e) { var dd = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0; if (!dd) return; e.preventDefault(); S.k[r] = Math.max(1, Math.min(d - 1, S.k[r] + dd)); S.pl = [0, 0]; save(); drawS(); report(); var b2 = $$('.bridge', svg)[r]; if (b2) b2.focus(); });
+        }
+        // a shorter string can be stretched: drag its end
+        if (lens && r === 1 && S.w2 < lens[0]) {
+          var eg = NS('g', { class: 'bridge drag', tabindex: 0, role: 'slider', 'aria-label': 'End of ' + rows[r] + '. Drag it to make the string longer.' }, svg);
+          NS('rect', { x: X0 + w + 2 - 24 * K, y: y - 20, width: 48 * K, height: 80, fill: 'transparent' }, eg);
+          NS('circle', { cx: X0 + w + 2, cy: y + 31, r: 13 * K, fill: '#E9C46A', stroke: '#5E3818', 'stroke-width': 2 }, eg);
+          NS('path', { d: 'M' + (X0 + w - 4) + ' ' + (y + 31) + ' l5 -5 v10 z M' + (X0 + w + 8) + ' ' + (y + 31) + ' l-5 -5 v10 z', fill: '#5E3818', transform: 'translate(0,0)' }, eg);
+          drag(eg, svg, function (pt) { var nw = Math.max(lens[1], Math.min(lens[0], pt.x - X0)); eg.setAttribute('transform', 'translate(' + (nw - w) + ',0)'); eg.__w = nw; }, function () { if (eg.__w) { S.w2 = eg.__w; if (lens[0] - S.w2 < 30) S.w2 = lens[0]; } save(); drawS(); report(); }, null);
+          eg.addEventListener('keydown', function (e) { var dd = e.key === 'ArrowRight' ? 20 : e.key === 'ArrowLeft' ? -20 : 0; if (!dd) return; e.preventDefault(); S.w2 = Math.max(lens[1], Math.min(lens[0], S.w2 + dd)); if (lens[0] - S.w2 < 30) S.w2 = lens[0]; save(); drawS(); report(); });
+        }
+      });
+      report();
+    };
+    function matched() { return lens && S.w2 >= lens[0]; }
+    function pl(r, path, xb) {
+      var part = (xb - X0) / LW; pluck(F0 / Math.max(0.05, part));
+      if (!reduced && !document.documentElement.classList.contains('sb-still')) { var t0 = performance.now(), y = Ys[r]; (function wob(t) { var q = (t - t0) / 700; if (q > 1) { path.setAttribute('d', 'M' + X0 + ' ' + y + ' L' + xb + ' ' + y); return; } var a = Math.sin(q * 40) * 8 * (1 - q); path.setAttribute('d', 'M' + X0 + ' ' + y + ' Q ' + (X0 + xb) / 2 + ' ' + (y + a) + ' ' + xb + ' ' + y); requestAnimationFrame(wob); })(t0); }
+      if (lens) { (matched() ? S.pl2 : S.pl)[r] = 1; } else if (setOK()) S.pl[r] = 1;
+      save(); report();
+    }
+    function setOK() { return S.k[0] === A && S.k[1] === B; }
+    var report = function () {
+      if (lens) {
+        if (S.pl[0] && S.pl[1]) flag(box, 'heard');
+        if (matched()) flag(box, 'match');
+        if (matched() && S.pl2[0] && S.pl2[1]) { flag(box, 'same'); msg('Same whole, same note! Now both parts really are ' + A + ' ' + DNAME[d] + 's of the same whole.', true); return; }
+        if (matched()) { msg('Now both strings are the same length: the same whole.', true); return; }
+        msg(S.pl[0] && S.pl[1] ? 'Different notes! The long string\'s part is longer, even though both bridges are at ' + A + ' ' + DNAME[d] + 's.' : S.pl[0] || S.pl[1] ? 'You plucked one part.' : '');
+        return;
+      }
+      var okA = S.k[0] === A, okB = S.k[1] === B;
+      flag(box, 'a', okA); if (okA) flag(box, 'a'); flag(box, 'b', okB); if (okB) flag(box, 'b');
+      if (okA && okB && S.pl[0] && S.pl[1]) { flag(box, 'pluck'); msg(rows[1] + '\'s part is longer and sings lower: ' + B + ' ' + DNAME[d] + 's is more string than ' + A + ' ' + DNAME[d] + 's.', true); return; }
+      if (okA && okB) { msg(S.pl[0] || S.pl[1] ? 'You plucked one part.' : 'Both bridges are in place.', true); return; }
+      var r = !okA ? 0 : 1, want = r ? B : A;
+      msg(rows[r] + '\'s bridge is at <b>' + S.k[r] + '</b> ' + DNAME[d] + (S.k[r] === 1 ? '' : 's') + '. ' + (S.k[r] > want ? 'That is too far.' : S.k[r] < want ? 'Not far enough yet.' : ''));
+    };
+    document.addEventListener('sb:step', drawS); var lastW = -1; if (window.ResizeObserver) new ResizeObserver(function () { var w = box.clientWidth; if (w && Math.abs(w - lastW) > 30) { lastW = w; drawS(); } }).observe(box); drawS();
+  };
+
+  /* ── sym: drag <, > or = between two fractions; the sentence reads it back ──
+     data-a "5/12", data-b "11/12", data-ans "<", data-wrong ">" (a friend's symbol already in the slot), data-who "Mia". Flag: sym */
+  MODS.sym = function (box) {
+    var a = box.dataset.a, b = box.dataset.b, ans = box.dataset.ans, name = box.dataset.name || 'sym', who = box.dataset.who;
+    var S = mstate(name, { v: box.dataset.wrong || '' });
+    box.innerHTML = '<div class="sb-stage sb-sym"><div class="sym-row"><span class="sym-f">' + fracHTML(a) + '</span><span class="sym-slot" aria-label="The symbol between the fractions"></span><span class="sym-f">' + fracHTML(b) + '</span></div>' +
+      '<div class="sym-cards" role="group" aria-label="Symbols to drag">' + ['<', '>', '='].map(function (s) { return '<button type="button" class="sym-card" data-s="' + esc(s) + '" aria-label="' + SYMW[s] + '">' + esc(s) + '</button>'; }).join('') + '</div></div><div class="sb-readout" aria-live="polite"></div>';
+    var slot = $('.sym-slot', box), out = $('.sb-readout', box);
+    function words(t) { var p = String(t).split('/'); return p.length > 1 ? frac(p[0], p[1]) : esc(t); }
+    function paint(say) {
+      var v = S.v, ok = v === ans, wrong = v && v === box.dataset.wrong && !ok;
+      slot.className = 'sym-slot' + (v ? ' full' : '') + (v ? ok ? ' ok' : ' no' : '');
+      slot.innerHTML = v ? '<span class="sym-in">' + esc(v) + '</span>' + (wrong && who ? '<small>' + esc(who) + '\'s</small>' : '') : '<small>drop here</small>';
+      if (!v) { out.innerHTML = ''; flag(box, 'sym', false); return; }
+      var sent = words(a) + ' ' + SYMW[v] + ' ' + words(b) + '.';
+      if (ok) { out.innerHTML = '<span style="color:#1E7A4C">' + sent + ' ✓</span>'; flag(box, 'sym'); if (say) playClip('words/g3m-word-' + SYMF[v] + '.mp3'); }
+      else { flag(box, 'sym', false); out.innerHTML = 'That says: ' + sent + ' ' + (v === '=' ? 'Equal means the same amount. These are not the same.' : ans === '=' ? 'These two are the same amount.' : 'The open side must face the greater fraction.'); }
+    }
+    $$('.sym-card', box).forEach(function (c) {
+      hdrag(c, function (t) { if (t && t.closest && t.closest('.sym-slot') === slot) { S.v = c.dataset.s; save(); paint(true); } }, function () { S.v = c.dataset.s; save(); paint(true); });
+    });
+    paint(false);
+  };
+
+  /* ── order: drag three fractions into order, least to greatest; play them as a tune ──
+     data-d, data-nums "9,4,1", data-pre (start with the cards in the slots in that order), data-who "Leo". Flags: order · tune */
+  MODS.order = function (box) {
+    var d = +box.dataset.d, nums = box.dataset.nums.split(',').map(Number), name = box.dataset.name || 'order', who = box.dataset.who;
+    var S = mstate(name, { s: box.dataset.pre ? nums.slice() : [null, null, null], played: 0 });
+    var col = DCOL[d] || '#1F2A44', sel = null;
+    box.innerHTML = '<div class="sb-stage sb-order"><div class="ord-tray" aria-label="Fraction cards"></div><div class="ord-slots"></div>' +
+      '<div class="sb-row"><button type="button" class="sb-btn sm ghost ord-play">🔊 Play the tune</button><span class="ord-who"></span></div></div><div class="sb-readout" aria-live="polite"></div>';
+    var tray = $('.ord-tray', box), slots = $('.ord-slots', box), out = $('.sb-readout', box), playB = $('.ord-play', box);
+    function card(n) {
+      var w = 120, cw = w / d, sv = '<svg viewBox="0 0 ' + (w + 2) + ' 22" aria-hidden="true">';
+      for (var i = 0; i < d; i++) sv += '<rect x="' + (1 + i * cw) + '" y="1" width="' + cw + '" height="20" fill="' + (i < n ? col : '#fff') + '" stroke="' + col + '" stroke-width="1.5"/>';
+      sv += '</svg>';
+      var c = el('button', 'ord-card', frac(n, d) + sv); c.type = 'button'; c.dataset.n = n; c.setAttribute('aria-label', n + ' ' + DNAME[d] + (n === 1 ? '' : 's')); return c;
+    }
+    function place(n, slotI) {
+      var from = S.s.indexOf(n), there = S.s[slotI];
+      if (from > -1) S.s[from] = there; S.s[slotI] = n; S.played = 0; sel = null; save(); draw();
+    }
+    function draw() {
+      tray.innerHTML = ''; slots.innerHTML = '';
+      nums.forEach(function (n) { if (S.s.indexOf(n) > -1) return; var c = card(n); tray.appendChild(c); wire(c, n); });
+      tray.hidden = !tray.children.length;
+      ['least', '', 'greatest'].forEach(function (lab, i) {
+        var s = el('div', 'ord-slot'); s.dataset.i = i; s.innerHTML = '<small>' + (lab || '&nbsp;') + '</small>';
+        if (S.s[i] != null) { var c = card(S.s[i]); s.appendChild(c); wire(c, S.s[i]); s.classList.add('full'); }
+        s.addEventListener('click', function (e) { if (sel != null && !e.target.closest('.ord-card')) place(sel, i); });
+        slots.appendChild(s); if (i < 2) slots.appendChild(el('span', 'ord-arrow', '→'));
+      });
+      if (sel != null) $$('.ord-card', box).forEach(function (c) { if (+c.dataset.n === sel) c.classList.add('sel'); });
+      $('.ord-who', box).textContent = who && S.s.join() === box.dataset.pre ? who + '\'s order' : '';
+      report();
+    }
+    function wire(c, n) {
+      hdrag(c, function (t) { var s = t && t.closest && t.closest('.ord-slot'); if (s && box.contains(s)) place(n, +s.dataset.i); },
+        function () { if (sel == null || sel === n) { sel = sel === n ? null : n; draw(); return; } var si = S.s.indexOf(n); if (si > -1) place(sel, si); else { sel = n; draw(); } });
+    }
+    function right() { var s = S.s; return s.every(function (v) { return v != null; }) && s[0] < s[1] && s[1] < s[2]; }
+    playB.onclick = function () {
+      if (S.s.some(function (v) { return v == null; })) { out.innerHTML = 'Put all 3 cards in the boxes first.'; return; }
+      S.s.forEach(function (n, i) { setTimeout(function () { pluck(98 * d / n); var c = $$('.ord-slot .ord-card', box)[i]; if (c) { c.classList.add('ring'); setTimeout(function () { c.classList.remove('ring'); }, 520); } }, i * 700); });
+      setTimeout(function () { if (right()) { S.played = 1; save(); } else flag(box, 'try'); report(true); }, 2200);
+    };
+    function report(afterPlay) {
+      var full = S.s.every(function (v) { return v != null; });
+      if (right()) { flag(box, 'order'); if (S.played) flag(box, 'tune'); out.innerHTML = '<span style="color:#1E7A4C">' + (S.played ? 'Hear it? From least to greatest, each part is longer, so the notes step down.' : 'Least to greatest: ' + S.s.map(function (n) { return frac(n, d); }).join(' , ') + '.') + '</span>'; return; }
+      flag(box, 'order', false);
+      if (!full) { out.innerHTML = ''; return; }
+      out.innerHTML = afterPlay ? 'The notes did not step down each time. A smaller fraction is a shorter part, and a shorter part sings higher.' : '';
+    }
+    draw();
   };
 
   $$('[data-mod]').forEach(function (b) { var f = MODS[b.dataset.mod]; if (f) try { f(b); } catch (e) { console.error('model', b.dataset.mod, e); } });

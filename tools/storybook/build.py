@@ -22,6 +22,12 @@ TOOLS = {
  'nl-10': NL(0, 1, 10) + ('Try the Number Line in tenths. Count the spaces between 0 and 1.',),
  'nl-9': NL(0, 1, 9, 'all') + ('Try the Number Line in ninths. Check each label by counting jumps from 0.',),
  'nl-20': NL(0, 2, 20) + ('Try the Number Line from 0 to 2 in tenths. Find 1 first, then count past it.',),
+ 'fbars-9': ('fbars', {"d": [9], "lab": 1}, 'Fraction Tiles', 'Try two bars of ninths. Shade 3 tiles in one and 6 in the other. Which is more?'),
+ 'fbars-12': ('fbars', {"d": [12], "lab": 1}, 'Fraction Tiles', 'Try two bars of twelfths. Shade a different number of tiles in each. The bar with more shaded tiles is greater.'),
+ 'fbars-11': ('fbars', {"d": [11], "lab": 1}, 'Fraction Tiles', 'Try two bars of elevenths. Shade 2 tiles in one and 6 in the other. Say it with greater than.'),
+ 'fbars-10': ('fbars', {"d": [10], "lab": 1}, 'Fraction Tiles', 'Try two bars of tenths. Both bars are the same whole, so every tenth is the same size.'),
+ 'nl-10o': NL(0, 1, 10) + ('Try the Number Line in tenths. Put dots on three fractions. The dot farthest left is the least.',),
+ 'nl-10c': NL(0, 1, 10) + ('Try the Number Line in tenths. Put dots on two fractions. The one farther right is greater.',),
 }
 def enc(o): return base64.urlsafe_b64encode(json.dumps(o, separators=(',', ':')).encode()).decode().rstrip('=')
 GL_BASE = [
@@ -48,6 +54,16 @@ L = {
      {"t": "one whole", "alt": ["1 whole"], "d": "All the equal parts together. On the number line, 1 whole is the mark at 1.", "key": True},
      GL_BASE[0], GL_BASE[2], GL_BASE[3],
      {"t": "jump", "d": "One move from one tick mark to the next one."},
+     GL_BASE[5]]),
+ '3.09.03': dict(page='math-lesson-3-09-03-comparing-fractions-like-denominators.html', title='Comparing Fractions with Like Denominators', video='g3math-09-03-learn',
+   glossary=[
+     {"t": "compare", "d": "To look at two numbers and find out which is greater, which is less, or if they are equal.", "key": True},
+     {"t": "greater than", "d": "More than. The symbol is >. The open side faces the greater number.", "key": True},
+     {"t": "less than", "d": "Not as much as. The symbol is <. The point faces the smaller number.", "key": True},
+     {"t": "equal to", "d": "The same amount. The symbol is =.", "key": True},
+     {"t": "same denominator", "d": "Two fractions with the same bottom number. Their parts are the same size.", "key": True},
+     GL_BASE[2], GL_BASE[3], GL_BASE[1],
+     {"t": "least to greatest", "d": "In order from the smallest amount to the biggest amount."},
      GL_BASE[5]]),
 }
 def tool(m):
