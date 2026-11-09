@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 9 Family Guide · 3rd Grade Math · Optima Academy Online</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FBF6EA;--paper2:#F4ECDB;--card:#FFFDF8;--ink:#1F2A44;--navy:#0E1C42;--navy2:#1F2F55;--mute:#5B6478;--line:#E4D8BF;
+ --gold:#B8892E;--gold2:#E9C46A;--gold3:#FFF4D6;--terra:#A3472E;--terra2:#F6E3DA;--sage:#2F6B57;--sage2:#E3F0E9;--sky:#2E5480;--sky2:#E5EEF8;
+ --r:16px;--sh:0 6px 18px rgba(60,40,10,.08);--serif:'Cormorant Garamond','Lora',Georgia,serif;--sans:'Nunito',Arial,sans-serif}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:var(--sans);font-size:18px;line-height:1.6;color:var(--ink);
+ background:var(--paper) radial-gradient(1200px 600px at 8% -10%,rgba(233,196,106,.20),transparent 60%),
+  radial-gradient(900px 700px at 105% 20%,rgba(46,84,128,.08),transparent 60%),
+  radial-gradient(900px 700px at -5% 80%,rgba(163,71,46,.07),transparent 60%)}
+img{max-width:100%}
+.wrap{max-width:900px;margin:0 auto;padding:0 16px 48px}
+h1,h2,h3{font-family:var(--serif);color:var(--navy);margin:0;font-weight:700}
+p{margin:0 0 10px} strong{color:var(--navy)}
+.k{display:block;font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:900;color:var(--gold)}
+
+/* header + open book */
+.head{background:var(--navy);color:#fff;border-radius:0 0 var(--r) var(--r);padding:16px 22px 18px;box-shadow:var(--sh)}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{width:46px;height:46px;border-radius:50%;background:#fff}
+.brand b{display:block;font-size:19px;line-height:1.1}.brand small{color:#B9C3DA;font-size:12px}
+.head h1{font-size:clamp(30px,5vw,42px);color:#F7E7BE;line-height:1.1;margin:10px 0 4px}
+.head .sub{color:#DCE3F2;font-size:18px;margin:0 0 12px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{display:inline-flex;align-items:center;min-height:34px;padding:4px 12px;border-radius:99px;border:1.5px solid rgba(255,255,255,.25);background:rgba(255,255,255,.08);color:#fff;font-weight:800;font-size:14px}
+.chip.lead{background:var(--navy2);border-color:var(--gold2)}
+.print-btn{margin-top:14px;background:var(--gold2);color:var(--navy);border:0;border-radius:10px;padding:8px 16px;font:900 16px var(--sans);cursor:pointer}
+.book{position:relative;margin:22px auto 8px;max-width:860px}
+.book-in{display:grid;grid-template-columns:1fr 1fr;background:#E8DCC0;border-radius:10px;padding:10px;box-shadow:0 18px 40px rgba(60,40,10,.22),inset 0 0 0 2px #CDB78A}
+.pg{background:linear-gradient(90deg,#FFFBF1 0%,#FBF4E3 92%,#EFE2C6 100%);padding:20px 22px;border-radius:4px 0 0 4px}
+.pg.r{background:linear-gradient(270deg,#FFFBF1 0%,#FBF4E3 92%,#EFE2C6 100%);border-radius:0 4px 4px 0;display:flex;flex-direction:column;justify-content:center}
+.plate{margin:0;background:#fff;padding:8px;border:1px solid #D9C79F;box-shadow:0 2px 8px rgba(60,40,10,.15)}
+.plate img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover}
+.plate figcaption{font-size:13px;color:#5B4A2A;text-align:center;padding-top:6px;font-style:italic}
+.chap{font-family:var(--serif);text-transform:uppercase;letter-spacing:.22em;font-size:14px;color:var(--gold);font-weight:700}
+.chap-t{font-family:var(--serif);font-size:clamp(28px,4vw,38px);line-height:1.05;margin:6px 0 10px;color:#3A2A12;font-weight:700}
+.orn{height:14px;margin:2px 0 10px;background:radial-gradient(circle at 50% 50%,var(--gold) 2.5px,transparent 3px) center/18px 14px repeat-x;opacity:.7;width:140px}
+.chap-s{font-size:16px;color:#5B4A2A;margin:0}
+.chap-l{margin-top:12px;font-weight:800;color:var(--navy);font-size:16px;line-height:1.5}
+.owl{position:absolute;right:-6px;bottom:-14px;width:92px;filter:drop-shadow(0 6px 6px rgba(0,0,0,.25))}
+
+/* cards */
+.card{background:var(--card);border:1.5px solid var(--line);border-radius:var(--r);box-shadow:var(--sh);padding:22px 24px;margin-top:20px}
+.card-head{display:flex;align-items:center;gap:12px;margin-bottom:12px;flex-wrap:wrap}
+.card-head .ico{font-size:26px;line-height:1}
+.card-head h2{font-size:28px;line-height:1.15}
+.card-head .tag{margin-left:auto;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:900;color:var(--gold)}
+ul.how{list-style:none;padding:0;margin:0}
+ul.how li{display:flex;gap:12px;padding:9px 0;border-bottom:1px dashed var(--line)}
+ul.how li:last-child{border-bottom:none}
+ul.how .i{font-size:22px;width:30px;flex-shrink:0;text-align:center}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.box{border-radius:12px;padding:14px 16px}
+.box .k{margin-bottom:4px}
+.b-gold{background:var(--gold3)}.b-gold .k{color:#8A6418}
+.b-sky{background:var(--sky2)}.b-sky .k{color:var(--sky)}
+.b-sage{background:var(--sage2)}.b-sage .k{color:var(--sage)}
+.b-terra{background:var(--terra2)}.b-terra .k{color:var(--terra)}
+table.days{width:100%;border-collapse:collapse}
+.days th{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);text-align:left;padding:8px 10px;border-bottom:2px solid var(--line);font-weight:900}
+.days td{padding:12px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+.days tr:last-child td{border-bottom:none}
+.ln{font-family:var(--serif);font-weight:700;font-size:22px;color:var(--navy);white-space:nowrap}
+.ln span{display:block;font-family:var(--sans);font-size:14px;font-weight:700;color:var(--mute);white-space:normal}
+.ttl{font-weight:800;color:var(--navy)}
+.small{font-size:16px;color:var(--mute)}
+.eg{display:inline-block;background:var(--paper);border:1.5px solid var(--line);border-radius:8px;padding:2px 10px;font-weight:800;color:var(--navy);margin-top:4px}
+.chk-row td{background:var(--paper2)}
+.vr-row td{background:var(--sky2)}
+.frac{display:inline-flex;flex-direction:column;align-items:center;vertical-align:middle;line-height:1;margin:0 .1em;font-size:.88em}
+.frac .num{border-bottom:1.6px solid currentColor;padding:0 .2em .05em}
+.frac .den{padding:.05em .2em 0}
+.model{display:grid;grid-template-columns:1.15fr 1fr;gap:16px;align-items:center}
+.model svg{width:100%;height:auto;display:block}
+.rule{display:flex;flex-direction:column;gap:8px}
+.rule div{background:var(--paper);border:1.5px solid var(--gold);border-radius:10px;padding:8px 12px;font-weight:800;color:var(--navy)}
+.steps{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 12px}
+.steps span{background:var(--gold3);border:1.5px solid var(--gold2);border-radius:99px;padding:3px 12px;font-weight:800;font-size:15px;color:var(--navy)}
+.words{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.word{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:10px 14px}
+.word b{display:block;color:var(--navy);font-size:19px}
+.word span{font-size:16px}
+ol.home{margin:0;padding-left:22px} ol.home li{margin-bottom:10px}
+ol.vr{margin:6px 0 0;padding-left:22px} ol.vr li{margin-bottom:6px}
+.mist li{margin-bottom:8px}
+.tracker{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.stop{border:2px dashed var(--gold);border-radius:12px;padding:10px;text-align:center;font-weight:800;color:var(--navy);font-size:15px;min-height:96px;display:flex;flex-direction:column;justify-content:space-between;background:#fff}
+.stop .bx{width:30px;height:30px;border:2.5px solid var(--navy);border-radius:6px;margin:6px auto 0;background:#fff}
+.stop.vr{background:var(--sky2);border-style:solid;border-color:var(--sky)}
+.stop.test{background:var(--paper2)}
+.note{font-size:15px;color:var(--mute);margin-top:8px}
+.foot{text-align:center;font-size:14px;color:var(--mute);margin-top:24px}
+.credit{font-size:13px;color:var(--mute);text-align:center;margin-top:6px}
+@media(max-width:720px){.book-in{grid-template-columns:1fr}.pg,.pg.r{border-radius:4px}.owl{width:70px;right:2px}}
+@media(max-width:640px){.two,.model,.words{grid-template-columns:1fr}.tracker{grid-template-columns:1fr 1fr}.card{padding:18px 16px}.card-head h2{font-size:25px}.card-head .tag{margin-left:0;width:100%}.days .hide-sm{display:none}.days td,.days th{padding-left:6px;padding-right:6px}.ln{font-size:19px}}
+@media print{body{background:#fff;font-size:15px}.print-btn{display:none}.card{box-shadow:none;break-inside:avoid}.head,.book-in{-webkit-print-color-adjust:exact;print-color-adjust:exact}.book{break-inside:avoid}.wrap{padding:0}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="head">
+  <div class="brand"><img alt="" src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png"><div><b>Optima Academy Online</b><small>An Education Experience Company</small></div></div>
+  <h1>Unit 9 Family Guide: Fractions</h1>
+  <p class="sub">What a fraction is, where it sits on a number line, and how to compare two fractions</p>
+  <div class="chips"><span class="chip lead">3rd Grade Math · Unit 9</span><span class="chip">4 lessons</span><span class="chip">1 VR day</span><span class="chip">Unit 9 Summative at the end</span><span class="chip">Dimensions Math 3B, Chapter 9</span></div>
+  <button class="print-btn" type="button" onclick="window.print()">🖨️ Print this guide</button>
+</header>
+
+<div class="book" aria-label="Opti's storybook, open to Chapter 9">
+  <div class="book-in">
+    <div class="pg">
+      <figure class="plate"><img src="images/storybook/sb-athens-plate.jpg" alt="Part of The School of Athens, a wall painting by Raphael. Pythagoras sits writing in a book. A boy holds up a small slate for him."><figcaption>Pythagoras, as Raphael painted him about 500 years ago</figcaption></figure>
+    </div>
+    <div class="pg r">
+      <div class="chap">Chapter 9</div>
+      <div class="chap-t">Pythagoras' Singing String</div>
+      <div class="orn" aria-hidden="true"></div>
+      <p class="chap-s">Ancient Greece · more than 2,500 years ago</p>
+      <div class="chap-l">This unit, Opti the owl opens his storybook to Pythagoras, who loved numbers and music. Stories say he tested sounds with strings, glasses of water, pipes and bells. Your student uses his strings and pipes to learn fractions, and can hear the answers.</div>
+    </div>
+  </div>
+  <img class="owl" src="images/storybook/opti-owl.png" alt="Opti the owl, sitting on the open book">
+</div>
+
+<section class="card">
+  <div class="card-head"><span class="ico">🧭</span><h2>How the Lesson Pages Work</h2></div>
+  <ul class="how">
+    <li><span class="i">🗂️</span><span><strong>Three tabs, in order:</strong> Warm-Up → Lesson → Show What You Know. The Lesson tab has three stops: <strong>Learn it</strong>, <strong>Practice together</strong> (fixing common mix-ups) and <strong>On your own</strong>.</span></li>
+    <li><span class="i">📖</span><span><strong>Opti opens a storybook.</strong> Each lesson starts with Opti, the Optima owl, and a page of real art from long ago. Opti's notes have a play button so your student can listen, and the lesson works on one step at a time.</span></li>
+    <li><span class="i">🔨</span><span><strong>The work is in "Jobs."</strong> Jobs 1 to 8 are required in every lesson. A ★ Bonus at the end is optional. Jobs marked <strong>✏️ Write</strong> ask for a sentence or two.</span></li>
+    <li><span class="i">👀</span><span><strong>"What am I looking at?"</strong> buttons explain every picture and tool in plain words.</span></li>
+    <li><span class="i">🔊</span><span><strong>Sound is part of the math.</strong> Your student plucks strings and blows pipes on the screen, and the notes show which part is longer. Headphones or speakers help. Each lesson ends with a short piece of Bach in the <strong>Listening corner</strong>.</span></li>
+    <li><span class="i">💡</span><span><strong>Stuck?</strong> Each job has a <strong>Need a hint?</strong> button, a link to an online tool (fraction tiles, fraction circles, a number line), and often a tip from a classmate character (Felix, Hazel, Atlas or Cora).</span></li>
+    <li><span class="i">🎛️</span><span><strong>Buttons at the top:</strong> 🔊 Read aloud reads the page, 🎵 Music plays background music, ✨ Motion turns animations on or off, and Standards shows the Florida standards for the lesson.</span></li>
+    <li><span class="i">💾</span><span><strong>Answers save as your student works,</strong> but only on that device. Switching computers or clearing the browser loses them.</span></li>
+    <li><span class="i">📋</span><span><strong>Turning in:</strong> at the bottom of Show What You Know, press <strong>Gather my answers</strong>, then <strong>Copy</strong> (or <strong>Print or save as PDF</strong>). Open the lesson's assignment in Canvas, paste the answers or upload the PDF and a photo of the math journal, and press <strong>Submit</strong>. Every lesson also asks for one sketch in the math journal.</span></li>
+  </ul>
+</section>
+
+<section class="card">
+  <div class="card-head"><span class="ico">🗺️</span><h2>This Unit at a Glance</h2></div>
+  <p>Your student learns what a fraction means, finds fractions on a number line, and compares two fractions. Every fraction is part of one whole that has been cut into <strong>equal parts</strong>.</p>
+  <div class="two">
+    <div class="box b-gold"><span class="k">The big idea</span><p style="margin:0"><strong>A fraction uses two numbers to name part of one whole.</strong> The bottom number tells how many equal parts make the whole. The top number tells how many parts you are counting.</p></div>
+    <div class="box b-sky"><span class="k">Two ways to compare</span><p style="margin:0"><strong>Same bottom number?</strong> The parts are the same size, so count them: more parts is greater.<br><strong>Same top number?</strong> Look at the size of the parts: fewer parts in the whole means bigger parts.</p></div>
+  </div>
+  <p class="note" style="margin-top:12px">Every lesson starts with a quick <strong>fact warm-up</strong> (×7, ×8, ×9, then dividing by 6, 7, 8 and 9) and a short "Remember from 2nd grade" question.</p>
+</section>
+
+<section class="card">
+  <div class="card-head"><span class="ico">📅</span><h2>Lesson by Lesson</h2></div>
+  <table class="days">
+    <thead><tr><th>Lesson</th><th>What we learn</th><th class="hide-sm">An example</th></tr></thead>
+    <tbody>
+      <tr><td class="ln">3.09.01<span>Fractions of a whole</span></td><td><span class="ttl">Cut one whole into equal parts and name a fraction: how many? of what?</span><br><span class="small">Your student slides bridges on Pythagoras's string until all 3 parts sing the same note, so the parts are equal. Then they build fractions with tiles, find the part that is left (6 eighths and 2 eighths make 1 whole), and sort shapes that are real thirds from shapes that only look like thirds.</span></td><td class="hide-sm"><span class="eg"><span class="frac"><span class="num">6</span><span class="den">8</span></span> gold, <span class="frac"><span class="num">2</span><span class="den">8</span></span> not</span><div class="small">A string cut into 8 equal parts with 6 wrapped in gold. Together the two parts make <span class="frac"><span class="num">8</span><span class="den">8</span></span>, 1 whole.</div></td></tr>
+      <tr><td class="ln">3.09.02<span>Fractions on a number line</span></td><td><span class="ttl">The string becomes a number line from 0 to 1, and every fraction gets its own spot.</span><br><span class="small">Draw it, cut it, count it, label it: tick marks cut the line into equal spaces, and each jump from 0 is one unit fraction. Your student also tells if a fraction is closer to 0 or to 1, and keeps counting past 1 on a 2-meter measuring rod.</span></td><td class="hide-sm"><span class="eg">4 jumps of <span class="frac"><span class="num">1</span><span class="den">7</span></span> = <span class="frac"><span class="num">4</span><span class="den">7</span></span></span><div class="small">7 equal parts need 6 tick marks. 7 jumps lands on 1, and 8 jumps is <span class="frac"><span class="num">8</span><span class="den">7</span></span>, past 1.</div></td></tr>
+      <tr><td class="ln">3.09.03<span>Like denominators</span></td><td><span class="ttl">Compare two fractions with the same bottom number by counting the parts.</span><br><span class="small">Two strings in ninths: the longer gold part sings a lower note. Your student shows fractions with tiles, a number line and a symbol (&lt;, &gt;, =), and puts three fractions in order from least to greatest, then plays them as a tune to check.</span></td><td class="hide-sm"><span class="eg"><span class="frac"><span class="num">2</span><span class="den">7</span></span> &lt; <span class="frac"><span class="num">5</span><span class="den">7</span></span></span><div class="small">Sevenths are all the same size, and 5 parts is more than 2 parts.</div></td></tr>
+      <tr><td class="ln">3.09.04<span>Like numerators</span></td><td><span class="ttl">Compare two fractions with the same top number by looking at the size of the parts.</span><br><span class="small">Pythagoras cuts two pipes of the same length into 9 and 12 pieces. The one-twelfth piece is shorter, so it whistles higher. More parts in the whole means smaller parts. Your student compares and orders fractions like <span class="frac"><span class="num">5</span><span class="den">12</span></span>, <span class="frac"><span class="num">5</span><span class="den">10</span></span> and <span class="frac"><span class="num">5</span><span class="den">9</span></span>.</span></td><td class="hide-sm"><span class="eg"><span class="frac"><span class="num">1</span><span class="den">10</span></span> &gt; <span class="frac"><span class="num">1</span><span class="den">12</span></span></span><div class="small">Twelve is more than ten, but twelfths are smaller than tenths.</div></td></tr>
+      <tr class="vr-row"><td class="ln">VR<span>Pie Night</span></td><td colspan="2"><span class="ttl">Field Trip with Opti, with Lesson 3.09.04.</span> <span class="small">Build two pairs of pies and show which has more. See the VR Day section below.</span></td></tr>
+      <tr class="chk-row"><td class="ln">Check<span>End of unit</span></td><td colspan="2"><span class="ttl">Unit 9 Summative.</span> <span class="small">The unit check that comes after Lesson 3.09.04, before Unit 10 begins with equivalent fractions.</span></td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="card">
+  <div class="card-head"><span class="ico">🥽</span><h2>The VR Day: Pie Night</h2><span class="tag">Week 19 · about 15 minutes</span></div>
+  <p>This goes with Lesson 3.09.04. Opti takes the class to a restaurant where the cook baked four pies with fair slices. Your student builds <strong>a 2 eighths pie and a 4 eighths pie</strong>, then <strong>a 2 fifths pie and a 2 twelfths pie</strong>, and puts the right sign (&lt; or &gt;) between each pair. The page asks your student to say out loud why each sign points the way it does.</p>
+  <div class="two">
+    <div class="box b-sky"><span class="k">🚌 Field Trip (with a headset)</span>
+      <ol class="vr">
+        <li>Before putting on the headset, look over the list of pie-slice and sign models to bring out.</li>
+        <li>In the headset, open the On-Demand app and go to <strong>Optima Sydney Restaurant</strong>.</li>
+        <li>Build the two pairs of pies and place the signs.</li>
+        <li>Take a photo with both pairs in it and send it to Canvas from the headset. Look for the green <strong>Submitted</strong> tag.</li>
+      </ol>
+      <p class="note">First time only: connect Canvas at xr.optimaed.com. Photos also save to My Files there, so they can be uploaded by hand if the headset send doesn't work.</p>
+    </div>
+    <div class="box b-sage"><span class="k">📮 Postcard Day (no headset)</span>
+      <ol class="vr">
+        <li>Build the same four pies right on the page by tapping or dragging slices onto plates.</li>
+        <li>Pick the sign for each pair.</li>
+        <li>Write a postcard to Opti about both pairs, at least 20 words. A word bank helps.</li>
+        <li>Press <strong>Download my answers (PDF)</strong> and upload that file to the Canvas assignment.</li>
+      </ol>
+    </div>
+  </div>
+  <div class="box b-gold" style="margin-top:14px"><span class="k">⭐ What gets full points</span>
+    <p style="margin:0"><strong>Field Trip:</strong> the photo shows all 4 pies with the right slices, and both signs point the right way.<br><strong>Postcard Day:</strong> all 4 pies built, both signs picked, and a postcard of at least 20 words.</p></div>
+  <p class="note">A <strong>Having trouble in VR?</strong> drawer on the page has step-by-step pictures and a how-to video. Only VR travelers earn the Pie Night patch.</p>
+</section>
+
+<section class="card">
+  <div class="card-head"><span class="ico">📐</span><h2>How We Teach It</h2></div>
+  <p>Your student starts with something they can hear and touch: a string or pipe on the screen. Then the same idea moves to fraction tiles and strips, then to a number line, and only then to written fractions and symbols. Every fraction is read two ways: <strong>how many?</strong> (the top number) and <strong>of what?</strong> (the bottom number).</p>
+  <div class="model">
+    <svg viewBox="0 0 320 150" role="img" aria-label="A number line from 0 to 1 cut into 5 equal spaces. Each jump is one-fifth. A dot sits at three-fifths.">
+      <line x1="20" y1="70" x2="300" y2="70" stroke="#1F2A44" stroke-width="3"/>
+      <g stroke="#1F2A44" stroke-width="3"><line x1="20" y1="56" x2="20" y2="84"/><line x1="300" y1="56" x2="300" y2="84"/></g>
+      <g stroke="#1F2A44" stroke-width="2.5"><line x1="76" y1="61" x2="76" y2="79"/><line x1="132" y1="61" x2="132" y2="79"/><line x1="188" y1="61" x2="188" y2="79"/><line x1="244" y1="61" x2="244" y2="79"/></g>
+      <g fill="none" stroke="#B8892E" stroke-width="2.5"><path d="M20 54 Q48 26 76 54"/><path d="M76 54 Q104 26 132 54"/><path d="M132 54 Q160 26 188 54"/></g>
+      <g font-family="Nunito,Arial" font-weight="900" font-size="13" fill="#8A6418" text-anchor="middle"><text x="48" y="30">1</text><text x="104" y="30">2</text><text x="160" y="30">3</text></g>
+      <circle cx="188" cy="70" r="8" fill="#A3472E"/>
+      <g font-family="Nunito,Arial" font-weight="900" font-size="18" fill="#0E1C42" text-anchor="middle"><text x="20" y="110">0</text><text x="300" y="110">1</text></g>
+      <g font-family="Nunito,Arial" font-weight="900" font-size="15" fill="#A3472E" text-anchor="middle"><text x="188" y="104">3</text><line x1="180" y1="109" x2="196" y2="109" stroke="#A3472E" stroke-width="2"/><text x="188" y="125">5</text></g>
+      <text x="160" y="146" text-anchor="middle" font-family="Nunito,Arial" font-weight="700" font-size="13" fill="#5B6478">4 tick marks make 5 equal spaces</text>
+    </svg>
+    <div class="rule"><div>Draw it: 0 at the start, 1 at the end.</div><div>Cut it into equal parts. Count the spaces, not the marks.</div><div>Count jumps from 0. The last jump names the spot.</div></div>
+  </div>
+  <p style="margin-top:14px"><strong>Comparing.</strong> Before comparing, your student checks that the two wholes are the same size. Then:</p>
+  <div class="steps"><span>Same denominator → count the parts</span><span>Same numerator → look at the size of the parts</span><span>On a number line, farther right is greater</span></div>
+  <p><strong>The sound check.</strong> A longer part of a string or pipe sings a lower note, and a shorter part sings a higher note. When your student puts three fractions in order from least to greatest and plays them, the notes should step down.</p>
+  <p style="margin:0"><strong>The Math Crew.</strong> Each Learn stop shows four ways to see the same fraction and asks which way is most like your student's own thinking.</p>
+</section>
+
+<section class="card">
+  <div class="card-head"><span class="ico">🔤</span><h2>Words to Know</h2></div>
+  <div class="words">
+    <div class="word"><b>fraction</b><span>two numbers that name part of one whole, like <span class="frac"><span class="num">2</span><span class="den">3</span></span></span></div>
+    <div class="word"><b>equal parts</b><span>parts that are all the same size; a fraction needs them</span></div>
+    <div class="word"><b>numerator</b><span>the top number; it answers "how many?"</span></div>
+    <div class="word"><b>denominator</b><span>the bottom number; it answers "of what?" (how many equal parts make the whole)</span></div>
+    <div class="word"><b>unit fraction</b><span>one equal part, with 1 on top, like <span class="frac"><span class="num">1</span><span class="den">5</span></span>; one jump on a number line</span></div>
+    <div class="word"><b>tick mark</b><span>a small line that cuts a number line into equal spaces</span></div>
+    <div class="word"><b>&lt; and &gt;</b><span>"is less than" and "is greater than"; the open side faces the greater number</span></div>
+    <div class="word"><b>least to greatest</b><span>putting numbers in order from smallest to biggest</span></div>
+  </div>
+</section>
+
+<section class="card">
+  <div class="card-head"><span class="ico">⚠️</span><h2>Mix-Ups to Watch For</h2></div>
+  <p class="small">These are the mix-ups your student fixes in each lesson's "Practice together" stop.</p>
+  <ul class="mist">
+    <li><strong>Unequal parts.</strong> A shape cut into 3 parts isn't in thirds unless the parts are the same size.</li>
+    <li><strong>An upside-down fraction.</strong> The bottom number is never "the ones I shaded." It is how many equal parts make the whole.</li>
+    <li><strong>Forgetting the part that is left.</strong> If 4 of 10 slices are eaten, <span class="frac"><span class="num">6</span><span class="den">10</span></span> is left, and it's a fraction too.</li>
+    <li><strong>Counting marks instead of spaces.</strong> 10 tick marks between 0 and 1 make 11 spaces. Tenths need 9.</li>
+    <li><strong>Starting the count at 0.</strong> 0 is not a jump. The first mark after 0 is <span class="frac"><span class="num">1</span><span class="den">9</span></span>, not <span class="frac"><span class="num">2</span><span class="den">9</span></span>.</li>
+    <li><strong>Different-size wholes.</strong> <span class="frac"><span class="num">6</span><span class="den">10</span></span> of a long string is longer than <span class="frac"><span class="num">6</span><span class="den">10</span></span> of a short string. Only compare fractions of the same whole.</li>
+    <li><strong>A backward symbol.</strong> Read it out loud from left to right. If the words match the picture, the symbol is right.</li>
+    <li><strong>"Bigger number, bigger fraction."</strong> 11 is more than 9, but <span class="frac"><span class="num">1</span><span class="den">11</span></span> is less than <span class="frac"><span class="num">1</span><span class="den">9</span></span>: more parts in the whole makes smaller parts.</li>
+    <li><strong>"Same top number, so they're equal."</strong> <span class="frac"><span class="num">4</span><span class="den">5</span></span> and <span class="frac"><span class="num">4</span><span class="den">10</span></span> are both 4 parts, but fifths are bigger, so <span class="frac"><span class="num">4</span><span class="den">5</span></span> is greater.</li>
+  </ul>
+</section>
+
+<section class="card">
+  <div class="card-head"><span class="ico">🏠</span><h2>Try It at Home</h2></div>
+  <ol class="home">
+    <li><strong>Fair slices.</strong> When you cut bread, a pie or a cake, ask: "Are these equal parts? What fraction is one piece? What fraction is left after we each take one?"</li>
+    <li><strong>Paper strips.</strong> Fold two same-size strips of paper, one into 4 equal parts and one into 8. Which is bigger, one-fourth or one-eighth? Now color 3 parts of each strip and compare.</li>
+    <li><strong>Pizza question.</strong> "Would you rather share a pizza with 9 friends or with 12 friends? Why?" (With 12, everyone gets a smaller slice.)</li>
+    <li><strong>Number line on the floor.</strong> Lay a strip of tape with 0 at one end and 1 at the other, mark it in fifths, and have your student hop the jumps out loud: "one-fifth, two-fifths…"</li>
+    <li><strong>Listen together.</strong> Play the Bach cello or organ piece from a Listening corner. Can your student hear the low notes and the high notes?</li>
+  </ol>
+  <p class="note">The best question to ask at home, straight from the Prove It questions: <strong>"How do you know which fraction is greater?"</strong></p>
+</section>
+
+<section class="card">
+  <div class="card-head"><span class="ico">✅</span><h2>Unit 9 Tracker</h2><span class="tag">Chapter 9 · Pythagoras' Singing String</span></div>
+  <p class="small">Check off each stop as your student finishes it.</p>
+  <div class="tracker">
+    <div class="stop">3.09.01 Fractions of a whole<div class="bx"></div></div>
+    <div class="stop">3.09.02 Number line<div class="bx"></div></div>
+    <div class="stop">3.09.03 Like denominators<div class="bx"></div></div>
+    <div class="stop">3.09.04 Like numerators<div class="bx"></div></div>
+    <div class="stop vr">VR · Pie Night<div class="bx"></div></div>
+    <div class="stop test">Unit 9 Summative<div class="bx"></div></div>
+  </div>
+</section>
+
+<p class="foot">Optima Academy Online · 3rd Grade Math · Unit 9 Family Guide</p>
+<p class="credit">Art: Raphael, The School of Athens (detail), 1509–1511, Vatican, public domain. Opti the owl © Optima Academy Online.</p>
+</div>
+</body>
+</html>
