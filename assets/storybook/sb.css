@@ -367,3 +367,13 @@ html.sb-still *{animation:none!important;transition:none!important}
 .ord-card.ring{background:var(--gold3);transform:scale(1.06)}
 .ord-who{font-weight:800;color:var(--no);margin-left:8px}
 @media (max-width:560px){.ord-arrow{display:none}.ord-slot{min-width:0;flex:1 1 30%}.ord-card svg{width:84px}.ord-card{font-size:20px;padding:6px}.sym-row{font-size:28px;gap:10px}.sym-slot{width:72px;height:72px}}
+/* 3.09.04 pipes + two number lines */
+.sb-pipes .pp-row+.pp-row{margin-top:6px;padding-top:8px;border-top:1px dashed var(--line)}
+.sb-pipes .pp-ctl{gap:8px;align-items:center;flex-wrap:wrap;margin:0 0 2px}
+.sb-pipes .pp-name{color:#5B4A2A;min-width:96px}
+.sb-pipes .pp-cnt{font-weight:800;color:#5B6478;min-width:118px;text-align:center}
+.sb-pipes .pp-piece{cursor:pointer;transition:transform .15s}
+.sb-pipes .pp-piece.pp-on rect{filter:brightness(1.15)}
+.sb-pipes .pp-notes{margin-top:6px;border-top:1px dashed var(--line);padding-top:6px}
+.sb-pipes .pp-notes svg{display:block;width:100%;height:auto}
+.sb-pipes button:disabled{opacity:.45;cursor:default}

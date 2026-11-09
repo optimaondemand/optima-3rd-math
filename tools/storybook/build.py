@@ -28,6 +28,11 @@ TOOLS = {
  'fbars-10': ('fbars', {"d": [10], "lab": 1}, 'Fraction Tiles', 'Try two bars of tenths. Both bars are the same whole, so every tenth is the same size.'),
  'nl-10o': NL(0, 1, 10) + ('Try the Number Line in tenths. Put dots on three fractions. The dot farthest left is the least.',),
  'nl-10c': NL(0, 1, 10) + ('Try the Number Line in tenths. Put dots on two fractions. The one farther right is greater.',),
+ 'fbars-9-12': ('fbars', {"d": [9, 12], "lab": 1}, 'Fraction Tiles', 'Try a bar of ninths and a bar of twelfths. Shade the same number of tiles in each. Which bar shows more?'),
+ 'fbars-9-11': ('fbars', {"d": [9, 11], "lab": 1}, 'Fraction Tiles', 'Try a bar of ninths and a bar of elevenths. Shade 1 tile in each. Which tile is bigger?'),
+ 'fbars-5-10': ('fbars', {"d": [5, 10], "lab": 1}, 'Fraction Tiles', 'Try a bar of fifths and a bar of tenths. Shade the same number of tiles in each. Are they equal?'),
+ 'fbars-9-11-12': ('fbars', {"d": [9, 11, 12], "lab": 1}, 'Fraction Tiles', 'Try bars of ninths, elevenths and twelfths. Shade 1 tile in each and line them up from smallest to biggest.'),
+ 'fbars-7-12': ('fbars', {"d": [7, 12], "lab": 1}, 'Fraction Tiles', 'Try a bar of sevenths and a bar of twelfths. Shade the same number of tiles in each. Which reaches farther?'),
 }
 def enc(o): return base64.urlsafe_b64encode(json.dumps(o, separators=(',', ':')).encode()).decode().rstrip('=')
 GL_BASE = [
@@ -65,6 +70,16 @@ L = {
      GL_BASE[2], GL_BASE[3], GL_BASE[1],
      {"t": "least to greatest", "d": "In order from the smallest amount to the biggest amount."},
      GL_BASE[5]]),
+ '3.09.04': dict(page='math-lesson-3-09-04-comparing-fractions-like-numerators.html', title='Comparing Fractions with Like Numerators', video='g3math-09-04-learn',
+   glossary=[
+     {"t": "unit fraction", "d": "A fraction with 1 on top, like one-ninth. It names one equal part. More parts in the whole make each part smaller.", "key": True},
+     {"t": "denominator", "d": "The bottom number of a fraction. It tells how many equal parts make the whole. A bigger denominator means smaller parts.", "key": True},
+     {"t": "same numerator", "d": "Two fractions with the same top number. They have the same number of parts, but the parts may not be the same size."},
+     GL_BASE[2],
+     {"t": "pipe", "d": "A hollow tube. When you blow across it, it whistles. A short pipe whistles a higher note than a long pipe."},
+     {"t": "compare", "d": "To look at two numbers and find out which is greater, which is less, or if they are equal."},
+     {"t": "least to greatest", "d": "In order from the smallest amount to the biggest amount."},
+     GL_BASE[1], GL_BASE[5]]),
 }
 def tool(m):
     t, st, name, tip = TOOLS[m.group(1)]

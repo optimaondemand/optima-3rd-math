@@ -1,0 +1,421 @@
+# Generates tools/storybook/lesson-3-09-04.src.html (static SVGs drawn here)
+DCOL = {5:'#4E7A1A',6:'#2F6FDE',7:'#B03A2E',8:'#A23B8C',9:'#2E7D6B',10:'#117E7E',11:'#8C2F6E',12:'#5B6478'}
+NAME = {5:'fifths',6:'sixths',7:'sevenths',8:'eighths',9:'ninths',10:'tenths',11:'elevenths',12:'twelfths'}
+def strips(rows, W=640, label=''):
+    BW = W - 70; h = 34; gap = 22; H = len(rows) * (h + gap) - gap + 12
+    o = ['<svg viewBox="0 0 %d %d" role="img" aria-label="%s" style="display:block;width:100%%;max-width:%dpx">' % (W, H, label, W)]
+    for r, (k, d) in enumerate(rows):
+        y = 6 + r * (h + gap); c = DCOL[d]; w = BW / d
+        for i in range(d):
+            o.append('<rect x="%.1f" y="%d" width="%.1f" height="%d" fill="%s" stroke="%s" stroke-width="2"/>' % (10 + i * w, y, w, h, c if i < k else '#fff', c))
+        x = BW + 40
+        o.append('<text x="%d" y="%d" text-anchor="middle" font-size="14" font-weight="900" fill="%s">%d</text><line x1="%.1f" y1="%d" x2="%.1f" y2="%d" stroke="%s" stroke-width="2"/><text x="%d" y="%d" text-anchor="middle" font-size="14" font-weight="900" fill="%s">%d</text>' % (x, y + 12, c, k, x - 8, y + 17, x + 8, y + 17, c, x, y + 32, c, d))
+    o.append('</svg>'); return ''.join(o)
+def lines2(a, b, label):
+    (ka, da), (kb, db) = a, b; W = 640; X0 = 30; X1 = 610; L = X1 - X0
+    o = ['<svg viewBox="0 0 %d 200" role="img" aria-label="%s" style="display:block;width:100%%;max-width:%dpx">' % (W, label, W)]
+    for r, (k, d, y) in enumerate(((ka, da, 40), (kb, db, 130))):
+        c = DCOL[d]
+        o.append('<text x="%d" y="%d" text-anchor="end" font-size="13" font-weight="900" fill="%s">%s</text>' % (X1, y - 22, c, NAME[d]))
+        o.append('<line x1="%d" y1="%d" x2="%d" y2="%d" stroke="#1F2A44" stroke-width="3" stroke-linecap="round"/>' % (X0 - 10, y, X1 + 10, y))
+        for q in range(d + 1):
+            x = X0 + q * L / d; big = q in (0, d)
+            o.append('<line x1="%.1f" y1="%d" x2="%.1f" y2="%d" stroke="%s" stroke-width="%s"/>' % (x, y - (13 if big else 9), x, y + (13 if big else 9), '#1F2A44' if big else c, 3 if big else 2))
+        for i in range(k):
+            xa = X0 + i * L / d; xb = X0 + (i + 1) * L / d
+            o.append('<path d="M%.1f %d Q %.1f %d %.1f %d" stroke="%s" stroke-width="2.2" fill="none"/>' % (xa + 2, y - 5, (xa + xb) / 2, y - 26, xb - 2, y - 5, c))
+        x = X0 + k * L / d
+        o.append('<circle cx="%.1f" cy="%d" r="7" fill="%s" stroke="#fff" stroke-width="2.5"/>' % (x, y, c))
+        o.append('<text x="%.1f" y="%d" text-anchor="middle" font-size="13" font-weight="900" fill="%s">%d</text><line x1="%.1f" y1="%d" x2="%.1f" y2="%d" stroke="%s" stroke-width="2"/><text x="%.1f" y="%d" text-anchor="middle" font-size="13" font-weight="900" fill="%s">%d</text>' % (x, y + 26, c, k, x - 8, y + 30, x + 8, y + 30, c, x, y + 45, c, d))
+        o.append('<text x="%d" y="%d" text-anchor="middle" font-size="15" font-weight="900" fill="#1F2A44">0</text><text x="%d" y="%d" text-anchor="middle" font-size="15" font-weight="900" fill="#1F2A44">1</text>' % (X0, y + 32, X1, y + 32))
+    o.append('</svg>'); return ''.join(o)
+def fr(n, d): return '<span class="fr"><span>%s</span><span>%s</span></span>' % (n, d)
+
+src = open('/home/claude/g3sb/src/lesson-3-09-03.src.html').read()
+head = src.split('<!-- the open book -->')[0]
+head = head.replace('Comparing Fractions with Like Denominators', 'Comparing Fractions with Like Numerators').replace('3.09.03', '3.09.04').replace('Lesson 3</span>', 'Lesson 4</span>')
+head = head.replace('Plot, order and compare fractional numbers with the same numerator or the same denominator.<br><small>Dimensions Math 3B, Chapter 9, Lesson 3', 'Plot, order and compare fractional numbers with the same numerator or the same denominator.<br><small>Dimensions Math 3B, Chapter 9, Lesson 4')
+assert 'Lesson 4 ·' in head or 'Lesson 4</span>' in head
+body = r'''<!-- the open book -->
+<div class="sb-book" aria-label="Opti's storybook, open to Chapter 9">
+  <div class="sb-book-in">
+    <div class="sb-pg">
+      <figure class="sb-plate"><img src="{{IMG:sb-athens-plate.jpg}}" alt="Part of The School of Athens, a wall painting by Raphael. Pythagoras sits writing in a book. A boy holds up a small slate for him."><figcaption>Pythagoras, as Raphael painted him about 500 years ago</figcaption></figure>
+    </div>
+    <div class="sb-pg r">
+      <div class="sb-chap">Chapter 9</div>
+      <div class="sb-chap-t">Pythagoras' Singing String</div>
+      <div class="sb-orn" aria-hidden="true"></div>
+      <p class="sb-chap-s">Ancient Greece · more than 2,500 years ago</p>
+      <div class="sb-chap-l">Lesson 4 · Comparing Fractions with Like Numerators</div>
+    </div>
+  </div>
+  <img class="sb-owl" src="{{IMG:opti-owl.png}}" alt="Opti the owl, sitting on the open book">
+</div>
+
+<div class="sb-intro">
+  <div class="sb-card sb-eq">
+    <span class="sb-k">Essential Question</span>
+    <h3>When two fractions have the same numerator, how can you tell which one is greater?</h3>
+    ''' + strips([(2, 7), (2, 10)], 380, 'Two strips of the same length. The top strip is cut into 7 equal parts with 2 shaded. The bottom strip is cut into 10 equal parts with 2 shaded. The 2 sevenths cover more of the strip.') + r'''
+    <p style="margin:4px 0 0">Same number of parts, but not the same size. Fewer parts in the whole means bigger parts.</p>
+  </div>
+  <div class="sb-card sb-obj">
+    <span class="sb-k">Today's Objectives</span>
+    <h3>You will…</h3>
+    <ul>
+      <li><b>Compare</b> unit fractions: more equal parts in the whole makes each part smaller.</li>
+      <li><b>Compare</b> two fractions with the same numerator by looking at the size of the parts.</li>
+      <li><b>Write</b> &lt;, &gt; or =, and <b>order</b> three fractions from least to greatest.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="sb-tabs" role="tablist" aria-label="Lesson sections">
+  <button class="sb-tab" role="tab" data-tab="warmup" aria-controls="tab-warmup">🔍 Warm-Up <span class="ck">✓</span></button>
+  <button class="sb-tab" role="tab" data-tab="learn" aria-controls="tab-learn">📐 Lesson <span class="ck">✓</span></button>
+  <button class="sb-tab" role="tab" data-tab="swyk" aria-controls="tab-swyk">🌟 Show What You Know <span class="ck">✓</span></button>
+</div>
+
+<!-- ══════════════ WARM-UP ══════════════ -->
+<section class="sb-panel tab-panel" id="tab-warmup" role="tabpanel">
+
+<div class="sb-opti" data-slot="warm-1">Hoo, welcome back to Chapter 9! Today Pythagoras has pipes. When you cut a pipe into equal pieces, the pieces can be long or short. We'll find out which fraction is greater when the numerators are the same, and we'll even hear the answer.</div>
+
+<div class="sb-card">
+  <span class="sb-k">From an old music book</span>
+  <h3>Pipes and bells</h3>
+  <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>Two more pictures from the music book printed in Italy in 1492, almost 2,000 years after Pythagoras. The pictures were carved in wood and then printed. Stories say Pythagoras tested sounds with pipes and with bells. On the left, Pythagoras and his student Philolaus blow pipes of different lengths. On the right, Pythagoras taps a row of bells, from big to small.</p></div>
+  <div class="sb-art">
+    <figure class="sb-fig"><img src="{{IMG:sb-gaffurio-pipes.jpg}}" alt="An old woodcut. Two bearded men blow long and short pipes. More pipes lie in a bundle. One man is labeled Pytagora and the other Phylolaus." style="object-position:50% 30%"><figcaption>Long pipes and short pipes. A shorter pipe whistles a higher note.<small>Franchino Gaffurio, Theorica musicae, 1492 (woodcut, detail). Public domain.</small></figcaption></figure>
+    <figure class="sb-fig"><img src="{{IMG:sb-gaffurio-bells.jpg}}" alt="An old woodcut. A bearded man labeled Pytacora taps a row of six bells with a long stick. The bells go from big to small." style="object-position:50% 40%"><figcaption>Big bells and small bells. A smaller bell rings a higher note.<small>Franchino Gaffurio, Theorica musicae, 1492 (woodcut, detail). Public domain.</small></figcaption></figure>
+  </div>
+  <p style="margin:6px 0 0"><b>Today's math:</b> when you cut the same pipe into more equal pieces, each piece is shorter. A shorter piece whistles higher, and it is a smaller fraction of the pipe.</p>
+</div>
+
+<div class="video-placeholder-wrap">
+<!-- slot: g3math-09-04 -->
+<div class="video-placeholder-inner"><div class="vp-label">🎬 Welcome Video</div><div class="vp-slot">g3math-09-04</div><div class="vp-notes"><b>Teacher recording notes:</b> Welcome back to Chapter 9! Start with the divide-by-6-to-9 fact warm-up. Then cut two pipes into ninths and twelfths, and listen for the higher note.</div></div>
+</div>
+
+<div class="fluency-box">
+  <div class="fluency-head"><div class="fluency-head-icon">✍️</div><div><div class="fluency-head-label">FACT WARM-UP</div><div class="fluency-head-title">Divide by 6, 7, 8 and 9: Think Times</div></div></div>
+  <div class="fluency-body">
+    <p class="fluency-instructions">To divide, think of the times fact. 54 ÷ 6: what times 6 makes 54? 9 × 6 = 54, so 54 ÷ 6 = 9. Type each answer, then check. You can fix any answer and check again.</p>
+    <div class="fluency-grid" id="fluencyGrid">
+FLUENCY
+    </div>
+    <div class="sb-help"><button type="button" class="sb-btn check" data-fluency-check>Check my answers</button></div>
+    <div class="sb-fb" aria-live="polite"></div>
+  </div>
+</div>
+
+<div class="sb-card sb-qgroup" data-done="review" data-ok="✓ Yes! One of 10 equal parts is one-tenth. One of 11 equal parts is one-eleventh.">
+  <span class="sb-k">Remember from 2nd grade</span>
+  <h3>One equal part</h3>
+  <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>Two ribbons. Each ribbon is cut into equal parts, and one part is shaded. A fraction with 1 on top names one equal part. The bottom number tells how many equal parts make the whole ribbon.</p></div>
+  ''' + strips([(1, 10)], 520, 'A ribbon cut into 10 equal parts. One part is shaded.') + r'''
+  <div class="sb-q">One part of 10 equal parts: [[fr:1:10~Count all the equal parts. That number goes on the bottom.]]</div>
+  ''' + strips([(1, 11)], 520, 'A ribbon cut into 11 equal parts. One part is shaded.') + r'''
+  <div class="sb-q">One part of 11 equal parts: [[fr:1:11~Count all the equal parts. That number goes on the bottom.]]</div>
+  <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div>
+  <div class="sb-fb" aria-live="polite"></div>
+</div>
+
+<!-- JOB 1 · THINK -->
+<section class="sb-card sb-job" data-job="1">
+  <div class="sb-jh"><span class="sb-jn">JOB 1</span><div><h3>Think: Pythagoras' Pipes</h3><span class="sb-kind">🔨 Do · listen</span></div><span class="sb-donechip"></span></div>
+  <div class="sb-opti" data-slot="think-1">Both pipes are the same length. Cut the top pipe into nine equal pieces and the bottom pipe into twelve. Then blow one piece of each and listen. Which piece is longer?</div>
+  <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>Two bronze pipes of the same length. Each pipe has a ✂ button that cuts it into one more equal piece. The first piece of each pipe has a light edge, and the fraction under it names that piece. Tap a piece to blow it.</p>
+    <div class="sb-how"><div><b>What to do:</b> Cut both pipes, then blow one piece of each.</div></div></div>
+  <div data-mod="pipes" data-mode="pair" data-da="9" data-db="12" data-name="think"></div>
+  <div class="sb-steps">
+    <div class="sb-step" data-need="a"><h4>Cut the top pipe into 9 equal pieces</h4><p>Press ✂ Cut one more piece next to the top pipe until it says 9 equal pieces.</p></div>
+    <div class="sb-step" data-need="b"><h4>Cut the bottom pipe into 12 equal pieces</h4><p>Press ✂ Cut one more piece next to the bottom pipe until it says 12 equal pieces.</p></div>
+    <div class="sb-step" data-need="blow"><h4>Blow one piece of each pipe</h4><p>Tap the first piece of the top pipe. Then tap the first piece of the bottom pipe. Listen for the higher note.</p></div>
+    <div class="sb-step"><h4>Which piece is greater?</h4>
+      <div class="sb-q">A one-ninth piece is [[w:longer|bigger|larger~Look at the two pieces with the light edge. Which one is longer?]] than a one-twelfth piece.</div>
+      <div class="sb-q">So [[fr:1:9~Which piece is longer, one-ninth or one-twelfth?]] is greater than [[fr:1:12]].</div>
+      <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div>
+      <div class="sb-fb" aria-live="polite"></div>
+    </div>
+    <div class="sb-locked"></div>
+  </div>
+  <div class="sb-help"><button type="button" class="sb-btn ghost" data-hints='["Each press of ✂ adds one more equal piece. Watch the number next to the button.","Same pipe, more pieces: each piece has to be shorter.","The shorter piece whistles the higher note."]'>💡 Need a hint?</button>{{TOOL:fbars-9-12}}<button type="button" class="sb-btn ghost sb-tipbtn" data-tip="#tip-1">💬 Atlas has a tip</button></div>
+  <div class="sb-hintbox"></div>
+  <div class="sb-tip" id="tip-1" data-who="atlas">Think of sharing a pizza. Share it with 9 friends or with 12 friends? With 12, everyone gets a smaller slice.</div>
+  <div class="sb-payoff" data-after-job="1">
+    ''' + strips([(1, 9), (1, 12)], 640, 'Two strips of the same length. The top strip is cut into ninths with one part shaded. The bottom strip is cut into twelfths with one part shaded. The ninth is longer.') + r'''
+    <p style="margin:8px 0 0"><b>More pieces, smaller pieces.</b> One-ninth is longer than one-twelfth: ''' + fr(1, 9) + ' &gt; ' + fr(1, 12) + r'''.</p>
+  </div>
+  <div class="sb-opti" data-slot="think-done" data-after="1">Did you hear it? The one-twelfth piece whistled higher, because it is shorter. When you cut the same pipe into more pieces, each piece gets smaller. So one-ninth is greater than one-twelfth.</div>
+</section>
+
+<div class="sb-next"><button type="button" class="sb-btn gold" data-go-tab="learn" data-go-st="1">Next: the Lesson →</button></div>
+</section>
+
+<!-- ══════════════ LESSON ══════════════ -->
+<section class="sb-panel tab-panel" id="tab-learn" role="tabpanel">
+<div class="sb-path" role="list">
+  <button type="button" class="sb-pstep" data-st="1" role="listitem"><span class="num">1</span><span><b>Learn it</b><small>Learn + Your Turn</small></span></button>
+  <button type="button" class="sb-pstep" data-st="2" role="listitem"><span class="num">2</span><span><b>Practice together</b><small>2 mix-ups + a tune</small></span></button>
+  <button type="button" class="sb-pstep" data-st="3" role="listitem"><span class="num">3</span><span><b>On your own</b><small>1 job</small></span></button>
+</div>
+
+<!-- STATION 1 -->
+<div class="sb-station" data-st="1">
+  <div class="sb-opti" data-slot="learn-1">Welcome to the Lesson. It has three stops. First, learn how to compare fractions that have the same numerator. Next, we fix some mix-ups together and play a tune. Then you try it on your own.</div>
+
+  <div class="sb-video pq-vslot" data-slot="learn">
+    {{LEARNVIDEO}}
+    <div class="cap">🎬 Look at the Size of the Parts</div>
+  </div>
+
+  <div class="sb-card">
+    <span class="sb-k">Learn</span>
+    <h3>Same numerator? Look at the size of the parts.</h3>
+    ''' + strips([(1, 10), (1, 12)], 640, 'Two strips of the same length. One-tenth is shaded on the top strip and one-twelfth on the bottom strip. One-tenth is longer.') + r'''
+    <p style="margin:2px 0 12px">One whole cut into 10 parts, and one whole cut into 12 parts. More parts make smaller parts, so ''' + fr(1, 10) + ' &gt; ' + fr(1, 12) + r'''.</p>
+    ''' + strips([(5, 10), (5, 12)], 640, 'Two strips of the same length. Five-tenths is shaded on the top strip and five-twelfths on the bottom strip. Five-tenths covers more.') + r'''
+    ''' + lines2((5, 10), (5, 12), 'Two number lines from 0 to 1. On the tenths line, a dot at five-tenths. On the twelfths line, a dot at five-twelfths. Five-tenths is farther to the right.') + r'''
+    <p style="font-size:26px;font-weight:900;text-align:center;margin:4px 0 10px">''' + fr(5, 10) + ' &gt; ' + fr(5, 12) + r''' <small style="font-size:16px;color:#5B6478">five-tenths is greater than five-twelfths</small></p>
+    <ol class="sb-steps4">
+      <li><b>Same whole?</b> Only compare fractions of the same whole: two strips, pipes or lines that are the same length.</li>
+      <li><b>Same numerator?</b> Then you have the same number of parts. Now look at the size of the parts.</li>
+      <li><b>Look at the denominators.</b> The denominator tells how many equal parts make the whole. More parts means smaller parts. Twelve is more than ten, but twelfths are smaller than tenths.</li>
+      <li><b>Write it.</b> The open side of &lt; or &gt; faces the greater fraction. To order three, start with the smallest parts: ''' + fr(5, 12) + ', ' + fr(5, 10) + ', ' + fr(5, 9) + r'''.</li>
+    </ol>
+  </div>
+
+  <div class="sb-card">
+    <span class="sb-k">The Math Crew</span>
+    <h3>Four ways to see five-tenths and five-twelfths</h3>
+    <div class="sb-crew">
+      <div class="sb-mate" data-who="atlas"><span>Both have 5 parts. The numerators are the same.</span></div>
+      <div class="sb-mate" data-who="felix"><span>Tenths are bigger than twelfths. Fewer parts in the whole, bigger parts.</span></div>
+      <div class="sb-mate" data-who="hazel"><span>On the lines, ''' + fr(5, 10) + r''' is farther to the right.</span></div>
+      <div class="sb-mate" data-who="cora"><span>The open side of &gt; faces ''' + fr(5, 10) + r''', the greater one.</span></div>
+    </div>
+    <label class="sb-write-l" for="w-crew">Which Crew way helps you most? Why?</label>
+    <textarea class="sb-write" id="w-crew" data-label="Which Crew way helps me most" placeholder="I like… because…"></textarea>
+  </div>
+
+  <!-- JOB 2 · YOUR TURN -->
+  <section class="sb-card sb-job" data-job="2">
+    <div class="sb-jh"><span class="sb-jn">JOB 2</span><div><h3>Your Turn: Seven Ninths or Seven Twelfths?</h3><span class="sb-kind">🔨 Do</span></div><span class="sb-donechip"></span></div>
+    <p class="sb-story">Pythagoras painted <b>7 pieces</b> of a pipe cut into <b>ninths</b>, and <b>7 pieces</b> of the same size pipe cut into <b>twelfths</b>. Which painted part is greater?</p>
+    <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>Fraction tiles: the navy bar is 1 whole. Under it is a bar of ninths and a bar of twelfths. Then there is a box for a symbol between the two fractions.</p>
+      <div class="sb-how"><div><b>What to do:</b> Shade the tiles, then drag the symbol.</div></div></div>
+    <div data-mod="cmp" data-kind="tiles" data-da="9" data-db="12" data-a="7" data-b="7" data-rows="Ninths,Twelfths" data-name="yt-tiles" data-for="a b"></div>
+    <div data-mod="sym" data-a="7/9" data-b="7/12" data-ans=">" data-name="yt-sym" data-for="sym"></div>
+    <div class="sb-steps">
+      <div class="sb-step" data-need="a"><h4>Shade 7 tiles in the ninths bar</h4><p>Tap the 7th tile in the ninths bar, or drag along the bar until 7 tiles are shaded.</p></div>
+      <div class="sb-step" data-need="b"><h4>Shade 7 tiles in the twelfths bar</h4><p>Tap the 7th tile in the twelfths bar, or drag along it until 7 tiles are shaded.</p></div>
+      <div class="sb-step"><h4>Which tiles are bigger?</h4><div class="sb-q">Both bars have 7 shaded tiles. The [[w:ninths|ninth|ninths bar~Look at one tile in each bar. Which tile is wider?]] tiles are bigger, so they cover more of the whole.</div><div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-step" data-need="sym"><h4>Drag the symbol that makes it true</h4><p>Drag &lt;, &gt; or = into the box between ''' + fr(7, 9) + ' and ' + fr(7, 12) + r'''.</p></div>
+      <div class="sb-locked"></div>
+    </div>
+    <div class="sb-help"><button type="button" class="sb-btn ghost" data-hints='["The numerators match: 7 and 7. So look at the size of the tiles.","Fewer tiles fill the whole in the ninths bar, so each ninth is bigger.","The open side faces the greater fraction: seven-ninths."]'>💡 Need a hint?</button>{{TOOL:fbars-9-12}}<button type="button" class="sb-btn ghost sb-tipbtn" data-tip="#tip-2">💬 Felix has a tip</button></div>
+    <div class="sb-hintbox"></div>
+    <div class="sb-tip" id="tip-2" data-who="felix">When the tops match, I look at where the shading stops. The bar that is shaded farther is the greater fraction.</div>
+  </section>
+  <div class="sb-next"><button type="button" class="sb-btn gold" data-next-st="2">Next station: Practice together →</button></div>
+</div>
+
+<!-- STATION 2 -->
+<div class="sb-station" data-st="2">
+  <div class="sb-opti" data-slot="practice-1">Each of these jobs has a mix-up that kids often make. Here's a clue: a bigger denominator does not make a bigger fraction. It means the whole is cut into more pieces, so each piece is smaller.</div>
+
+  <!-- JOB 3 -->
+  <section class="sb-card sb-job" data-job="3">
+    <div class="sb-jh"><span class="sb-jn">JOB 3</span><div><h3>Ava's Big Number</h3><span class="sb-kind">🔨 Do · ✏️ Write</span></div><span class="sb-donechip"></span></div>
+    <p class="sb-story">Ava compared <b>one-eleventh</b> and <b>one-ninth</b>. She said, "11 is more than 9, so one-eleventh is more." She wrote: ''' + fr(1, 11) + ' &gt; ' + fr(1, 9) + r'''.</p>
+    <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>Fraction tiles: a bar of elevenths and a bar of ninths under 1 whole. Then Ava's comparison. Her symbol is in the box, marked "Ava's".</p>
+      <div class="sb-how"><div><b>What to do:</b> Shade one tile in each bar, then fix Ava's symbol.</div></div></div>
+    <div data-mod="cmp" data-kind="tiles" data-da="11" data-db="9" data-a="1" data-b="1" data-rows="Elevenths,Ninths" data-name="ava-tiles" data-for="a b"></div>
+    <div data-mod="sym" data-a="1/11" data-b="1/9" data-ans="<" data-wrong=">" data-who="Ava" data-name="ava-sym" data-for="sym"></div>
+    <div class="sb-steps">
+      <div class="sb-step" data-need="a b"><h4>Shade one tile in each bar</h4><p>Tap the first tile in the elevenths bar. Then tap the first tile in the ninths bar.</p></div>
+      <div class="sb-step"><h4>Which tile is bigger?</h4><div class="sb-q">The one-[[w:ninth|ninths~Look at the two shaded tiles. Which one is wider?]] tile is bigger.</div><div class="sb-q">11 is more than 9, but 11 parts in the whole makes [[w:smaller|smaller parts|littler|tinier~More equal parts in the same whole. Are the parts bigger or smaller?]] parts.</div><div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-step" data-need="sym"><h4>Fix Ava's symbol</h4><p>Drag a new symbol into the box. The open side must face the bigger fraction.</p></div>
+      <div class="sb-step"><h4>Help Ava</h4><label class="sb-write-l" for="w-ava">Tell Ava why one-eleventh is less than one-ninth.</label><textarea class="sb-write" id="w-ava" data-req data-label="Help Ava" placeholder="When the whole is cut into more parts…"></textarea><div class="sb-chips2">Remember to tell: <span>more parts</span><span>smaller parts</span></div><div class="sb-help"><button type="button" class="sb-btn check">Done</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-locked"></div>
+    </div>
+    <div class="sb-help"><button type="button" class="sb-btn ghost" data-hints='["Look at the two shaded tiles side by side. Which one is wider?","The denominator tells how many parts. It does not tell how big the fraction is.","The point of the symbol faces the smaller fraction: one-eleventh."]'>💡 Need a hint?</button>{{TOOL:fbars-9-11}}<button type="button" class="sb-btn ghost sb-tipbtn" data-tip="#tip-3">💬 Cora has a tip</button></div>
+    <div class="sb-hintbox"></div>
+    <div class="sb-tip" id="tip-3" data-who="cora">Read it out loud: "one-eleventh is less than one-ninth." If the words match the tiles, the symbol is right.</div>
+  </section>
+
+  <!-- JOB 4 -->
+  <section class="sb-card sb-job" data-job="4">
+    <div class="sb-jh"><span class="sb-jn">JOB 4</span><div><h3>Noah's Same Numerator</h3><span class="sb-kind">🔨 Do · ✏️ Write</span></div><span class="sb-donechip"></span></div>
+    <p class="sb-story">Noah says <b>four-fifths</b> and <b>four-tenths</b> are equal, because both are 4 parts. Pythagoras has two strings of the same length: one marked in fifths, one marked in tenths. Let's listen.</p>
+    <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>Two strings of the same length. The light dots on the top box show fifths. The light dots on the bottom box show tenths. Each string has a bridge. The gold part, from the start to the bridge, is the part you pluck.</p>
+      <div class="sb-how"><div><b>What to do:</b> Slide the bridges, pluck both parts, then compare.</div></div></div>
+    <div data-mod="cmp" data-kind="strings" data-da="5" data-db="10" data-a="4" data-b="4" data-rows="Fifths string,Tenths string" data-name="noah" data-for="a b pluck"></div>
+    <div data-mod="sym" data-a="4/5" data-b="4/10" data-ans=">" data-wrong="=" data-who="Noah" data-name="noah-sym" data-for="sym"></div>
+    <div class="sb-steps">
+      <div class="sb-step" data-need="a"><h4>Slide the top bridge to four-fifths</h4><p>Drag the top bridge to the right until the fraction under it says ''' + fr(4, 5) + r'''.</p></div>
+      <div class="sb-step" data-need="b"><h4>Slide the bottom bridge to four-tenths</h4><p>Drag the bottom bridge until the fraction under it says ''' + fr(4, 10) + r'''.</p></div>
+      <div class="sb-step" data-need="pluck"><h4>Pluck both gold parts</h4><p>Tap the gold part of the top string. Then tap the gold part of the bottom string. Do they sing the same note?</p></div>
+      <div class="sb-step"><h4>What did you hear?</h4><div class="sb-q">The notes are [[w:different|not the same~Did the two notes match?]]. The [[w:fifths|top|fifths string~Which gold part is longer?]] gold part is longer.</div><div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-step" data-need="sym"><h4>Fix Noah's symbol</h4><p>Noah put = in the box. Drag the symbol that makes it true.</p></div>
+      <div class="sb-step"><h4>Fix Noah's thinking</h4><label class="sb-write-l" for="w-noah">Why are four-fifths and four-tenths not equal?</label><textarea class="sb-write" id="w-noah" data-req data-label="Fix Noah's thinking" placeholder="Both have 4 parts, but…"></textarea><div class="sb-chips2">Remember to tell: <span>same numerator</span><span>size of the parts</span></div><div class="sb-help"><button type="button" class="sb-btn check">Done</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-locked"></div>
+    </div>
+    <div class="sb-help"><button type="button" class="sb-btn ghost" data-hints='["Count the light dots from the start. The top string has 4 big jumps to four-fifths.","The fifths are bigger than the tenths, so 4 fifths is more string.","Same numerator does not mean equal. Look at the size of the parts."]'>💡 Need a hint?</button>{{TOOL:fbars-5-10}}<button type="button" class="sb-btn ghost sb-tipbtn" data-tip="#tip-4">💬 Hazel has a tip</button></div>
+    <div class="sb-hintbox"></div>
+    <div class="sb-tip" id="tip-4" data-who="hazel">Four big steps take me farther than four little steps. Fifths are big steps. Tenths are little steps.</div>
+  </section>
+
+  <!-- JOB 5 -->
+  <section class="sb-card sb-job" data-job="5">
+    <div class="sb-jh"><span class="sb-jn">JOB 5</span><div><h3>The Climbing Notes</h3><span class="sb-kind">🔨 Do · listen</span></div><span class="sb-donechip"></span></div>
+    <p class="sb-story">Pythagoras has one pipe, already cut into <b>9 equal pieces</b>. He blows one piece. Then he cuts the same pipe into one more piece and blows again. What happens to the note?</p>
+    <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>One bronze pipe with a ✂ button, and a row of lines that shows each note you hear, from low to high. Below it are three fraction cards and three boxes, from least on the left to greatest on the right.</p>
+      <div class="sb-how"><div><b>What to do:</b> Blow, cut, blow again. Then order the cards and play them.</div></div></div>
+    <div data-mod="pipes" data-mode="climb" data-from="9" data-to="12" data-name="climb" data-for="climb"></div>
+    <div data-mod="order" data-fr="1/11,1/9,1/12" data-name="climb-order" data-for="order tune"></div>
+    <div class="sb-steps">
+      <div class="sb-step" data-need="climb"><h4>Blow, cut, blow again</h4><p>Tap the first piece to blow it. Then press ✂ Cut one more piece and blow the first piece again. Keep going until the pipe has 12 pieces and you have heard 4 notes.</p></div>
+      <div class="sb-step"><h4>What happened?</h4><div class="sb-q">Each new cut made the pieces [[w:smaller|shorter~Did the pieces get longer or shorter?]], and the note went [[w:higher|up~Did the notes go up or down?]].</div><div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-step" data-need="order"><h4>Order the three cards</h4><p>Drag the three cards into the boxes, from least to greatest. You can also tap a card, then tap a box.</p></div>
+      <div class="sb-step" data-need="tune"><h4>Play the tune</h4><p>Press 🔊 Play the tune. From least to greatest, each piece is longer, so the notes step down.</p></div>
+      <div class="sb-locked"></div>
+    </div>
+    <div class="sb-help"><button type="button" class="sb-btn ghost" data-hints='["The most pieces makes the smallest piece.","Twelfths are the smallest of the three. Ninths are the biggest.","Least to greatest: the most pieces first, the fewest pieces last."]'>💡 Need a hint?</button>{{TOOL:fbars-9-11-12}}<button type="button" class="sb-btn ghost sb-tipbtn" data-tip="#tip-5">💬 Felix has a tip</button></div>
+    <div class="sb-hintbox"></div>
+    <div class="sb-tip" id="tip-5" data-who="felix">High note, short piece, small fraction. Low note, long piece, big fraction.</div>
+  </section>
+  <div class="sb-next"><button type="button" class="sb-btn gold" data-next-st="3">Next station: On your own →</button></div>
+</div>
+
+<!-- STATION 3 -->
+<div class="sb-station" data-st="3">
+  <div class="sb-opti" data-slot="own-1">Your turn to work on your own. On two number lines of the same length, count the jumps. Then look at how long each jump is.</div>
+
+  <!-- JOB 6 -->
+  <section class="sb-card sb-job" data-job="6">
+    <div class="sb-jh"><span class="sb-jn">JOB 6</span><div><h3>Long Jumps, Short Jumps</h3><span class="sb-kind">🔨 Do</span></div><span class="sb-donechip"></span></div>
+    <p class="sb-story">Two builder's rods are each 1 meter long. One is marked in <b>sevenths</b>. The other is marked in <b>twelfths</b>. One mark is at <b>three-sevenths</b>, and the other is at <b>three-twelfths</b>. Which mark is farther from the start?</p>
+    <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>Two number lines from 0 to 1, the same length, like the two rods. The top line is cut into sevenths and the bottom line into twelfths. Under them is a box for a symbol.</p>
+      <div class="sb-how"><div><b>What to do:</b> Put a dot on each line, then drag the symbol.</div></div></div>
+    <div data-mod="nl2" data-n="7" data-n2="12" data-ka="3" data-kb="3" data-rows="Sevenths,Twelfths" data-name="own-lines" data-for="top bot dots"></div>
+    <div data-mod="sym" data-a="3/7" data-b="3/12" data-ans=">" data-name="own-sym" data-for="sym"></div>
+    <div class="sb-steps">
+      <div class="sb-step" data-need="top"><h4>Put the top dot on three-sevenths</h4><p>Drag the red dot on the top line 3 jumps from 0. You can also tap a mark.</p></div>
+      <div class="sb-step" data-need="bot"><h4>Put the bottom dot on three-twelfths</h4><p>Drag the red dot on the bottom line 3 jumps from 0.</p></div>
+      <div class="sb-step" data-need="sym"><h4>Drag the symbol that makes it true</h4><p>Drag &lt;, &gt; or = into the box between ''' + fr(3, 7) + ' and ' + fr(3, 12) + r'''.</p></div>
+      <div class="sb-step"><h4>Long jumps or short jumps?</h4><div class="sb-q">Both dots are 3 jumps from 0. The [[w:sevenths|seventh|top~Which line has the longer jumps?]] jumps are longer, so ''' + fr(3, 7) + r''' is farther to the right.</div><div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-locked"></div>
+    </div>
+    <div class="sb-help"><button type="button" class="sb-btn ghost" data-hints='["Start at 0 and count the jumps: 1, 2, 3.","A line cut into 7 parts has longer jumps than a line cut into 12 parts.","The dot farther to the right is the greater fraction."]'>💡 Need a hint?</button>{{TOOL:fbars-7-12}}</div>
+    <div class="sb-hintbox"></div>
+  </section>
+
+  <div class="sb-next"><button type="button" class="sb-btn gold" data-go-tab="swyk">Next: Show What You Know →</button></div>
+</div>
+</section>
+
+<!-- ══════════════ SHOW WHAT YOU KNOW ══════════════ -->
+<section class="sb-panel tab-panel" id="tab-swyk" role="tabpanel">
+<div class="sb-opti" data-slot="swyk-1">Last stop! Show what you know. When the numerators match, look at the denominators. Fewer pieces in the whole means bigger pieces.</div>
+
+<!-- JOB 7 -->
+<section class="sb-card sb-job" data-job="7">
+  <div class="sb-jh"><span class="sb-jn">JOB 7</span><div><h3>Ninths or Elevenths?</h3><span class="sb-kind">🔨 Do · ✏️ Write</span></div><span class="sb-donechip"></span></div>
+  <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>A bar of ninths and a bar of elevenths under 1 whole, and a box for a symbol.</p>
+    <div class="sb-how"><div><b>What to do:</b> Shade, compare, then explain.</div></div></div>
+  <div data-mod="cmp" data-kind="tiles" data-da="9" data-db="11" data-a="4" data-b="4" data-rows="Ninths,Elevenths" data-name="swyk-tiles" data-for="a b"></div>
+  <div data-mod="sym" data-a="4/9" data-b="4/11" data-ans=">" data-name="swyk-sym" data-for="sym"></div>
+  <div class="sb-steps">
+    <div class="sb-step" data-need="a b"><h4>Problem 1 · Shade</h4><p>Shade 4 tiles in the ninths bar and 4 tiles in the elevenths bar. Sketch both bars in your math journal too.</p></div>
+    <div class="sb-step" data-need="sym"><h4>Problem 1 · Compare</h4><p>Drag the symbol that makes it true.</p></div>
+    <div class="sb-step"><h4>Problem 2 · Explain</h4><label class="sb-write-l" for="w-ninths">How did you know which fraction is greater? Use the words <b>denominator</b> and <b>size of the parts</b>.</label><textarea class="sb-write" id="w-ninths" data-req data-label="How I compared ninths and elevenths" placeholder="Both have 4 parts, so… The denominator…"></textarea><div class="sb-help"><button type="button" class="sb-btn check">Done</button></div><div class="sb-fb" aria-live="polite"></div></div>
+    <div class="sb-locked"></div>
+  </div>
+</section>
+
+<!-- JOB 8 -->
+<section class="sb-card sb-job" data-job="8">
+  <div class="sb-jh"><span class="sb-jn">JOB 8</span><div><h3>Show What You Know: Order and Play</h3><span class="sb-kind">🔨 Do · ✏️ Write</span></div><span class="sb-donechip"></span></div>
+  <p class="sb-story">Three pipes of the same length are cut into <b>eighths</b>, <b>elevenths</b> and <b>ninths</b>. Pythagoras painted 6 pieces of each: <b>six-eighths</b>, <b>six-elevenths</b> and <b>six-ninths</b>.</p>
+  <div data-mod="order" data-fr="6/8,6/11,6/9" data-name="swyk-order"></div>
+  <div class="sb-steps">
+    <div class="sb-step" data-need="order"><h4>Problem 3 · Order</h4><p>Drag the three cards into the boxes, from least to greatest.</p></div>
+    <div class="sb-step" data-need="tune"><h4>Problem 3 · Play it</h4><p>Press 🔊 Play the tune. The notes should step down.</p></div>
+    <div class="sb-step"><h4>Prove It</h4>
+      <label class="sb-write-l" for="w-prove">Explain how you put the three fractions in order. Tell why you looked at the denominators, and how the tune helped you check.</label><textarea class="sb-write" id="w-prove" data-req data-label="Prove It" placeholder="All three have 6 parts, so… The denominator… The tune…"></textarea><div class="sb-chips2">Remember to tell: <span>same numerator</span><span>size of the parts</span><span>least to greatest</span></div>
+      <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+    <div class="sb-locked"></div>
+  </div>
+</section>
+
+<div class="sb-card sb-qgroup" data-done="bonus" data-ok="✓ Yes! Any denominator bigger than 9 makes smaller parts, so 4 of them is less than four-ninths.">
+  <span class="sb-k">Bonus · optional</span>
+  <h3>Find a Denominator</h3>
+  <p>Write a denominator from 10 to 12 that makes this true: the fraction is less than ''' + fr(4, 9) + r'''.</p>
+  <div class="sb-q" style="font-size:22px">''' + '<span class="sb-frac"><input class="sb-ans" data-a="4" value="4" readonly aria-label="top number 4"><i></i>[[n:10|11|12~Smaller parts make a smaller fraction. Should the denominator be more than 9 or less than 9?]]</span>' + r''' &lt; ''' + fr(4, 9) + r'''</div>
+  <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div>
+</div>
+
+<div class="sb-card">
+  <span class="sb-k">How to turn in</span>
+  <h3>Turn in your work</h3>
+  <ol class="sb-steps4">
+    <li>Check the list below. Jobs 1 to 8 are required. The Bonus is optional.</li>
+    <li>Press <b>📋 Gather my answers</b>, then <b>📋 Copy</b>. Or press <b>🖨️ Print or save as PDF</b>.</li>
+    <li>Open this lesson's assignment in Canvas.</li>
+    <li>Paste your answers (or upload your PDF and journal photo), then press <b>Submit</b>.</li>
+  </ol>
+</div>
+
+<div class="sb-card sb-journal">
+  <span class="sb-k">Math journal</span>
+  <h3>All my answers</h3>
+  <div class="sb-help"><button type="button" class="sb-btn" data-journal="gather">📋 Gather my answers</button><button type="button" class="sb-btn ghost" data-journal="copy">📋 Copy</button><button type="button" class="sb-btn ghost" data-journal="download">⬇️ Download as text</button><button type="button" class="sb-btn ghost" data-journal="print">🖨️ Print or save as PDF</button></div>
+  <textarea id="sb-journal-out" readonly aria-label="All my answers">Press Gather my answers to collect everything here.</textarea>
+  <p class="sb-saved">Your answers and your work on this page save on this device as you go.</p>
+</div>
+
+<div class="sb-card">
+  <span class="sb-k">Checklist</span>
+  <h3>Before you turn in</h3>
+  <ul class="sb-check">
+    <li><span class="bx"></span><span>I finished Jobs 1 to 8.</span></li>
+    <li><span class="bx"></span><span>I sketched my ninths bar and elevenths bar in my math journal and wrote the symbol.</span></li>
+    <li><span class="bx"></span><span>I wrote my Prove It.</span></li>
+    <li><span class="bx"></span><span>I tried the Bonus. <span class="opt">(optional)</span></span></li>
+  </ul>
+</div>
+
+<div class="sb-card">
+  <span class="sb-k">Coming up next</span>
+  <h3>Unit 9 Summative, then Lesson 3.10.01 · Equivalent Fractions</h3>
+  <p>You can now compare fractions two ways: when the denominators match, count the parts, and when the numerators match, look at the size of the parts. Next comes the Unit 9 check. Then, in Unit 10, we find fractions that look different but name the same amount.</p>
+</div>
+
+<div class="sb-opti" data-slot="end-1">Before you go, listen to some organ music by Bach. An organ has hundreds of pipes. The long pipes play the low notes, and the short pipes play the high notes. Press play, and press stop whenever you like.</div>
+<div class="sb-card sb-listen" data-src="bach-organ-bwv659.mp3">
+  <img src="{{IMG:sb-gaffurio-pipes.jpg}}" alt="The old woodcut of Pythagoras and Philolaus blowing pipes">
+  <div style="flex:1">
+    <span class="sb-k">Listening corner</span>
+    <h3>Bach · Nun komm, der Heiden Heiland</h3>
+    <p style="margin:2px 0">Written about 300 years ago, for the organ. About 4½ minutes.</p>
+    <div class="meter"><i></i></div><div class="sb-row"><button type="button" class="sb-btn play">▶ Play the music</button><button type="button" class="sb-btn ghost stop">■ Stop</button><span class="time" style="font-weight:800;color:#5B6478">0:00</span></div>
+    <p class="sb-credits">Johann Sebastian Bach, chorale prelude Nun komm, der Heiden Heiland, BWV 659, played on the organ. Public-domain recording, Wikimedia Commons.</p>
+  </div>
+</div>
+</section>
+
+<footer class="sb-foot footer"><b>🏫 Optima Academy Online</b><br>Math · Grade 3 · Lesson 3.09.04 · Unit 9<br><span style="font-size:12px">Art: Raphael, The School of Athens (1509–1511), public domain. Franchino Gaffurio, Theorica musicae (1492), woodcut, public domain. Music: Bach, Nun komm, der Heiden Heiland, BWV 659 (organ), public-domain recording, Wikimedia Commons.</span></footer>
+</div>
+'''
+tail = '<script type="application/json" id="sb-data">' + src.split('<script type="application/json" id="sb-data">')[1]
+FL = [('54 ÷ 6', 9), ('63 ÷ 7', 9), ('48 ÷ 8', 6), ('45 ÷ 9', 5), ('42 ÷ 7', 6), ('56 ÷ 8', 7), ('72 ÷ 9', 8), ('36 ÷ 6', 6)]
+WORDS = {'÷': 'divided by'}
+fl = '\n'.join('      <div class="fluency-item"><span class="fluency-q">%s =</span><input class="fluency-input" data-answer="%d" inputmode="numeric" autocomplete="off" aria-label="%s"></div>' % (q, a, q.replace('÷', 'divided by')) for q, a in FL)
+body = body.replace('FLUENCY', fl)
+out = head + body + '\n' + tail
+open('/home/claude/g3sb/src/lesson-3-09-04.src.html', 'w').write(out)
+print(len(out))

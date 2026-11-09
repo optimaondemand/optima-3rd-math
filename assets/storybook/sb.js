@@ -298,7 +298,7 @@
   function musicDuck() { if (MUS && musicOn) { MUS.volume = 0.06; clearTimeout(musicDuck.t); musicDuck.t = setTimeout(function () { if (musicOn) MUS.volume = 0.16; }, 9000); } }
   if (musBtn) musBtn.addEventListener('click', function () { var m = musicEl(); musicOn = !musicOn; musBtn.setAttribute('aria-pressed', musicOn); musBtn.textContent = musicOn ? '🎵 Music: on' : '🎵 Music: off'; if (musicOn) { m.loop = true; m.volume = 0.16; m.play().catch(function () {}); } else m.pause(); });
   $$('.sb-listen').forEach(function (L) {
-    var a = new Audio(src(D.music || 'music.mp3')); a.preload = 'none';
+    var a = new Audio(src(L.dataset.src || D.music || 'music.mp3')); a.preload = 'none';
     var p = $('.play', L), s = $('.stop', L), bar = $('.meter i', L), t = $('.time', L);
     function fmt(x) { x = Math.max(0, Math.floor(x || 0)); return Math.floor(x / 60) + ':' + ('0' + x % 60).slice(-2); }
     a.addEventListener('timeupdate', function () { if (a.duration) { bar.style.width = (a.currentTime / a.duration * 100) + '%'; t.textContent = fmt(a.currentTime) + ' / ' + fmt(a.duration); } });
@@ -324,6 +324,12 @@
 
   /* ═══════════════ MODELS ═══════════════ */
   var MODS = {};
+  // redraw a model when its box gets much wider or narrower. The redraw waits a frame, so a
+  // height change inside it never re-enters the observer ("ResizeObserver loop" error).
+  function onWidth(box, fn) {
+    if (!window.ResizeObserver) return; var last = box.clientWidth || -1, raf = 0;
+    new ResizeObserver(function () { cancelAnimationFrame(raf); raf = requestAnimationFrame(function () { var w = box.clientWidth; if (w && Math.abs(w - last) > 30) { last = w; fn(); } }); }).observe(box);
+  }
   function mstate(name, def) { if (!ST.mods[name]) ST.mods[name] = def; return ST.mods[name]; }
   // pointer drag helper (mouse, touch, pen); returns svg coordinates
   function svgPt(svg, e) { var p = svg.createSVGPoint(); p.x = e.clientX; p.y = e.clientY; return p.matrixTransform(svg.getScreenCTM().inverse()); }
@@ -889,12 +895,15 @@
      data-d, data-a / data-b (numerators to reach), data-lens "660,360" (strings of different lengths: fixed bridges, stretch the short one)
      data-rows "Top bar,Bottom bar". Flags: a · b · shade (tiles) · pluck (strings) · heard · match · same (lens) */
   MODS.cmp = function (box) {
-    var kind = box.dataset.kind || 'tiles', d = +box.dataset.d, A = +box.dataset.a, B = +box.dataset.b, name = box.dataset.name || 'cmp';
+    var kind = box.dataset.kind || 'tiles', A = +box.dataset.a, B = +box.dataset.b, name = box.dataset.name || 'cmp';
+    // two denominators (3.09.04): data-da / data-db; else both rows use data-d
+    var DD = [+(box.dataset.da || box.dataset.d), +(box.dataset.db || box.dataset.d)], d = DD[0], mixed = DD[0] !== DD[1];
+    function pn(k, dn) { return k + ' ' + DNAME[dn] + (k === 1 ? '' : 's'); }
     var rows = (box.dataset.rows || (kind === 'tiles' ? 'Top bar,Bottom bar' : 'String A,String B')).split(',');
     var col = DCOL[d] || '#1F2A44', NAVY = '#0E1C42', OK = '#1E7A4C';
     var lens = box.dataset.lens ? box.dataset.lens.split(',').map(Number) : null;
     var S = mstate(name, kind === 'tiles' ? { k: [0, 0] } : lens ? { k: [A, B], w2: lens[1], pl: [0, 0], pl2: [0, 0] } : { k: [1, 1], pl: [0, 0] });
-    box.innerHTML = '<div class="sb-stage sb-cmp"><svg role="group" aria-label="Two wholes, each cut into ' + d + ' equal parts"></svg></div><div class="sb-readout" aria-live="polite"></div>';
+    box.innerHTML = '<div class="sb-stage sb-cmp"><svg role="group" aria-label="' + (mixed ? 'Two wholes: one cut into ' + DD[0] + ' equal parts, one cut into ' + DD[1] : 'Two wholes, each cut into ' + d + ' equal parts') + '"></svg></div><div class="sb-readout" aria-live="polite"></div>';
     var svg = $('svg', box), out = $('.sb-readout', box);
     function msg(h, ok) { out.innerHTML = ok ? '<span style="color:' + OK + '">' + h + '</span>' : h; }
     function txt(g, x, y, s, c, fs, an) { return NS('text', { x: x, y: y, 'text-anchor': an || 'start', 'font-size': fs || 15, 'font-weight': 900, fill: c || NAVY, text: s, 'pointer-events': 'none' }, g); }
@@ -907,17 +916,17 @@
         svg.innerHTML = '';
         NS('rect', { x: LX + 1, y: Y0, width: BW - 2, height: RH, rx: 6, fill: NAVY }, svg); txt(svg, LX + BW / 2, Y0 + RH / 2 + 7, '1 whole', '#fff', 20, 'middle');
         [0, 1].forEach(function (r) {
-          var y = YS[r], w = BW / d, row = NS('g', { class: 'cmp-row' }, svg);
+          var dn = DD[r], col = DCOL[dn] || '#1F2A44', y = YS[r], w = BW / dn, row = NS('g', { class: 'cmp-row' }, svg);
           var lab = txt(svg, LX, y - 9, rows[r] + ' · ' + S.k[r] + ' shaded', '#5B6478', 13);
-          for (var i = 0; i < d; i++) (function (i) {
+          for (var i = 0; i < dn; i++) (function (i) {
             var on = i < S.k[r], g = NS('g', { class: 'tile part', tabindex: 0, role: 'button', 'aria-label': rows[r] + ', tile ' + (i + 1) + (on ? ', shaded' : '') }, row);
             NS('rect', { x: LX + i * w + 1, y: y, width: w - 2, height: RH, rx: 6, fill: on ? col : '#fff', stroke: col, 'stroke-width': 2 }, g);
-            var c = on ? '#fff' : NAVY, f = w >= 44 ? 15 : 12; txt(g, LX + i * w + w / 2, y + RH / 2 - 4, '1', c, f, 'middle'); NS('line', { x1: LX + i * w + w / 2 - 7, y1: y + RH / 2 + 1, x2: LX + i * w + w / 2 + 7, y2: y + RH / 2 + 1, stroke: c, 'stroke-width': 2, 'pointer-events': 'none' }, g); txt(g, LX + i * w + w / 2, y + RH / 2 + 4 + f, String(d), c, f, 'middle');
+            var c = on ? '#fff' : NAVY, f = w >= 44 ? 15 : 12; txt(g, LX + i * w + w / 2, y + RH / 2 - 4, '1', c, f, 'middle'); NS('line', { x1: LX + i * w + w / 2 - 7, y1: y + RH / 2 + 1, x2: LX + i * w + w / 2 + 7, y2: y + RH / 2 + 1, stroke: c, 'stroke-width': 2, 'pointer-events': 'none' }, g); txt(g, LX + i * w + w / 2, y + RH / 2 + 4 + f, String(dn), c, f, 'middle');
             g.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); set(r, S.k[r] === i + 1 ? i : i + 1); } });
           })(i);
           // tap a tile: shade it and every tile before it. Drag along the bar: shade up to your finger.
           var hit = NS('rect', { x: LX, y: y, width: BW, height: RH, fill: 'transparent', style: 'cursor:pointer' }, svg);
-          function at(pt) { return Math.max(0, Math.min(d, Math.ceil((pt.x - LX) / w))); }
+          function at(pt) { return Math.max(0, Math.min(dn, Math.ceil((pt.x - LX) / w))); }
           // recolor in place while dragging (redrawing would drop the pointer)
           function recolor() { [].forEach.call(row.children, function (g, i) { var on = i < S.k[r], c = on ? '#fff' : NAVY; g.querySelector('rect').setAttribute('fill', on ? col : '#fff'); [].forEach.call(g.querySelectorAll('text'), function (t) { t.setAttribute('fill', c); }); g.querySelector('line').setAttribute('stroke', c); }); lab.textContent = rows[r] + ' · ' + S.k[r] + ' shaded'; }
           drag(hit, svg, function (pt) { var k = at(pt); if (k !== S.k[r]) { S.k[r] = k; recolor(); } }, function () { drawT(); }, function (e) { var k = at(svgPt(svg, e)); set(r, S.k[r] === k ? k - 1 : k); });
@@ -929,7 +938,7 @@
         save();
         var okA = S.k[0] === A, okB = S.k[1] === B;
         flag(box, 'a', okA); if (okA) flag(box, 'a'); flag(box, 'b', okB); if (okB) flag(box, 'b');
-        if (okA && okB) { flag(box, 'shade'); msg(A + ' ' + DNAME[d] + (A === 1 ? '' : 's') + ' and ' + B + ' ' + DNAME[d] + (B === 1 ? '' : 's') + '. Every tile is the same size, so count the shaded tiles.', true); return; }
+        if (okA && okB) { flag(box, 'shade'); var big = DD[0] < DD[1] ? 0 : 1; msg(mixed ? pn(A, DD[0]) + ' and ' + pn(B, DD[1]) + '. ' + (A === B ? 'The same number of tiles, but ' + DNAME[DD[big]] + ' tiles are bigger, so the ' + rows[big].toLowerCase() + ' shows more.' : 'Look at how much of each bar is shaded.') : pn(A, d) + ' and ' + pn(B, d) + '. Every tile is the same size, so count the shaded tiles.', true); return; }
         flag(box, 'shade', false);
         var r = !okA ? 0 : 1, want = r ? B : A, k = S.k[r];
         msg(k === 0 ? (okA ? rows[0] + ': <b>' + A + '</b> tile' + (A === 1 ? '' : 's') + ' shaded. ✓' : '') : rows[r] + ': <b>' + k + '</b> tile' + (k === 1 ? '' : 's') + ' shaded. ' + (k > want ? 'That is too many.' : 'That is not enough yet.'));
@@ -945,26 +954,26 @@
     var drawS = function () {
       fit(); svg.innerHTML = '';
       [0, 1].forEach(function (r) {
-        var y = Ys[r], w = W(r), seg = w / d, k = S.k[r], xb = X0 + k * seg;
+        var dn = DD[r], y = Ys[r], w = W(r), seg = w / dn, k = S.k[r], xb = X0 + k * seg;
         txt(svg, X0 - 40, y - 30 - 4 * K, rows[r], '#5B4A2A', 15 * K);
         NS('rect', { x: X0 - 30, y: y + 12, width: w + 60, height: 38, rx: 8, fill: r ? '#B07A45' : '#A86A35', stroke: '#5E3818', 'stroke-width': 2 }, svg);
-        for (var q = 1; q < d; q++) NS('circle', { cx: X0 + q * seg, cy: y + 31, r: 3.2, fill: '#F3E6C4', opacity: .85, 'pointer-events': 'none' }, svg);
+        for (var q = 1; q < dn; q++) NS('circle', { cx: X0 + q * seg, cy: y + 31, r: 3.2, fill: '#F3E6C4', opacity: .85, 'pointer-events': 'none' }, svg);
         NS('rect', { x: X0 - 7, y: y - 2, width: 10, height: 16, rx: 2, fill: '#EDE3CC', stroke: '#8C7550' }, svg);
         NS('rect', { x: X0 + w - 3, y: y - 2, width: 10, height: 16, rx: 2, fill: '#EDE3CC', stroke: '#8C7550' }, svg);
         NS('line', { x1: xb, y1: y, x2: X0 + w, y2: y, stroke: '#B8A57A', 'stroke-width': 2, 'pointer-events': 'none' }, svg);
         // the part you pluck: from the start to the bridge
-        var pg = NS('g', { class: 'seg', tabindex: 0, role: 'button', 'aria-label': 'Pluck ' + rows[r] + ': ' + k + ' ' + DNAME[d] + (k === 1 ? '' : 's') }, svg);
+        var pg = NS('g', { class: 'seg', tabindex: 0, role: 'button', 'aria-label': 'Pluck ' + rows[r] + ': ' + pn(k, dn) }, svg);
         NS('rect', { x: X0, y: y - 24, width: Math.max(8, xb - X0), height: 40, fill: 'transparent' }, pg);
         var sp = NS('path', { d: 'M' + X0 + ' ' + y + ' L' + xb + ' ' + y, stroke: '#D9A21B', 'stroke-width': 5, 'stroke-linecap': 'round', fill: 'none' }, pg);
         pg.addEventListener('click', function () { pl(r, sp, xb); }); pg.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); pl(r, sp, xb); } });
         // the bridge
-        var bg = NS('g', { class: 'bridge' + (lens ? '' : ' drag'), tabindex: lens ? -1 : 0, role: 'slider', 'aria-label': rows[r] + ' bridge', 'aria-valuenow': k, 'aria-valuemin': 1, 'aria-valuemax': d - 1 }, svg);
+        var bg = NS('g', { class: 'bridge' + (lens ? '' : ' drag'), tabindex: lens ? -1 : 0, role: 'slider', 'aria-label': rows[r] + ' bridge', 'aria-valuenow': k, 'aria-valuemin': 1, 'aria-valuemax': dn - 1 }, svg);
         NS('rect', { x: xb - 22 * K, y: y - 10 * K, width: 44 * K, height: 52 * K, fill: 'transparent' }, bg);
         NS('path', { d: 'M' + (xb - 12 * K) + ' ' + (y + 18 * K) + ' L' + xb + ' ' + (y - 1) + ' L' + (xb + 12 * K) + ' ' + (y + 18 * K) + ' Z', fill: '#F3E6C4', stroke: '#6B4A12', 'stroke-width': 2 }, bg);
-        sfr(svg, xb, y + 56 + 16 * K, k, d, '#5B4A2A', 15 * K);
+        sfr(svg, xb, y + 56 + 16 * K, k, dn, '#5B4A2A', 15 * K);
         if (!lens) {
-          drag(bg, svg, function (pt) { var nk = Math.max(1, Math.min(d - 1, Math.round((pt.x - X0) / seg))); bg.setAttribute('transform', 'translate(' + (X0 + nk * seg - xb) + ',0)'); bg.__k = nk; }, function () { if (bg.__k) { S.k[r] = bg.__k; S.pl = [0, 0]; } save(); drawS(); report(); }, null);
-          bg.addEventListener('keydown', function (e) { var dd = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0; if (!dd) return; e.preventDefault(); S.k[r] = Math.max(1, Math.min(d - 1, S.k[r] + dd)); S.pl = [0, 0]; save(); drawS(); report(); var b2 = $$('.bridge', svg)[r]; if (b2) b2.focus(); });
+          drag(bg, svg, function (pt) { var nk = Math.max(1, Math.min(dn - 1, Math.round((pt.x - X0) / seg))); bg.setAttribute('transform', 'translate(' + (X0 + nk * seg - xb) + ',0)'); bg.__k = nk; }, function () { if (bg.__k) { S.k[r] = bg.__k; S.pl = [0, 0]; } save(); drawS(); report(); }, null);
+          bg.addEventListener('keydown', function (e) { var dd = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0; if (!dd) return; e.preventDefault(); S.k[r] = Math.max(1, Math.min(dn - 1, S.k[r] + dd)); S.pl = [0, 0]; save(); drawS(); report(); var b2 = $$('.bridge', svg)[r]; if (b2) b2.focus(); });
         }
         // a shorter string can be stretched: drag its end
         if (lens && r === 1 && S.w2 < lens[0]) {
@@ -997,12 +1006,12 @@
       }
       var okA = S.k[0] === A, okB = S.k[1] === B;
       flag(box, 'a', okA); if (okA) flag(box, 'a'); flag(box, 'b', okB); if (okB) flag(box, 'b');
-      if (okA && okB && S.pl[0] && S.pl[1]) { flag(box, 'pluck'); msg(rows[1] + '\'s part is longer and sings lower: ' + B + ' ' + DNAME[d] + 's is more string than ' + A + ' ' + DNAME[d] + 's.', true); return; }
+      if (okA && okB && S.pl[0] && S.pl[1]) { flag(box, 'pluck'); var va = A / DD[0], vb = B / DD[1], lo = vb > va ? 1 : 0; msg(Math.abs(va - vb) < 1e-9 ? 'Same length, same note: ' + pn(A, DD[0]) + ' and ' + pn(B, DD[1]) + ' are the same amount of string.' : rows[lo] + '\'s part is longer and sings lower: ' + pn(lo ? B : A, DD[lo]) + ' is more string than ' + pn(lo ? A : B, DD[1 - lo]) + '.', true); return; }
       if (okA && okB) { msg(S.pl[0] || S.pl[1] ? 'You plucked one part.' : 'Both bridges are in place.', true); return; }
       var r = !okA ? 0 : 1, want = r ? B : A;
-      msg(rows[r] + '\'s bridge is at <b>' + S.k[r] + '</b> ' + DNAME[d] + (S.k[r] === 1 ? '' : 's') + '. ' + (S.k[r] > want ? 'That is too far.' : S.k[r] < want ? 'Not far enough yet.' : ''));
+      msg(rows[r] + '\'s bridge is at <b>' + S.k[r] + '</b> ' + DNAME[DD[r]] + (S.k[r] === 1 ? '' : 's') + '. ' + (S.k[r] > want ? 'That is too far.' : S.k[r] < want ? 'Not far enough yet.' : ''));
     };
-    document.addEventListener('sb:step', drawS); var lastW = -1; if (window.ResizeObserver) new ResizeObserver(function () { var w = box.clientWidth; if (w && Math.abs(w - lastW) > 30) { lastW = w; drawS(); } }).observe(box); drawS();
+    document.addEventListener('sb:step', drawS); onWidth(box, drawS); drawS();
   };
 
   /* ── sym: drag <, > or = between two fractions; the sentence reads it back ──
@@ -1032,17 +1041,22 @@
   /* ── order: drag three fractions into order, least to greatest; play them as a tune ──
      data-d, data-nums "9,4,1", data-pre (start with the cards in the slots in that order), data-who "Leo". Flags: order · tune */
   MODS.order = function (box) {
-    var d = +box.dataset.d, nums = box.dataset.nums.split(',').map(Number), name = box.dataset.name || 'order', who = box.dataset.who;
-    var S = mstate(name, { s: box.dataset.pre ? nums.slice() : [null, null, null], played: 0 });
-    var col = DCOL[d] || '#1F2A44', sel = null;
+    // data-fr "1/11,1/9,1/12" (mixed denominators, 3.09.04): cards are keyed by "n/d"; else data-d + data-nums (keyed by numerator)
+    var FR = !!box.dataset.fr, d = +box.dataset.d || 0, name = box.dataset.name || 'order', who = box.dataset.who;
+    var nums = FR ? box.dataset.fr.split(',') : box.dataset.nums.split(',').map(Number);
+    function nOf(id) { return FR ? +String(id).split('/')[0] : id; }
+    function dOf(id) { return FR ? +String(id).split('/')[1] : d; }
+    function val(id) { return nOf(id) / dOf(id); }
+    var S = mstate(name, { s: box.dataset.pre ? (FR ? box.dataset.pre.split(',') : nums.slice()) : [null, null, null], played: 0 });
+    var sel = null;
     box.innerHTML = '<div class="sb-stage sb-order"><div class="ord-tray" aria-label="Fraction cards"></div><div class="ord-slots"></div>' +
       '<div class="sb-row"><button type="button" class="sb-btn sm ghost ord-play">🔊 Play the tune</button><span class="ord-who"></span></div></div><div class="sb-readout" aria-live="polite"></div>';
     var tray = $('.ord-tray', box), slots = $('.ord-slots', box), out = $('.sb-readout', box), playB = $('.ord-play', box);
-    function card(n) {
-      var w = 120, cw = w / d, sv = '<svg viewBox="0 0 ' + (w + 2) + ' 22" aria-hidden="true">';
+    function card(id) {
+      var n = nOf(id), d = dOf(id), col = DCOL[d] || '#1F2A44', w = 120, cw = w / d, sv = '<svg viewBox="0 0 ' + (w + 2) + ' 22" aria-hidden="true">';
       for (var i = 0; i < d; i++) sv += '<rect x="' + (1 + i * cw) + '" y="1" width="' + cw + '" height="20" fill="' + (i < n ? col : '#fff') + '" stroke="' + col + '" stroke-width="1.5"/>';
       sv += '</svg>';
-      var c = el('button', 'ord-card', frac(n, d) + sv); c.type = 'button'; c.dataset.n = n; c.setAttribute('aria-label', n + ' ' + DNAME[d] + (n === 1 ? '' : 's')); return c;
+      var c = el('button', 'ord-card', frac(n, d) + sv); c.type = 'button'; c.dataset.n = id; c.setAttribute('aria-label', n + ' ' + DNAME[d] + (n === 1 ? '' : 's')); return c;
     }
     function place(n, slotI) {
       var from = S.s.indexOf(n), there = S.s[slotI];
@@ -1058,7 +1072,7 @@
         s.addEventListener('click', function (e) { if (sel != null && !e.target.closest('.ord-card')) place(sel, i); });
         slots.appendChild(s); if (i < 2) slots.appendChild(el('span', 'ord-arrow', '→'));
       });
-      if (sel != null) $$('.ord-card', box).forEach(function (c) { if (+c.dataset.n === sel) c.classList.add('sel'); });
+      if (sel != null) $$('.ord-card', box).forEach(function (c) { if (String(c.dataset.n) === String(sel)) c.classList.add('sel'); });
       $('.ord-who', box).textContent = who && S.s.join() === box.dataset.pre ? who + '\'s order' : '';
       report();
     }
@@ -1066,20 +1080,157 @@
       hdrag(c, function (t) { var s = t && t.closest && t.closest('.ord-slot'); if (s && box.contains(s)) place(n, +s.dataset.i); },
         function () { if (sel == null || sel === n) { sel = sel === n ? null : n; draw(); return; } var si = S.s.indexOf(n); if (si > -1) place(sel, si); else { sel = n; draw(); } });
     }
-    function right() { var s = S.s; return s.every(function (v) { return v != null; }) && s[0] < s[1] && s[1] < s[2]; }
+    function right() { var s = S.s; return s.every(function (v) { return v != null; }) && val(s[0]) < val(s[1]) && val(s[1]) < val(s[2]); }
     playB.onclick = function () {
       if (S.s.some(function (v) { return v == null; })) { out.innerHTML = 'Put all 3 cards in the boxes first.'; return; }
-      S.s.forEach(function (n, i) { setTimeout(function () { pluck(98 * d / n); var c = $$('.ord-slot .ord-card', box)[i]; if (c) { c.classList.add('ring'); setTimeout(function () { c.classList.remove('ring'); }, 520); } }, i * 700); });
+      S.s.forEach(function (n, i) { setTimeout(function () { pluck(98 / val(n)); var c = $$('.ord-slot .ord-card', box)[i]; if (c) { c.classList.add('ring'); setTimeout(function () { c.classList.remove('ring'); }, 520); } }, i * 700); });
       setTimeout(function () { if (right()) { S.played = 1; save(); } else flag(box, 'try'); report(true); }, 2200);
     };
     function report(afterPlay) {
       var full = S.s.every(function (v) { return v != null; });
-      if (right()) { flag(box, 'order'); if (S.played) flag(box, 'tune'); out.innerHTML = '<span style="color:#1E7A4C">' + (S.played ? 'Hear it? From least to greatest, each part is longer, so the notes step down.' : 'Least to greatest: ' + S.s.map(function (n) { return frac(n, d); }).join(' , ') + '.') + '</span>'; return; }
+      if (right()) { flag(box, 'order'); if (S.played) flag(box, 'tune'); out.innerHTML = '<span style="color:#1E7A4C">' + (S.played ? 'Hear it? From least to greatest, each part is longer, so the notes step down.' : 'Least to greatest: ' + S.s.map(function (n) { return frac(nOf(n), dOf(n)); }).join(' , ') + '.') + '</span>'; return; }
       flag(box, 'order', false);
       if (!full) { out.innerHTML = ''; return; }
       out.innerHTML = afterPlay ? 'The notes did not step down each time. A smaller fraction is a shorter part, and a shorter part sings higher.' : '';
     }
     draw();
+  };
+
+  /* ── nl2: two number lines, one above the other, same length; one dot on each (3.09.04) ──
+     data-n / data-n2 (denominators), data-ka / data-kb (jumps to reach), data-rows "Sevenths,Twelfths". Flags: top · bot · dots */
+  MODS.nl2 = function (box) {
+    var NN = [+box.dataset.n, +box.dataset.n2], KK = [+box.dataset.ka, +box.dataset.kb], name = box.dataset.name || 'nl2';
+    var rows = (box.dataset.rows || (DNAME[NN[0]] + 's,' + DNAME[NN[1]] + 's')).split(','), NAVY = '#1F2A44', OK = '#1E7A4C', BAD = '#B23A2E';
+    var S = mstate(name, { c: [0, 0], ok: [0, 0] }), X0 = 60, X1 = 740, LW = X1 - X0, Ys = [96, 236], K = 1;
+    // phones: the same picture, drawn with bigger text and dots
+    function fit() { K = Math.max(1, Math.min(2.2, 740 / (box.clientWidth || 800))); Ys = [50 + 46 * K, 50 + 46 * K + 90 + 50 * K]; svg.setAttribute('viewBox', '0 0 800 ' + Math.round(Ys[1] + 30 + 46 * K)); }
+    box.innerHTML = '<div class="sb-stage sb-nl"><svg viewBox="0 0 800 320" role="group" aria-label="Two number lines from 0 to 1: ' + rows.join(' and ') + '"></svg></div><div class="sb-readout" aria-live="polite"></div>';
+    var svg = $('svg', box), out = $('.sb-readout', box);
+    function X(r, k) { return X0 + k / NN[r] * LW; }
+    function txt(x, y, s, c, fs, an) { return NS('text', { x: x, y: y, 'text-anchor': an || 'middle', 'font-size': fs || 16, 'font-weight': 900, fill: c || NAVY, text: s, 'pointer-events': 'none' }, svg); }
+    function fr(x, y, nu, de, c) { var f = 16 * K; txt(x, y, String(nu), c, f); NS('line', { x1: x - 9 * K, y1: y + 5 * K, x2: x + 9 * K, y2: y + 5 * K, stroke: c, 'stroke-width': 2, 'pointer-events': 'none' }, svg); txt(x, y + f + 6 * K, String(de), c, f); }
+    function msg(h, ok) { out.innerHTML = ok ? '<span style="color:' + OK + '">' + h + '</span>' : h; }
+    function draw() {
+      fit(); svg.innerHTML = '';
+      [0, 1].forEach(function (r) {
+        var y = Ys[r], n = NN[r], col = DCOL[n] || NAVY, done = S.ok[r], k = done ? KK[r] : S.c[r];
+        txt(X1 + 10, y - 34 - 14 * K, rows[r], col, 15 * K, 'end');
+        NS('line', { x1: X0 - 18, y1: y, x2: X1 + 18, y2: y, stroke: NAVY, 'stroke-width': 3, 'stroke-linecap': 'round' }, svg);
+        [0, 1].forEach(function (w) { NS('line', { x1: X0 + w * LW, y1: y - 16, x2: X0 + w * LW, y2: y + 16, stroke: NAVY, 'stroke-width': 3.5 }, svg); txt(X0 + w * LW, y + 22 + 18 * K, String(w), NAVY, 20 * K); });
+        for (var q = 1; q < n; q++) NS('line', { x1: X(r, q), y1: y - 11 * K, x2: X(r, q), y2: y + 11 * K, stroke: col, 'stroke-width': 2.5 }, svg);
+        for (var i = 0; i < k; i++) { var xa = X(r, i), xb = X(r, i + 1), h = Math.min(30, (xb - xa) * 0.55); NS('path', { d: 'M' + (xa + 3) + ' ' + (y - 6) + ' Q ' + (xa + xb) / 2 + ' ' + (y - 6 - h * 1.6) + ' ' + (xb - 3) + ' ' + (y - 6), stroke: col, 'stroke-width': 2.5, fill: 'none', 'pointer-events': 'none' }, svg); }
+        if (done) { NS('circle', { cx: X(r, k), cy: y, r: 10 * K, fill: OK, stroke: '#fff', 'stroke-width': 3 }, svg); fr(X(r, k), y + 14 + 16 * K, k, n, OK); return; }
+        if (k) txt(X(r, k), y + 22 + 18 * K, k + ' jump' + (k > 1 ? 's' : ''), BAD, 14 * K);
+        var hit = NS('rect', { x: X0 - 20, y: y - 30, width: LW + 40, height: 60, fill: 'transparent', class: 'nl-hit' }, svg);
+        hit.addEventListener('click', function (e) { S.c[r] = snap(r, svgPt(svg, e).x); check(r); });
+        var x = X(r, k), d = NS('g', { class: 'nl-dot', tabindex: 0, role: 'slider', 'aria-label': rows[r] + ' dot. ' + k + ' jumps from 0.' }, svg);
+        NS('circle', { cx: x, cy: y, r: 22 * K, fill: 'transparent' }, d); NS('circle', { cx: x, cy: y, r: 11 * K, fill: BAD, stroke: '#fff', 'stroke-width': 3 }, d);
+        drag(d, svg, function (pt) { var kk = snap(r, pt.x); S.c[r] = kk; d.setAttribute('transform', 'translate(' + (X(r, kk) - x) + ',0)'); }, function () { check(r); }, null);
+        d.addEventListener('keydown', function (e) { var dd = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0; if (!dd) return; e.preventDefault(); S.c[r] = Math.max(0, Math.min(n, S.c[r] + dd)); check(r); var nd = $$('.nl-dot', svg)[0]; if (nd) nd.focus(); });
+      });
+      if (S.ok[0] && S.ok[1]) { var far = KK[0] / NN[0] > KK[1] / NN[1] ? 0 : 1, fx = X(far, KK[far]); NS('line', { x1: fx, y1: far ? Ys[0] + 14 : Ys[0] + 26 + 44 * K, x2: fx, y2: Ys[1] - 14, stroke: '#C9A227', 'stroke-width': 2, 'stroke-dasharray': '5 5', 'pointer-events': 'none' }, svg); }
+    }
+    function snap(r, x) { return Math.max(0, Math.min(NN[r], Math.round((x - X0) / LW * NN[r]))); }
+    function check(r) { if (S.c[r] === KK[r]) { S.ok[r] = 1; pluck(98 / (KK[r] / NN[r])); } save(); draw(); report(r); }
+    function report(r) {
+      flag(box, 'top', !!S.ok[0]); if (S.ok[0]) flag(box, 'top'); flag(box, 'bot', !!S.ok[1]); if (S.ok[1]) flag(box, 'bot');
+      if (S.ok[0] && S.ok[1]) { var big = NN[0] < NN[1] ? 0 : 1; flag(box, 'dots'); msg('A one-' + DNAME[NN[big]] + ' jump is longer than a one-' + DNAME[NN[1 - big]] + ' jump. ' + KK[0] + ' long jumps go farther than ' + KK[0] + ' short jumps.', true); return; }
+      var c = r == null ? -1 : r;
+      if (c > -1 && !S.ok[c] && S.c[c]) { msg('The ' + rows[c].toLowerCase() + ' dot is <b>' + S.c[c] + '</b> jump' + (S.c[c] > 1 ? 's' : '') + ' from 0. That is not ' + frac(KK[c], NN[c]) + '.'); return; }
+      msg(S.ok[0] ? 'The top dot is on ' + frac(KK[0], NN[0]) + '. ✓' : '');
+    }
+    onWidth(box, draw);
+    draw(); report();
+  };
+
+  /* ── pipes: Pythagoras' pipes. Cut a pipe into equal pieces; blow one piece (3.09.04) ──
+     data-mode pair (two same-length pipes: data-da, data-db, data-rows) · climb (one pipe: data-from, data-to; add a cut, blow each time)
+     Flags pair: a · b · blow   ·  climb: climb */
+  var PAC = null;
+  function blowTone(freq) {
+    var c = ac(); if (!c) return; var t = c.currentTime, o = c.createOscillator(), o2 = c.createOscillator(), g = c.createGain(), f = c.createBiquadFilter();
+    o.type = 'triangle'; o.frequency.value = freq; o2.type = 'sine'; o2.frequency.value = freq * 2; f.type = 'lowpass'; f.frequency.value = freq * 4;
+    g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(0.5, t + 0.08); g.gain.setValueAtTime(0.45, t + 0.7); g.gain.exponentialRampToValueAtTime(0.001, t + 1.2);
+    var g2 = c.createGain(); g2.gain.value = 0.18; o.connect(f); o2.connect(g2); g2.connect(f); f.connect(g); g.connect(VOL);
+    // a little breath at the start
+    var len = Math.floor(c.sampleRate * 0.25), nb = c.createBuffer(1, len, c.sampleRate), dd = nb.getChannelData(0); for (var i = 0; i < len; i++) dd[i] = (Math.random() * 2 - 1) * (1 - i / len) * 0.25;
+    var ns = c.createBufferSource(), nf = c.createBiquadFilter(); ns.buffer = nb; nf.type = 'bandpass'; nf.frequency.value = freq * 2; ns.connect(nf); nf.connect(VOL);
+    o.start(t); o2.start(t); ns.start(t); o.stop(t + 1.3); o2.stop(t + 1.3);
+  }
+  MODS.pipes = function (box) {
+    var mode = box.dataset.mode || 'pair', name = box.dataset.name || 'pipes', F0 = 55, MAX = 12;
+    var climb = mode === 'climb', from = +box.dataset.from || 9, to = +box.dataset.to || 12;
+    var DD = [+box.dataset.da || 9, +box.dataset.db || 12], rows = (box.dataset.rows || (climb ? 'The pipe' : 'Top pipe,Bottom pipe')).split(',');
+    var S = mstate(name, climb ? { n: [from], heard: {} } : { n: [1, 1], bl: [0, 0] }), R = climb ? [0] : [0, 1];
+    box.innerHTML = '<div class="sb-stage sb-pipes">' + R.map(function (r) { return '<div class="pp-row" data-r="' + r + '"><div class="sb-row pp-ctl"><b class="pp-name">' + esc(rows[r]) + '</b><button type="button" class="sb-btn sm ghost pp-less" aria-label="One piece fewer">−</button><span class="pp-cnt" aria-live="polite"></span><button type="button" class="sb-btn sm pp-more">✂ Cut one more piece</button></div><svg viewBox="0 0 800 136" role="group" aria-label="' + esc(rows[r]) + '"></svg></div>'; }).join('') +
+      (climb ? '<div class="pp-notes"><svg viewBox="0 0 800 190" role="img" aria-label="The notes you heard, from low to high"></svg></div>' : '') + '</div><div class="sb-readout" aria-live="polite"></div>';
+    var out = $('.sb-readout', box), X0 = 40, LW = 720, Y = 46, H = 36, GAP = 6, K = 1;
+    function fit() { K = Math.max(1, Math.min(2.2, 740 / (box.clientWidth || 800))); H = 36 * K; Y = 14 + 16 * K + H / 2; }
+    function msg(h, ok) { out.innerHTML = ok ? '<span style="color:#1E7A4C">' + h + '</span>' : h; }
+    var still = function () { return reduced || document.documentElement.classList.contains('sb-still'); };
+    function draw(r) {
+      fit(); var wrap = $('.pp-row[data-r="' + r + '"]', box), svg = $('svg', wrap), n = S.n[r], pw = (LW - GAP * (n - 1)) / n;
+      svg.setAttribute('viewBox', '0 0 800 ' + Math.round(Y + H / 2 + 14 + 54 * K));
+      $('.pp-cnt', wrap).textContent = n === 1 ? '1 whole pipe' : n + ' equal pieces';
+      $('.pp-less', wrap).disabled = n <= (climb ? from : 1); $('.pp-more', wrap).disabled = n >= (climb ? to : MAX);
+      svg.innerHTML = '';
+      var defs = NS('defs', {}, svg), gr = NS('linearGradient', { id: name + '-br' + r, x1: 0, y1: 0, x2: 0, y2: 1 }, defs);
+      NS('stop', { offset: '0', 'stop-color': '#E8C27A' }, gr); NS('stop', { offset: '.45', 'stop-color': '#C1923F' }, gr); NS('stop', { offset: '1', 'stop-color': '#8A5F22' }, gr);
+      for (var i = 0; i < n; i++) (function (i) {
+        var x = X0 + i * (pw + GAP), g = NS('g', { class: 'part pp-piece', tabindex: 0, role: 'button', 'aria-label': n === 1 ? 'Blow the whole pipe' : 'Blow piece ' + (i + 1) + ': one ' + DNAME[n] }, svg);
+        NS('rect', { x: x, y: Y - H / 2, width: pw, height: H, rx: 6, fill: 'url(#' + name + '-br' + r + ')', stroke: '#5E3B10', 'stroke-width': 2 }, g);
+        NS('ellipse', { cx: x + 5, cy: Y, rx: 3.5, ry: H / 2 - 4, fill: '#3A250A', opacity: .55 }, g);
+        if (i === 0) NS('rect', { x: x + 3, y: Y - H / 2 + 3, width: pw - 6, height: H - 6, rx: 4, fill: 'none', stroke: '#FFF3C4', 'stroke-width': 2.5, 'pointer-events': 'none' }, g);
+        function hit() { blow(r, g, x, pw); }
+        g.addEventListener('click', hit); g.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); hit(); } });
+      })(i);
+      // the label sits under the first piece, never on it
+      var lx = X0 + (n === 1 ? LW / 2 : pw / 2);
+      var B = Y + H / 2, f = 16 * K;
+      if (n === 1) NS('text', { x: lx, y: B + 8 + f, 'text-anchor': 'middle', 'font-size': 17 * K, 'font-weight': 900, fill: '#0E1C42', text: '1 whole' }, svg);
+      else { var c = DCOL[n] || '#0E1C42'; NS('path', { d: 'M' + X0 + ' ' + (B + 6) + ' v6 h' + pw + ' v-6', stroke: c, 'stroke-width': 2, fill: 'none' }, svg);
+        NS('text', { x: lx, y: B + 14 + f, 'text-anchor': 'middle', 'font-size': f, 'font-weight': 900, fill: c, text: '1' }, svg); NS('line', { x1: lx - 9 * K, y1: B + 19 + f, x2: lx + 9 * K, y2: B + 19 + f, stroke: c, 'stroke-width': 2 }, svg); NS('text', { x: lx, y: B + 24 + 2 * f, 'text-anchor': 'middle', 'font-size': f, 'font-weight': 900, fill: c, text: String(n) }, svg); }
+    }
+    function blow(r, g, x, pw) {
+      var n = S.n[r]; blowTone(F0 * n);
+      if (!still()) { var svg = g.ownerSVGElement, p = NS('g', { 'pointer-events': 'none' }, svg); for (var k = 0; k < 3; k++) NS('path', { d: 'M' + (x + pw / 2 - 14 + k * 14) + ' ' + (Y - H / 2 - 4) + ' q -6 -9 0 -18', stroke: '#9FB4D8', 'stroke-width': 2.5, fill: 'none', 'stroke-linecap': 'round' }, p); g.classList.add('pp-on'); setTimeout(function () { p.remove(); g.classList.remove('pp-on'); }, 700); }
+      if (climb) { S.heard[n] = 1; save(); notes(); report(); return; }
+      if (n === DD[r]) S.bl[r] = 1; save(); report();
+    }
+    function notes() {
+      var svg = $('.pp-notes svg', box); if (!svg) return; svg.innerHTML = ''; fit();
+      var step = 26 * K, base = 44 + 4 * step, f = 15 * K; svg.setAttribute('viewBox', '0 0 800 ' + Math.round(base + 26 * K + 2 * f + 6));
+      NS('text', { x: 20, y: 22 * K, 'font-size': 14 * K, 'font-weight': 800, fill: '#5B6478', text: 'Notes you heard' }, svg);
+      NS('path', { d: 'M40 ' + base + ' V' + (base - 3 * step - 10) + ' m-7 10 l7 -10 l7 10', stroke: '#B8AE95', 'stroke-width': 2, fill: 'none' }, svg); NS('text', { x: 54, y: base - 3 * step, 'font-size': 13 * K, 'font-weight': 800, fill: '#8C8270', text: 'higher' }, svg);
+      var pts = [];
+      for (var n = from; n <= to; n++) { if (!S.heard[n]) continue; var i = n - from, x = 170 + i * 170, y = base - i * step, c = DCOL[n] || '#0E1C42'; pts.push([x, y]);
+        NS('circle', { cx: x, cy: y, r: 10 * K, fill: c }, svg); NS('text', { x: x, y: y + 12 * K + f, 'text-anchor': 'middle', 'font-size': f, 'font-weight': 900, fill: c, text: '1' }, svg); NS('line', { x1: x - 8 * K, y1: y + 17 * K + f, x2: x + 8 * K, y2: y + 17 * K + f, stroke: c, 'stroke-width': 2 }, svg); NS('text', { x: x, y: y + 22 * K + 2 * f, 'text-anchor': 'middle', 'font-size': f, 'font-weight': 900, fill: c, text: String(n) }, svg); }
+      for (var k = 1; k < pts.length; k++) if (pts[k][0] - pts[k - 1][0] < 180) NS('line', { x1: pts[k - 1][0] + 12 * K, y1: pts[k - 1][1] - 4, x2: pts[k][0] - 12 * K, y2: pts[k][1] + 4, stroke: '#C9A227', 'stroke-width': 2, 'stroke-dasharray': '4 4' }, svg);
+    }
+    function report() {
+      if (climb) {
+        var all = true; for (var n = from; n <= to; n++) if (!S.heard[n]) all = false;
+        if (all) { flag(box, 'climb'); msg('Every new cut made each piece shorter, and the note climbed higher. More equal pieces means smaller pieces: one-' + DNAME[to] + ' is the smallest.', true); return; }
+        msg(S.heard[S.n[0]] ? 'You heard one-' + DNAME[S.n[0]] + '. ' + (S.n[0] < to ? 'Now cut one more piece.' : '') : 'The pipe is cut into ' + S.n[0] + ' equal pieces.');
+        return;
+      }
+      var ok = [S.n[0] === DD[0], S.n[1] === DD[1]];
+      flag(box, 'a', ok[0]); if (ok[0]) flag(box, 'a'); flag(box, 'b', ok[1]); if (ok[1]) flag(box, 'b');
+      if (ok[0] && ok[1] && S.bl[0] && S.bl[1]) { var big = DD[0] < DD[1] ? 0 : 1; flag(box, 'blow'); msg('The one-' + DNAME[DD[1 - big]] + ' piece is shorter, so it whistles higher. The one-' + DNAME[DD[big]] + ' piece is longer.', true); return; }
+      flag(box, 'blow', false);
+      var r = !ok[0] ? 0 : !ok[1] ? 1 : -1;
+      if (r < 0) { msg(S.bl[0] || S.bl[1] ? 'You blew one piece.' : 'Both pipes are cut.', true); return; }
+      var n = S.n[r], w = DD[r];
+      msg(rows[r] + ': ' + (n === 1 ? 'not cut yet.' : '<b>' + n + '</b> equal pieces. ' + (n > w ? 'That is too many.' : 'Not enough yet.')));
+    }
+    R.forEach(function (r) {
+      var wrap = $('.pp-row[data-r="' + r + '"]', box);
+      $('.pp-more', wrap).onclick = function () { if (S.n[r] >= (climb ? to : MAX)) return; S.n[r]++; if (!climb) S.bl[r] = 0; save(); draw(r); report(); };
+      $('.pp-less', wrap).onclick = function () { if (S.n[r] <= (climb ? from : 1)) return; S.n[r]--; if (!climb) S.bl[r] = 0; save(); draw(r); report(); };
+      draw(r);
+    });
+    if (climb) notes(); report();
+    onWidth(box, function () { R.forEach(draw); notes(); });
   };
 
   $$('[data-mod]').forEach(function (b) { var f = MODS[b.dataset.mod]; if (f) try { f(b); } catch (e) { console.error('model', b.dataset.mod, e); } });
