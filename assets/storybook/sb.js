@@ -1358,6 +1358,7 @@
     var v = $('video', pane), hv = $('.hv', pane);
     if (VID) { v.addEventListener('loadedmetadata', function () { hv.hidden = false; $('.ht', pane).textContent = 'Watch Opti show how a lesson works. Or take the tour and click along.'; }); v.src = VID; v.poster = VID.replace(/\.mp4$/, '.jpg'); }
     function open(o) { pane.hidden = !o; chip.setAttribute('aria-expanded', o); if (!o && !v.paused) v.pause(); }
+    document.addEventListener('sb:tab', function () { if (!v.paused) v.pause(); });
     chip.addEventListener('click', function () { open(pane.hidden); });
     $('.how-x', pane).addEventListener('click', function () { open(false); });
     $('.tour-go', pane).addEventListener('click', function () { open(false); tour(); });
@@ -1365,11 +1366,14 @@
     var seen = false; try { seen = !!localStorage.getItem('g3sb-howto-seen'); } catch (e) {}
     var first = $('.sb-panel'), opti = first && $('.sb-opti', first);
     if (!seen && first) {
-      var n = el('div', 'sb-newhere', '<span class="ow">🧭</span><div><b>New to these lessons?</b> Take a 1-minute tour. It shows you what to click.</div><button type="button" class="sb-btn gold sm go">Show me around</button><button type="button" class="sb-btn ghost sm no">No thanks</button>');
+      var n = el('div', 'sb-newhere', '<span class="ow">🧭</span><div><b>New to these lessons?</b> Opti shows you what to click.</div><button type="button" class="sb-btn gold sm wv" hidden>▶ Watch how (1 min)</button><button type="button" class="sb-btn gold sm go">Show me around</button><button type="button" class="sb-btn ghost sm no">No thanks</button>');
       first.insertBefore(n, opti ? opti.nextSibling : first.firstChild);
       function done() { n.remove(); try { localStorage.setItem('g3sb-howto-seen', '1'); } catch (e) {} }
       $('.go', n).addEventListener('click', function () { done(); tour(); });
       $('.no', n).addEventListener('click', done);
+      var wv = $('.wv', n);
+      if (VID) { if (v.readyState >= 1) wv.hidden = false; v.addEventListener('loadedmetadata', function () { wv.hidden = false; }); }
+      wv.addEventListener('click', function () { done(); open(true); pane.scrollIntoView({ block: 'start', behavior: 'instant' }); stopAllVoice(); v.play().catch(function () {}); });
     }
   })();
 
