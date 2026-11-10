@@ -1378,6 +1378,8 @@
       '<div class="hv" hidden><video controls playsinline preload="metadata"></video></div>' +
       '<div class="sb-row"><button type="button" class="sb-btn gold sm tour-go">🧭 Show me around</button></div>';
     first.insertBefore(card, first.firstChild);
+    // keep it first, even when the Math tools drawer (lesson-tools.js) is added at the top of the tab later
+    if (window.MutationObserver) new MutationObserver(function () { if (first.firstElementChild !== card) first.insertBefore(card, first.firstChild); }).observe(first, { childList: true });
     var v = $('video', card), hv = $('.hv', card);
     if (VID) { v.addEventListener('loadedmetadata', function () { hv.hidden = false; }); v.addEventListener('error', function () { hv.hidden = true; $('.ht', card).textContent = 'Take a quick tour. Opti shows you what to click.'; }); v.poster = VID.replace(/\.mp4$/, '.jpg'); v.src = VID; }
     else $('.ht', card).textContent = 'Take a quick tour. Opti shows you what to click.';
