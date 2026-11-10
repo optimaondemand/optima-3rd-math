@@ -1367,28 +1367,30 @@
 
   /* ❓ How this works: a chip in the header opens a small panel (video when it exists + the tour) */
   (function howTo() {
-    /* The how-to video sits at the very top of the Warm-Up on every storybook lesson (Bethany, 10 Nov 2026),
-       with Show me around under it. It shows only once the mp4 loads (no empty video spot). The ❓ chip in the
-       header brings any student back to it from any tab. */
-    var chips = $('.sb-chips'), first = $('.sb-panel'); if (!chips || !first) return;
+    /* "Start here" drawer at the very top of every storybook lesson, right under the title, on every tab
+       (Bethany, 10 Nov 2026): inside are the how-to video and 🧭 Show me around. It is open the first time a
+       student comes to a storybook lesson; after they close it, it stays closed (this device) until they open it.
+       The video spot shows only once the mp4 loads. */
+    var head = $('.sb-head'); if (!head) return;
     var VID = D.howtoVideo === false ? '' : (D.howtoVideo || 'assets/video/g3math-howto.mp4');
-    var card = el('div', 'sb-card sb-howcard');
-    card.innerHTML = '<span class="sb-k">Start here</span><h3>How this lesson works</h3>' +
-      '<p class="ht">Watch Opti show you what to click. It takes about 1 minute.</p>' +
-      '<div class="hv" hidden><video controls playsinline preload="metadata"></video></div>' +
-      '<div class="sb-row"><button type="button" class="sb-btn gold sm tour-go">🧭 Show me around</button></div>';
-    first.insertBefore(card, first.firstChild);
-    // keep it first, even when the Math tools drawer (lesson-tools.js) is added at the top of the tab later
-    if (window.MutationObserver) new MutationObserver(function () { if (first.firstElementChild !== card) first.insertBefore(card, first.firstChild); }).observe(first, { childList: true });
-    var v = $('video', card), hv = $('.hv', card);
-    if (VID) { v.addEventListener('loadedmetadata', function () { hv.hidden = false; }); v.addEventListener('error', function () { hv.hidden = true; $('.ht', card).textContent = 'Take a quick tour. Opti shows you what to click.'; }); v.poster = VID.replace(/\.mp4$/, '.jpg'); v.src = VID; }
-    else $('.ht', card).textContent = 'Take a quick tour. Opti shows you what to click.';
+    var dr = el('details', 'sb-start'); dr.id = 'sb-start';
+    dr.innerHTML = '<summary><span class="ic">🧭</span><span class="tx"><b>Start here: How this lesson works</b><small>Watch Opti show you what to click (1 minute)</small></span><span class="go"></span></summary>' +
+      '<div class="in"><div class="hv" hidden><video controls playsinline preload="metadata"></video></div>' +
+      '<p class="ht" hidden>Take a quick tour. Opti shows you what to click.</p>' +
+      '<div class="sb-row"><button type="button" class="sb-btn gold tour-go">🧭 Show me around</button><button type="button" class="sb-btn ghost close">Close and start the lesson</button></div></div>';
+    head.parentNode.insertBefore(dr, head.nextSibling);
+    var closed = false; try { closed = localStorage.getItem('g3sb-start-closed') === '1'; } catch (e) {}
+    dr.open = !closed;
+    var go = $('.go', dr); function paint() { go.textContent = dr.open ? 'Hide ▴' : 'Open ▾'; }
+    paint();
+    var v = $('video', dr), hv = $('.hv', dr), ht = $('.ht', dr);
+    if (VID) { v.addEventListener('loadedmetadata', function () { hv.hidden = false; ht.hidden = true; }); v.addEventListener('error', function () { hv.hidden = true; ht.hidden = false; }); v.poster = VID.replace(/\.mp4$/, '.jpg'); v.src = VID; }
+    else { ht.hidden = false; $('small', dr).textContent = 'Take a quick tour with Opti'; }
+    dr.addEventListener('toggle', function () { paint(); if (!dr.open && !v.paused) v.pause(); try { localStorage.setItem('g3sb-start-closed', dr.open ? '0' : '1'); } catch (e) {} });
     v.addEventListener('play', function () { stopAllVoice(); });
     document.addEventListener('sb:tab', function () { if (!v.paused) v.pause(); });
-    $('.tour-go', card).addEventListener('click', function () { if (!v.paused) v.pause(); tour(); });
-    var chip = el('button', 'sb-chip sb-howchip', '❓ How this works'); chip.type = 'button';
-    chips.appendChild(chip);
-    chip.addEventListener('click', function () { switchTab(TABS[0].dataset.tab, true); toTop(card); card.classList.add('sb-cue'); setTimeout(function () { card.classList.remove('sb-cue'); }, 1600); });
+    $('.tour-go', dr).addEventListener('click', function () { if (!v.paused) v.pause(); dr.open = false; tour(); });
+    $('.close', dr).addEventListener('click', function () { dr.open = false; var p = $('.sb-panel.on'); toTop(); });
   })();
 
   /* the tour: a ring around one thing at a time, Opti's note right under it */

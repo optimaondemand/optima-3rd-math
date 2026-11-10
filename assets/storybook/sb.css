@@ -4,7 +4,7 @@
    Real public-domain art, calm paper, the familiar OAO buttons.
    Shared by every G3 storybook lesson. Holds no lesson content.
    ═══════════════════════════════════════════════════════════════ */
-:root{
+:root{--hand:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 2.6a1.5 1.5 0 0 1 3 0V10h.6V8.2a1.5 1.5 0 0 1 3 0V10h.6V9.2a1.5 1.5 0 0 1 3 0v1.5h.3a1.4 1.4 0 0 1 2.8 0V16c0 3.6-2.6 6-6 6h-1.6c-2.2 0-3.8-.9-5-2.7l-4.1-5.5a1.6 1.6 0 0 1 2.5-2L9 14.6V2.6z'/%3E%3C/svg%3E");
   --paper:#FBF6EA; --paper2:#F4ECDB; --card:#FFFDF8; --ink:#1F2A44; --navy:#0E1C42; --navy2:#1F2F55;
   --mute:#5B6478; --line:#E4D8BF; --gold:#B8892E; --gold2:#E9C46A; --gold3:#FFF4D6;
   --terra:#A3472E; --terra2:#F6E3DA; --sage:#2F6B57; --sage2:#E3F0E9; --sky:#2E5480; --sky2:#E5EEF8;
@@ -417,11 +417,20 @@ html.sb-still *{animation:none!important;transition:none!important}
 @media (prefers-reduced-motion:reduce){.sb-hand,.sb-hand.drag{animation:none}.sb-hand::before{display:none}}
 .sb-still .sb-hand,.sb-still .sb-hand.drag{animation:none}.sb-still .sb-hand::before{display:none}
 /* ❓ How this works */
-.sb-howcard{border:2px solid var(--gold2)}
-.sb-howcard .ht{margin:2px 0 10px;font-weight:700}
-.sb-howcard .hv{max-width:720px;margin:0 auto 10px}
-.sb-howcard video{width:100%;aspect-ratio:16/9;border-radius:10px;background:#000;display:block}
-.sb-howcard .sb-row{justify-content:center}
+.sb-start{margin:16px 0 0;background:#FFF9EC;border:3px solid var(--gold2);border-radius:16px;box-shadow:0 4px 0 #D9B65A,var(--sh)}
+.sb-start>summary{list-style:none;display:flex;align-items:center;gap:12px;padding:12px 16px;cursor:pointer;color:var(--navy)}
+.sb-start>summary::-webkit-details-marker{display:none}
+.sb-start .ic{font-size:30px;flex:0 0 auto}
+.sb-start .tx{flex:1 1 auto}.sb-start .tx b{display:block;font-family:var(--serif);font-size:24px;line-height:1.15}.sb-start .tx small{display:block;font-size:15px;font-weight:800;color:var(--mute)}
+.sb-start .go{flex:0 0 auto;display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:#fff;font-weight:900;font-size:15px;border-radius:99px;padding:6px 14px;box-shadow:0 3px 0 #050c22}
+.sb-start .go::after{content:"";width:13px;height:13px;background:currentColor;-webkit-mask:var(--hand) center/contain no-repeat;mask:var(--hand) center/contain no-repeat}
+.sb-start>summary:active .go{transform:translateY(2px);box-shadow:0 1px 0 #050c22}
+.sb-start .in{padding:0 16px 16px}
+.sb-start .hv{max-width:760px;margin:0 auto 12px}
+.sb-start video{width:100%;aspect-ratio:16/9;border-radius:12px;background:#000;display:block}
+.sb-start .ht{margin:0 0 10px;font-weight:700;text-align:center}
+.sb-start .sb-row{justify-content:center}
+@media (max-width:620px){.sb-start .tx b{font-size:20px}.sb-start .tx small{font-size:13px}}
 /* the tour */
 .sb-ring{position:absolute;z-index:300;border-radius:14px;box-shadow:0 0 0 4px #F2B705,0 0 0 9999px rgba(14,28,66,.55);pointer-events:none;transition:all .25s}
 .sb-tourtip{position:absolute;z-index:301;display:flex;gap:10px;align-items:flex-start;background:#fff;border:3px solid #F2B705;border-radius:16px;padding:12px;box-shadow:0 10px 30px rgba(0,0,0,.3)}
@@ -429,4 +438,4 @@ html.sb-still *{animation:none!important;transition:none!important}
 .sb-tourtip .nn{font-size:12px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--gold)}
 .sb-tourtip p{margin:4px 0 10px;font-size:17px;line-height:1.4;color:var(--navy)}
 .sb-tourtip .sb-row{gap:8px;flex-wrap:wrap}
-@media print{.sb-hand,.sb-howcard,.sb-ring,.sb-tourtip,.sb-howchip{display:none!important}}
+@media print{.sb-hand,.sb-start,.sb-ring,.sb-tourtip{display:none!important}}
