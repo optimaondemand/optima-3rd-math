@@ -71,11 +71,23 @@
   }
   // height of what stays stuck at the top (progress strip + tab bar), so a new tab or station starts just under it
   function stickyH() { var h = 0, pr = $('.sb-prog'), tb = $('.sb-tabs'); if (pr) h += pr.offsetHeight; if (tb) h += tb.offsetHeight + 14; return h; }
+  /* Back to the top (pilot feedback, Nov 2026). In Canvas the lesson sits in a tall iframe, so the CANVAS page is what
+     scrolls; scrolling only inside the frame did nothing. So: scroll the frame, then scrollIntoView (browsers carry it up
+     to the parent page), then ask Canvas itself (lti.scrollToTop). Tabs land at the very top of the lesson. */
+  function toTop(node) {
+    var t = node || document.body.firstElementChild || document.body;
+    var y = node ? Math.max(0, node.getBoundingClientRect().top + window.scrollY - stickyH()) : 0;
+    window.scrollTo({ top: y, behavior: 'instant' });
+    if (node) node.style.scrollMarginTop = stickyH() + 'px';
+    try { if (window.top !== window.self) t.scrollIntoView({ block: 'start', behavior: 'instant' }); } catch (e) {}
+    try { if (window.parent !== window && !node) window.parent.postMessage(JSON.stringify({ subject: 'lti.scrollToTop' }), '*'); } catch (e) {}
+  }
+  SB.toTop = toTop;
   function switchTab(id, noScroll) {
     TABS.forEach(function (t) { var on = t.dataset.tab === id; t.setAttribute('aria-selected', on); t.tabIndex = on ? 0 : -1; });
     $$('.sb-panel').forEach(function (p) { p.classList.toggle('on', p.id === 'tab-' + id); });
     ST.tab = id; save(); stopAllVoice(); paintTop();
-    if (!noScroll) { var pan = $('#tab-' + id); if (pan) window.scrollTo({ top: Math.max(0, pan.getBoundingClientRect().top + window.scrollY - stickyH()), behavior: 'instant' }); }
+    if (!noScroll) toTop();
     document.dispatchEvent(new CustomEvent('sb:tab', { detail: id }));
   }
   TABS.forEach(function (t, i) {
@@ -91,7 +103,8 @@
     STATIONS.forEach(function (s) { s.classList.toggle('on', +s.dataset.st === n); });
     PSTEPS.forEach(function (p) { if (+p.dataset.st === n) p.setAttribute('aria-current', 'step'); else p.removeAttribute('aria-current'); });
     ST.st = n; save(); stopAllVoice();
-    if (scroll) { var path = $('.sb-path'); if (path) window.scrollTo({ top: Math.max(0, path.getBoundingClientRect().top + window.scrollY - stickyH()), behavior: 'instant' }); }
+    document.dispatchEvent(new CustomEvent('sb:station', { detail: n }));
+    if (scroll) { var path = $('.sb-path'); if (path) toTop(path); }
   }
   PSTEPS.forEach(function (p) { p.addEventListener('click', function () { station(+p.dataset.st, true); }); });
   $$('[data-next-st]').forEach(function (b) { b.addEventListener('click', function () { station(+b.dataset.nextSt, true); }); });
@@ -147,6 +160,7 @@
     var job = box.closest('.sb-job');
     if (job && steps.length && steps.every(function (s) { return ST.steps[s.id]; })) jobDone(job.dataset.job);
     placeSteps(box);
+    if (SB.cue) SB.cue(box);
     var lk = $('.sb-locked', box); if (lk) { var left = steps.filter(function (s) { return !ST.steps[s.id]; }).length; lk.textContent = left ? left + (left > 1 ? ' steps' : ' step') + ' to go. Each step opens when the one before is done.' : ''; }
   }
   // a job with several tools: the step list sits right above the tool the current step uses (data-for on the tool)
@@ -1278,6 +1292,141 @@
       if (a === 'print') window.print();
     });
   });
+
+  /* ── click cues + "How this works" (pilot feedback, Nov 2026) ──────────────
+     Students weren't sure what to click. Three cues, the same on every lesson:
+     1. a little hand inside every button (CSS: .sb-btn::after, .sb-tool::after) = "this is a button";
+     2. a bouncing 👆 on the part of the tool the current step uses; it goes away on the first touch;
+     3. "❓ How this works": the how-to video (shown only once the mp4 exists) + a Show-me-around tour.
+     Canvas keeps the lesson in a tall iframe, so nothing here uses position:fixed (it would land at the
+     bottom of the lesson); the hand, the tour ring and the bubble sit next to what they point at. */
+  var HAND = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 2.6a1.5 1.5 0 0 1 3 0V10h.6V8.2a1.5 1.5 0 0 1 3 0V10h.6V9.2a1.5 1.5 0 0 1 3 0v1.5h.3a1.4 1.4 0 0 1 2.8 0V16c0 3.6-2.6 6-6 6h-1.6c-2.2 0-3.8-.9-5-2.7l-4.1-5.5a1.6 1.6 0 0 1 2.5-2L9 14.6V2.6z"/></svg>';
+  var DRAGWORDS = /\b(drag|slide|move|pour|put)\b/i;
+  function cueTarget(step, model) {
+    var sel = step.dataset.cue;
+    if (sel) return $(sel, model);
+    var list = DRAGWORDS.test(step.textContent) ?
+      ['[role=slider]', '.drag', '[data-src]', '[aria-label^="Add"]', '.sb-chipnum', '.sb-shape', '.sym-card', '.ord-card', '.pp-piece', '[tabindex="0"]', 'button'] :
+      ['[role=button][tabindex="0"]', '.part', '.seg', '[tabindex="0"]', 'button'];
+    for (var i = 0; i < list.length; i++) {
+      var hit = $$(list[i], model).filter(function (n) { var r = n.getBoundingClientRect(); return r.width > 4 && r.height > 4 && !n.closest('[hidden]'); })[0];
+      if (hit) return hit;
+    }
+    return null;
+  }
+  function placeHand(h) {
+    var m = h.parentNode, t = h._t; if (!m || !t || !t.isConnected) { h.hidden = true; return; }
+    var mr = m.getBoundingClientRect(), r = t.getBoundingClientRect();
+    if (!mr.width || !r.width) { h.hidden = true; return; }
+    h.hidden = false; h.style.left = (r.left - mr.left + r.width / 2 - 6) + 'px'; h.style.top = (r.top - mr.top + r.height / 2) + 'px';
+  }
+  function cue(box) {
+    var job = box.closest('.sb-job'); if (!job) return;
+    $$('.sb-hand', job).forEach(function (h) { h.remove(); });
+    var step = $('.sb-step.now:not(.right)', box); if (!step || !(step.dataset.need || step.dataset.cue)) return;
+    var need = (step.dataset.need || '').split(' ').filter(Boolean);
+    var model = $$('[data-for]', job).filter(function (x) { return x.dataset.for.split(' ').some(function (f) { return need.indexOf(f) > -1; }); })[0] || $('[data-mod]', job);
+    if (!model) return;
+    if (getComputedStyle(model).position === 'static') model.style.position = 'relative';
+    var h = el('span', 'sb-hand' + (DRAGWORDS.test(step.textContent) ? ' drag' : ''), HAND);
+    h.setAttribute('aria-hidden', 'true'); model.appendChild(h);
+    function find() { h._t = cueTarget(step, model); placeHand(h); }
+    requestAnimationFrame(find);
+    function gone() { h.remove(); model.removeEventListener('pointerdown', gone, true); model.removeEventListener('keydown', gone, true); }
+    model.addEventListener('pointerdown', gone, true); model.addEventListener('keydown', gone, true);
+    h._find = find;
+  }
+  SB.cue = cue;
+  function recue() { $$('.sb-hand').forEach(function (h) { if (h._find) h._find(); }); }
+  document.addEventListener('sb:tab', function () { requestAnimationFrame(recue); });
+  document.addEventListener('sb:station', function () { requestAnimationFrame(recue); });
+  window.addEventListener('resize', function () { requestAnimationFrame(recue); });
+  window.addEventListener('load', recue);
+  $$('.sb-steps').forEach(cue);
+
+  /* ❓ How this works: a chip in the header opens a small panel (video when it exists + the tour) */
+  (function howTo() {
+    var chips = $('.sb-chips'); if (!chips) return;
+    var VID = D.howtoVideo === false ? '' : (D.howtoVideo || 'assets/video/g3math-howto.mp4');
+    var chip = el('button', 'sb-chip sb-howchip', '❓ How this works'); chip.type = 'button'; chip.setAttribute('aria-expanded', 'false');
+    chips.appendChild(chip);
+    var pane = el('div', 'sb-howpane'); pane.hidden = true;
+    pane.innerHTML = '<div class="hv" hidden><video controls playsinline preload="metadata"></video></div>' +
+      '<p class="ht">New to these lessons? Take a quick tour. Opti shows you where to click.</p>' +
+      '<div class="sb-row"><button type="button" class="sb-btn gold tour-go">🧭 Show me around</button><button type="button" class="sb-btn ghost how-x">Close</button></div>';
+    $('.sb-head').appendChild(pane);
+    var v = $('video', pane), hv = $('.hv', pane);
+    if (VID) { v.addEventListener('loadedmetadata', function () { hv.hidden = false; $('.ht', pane).textContent = 'Watch Opti show how a lesson works. Or take the tour and click along.'; }); v.src = VID; v.poster = VID.replace(/\.mp4$/, '.jpg'); }
+    function open(o) { pane.hidden = !o; chip.setAttribute('aria-expanded', o); if (!o && !v.paused) v.pause(); }
+    chip.addEventListener('click', function () { open(pane.hidden); });
+    $('.how-x', pane).addEventListener('click', function () { open(false); });
+    $('.tour-go', pane).addEventListener('click', function () { open(false); tour(); });
+    // first visit to any storybook lesson on this device: a short "new here?" note on the Warm-Up
+    var seen = false; try { seen = !!localStorage.getItem('g3sb-howto-seen'); } catch (e) {}
+    var first = $('.sb-panel'), opti = first && $('.sb-opti', first);
+    if (!seen && first) {
+      var n = el('div', 'sb-newhere', '<span class="ow">🧭</span><div><b>New to these lessons?</b> Take a 1-minute tour. It shows you what to click.</div><button type="button" class="sb-btn gold sm go">Show me around</button><button type="button" class="sb-btn ghost sm no">No thanks</button>');
+      first.insertBefore(n, opti ? opti.nextSibling : first.firstChild);
+      function done() { n.remove(); try { localStorage.setItem('g3sb-howto-seen', '1'); } catch (e) {} }
+      $('.go', n).addEventListener('click', function () { done(); tour(); });
+      $('.no', n).addEventListener('click', done);
+    }
+  })();
+
+  /* the tour: a ring around one thing at a time, Opti's note right under it */
+  function tour() {
+    $$('.sb-newhere').forEach(function (n) { n.remove(); });
+    switchTab(TABS[0].dataset.tab, true);
+    var P = $('.sb-panel.on') || document;
+    function vis(sel) { return $$(sel, P).concat($$(sel)).filter(function (n) { var r = n.getBoundingClientRect(); return r.width > 0 && r.height > 0; })[0]; }
+    var S = [
+      ['.sb-tabs', 'Your lesson has 3 parts. Do them in order: <b>Warm-Up</b>, then <b>Lesson</b>, then <b>Show What You Know</b>.'],
+      ['.sb-opti .ctl', 'Press <b>▶ Listen to Opti</b> to hear me read. Press <b>📄 Read along</b> to see the words.'],
+      ['.sb-btn.check', 'See the little hand on this button? <b>A hand means you can press it.</b>'],
+      ['.sb-term', 'A word with <b>dots under it</b> is a key word. Tap it to see what it means.'],
+      ['.sb-step.now', 'The <b>gold box</b> tells you what to do now. Do one step at a time. The next step opens when you finish.'],
+      ['.sb-hand', 'The <b>bouncing hand</b> shows you where to tap or drag first.'],
+      ['.sb-job .sb-help', 'Stuck? Press <b>💡 Need a hint</b>. A friend from the Math Crew can give you a tip, too.'],
+      ['.sb-next', 'Done with this part? Press <b>Next</b>. The page goes back to the top for you.'],
+      ['.sb-prog', 'This bar fills up as you finish your jobs. You are ready. Let\'s go!']
+    ].map(function (s) { return { n: vis(s[0]), t: s[1] }; }).filter(function (s) { return s.n; });
+    // walk down the page in order (the progress bar, stuck at the top, goes last)
+    var last = S.pop(); S.sort(function (a, b) { return a.n.compareDocumentPosition(b.n) & Node.DOCUMENT_POSITION_FOLLOWING ? -1 : 1; }); S.push(last);
+    if (!S.length) return;
+    var ring = el('div', 'sb-ring'), tip = el('div', 'sb-tourtip'); ring.setAttribute('aria-hidden', 'true');
+    tip.setAttribute('role', 'dialog'); tip.setAttribute('aria-label', 'Lesson tour');
+    document.body.appendChild(ring); document.body.appendChild(tip);
+    var i = 0, OWL2 = OWL;
+    function go(k) {
+      i = k; var s = S[i], n = s.n, pad = 8, stuck = /sticky|fixed/.test(getComputedStyle(n).position);
+      // a sticky bar: bring its own place in the page to the middle (not where it is stuck right now)
+      if (stuck) { var ps = n.style.position; n.style.position = 'relative'; n.scrollIntoView({ block: 'center', behavior: 'instant' }); n.style.position = ps; }
+      else n.scrollIntoView({ block: 'center', behavior: 'instant' });
+      var r = n.getBoundingClientRect(), y = r.top + window.scrollY, x = r.left + window.scrollX;
+      ring.style.cssText = 'left:' + (x - pad) + 'px;top:' + (y - pad) + 'px;width:' + (r.width + pad * 2) + 'px;height:' + (r.height + pad * 2) + 'px';
+      tip.innerHTML = '<img alt="" src="' + OWL2 + '"><div class="tx"><div class="nn">Opti · ' + (i + 1) + ' of ' + S.length + '</div><p>' + s.t + '</p>' +
+        '<div class="sb-row">' + (i ? '<button type="button" class="sb-btn ghost sm bk">← Back</button>' : '') +
+        '<button type="button" class="sb-btn sm nx">' + (i < S.length - 1 ? 'Next →' : '✓ Done') + '</button>' +
+        '<button type="button" class="sb-btn ghost sm sk">' + (i < S.length - 1 ? 'Skip tour' : '') + '</button></div></div>';
+      if (i === S.length - 1) $('.sk', tip).remove();
+      var below = y + r.height + pad + 14, w = Math.min(420, document.documentElement.clientWidth - 24);
+      tip.style.width = w + 'px';
+      tip.style.left = Math.max(12, Math.min(x, document.documentElement.clientWidth - w - 12)) + 'px';
+      tip.style.top = below + 'px';
+      var th = tip.offsetHeight, docH = document.documentElement.scrollHeight;
+      if (below + th > Math.min(docH, window.scrollY + innerHeight) && y - pad - 14 - th > 0) tip.style.top = (y - pad - 14 - th) + 'px';
+      try { tip.scrollIntoView({ block: 'nearest', behavior: 'instant' }); } catch (e) {}
+      $('.nx', tip).onclick = function () { if (i < S.length - 1) go(i + 1); else end(); };
+      if ($('.bk', tip)) $('.bk', tip).onclick = function () { go(i - 1); };
+      if ($('.sk', tip)) $('.sk', tip).onclick = end;
+      $('.nx', tip).focus({ preventScroll: true });
+    }
+    function key(e) { if (e.key === 'Escape') end(); }
+    function end() { ring.remove(); tip.remove(); document.removeEventListener('keydown', key); try { localStorage.setItem('g3sb-howto-seen', '1'); } catch (e) {} toTop(); }
+    document.addEventListener('keydown', key);
+    go(0);
+  }
+  SB.tour = tour;
 
   /* start */
   paintJobs(); payoffs();

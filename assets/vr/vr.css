@@ -187,3 +187,15 @@ body.g3m-vr{background:#ECE8F6}
   .header-title{font-size:20px}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* ── click cues (pilot feedback, Nov 2026): a hand = you can press it; buttons are raised ── */
+.vr-pdf,.vr-chips button,.wl-pill,.vr-play,.pg-undo,.pg-slice,.vr-path{position:relative}
+.vr-pdf::after,.vr-chips button::after,.wl-pill::after,.vr-play::after,.pg-undo::after,.pg-slice::after,.vr-path::after{content:"";display:inline-block;vertical-align:-2px;width:14px;height:14px;margin-left:6px;background:currentColor;opacity:.85;
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 2.6a1.5 1.5 0 0 1 3 0V10h.6V8.2a1.5 1.5 0 0 1 3 0V10h.6V9.2a1.5 1.5 0 0 1 3 0v1.5h.3a1.4 1.4 0 0 1 2.8 0V16c0 3.6-2.6 6-6 6h-1.6c-2.2 0-3.8-.9-5-2.7l-4.1-5.5a1.6 1.6 0 0 1 2.5-2L9 14.6V2.6z'/%3E%3C/svg%3E") center/contain no-repeat;
+          mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 2.6a1.5 1.5 0 0 1 3 0V10h.6V8.2a1.5 1.5 0 0 1 3 0V10h.6V9.2a1.5 1.5 0 0 1 3 0v1.5h.3a1.4 1.4 0 0 1 2.8 0V16c0 3.6-2.6 6-6 6h-1.6c-2.2 0-3.8-.9-5-2.7l-4.1-5.5a1.6 1.6 0 0 1 2.5-2L9 14.6V2.6z'/%3E%3C/svg%3E") center/contain no-repeat}
+.vr-path::after{position:absolute;right:12px;top:12px;margin:0;width:18px;height:18px}
+.vr-path{box-shadow:0 3px 0 var(--wl-line)}
+.vr-chips button{box-shadow:0 2px 0 #d9c39a}
+.vr-pdf{box-shadow:0 3px 0 #1B5E20}
+.vr-path:active,.vr-chips button:active,.vr-pdf:active{transform:translateY(2px)}
+.pg-slice::after{animation:vrTap 1.1s ease-in-out infinite}@keyframes vrTap{0%,100%{transform:translateY(3px)}50%{transform:translateY(-2px)}}@media (prefers-reduced-motion:reduce){.pg-slice::after{animation:none}}
