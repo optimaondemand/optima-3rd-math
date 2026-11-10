@@ -223,7 +223,7 @@
 
   /* ── Opti: voice + read-along ─────────────────────────────── */
   var VOICES = [], clipA = null, clipBtn = null;
-  function stopAllVoice() { VOICES.forEach(function (a) { if (!a.paused) a.pause(); }); if (clipA && !clipA.paused) { clipA.pause(); if (clipBtn) clipBtn.classList.remove('on'); } if (window.speechSynthesis) speechSynthesis.cancel(); }
+  function stopAllVoice() { VOICES.forEach(function (a) { if (!a.paused) a.pause(); }); if (clipA && !clipA.paused) { clipA.pause(); if (clipBtn) clipBtn.classList.remove('on'); } raStop(); }
   function src(name) { return (window.SB_AUDIO && window.SB_AUDIO[name]) || (AUD + name); }
   function playClip(name, btn) {
     if (clipA && !clipA.paused) { clipA.pause(); if (clipBtn) clipBtn.classList.remove('on'); if (clipBtn === btn) { clipBtn = null; return; } }
@@ -328,13 +328,80 @@
   /* ── header extras: standards popover, read aloud, motion ─── */
   $$('[data-pop]').forEach(function (b) { var p = $(b.dataset.pop); b.addEventListener('click', function () { var o = !p.classList.contains('open'); p.classList.toggle('open', o); b.setAttribute('aria-expanded', o); }); });
   var mot = $('#sb-motion'); if (mot) { if (ST.still) document.documentElement.classList.add('sb-still'); mot.setAttribute('aria-pressed', !ST.still); mot.textContent = ST.still ? '✨ Motion: off' : '✨ Motion: on'; mot.addEventListener('click', function () { ST.still = !ST.still; save(); document.documentElement.classList.toggle('sb-still', ST.still); mot.setAttribute('aria-pressed', !ST.still); mot.textContent = ST.still ? '✨ Motion: off' : '✨ Motion: on'; }); }
-  var rd = $('#sb-read');
-  if (rd) rd.addEventListener('click', function () {
-    if (!window.speechSynthesis) return; if (speechSynthesis.speaking) { speechSynthesis.cancel(); rd.textContent = '🔊 Read aloud'; return; }
+  /* Read aloud (pilot feedback, Nov 2026): reads everything a student can see on this tab (or this station), top to
+     bottom, one sentence at a time (one long utterance gets cut off in Chrome). The part being read gets a gold outline.
+     Fractions are said as fractions ("2 sevenths"), answer boxes as "blank". Opti's notes are skipped: they have their
+     own Listen button. Press again to stop; a tab or station change stops it too. */
+  var rd = $('#sb-read'), raTok = 0, raOn = false, raEl = null;
+  var RA_ORD = { 2: 'half', 3: 'third', 4: 'fourth', 5: 'fifth', 6: 'sixth', 7: 'seventh', 8: 'eighth', 9: 'ninth', 10: 'tenth', 11: 'eleventh', 12: 'twelfth' };
+  function raMark(e) { if (raEl) raEl.classList.remove('sb-reading'); raEl = e; if (e) e.classList.add('sb-reading'); }
+  function raStop() { raTok++; if (window.speechSynthesis) { try { speechSynthesis.cancel(); } catch (e) {} } raMark(null); if (raOn) { raOn = false; if (rd) rd.textContent = '🔊 Read aloud'; } }
+  function raFrac(f) {
+    var k = [].filter.call(f.children, function (c) { return c.tagName !== 'I'; }), v = k.map(function (c) { return c.tagName === 'INPUT' ? (c.value.trim() || 'blank') : c.textContent.trim(); });
+    if (v.length !== 2) return f.textContent;
+    var n = +v[0], d = +v[1];
+    if (RA_ORD[d] && n === Math.floor(n) && n > 0) return ' ' + n + ' ' + (d === 2 ? (n === 1 ? 'half' : 'halves') : RA_ORD[d] + (n === 1 ? '' : 's')) + ' ';
+    return ' ' + v[0] + ' over ' + v[1] + ' ';
+  }
+  function raText(n) {
+    if (n.nodeType === 3) return n.nodeValue;
+    if (n.nodeType !== 1) return '';
+    var tg = n.tagName, c = n.classList;
+    if (tg === 'SCRIPT' || tg === 'STYLE' || tg === 'svg' || tg === 'SVG' || tg === 'BUTTON' || tg === 'TEXTAREA' || tg === 'SELECT' || tg === 'VIDEO' || tg === 'AUDIO' || tg === 'IMG') return '';
+    if (n.getAttribute('aria-hidden') === 'true' || c.contains('sb-hand') || c.contains('sb-tipw')) return '';
+    if (tg === 'INPUT') return n.type === 'checkbox' || n.type === 'radio' ? '' : ' ' + (n.value.trim() || 'blank') + ' ';
+    if (c.contains('sb-frac') || c.contains('fr')) return raFrac(n);
+    if (tg === 'BR') return '. ';
+    if (c.contains('time') || ((tg === 'SMALL' || c.contains('sb-credit')) && /public[- ]domain|Wikimedia|Photo:/i.test(n.textContent))) return '';   /* timers, picture credits */
+    var s = ''; for (var k = n.firstChild; k; k = k.nextSibling) { var x = raText(k); if (x && k.nodeType === 1 && k.tagName !== 'INPUT' && !/^inline/.test(getComputedStyle(k).display)) x = /^\s*(blank|\S+)\s*$/.test(x) && /blank/.test(x) ? ' ' + x + ' ' : ' . ' + x + ' . '; s += x; } return s;
+  }
+  function raClean(t) {
+    return t.replace(/[\u{1F000}-\u{1FAFF}\u{2600}-\u{27BF}\u{2190}-\u{21FF}\u{2B00}-\u{2BFF}\u{FE0F}\u{200D}▾▴■▶·]/gu, ' ')
+      .replace(/(\d)\s*×\s*(?=[\d_?])/g, '$1 times ').replace(/×/g, ' times ').replace(/÷/g, ' divided by ').replace(/−/g, ' minus ')
+      .replace(/_{2,}/g, ' blank ').replace(/\s+/g, ' ')
+      .replace(/(\d|blank|ths?|thirds?|half|halves) ([<>]) (?=\d|blank)/g, function (m, a, sg) { return a + (sg === '<' ? ' is less than ' : ' is greater than '); })
+      .replace(/</g, ' the less than sign ').replace(/>/g, ' the greater than sign ').replace(/(\d|blank|ths?|thirds?|half|halves) = /g, '$1 equals ').replace(/ = /g, ' the equals sign ')
+      .replace(/ \. (?=blank\b)/g, ' ').replace(/\bNo\. (?=\d)/g, 'Number ').replace(/(\s*\.)+(\s*[.!?:,])/g, '$2').replace(/([!?:,])\s*\./g, '$1').replace(/^[\s.]+/, '').replace(/\s+/g, ' ').trim();
+  }
+  function raQueue(root) {
+    var SKIP = '.sb-opti, .sb-tabs, .sb-path, .sb-start, .sb-prog, .sb-head, .sb-donechip, .sb-locked, .sb-credit, figcaption small, [hidden]';
+    var BLOCK = 'p, li, h1, h2, h3, h4, h5, h6, figcaption, td, th, dt, dd, .sb-q, .sb-how, .sb-readout, .sb-fb, .sb-tip, .sb-hintbox, .sb-k, .sb-kind, .sb-jn, label, div';
+    var items = [], w = document.createTreeWalker(root, NodeFilter.SHOW_ELEMENT | NodeFilter.SHOW_TEXT, null, false), nd, done = [];
+    while ((nd = w.nextNode())) {
+      var el0 = nd.nodeType === 1 ? nd : nd.parentElement; if (!el0) continue;
+      if (nd.nodeType === 3 && !/\S/.test(nd.nodeValue)) continue;
+      if (nd.nodeType === 1 && !(nd.tagName === 'INPUT' || nd.classList.contains('sb-frac') || nd.classList.contains('fr'))) continue;
+      if (el0.closest(SKIP) || el0.closest('button, svg, textarea, select, [aria-hidden="true"]')) continue;
+      var blk = el0.closest(BLOCK) || root; if (!blk.offsetParent && blk !== root) continue;
+      if (done.indexOf(blk) >= 0) continue; done.push(blk);
+      var t = raClean(raText(blk)); if (t && /[A-Za-z0-9]/.test(t)) items.push({ el: blk, text: t });
+    }
+    /* a block that sits inside another block we already read is a repeat */
+    items = items.filter(function (it, i) { return !items.some(function (o, j) { return j !== i && o.el !== it.el && o.el.contains(it.el); }); });
+    var q = [];
+    items.forEach(function (it) { (it.text.match(/[^.!?]+(?:[.!?](?=\S)[^.!?]*)*(?:[.!?]+["”’')\]]*(?:\s+|$)|$)/g) || [it.text]).forEach(function (s) { s = s.trim(); if (s) q.push({ el: it.el, text: s }); }); });
+    return q;
+  }
+  function raStart() {
     var p = $('.sb-panel.on'), st = p && $('.sb-station.on', p), root = st || p; if (!root) return;
-    var txt = $$('.sb-story, .sb-ctx p, .sb-step.open h4, .sb-step.open p, .sb-card > p', root).filter(function (x) { return x.offsetParent; }).map(function (x) { return x.textContent; }).join(' ');
-    var u = new SpeechSynthesisUtterance(txt); u.rate = 0.92; u.onend = function () { rd.textContent = '🔊 Read aloud'; }; speechSynthesis.speak(u); rd.textContent = '■ Stop reading';
-  });
+    stopAllVoice(); var q = raQueue(root); if (!q.length) return;
+    var tok = ++raTok, i = 0; raOn = true; rd.textContent = '■ Stop reading';
+    (function next() {
+      if (tok !== raTok) return;
+      if (i >= q.length) { raStop(); return; }
+      var it = q[i++]; raMark(it.el);
+      try { var r = it.el.getBoundingClientRect(), vh = window.innerHeight; if (r.top < 60 || r.bottom > vh - 20) it.el.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); } catch (e) {}
+      var u = new SpeechSynthesisUtterance(it.text); u.rate = 0.92;
+      u.onend = function () { if (tok === raTok) next(); };
+      u.onerror = function (e) { if (tok !== raTok || (e && (e.error === 'canceled' || e.error === 'interrupted'))) return; next(); };
+      speechSynthesis.speak(u);
+    })();
+  }
+  if (rd) {
+    if (!window.speechSynthesis || !window.SpeechSynthesisUtterance) rd.hidden = true;   /* no button that does nothing */
+    else rd.addEventListener('click', function () { if (raOn) raStop(); else raStart(); });
+    window.addEventListener('pagehide', raStop);
+  }
 
   /* ═══════════════ MODELS ═══════════════ */
   var MODS = {};

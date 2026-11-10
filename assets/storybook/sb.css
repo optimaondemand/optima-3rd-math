@@ -439,3 +439,9 @@ html.sb-still *{animation:none!important;transition:none!important}
 .sb-tourtip p{margin:4px 0 10px;font-size:17px;line-height:1.4;color:var(--navy)}
 .sb-tourtip .sb-row{gap:8px;flex-wrap:wrap}
 @media print{.sb-hand,.sb-start,.sb-ring,.sb-tourtip{display:none!important}}
+
+/* read aloud: the part being read (Nov 2026) */
+.sb-reading{outline:3px solid var(--gold2,#E9C46A);outline-offset:3px;border-radius:8px;background:rgba(233,196,106,.14)}
+/* the owl never sits on the lesson line of the open book (long lesson titles, Nov 2026) */
+.sb-chap-l{padding-right:92px}
+@media (max-width:720px){.sb-chap-l{padding-right:76px}}
