@@ -417,11 +417,11 @@ html.sb-still *{animation:none!important;transition:none!important}
 @media (prefers-reduced-motion:reduce){.sb-hand,.sb-hand.drag{animation:none}.sb-hand::before{display:none}}
 .sb-still .sb-hand,.sb-still .sb-hand.drag{animation:none}.sb-still .sb-hand::before{display:none}
 /* ❓ How this works */
-.sb-howpane{margin:12px 0 0;background:#fff;color:var(--ink);border-radius:14px;padding:14px;box-shadow:var(--sh)}
-.sb-howpane .hv video{width:100%;border-radius:10px;background:#000;display:block;margin-bottom:10px}
-.sb-howpane .ht{margin:0 0 10px;font-weight:700}
-.sb-newhere{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:12px 0;padding:12px 14px;background:#FFF9EC;border:2px solid var(--gold2);border-radius:14px;font-size:16px}
-.sb-newhere .ow{font-size:26px}.sb-newhere > div{flex:1 1 220px}
+.sb-howcard{border:2px solid var(--gold2)}
+.sb-howcard .ht{margin:2px 0 10px;font-weight:700}
+.sb-howcard .hv{max-width:720px;margin:0 auto 10px}
+.sb-howcard video{width:100%;aspect-ratio:16/9;border-radius:10px;background:#000;display:block}
+.sb-howcard .sb-row{justify-content:center}
 /* the tour */
 .sb-ring{position:absolute;z-index:300;border-radius:14px;box-shadow:0 0 0 4px #F2B705,0 0 0 9999px rgba(14,28,66,.55);pointer-events:none;transition:all .25s}
 .sb-tourtip{position:absolute;z-index:301;display:flex;gap:10px;align-items:flex-start;background:#fff;border:3px solid #F2B705;border-radius:16px;padding:12px;box-shadow:0 10px 30px rgba(0,0,0,.3)}
@@ -429,4 +429,4 @@ html.sb-still *{animation:none!important;transition:none!important}
 .sb-tourtip .nn{font-size:12px;font-weight:900;letter-spacing:.1em;text-transform:uppercase;color:var(--gold)}
 .sb-tourtip p{margin:4px 0 10px;font-size:17px;line-height:1.4;color:var(--navy)}
 .sb-tourtip .sb-row{gap:8px;flex-wrap:wrap}
-@media print{.sb-hand,.sb-howpane,.sb-newhere,.sb-ring,.sb-tourtip,.sb-howchip{display:none!important}}
+@media print{.sb-hand,.sb-howcard,.sb-ring,.sb-tourtip,.sb-howchip{display:none!important}}

@@ -1346,40 +1346,30 @@
 
   /* ❓ How this works: a chip in the header opens a small panel (video when it exists + the tour) */
   (function howTo() {
-    var chips = $('.sb-chips'); if (!chips) return;
+    /* The how-to video sits at the very top of the Warm-Up on every storybook lesson (Bethany, 10 Nov 2026),
+       with Show me around under it. It shows only once the mp4 loads (no empty video spot). The ❓ chip in the
+       header brings any student back to it from any tab. */
+    var chips = $('.sb-chips'), first = $('.sb-panel'); if (!chips || !first) return;
     var VID = D.howtoVideo === false ? '' : (D.howtoVideo || 'assets/video/g3math-howto.mp4');
-    var chip = el('button', 'sb-chip sb-howchip', '❓ How this works'); chip.type = 'button'; chip.setAttribute('aria-expanded', 'false');
-    chips.appendChild(chip);
-    var pane = el('div', 'sb-howpane'); pane.hidden = true;
-    pane.innerHTML = '<div class="hv" hidden><video controls playsinline preload="metadata"></video></div>' +
-      '<p class="ht">New to these lessons? Take a quick tour. Opti shows you where to click.</p>' +
-      '<div class="sb-row"><button type="button" class="sb-btn gold tour-go">🧭 Show me around</button><button type="button" class="sb-btn ghost how-x">Close</button></div>';
-    $('.sb-head').appendChild(pane);
-    var v = $('video', pane), hv = $('.hv', pane);
-    if (VID) { v.addEventListener('loadedmetadata', function () { hv.hidden = false; $('.ht', pane).textContent = 'Watch Opti show how a lesson works. Or take the tour and click along.'; }); v.src = VID; v.poster = VID.replace(/\.mp4$/, '.jpg'); }
-    function open(o) { pane.hidden = !o; chip.setAttribute('aria-expanded', o); if (!o && !v.paused) v.pause(); }
+    var card = el('div', 'sb-card sb-howcard');
+    card.innerHTML = '<span class="sb-k">Start here</span><h3>How this lesson works</h3>' +
+      '<p class="ht">Watch Opti show you what to click. It takes about 1 minute.</p>' +
+      '<div class="hv" hidden><video controls playsinline preload="metadata"></video></div>' +
+      '<div class="sb-row"><button type="button" class="sb-btn gold sm tour-go">🧭 Show me around</button></div>';
+    first.insertBefore(card, first.firstChild);
+    var v = $('video', card), hv = $('.hv', card);
+    if (VID) { v.addEventListener('loadedmetadata', function () { hv.hidden = false; }); v.addEventListener('error', function () { hv.hidden = true; $('.ht', card).textContent = 'Take a quick tour. Opti shows you what to click.'; }); v.poster = VID.replace(/\.mp4$/, '.jpg'); v.src = VID; }
+    else $('.ht', card).textContent = 'Take a quick tour. Opti shows you what to click.';
+    v.addEventListener('play', function () { stopAllVoice(); });
     document.addEventListener('sb:tab', function () { if (!v.paused) v.pause(); });
-    chip.addEventListener('click', function () { open(pane.hidden); });
-    $('.how-x', pane).addEventListener('click', function () { open(false); });
-    $('.tour-go', pane).addEventListener('click', function () { open(false); tour(); });
-    // first visit to any storybook lesson on this device: a short "new here?" note on the Warm-Up
-    var seen = false; try { seen = !!localStorage.getItem('g3sb-howto-seen'); } catch (e) {}
-    var first = $('.sb-panel'), opti = first && $('.sb-opti', first);
-    if (!seen && first) {
-      var n = el('div', 'sb-newhere', '<span class="ow">🧭</span><div><b>New to these lessons?</b> Opti shows you what to click.</div><button type="button" class="sb-btn gold sm wv" hidden>▶ Watch how (1 min)</button><button type="button" class="sb-btn gold sm go">Show me around</button><button type="button" class="sb-btn ghost sm no">No thanks</button>');
-      first.insertBefore(n, opti ? opti.nextSibling : first.firstChild);
-      function done() { n.remove(); try { localStorage.setItem('g3sb-howto-seen', '1'); } catch (e) {} }
-      $('.go', n).addEventListener('click', function () { done(); tour(); });
-      $('.no', n).addEventListener('click', done);
-      var wv = $('.wv', n);
-      if (VID) { if (v.readyState >= 1) wv.hidden = false; v.addEventListener('loadedmetadata', function () { wv.hidden = false; }); }
-      wv.addEventListener('click', function () { done(); open(true); pane.scrollIntoView({ block: 'start', behavior: 'instant' }); stopAllVoice(); v.play().catch(function () {}); });
-    }
+    $('.tour-go', card).addEventListener('click', function () { if (!v.paused) v.pause(); tour(); });
+    var chip = el('button', 'sb-chip sb-howchip', '❓ How this works'); chip.type = 'button';
+    chips.appendChild(chip);
+    chip.addEventListener('click', function () { switchTab(TABS[0].dataset.tab, true); toTop(card); card.classList.add('sb-cue'); setTimeout(function () { card.classList.remove('sb-cue'); }, 1600); });
   })();
 
   /* the tour: a ring around one thing at a time, Opti's note right under it */
   function tour() {
-    $$('.sb-newhere').forEach(function (n) { n.remove(); });
     switchTab(TABS[0].dataset.tab, true);
     var P = $('.sb-panel.on') || document;
     function vis(sel) { return $$(sel, P).concat($$(sel)).filter(function (n) { var r = n.getBoundingClientRect(); return r.width > 0 && r.height > 0; })[0]; }
@@ -1426,7 +1416,7 @@
       $('.nx', tip).focus({ preventScroll: true });
     }
     function key(e) { if (e.key === 'Escape') end(); }
-    function end() { ring.remove(); tip.remove(); document.removeEventListener('keydown', key); try { localStorage.setItem('g3sb-howto-seen', '1'); } catch (e) {} toTop(); }
+    function end() { ring.remove(); tip.remove(); document.removeEventListener('keydown', key); toTop(); }
     document.addEventListener('keydown', key);
     go(0);
   }
