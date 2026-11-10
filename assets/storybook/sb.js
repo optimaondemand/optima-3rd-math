@@ -1225,7 +1225,10 @@
       if (climb) {
         var all = true; for (var n = from; n <= to; n++) if (!S.heard[n]) all = false;
         if (all) { flag(box, 'climb'); msg('Every new cut made each piece shorter, and the note climbed higher. More equal pieces means smaller pieces: one-' + DNAME[to] + ' is the smallest.', true); return; }
-        msg(S.heard[S.n[0]] ? 'You heard one-' + DNAME[S.n[0]] + '. ' + (S.n[0] < to ? 'Now cut one more piece.' : '') : 'The pipe is cut into ' + S.n[0] + ' equal pieces.');
+        var miss = []; for (var m2 = from; m2 < S.n[0]; m2++) if (!S.heard[m2]) miss.push(m2);
+        msg(!S.heard[S.n[0]] ? 'The pipe is cut into ' + S.n[0] + ' equal pieces. Tap the first piece to hear one-' + DNAME[S.n[0]] + '.' :
+          miss.length ? 'You skipped one-' + DNAME[miss[0]] + '. Press − until the pipe has ' + miss[0] + ' pieces, then tap the first piece.' :
+          'You heard one-' + DNAME[S.n[0]] + '. ' + (S.n[0] < to ? 'Now press ✂ Cut one more piece.' : ''));
         return;
       }
       var ok = [S.n[0] === DD[0], S.n[1] === DD[1]];
@@ -1302,16 +1305,31 @@
      bottom of the lesson); the hand, the tour ring and the bubble sit next to what they point at. */
   var HAND = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 2.6a1.5 1.5 0 0 1 3 0V10h.6V8.2a1.5 1.5 0 0 1 3 0V10h.6V9.2a1.5 1.5 0 0 1 3 0v1.5h.3a1.4 1.4 0 0 1 2.8 0V16c0 3.6-2.6 6-6 6h-1.6c-2.2 0-3.8-.9-5-2.7l-4.1-5.5a1.6 1.6 0 0 1 2.5-2L9 14.6V2.6z"/></svg>';
   var DRAGWORDS = /\b(drag|slide|move|pour|put)\b/i;
+  function vis(n) { if (n.closest('.sb-hand')) return false; var r = n.getBoundingClientRect(); return r.width > 4 && r.height > 4 && !n.closest('[hidden]'); }
+  function words(t) { return String(t || '').toLowerCase().replace(/[^a-z0-9 ]+/g, ' ').replace(/\s+/g, ' ').trim(); }
+  // where the hand goes: data-cue (a selector, or "text:Some words" to match a part's label), then a
+  // "Press <button>" in the step, then the first thing to drag (drag/slide/move steps) or to tap
   function cueTarget(step, model) {
-    var sel = step.dataset.cue;
-    if (sel) return $(sel, model);
-    var list = DRAGWORDS.test(step.textContent) ?
+    var txt = ($('h4', step) ? $('h4', step).textContent + '. ' : '') + ($('p', step) ? $('p', step).textContent : step.textContent);
+    var sel = step.dataset.cue, all = $$('[tabindex="0"], button, [role=slider], [role=button]', model).filter(vis);
+    function byLabel(w) { w = words(w); return all.filter(function (n) { return words(n.getAttribute('aria-label') || n.textContent).indexOf(w) > -1; }); }
+    if (sel) { var c = sel.indexOf('text:') === 0 ? byLabel(sel.slice(5)) : $$(sel, model).filter(vis); return c[0] || null; }
+    var pm = txt.match(/\bPress\s+(?:the\s+)?(.+?)(?=\s+(?:next to|to|until|and|then|once|again)\b|[.,]|$)/i);
+    if (pm) { var hits = byLabel(pm[1]).filter(function (n) { return n.matches('button, [role=button]'); }); if (hits.length) return /\bbottom\b/i.test(txt) ? hits[hits.length - 1] : hits[0]; }
+    // "Tap the 5th tile in the top bar" → that tile
+    var tm = txt.match(/\bTap the (\d+)(?:st|nd|rd|th)? tile in the (\w+)/i) || txt.match(/\bTap the (first) tile in the (\w+)/i);
+    if (tm) { var k = tm[1].toLowerCase() === 'first' ? '1' : tm[1], t1 = byLabel(tm[2] + ' bar tile ' + k).concat(byLabel(tm[2] + ' tile ' + k)); if (t1.length) return t1[0]; }
+    // a step that starts with a sound verb: the part to pluck / blow
+    var vm = ($('p', step) ? $('p', step).textContent : txt).match(/^\s*(Pluck|Blow)\b/i);
+    if (vm) { var v1 = byLabel(vm[1]); if (v1.length) return v1[0]; }
+    // the thing the step names (never a single symbol or card: that would give away the answer)
+    var NOUN = [[/\bsymbol\b/i, '.sym-cards'], [/\bcards?\b/i, '.ord-tray'], [/\bknob\b/i, '[aria-label^="End of"]'], [/\bdot\b/i, '.nl-dot'], [/\bbridges?\b/i, '.bridge'], [/\btick marks?\b/i, '.nl-tick.drag']];
+    for (var q = 0; q < NOUN.length; q++) if (NOUN[q][0].test(txt)) { var nn = $$(NOUN[q][1], model).filter(vis); if (nn.length) return /\bbottom\b/i.test(txt) && nn.length > 1 ? nn[nn.length - 1] : nn[0]; }
+    var list = DRAGWORDS.test(txt) ?
       ['[role=slider]', '.drag', '[data-src]', '[aria-label^="Add"]', '.sb-chipnum', '.sb-shape', '.sym-card', '.ord-card', '.pp-piece', '[tabindex="0"]', 'button'] :
       ['[role=button][tabindex="0"]', '.part', '.seg', '[tabindex="0"]', 'button'];
-    for (var i = 0; i < list.length; i++) {
-      var hit = $$(list[i], model).filter(function (n) { var r = n.getBoundingClientRect(); return r.width > 4 && r.height > 4 && !n.closest('[hidden]'); })[0];
-      if (hit) return hit;
-    }
+    if (DRAGWORDS.test(txt) && /\bbottom\b/i.test(txt)) { var sl = $$('[role=slider]', model).filter(vis); if (sl.length > 1) return sl.filter(function (n) { return /bottom|short|second|tenths|twelfths/i.test(n.getAttribute('aria-label') || ''); })[0] || sl[sl.length - 1]; }
+    for (var i = 0; i < list.length; i++) { var hit = $$(list[i], model).filter(vis)[0]; if (hit) return hit; }
     return null;
   }
   function placeHand(h) {
@@ -1322,7 +1340,7 @@
   }
   function cue(box) {
     var job = box.closest('.sb-job'); if (!job) return;
-    $$('.sb-hand', job).forEach(function (h) { h.remove(); });
+    $$('.sb-hand', job).forEach(function (h) { if (h._gone) h._gone(); else h.remove(); });
     var step = $('.sb-step.now:not(.right)', box); if (!step || !(step.dataset.need || step.dataset.cue)) return;
     var need = (step.dataset.need || '').split(' ').filter(Boolean);
     var model = $$('[data-for]', job).filter(function (x) { return x.dataset.for.split(' ').some(function (f) { return need.indexOf(f) > -1; }); })[0] || $('[data-mod]', job);
@@ -1330,11 +1348,14 @@
     if (getComputedStyle(model).position === 'static') model.style.position = 'relative';
     var h = el('span', 'sb-hand' + (DRAGWORDS.test(step.textContent) ? ' drag' : ''), HAND);
     h.setAttribute('aria-hidden', 'true'); model.appendChild(h);
-    function find() { h._t = cueTarget(step, model); placeHand(h); }
-    requestAnimationFrame(find);
-    function gone() { h.remove(); model.removeEventListener('pointerdown', gone, true); model.removeEventListener('keydown', gone, true); }
+    function find() { if (!h.isConnected) return; h._t = cueTarget(step, model); placeHand(h); h.dataset.step = step.id; h.dataset.t = h._t ? (h._t.getAttribute('aria-label') || words(h._t.textContent) || h._t.getAttribute('class') || '') : ''; }
+    requestAnimationFrame(find); setTimeout(find, 350);
+    // the model may redraw for the new step (new bridges, new tiles): look again when it changes
+    var mt = 0, mo = window.MutationObserver ? new MutationObserver(function (ms) { if (ms.every(function (m) { return m.target === h || h.contains(m.target) || [].slice.call(m.addedNodes).concat([].slice.call(m.removedNodes)).every(function (x) { return x === h; }); })) return; clearTimeout(mt); mt = setTimeout(find, 120); }) : null;
+    if (mo) mo.observe(model, { childList: true, subtree: true });
+    function gone() { h.remove(); if (mo) mo.disconnect(); model.removeEventListener('pointerdown', gone, true); model.removeEventListener('keydown', gone, true); }
     model.addEventListener('pointerdown', gone, true); model.addEventListener('keydown', gone, true);
-    h._find = find;
+    h._find = find; h._gone = gone;
   }
   SB.cue = cue;
   function recue() { $$('.sb-hand').forEach(function (h) { if (h._find) h._find(); }); }
