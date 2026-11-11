@@ -445,3 +445,18 @@ html.sb-still *{animation:none!important;transition:none!important}
 /* the owl never sits on the lesson line of the open book (long lesson titles, Nov 2026) */
 .sb-chap-l{padding-right:92px}
 @media (max-width:720px){.sb-chap-l{padding-right:76px}}
+
+/* read-aloud player under the title (11 Nov 2026): same controls as 4th and 5th grade */
+.sb-ra{margin:10px 0 0;padding:10px 14px;background:#EEF6FB;border:1.5px solid #C5DCE5;border-left:5px solid #2196D0;border-radius:12px}
+.sb-ra[hidden]{display:none}
+.sb-ra .ra-k{font-size:11px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;color:#1B6A94;margin-bottom:8px}
+.sb-ra .ra-row{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.sb-ra .ra-speed{font-size:13px;font-weight:800;color:#3A4560;display:inline-flex;align-items:center;gap:6px}
+.sb-ra select{font:inherit;font-weight:800;padding:5px 8px;border-radius:8px;border:1.5px solid #C5DCE5;background:#fff}
+.sb-ra .ra-status{font-size:13px;font-weight:800;color:#1B6A94}
+.sb-ra .ra-note{margin:8px 0 0;font-size:13px;color:#5B6478}
+.sb-ra .sb-btn[disabled]{opacity:.45;cursor:default}
+.sb-ra-mini{position:absolute;z-index:60;display:flex;gap:6px;padding:4px;background:#0E1C42;border-radius:12px;box-shadow:0 6px 16px rgba(14,28,66,.3)}
+.sb-ra-mini[hidden]{display:none}
+.sb-ra-mini button{font:inherit;font-weight:900;font-size:14px;min-height:30px;padding:3px 10px;border-radius:9px;border:0;background:#F2C94C;color:#0E1C42;cursor:pointer}
+.sb-ra-mini .m-stop{background:#fff}

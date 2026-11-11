@@ -332,10 +332,9 @@
      bottom, one sentence at a time (one long utterance gets cut off in Chrome). The part being read gets a gold outline.
      Fractions are said as fractions ("2 sevenths"), answer boxes as "blank". Opti's notes are skipped: they have their
      own Listen button. Press again to stop; a tab or station change stops it too. */
-  var rd = $('#sb-read'), raTok = 0, raOn = false, raEl = null;
+  var rd = $('#sb-read'), raTok = 0, raOn = false, raEl = null, raQ = null, raI = 0, raPaused = false, raBox = null, raRate = 0.92;
   var RA_ORD = { 2: 'half', 3: 'third', 4: 'fourth', 5: 'fifth', 6: 'sixth', 7: 'seventh', 8: 'eighth', 9: 'ninth', 10: 'tenth', 11: 'eleventh', 12: 'twelfth' };
   function raMark(e) { if (raEl) raEl.classList.remove('sb-reading'); raEl = e; if (e) e.classList.add('sb-reading'); }
-  function raStop() { raTok++; if (window.speechSynthesis) { try { speechSynthesis.cancel(); } catch (e) {} } raMark(null); if (raOn) { raOn = false; if (rd) rd.textContent = '🔊 Read aloud'; } }
   function raFrac(f) {
     var k = [].filter.call(f.children, function (c) { return c.tagName !== 'I'; }), v = k.map(function (c) { return c.tagName === 'INPUT' ? (c.value.trim() || 'blank') : c.textContent.trim(); });
     if (v.length !== 2) return f.textContent;
@@ -382,25 +381,73 @@
     items.forEach(function (it) { (it.text.match(/[^.!?]+(?:[.!?](?=\S)[^.!?]*)*(?:[.!?]+["”’')\]]*(?:\s+|$)|$)/g) || [it.text]).forEach(function (s) { s = s.trim(); if (s) q.push({ el: it.el, text: s }); }); });
     return q;
   }
-  function raStart() {
-    var p = $('.sb-panel.on'), st = p && $('.sb-station.on', p), root = st || p; if (!root) return;
-    stopAllVoice(); var q = raQueue(root); if (!q.length) return;
-    var tok = ++raTok, i = 0; raOn = true; rd.textContent = '■ Stop reading';
+  /* The player (11 Nov 2026): the same controls as the 4th and 5th grade read-aloud. The 🔊 Read aloud chip opens a bar
+     under the title and starts reading: Pause / Resume (resume starts the sentence it stopped in, because pause() is not
+     reliable on Chromebooks and tablets), Stop, and a Speed menu. A tab or station change stops it and keeps the bar open. */
+  function raUI(msg) {
+    if (!raBox) return; var go = $('.ra-go', raBox), st = $('.ra-stop', raBox), s = $('.ra-status', raBox);
+    go.textContent = raOn ? '⏸ Pause' : (raPaused ? '▶ Resume' : '▶ Listen'); st.disabled = !(raOn || raPaused);
+    s.textContent = msg != null ? msg : (raOn && raQ ? 'Reading ' + Math.min(raI, raQ.length) + ' of ' + raQ.length : (raPaused ? 'Paused' : ''));
+    raMiniSync();
+  }
+  /* Reading scrolls the page along, so the bar at the top leaves the screen. A small Pause / Stop pair rides on the part
+     being read (placed in page coordinates, never position:fixed, so it also works in Canvas's tall frame). */
+  var raMini = null;
+  function raMiniSync() {
+    var live = (raOn || raPaused) && raEl && raEl.isConnected;
+    if (!live) { if (raMini) raMini.hidden = true; return; }
+    if (!raMini) {
+      raMini = document.createElement('div'); raMini.className = 'sb-ra-mini';
+      raMini.innerHTML = '<button type="button" class="m-go"></button><button type="button" class="m-stop" aria-label="Stop reading">■ Stop</button>';
+      document.body.appendChild(raMini);
+      $('.m-go', raMini).addEventListener('click', function () { if (raOn) raPause(); else if (raPaused && raQ) raRun(); });
+      $('.m-stop', raMini).addEventListener('click', function () { raStop(''); });
+    }
+    var g = $('.m-go', raMini); g.textContent = raOn ? '⏸ Pause' : '▶ Resume'; g.setAttribute('aria-label', raOn ? 'Pause reading' : 'Resume reading');
+    raMini.hidden = false; var r = raEl.getBoundingClientRect(), w = raMini.offsetWidth || 150;
+    raMini.style.top = Math.max(0, r.top + window.scrollY - 38) + 'px';
+    raMini.style.left = Math.max(4, Math.min(r.right + window.scrollX - w, document.documentElement.clientWidth - w - 4)) + 'px';
+  }
+  function raStop(msg) { raTok++; if (window.speechSynthesis) { try { speechSynthesis.cancel(); } catch (e) {} } raOn = false; raPaused = false; raQ = null; raI = 0; raMark(null); raUI(typeof msg === 'string' ? msg : ''); }
+  function raPause() { if (!raOn) return; raTok++; try { speechSynthesis.cancel(); } catch (e) {} raOn = false; raPaused = true; raI = Math.max(0, raI - 1); raUI(); }
+  function raRun() {
+    var tok = ++raTok; raOn = true; raPaused = false;
     (function next() {
       if (tok !== raTok) return;
-      if (i >= q.length) { raStop(); return; }
-      var it = q[i++]; raMark(it.el);
+      if (!raQ || raI >= raQ.length) { raStop('Finished reading this part.'); return; }
+      var it = raQ[raI++]; raMark(it.el); raUI();
       try { var r = it.el.getBoundingClientRect(), vh = window.innerHeight; if (r.top < 60 || r.bottom > vh - 20) it.el.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); } catch (e) {}
-      var u = new SpeechSynthesisUtterance(it.text); u.rate = 0.92;
+      var u = new SpeechSynthesisUtterance(it.text); u.rate = raRate;
       u.onend = function () { if (tok === raTok) next(); };
       u.onerror = function (e) { if (tok !== raTok || (e && (e.error === 'canceled' || e.error === 'interrupted'))) return; next(); };
       speechSynthesis.speak(u);
     })();
   }
+  function raStart() {
+    var p = $('.sb-panel.on'), st = p && $('.sb-station.on', p), root = st || p; if (!root) return;
+    stopAllVoice(); var q = raQueue(root); if (!q.length) { raUI('Nothing to read here yet.'); return; }
+    raQ = q; raI = 0; raRun();
+  }
+  function raOpen(open) {
+    if (!raBox) {
+      raBox = document.createElement('div'); raBox.className = 'sb-ra'; raBox.id = 'sb-ra'; raBox.hidden = true;
+      raBox.innerHTML = '<div class="ra-k">🔊 Read aloud · listen to this part of the lesson</div><div class="ra-row">' +
+        '<button type="button" class="sb-btn sm ra-go">▶ Listen</button><button type="button" class="sb-btn sm ghost ra-stop" disabled>■ Stop</button>' +
+        '<label class="ra-speed">Speed <select aria-label="Reading speed"><option value="0.75">Slower</option><option value="0.92" selected>Normal</option><option value="1.1">Faster</option></select></label>' +
+        '<span class="ra-status" role="status" aria-live="polite"></span></div>' +
+        '<p class="ra-note">It reads what is on this tab, from the top. Opti’s notes have their own Listen button.</p>';
+      var hd = $('.sb-head'); hd.parentNode.insertBefore(raBox, hd.nextSibling);
+      $('.ra-go', raBox).addEventListener('click', function () { if (raOn) raPause(); else if (raPaused && raQ) raRun(); else raStart(); });
+      $('.ra-stop', raBox).addEventListener('click', function () { raStop(''); });
+      $('select', raBox).addEventListener('change', function () { raRate = parseFloat(this.value) || 0.92; if (raOn) { raPause(); raRun(); } });
+    }
+    raBox.hidden = !open; rd.setAttribute('aria-expanded', open); rd.setAttribute('aria-controls', 'sb-ra');
+    if (!open) raStop('');
+  }
   if (rd) {
     if (!window.speechSynthesis || !window.SpeechSynthesisUtterance) rd.hidden = true;   /* no button that does nothing */
-    else rd.addEventListener('click', function () { if (raOn) raStop(); else raStart(); });
-    window.addEventListener('pagehide', raStop);
+    else rd.addEventListener('click', function () { var open = !raBox || raBox.hidden; raOpen(open); if (open) raStart(); });
+    window.addEventListener('pagehide', function () { raStop(''); });
   }
 
   /* ═══════════════ MODELS ═══════════════ */
