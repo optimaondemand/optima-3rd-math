@@ -371,12 +371,16 @@
       if (nd.nodeType === 3 && !/\S/.test(nd.nodeValue)) continue;
       if (nd.nodeType === 1 && !(nd.tagName === 'INPUT' || nd.classList.contains('sb-frac') || nd.classList.contains('fr'))) continue;
       if (el0.closest(SKIP) || el0.closest('button, svg, textarea, select, [aria-hidden="true"]')) continue;
-      var blk = el0.closest(BLOCK) || root; if (!blk.offsetParent && blk !== root) continue;
+      /* the block must sit INSIDE this tab: a loose text node (the Math tools drawer, the fact check link) has its nearest
+         div outside the tab, and reading that div read the whole page (live check, 11 Nov 2026) */
+      var blk = el0.closest(BLOCK); if (!blk || blk === root || !root.contains(blk)) blk = el0 === root ? null : el0;
+      if (!blk) { var lone = raClean(nd.nodeValue || ''); if (lone && /[A-Za-z0-9]/.test(lone)) items.push({ el: null, text: lone }); continue; }
+      if (!blk.offsetParent) continue;
       if (done.indexOf(blk) >= 0) continue; done.push(blk);
       var t = raClean(raText(blk)); if (t && /[A-Za-z0-9]/.test(t)) items.push({ el: blk, text: t });
     }
     /* a block that sits inside another block we already read is a repeat */
-    items = items.filter(function (it, i) { return !items.some(function (o, j) { return j !== i && o.el !== it.el && o.el.contains(it.el); }); });
+    items = items.filter(function (it, i) { return !it.el || !items.some(function (o, j) { return j !== i && o.el && o.el !== it.el && o.el.contains(it.el); }); });
     var q = [];
     items.forEach(function (it) { (it.text.match(/[^.!?]+(?:[.!?](?=\S)[^.!?]*)*(?:[.!?]+["”’')\]]*(?:\s+|$)|$)/g) || [it.text]).forEach(function (s) { s = s.trim(); if (s) q.push({ el: it.el, text: s }); }); });
     return q;
