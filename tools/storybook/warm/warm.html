@@ -1,0 +1,167 @@
+<!DOCTYPE html><html><head><meta charset="utf-8">
+<style>
+html,body{margin:0;width:1280px;height:720px;overflow:hidden;background:#FBF6EA;font-family:Nunito,Arial,sans-serif}
+#bg{position:absolute;inset:0;background:radial-gradient(circle at 50% 40%,#FFF8E6,#EFE2C6)}
+.cap{position:absolute;left:90px;right:90px;bottom:26px;min-height:58px;background:rgba(14,28,66,.9);color:#fff;border-radius:14px;padding:12px 20px;font-size:27px;font-weight:800;line-height:1.3;text-align:center;box-sizing:border-box}
+.cap:empty{display:none}
+.hd{position:absolute;left:40px;top:24px;font-family:Georgia,serif;font-size:32px;font-weight:700;color:#3A2A12;transition:none}
+.hd small{display:block;font-family:Arial;font-size:15px;letter-spacing:.18em;color:#B8892E;font-weight:900;margin-bottom:2px}
+#sv{position:absolute;inset:0}
+.owl{position:absolute;width:140px}
+</style></head><body>
+<div id="bg"></div>
+<svg id="sv" width="1280" height="720" viewBox="0 0 1280 720"></svg>
+<div class="hd" id="hd"></div>
+<img class="owl" id="owl" src="../repo/images/storybook/opti-owl.png">
+<div class="cap" id="cap"></div>
+<script>
+var NS='http://www.w3.org/2000/svg',XL='http://www.w3.org/1999/xlink',IMG='../repo/images/storybook/';
+var NAVY='#0E1C42',GOLD='#B8892E',BROWN='#3A2A12',WOOD='#8A5A2B',WOOD2='#B07A43',STR='#5B4A2A',ORANGE='#B05E09',GREEN='#1E7A4C';
+var TL=null,LEAD=0.6,L='';
+function S(tag,a,p){var e=document.createElementNS(NS,tag);for(var k in a){if(k==='text')e.textContent=a[k];else if(k==='href')e.setAttributeNS(XL,'href',a[k]);else e.setAttribute(k,a[k]);}(p||sv).appendChild(e);return e;}
+function ease(x){x=Math.max(0,Math.min(1,x));return x<.5?2*x*x:1-Math.pow(-2*x+2,2)/2;}
+function ramp(t,a,d){return ease((t-a)/(d||0.6));}
+// time of the nth word matching re (after word index from)
+function wt(re,n,from){var W=TL.words,c=0;for(var i=from||0;i<W.length;i++){if(re.test(W[i].w.replace(/[^\w'-]/g,''))){if(c===(n||0))return W[i].t+LEAD;c++;}}throw new Error('no word '+re);}
+function caption(t){var W=TL.words,all=[],cur=[];W.forEach(function(w,i){cur.push(w);if(/[.!?]$/.test(w.w)||i===W.length-1){all.push(cur);cur=[];}});
+  for(var i=0;i<all.length;i++){var a=all[i][0].t+LEAD,b=all[i][all[i].length-1].e+LEAD+0.35;if(i+1<all.length)b=Math.min(b,all[i+1][0].t+LEAD-0.05);if(t>=a-0.15&&t<=b)return all[i].map(function(w){return w.w;}).join(' ');}return '';}
+function owl(x,y,w,bob){var o=document.getElementById('owl');o.style.display=x==null?'none':'block';if(x==null)return;o.style.left=x+'px';o.style.top=(y+(bob?Math.sin(bob*6)*3:0))+'px';o.style.width=(w||140)+'px';}
+function head(small,big){document.getElementById('hd').innerHTML=small?'<small>'+small+'</small>'+big:'';}
+// picture in a white mat with slow zoom (ken burns)
+function pic(src,x,y,w,h,z,fx,fy,op){var g=S('g',{opacity:op==null?1:op});S('rect',{x:x-10,y:y-10,width:w+20,height:h+20,fill:'#fff',rx:4,filter:'url(#sh)'},g);
+  var cp='c'+Math.round(x)+'_'+Math.round(y);var d=S('clipPath',{id:cp},g);S('rect',{x:x,y:y,width:w,height:h},d);
+  var iw=w*z,ih=h*z;var im=S('image',{href:IMG+src,x:x-(iw-w)*(fx==null?.5:fx),y:y-(ih-h)*(fy==null?.5:fy),width:iw,height:ih,preserveAspectRatio:'xMidYMid slice','clip-path':'url(#'+cp+')'},g);return g;}
+function label(x,y,txt,op,col,size){var g=S('g',{opacity:op});var w=txt.length*(size||26)*0.56+36;S('rect',{x:x-w/2,y:y-(size||26)-8,width:w,height:(size||26)+22,rx:12,fill:'#FFF4D6',stroke:col||GOLD,'stroke-width':2.5},g);S('text',{x:x,y:y+2,'text-anchor':'middle','font-size':size||26,'font-weight':900,fill:col==null?'#6B4A12':col,text:txt},g);return g;}
+function defs(){var d=S('defs',{});var f=S('filter',{id:'sh',x:'-10%',y:'-10%',width:'120%',height:'130%'},d);S('feDropShadow',{dx:0,dy:6,stdDeviation:8,'flood-color':'#3C280A','flood-opacity':.22},f);}
+// the open book (chapter title page)
+function book(t,t0,img,line1,line2,line3){var p=ramp(t,t0,0.9);var g=S('g',{opacity:Math.min(1,p*1.5)});
+  var cx=640,cy=330,W=860,H=400;S('rect',{x:cx-W/2-12,y:cy-H/2-12,width:W+24,height:H+24,rx:10,fill:'#E8DCC0',filter:'url(#sh)'},g);
+  // left page opens like a cover
+  var open=ease((t-t0-0.2)/1.0);S('rect',{x:cx,y:cy-H/2,width:W/2,height:H,fill:'#FFFBF1'},g);
+  S('line',{x1:cx,y1:cy-H/2,x2:cx,y2:cy+H/2,stroke:'#D9C9A3','stroke-width':2},g);
+  var lw=W/2*Math.max(0.02,open);if(open<1){S('rect',{x:cx-lw,y:cy-H/2,width:lw,height:H,fill:open<.5?'#6B3E1F':'#FFFBF1'},g);}else S('rect',{x:cx-W/2,y:cy-H/2,width:W/2,height:H,fill:'#FFFBF1'},g);
+  if(open>=1){pic(img,cx-W/2+28,cy-H/2+34,W/2-56,H-68,1+0.04*Math.max(0,t-t0),.5,.35).setAttribute('opacity',ramp(t,t0+1.1,0.5));}
+  var to=ramp(t,t0+1.0,0.6);var tg=S('g',{opacity:to},g);
+  S('text',{x:cx+32,y:cy-60,'font-family':'Georgia,serif','letter-spacing':'3','font-size':17,'font-weight':700,fill:GOLD,text:line1},tg);
+  var L2=[].concat(line2);L2.forEach(function(s,i){S('text',{x:cx+32,y:cy-6+i*46,'font-family':'Georgia,serif','font-size':40,'font-weight':700,fill:BROWN,text:s},tg);});
+  if(line3)S('text',{x:cx+32,y:cy+40+(L2.length-1)*46,'font-size':22,'font-weight':800,fill:NAVY,text:line3},tg);
+  return g;}
+// monochord: wooden box + string from x0..x0+L at y; bridges at fractions; vib = amount of wiggle
+function chord(x0,y,len,t,opt){opt=opt||{};var g=S('g',{opacity:opt.op==null?1:opt.op});
+  if(!opt.nobox){S('rect',{x:x0-30,y:y+14,width:len+60,height:76,rx:8,fill:WOOD2,stroke:WOOD,'stroke-width':3},g);S('rect',{x:x0-30,y:y+78,width:len+60,height:12,rx:4,fill:WOOD},g);
+    S('ellipse',{cx:x0+len/2,cy:y+48,rx:36,ry:16,fill:'#5A3416'},g);
+    S('path',{d:'M'+(x0-6)+' '+(y+14)+' l6 -12 l6 12 z',fill:'#5A3416'},g);S('path',{d:'M'+(x0+len-6)+' '+(y+14)+' l6 -12 l6 12 z',fill:'#5A3416'},g);}
+  var sl=opt.stretch==null?1:opt.stretch;var x1=x0+len*sl;
+  var vib=opt.vib||0,pts=[];var cuts=[0].concat(opt.cuts||[],[1]);
+  for(var c=0;c+1<cuts.length;c++){var a=x0+len*cuts[c],b=x0+len*cuts[c+1];if(a>x1)break;b=Math.min(b,x1);var d='M'+a+' '+y;var n=16;for(var i=1;i<=n;i++){var xx=a+(b-a)*i/n;var amp=vib*Math.sin(Math.PI*i/n)*Math.sin(t*40+c);d+=' L'+xx+' '+(y+amp);}
+    var col=(opt.shade&&c<opt.shade)?ORANGE:STR;S('path',{d:d,stroke:col,'stroke-width':(opt.shade&&c<opt.shade)?7:5,fill:'none','stroke-linecap':'round'},g);}
+  (opt.cuts||[]).forEach(function(f,i){var bo=opt.bop==null?1:Math.max(0,Math.min(1,opt.bop*(opt.cuts.length)-i));if(bo<=0)return;S('path',{d:'M'+(x0+len*f-9)+' '+(y+14)+' l9 -14 l9 14 z',fill:GOLD,stroke:'#6B4A12','stroke-width':1.5,opacity:bo},g);});
+  return g;}
+function waves(x,y,t,t0,op,dir){var g=S('g',{opacity:op});for(var k=0;k<3;k++){var ph=((t-t0)*0.9+k/3)%1;var r=20+ph*70;S('path',{d:'M'+x+' '+(y-r)+' a'+r+' '+r+' 0 0 '+(dir<0?0:1)+' 0 '+(2*r),stroke:GOLD,'stroke-width':4,fill:'none',opacity:1-ph},g);}return g;}
+function note(x,y,s,op){var g=S('g',{opacity:op,transform:'translate('+x+','+y+') scale('+s+')'});S('ellipse',{cx:0,cy:0,rx:11,ry:8,fill:NAVY,transform:'rotate(-20)'},g);S('rect',{x:8,y:-44,width:4,height:44,fill:NAVY},g);S('path',{d:'M12 -44 q16 8 14 26 q-4 -12 -14 -14 z',fill:NAVY},g);return g;}
+function frac(x,y,n,d,size,col,op){var g=S('g',{opacity:op==null?1:op});S('text',{x:x,y:y,'text-anchor':'middle','font-size':size,'font-weight':900,fill:col||NAVY,text:String(n)},g);S('line',{x1:x-size*0.42,y1:y+size*0.22,x2:x+size*0.42,y2:y+size*0.22,stroke:col||NAVY,'stroke-width':size/12},g);S('text',{x:x,y:y+size*1.05,'text-anchor':'middle','font-size':size,'font-weight':900,fill:col||NAVY,text:String(d)},g);return g;}
+function fade(t,a,b,f){f=f||0.4;return Math.max(0,Math.min(1,Math.min((t-a)/f+1,(b-t)/f)));}
+
+var SC={};
+// ───────── 3.09.01 Fractions of a Whole ─────────
+SC['3.09.01']=function(t,K){
+  var HD='CHAPTER 9 · PYTHAGORAS\' SINGING STRING';
+  if(t<K.each-0.2){head('','');owl(1000,380,150,t);book(t,0.1,'sb-athens-plate.jpg','CHAPTER 9 · LESSON 1','Fractions of a Whole','Equal parts of a string');return;}
+  if(t<K.today-0.2){head(HD,'A real time and place');owl(null);var z=1+0.05*(t-K.each);pic('sb-athens-plate.jpg',300,120,680,430,z,.5,.4,fade(t,K.each,K.today));
+    label(640,605,'People really used math here!',ramp(t,K.math-0.2,0.5));return;}
+  if(t<K.meet-0.2){head(HD,'Ancient Greece');owl(null);var o=fade(t,K.today,K.meet);var g=S('g',{opacity:o});
+    var y=330,xa=180,xb=1100;S('line',{x1:xa,y1:y,x2:xb,y2:y,stroke:NAVY,'stroke-width':6,'stroke-linecap':'round'},g);for(var k=1;k<5;k++){S('line',{x1:xa+k*(xb-xa)/5,y1:y-10,x2:xa+k*(xb-xa)/5,y2:y+10,stroke:NAVY,'stroke-width':3},g);}
+    S('circle',{cx:xb,cy:y,r:14,fill:GREEN},g);S('text',{x:xb,y:y+56,'text-anchor':'middle','font-size':28,'font-weight':900,fill:GREEN,text:'Today'},g);
+    var p=ramp(t,K.more-0.1,1.6);var xd=xb-(xb-xa)*p;
+    S('line',{x1:xd,y1:y,x2:xb,y2:y,stroke:GOLD,'stroke-width':10,'stroke-linecap':'round',opacity:.7},g);
+    S('circle',{cx:xd,cy:y,r:16,fill:ORANGE},g);
+    if(p>0.98){label(xa+140,y-50,'Ancient Greece',1,ORANGE,30);S('text',{x:(xa+xb)/2,y:y+70,'text-anchor':'middle','font-size':30,'font-weight':900,fill:BROWN,text:'more than 2,500 years ago'},g);}
+    return;}
+  if(t<K.stories-0.2){head(HD,'Meet Pythagoras');owl(null);var o2=fade(t,K.meet,K.stories);
+    var sh=ramp(t,K.music-0.4,0.8);var px=640-300*sh;
+    pic('sb-pythagoras-tablet.jpg',px-190,105,380,445,1+0.04*(t-K.meet),.5,.3,o2);
+    label(px,605,'numbers',o2*ramp(t,K.numbers-0.2,0.4),NAVY);
+    if(sh>0){pic('sb-muse-lyre.jpg',740,105,300,445,1.05,.5,.35,o2*sh);label(890,605,'music',o2*ramp(t,K.music-0.2,0.4),NAVY);note(1090,200+Math.sin(t*3)*6,1,o2*sh);note(1130,300+Math.cos(t*3)*6,.8,o2*sh);}
+    return;}
+  // the string over a wooden box
+  head(HD,K.listen<=t+0.2?'Listen carefully':'One string, one long box');owl(t>=K.lets-0.3?1080:null,110,130,t);
+  var o3=ramp(t,K.stories-0.2,0.5);var x0=230,len=720,y=330;
+  var st=ramp(t,K.string-0.3,0.9);
+  var vib=t>=K.then-0.1?Math.max(0,12*(1-((t-K.then)%2.2)/2.2)):0;
+  chord(x0,y,len,t,{stretch:st,vib:vib,op:o3});
+  if(t>=K.box-0.3)label(x0+len/2,y+150,'a long wooden box',ramp(t,K.box-0.3,0.4),WOOD,24);
+  if(st>0&&st<1){S('circle',{cx:x0+len*st,cy:y,r:8,fill:GOLD});}
+  if(t>=K.string-0.2&&t<K.then)label(x0+len/2,y-60,'one string',ramp(t,K.string-0.1,0.4),STR,24);
+  if(t>=K.then-0.1){waves(x0+len+50,y,t,K.then,1,1);waves(x0-50,y,t,K.then,1,-1);}
+  if(t>=K.lets-0.3){label(x0+len/2,y-70,'Your turn: listen to the string',ramp(t,K.lets-0.3,0.5),GREEN,26);}
+};
+// ───────── 3.09.02 Fractions on a Number Line ─────────
+SC['3.09.02']=function(t,K){
+  var HD='CHAPTER 9 · PYTHAGORAS\' SINGING STRING';
+  if(t<K.still-0.2){head('','');owl(1000,380,150,t);book(t,0.1,'sb-gaffurio-strings.jpg','CHAPTER 9 · LESSON 2',['Fractions on a','Number Line'],'A string becomes a line');return;}
+  if(t<K.last-0.2){head(HD,'Still in Ancient Greece');owl(null);var o=fade(t,K.still,K.last);pic('sb-gaffurio-strings.jpg',200,110,400,440,1+0.04*(t-K.still),.5,.3,o);
+    chord(720,330,380,t,{op:o,vib:t>K.singing-0.2?6*Math.abs(Math.sin((t-K.singing)*2)):0});label(910,250,'his singing string',o*ramp(t,K.singing-0.2,0.4),STR,24);return;}
+  var x0=240,len=800,y=320;
+  if(t<K.today-0.2){head(HD,'Last time: equal parts');owl(null);var bo=ramp(t,K.cut-0.2,1.2);chord(x0,y,len,t,{cuts:[.25,.5,.75],bop:bo,op:ramp(t,K.last-0.2,0.4)});
+    if(t>=K.equal-0.2){for(var k=0;k<4;k++)S('path',{d:'M'+(x0+k*len/4+10)+' '+(y+92)+' q'+(len/8-10)+' 18 '+(len/4-20)+' 0',stroke:GREEN,'stroke-width':4,fill:'none',opacity:ramp(t,K.equal-0.2,0.4)});label(x0+len/2,y+160,'4 equal parts',ramp(t,K.equal-0.1,0.4),GREEN,26);}
+    return;}
+  // morph: box fades, string becomes a number line
+  head(HD,t>=K.every-0.2?'Every fraction has a spot':'A number line!');owl(null);
+  var m=ramp(t,K.turns-0.2,1.4);
+  var g=chord(x0,y,len,t,{cuts:[.25,.5,.75],bop:1,op:1-m});
+  var ng=S('g',{opacity:m});S('line',{x1:x0,y1:y,x2:x0+len,y2:y,stroke:NAVY,'stroke-width':5},ng);
+  S('path',{d:'M'+(x0+len+6)+' '+(y-12)+' l18 12 l-18 12 z',fill:NAVY},ng);
+  [0,.25,.5,.75,1].forEach(function(f){S('line',{x1:x0+len*f,y1:y-20,x2:x0+len*f,y2:y+20,stroke:NAVY,'stroke-width':4},ng);});
+  S('text',{x:x0,y:y+62,'text-anchor':'middle','font-size':34,'font-weight':900,fill:NAVY,text:'0'},ng);S('text',{x:x0+len,y:y+62,'text-anchor':'middle','font-size':34,'font-weight':900,fill:NAVY,text:'1'},ng);
+  if(t>=K.line-0.2)label(x0+len/2,y-70,'number line',ramp(t,K.line-0.2,0.4),NAVY,26);
+  if(t>=K.every-0.3){[.25,.5,.75].forEach(function(f,i){var p=ramp(t,K.every-0.2+i*0.45,0.35);S('circle',{cx:x0+len*f,cy:y,r:16*p,fill:ORANGE,stroke:'#fff','stroke-width':3});});
+    label(x0+len/2,y+150,'its very own spot',ramp(t,K.spot-0.2,0.4),ORANGE,26);}
+};
+// ───────── 3.09.03 Comparing Fractions with Like Denominators ─────────
+SC['3.09.03']=function(t,K){
+  var HD='CHAPTER 9 · PYTHAGORAS\' SINGING STRING';
+  if(t<K.pyth-0.2){head('','');owl(1000,380,150,t);book(t,0.1,'sb-gaffurio-strings.jpg','CHAPTER 9 · LESSON 3',['Comparing','Fractions'],'Same denominator');return;}
+  var x0=250,len=740,y1=230,y2=420;var cuts=[1/6,2/6,3/6,4/6,5/6];
+  head(HD,t>=K.today-0.2?'Which fraction is greater?':'Two strings, side by side');owl(null);
+  var o=ramp(t,K.pyth-0.2,0.5);var bo=ramp(t,K.cut-0.2,1.0);
+  var vib=t>=K.hear-0.2?6*Math.abs(Math.sin((t-K.hear)*3)):0;
+  var shA=t>=K.frac-0.2?Math.min(2,Math.floor((t-K.frac+0.2)/0.25)+1):0,shB=t>=K.frac-0.2?Math.min(5,Math.floor((t-K.frac+0.2)/0.25)+1):0;
+  chord(x0,y1,len,t,{cuts:t>=K.cut-0.2?cuts:[],bop:bo,op:o,vib:vib,shade:shA});
+  chord(x0,y2,len,t,{cuts:t>=K.cut-0.2?cuts:[],bop:bo,op:o*ramp(t,K.two-0.2,0.5),vib:vib,shade:shB});
+  if(t>=K.frac-0.2){var fq=ramp(t,K.frac,0.5);frac(x0-110,y1-14,2,6,40,ORANGE,fq);frac(x0-110,y2-14,5,6,40,ORANGE,fq);}
+  if(t>=K.length-0.3&&t<K.today){var p=ramp(t,K.length-0.3,0.4);[y1,y2].forEach(function(y){S('line',{x1:x0,y1:y-34,x2:x0+len,y2:y-34,stroke:GREEN,'stroke-width':3,opacity:p});S('line',{x1:x0,y1:y-44,x2:x0,y2:y-24,stroke:GREEN,'stroke-width':3,opacity:p});S('line',{x1:x0+len,y1:y-44,x2:x0+len,y2:y-24,stroke:GREEN,'stroke-width':3,opacity:p});});
+    label(640,342,'same length',p,GREEN,24);}
+  if(t>=K.number-0.3&&t<K.today){[y1,y2].forEach(function(y){S('text',{x:x0+len+70,y:y+10,'text-anchor':'middle','font-size':26,'font-weight':900,fill:GREEN,opacity:ramp(t,K.number-0.3,0.4),text:'6 parts'});});}
+  if(t>=K.today-0.2){var q=ramp(t,K.today-0.2,0.5);
+    var g=S('g',{opacity:q*(1-ramp(t,K.hear-0.3,0.4))});S('circle',{cx:x0+len+100,cy:(y1+y2)/2+20,r:46,fill:'#FFF4D6',stroke:GOLD,'stroke-width':4},g);S('text',{x:x0+len+100,y:(y1+y2)/2+42,'text-anchor':'middle','font-size':62,'font-weight':900,fill:'#6B4A12',text:'?'},g);}
+  if(t>=K.hear-0.2){waves(x0+len+40,y1,t,K.hear,1,1);waves(x0+len+40,y2,t,K.hear+0.3,1,1);note(1180,140+Math.sin(t*3)*6,1,ramp(t,K.hear,0.4));}
+};
+// ───────── 3.09.04 Comparing Fractions with Like Numerators ─────────
+function pipe(x,y,len,h,n,t,op,glow){var g=S('g',{opacity:op});var gap=n>1?6:0,w=(len-gap*(n-1))/n;
+  for(var i=0;i<n;i++){var xx=x+i*(w+gap);S('rect',{x:xx,y:y,width:w,height:h,rx:h/2.4,fill:i===glow?'#E9C46A':'#C9A86A',stroke:'#6B4A12','stroke-width':2.5},g);S('ellipse',{cx:xx+w-4,cy:y+h/2,rx:5,ry:h/2-4,fill:'#5A3416',opacity:.55},g);}return g;}
+SC['3.09.04']=function(t,K){
+  var HD='CHAPTER 9 · PYTHAGORAS\' PIPES';
+  if(t<K.today-0.2){head('','');owl(1000,380,150,t);book(t,0.1,'sb-gaffurio-pipes.jpg','CHAPTER 9 · LESSON 4',['Comparing','Fractions'],'Same numerator');return;}
+  if(t<K.when-0.2){head(HD,'Pythagoras has pipes');owl(null);var o=fade(t,K.today,K.when);pic('sb-gaffurio-pipes.jpg',400,105,480,470,1+0.05*(t-K.today),.5,.15,o);label(640,620,'pipes',o*ramp(t,K.pipes-0.2,0.4),NAVY);return;}
+  var x0=300,len=760,ya=210,yb=350;
+  head(HD,t>=K.find-0.2?'Same top number. Which is greater?':'Cut a pipe into equal pieces');owl(null);
+  var cut=t>=K.eq-0.1;var po=ramp(t,K.when-0.2,0.4);
+  pipe(x0,ya,len,58,cut?2:1,t,po,t>=K.long-0.2?0:-1);
+  pipe(x0,yb,len,58,cut?6:1,t,po,t>=K.short-0.2?0:-1);
+  if(t>=K.long-0.2&&t<K.find)label(x0+len/4,ya-24,'long',ramp(t,K.long-0.2,0.3),'#6B4A12',24);
+  if(t>=K.short-0.2&&t<K.find)label(x0+len/12+10,yb+110,'short',ramp(t,K.short-0.2,0.3),'#6B4A12',24);
+  if(t>=K.find-0.2){var q=ramp(t,K.find-0.2,0.5);frac(x0-90,ya+12,1,2,40,NAVY,q);frac(x0-90,yb+12,1,6,40,NAVY,q);
+    if(t>=K.num-0.2){var p=ramp(t,K.num-0.2,0.4);S('rect',{x:x0-114,y:ya-24,width:48,height:46,rx:8,fill:'none',stroke:ORANGE,'stroke-width':4,opacity:p});S('rect',{x:x0-114,y:yb-24,width:48,height:46,rx:8,fill:'none',stroke:ORANGE,'stroke-width':4,opacity:p});label(640,510,'same numerator',p,ORANGE,26);}
+    var g=S('g',{opacity:q*(1-ramp(t,K.hear-0.3,0.4))});S('circle',{cx:x0+len+90,cy:(ya+yb)/2+29,r:44,fill:'#FFF4D6',stroke:GOLD,'stroke-width':4},g);S('text',{x:x0+len+90,y:(ya+yb)/2+50,'text-anchor':'middle','font-size':60,'font-weight':900,fill:'#6B4A12',text:'?'},g);}
+  if(t>=K.hear-0.2){waves(x0+len+30,ya+29,t,K.hear,1,1);waves(x0+len+30,yb+29,t,K.hear+0.3,1,1);}
+};
+var CUES={
+ '3.09.01':function(){return{each:wt(/^Each$/),math:wt(/^math$/),today:wt(/^Today's$/),more:wt(/^more$/),meet:wt(/^Meet$/),numbers:wt(/^numbers$/),music:wt(/^music$/),stories:wt(/^Stories$/),string:wt(/^string$/),box:wt(/^box$/),then:wt(/^Then$/),listen:wt(/^listened$/),lets:wt(/^Let's$/)};},
+ '3.09.02':function(){return{still:wt(/^We're$/),singing:wt(/^singing$/),last:wt(/^Last$/),cut:wt(/^cut$/),equal:wt(/^equal$/),today:wt(/^Today$/),turns:wt(/^turns$/),line:wt(/^line$/),every:wt(/^Every$/),spot:wt(/^spot$/)};},
+ '3.09.03':function(){return{pyth:wt(/^Pythagoras$/),two:wt(/^two$/),length:wt(/^length$/),cut:wt(/^cut$/),number:wt(/^number$/),today:wt(/^Today$/),frac:wt(/^fraction$/),hear:wt(/^hear$/)};},
+ '3.09.04':function(){return{today:wt(/^Today$/),pipes:wt(/^pipes$/),when:wt(/^When$/),cut:wt(/^cut$/),eq:wt(/^equal$/),long:wt(/^long$/),short:wt(/^short$/),find:wt(/^find$/),num:wt(/^numerators$/),hear:wt(/^hear$/)};}
+};
+var K={};
+window.init=function(lesson,tl){L=lesson;TL=tl;K=CUES[L]();K.total=TL.dur+LEAD+1.2;return K;};
+window.render=function(t){sv.innerHTML='';defs();document.getElementById('cap').textContent=caption(t);SC[L](t,K);};
+</script></body></html>

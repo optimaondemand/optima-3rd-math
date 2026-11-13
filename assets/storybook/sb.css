@@ -460,3 +460,4 @@ html.sb-still *{animation:none!important;transition:none!important}
 .sb-ra-mini[hidden]{display:none}
 .sb-ra-mini button{font:inherit;font-weight:900;font-size:14px;min-height:30px;padding:3px 10px;border-radius:9px;border:0;background:#F2C94C;color:#0E1C42;cursor:pointer}
 .sb-ra-mini .m-stop{background:#fff}
+.sb-opti:has(+ .sb-video.ready) .play{display:none}
