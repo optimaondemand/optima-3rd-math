@@ -35,6 +35,10 @@ TOOLS = {
  'fbars-3-12': ('fbars', {"d": [3, 12], "lab": 1}, 'Fraction Tiles', 'Try a bar of thirds and a bar of twelfths. Shade 2 thirds. How many twelfths reach the same place?'),
  'nl-12': NL(0, 1, 12) + ('Try the Number Line in twelfths. Count by twos: every 2 twelfths make 1 sixth.',),
  'fbars-7-12': ('fbars', {"d": [7, 12], "lab": 1}, 'Fraction Tiles', 'Try a bar of sevenths and a bar of twelfths. Shade the same number of tiles in each. Which reaches farther?'),
+ 'fbars-4-8-12': ('fbars', {"d": [4, 8, 12], "lab": 1}, 'Fraction Tiles', 'Try bars of fourths, eighths and twelfths. Shade 1 fourth. How many eighths and twelfths reach the same place?'),
+ 'fbars-3-6': ('fbars', {"d": [3, 6], "lab": 1}, 'Fraction Tiles', 'Try a bar of thirds and a bar of sixths. Shade 2 thirds. How many sixths reach the same place?'),
+ 'fbars-3-9': ('fbars', {"d": [3, 9], "lab": 1}, 'Fraction Tiles', 'Try a bar of thirds and a bar of ninths. Shade 1 third. How many ninths line up with it?'),
+ 'fbars-6-12': ('fbars', {"d": [6, 12], "lab": 1}, 'Fraction Tiles', 'Try a bar of sixths and a bar of twelfths. Shade some sixths, then find the twelfths that line up.'),
 }
 def enc(o): return base64.urlsafe_b64encode(json.dumps(o, separators=(',', ':')).encode()).decode().rstrip('=')
 GL_BASE = [
@@ -92,6 +96,16 @@ L = {
      {"t": "half note", "d": "A note that lasts for one-half of a measure."},
      {"t": "quarter note", "d": "A note that lasts for one-fourth of a measure."},
      {"t": "eighth note", "d": "A note that lasts for one-eighth of a measure."}]),
+ '3.10.02': dict(page='math-lesson-3-10-02-finding-equivalent-fractions.html', title='Finding Equivalent Fractions', video='g3math-10-02-learn',
+   glossary=[
+     {"t": "equivalent fractions", "d": "Fractions that name the same amount, like one-fourth and three-twelfths.", "key": True},
+     {"t": "multiply", "d": "To find the total of equal groups. 4 × 3 means 4 groups of 3.", "key": True},
+     GL_BASE[2], GL_BASE[3],
+     {"t": "variation", "d": "A new version of a piece of music. It keeps the same measures and low notes but fills them with new notes.", "key": True},
+     {"t": "measure", "d": "In music, one measure is one whole. Notes of different lengths can fill it.", "key": True},
+     GL_BASE[1],
+     {"t": "aria", "d": "A slow song. Bach's book of variations starts with one."},
+     {"t": "one whole", "alt": ["1 whole"], "d": "All the equal parts together."}]),
 }
 def tool(m):
     t, st, name, tip = TOOLS[m.group(1)]

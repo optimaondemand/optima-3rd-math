@@ -1,0 +1,125 @@
+<!DOCTYPE html><html><head><meta charset="utf-8">
+<!-- 3.10.02 Learn video: "Same Beat, More Notes". Frames rendered by render.js from timeline-3-10-02.json (Scribe word times). -->
+<style>
+html,body{margin:0;width:1280px;height:720px;overflow:hidden;background:#FBF6EA;font-family:Nunito,Arial,sans-serif}
+#st{position:absolute;inset:0}
+.cap{position:absolute;left:90px;right:90px;bottom:22px;min-height:52px;background:rgba(14,28,66,.88);color:#fff;border-radius:14px;padding:10px 20px;font-size:26px;font-weight:800;line-height:1.3;text-align:center}
+.cap:empty{display:none}
+.hd{position:absolute;left:40px;top:22px;font-family:'Cormorant Garamond',Georgia,serif;font-size:32px;font-weight:700;color:#3A2A12}
+.hd small{display:block;font-family:Nunito,Arial;font-size:15px;letter-spacing:.18em;color:#B8892E;font-weight:900}
+.book{position:absolute;inset:0;display:none;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 40%,#FFF8E6,#EFE2C6)}
+.book.on{display:flex}
+.bk{display:grid;grid-template-columns:420px 420px;background:#E8DCC0;padding:12px;border-radius:10px;box-shadow:0 20px 40px rgba(60,40,10,.25)}
+.pg{background:#FFFBF1;height:380px;padding:24px;box-sizing:border-box}
+.pg img{width:100%;height:290px;object-fit:cover;border:8px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.2);box-sizing:border-box}
+.pg.r{display:flex;flex-direction:column;justify-content:center}
+.ch{font-family:Georgia,serif;letter-spacing:.2em;color:#B8892E;font-weight:700;font-size:16px}
+.tt{font-family:'Cormorant Garamond',Georgia,serif;font-size:40px;font-weight:700;color:#3A2A12;line-height:1.05;margin:8px 0}
+.q{font-size:22px;font-weight:800;color:#0E1C42;margin-top:10px}
+.owl{position:absolute;width:140px;right:28px;bottom:150px}
+</style></head><body>
+<div id="st"><svg id="sv" width="1280" height="720" viewBox="0 0 1280 720"></svg>
+<div class="hd"><small>CHAPTER 10 · BACH'S MEASURES</small>Same Beat, More Notes</div></div>
+<div class="book" id="book"><div class="bk"><div class="pg"><img src="../repo/images/storybook/sb-goldberg-plate.jpg" style="object-fit:contain;background:#FBF6EA"></div><div class="pg r"><div class="ch">CHAPTER 10 · LESSON 2</div><div class="tt" id="btt">Finding Equivalent Fractions</div><div class="q" id="bq">How can you find an equivalent fraction by multiplying?</div></div></div><img class="owl" src="../repo/images/storybook/opti-owl.png"></div>
+<div class="cap" id="cap"></div>
+<script>
+var TL=null, NSV='http://www.w3.org/2000/svg';
+function S(tag,a,p){var e=document.createElementNS(NSV,tag);for(var k in a){if(k==='text')e.textContent=a[k];else e.setAttribute(k,a[k]);}(p||sv).appendChild(e);return e;}
+var NAVY='#1F2A44', NV='#0E1C42', CT='#117E7E', CW='#5B6478', C9='#2E7D6B', C2='#6B46C1', C4='#8A6A00', C8='#A23B8C', C5='#4E7A1A', C10='#117E7E', C3='#B05E09', C6='#2F6FDE', C12='#5B6478', RED='#B03A2E', OK='#1E7A4C', GOLD='#B8892E', NO='#B23A2E', X0=200, W=880;
+function sec(s){return TL.secs[s];}
+var M='vid-math';
+function wt(re,n,from){var Wd=sec(M).words,c=0;for(var i=from||0;i<Wd.length;i++){if(re.test(Wd[i].w.replace(/[^\w'-]/g,''))){if(c===(n||0))return Wd[i].t;c++;}}return null;}
+function wi(re,n){var Wd=sec(M).words,c=0;for(var i=0;i<Wd.length;i++){if(re.test(Wd[i].w.replace(/[^\w'-]/g,''))){if(c===(n||0))return i;c++;}}return 0;}
+function ease(x){x=Math.max(0,Math.min(1,x));return x<.5?2*x*x:1-Math.pow(-2*x+2,2)/2;}
+function caption(t){var all=[];['vid-open',M,'vid-close'].forEach(function(s){var Wd=sec(s).words,cur=[];Wd.forEach(function(w,i){cur.push(w);if(/[.!?:]$/.test(w.w)||i===Wd.length-1){all.push(cur);cur=[];}});});
+  for(var i=0;i<all.length;i++){var a=all[i][0].t,b=all[i][all[i].length-1].e+0.35;if(t>=a-0.1&&t<=b)return all[i].map(function(w){return w.w;}).join(' ');}return '';}
+var K={};
+function setup(){
+  K.a=sec(M).start; K.close=sec('vid-close').start;
+  K.cut=wt(/^Cut$/,0); K.oneshaded=wt(/^One$/,0); K.half1=wt(/^One-half$/,0);
+  K.split1=wt(/^split$/,0); K.four=wt(/^four$/,0); K.doubled=wt(/^doubled$/,0); K.eq1=wt(/^equals$/,0);
+  K.back=wt(/^Go$/,0); K.split2=wt(/^split$/,1); K.six=wt(/^six$/,0); K.three=wt(/^three$/,1); K.eq2=wt(/^equals$/,1);
+  K.split3=wt(/^Split$/,0); K.eight=wt(/^eight$/,0); K.eq3=wt(/^equals$/,2); K.rule=wt(/^Do$/,0); K.mult=wt(/^Multiply$/,0);
+  K.weshow=wt(/^We$/,0); K.t4a=wt(/^Times$/,0); K.t4b=wt(/^Times$/,1); K.stays=wt(/^stays$/,0); K.equiv=wt(/^equivalent$/,0);
+  K.does=wt(/^Does$/,0); K.here=wt(/^Here$/,1); K.split4=wt(/^Split$/,1); K.twelve=wt(/^twelve$/,0); K.m1=wt(/^Two$/,1); K.m2=wt(/^Three$/,1); K.eq4=wt(/^equals$/,3);
+  K.watch=wt(/^Watch$/,0); K.always=wt(/^Always$/,0); K.ifonly=wt(/^If$/,0);
+}
+// a strip with its counts at the right
+function row(y,d,k,col,t0,lab,mul){var X=200,W=640,h=50;
+  if(lab)S('text',{x:X-16,y:y+h/2+8,'text-anchor':'end','font-size':20,'font-weight':900,fill:col,text:lab});
+  if(t0!=null&&window.__t>=t0){S('text',{x:870,y:y+22,'font-size':19,'font-weight':900,fill:NAVY,text:k+' shaded'});S('text',{x:870,y:y+44,'font-size':19,'font-weight':900,fill:NAVY,text:d+' in all'});
+    if(mul){S('rect',{x:990,y:y+4,width:50,height:24,rx:8,fill:'#E3F4EA',stroke:OK,'stroke-width':2});S('text',{x:1015,y:y+22,'text-anchor':'middle','font-size':17,'font-weight':900,fill:OK,text:'×'+mul});
+      S('rect',{x:990,y:y+28,width:50,height:24,rx:8,fill:'#E3F4EA',stroke:OK,'stroke-width':2});S('text',{x:1015,y:y+46,'text-anchor':'middle','font-size':17,'font-weight':900,fill:OK,text:'×'+mul});}}}
+function grow(t,t0,y){var p=ease((t-t0)/0.7);if(p<1)S('rect',{x:196,y:y-4,width:650,height:60,fill:'#FBF6EA',opacity:1-p});}
+function arrowsPic(cx,cy,a,b,n,c,d,tTop,tBot,col){var t=window.__t;
+  fr(cx-230,cy-20,a,b,64,NAVY);fr(cx+230,cy-20,c,d,64,col||OK);
+  if(t>=tTop){S('path',{d:'M'+(cx-170)+' '+(cy-30)+' Q '+cx+' '+(cy-120)+' '+(cx+170)+' '+(cy-30),fill:'none',stroke:NV,'stroke-width':5});S('path',{d:'M'+(cx+170)+' '+(cy-30)+' l-20 -4 l8 -16 z',fill:NV});
+    S('rect',{x:cx-42,y:cy-150,width:84,height:44,rx:12,fill:'#E3F4EA',stroke:OK,'stroke-width':3});S('text',{x:cx,y:cy-119,'text-anchor':'middle','font-size':28,'font-weight':900,fill:OK,text:'×'+n});}
+  if(t>=tBot){S('path',{d:'M'+(cx-170)+' '+(cy+70)+' Q '+cx+' '+(cy+160)+' '+(cx+170)+' '+(cy+70),fill:'none',stroke:NV,'stroke-width':5});S('path',{d:'M'+(cx+170)+' '+(cy+70)+' l-20 4 l8 16 z',fill:NV});
+    S('rect',{x:cx-42,y:cy+146,width:84,height:44,rx:12,fill:'#E3F4EA',stroke:OK,'stroke-width':3});S('text',{x:cx,y:cy+177,'text-anchor':'middle','font-size':28,'font-weight':900,fill:OK,text:'×'+n});}
+  S('text',{x:cx,y:cy+38,'text-anchor':'middle','font-size':56,'font-weight':900,fill:NAVY,text:'='});}
+function fr(x,y,nu,de,size,col){col=col||NAVY;S('text',{x:x,y:y,'text-anchor':'middle','font-size':size,'font-weight':900,fill:col,text:String(nu)});S('line',{x1:x-size*0.6,y1:y+size*0.25,x2:x+size*0.6,y2:y+size*0.25,stroke:col,'stroke-width':Math.max(2,size/12)});S('text',{x:x,y:y+size*1.1,'text-anchor':'middle','font-size':size,'font-weight':900,fill:col,text:String(de)});}
+function cursor(x,y,press){var g=S('g',{transform:'translate('+x+','+y+')'});if(press)S('circle',{r:16,fill:'rgba(233,196,106,.55)'},g);S('path',{d:'M0 0 L0 30 L8 23 L14 36 L19 34 L13 21 L23 21 Z',fill:'#fff',stroke:'#111','stroke-width':2},g);}
+// a strip of d equal parts, k shaded; p = 0..1 how far the new cut lines have grown in
+function strip(x,y,w,d,k,col,h,lab){h=h||56;var tw=w/d;for(var i=0;i<d;i++)S('rect',{x:x+i*tw+1,y:y,width:tw-2,height:h,rx:6,fill:i<k?col:'#fff',stroke:col,'stroke-width':2.5});
+  if(lab)S('text',{x:x-16,y:y+h/2+8,'text-anchor':'end','font-size':20,'font-weight':900,fill:col,text:lab});}
+function whole(x,y,w,h,txt){S('rect',{x:x+1,y:y,width:w-2,height:h,rx:6,fill:NV});S('text',{x:x+w/2,y:y+h/2+8,'text-anchor':'middle','font-size':22,'font-weight':900,fill:'#fff',text:txt||'1 whole'});}
+function nline(LY,d,k,col,t0,lab){S('line',{x1:X0-20,y1:LY,x2:X0+W+20,y2:LY,stroke:NAVY,'stroke-width':5,'stroke-linecap':'round'});
+  for(var q=0;q<=d;q++){var big=q===0||q===d;S('line',{x1:X0+q*W/d,y1:LY-(big?20:12),x2:X0+q*W/d,y2:LY+(big?20:12),stroke:big?NAVY:col,'stroke-width':big?5:3});}
+  S('text',{x:X0-44,y:LY+9,'text-anchor':'middle','font-size':26,'font-weight':900,fill:NAVY,text:'0'});S('text',{x:X0+W+44,y:LY+9,'text-anchor':'middle','font-size':26,'font-weight':900,fill:NAVY,text:'1'});
+  S('text',{x:X0,y:LY-30,'font-size':20,'font-weight':900,fill:col,text:lab});
+  var tt=window.__t;if(t0!=null&&tt>=t0){for(var i=0;i<k;i++){var p=ease((tt-t0-i*0.15)/0.3);if(p<=0)continue;var xa=X0+i*W/d,xb=X0+(i+1)*W/d,dd='M'+(xa+4)+' '+(LY-8)+' Q '+(xa+xb)/2+' '+(LY-46)+' '+(xb-4)+' '+(LY-8),pa=S('path',{d:dd,stroke:col,'stroke-width':4,fill:'none'});if(p<1){var L=pa.getTotalLength();pa.setAttribute('stroke-dasharray',L);pa.setAttribute('stroke-dashoffset',L*(1-p));}}
+    if(tt>=t0+k*0.15+0.3)S('circle',{cx:X0+k*W/d,cy:LY,r:13,fill:col,stroke:'#fff','stroke-width':4});}}
+function render(t){
+  window.__t=t;var book=document.getElementById('book'),cap=document.getElementById('cap');
+  cap.textContent=caption(t);
+  var inOpen=t<K.a-0.3, inClose=t>=K.close-0.3;
+  book.classList.toggle('on',inOpen||inClose);
+  if(inClose){document.getElementById('btt').textContent='Your turn';document.getElementById('bq').textContent='Same beat, more notes. Multiply both numbers by the same number.';}
+  sv.innerHTML='';if(inOpen||inClose)return;
+  var cur=null,press=false,R=[180,262,344,426];
+  // ── scene 1: split one-half again and again; count both
+  if(t<K.weshow-0.3){
+    whole(200,100,640,44,'1 whole measure');
+    var d1=t>=K.cut-0.1?2:1,k1=t>=K.cut+0.9?1:0;
+    strip(200,R[0],640,d1,k1,C2,50);row(R[0],2,1,C2,K.oneshaded-0.2,'',0);
+    if(t>=K.cut+0.6&&t<K.oneshaded){cur=[360,R[0]+28];press=t>=K.cut+0.9;}
+    if(t>=K.split1-0.1){strip(200,R[1],640,4,2,C4,50);grow(t,K.split1-0.1,R[1]);row(R[1],4,2,C4,K.four-0.2,'',t>=K.doubled-0.2?2:0);}
+    if(t>=K.split2-0.1){strip(200,R[2],640,6,3,C6,50);grow(t,K.split2-0.1,R[2]);row(R[2],6,3,C6,K.six-0.2,'',t>=K.three-0.2?3:0);}
+    if(t>=K.split3-0.1){strip(200,R[3],640,8,4,C8,50);grow(t,K.split3-0.1,R[3]);row(R[3],8,4,C8,K.eight-0.2,'',t>=K.eight+0.4?4:0);}
+    var nm=[[K.half1,1,2,C2,R[0]],[K.eq1,2,4,C4,R[1]],[K.eq2,3,6,C6,R[2]],[K.eq3,4,8,C8,R[3]]];
+    nm.forEach(function(q){if(q[0]!=null&&t>=q[0]-0.2)fr(150,q[4]+20,q[1],q[2],22,q[3]);});
+    if(t>=K.split1+0.6){var gx=200+320;S('line',{x1:gx,y1:R[0]-10,x2:gx,y2:(t>=K.split3?R[3]:t>=K.split2?R[2]:R[1])+60,stroke:GOLD,'stroke-width':4,'stroke-dasharray':'10 7'});}
+    if(t>=K.mult-0.3){S('rect',{x:160,y:500,width:960,height:70,rx:16,fill:'#E3F4EA',stroke:OK,'stroke-width':3});S('text',{x:640,y:545,'text-anchor':'middle','font-size':28,'font-weight':900,fill:OK,text:'Multiply the numerator and the denominator by the same number.'});}
+    else if(t>=K.rule-0.3){S('text',{x:640,y:545,'text-anchor':'middle','font-size':30,'font-weight':900,fill:NAVY,text:'Do you see the rule?'});}
+  }
+  // ── scene 2: the arrows
+  else if(t<K.does-0.3){
+    arrowsPic(640,250,1,2,4,4,8,K.t4a-0.2,K.t4b-0.2,C8);
+    if(t>=K.stays-0.4){strip(330,470,620,2,1,C2,34);strip(330,512,620,8,4,C8,34);var gx=330+310;S('line',{x1:gx,y1:462,x2:gx,y2:554,stroke:GOLD,'stroke-width':4,'stroke-dasharray':'8 6'});S('text',{x:gx+14,y:500,'font-size':20,'font-weight':900,fill:GOLD,text:''});
+      S('text',{x:300,y:497,'text-anchor':'end','font-size':20,'font-weight':900,fill:C2,text:'halves'});S('text',{x:300,y:539,'text-anchor':'end','font-size':20,'font-weight':900,fill:C8,text:'eighths'});}
+    if(t>=K.equiv-0.2){S('text',{x:1010,y:520,'text-anchor':'middle','font-size':26,'font-weight':900,fill:OK,text:'same length:'});S('text',{x:1010,y:550,'text-anchor':'middle','font-size':26,'font-weight':900,fill:OK,text:'equivalent'});}
+  }
+  // ── scene 3: thirds too
+  else if(t<K.watch-0.3){
+    S('text',{x:640,y:120,'text-anchor':'middle','font-size':30,'font-weight':900,fill:NAVY,text:'Does it work for thirds, too?'});
+    if(t>=K.here-0.2){strip(200,160,640,3,2,C3,50);S('text',{x:184,y:193,'text-anchor':'end','font-size':20,'font-weight':900,fill:C3,text:'thirds'});row(160,3,2,C3,K.here,'',0);}
+    if(t>=K.split4-0.1){strip(200,240,640,12,8,C12,50);grow(t,K.split4-0.1,240);S('text',{x:184,y:273,'text-anchor':'end','font-size':20,'font-weight':900,fill:C12,text:'twelfths'});row(240,12,8,C12,K.twelve-0.2,'',t>=K.m1-0.2?4:0);
+      var gx=200+640*2/3;S('line',{x1:gx,y1:150,x2:gx,y2:300,stroke:GOLD,'stroke-width':4,'stroke-dasharray':'10 7'});}
+    if(t>=K.m1-0.2)S('text',{x:420,y:370,'text-anchor':'middle','font-size':36,'font-weight':900,fill:RED,text:'2 × 4 = 8'});
+    if(t>=K.m2-0.2)S('text',{x:860,y:370,'text-anchor':'middle','font-size':36,'font-weight':900,fill:C12,text:'3 × 4 = 12'});
+    if(t>=K.eq4-0.3){S('rect',{x:390,y:400,width:500,height:150,rx:18,fill:'#FFFDF8',stroke:'#E4D8BF','stroke-width':2});fr(520,450,2,3,44,C3);S('text',{x:640,y:500,'text-anchor':'middle','font-size':56,'font-weight':900,fill:NAVY,text:'='});fr(760,450,8,12,44,C12);}
+  }
+  // ── scene 4: watch out
+  else {
+    S('rect',{x:140,y:100,width:1000,height:62,rx:14,fill:'#FBE7E4',stroke:NO,'stroke-width':3});S('text',{x:640,y:142,'text-anchor':'middle','font-size':32,'font-weight':900,fill:NO,text:'Watch out!'});
+    if(t>=K.always-0.4){S('text',{x:200,y:230,'font-size':32,'font-weight':900,fill:OK,text:'✓  ×4 on both:'});fr(560,200,1,2,30,C2);S('text',{x:620,y:232,'font-size':34,'font-weight':900,fill:NAVY,text:'='});fr(680,200,4,8,30,C8);
+      strip(780,196,300,8,4,C8,40);}
+    if(t>=K.ifonly-0.3){S('text',{x:200,y:400,'font-size':32,'font-weight':900,fill:NO,text:'✗  ×4 on only one:'});fr(560,370,1,2,30,C2);S('text',{x:620,y:402,'font-size':34,'font-weight':900,fill:NO,text:'≠'});fr(680,370,1,8,30,NO);
+      strip(780,366,300,8,1,C8,40);S('line',{x1:780+150,y1:356,x2:780+150,y2:416,stroke:GOLD,'stroke-width':4,'stroke-dasharray':'8 6'});
+      S('text',{x:930,y:450,'text-anchor':'middle','font-size':22,'font-weight':900,fill:NO,text:'too short!'});}
+  }
+  if(cur)cursor(cur[0],cur[1],press);
+}
+window.init=function(tl){TL=tl;setup();};
+</script></body></html>

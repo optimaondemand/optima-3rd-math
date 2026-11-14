@@ -171,10 +171,31 @@ SC['3.10.01']=function(t,K){
   if(t>=K.same-0.1){var e=ramp(t,K.same-0.1,0.4);S('line',{x1:x0+len,y1:y0-10,x2:x0+len,y2:y0+270,stroke:GOLD,'stroke-width':5,'stroke-dasharray':'10 7',opacity:e});}
   if(t>=K.listen-0.3){waves(x0+len+40,y0+130,t,K.listen,1,1);}
 };
+SC['3.10.02']=function(t,K){
+  var HD='CHAPTER 10 · BACH\'S MEASURES';
+  if(t<K.printed-0.3){head('','');owl(1000,380,150,t);book(t,0.1,'sb-goldberg-plate.jpg','CHAPTER 10 · LESSON 2',['Finding Equivalent','Fractions'],'Same measure, more notes');return;}
+  if(t<K.aria-0.3){head(HD,'A book Bach printed');owl(1040,430,120,t);var o=fade(t,K.printed-0.3,K.aria-0.3);pic('sb-goldberg-titlepage.jpg',420,92,440,520,1+0.05*(t-K.printed),.5,.3,o);
+    label(1010,200,'1741',o*ramp(t,K.printed,0.4),NAVY,40);return;}
+  if(t<K.thirty-0.3){head(HD,'It starts with the Aria');owl(1040,430,120,t);var o2=fade(t,K.aria-0.3,K.thirty-0.3);pic('sb-goldberg-aria-crop.jpg',190,170,900,240,1+0.03*(t-K.aria),.5,.5,o2);
+    label(640,520,'Aria = a slow, calm song',o2*ramp(t,K.calm-0.3,0.4),'#6B4A12',32);return;}
+  head(HD,t>=K.same-0.2?'Same measure, more notes':'Thirty variations');owl(null);
+  var x0=150,mw=240,gap=10,yA=170,yV=360,p0=ramp(t,K.thirty-0.3,0.5);
+  S('text',{x:x0,y:yA-18,'font-size':24,'font-weight':900,fill:'#6B46C1',opacity:p0,text:'The Aria'});
+  for(var m=0;m<4;m++){var x=x0+m*(mw+gap);S('rect',{x:x,y:yA,width:mw,height:70,rx:8,fill:'#FFFDF8',stroke:NAVY,'stroke-width':3,opacity:p0});
+    S('rect',{x:x+8,y:yA+10,width:mw-16,height:24,rx:6,fill:'#6B46C1',opacity:p0});S('rect',{x:x+8,y:yA+40,width:mw-16,height:20,rx:6,fill:'#5B4A2A',opacity:p0*ramp(t,K.low-0.3,0.4)});}
+  if(t>=K.low-0.3)S('text',{x:x0+4*(mw+gap)+6,y:yA+58,'font-size':20,'font-weight':900,fill:'#5B4A2A',opacity:ramp(t,K.low-0.3,0.4),text:'low notes'});
+  if(t>=K.fills-0.4){var q=ramp(t,K.fills-0.4,0.5);S('text',{x:x0,y:yV-18,'font-size':24,'font-weight':900,fill:'#117E7E',opacity:q,text:'A variation'});
+    for(var m=0;m<4;m++){var x=x0+m*(mw+gap);S('rect',{x:x,y:yV,width:mw,height:70,rx:8,fill:'#FFFDF8',stroke:NAVY,'stroke-width':3,opacity:q});
+      var n=4,w=(mw-16)/n;for(var i=0;i<n;i++){var b=ramp(t,K.fills-0.2+(m*n+i)*0.08,0.25);S('rect',{x:x+8+i*w+1,y:yV+10,width:(w-2)*b,height:24,rx:5,fill:'#117E7E'});}
+      S('rect',{x:x+8,y:yV+40,width:mw-16,height:20,rx:6,fill:'#5B4A2A',opacity:q});}
+    for(var m=0;m<=4;m++){var gx=x0+m*(mw+gap)-(m?gap/2:0);[[yA-6,yA+76],[yV-6,yV+76]].forEach(function(r){S('line',{x1:gx,y1:r[0],x2:gx,y2:r[1],stroke:GOLD,'stroke-width':3,'stroke-dasharray':'8 6',opacity:ramp(t,K.same-0.3,0.4)});});}}
+  if(t>=K.today-0.3){var e=ramp(t,K.today-0.3,0.5);label(640,560,'Today: the math of more notes',e,GREEN,30);}
+};
 var CUES={
  '3.09.01':function(){return{each:wt(/^Each$/),math:wt(/^math$/),today:wt(/^Today's$/),more:wt(/^more$/),meet:wt(/^Meet$/),numbers:wt(/^numbers$/),music:wt(/^music$/),stories:wt(/^Stories$/),string:wt(/^string$/),box:wt(/^box$/),then:wt(/^Then$/),listen:wt(/^listened$/),lets:wt(/^Let's$/)};},
  '3.09.02':function(){return{still:wt(/^We're$/),singing:wt(/^singing$/),last:wt(/^Last$/),cut:wt(/^cut$/),equal:wt(/^equal$/),today:wt(/^Today$/),turns:wt(/^turns$/),line:wt(/^line$/),every:wt(/^Every$/),spot:wt(/^spot$/)};},
  '3.09.03':function(){return{pyth:wt(/^Pythagoras$/),two:wt(/^two$/),length:wt(/^length$/),cut:wt(/^cut$/),number:wt(/^number$/),today:wt(/^Today$/),frac:wt(/^fraction$/),hear:wt(/^hear$/)};},
+ '3.10.02':function(){return{printed:wt(/^printed$/),aria:wt(/^starts$/),calm:wt(/^calm$/),thirty:wt(/^thirty$/),low:wt(/^low$/),fills:wt(/^fills$/),same:wt(/^Same$/),today:wt(/^Today$/)};},
  '3.10.01':function(){return{leip:wt(/^Leipzig$/),ago:wt(/^ago$/),meet:wt(/^Meet$/),wrote:wt(/^wrote$/),one:wt(/^one$/,0),fill:wt(/^fill$/),long:wt(/^long$/),shorter:wt(/^shorter$/),same:wt(/^same$/),listen:wt(/^listen$/)};},
  '3.09.04':function(){return{today:wt(/^Today$/),pipes:wt(/^pipes$/),when:wt(/^When$/),cut:wt(/^cut$/),eq:wt(/^equal$/),long:wt(/^long$/),short:wt(/^short$/),find:wt(/^find$/),num:wt(/^numerators$/),hear:wt(/^hear$/)};}
 };

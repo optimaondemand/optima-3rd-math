@@ -1,0 +1,62 @@
+{
+ "g3m-3-10-01-warm-1": {
+  "text": "Hoo, welcome to Chapter 10! Let's open our old book to a new time and place: Leipzig, Germany, about 300 years ago. Meet Johann Sebastian Bach. He wrote music, and in his music, one measure is one whole. Bach could fill a measure in many ways: one long note, or shorter notes that take the same time. Let's listen.",
+  "voice": "opti"
+ },
+ "g3m-3-10-01-think-1": {
+  "text": "Two players share one measure. The top player plays two one-third notes. Build the bottom row from twelfths until it ends on the same beat. Press Play to check. How many twelfths did it take?",
+  "voice": "opti"
+ },
+ "g3m-3-10-01-think-done": {
+  "text": "You heard it! Both rows ended on the same beat. Two-thirds and eight-twelfths fill the same amount. In the Lesson, you'll learn a word for this.",
+  "voice": "opti"
+ },
+ "g3m-3-10-01-learn-1": {
+  "text": "Welcome to the Lesson. It has three stops. First, learn what equivalent fractions are. Next, we fix some mix-ups together. Then you try one on your own.",
+  "voice": "opti"
+ },
+ "g3m-3-10-01-practice-1": {
+  "text": "Each job has a mix-up kids often make. A clue: the wholes must be the same size, and the parts must be equal. Then look at the length, not just the numbers.",
+  "voice": "opti"
+ },
+ "g3m-3-10-01-own-1": {
+  "text": "Your turn to work on your own. Split every piece into two equal pieces. The shaded part stays the same length. Only its name changes.",
+  "voice": "opti"
+ },
+ "g3m-3-10-01-swyk-1": {
+  "text": "Last stop! Show what you know. Fill one of Bach's measures any way you like. Then press Play and listen to your music.",
+  "voice": "opti"
+ },
+ "g3m-3-10-01-end-1": {
+  "text": "Before you go, listen to Bach's music for a group of string players. Hear the long notes and quick notes fit together. Press play, and press stop whenever you like.",
+  "voice": "opti"
+ },
+ "g3m-3-10-01-vid-open": {
+  "text": "Hoo! Claire is going to show us fractions that look different but fill the same amount. Watch the length.",
+  "voice": "opti"
+ },
+ "g3m-3-10-01-vid-close": {
+  "text": "Same length, new name. That's what equivalent fractions are. Now it's your turn.",
+  "voice": "opti"
+ },
+ "g3m-3-10-01-vid-math": {
+  "text": "Here is one measure of music. It is one whole. One whole note fills the whole measure. Cut it into two equal parts. Each part is one-half. Let's shade one half. Bach could play a half note here. Now cut every part in half again. There are four equal parts, and two are shaded. That's two-fourths. Two quarter notes take the same time as one half note. Cut every part in half one more time. Eight equal parts, and four are shaded. Four-eighths. Look at the shaded part. It never changed length. One-half, two-fourths, and four-eighths are the same amount. We call them equivalent fractions. Equivalent sounds like equal. They have the same value. Let's check on number lines. One line is in halves, one is in fourths, and one is in eighths. One-half, two-fourths, and four-eighths all land on the same spot. We can go the other way, too. This bar has ten equal parts, and two tenths are shaded. Group the tenths in pairs. Now there are five bigger parts, and one is shaded. Two-tenths is equal to one-fifth. Watch out! Every part must be split or grouped the same way, and the whole must stay the same size. Then the shaded amount stays the same.",
+  "voice": "claire"
+ },
+ "g3m-word-equivalent-fractions": {
+  "text": "Equivalent fractions.",
+  "voice": "opti"
+ },
+ "g3m-word-equivalent": {
+  "text": "Equivalent.",
+  "voice": "opti"
+ },
+ "g3m-word-measure": {
+  "text": "Measure.",
+  "voice": "opti"
+ },
+ "g3m-3-10-02-vid-math": {
+  "text": "Here is one measure. It is one whole. Cut it in half and shade one part. One part is shaded, and there are two parts in all. One-half. Now split every part into two. Two parts are shaded, and there are four parts in all. Both counts doubled. One-half equals two-fourths. Go back to one-half, and split every part into three. Three are shaded, and there are six in all. Both counts are three times as many. One-half equals three-sixths. Split every part into four. Four shaded, eight in all. One-half equals four-eighths. Do you see the rule? Multiply the numerator and the denominator by the same number. We show it with arrows. Times four on the numerator. Times four on the denominator. The shaded part stays the same length, so the fraction is equivalent. Does it work for thirds, too? Here is two-thirds. Split every part into four. Eight are shaded, and there are twelve in all. Two times four is eight. Three times four is twelve. Two-thirds equals eight-twelfths. Watch out! Always multiply both numbers by the same number. If you change only one, the shaded part changes size.",
+  "voice": "claire"
+ }
+}

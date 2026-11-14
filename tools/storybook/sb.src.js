@@ -363,7 +363,7 @@
       .replace(/ \. (?=blank\b)/g, ' ').replace(/\bNo\. (?=\d)/g, 'Number ').replace(/(\s*\.)+(\s*[.!?:,])/g, '$2').replace(/([!?:,])\s*\./g, '$1').replace(/^[\s.]+/, '').replace(/\s+/g, ' ').trim();
   }
   function raQueue(root) {
-    var SKIP = '.sb-opti, .sb-tabs, .sb-path, .sb-start, .sb-prog, .sb-head, .sb-donechip, .sb-locked, .sb-credit, figcaption small, [hidden]';
+    var SKIP = '.sb-opti, .sb-tabs, .sb-path, .sb-start, .sb-prog, .sb-head, .sb-donechip, .sb-locked, .sb-credit, .ar-grid, figcaption small, [hidden]';
     var BLOCK = 'p, li, h1, h2, h3, h4, h5, h6, figcaption, td, th, dt, dd, .sb-q, .sb-how, .sb-readout, .sb-fb, .sb-tip, .sb-hintbox, .sb-k, .sb-kind, .sb-jn, label, div';
     var items = [], w = document.createTreeWalker(root, NodeFilter.SHOW_ELEMENT | NodeFilter.SHOW_TEXT, null, false), nd, done = [];
     while ((nd = w.nextNode())) {
@@ -1594,6 +1594,150 @@
       else msg('The measure is not full yet.');
     }
     document.addEventListener('sb:step', report); draw();
+  };
+
+  /* stack (3.10.02 Think): one measure cut several ways. data-d "4,8,12" (row denominators), data-k (shaded in the first row, fixed).
+     Tap a tile in a lower row to shade up to it. Flags: r1, r2 … (row i shaded to the gold line) */
+  MODS.stack = function (box) {
+    var D = box.dataset.d.split(',').map(Number), k = +box.dataset.k, name = box.dataset.name || 'stack', S = mstate(name, { k: D.map(function (d, i) { return i ? 0 : k; }) });
+    S.k[0] = k; var BW = 680, LX = 10, RH = 46, Y0 = 8, GAP = 34, gx = LX + BW * k / D[0];
+    var YS = D.map(function (d, i) { return Y0 + RH + GAP + i * (RH + GAP); }), H = YS[YS.length - 1] + RH + 12;
+    box.innerHTML = '<div class="sb-stage sb-tiles"><svg viewBox="0 0 700 ' + H + '" role="group" aria-label="One measure cut ' + D.length + ' ways"></svg></div><div class="sb-readout" aria-live="polite"></div>';
+    var svg = $('svg', box), out = $('.sb-readout', box);
+    function msg(h, ok) { out.innerHTML = ok ? '<span style="color:#1E7A4C">' + h + '</span>' : h; }
+    function good(i) { return S.k[i] * D[0] === k * D[i]; }
+    function draw() {
+      svg.innerHTML = ''; wholeBar(svg, LX, Y0, BW, RH, '1 whole measure');
+      D.forEach(function (d, r) {
+        var y = YS[r], w = BW / d;
+        NS('text', { x: LX, y: y - 9, 'font-size': 13, 'font-weight': 900, fill: '#5B6478', text: (DNAME[d] + 's').toUpperCase() + (r ? ' · tap a tile to shade up to it' : ' · already shaded'), 'pointer-events': 'none' }, svg);
+        for (var i = 0; i < d; i++) (function (i) {
+          var g = ftile(svg, LX + i * w, y, w, RH, d, i < S.k[r], 'tile part st-r' + r);
+          if (!r) return;
+          g.setAttribute('tabindex', 0); g.setAttribute('role', 'button'); g.setAttribute('aria-label', DNAME[d] + 's row, tile ' + (i + 1) + (i < S.k[r] ? ', shaded' : ''));
+          function set() { S.k[r] = S.k[r] === i + 1 ? i : i + 1; save(); pluck(HZ.G4); draw(); }
+          g.addEventListener('click', set); g.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); set(); } });
+        })(i);
+      });
+      YS.forEach(function (y) { NS('line', { x1: gx, y1: y - 4, x2: gx, y2: y + RH + 4, stroke: '#C9A227', 'stroke-width': 3, 'stroke-dasharray': '5 5', 'pointer-events': 'none' }, svg); });
+      report();
+    }
+    function report() {
+      var all = true;
+      D.forEach(function (d, r) { if (!r) return; var ok = good(r); flag(box, 'r' + r, ok); if (ok) flag(box, 'r' + r); else all = false; });
+      var bad = D.map(function (d, r) { return r && S.k[r] && !good(r) ? r : 0; }).filter(Boolean)[0];
+      if (all) msg('Every row is shaded right up to the gold line. Same amount, three names.', true);
+      else if (bad) msg('The ' + DNAME[D[bad]] + 's row stops ' + (S.k[bad] * D[0] < k * D[bad] ? 'before' : 'after') + ' the gold line.');
+      else msg('Shade each row up to the gold line.');
+    }
+    document.addEventListener('sb:step', report); draw();
+  };
+
+  /* arrows (3.10.02): curved ×n arrows from a/b to a new fraction. Drag a tag (×2 … ×5) onto the top or bottom arrow (or tap a tag).
+     data-a, data-b, data-by (the right tag), data-c (show this new denominator), data-first "bot" (a tap fills the bottom arrow first),
+     data-who (a student's wrong pair, e.g. "1,3": ×1 on top, ×3 on the bottom, shown first). Flags: top · bot */
+  MODS.arrows = function (box) {
+    var a = +box.dataset.a, b = +box.dataset.b, by = +box.dataset.by, c = box.dataset.c, name = box.dataset.name || 'arrows', first = box.dataset.first || 'top';
+    var S = mstate(name, { t: 0, u: 0 }), TAGS = [2, 3, 4, 5];
+    function arc(down) { return '<svg class="ar-arc' + (down ? ' dn' : '') + '" viewBox="0 0 160 40" aria-hidden="true"><path d="' + (down ? 'M8 4 Q80 44 150 6' : 'M8 36 Q80 -4 150 34') + '" fill="none" stroke="#0E1C42" stroke-width="3"/><path d="' + (down ? 'M150 6 l-12 2 l6 9 z' : 'M150 34 l-12 -2 l6 -9 z') + '" fill="#0E1C42"/></svg>'; }
+    box.innerHTML = '<div class="sb-stage sb-arrows"><div class="ar-grid">' +
+      '<div class="ar-f">' + frac(a, b) + '</div>' +
+      '<div class="ar-mid"><div class="ar-slot top" data-k="t" aria-label="The arrow over the numerators"></div>' + arc(0) + '<div class="ar-eq">=</div>' + arc(1) + '<div class="ar-slot bot" data-k="u" aria-label="The arrow under the denominators"></div></div>' +
+      '<div class="ar-f new">' + frac('?', c || '?') + '</div></div>' +
+      '<div class="sym-cards ar-cards" role="group" aria-label="Tags to drag">' + TAGS.map(function (t) { return '<button type="button" class="sym-card ar-card" data-t="' + t + '" aria-label="times ' + t + '">×' + t + '</button>'; }).join('') + '</div></div><div class="sb-readout" aria-live="polite"></div>';
+    var out = $('.sb-readout', box), slots = { t: $('.ar-slot.top', box), u: $('.ar-slot.bot', box) };
+    function msg(h, ok) { out.innerHTML = ok ? '<span style="color:#1E7A4C">' + h + '</span>' : h; }
+    function paint() {
+      ['t', 'u'].forEach(function (k) { var v = S[k], s = slots[k], ok = v === by; s.className = 'ar-slot ' + (k === 't' ? 'top' : 'bot') + (v ? ' full ' + (ok ? 'ok' : 'no') : ''); s.innerHTML = v ? '<span>×' + v + '</span>' : '<small>drop here</small>'; });
+      var t = S.t, u = S.u; flag(box, 'top', t === by); if (t === by) flag(box, 'top'); flag(box, 'bot', u === by); if (u === by) flag(box, 'bot');
+      if (t && u && t !== u) msg('×' + t + ' on the numerator but ×' + u + ' on the denominator. Different numbers change the amount. Use the same tag on both arrows.');
+      else if (t === by && u === by) msg('×' + by + ' on the numerator and ×' + by + ' on the denominator. Every part is split into ' + by + '. Same amount, new name.', true);
+      else if (c && u && u * b !== +c) msg(b + ' × ' + u + ' = ' + (b * u) + ', not ' + c + '. Try another tag.');
+      else if (t && u) msg('×' + t + ' on both arrows makes an equivalent fraction, but not the one this job asks for. Try another tag.');
+      else if (t || u) msg('Now put the same tag on the other arrow.');
+      else msg('Both arrows are empty.');
+    }
+    function put(k, v) { S[k] = v; save(); pluck(v === by ? HZ.D5 : HZ.D4); paint(); }
+    $$('.ar-card', box).forEach(function (card) {
+      var v = +card.dataset.t;
+      hdrag(card, function (t) { var s = t && t.closest && t.closest('.ar-slot'); if (s && box.contains(s)) put(s.dataset.k, v); },
+        function () { var o = first === 'bot' ? ['u', 't'] : ['t', 'u'], k = !S[o[0]] ? o[0] : !S[o[1]] ? o[1] : o[0]; put(k, v); });
+    });
+    ['t', 'u'].forEach(function (k) { slots[k].setAttribute('tabindex', 0); slots[k].setAttribute('role', 'button'); slots[k].addEventListener('click', function () { if (S[k]) { S[k] = 0; save(); paint(); } }); });
+    document.addEventListener('sb:step', paint); paint();
+  };
+
+  /* ttwin (3.10.02 wow): the times-table window. Two rows of the times table (data-a row on top, data-b row below), data-cols columns.
+     Tap a column (or drag the gold window) to move the window there; every column it lands on is kept as a new name for a/b.
+     A number line shows each name landing on the same spot. ▶ Play: each name is one measure over the opening bass of Bach's Aria.
+     Flags: names (data-need names kept, the start column does not count), play */
+  MODS.ttwin = function (box) {
+    var a = +box.dataset.a, b = +box.dataset.b, N0 = +box.dataset.cols || 10, need = +box.dataset.need || 3, name = box.dataset.name || 'ttwin', S = mstate(name, { c: 1, kept: [], played: 0 });
+    var N, LX, CW, VW, Y0 = 34, RH = 44, NLY = Y0 + 2 * RH + 96, H = NLY + 74;
+    // narrow screens: fewer, bigger columns (the row labels sit above the table)
+    function layout() { var narrow = (box.clientWidth || 700) < 560; N = narrow ? 6 : N0; VW = narrow ? 420 : 700; LX = narrow ? 64 : 150; CW = narrow ? 58 : 54; S.c = Math.min(S.c, N); }
+    box.innerHTML = '<div class="sb-stage sb-tiles"><svg viewBox="0 0 700 ' + H + '" role="group" aria-label="Two rows of the times table, with a gold window around one column"></svg></div><div class="tt-kept" aria-live="polite"></div><div class="sb-row" style="margin-top:6px"><button type="button" class="sb-btn tt-play">▶ Play my names with Bach</button><button type="button" class="sb-btn ghost tt-clear">↺ Start over</button></div><div class="sb-readout" aria-live="polite"></div>';
+    var svg = $('svg', box), out = $('.sb-readout', box), kp = $('.tt-kept', box), busy = false;
+    function msg(h, ok) { out.innerHTML = ok ? '<span style="color:#1E7A4C">' + h + '</span>' : h; }
+    function cx(c) { return LX + (c - 0.5) * CW; }
+    function move(c, keep) { c = Math.max(1, Math.min(N, c)); S.c = c; if (keep && c > 1 && S.kept.indexOf(c) < 0) { S.kept.push(c); S.played = 0; bowTone(HZ.G4, 0.25, 0, 0.12); } save(); draw(); }
+    function draw() {
+      layout(); svg.innerHTML = ''; svg.setAttribute('viewBox', '0 0 ' + VW + ' ' + H); var narrow = VW < 700;
+      NS('text', { x: LX - 10, y: Y0 - 12, 'text-anchor': 'end', 'font-size': 13, 'font-weight': 900, fill: '#5B6478', text: 'times', 'pointer-events': 'none' }, svg);
+      [[a, 'numerator row', 'tops'], [b, 'denominator row', 'bottoms']].forEach(function (rw, r) {
+        var y = Y0 + r * RH;
+        NS('text', { x: LX - 10, y: y + 20, 'text-anchor': 'end', 'font-size': 15, 'font-weight': 900, fill: r ? DCOL[b] || '#1F2A44' : '#B03A2E', text: rw[0] + ' ×', 'pointer-events': 'none' }, svg);
+        NS('text', { x: LX - 10, y: y + 36, 'text-anchor': 'end', 'font-size': 11, 'font-weight': 800, fill: '#5B6478', text: narrow ? rw[2] : rw[1], 'pointer-events': 'none' }, svg);
+      });
+      for (var c = 1; c <= N; c++) (function (c) {
+        var x = cx(c), kept = S.kept.indexOf(c) > -1 || c === 1, g = NS('g', { class: 'tt-col', tabindex: 0, role: 'button', 'aria-label': 'Column times ' + c + ': ' + (a * c) + ' over ' + (b * c) }, svg);
+        NS('rect', { x: x - CW / 2 + 2, y: Y0 - 28, width: CW - 4, height: 2 * RH + 32, rx: 8, fill: kept ? '#FFF6D8' : '#F6F7FB', stroke: '#DDE2EE', 'stroke-width': 1.5 }, g);
+        NS('text', { x: x, y: Y0 - 10, 'text-anchor': 'middle', 'font-size': 12, 'font-weight': 900, fill: '#5B6478', text: '×' + c }, g);
+        NS('text', { x: x, y: Y0 + 26, 'text-anchor': 'middle', 'font-size': 19, 'font-weight': 900, fill: '#B03A2E', text: String(a * c) }, g);
+        NS('line', { x1: x - 14, y1: Y0 + RH - 2, x2: x + 14, y2: Y0 + RH - 2, stroke: '#0E1C42', 'stroke-width': 2 }, g);
+        NS('text', { x: x, y: Y0 + RH + 26, 'text-anchor': 'middle', 'font-size': 19, 'font-weight': 900, fill: DCOL[b] || '#1F2A44', text: String(b * c) }, g);
+        g.addEventListener('click', function () { move(c, true); }); g.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); move(c, true); } });
+      })(c);
+      var w = NS('g', { class: 'tt-win', tabindex: 0, role: 'slider', 'aria-label': 'The gold window', 'aria-valuemin': 1, 'aria-valuemax': N, 'aria-valuenow': S.c }, svg);
+      NS('rect', { x: cx(S.c) - CW / 2, y: Y0 - 30, width: CW, height: 2 * RH + 36, rx: 10, fill: 'transparent', stroke: '#C9A227', 'stroke-width': 5 }, w);
+      NS('rect', { x: cx(S.c) - 18, y: Y0 + 2 * RH + 8, width: 36, height: 18, rx: 6, fill: '#C9A227' }, w);
+      NS('text', { x: cx(S.c), y: Y0 + 2 * RH + 22, 'text-anchor': 'middle', 'font-size': 13, 'font-weight': 900, fill: '#3A2A12', text: '↔', 'pointer-events': 'none' }, w);
+      drag(w, svg, function (pt) { w.setAttribute('transform', 'translate(' + Math.max(LX - cx(S.c) + CW / 2, Math.min(LX + N * CW - cx(S.c) - CW / 2, pt.x - cx(S.c))) + ',0)'); }, function (pt) { if (pt) move(Math.round((pt.x - LX) / CW + 0.5), true); else draw(); });
+      w.addEventListener('keydown', function (e) { if (e.key === 'ArrowRight') { e.preventDefault(); move(S.c + 1, true); } if (e.key === 'ArrowLeft') { e.preventDefault(); move(S.c - 1, false); } });
+      // number line: 0 to 1, ticks for the window's denominator, a dot on a/b
+      var n = b * S.c, NX = narrow ? 30 : 50, NW = VW - 2 * NX, px = NX + NW * a / b;
+      NS('line', { x1: NX, y1: NLY, x2: NX + NW, y2: NLY, stroke: '#1F2A44', 'stroke-width': 3, 'stroke-linecap': 'round' }, svg);
+      for (var q = 0; q <= n; q++) { var tx = NX + q * NW / n, big = q === 0 || q === n; NS('line', { x1: tx, y1: NLY - (big ? 13 : 8), x2: tx, y2: NLY + (big ? 13 : 8), stroke: big ? '#1F2A44' : DCOL[n] || '#5B6478', 'stroke-width': big ? 3 : 2 }, svg); }
+      NS('text', { x: NX, y: NLY + 34, 'text-anchor': 'middle', 'font-size': 16, 'font-weight': 900, fill: '#1F2A44', text: '0' }, svg);
+      NS('text', { x: NX + NW, y: NLY + 34, 'text-anchor': 'middle', 'font-size': 16, 'font-weight': 900, fill: '#1F2A44', text: '1' }, svg);
+      NS('circle', { cx: px, cy: NLY, r: 9, fill: '#1E7A4C', stroke: '#fff', 'stroke-width': 3 }, svg);
+      NS('text', { x: px, y: NLY + 30, 'text-anchor': 'middle', 'font-size': 15, 'font-weight': 900, fill: '#1E7A4C', text: String(a * S.c) }, svg);
+      NS('line', { x1: px - 10, y1: NLY + 36, x2: px + 10, y2: NLY + 36, stroke: '#1E7A4C', 'stroke-width': 2 }, svg);
+      NS('text', { x: px, y: NLY + 54, 'text-anchor': 'middle', 'font-size': 15, 'font-weight': 900, fill: '#1E7A4C', text: String(n) }, svg);
+      NS('text', { x: NX - (narrow ? 20 : 40), y: NLY - 18, 'font-size': 12, 'font-weight': 800, fill: '#5B6478', text: 'NUMBER LINE · ' + n + ' equal jumps', 'pointer-events': 'none' }, svg);
+      report();
+    }
+    function report() {
+      kp.innerHTML = '<b>My names:</b> ' + frac(a, b) + S.kept.map(function (c) { return ' = ' + frac(a * c, b * c); }).join('') + (S.kept.length < need ? ' <span class="tt-left">(' + (need - S.kept.length) + ' more to find)</span>' : '');
+      var ok = S.kept.length >= need; flag(box, 'names', ok); if (ok) flag(box, 'names');
+      if (ok && S.played) { flag(box, 'play'); msg('Every name ended on the same beat, and every dot landed on the same spot.', true); return; }
+      if (ok) msg('You found ' + S.kept.length + ' new names. Press ▶ Play my names with Bach.', true);
+      else msg('The window is on the ×' + S.c + ' column: ' + frac(a * S.c, b * S.c) + '. Every column is a new name for ' + frac(a, b) + '.');
+    }
+    // the opening bass of Bach's Aria (Goldberg Variations): G, F sharp, E, D
+    var BASS = [196.0, 185.0, 164.81, 146.83], TUNE = [392.0, 493.88, 587.33, 783.99, 587.33, 493.88];
+    $('.tt-play', box).addEventListener('click', function () {
+      if (busy) return; if (S.kept.length < need) { msg('Find ' + need + ' new names first.'); return; }
+      busy = true; musicDuck(); var M = 2.6, list = [1].concat(S.kept.slice(0, 3));
+      list.forEach(function (c, m) {
+        var k = a * c, n = b * c; bowTone(BASS[m % 4], M * 0.96, m * M, 0.18);
+        for (var i = 0; i < k; i++) bowTone(TUNE[i % TUNE.length], M / n, m * M + i * M / n, 0.15);
+        setTimeout(function () { S.c = c; draw(); }, m * M * 1000);
+      });
+      setTimeout(function () { busy = false; S.played = 1; save(); report(); }, list.length * M * 1000 + 150);
+    });
+    $('.tt-clear', box).addEventListener('click', function () { S.c = 1; S.kept = []; S.played = 0; save(); draw(); });
+    document.addEventListener('sb:step', report); onWidth(box, draw); draw();
   };
 
   $$('[data-mod]').forEach(function (b) { var f = MODS[b.dataset.mod]; if (f) try { f(b); } catch (e) { console.error('model', b.dataset.mod, e); } });

@@ -461,3 +461,30 @@ html.sb-still *{animation:none!important;transition:none!important}
 .sb-ra-mini button{font:inherit;font-weight:900;font-size:14px;min-height:30px;padding:3px 10px;border-radius:9px;border:0;background:#F2C94C;color:#0E1C42;cursor:pointer}
 .sb-ra-mini .m-stop{background:#fff}
 .sb-opti:has(+ .sb-video.ready) .play{display:none}
+/* 3.10.02: ×n arrows and the times-table window */
+.sb-arrows{padding:14px}
+.ar-grid{display:flex;align-items:center;justify-content:center;gap:10px;color:var(--navy)}
+.ar-f{font-size:44px;font-weight:900}
+.ar-f .fr{font-size:1em}
+.ar-f.new .fr span{color:#5B6478}
+.ar-mid{display:flex;flex-direction:column;align-items:center;gap:2px;min-width:170px}
+.ar-arc{width:160px;height:40px;display:block}
+.ar-eq{font-size:30px;font-weight:900;line-height:1}
+.ar-slot{width:78px;height:48px;border:3px dashed #AEB6CC;border-radius:12px;display:flex;align-items:center;justify-content:center;background:#F6F7FB;font-size:24px;font-weight:900;cursor:pointer}
+.ar-slot small{font-size:11px;font-weight:800;color:var(--mute)}
+.ar-slot.full{border-style:solid;background:#fff}
+.ar-slot.ok{border-color:var(--ok);background:var(--ok2)}
+.ar-slot.no{border-color:var(--no);background:var(--no2)}
+.ar-card{width:auto;min-width:62px;padding:0 10px;font-size:26px}
+.tt-col{cursor:pointer}
+.tt-win{cursor:grab}
+.tt-kept{margin-top:8px;font-size:17px;font-weight:800;color:var(--navy);line-height:2.2}
+.tt-kept .fr{font-size:1em;margin:0 2px}
+.tt-left{font-size:14px;color:var(--mute)}
+@media (max-width:560px){.ar-f{font-size:34px}.ar-mid{min-width:120px}.ar-arc{width:116px}.ar-slot{width:64px;height:42px;font-size:20px}}
+.sb-table{border-collapse:collapse;margin:6px 0 10px;font-size:17px;font-weight:800;color:var(--navy)}
+.sb-table th,.sb-table td{border:1.5px solid #DDE2EE;padding:6px 12px;text-align:center}
+.sb-table th{background:#F6F7FB;font-size:14px;color:var(--mute)}
+.sb-table td .fr{font-size:1.1em}
+.sb-table .sb-ans{width:3.2em}
+@media (max-width:560px){.sb-table{font-size:15px}.sb-table th,.sb-table td{padding:4px 6px}}
