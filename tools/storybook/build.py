@@ -49,6 +49,12 @@ TOOLS = {
  'nl-11': NL(0, 1, 11) + ('Try the Number Line in elevenths. Start near 1 and hop back two times.',),
  'fbars-half': ('fbars', {"d": [2, 9, 10], "lab": 1}, 'Fraction Tiles', 'Line up a one-half tile with a bar of ninths and a bar of tenths. Which fractions stop before the half tile ends?'),
  'fbars-8': ('fbars', {"d": [8], "lab": 1}, 'Fraction Tiles', 'Try a bar of eighths. Each eighth is as long as 2 sixteenths.'),
+ 'fbars-16c': ('fbars', {"bm": "build", "d": [16], "bt": [], "sh": {}}, 'Fraction Tiles', 'Fill a bar with one-sixteenth tiles. Add some, then take some away. Say each step out loud.'),
+ 'fbars-9b': ('fbars', {"d": [9], "lab": 1}, 'Fraction Tiles', 'Try a bar of ninths. Shade some tiles, add a few more, then take one away.'),
+ 'fbars-11g': ('fbars', {"d": [11], "lab": 1}, 'Fraction Tiles', 'Try two bars of elevenths. Shade a different number of tiles in each, then count the extra tiles in the longer bar.'),
+ 'fbars-12g': ('fbars', {"d": [12], "lab": 1}, 'Fraction Tiles', 'Try two bars of twelfths. Shade a different number in each. How many more tiles does the longer bar have?'),
+ 'fbars-8-16': ('fbars', {"d": [8, 16], "lab": 1}, 'Fraction Tiles', 'Line up a bar of eighths and a bar of sixteenths. How many sixteenths fit under one eighth?'),
+ 'nl-11b': NL(0, 1, 11) + ('Try the Number Line in elevenths. Put a dot on a fraction, hop back, then hop forward.',),
  'fbars-9-10': ('fbars', {"d": [9, 10], "lab": 1}, 'Fraction Tiles', 'Try a bar of ninths and a bar of tenths. Shade 1 ninth and 2 tenths. Which reaches farther?'),
 }
 def enc(o): return base64.urlsafe_b64encode(json.dumps(o, separators=(',', ':')).encode()).decode().rstrip('=')
@@ -158,6 +164,18 @@ L = {
      {"t": "sixteenth note", "alt": ["sixteenth notes"], "d": "A note that lasts for one-sixteenth of a measure. 16 of them fill one measure."},
      {"t": "cantata", "d": "A piece of music for singers and players. Bach wrote many of them.", "key": True},
      {"t": "musette", "d": "A happy dance with a low note that keeps sounding, like bagpipes."}]),
+  '3.10.07': dict(page='math-lesson-3-10-07-adding-subtracting-fractions-part-2.html', title='Adding and Subtracting Fractions, Part 2', video='g3math-10-07-learn',
+   glossary=[
+     {"t": "clue word", "alt": ["clue words"], "d": "A word in a story problem that tells you what to do, like more (add) or left (take away).", "key": True},
+     {"t": "altogether", "d": "All of it put together. Altogether is a clue to add.", "key": True},
+     {"t": "how much more", "d": "A question that asks for the gap between two amounts. Line them up and count the extra pieces.", "key": True},
+     {"t": "simplest form", "d": "A fraction written with the fewest, biggest pieces. 2 twelfths in simplest form is 1 sixth.", "key": True},
+     {"t": "difference", "d": "The answer when you subtract. 6 sevenths − 1 seventh: the difference is 5 sevenths.", "key": True},
+     GL_BASE[2], GL_BASE[3],
+     {"t": "unit", "d": "The size of the piece you are counting. In 4 ninths + 4 ninths, the unit is ninths.", "key": True},
+     {"t": "gallery", "d": "A high balcony inside a church, where the singers and players stood."},
+     {"t": "cantata", "d": "A piece of music for singers and players. Bach wrote many of them.", "key": True},
+     {"t": "chorale", "d": "A hymn tune that everyone in church could sing."}]),
 }
 def tool(m):
     t, st, name, tip = TOOLS[m.group(1)]

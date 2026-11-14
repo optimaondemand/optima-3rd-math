@@ -276,7 +276,33 @@ SC['3.10.06']=function(t,K){
   if(t>=K.add-0.3)label(470,580,'+ add pieces',ramp(t,K.add-0.3,0.4),NAVY,28);
   if(t>=K.take-0.3)label(820,580,'− take some away',ramp(t,K.take-0.3,0.4),'#B23A2E',28);
 };
+SC['3.10.07']=function(t,K){
+  var HD='CHAPTER 10 · BACH\'S MEASURES';
+  if(t<K.bells-0.3){head('','');owl(1000,380,150,t);book(t,0.1,'sb-walther-plate.jpg','CHAPTER 10 · LESSON 7',['Adding and','Subtracting, Part 2'],'Sunday at Saint Thomas');return;}
+  if(t<K.today-0.3){head(HD,'Sunday morning in Leipzig');owl(1060,440,120,t);var o=fade(t,K.bells-0.3,K.today-0.3);pic('sb-thomas-1723.jpg',330,92,420,550,1+0.05*(t-K.bells),.6,.15,o);
+    waves(770,190,t,K.ringing-0.4,o*ramp(t,K.ringing-0.4,0.4),1);label(1000,220,'Saint Thomas Church',o*ramp(t,K.thomas-0.3,0.4),NAVY,28);label(1000,310,'the bells are ringing',o*ramp(t,K.ringing-0.3,0.4),'#6B4A12',26);return;}
+  if(t<K.look-0.3){head(HD,'Today: the cantata');owl(null);var o2=fade(t,K.today-0.3,K.look-0.3);
+    [['Soprano',K.today+0.1],['Trumpet',K.players],['Violin',K.players+0.3],['Organ',K.cantata]].forEach(function(p,i){var e=o2*ramp(t,p[1]-0.3,0.5),x=150+i*250,y=170+(i%2)*30;var g=S('g',{opacity:e});
+      S('rect',{x:x,y:y,width:210,height:280,rx:6,fill:'#FFFBF1',stroke:'#D9C9A3','stroke-width':3,filter:'url(#sh)'},g);S('text',{x:x+105,y:y+40,'text-anchor':'middle','font-family':'Georgia,serif','font-size':26,'font-weight':700,fill:BROWN,text:p[0]},g);
+      for(var r=0;r<4;r++){for(var l=0;l<5;l++)S('line',{x1:x+18,y1:y+70+r*50+l*6,x2:x+192,y2:y+70+r*50+l*6,stroke:'#9C8A66','stroke-width':1.2},g);
+        for(var q=0;q<8;q++){var nx=x+30+q*20,ny=y+70+r*50+((q*3+i+r)%5)*5;S('ellipse',{cx:nx,cy:ny,rx:5,ry:4,fill:BROWN},g);S('line',{x1:nx+5,y1:ny,x2:nx+5,y2:ny-18,stroke:BROWN,'stroke-width':1.5},g);}}});
+    label(640,560,'copied by hand all week',o2*ramp(t,K.copied-0.3,0.4),GOLD,30);return;}
+  if(t<K.but-0.3){head(HD,'Musicians in a church gallery, 1732');owl(null);var o3=fade(t,K.look-0.3,K.but-0.3);pic('sb-walther-1732.jpg',150,92,274,500,1+0.05*(t-K.look),.5,.3,o3);
+    label(830,220,'singers',o3*ramp(t,K.singers-0.3,0.4),NAVY,30);label(830,310,'players',o3*ramp(t,K.players2-0.3,0.4),'#6B4A12',30);label(830,400,'a church loft',o3*ramp(t,K.loft-0.3,0.4),GOLD,30);return;}
+  head(HD,t>=K.today2-0.3?'One step at a time':'A few last fixes');owl(null);
+  var x0=200,len=880,y0=200,y1=300,q=ramp(t,K.but-0.4,0.5),w=len/16;
+  S('rect',{x:x0,y:y0,width:len,height:56,rx:6,fill:NAVY,opacity:q});S('text',{x:x0+len/2,y:y0+36,'text-anchor':'middle','font-size':24,'font-weight':900,fill:'#fff',opacity:q,text:'1 whole measure'});
+  S('rect',{x:x0,y:y1,width:len,height:70,rx:6,fill:'#F6F7FB',stroke:'#AEB6CC','stroke-width':2,'stroke-dasharray':'8 6',opacity:q});
+  for(var i=0;i<5;i++)S('rect',{x:x0+i*w+1,y:y1,width:w-3,height:70,rx:6,fill:'#6D4C41',opacity:q});
+  for(var j=0;j<6;j++){var b=ramp(t,K.add-0.2+j*0.12,0.25);if(b<=0)continue;S('rect',{x:x0+(5+j)*w+1,y:y1+(1-b)*120,width:w-3,height:70,rx:6,fill:'#6D4C41','fill-opacity':.5,opacity:q});}
+  var gone=t>=K.take-0.2?ramp(t,K.take-0.2,0.6):0;
+  for(var k=7;k<11;k++){if(gone<=0)break;S('rect',{x:x0+k*w+1,y:y1,width:w-3,height:70,rx:6,fill:'#fff',stroke:'#6D4C41','stroke-width':2,'stroke-dasharray':'6 4',opacity:gone});S('text',{x:x0+k*w+w/2,y:y1+46,'text-anchor':'middle','font-size':30,'font-weight':900,fill:'#B23A2E',opacity:gone,text:'✕'});}
+  if(t>=K.add-0.3)label(470,440,'step 1: add',ramp(t,K.add-0.3,0.4),NAVY,28);
+  if(t>=K.take-0.3)label(820,440,'step 2: take away',ramp(t,K.take-0.3,0.4),'#B23A2E',28);
+  if(t>=K.step-0.3)label(640,530,'one step at a time',ramp(t,K.step-0.3,0.4),GREEN,28);
+};
 var CUES={
+ '3.10.07':function(){return{bells:wt(/^bells$/)-0.25,thomas:wt(/^Thomas$/),ringing:wt(/^ringing$/),today:wt(/^Today$/,0),players:wt(/^players$/,0),cantata:wt(/^cantata$/),copied:wt(/^copied$/),look:wt(/^Look$/),singers:wt(/^Singers$/),players2:wt(/^players$/,1),loft:wt(/^loft$/),but:wt(/^But$/),today2:wt(/^Today$/,1),add:wt(/^add$/),take:wt(/^take$/),step:wt(/^step$/)};},
  '3.10.06':function(){return{tomorrow:wt(/^Tomorrow$/),choir:wt(/^choir$/),cantata:wt(/^cantata$/),but:wt(/^But$/),singer:wt(/^singer$/),player:wt(/^player$/),copied:wt(/^copied$/),so:wt(/^So$/),anna:wt(/^Anna$/),students:wt(/^students$/),every:wt(/^Every$/),whole:wt(/^whole$/),today:wt(/^Today$/),add:wt(/^add$/,1),take:wt(/^take$/)};},
  '3.09.01':function(){return{each:wt(/^Each$/),math:wt(/^math$/),today:wt(/^Today's$/),more:wt(/^more$/),meet:wt(/^Meet$/),numbers:wt(/^numbers$/),music:wt(/^music$/),stories:wt(/^Stories$/),string:wt(/^string$/),box:wt(/^box$/),then:wt(/^Then$/),listen:wt(/^listened$/),lets:wt(/^Let's$/)};},
  '3.09.02':function(){return{still:wt(/^We're$/),singing:wt(/^singing$/),last:wt(/^Last$/),cut:wt(/^cut$/),equal:wt(/^equal$/),today:wt(/^Today$/),turns:wt(/^turns$/),line:wt(/^line$/),every:wt(/^Every$/),spot:wt(/^spot$/)};},

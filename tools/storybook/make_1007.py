@@ -1,0 +1,496 @@
+# builds src/lesson-3-10-07.html (3.10.07 Adding and Subtracting Fractions, Part 2, Bach's measures: Sunday at Saint Thomas)
+exec(open('/home/claude/g3sb/tools/helpers1002.py').read())
+DCOL.update({16: '#6D4C41', 18: '#7A5C1E', 20: '#3949AB'})
+def bar(parts, d, W=600, label=None, aria='', taken=0, gap=0):
+    # one bar of d tiles; parts = list of counts (first dark, then lighter); taken = ✕ tiles after them; gap = gold dashed tiles
+    h = 58; out = ['<svg viewBox="0 0 %d %d" role="img" aria-label="%s" style="display:block;width:100%%;max-width:%dpx">' % (W + 90, h, aria, W + 90)]
+    w = (W - 10) / d; c = DCOL[d]; i = 0
+    for p, k in enumerate(parts):
+        for _ in range(k):
+            out.append('<rect x="%.1f" y="8" width="%.1f" height="40" rx="3" fill="%s" fill-opacity="%s" stroke="#fff" stroke-width="2.5"/>' % (10 + i * w, w, c, 1 if p == 0 else .45)); i += 1
+    for _ in range(taken):
+        out.append('<rect x="%.1f" y="8" width="%.1f" height="40" fill="#fff" stroke="%s" stroke-width="2" stroke-dasharray="4 3"/><text x="%.1f" y="35" text-anchor="middle" font-size="18" font-weight="900" fill="#B23A2E">✕</text>' % (10 + i * w, w, c, 10 + i * w + w / 2)); i += 1
+    for _ in range(gap):
+        out.append('<rect x="%.1f" y="8" width="%.1f" height="40" rx="3" fill="#FFF3C4" stroke="#C9A227" stroke-width="2.5" stroke-dasharray="5 3"/>' % (10 + i * w + 1, w - 2)); i += 1
+    while i < d:
+        out.append('<rect x="%.1f" y="8" width="%.1f" height="40" fill="#fff" stroke="%s" stroke-width="2"/>' % (10 + i * w, w, c)); i += 1
+    if label:
+        a, b = label
+        out.append('<text x="%d" y="24" text-anchor="middle" font-size="15" font-weight="900" fill="%s">%s</text><line x1="%d" y1="30" x2="%d" y2="30" stroke="%s" stroke-width="2"/><text x="%d" y="47" text-anchor="middle" font-size="15" font-weight="900" fill="%s">%s</text>' % (W + 48, c, a, W + 36, W + 60, c, W + 48, c, b))
+    out.append('</svg>'); return ''.join(out)
+def over(k, d, aria, W=480):
+    # Juno's bar: k tiles of 1/d when 1 whole page is only d tiles; the extra tiles hang past the end of the page
+    w = (W - 10) / d; tot = 10 + k * w + 70
+    out = ['<svg viewBox="0 0 %d 118" role="img" aria-label="%s" style="display:block;width:100%%;max-width:%dpx">' % (tot, aria, tot)]
+    out.append('<rect x="10" y="8" width="%.1f" height="40" rx="6" fill="#0E1C42"/><text x="%.1f" y="34" text-anchor="middle" font-size="17" font-weight="900" fill="#fff">1 whole page</text>' % (W - 10, 10 + (W - 10) / 2))
+    for i in range(k):
+        x = 10 + i * w
+        if i < d: out.append('<rect x="%.1f" y="62" width="%.1f" height="40" rx="3" fill="%s" stroke="#fff" stroke-width="2.5"/>' % (x, w, DCOL[d]))
+        else: out.append('<rect x="%.1f" y="62" width="%.1f" height="40" rx="3" fill="#FDECEA" stroke="#B23A2E" stroke-width="2.5" stroke-dasharray="5 3"/>' % (x + 1, w - 2))
+    xe = 10 + d * w
+    out.append('<line x1="%.1f" y1="2" x2="%.1f" y2="112" stroke="#C9A227" stroke-width="3" stroke-dasharray="6 5"/>' % (xe, xe))
+    out.append('<text x="%.1f" y="88" font-size="15" font-weight="900" fill="#B23A2E">%d/%d</text>' % (10 + k * w + 8, k, d))
+    out.append('</svg>'); return ''.join(out)
+def twobars(a, b, d, aria, W=600, gap=True):
+    return ('<div style="margin:6px 0" role="img" aria-label="%s">' % aria) + bar([a], d, W, (a, d), aria='') + bar([b], d, W, (b, d), aria='', gap=(a - b) if gap else 0) + '</div>'
+
+html = open('/home/claude/g3sb/src/lesson-3-10-06.html').read()
+head = html[:html.index('<div class="sb-prog"')]
+tail = html[html.index('<script type="application/json" id="sb-data">'):]
+head = head.replace('Adding and Subtracting Fractions, Part 1 · Grade 3 Math Lesson 3.10.06', 'Adding and Subtracting Fractions, Part 2 · Grade 3 Math Lesson 3.10.07')
+assert 'Lesson 3.10.07' in head
+
+body = r'''<div class="sb-prog" aria-label="Progress"><span class="k">📖 BACH'S MEASURES</span><span class="bar"><i></i></span><span class="n">0 of 8 jobs</span></div>
+<div class="sb-wrap">
+
+<header class="sb-head">
+  <div class="sb-brand"><img alt="" src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png"><div><b>Optima Academy Online</b><small>An Education Experience Company</small></div></div>
+  <h1 class="sb-title">Adding and Subtracting Fractions, Part 2</h1>
+  <div class="sb-chips">
+    <span class="sb-chip lead">Lesson 3.10.07 · Unit 10 · Lesson 7</span>
+    <button type="button" class="sb-chip" id="sb-read">🔊 Read aloud</button>
+    <button type="button" class="sb-chip" data-pop="#sb-std" aria-expanded="false">Standards ▾</button>
+    <button type="button" class="sb-chip" id="sb-music" aria-pressed="false">🎵 Music: off</button>
+    <button type="button" class="sb-chip" id="sb-motion" aria-pressed="true">✨ Motion: on</button>
+  </div>
+  <div class="sb-pop" id="sb-std"><b>MA.4.FR.2.2</b> Add and subtract fractions with like denominators, including mixed numbers and fractions greater than one, with procedural reliability.<br><small>Grade 4 preview: today you read story problems, choose to add or take away, work one step at a time, and check if an answer can be simpler. Dimensions Math 3B, Chapter 10, Lesson 8 · Adding and Subtracting Fractions, Part 2</small></div>
+</header>
+
+<!-- the open book -->
+<div class="sb-book" aria-label="Opti's storybook, open to Chapter 10">
+  <div class="sb-book-in">
+    <div class="sb-pg">
+      <figure class="sb-plate"><img src="{{IMG:sb-walther-plate.jpg}}" alt="An old black-and-white print: musicians with trumpets, violins and a big bass crowd into a church gallery next to a tall organ. A leader in the middle holds up a roll of paper."><figcaption>Musicians in a church gallery, printed in Leipzig in 1732</figcaption></figure>
+    </div>
+    <div class="sb-pg r">
+      <div class="sb-chap">Chapter 10</div>
+      <div class="sb-chap-t">Bach's Measures</div>
+      <div class="sb-orn" aria-hidden="true"></div>
+      <p class="sb-chap-s">Leipzig, Germany · about 300 years ago</p>
+      <div class="sb-chap-l">Lesson 7 · Adding and Subtracting Fractions, Part 2</div>
+    </div>
+  </div>
+  <img class="sb-owl" src="{{IMG:opti-owl.png}}" alt="Opti the owl, sitting on the open book">
+</div>
+
+<div class="sb-intro">
+  <div class="sb-card sb-eq">
+    <span class="sb-k">Essential Question</span>
+    <h3>What does a story problem tell you to do?</h3>
+    EQSVG
+    <p style="margin:4px 0 0">Clue words tell you. "More" says add. "Left" says take away. "How much more" says find the gap.</p>
+  </div>
+  <div class="sb-card sb-obj">
+    <span class="sb-k">Today's Objectives</span>
+    <h3>You will…</h3>
+    <ul>
+      <li><b>Find</b> the clue words in a story problem and choose to add or take away.</li>
+      <li><b>Solve</b> two-step problems one step at a time.</li>
+      <li><b>Find the gap</b> to answer "how much more," and check if an answer can be simpler.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="sb-tabs" role="tablist" aria-label="Lesson sections">
+  <button class="sb-tab" role="tab" data-tab="warmup" aria-controls="tab-warmup">🔍 Warm-Up <span class="ck">✓</span></button>
+  <button class="sb-tab" role="tab" data-tab="learn" aria-controls="tab-learn">📐 Lesson <span class="ck">✓</span></button>
+  <button class="sb-tab" role="tab" data-tab="swyk" aria-controls="tab-swyk">🌟 Show What You Know <span class="ck">✓</span></button>
+</div>
+
+<!-- ══════════════ WARM-UP ══════════════ -->
+<section class="sb-panel tab-panel" id="tab-warmup" role="tabpanel">
+
+<div class="sb-opti" data-slot="warm-1">OPTI_WARM</div>
+
+<div class="sb-video pq-vslot" data-slot="warm">
+  <video controls preload="metadata" playsinline poster="assets/video/g3math-10-07-warm.jpg" src="assets/video/g3math-10-07-warm.mp4"></video>
+  <div class="cap">🎬 Opti Opens Lesson 7: Sunday at Saint Thomas</div>
+</div>
+
+<div class="sb-card">
+  <span class="sb-k">From the book</span>
+  <h3>Why Bach?</h3>
+  <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>A real print from a music book made in Leipzig in 1732, while Bach lived there. It shows how church music was played on a Sunday. Singers and players crowd into a high gallery. Trumpets play at the back, and violins and a big bass play in front. A leader holds up a roll of paper to keep the beat, and the organist plays right beside him.</p></div>
+  <div class="sb-art">
+    <figure class="sb-fig"><img src="{{IMG:sb-walther-1732.jpg}}" alt="The whole print: a church gallery full of musicians, a tall organ with curtains on top, and a leader and an organist in front." style="object-fit:contain;background:#FBF6EA"><figcaption>Musicians in a church gallery.<small>Johann Christoph Dehne, engraving for J. G. Walther's music dictionary, Leipzig, 1732. Public domain, via Wikimedia Commons.</small></figcaption></figure>
+    <figure class="sb-fig"><img src="{{IMG:sb-walther-detail.jpg}}" alt="A close look: the leader holds a roll of paper high, and the organist sits at the keyboard with music in front of him." style="object-fit:contain;background:#fff"><figcaption>The leader and the organist.<small>Johann Christoph Dehne, 1732 (detail). Public domain, via Wikimedia Commons.</small></figcaption></figure>
+  </div>
+  <p style="margin:6px 0 0">Almost every Sunday at Saint Thomas Church, Bach's choir and players performed a cantata. The parts were copied by hand during the week. On Sunday morning there was no time to start over, so any last fixes had to be quick: add a few notes here, scratch out a few there.</p>
+  <p style="margin:6px 0 0"><b>Today's math:</b> a story tells you what to do. Look for the <b>clue words</b>. "More" means add. "Left" or "scratches out" means take away. Then work one step at a time.</p>
+</div>
+
+<div class="video-placeholder-wrap">
+<!-- slot: g3math-10-07 -->
+<div class="video-placeholder-inner"><div class="vp-label">🎬 Welcome Video</div><div class="vp-slot">g3math-10-07</div><div class="vp-notes"><b>Teacher recording notes:</b> Welcome to Lesson 7, the last lesson of the chapter! Warm up with two-step facts. Then help fix the trumpet part before church: add some notes, then take some away.</div></div>
+</div>
+
+<div class="fluency-box">
+  <div class="fluency-head"><div class="fluency-head-icon">✍️</div><div><div class="fluency-head-label">FACT WARM-UP</div><div class="fluency-head-title">Today's Helpers: Two Steps</div></div></div>
+  <div class="fluency-body">
+    <p class="fluency-instructions">Today you'll add and take away in two steps. Warm up with these. Work left to right: do the first step, then the second. Type each answer, then check. You can fix any answer and check again.</p>
+    <div class="fluency-grid" id="fluencyGrid">
+      FLUENCY
+    </div>
+    <div class="sb-help"><button type="button" class="sb-btn check" data-fluency-check>Check my answers</button></div>
+    <div class="sb-fb" aria-live="polite"></div>
+  </div>
+</div>
+
+<div class="sb-card sb-qgroup" data-done="review" data-ok="✓ Yes! Every 2 tenths line up with 1 fifth, so eight-tenths is four-fifths. That is its simplest form. You'll use this check again today.">
+  <span class="sb-k">Remember from Lesson 3.10.03</span>
+  <h3>Can it be simpler?</h3>
+  <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>Two bars, the same length. The top bar is cut into tenths, and 8 are shaded. The bottom bar is cut into fifths. The gold line shows where the shading ends.</p></div>
+  REVSVG
+  <div class="sb-q">Eight-tenths = [[fr:4:5~Count the fifths that end at the gold line. The bottom number is 5.]]</div>
+  <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div>
+  <div class="sb-fb" aria-live="polite"></div>
+</div>
+
+<!-- JOB 1 · THINK -->
+<section class="sb-card sb-job" data-job="1">
+  <div class="sb-jh"><span class="sb-jn">JOB 1</span><div><h3>Think: The Last Fix</h3><span class="sb-kind">🔨 Do · ✏️ Write</span></div><span class="sb-donechip"></span></div>
+  <div class="sb-opti" data-slot="think-1">OPTI_THINK</div>
+  <p class="sb-story">It is Sunday morning. The trumpet player's part is missing notes in one measure. Only <b>3 sixteenths</b> are written. The copyist quickly writes <b>11 more</b> sixteenths. Then Bach looks at it and <b>scratches out 5</b> wrong notes. How much of the measure has good notes now?</p>
+  <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>The navy bar is one whole measure. The bar under it is the trumpet part's measure. The dark tiles are the notes already there. Each tile in the tray is one sixteenth note.</p></div>
+  <div data-mod="addsub" data-d="16" data-start="3" data-ops="+11,-5" data-label="1 whole measure" data-name="think" data-for="f1 f2"></div>
+  <div class="sb-steps">
+    <div class="sb-step" data-need="f1"><h4>The copyist writes more</h4><p>Drag <b>11</b> one-sixteenth tiles into the measure.</p></div>
+    <div class="sb-step"><h4>How much is written?</h4>
+      <div class="sb-q">3 sixteenths + 11 sixteenths = [[fr:14:16~Count all the shaded tiles, dark and light. The pieces are still sixteenths.]] of the measure.</div>
+      <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+    <div class="sb-step" data-need="f2"><h4>Bach scratches out notes</h4><p>Tap <b>5</b> tiles in the measure to scratch them out.</p></div>
+    <div class="sb-step"><h4>How much is left?</h4>
+      <div class="sb-q">14 sixteenths − 5 sixteenths = [[fr:9:16~Count the shaded tiles that are left. Skip the ✕ tiles.]] of the measure.</div>
+      <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+    <div class="sb-step"><h4>Find the clue words</h4>
+      <label class="sb-write-l" for="w-think">Which words in the story told you to add? Which words told you to take away?</label>
+      <textarea class="sb-write" id="w-think" data-req data-label="The Last Fix" placeholder="The words … told me to add. The words … told me to take away."></textarea>
+      <div class="sb-chips2">Remember to tell: <span>add</span><span>take away</span></div>
+      <div class="sb-help"><button type="button" class="sb-btn check">Done</button></div><div class="sb-fb" aria-live="polite"></div></div>
+    <div class="sb-locked"></div>
+  </div>
+  <div class="sb-help"><button type="button" class="sb-btn ghost" data-hints='["Read the story again. Find the word that comes after 11. Find the words that come before 5.", "3 + 11 = 14, so 3 sixteenths and 11 more make 14 sixteenths.", "14 − 5 = 9. The pieces are still sixteenths, so 9 sixteenths are left."]'>💡 Need a hint?</button>{{TOOL:fbars-16c}}<button type="button" class="sb-btn ghost sb-tipbtn" data-tip="#tip-1">💬 Atlas has a tip</button></div>
+  <div class="sb-hintbox"></div>
+  <div class="sb-tip" id="tip-1" data-who="atlas">I read the whole story first. Then I do the first step, and only then the second step.</div>
+  <div class="sb-payoff" data-after-job="1">
+    <div class="sb-art" style="margin:0">PAY1</div>
+    <p style="margin:8px 0 0"><b>Two steps, one at a time.</b> "More" told you to add. "Scratches out" told you to take away. The pieces stayed sixteenths the whole time.</p>
+  </div>
+  <div class="sb-opti" data-slot="think-done" data-after="1">OPTI_THINKDONE</div>
+</section>
+
+<div class="sb-next"><button type="button" class="sb-btn gold" data-go-tab="learn" data-go-st="1">Next: the Lesson →</button></div>
+</section>
+
+<!-- ══════════════ LESSON ══════════════ -->
+<section class="sb-panel tab-panel" id="tab-learn" role="tabpanel">
+<div class="sb-path" role="list">
+  <button type="button" class="sb-pstep" data-st="1" role="listitem"><span class="num">1</span><span><b>Learn it</b><small>Learn + Your Turn</small></span></button>
+  <button type="button" class="sb-pstep" data-st="2" role="listitem"><span class="num">2</span><span><b>Practice together</b><small>Fix 3 mix-ups</small></span></button>
+  <button type="button" class="sb-pstep" data-st="3" role="listitem"><span class="num">3</span><span><b>On your own</b><small>1 job</small></span></button>
+</div>
+
+<!-- STATION 1 -->
+<div class="sb-station" data-st="1">
+  <div class="sb-opti" data-slot="learn-1">OPTI_LEARN</div>
+
+  <div class="sb-video pq-vslot" data-slot="learn">
+    {{LEARNVIDEO}}
+    <div class="cap">🎬 Read the Clues</div>
+  </div>
+
+  <div class="sb-card">
+    <span class="sb-k">Learn</span>
+    <h3>Read the story, find the clue words, then do one step at a time</h3>
+    <table class="sb-clues" style="width:100%;border-collapse:collapse;margin:6px 0 10px;font-size:17px">
+      <tr><th style="text-align:left;padding:6px;border-bottom:2px solid #E3E6EF">Clue words</th><th style="text-align:left;padding:6px;border-bottom:2px solid #E3E6EF">What to do</th></tr>
+      <tr><td style="padding:6px;border-bottom:1px solid #E3E6EF">more · in all · altogether · adds</td><td style="padding:6px;border-bottom:1px solid #E3E6EF"><b>Add</b> (+)</td></tr>
+      <tr><td style="padding:6px;border-bottom:1px solid #E3E6EF">left · eats · drinks · cuts off · scratches out</td><td style="padding:6px;border-bottom:1px solid #E3E6EF"><b>Take away</b> (−)</td></tr>
+      <tr><td style="padding:6px">how much more · how much longer · how much taller</td><td style="padding:6px"><b>Find the gap</b> (−)</td></tr>
+    </table>
+    KEYSVG
+    <p style="margin:2px 0 8px;font-size:20px;font-weight:800;text-align:center"><span class="fr"><span>2</span><span>11</span></span> + <span class="fr"><span>7</span><span>11</span></span> − <span class="fr"><span>4</span><span>11</span></span> = <span class="fr"><span>5</span><span>11</span></span></p>
+    GAPSVG
+    <p style="margin:2px 0 8px;font-size:20px;font-weight:800;text-align:center"><span class="fr"><span>6</span><span>7</span></span> − <span class="fr"><span>1</span><span>7</span></span> = <span class="fr"><span>5</span><span>7</span></span></p>
+    <ol class="sb-steps4">
+      <li><b>Read the whole story first.</b> Find every clue word before you start.</li>
+      <li><b>One step at a time.</b> Lena has 2 elevenths of a meter of ribbon and adds 7 more: 9 elevenths. Then she cuts off 4: 5 elevenths are left.</li>
+      <li><b>"How much more" means find the gap.</b> Line up the two amounts and count the extra pieces. 6 sevenths is 5 sevenths more than 1 seventh. The gap is the <b>difference</b>.</li>
+      <li><b>Last check: can it be simpler?</b> 2 twelfths line up with 1 sixth, so 2 twelfths in <b>simplest form</b> is 1 sixth.</li>
+    </ol>
+  </div>
+
+  <div class="sb-card">
+    <span class="sb-k">The Math Crew</span>
+    <h3>Four ways to read a story problem</h3>
+    <div class="sb-crew">
+      <div class="sb-mate" data-who="atlas"><span>I find the clue words first, before I touch any numbers.</span></div>
+      <div class="sb-mate" data-who="felix"><span>Two steps? I do the first one, write it down, then do the next one.</span></div>
+      <div class="sb-mate" data-who="hazel"><span>How much more? I line up two bars and count the gap.</span></div>
+      <div class="sb-mate" data-who="cora"><span>At the end I ask: can it be simpler?</span></div>
+    </div>
+    <label class="sb-write-l" for="w-crew">Which Crew way helps you most? Why?</label>
+    <textarea class="sb-write" id="w-crew" data-label="Which Crew way helps me most" placeholder="I like… because…"></textarea>
+  </div>
+
+  <!-- JOB 2 · YOUR TURN -->
+  <section class="sb-card sb-job" data-job="2">
+    <div class="sb-jh"><span class="sb-jn">JOB 2</span><div><h3>Your Turn: Water for the Singers</h3><span class="sb-kind">🔨 Do</span></div><span class="sb-donechip"></span></div>
+    <p class="sb-story">The singers' water jug is <b>4 ninths</b> full. A choir boy pours in <b>4 ninths more</b>. Before church, the singers drink <b>1 ninth</b> of the jug. How full is the jug now?</p>
+    <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>The navy bar is 1 whole jug. The bar under it is the jug, cut into ninths. The dark tiles are the water already in it.</p></div>
+    <div data-mod="addsub" data-d="9" data-start="4" data-ops="+4,-1" data-label="1 whole jug" data-name="yt" data-for="f1 f2"></div>
+    <div class="sb-steps">
+      <div class="sb-step" data-need="f1"><h4>Pour in more</h4><p>Drag <b>4</b> one-ninth tiles into the jug.</p></div>
+      <div class="sb-step"><h4>Step 1: add</h4>
+        <div class="sb-q">4 ninths + 4 ninths = [[fr:8:9~Count all the shaded tiles. Each one is a ninth.]] of the jug.</div>
+        <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-step" data-need="f2"><h4>The singers drink</h4><p>Tap <b>1</b> tile to take away the water they drink.</p></div>
+      <div class="sb-step"><h4>Step 2: take away</h4>
+        <div class="sb-q">8 ninths − 1 ninth = [[fr:7:9~Count the shaded tiles that are left.]] of the jug.</div>
+        <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-step"><h4>Name the clue words</h4>
+        <div class="sb-q">"Pours in more" told you to [[w:add|plus|add more~Pouring in more makes the water go up.]].</div>
+        <div class="sb-q">"Drink" told you to [[w:take away|subtract|minus|take|take it away~Drinking makes the water go down.]].</div>
+        <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-locked"></div>
+    </div>
+    <div class="sb-help"><button type="button" class="sb-btn ghost" data-hints='["Do the pouring first, then the drinking.", "4 + 4 = 8, so the jug is 8 ninths full after pouring.", "8 − 1 = 7. The jug is 7 ninths full."]'>💡 Need a hint?</button>{{TOOL:fbars-9b}}<button type="button" class="sb-btn ghost sb-tipbtn" data-tip="#tip-2">💬 Felix has a tip</button></div>
+    <div class="sb-hintbox"></div>
+    <div class="sb-tip" id="tip-2" data-who="felix">I write each step as its own line. 4 + 4 = 8. Then 8 − 1 = 7. Then I can't lose my place.</div>
+  </section>
+  <div class="sb-next"><button type="button" class="sb-btn gold" data-next-st="2">Next station: Practice together →</button></div>
+</div>
+
+<!-- STATION 2 -->
+<div class="sb-station" data-st="2">
+  <div class="sb-opti" data-slot="practice-1">OPTI_PRACTICE</div>
+
+  <!-- JOB 3 -->
+  <section class="sb-card sb-job" data-job="3">
+    <div class="sb-jh"><span class="sb-jn">JOB 3</span><div><h3>Juno Sees "More" and Adds</h3><span class="sb-kind">🔨 Do · ✏️ Write</span></div><span class="sb-donechip"></span></div>
+    <p class="sb-story">On one page of music, the bass part fills <b>10 elevenths</b> of the page. The flute part fills <b>4 elevenths</b>. How much more of the page does the bass part fill? Juno says, "More means add! 10 + 4 = 14, so the answer is fourteen-elevenths."</p>
+    <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>The navy bar is 1 whole page. The two bars under it are the bass part and the flute part, lined up at the left. The gold line marks where the bass part ends.</p></div>
+    <div data-mod="gap" data-d="11" data-a="10" data-b="4" data-rows="Bass part,Flute part" data-label="1 whole page" data-name="juno" data-for="fill"></div>
+    <div class="sb-steps">
+      <div class="sb-step" data-need="fill"><h4>Find the gap</h4><p>Drag gap tiles onto the flute part until it ends at the gold line.</p></div>
+      <div class="sb-step"><h4>How much more?</h4>
+        <div class="sb-q">The bass part fills [[fr:6:11~Count the gold gap tiles. Each one is an eleventh.]] more of the page than the flute part.</div>
+        <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-step"><h4>Look at Juno's answer</h4>
+        JUNOSVG
+        <div class="sb-q">Juno's bar runs [[n:3~Count the red tiles that hang past the gold line.]] elevenths past the end of the whole page.</div>
+        <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-step"><h4>Help Juno</h4><label class="sb-write-l" for="w-juno">Tell Juno what "how much more" means. How do the bars show it?</label><textarea class="sb-write" id="w-juno" data-req data-label="Help Juno" placeholder="How much more means… The gap is…"></textarea><div class="sb-chips2">Remember to tell: <span>gap</span><span>take away</span></div>
+        <div class="sb-help"><button type="button" class="sb-btn check">Done</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-locked"></div>
+    </div>
+    <div class="sb-help"><button type="button" class="sb-btn ghost" data-hints='["One part can&#39;t be longer than the whole page. Juno&#39;s answer is too big.", "How much more means: how far is it from the short bar to the long bar?", "10 elevenths − 4 elevenths = 6 elevenths."]'>💡 Need a hint?</button>{{TOOL:fbars-11g}}<button type="button" class="sb-btn ghost sb-tipbtn" data-tip="#tip-3">💬 Cora has a tip</button></div>
+    <div class="sb-hintbox"></div>
+    <div class="sb-tip" id="tip-3" data-who="cora">"More" by itself means add. "How much more" asks for the gap. I read the whole question.</div>
+  </section>
+
+  <!-- JOB 4 -->
+  <section class="sb-card sb-job" data-job="4">
+    <div class="sb-jh"><span class="sb-jn">JOB 4</span><div><h3>Leo Counts the Whole Candle</h3><span class="sb-kind">🔨 Do · ✏️ Write</span></div><span class="sb-donechip"></span></div>
+    <p class="sb-story">Two candles light the choir gallery. One candle is <b>7 twelfths</b> of a foot tall. The other is <b>2 twelfths</b> of a foot tall. How much taller is the first candle? Leo counts every tile in the first candle and says, "Seven-twelfths."</p>
+    <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>The navy bar is 1 whole foot. The two bars under it are the two candles, lined up at the left, like two candles lying side by side.</p></div>
+    <div data-mod="gap" data-d="12" data-a="7" data-b="2" data-rows="First candle,Second candle" data-label="1 whole foot" data-name="leo" data-for="fill"></div>
+    <div class="sb-steps">
+      <div class="sb-step" data-need="fill"><h4>Find the gap</h4><p>Drag gap tiles onto the second candle until it ends at the gold line.</p></div>
+      <div class="sb-step"><h4>How much taller?</h4>
+        <div class="sb-q">The first candle is [[fr:5:12~Count only the gold gap tiles, not the whole candle.]] of a foot taller.</div>
+        <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-step"><h4>Check by adding back</h4>
+        <div class="sb-q">2 twelfths + [[n:5~Add the gap to the short candle. You should get the tall candle.]] twelfths = 7 twelfths.</div>
+        <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-step"><h4>Help Leo</h4><label class="sb-write-l" for="w-leo">Leo said seven-twelfths. What did he count? What should he count?</label><textarea class="sb-write" id="w-leo" data-req data-label="Help Leo" placeholder="Leo counted… He should count only…"></textarea><div class="sb-chips2">Remember to tell: <span>the whole candle</span><span>the gap</span></div><div class="sb-help"><button type="button" class="sb-btn check">Done</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-locked"></div>
+    </div>
+    <div class="sb-help"><button type="button" class="sb-btn ghost" data-hints='["Leo&#39;s answer is the whole first candle. The question asks how much taller it is.", "Count only the gold tiles: the part of the first candle that sticks up past the second.", "7 twelfths − 2 twelfths = 5 twelfths."]'>💡 Need a hint?</button>{{TOOL:fbars-12g}}<button type="button" class="sb-btn ghost sb-tipbtn" data-tip="#tip-4">💬 Hazel has a tip</button></div>
+    <div class="sb-hintbox"></div>
+    <div class="sb-tip" id="tip-4" data-who="hazel">I check a gap by adding it back. Short bar + gap should make the long bar.</div>
+  </section>
+
+  <!-- JOB 5 -->
+  <section class="sb-card sb-job" data-job="5">
+    <div class="sb-jh"><span class="sb-jn">JOB 5</span><div><h3>Kai Halves Only the Top</h3><span class="sb-kind">🔨 Do · ✏️ Write</span></div><span class="sb-donechip"></span></div>
+    <p class="sb-story">The organist plays <b>9 sixteenths</b> of a measure. Then he plays <b>5 sixteenths more</b>. Kai finds the sum and wants to write it in simplest form. He cuts the top number in half and says, "Seven-sixteenths."</p>
+    <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>The navy bar is 1 whole measure. The bar under it is the organ part. Two sixteenth notes last as long as one eighth note.</p></div>
+    <div data-mod="addsub" data-d="16" data-start="9" data-ops="+5" data-label="1 whole measure" data-name="kai" data-for="f1"></div>
+    <div class="sb-steps">
+      <div class="sb-step" data-need="f1"><h4>Play more</h4><p>Drag <b>5</b> one-sixteenth tiles into the measure.</p></div>
+      <div class="sb-step"><h4>Find the sum</h4>
+        <div class="sb-q">9 sixteenths + 5 sixteenths = [[fr:14:16~Count all the shaded tiles.]] of the measure.</div>
+        <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-step" data-need="group" data-cue='[aria-label="Line after part 2"]'><h4>Group the sixteenths</h4><p>Tap the lines so every 2 sixteenths make 1 group.</p></div>
+      <div class="sb-step"><h4>Simplest form</h4>
+        <div class="sb-q">14 sixteenths = [[fr:7:8~Count the shaded groups. There are 8 groups in the whole measure.]] of the measure.</div>
+        <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-step"><h4>Look at Kai's answer</h4>
+        KAISVG
+        <div class="sb-q">Kai's seven-sixteenths is [[w:less|smaller|shorter|less than|smaller than|shorter than~Compare the two bars. Which one is longer?]] than fourteen-sixteenths.</div>
+        <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-step"><h4>Help Kai</h4><label class="sb-write-l" for="w-kai">Tell Kai how to write fourteen-sixteenths in simplest form.</label><textarea class="sb-write" id="w-kai" data-req data-label="Help Kai" placeholder="Divide the top and the bottom by… The answer stays the same size because…"></textarea><div class="sb-chips2">Remember to tell: <span>top and bottom</span><span>same amount</span></div><div class="sb-help"><button type="button" class="sb-btn check">Done</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-locked"></div>
+    </div>
+    <div data-mod="group" data-d="16" data-sh="14" data-size="2" data-name="kai-g" data-for="group"></div>
+    <div class="sb-help"><button type="button" class="sb-btn ghost" data-hints='["Simplest form must still be the same amount. Kai&#39;s bar got shorter!", "Divide the top AND the bottom by 2. 14 ÷ 2 = 7 and 16 ÷ 2 = 8.", "14 sixteenths = 7 eighths."]'>💡 Need a hint?</button>{{TOOL:fbars-8-16}}<button type="button" class="sb-btn ghost sb-tipbtn" data-tip="#tip-5">💬 Felix has a tip</button></div>
+    <div class="sb-hintbox"></div>
+    <div class="sb-tip" id="tip-5" data-who="felix">To make a fraction simpler, I divide the top and the bottom by the same number. Then I check that the bar didn't change size.</div>
+  </section>
+  <div class="sb-next"><button type="button" class="sb-btn gold" data-next-st="3">Next station: On your own →</button></div>
+</div>
+
+<!-- STATION 3 -->
+<div class="sb-station" data-st="3">
+  <div class="sb-opti" data-slot="own-1">OPTI_OWN</div>
+
+  <!-- JOB 6 -->
+  <section class="sb-card sb-job" data-job="6">
+    <div class="sb-jh"><span class="sb-jn">JOB 6</span><div><h3>Bread After Church</h3><span class="sb-kind">🔨 Do · ✏️ Write</span></div><span class="sb-donechip"></span></div>
+    <p class="sb-story">After church, there is <b>8 elevenths</b> of a loaf on the choir boys' table. The boys eat <b>6 elevenths</b> of the loaf. Then the cook brings <b>7 elevenths more</b>. How much bread is on the table now?</p>
+    <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>The navy bar is 1 whole loaf. The bar under it is the bread on the table, cut into elevenths.</p></div>
+    <div data-mod="addsub" data-d="11" data-start="8" data-ops="-6,+7" data-label="1 whole loaf" data-name="own" data-for="f1 f2"></div>
+    <div class="sb-steps">
+      <div class="sb-step" data-need="f1"><h4>The boys eat</h4><p>Tap <b>6</b> tiles to take away the bread they eat.</p></div>
+      <div class="sb-step"><h4>Step 1: take away</h4>
+        <div class="sb-q">8 elevenths − 6 elevenths = [[fr:2:11~Count the shaded tiles that are left.]] of a loaf.</div>
+        <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-step" data-need="f2"><h4>The cook brings more</h4><p>Drag <b>7</b> one-eleventh tiles onto the table.</p></div>
+      <div class="sb-step"><h4>Step 2: add</h4>
+        <div class="sb-q">2 elevenths + 7 elevenths = [[fr:9:11~Count all the shaded tiles, dark and light.]] of a loaf.</div>
+        <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-step"><h4>Tell how you know</h4><label class="sb-write-l" for="w-own">How much bread is on the table now? Tell each step and the clue word for it.</label><textarea class="sb-write" id="w-own" data-req data-label="Bread after church" placeholder="First … so I took away… Then … so I added…"></textarea><div class="sb-help"><button type="button" class="sb-btn check">Done</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-locked"></div>
+    </div>
+    <div class="sb-help"><button type="button" class="sb-btn ghost" data-hints='["The unit is elevenths. Eat first, then the cook brings more.", "8 − 6 = 2. Then 2 + 7 = 9.", "9 elevenths of a loaf is on the table."]'>💡 Need a hint?</button>{{TOOL:nl-11b}}</div>
+    <div class="sb-hintbox"></div>
+  </section>
+
+  <div class="sb-next"><button type="button" class="sb-btn gold" data-go-tab="swyk">Next: Show What You Know →</button></div>
+</div>
+</section>
+
+<!-- ══════════════ SHOW WHAT YOU KNOW ══════════════ -->
+<section class="sb-panel tab-panel" id="tab-swyk" role="tabpanel">
+<div class="sb-opti" data-slot="swyk-1">OPTI_SWYK</div>
+
+<!-- JOB 7 -->
+<section class="sb-card sb-job" data-job="7">
+  <div class="sb-jh"><span class="sb-jn">JOB 7</span><div><h3>The Story Builder</h3><span class="sb-kind">🔨 Do · ✏️ Write</span></div><span class="sb-donechip"></span></div>
+  <p class="sb-story">The cantata is over, and the choir is going home. Now you write the story! Build a take-away story of your own about Sunday in Leipzig.</p>
+  <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>Buttons to choose a clue word, a story thing and a unit. Then two bars: the top bar is the first amount, and the bottom bar is the amount taken away or compared.</p></div>
+  <div data-mod="storyb" data-units="7,11" data-name="story" data-for="clue thing unit a b play"></div>
+  <div class="sb-steps">
+    <div class="sb-step" data-need="clue" data-cue=".stb-clue button"><h4>Problem 1 · Pick a clue word</h4><p>Tap a clue word for your story.</p></div>
+    <div class="sb-step" data-need="thing" data-cue=".stb-thing button"><h4>Problem 1 · Pick a thing</h4><p>Tap a thing for your story.</p></div>
+    <div class="sb-step" data-need="unit" data-cue=".stb-unit button"><h4>Problem 1 · Pick a unit</h4><p>Tap sevenths or elevenths.</p></div>
+    <div class="sb-step" data-need="a" data-cue='[aria-label="Top bar tile 2"]'><h4>Problem 1 · The first amount</h4><p>Tap a tile in the top bar to set the first amount.</p></div>
+    <div class="sb-step" data-need="b" data-cue='[aria-label="Bottom bar tile 1"]'><h4>Problem 1 · The second amount</h4><p>Tap a tile in the bottom bar. Make it shorter than the top bar.</p></div>
+    <div class="sb-step"><h4>Problem 2 · Write your story</h4><label class="sb-write-l" for="w-story">Write your story in your own words. You can change the names and the story starter. Use your clue word.</label><textarea class="sb-write" id="w-story" data-req data-label="My story problem" placeholder="On Sunday in Leipzig…"></textarea>
+      <div class="sb-help"><button type="button" class="sb-btn check">Done</button></div><div class="sb-fb" aria-live="polite"></div></div>
+    <div class="sb-step stb-solve"><h4>Problem 2 · Solve your story</h4>
+      <div class="sb-q">The answer to my story is [[fr:?:?~Take the second amount away from the first.]]</div>
+      <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+    <div class="sb-step" data-need="play"><h4>Problem 2 · Listen</h4><p>Press <b>▶ Play my story</b>.</p></div>
+    <div class="sb-locked"></div>
+  </div>
+</section>
+
+<!-- JOB 8 -->
+<section class="sb-card sb-job" data-job="8">
+  <div class="sb-jh"><span class="sb-jn">JOB 8</span><div><h3>Prove It</h3><span class="sb-kind">✏️ Write</span></div><span class="sb-donechip"></span></div>
+  PROVESVG
+  <div class="sb-steps">
+    <div class="sb-step"><h4>Problem 3 · Prove It</h4>
+      <label class="sb-write-l" for="w-prove">Look back at the trumpet part from Job 1. Show how you found how much of the measure had good notes. Show each step. Use words, numbers or a picture.</label><textarea class="sb-write" id="w-prove" data-req data-label="Prove It" placeholder="First … so I … Then … so I …"></textarea><div class="sb-chips2">Remember to tell: <span>step 1</span><span>step 2</span><span>sixteenths</span></div>
+      <div class="sb-help"><button type="button" class="sb-btn check">Done</button></div><div class="sb-fb" aria-live="polite"></div></div>
+    <div class="sb-locked"></div>
+  </div>
+</section>
+
+<div class="sb-card sb-qgroup" data-done="bonus" data-ok="✓ Yes! 1 whole is 12 twelfths. 12 − 5 − 5 = 2, so 2 twelfths is left. Every 2 twelfths line up with 1 sixth, so in simplest form, 1 sixth of the bread is left.">
+  <span class="sb-k">Bonus · optional</span>
+  <h3>The Last Loaf</h3>
+  <p>A new loaf is 1 whole. The sopranos eat five-twelfths of it. The altos eat five-twelfths too. How much is left? Then write it in simplest form.</p>
+  <div class="sb-q" style="font-size:22px">1 − <span class="fr"><span>5</span><span>12</span></span> − <span class="fr"><span>5</span><span>12</span></span> = [[fr:2:12~Start with 1 whole = 12 twelfths. Then take away both amounts.]] = [[fr:1:6~Divide the top and the bottom by 2.]]</div>
+  <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div>
+</div>
+
+<div class="sb-card">
+  <span class="sb-k">How to turn in</span>
+  <h3>Turn in your work</h3>
+  <ol class="sb-steps4">
+    <li>Check the list below. Jobs 1 to 8 are required. The Bonus is optional.</li>
+    <li>Press <b>📋 Gather my answers</b>, then <b>📋 Copy</b>. Or press <b>🖨️ Print or save as PDF</b>.</li>
+    <li>Open this lesson's assignment in Canvas.</li>
+    <li>Paste your answers (or upload your PDF and journal photo), then press <b>Submit</b>.</li>
+  </ol>
+</div>
+
+<div class="sb-card sb-journal">
+  <span class="sb-k">Math journal</span>
+  <h3>All my answers</h3>
+  <div class="sb-help"><button type="button" class="sb-btn" data-journal="gather">📋 Gather my answers</button><button type="button" class="sb-btn ghost" data-journal="copy">📋 Copy</button><button type="button" class="sb-btn ghost" data-journal="download">⬇️ Download as text</button><button type="button" class="sb-btn ghost" data-journal="print">🖨️ Print or save as PDF</button></div>
+  <textarea id="sb-journal-out" readonly aria-label="All my answers">Press Gather my answers to collect everything here.</textarea>
+  <p class="sb-saved">Your answers and your work on this page save on this device as you go.</p>
+</div>
+
+<div class="sb-card">
+  <span class="sb-k">Checklist</span>
+  <h3>Before you turn in</h3>
+  <ul class="sb-check">
+    <li><span class="bx"></span><span>I finished Jobs 1 to 8.</span></li>
+    <li><span class="bx"></span><span>I wrote my own story problem and solved it.</span></li>
+    <li><span class="bx"></span><span>I showed each step of a two-step problem in my math journal.</span></li>
+    <li><span class="bx"></span><span>I tried the Bonus. <span class="opt">(optional)</span></span></li>
+  </ul>
+</div>
+
+<div class="sb-card">
+  <span class="sb-k">Coming up next</span>
+  <h3>The Unit 10 assessment, then Unit 11 · Measurement</h3>
+  <p>This is the last lesson of the chapter. Next comes the Unit 10 assessment, where you show what you know about fractions. After that, a new chapter begins: measuring length, weight and how much a container holds.</p>
+</div>
+
+<div class="sb-opti" data-slot="end-1">OPTI_END</div>
+<div class="sb-card sb-listen" data-src="bach-bwv147-jesus-bleibet.mp3">
+  <img src="{{IMG:sb-walther-plate.jpg}}" alt="Musicians in a church gallery, 1732" style="object-fit:cover;background:#FBF6EA">
+  <div style="flex:1">
+    <span class="sb-k">Listening corner</span>
+    <h3>Jesu, Joy of Man's Desiring</h3>
+    <p style="margin:2px 0">A calm chorale from a Bach cantata first sung in Leipzig in 1723. Listen for the slow hymn tune and the busy, flowing notes that never stop around it.</p>
+    <div class="meter"><i></i></div><div class="sb-row"><button type="button" class="sb-btn play">▶ Play the music</button><button type="button" class="sb-btn ghost stop">■ Stop</button><span class="time" style="font-weight:800;color:#5B6478">0:00</span></div>
+    <p class="sb-credits">"Jesus bleibet meine Freude" (Jesu, Joy of Man's Desiring), from Cantata BWV 147, Johann Sebastian Bach (1723). Recording by Orchestra Gli Armonici, via Musopen and Wikimedia Commons, CC0 (public domain).</p>
+  </div>
+</div>
+</section>
+
+<footer class="sb-foot footer"><b>🏫 Optima Academy Online</b><br>Math · Grade 3 · Lesson 3.10.07 · Unit 10<br><span style="font-size:12px">Art: Johann Christoph Dehne, frontispiece of J. G. Walther's Musicalisches Lexicon (Leipzig, 1732), public domain, via Wikimedia Commons. Music: "Jesus bleibet meine Freude," Cantata BWV 147, J. S. Bach, played by Orchestra Gli Armonici (Musopen, CC0). The Story Builder: notes played in the page.</span></footer>
+</div>
+
+'''
+exec(open('/home/claude/g3sb/scripts1007.py').read().split("n=sum")[0])
+FL = [('9 + 6 − 4', 11), ('15 − 7 + 2', 10), ('8 + 8 − 5', 11), ('17 − 9 + 4', 12), ('6 + 7 − 3', 10), ('14 − 6 + 5', 13), ('5 + 9 − 7', 7), ('16 − 8 + 6', 14)]
+flu = '\n      '.join('<div class="fluency-item"><span class="fluency-q">%s =</span><input class="fluency-input" data-answer="%d" inputmode="numeric" autocomplete="off" aria-label="%s"></div>' % (q, a, q.replace('−', 'minus').replace('+', 'plus')) for q, a in FL)
+rep = {
+ 'OPTI_WARM': notes['warm-1'], 'OPTI_THINKDONE': notes['think-done'], 'OPTI_THINK': notes['think-1'], 'OPTI_LEARN': notes['learn-1'],
+ 'OPTI_PRACTICE': notes['practice-1'], 'OPTI_OWN': notes['own-1'], 'OPTI_SWYK': notes['swyk-1'], 'OPTI_END': notes['end-1'],
+ 'EQSVG': twobars(9, 4, 11, 'Two bars in elevenths: 9 elevenths on top, 4 elevenths below, and a gold gap of 5 elevenths between their ends.'),
+ 'FLUENCY': flu,
+ 'REVSVG': strips([(8, 10), (4, 5)], aria='Two bars the same length. The top bar has 8 of 10 tenths shaded. The bottom bar has 4 of 5 fifths shaded. They end at the same gold line.'),
+ 'PAY1': '<div>%s</div>' % bar([3, 6], 16, label=('9', '16'), taken=5, aria='The measure: 3 dark sixteenths, 6 lighter sixteenths and 5 sixteenths scratched out. 9 sixteenths of good notes.'),
+ 'KEYSVG': bar([2, 3], 11, label=('5', '11'), taken=4, aria='A bar in elevenths: 2 dark tiles, 3 lighter tiles and 4 tiles cut off. 5 elevenths are left.'),
+ 'GAPSVG': twobars(6, 1, 7, 'Two bars in sevenths: 6 sevenths on top, 1 seventh below, and a gold gap of 5 sevenths.'),
+ 'JUNOSVG': over(14, 11, 'Juno\'s answer, fourteen-elevenths: 14 tiles of one-eleventh. The first 11 fill the whole page, and 3 red tiles hang past the end of the page.'),
+ 'KAISVG': '<div style="margin:6px 0">' + bar([14], 16, label=('14', '16'), aria='Fourteen-sixteenths: 14 of 16 tiles shaded.') + bar([7], 16, label=('7', '16'), aria='Kai\'s seven-sixteenths: only 7 of 16 tiles shaded, half as long.') + '</div>',
+ 'PROVESVG': bar([3, 11], 16, label=('14', '16'), aria='The trumpet measure: 3 dark sixteenths and 11 lighter sixteenths, 14 sixteenths before the scratch-outs.'),
+}
+for k in ['OPTI_THINKDONE']:  # replace the longer key before its prefix
+    body = body.replace(k, rep.pop(k))
+for k, v in rep.items():
+    assert k in body, k
+    body = body.replace(k, v)
+out = head + body + tail
+open('/home/claude/g3sb/src/lesson-3-10-07.html', 'w').write(out)
+print('ok', len(out))
