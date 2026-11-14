@@ -215,10 +215,28 @@ SC['3.10.03']=function(t,K){
   if(t>=K.group+1.6){var e=ramp(t,K.group+1.6,0.4);[x0+8+(len-16)/4,x0+len-8].forEach(function(gx){S('line',{x1:gx,y1:yV-10,x2:gx,y2:yS+80,stroke:GOLD,'stroke-width':4,'stroke-dasharray':'10 7',opacity:e});});label(x0+len/8+4,yS+130,'same time',e,GOLD,26);}
   if(t>=K.today-0.3){var e2=ramp(t,K.today-0.3,0.5);label(640,600,'Today: the math of grouping',e2,GREEN,30);}
 };
+SC['3.10.04']=function(t,K){
+  var HD='CHAPTER 10 · BACH\'S MEASURES';
+  if(t<K.before-0.3){head('','');owl(1000,380,150,t);book(t,0.1,'sb-wfb-plate.jpg','CHAPTER 10 · LESSON 4',['Comparing','Fractions, Part 1'],'Two hands, one measure');return;}
+  if(t<K.inside-0.3){head(HD,'A music book for Friedemann');owl(1060,440,120,t);var o=fade(t,K.before-0.3,K.inside-0.3);pic('sb-wfb-clefguide.jpg',300,96,560,486,1+0.05*(t-K.before),.4,.4,o);
+    label(1010,190,'1720',o*ramp(t,K.started-0.2,0.4),NAVY,40);label(1010,280,'Friedemann, age 9',o*ramp(t,K.nine-0.3,0.4),'#6B4A12',28);return;}
+  if(t<K.two2-0.4){head(HD,'Two parts: one for each hand');owl(null);var o2=fade(t,K.inside-0.3,K.two2-0.4);
+    pic('sb-wfb-trill-crop.jpg',170,110,560,322,1+0.04*(t-K.inside),.3,.4,o2);
+    label(980,190,'right hand',o2*ramp(t,K.one-0.2,0.4),'#2F6FDE',30);label(980,270,'left hand',o2*ramp(t,K.each+0.2,0.4),'#B03A2E',30);
+    label(980,400,'Inventions',o2*ramp(t,K.called-0.2,0.4),GOLD,36);label(980,470,'1723',o2*ramp(t,K.called+0.3,0.4),NAVY,28);return;}
+  head(HD,'Two hands, one measure');owl(null);
+  var x0=200,len=880,yR=200,yL=330,q=ramp(t,K.two2-0.5,0.5);
+  S('rect',{x:x0,y:yR-80,width:len,height:46,rx:6,fill:NAVY,opacity:q});S('text',{x:x0+len/2,y:yR-50,'text-anchor':'middle','font-size':22,'font-weight':900,fill:'#fff',opacity:q,text:'1 whole measure'});
+  function bar(y,n,k,col,lab,t0){S('text',{x:x0,y:y-12,'font-size':22,'font-weight':900,fill:col,opacity:q,text:lab});var w=len/n;for(var i=0;i<n;i++){var b=i<k?ramp(t,t0+i*0.12,0.25):0;S('rect',{x:x0+i*w+1,y:y,width:w-3,height:60,rx:6,fill:'#fff',stroke:col,'stroke-width':2.5,opacity:q});if(b>0)S('rect',{x:x0+i*w+1,y:y,width:(w-3)*b,height:60,rx:6,fill:col,opacity:q});}}
+  bar(yR,7,5,'#2F6FDE','Right hand',K.two2);bar(yL,9,7,'#B03A2E','Left hand',K.two2+0.4);
+  if(t>=K.which-0.3){var e=ramp(t,K.which-0.3,0.4);[x0+len*5/7,x0+len*7/9].forEach(function(gx){S('line',{x1:gx,y1:yR-8,x2:gx,y2:yL+70,stroke:GOLD,'stroke-width':4,'stroke-dasharray':'10 7',opacity:e});});label(x0+len*0.74,yL+130,'Which note is longer?',e,'#6B4A12',28);}
+  if(t>=K.today-0.3){var e2=ramp(t,K.today-0.3,0.5);label(640,560,'Today: make the pieces the same size',e2,GREEN,30);}
+};
 var CUES={
  '3.09.01':function(){return{each:wt(/^Each$/),math:wt(/^math$/),today:wt(/^Today's$/),more:wt(/^more$/),meet:wt(/^Meet$/),numbers:wt(/^numbers$/),music:wt(/^music$/),stories:wt(/^Stories$/),string:wt(/^string$/),box:wt(/^box$/),then:wt(/^Then$/),listen:wt(/^listened$/),lets:wt(/^Let's$/)};},
  '3.09.02':function(){return{still:wt(/^We're$/),singing:wt(/^singing$/),last:wt(/^Last$/),cut:wt(/^cut$/),equal:wt(/^equal$/),today:wt(/^Today$/),turns:wt(/^turns$/),line:wt(/^line$/),every:wt(/^Every$/),spot:wt(/^spot$/)};},
  '3.09.03':function(){return{pyth:wt(/^Pythagoras$/),two:wt(/^two$/),length:wt(/^length$/),cut:wt(/^cut$/),number:wt(/^number$/),today:wt(/^Today$/),frac:wt(/^fraction$/),hear:wt(/^hear$/)};},
+ '3.10.04':function(){return{before:wt(/^Before$/),started:wt(/^started$/),nine:wt(/^nine$/),inside:wt(/^Inside$/),one:wt(/^one$/),each:wt(/^each$/),called:wt(/^called$/),two2:wt(/^Two$/),which:wt(/^Which$/),today:wt(/^Today$/)};},
  '3.10.03':function(){return{its:wt(/^It's$/),called:wt(/^called$/),part:wt(/^part$/),violins:wt(/^violins$/),quick:wt(/^quick$/),singers:wt(/^singers$/),one:wt(/^One$/),group:wt(/^group$/),same:wt(/^same$/),fewer:wt(/^Fewer$/),today:wt(/^Today$/)};},
  '3.10.02':function(){return{printed:wt(/^printed$/),aria:wt(/^starts$/),calm:wt(/^calm$/),thirty:wt(/^thirty$/),low:wt(/^low$/),fills:wt(/^fills$/),same:wt(/^Same$/),today:wt(/^Today$/)};},
  '3.10.01':function(){return{leip:wt(/^Leipzig$/),ago:wt(/^ago$/),meet:wt(/^Meet$/),wrote:wt(/^wrote$/),one:wt(/^one$/,0),fill:wt(/^fill$/),long:wt(/^long$/),shorter:wt(/^shorter$/),same:wt(/^same$/),listen:wt(/^listen$/)};},

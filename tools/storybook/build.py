@@ -40,6 +40,7 @@ TOOLS = {
  'fbars-3-9': ('fbars', {"d": [3, 9], "lab": 1}, 'Fraction Tiles', 'Try a bar of thirds and a bar of ninths. Shade 1 third. How many ninths line up with it?'),
  'fbars-6-12': ('fbars', {"d": [6, 12], "lab": 1}, 'Fraction Tiles', 'Try a bar of sixths and a bar of twelfths. Shade some sixths, then find the twelfths that line up.'),
  'fbars-2-5-10': ('fbars', {"d": [2, 5, 10], "lab": 1}, 'Fraction Tiles', 'Try bars of halves, fifths and tenths. Shade 8 tenths. Which other bar can match it?'),
+ 'fbars-5-10c': ('fbars', {"d": [5, 10], "lab": 1}, 'Fraction Tiles', 'Line up a bar of fifths and a bar of tenths. How many tenths fit under one fifth?'),
  'fbars-8': ('fbars', {"d": [8], "lab": 1}, 'Fraction Tiles', 'Try a bar of eighths. Each eighth is as long as 2 sixteenths.'),
  'fbars-9-10': ('fbars', {"d": [9, 10], "lab": 1}, 'Fraction Tiles', 'Try a bar of ninths and a bar of tenths. Shade 1 ninth and 2 tenths. Which reaches farther?'),
 }
@@ -120,6 +121,16 @@ L = {
      {"t": "hymn", "d": "A song sung in church. Bach used old hymn tunes in his music."},
      {"t": "sixteenth note", "alt": ["sixteenth notes"], "d": "A note that lasts for one-sixteenth of a measure. 16 of them fill one measure."},
      {"t": "eighth note", "d": "A note that lasts for one-eighth of a measure."}]),
+ '3.10.04': dict(page='math-lesson-3-10-04-comparing-fractions-part-1.html', title='Comparing Fractions, Part 1', video='g3math-10-04-learn',
+   glossary=[
+     {"t": "common denominator", "d": "The same denominator for two fractions. When two fractions have a common denominator, their pieces are the same size, so you can count and compare.", "key": True},
+     {"t": "common numerator", "d": "The same numerator for two fractions. Then the fraction with the bigger pieces is greater.", "key": True},
+     {"t": "re-cut", "alt": ["re-cutting"], "d": "To cut every piece of a bar into the same number of smaller pieces. The amount stays the same, but the fraction gets a new name.", "key": True},
+     GL_BASE[2], GL_BASE[3],
+     {"t": "measure", "d": "In music, one measure is one whole. Notes of different lengths can fill it.", "key": True},
+     {"t": "multiply", "d": "To find the total of equal groups. 4 × 2 means 4 groups of 2."},
+     {"t": "invention", "alt": ["inventions"], "d": "A short practice piece Bach wrote with two parts, one for each hand."},
+     {"t": "harpsichord", "d": "A keyboard instrument from Bach's time. Its keys pluck the strings inside."}]),
 }
 def tool(m):
     t, st, name, tip = TOOLS[m.group(1)]

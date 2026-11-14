@@ -62,5 +62,21 @@
  "g3m-3-10-03-vid-math": {
   "text": "Here is a measure cut into ten parts. Eight are shaded. That's eight-tenths. Now group the parts in twos. Every two small parts make one bigger part. Count again. Four parts are shaded, and there are five in all. Eight divided by two is four. Ten divided by two is five. Eight-tenths equals four-fifths. Line up the two strips. The shaded parts are the same length. Here is sixteen-twentieths. Sofia divides both numbers by two, and gets eight-tenths. She divides by two again, and gets four-fifths. Small steps. Alex sees that four divides both numbers. Sixteen divided by four is four. Twenty divided by four is five. Four-fifths, in one big step. Both ways land in the same place. Can we divide four and five by the same number? Only by one. So four-fifths is in simplest form. It has the fewest, biggest parts. Watch out! Divide both numbers by the same number. If you divide only one number, or take away, the shaded part changes size.",
   "voice": "claire"
+ },
+ "g3m-3-10-04-vid-math": {
+  "text": "Here are four-fifths and seven-tenths. The bars are the same length, but the pieces are different sizes. So we can't just count yet. Let's re-cut. Cut each fifth into two pieces. Now both bars have tenths. Four-fifths is eight-tenths. Four times two is eight. Five times two is ten. Look, the shaded parts still line up. Re-cutting didn't change the amount. Eight-tenths is more than seven-tenths, so four-fifths is greater. That's Dion's way. He makes a common denominator. Emma has another way. Here are one-sixth and two-elevenths. She makes the numerators match. One-sixth is two-twelfths. Now both have two pieces. A twelfth is smaller than an eleventh. So two-elevenths is greater. That's a common numerator. Watch out! Don't compare only the numerators, or only the denominators. Re-cut first, so the pieces are the same size. Then compare.",
+  "voice": "claire"
+ },
+ "g3m-3-10-04-vid-open": {
+  "text": "Hoo! Claire is going to show us two ways to compare fractions with different denominators. Watch the pieces.",
+  "voice": "opti"
+ },
+ "g3m-3-10-04-vid-close": {
+  "text": "Same-size pieces make comparing fair. Re-cut, then count. Now it's your turn.",
+  "voice": "opti"
+ },
+ "g3m-3-10-04-words": {
+  "text": "Common denominator. ... Common numerator. ... Re-cut.",
+  "voice": "opti"
  }
 }
