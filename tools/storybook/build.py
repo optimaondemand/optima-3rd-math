@@ -39,6 +39,9 @@ TOOLS = {
  'fbars-3-6': ('fbars', {"d": [3, 6], "lab": 1}, 'Fraction Tiles', 'Try a bar of thirds and a bar of sixths. Shade 2 thirds. How many sixths reach the same place?'),
  'fbars-3-9': ('fbars', {"d": [3, 9], "lab": 1}, 'Fraction Tiles', 'Try a bar of thirds and a bar of ninths. Shade 1 third. How many ninths line up with it?'),
  'fbars-6-12': ('fbars', {"d": [6, 12], "lab": 1}, 'Fraction Tiles', 'Try a bar of sixths and a bar of twelfths. Shade some sixths, then find the twelfths that line up.'),
+ 'fbars-2-5-10': ('fbars', {"d": [2, 5, 10], "lab": 1}, 'Fraction Tiles', 'Try bars of halves, fifths and tenths. Shade 8 tenths. Which other bar can match it?'),
+ 'fbars-8': ('fbars', {"d": [8], "lab": 1}, 'Fraction Tiles', 'Try a bar of eighths. Each eighth is as long as 2 sixteenths.'),
+ 'fbars-9-10': ('fbars', {"d": [9, 10], "lab": 1}, 'Fraction Tiles', 'Try a bar of ninths and a bar of tenths. Shade 1 ninth and 2 tenths. Which reaches farther?'),
 }
 def enc(o): return base64.urlsafe_b64encode(json.dumps(o, separators=(',', ':')).encode()).decode().rstrip('=')
 GL_BASE = [
@@ -106,6 +109,17 @@ L = {
      GL_BASE[1],
      {"t": "aria", "d": "A slow song. Bach's book of variations starts with one."},
      {"t": "one whole", "alt": ["1 whole"], "d": "All the equal parts together."}]),
+ '3.10.03': dict(page='math-lesson-3-10-03-simplifying-fractions.html', title='Simplifying Fractions', video='g3math-10-03-learn',
+   glossary=[
+     {"t": "simplest form", "d": "A fraction is in simplest form when no number except 1 divides both the numerator and the denominator. It has the fewest, biggest parts.", "key": True},
+     {"t": "simplify", "alt": ["simplifying", "simpler name"], "d": "To find a simpler name for a fraction by dividing the numerator and the denominator by the same number.", "key": True},
+     {"t": "equivalent fractions", "d": "Fractions that name the same amount, like eight-tenths and four-fifths.", "key": True},
+     GL_BASE[2], GL_BASE[3],
+     {"t": "measure", "d": "In music, one measure is one whole. Notes of different lengths can fill it.", "key": True},
+     {"t": "divide", "alt": ["divided"], "d": "To split into equal groups. 8 ÷ 2 = 4 means 8 split into groups of 2 makes 4 groups."},
+     {"t": "hymn", "d": "A song sung in church. Bach used old hymn tunes in his music."},
+     {"t": "sixteenth note", "alt": ["sixteenth notes"], "d": "A note that lasts for one-sixteenth of a measure. 16 of them fill one measure."},
+     {"t": "eighth note", "d": "A note that lasts for one-eighth of a measure."}]),
 }
 def tool(m):
     t, st, name, tip = TOOLS[m.group(1)]

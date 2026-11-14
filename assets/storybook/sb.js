@@ -16,8 +16,9 @@
   var KEY = D.key || 'g3sb', AUD = D.audioBase || 'audio/storybook/', IMG = D.imgBase || 'images/storybook/';
   var CREW = {"atlas": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAUCAYAAACEYr13AAABZklEQVR4AaSSIUhDURiF/71kE0SwWAxicsUkCAa70SCaRINFEIUZBJE5DSsGkRVBMA0nK0axiKaBiIoYtLwiuGEwDja+C//lv3uPx2CD8/7zzjn/udzxIhnwlyjIj490stB7XlDAYrWyJlkgY0uCAoyHxrdkgYxFRCP4uN3tcPLczIRkgQxZdkD0ErdyNB4e1aRfbGxfsiLsBleIm//O4NEPJ+cLWKhVinJaKjhkcRYVvoAFxNmlHRmdX4cGsLpmCfgCXhSTY8NKg5mmuwL+jIWVggvXz/flqVp23D7Q8NDIsgN3BRAEjOWtY4k/35ACoOGRIaumL1Bh6vpdSvk92RxaDICGpzmdvoCP4u7qRJqvDfUSE48MWTV9gQq/B6tKEzPN8wXci/uxxUlMC9XIkFXPFyCo0a7fy0+xHADNZuAgKECw+Hu+EGC1Xp5aMN26EaBhONB3OxMFXOPs8SsH4AAO4HYZ3gUAAP//gnUhqAAAAAZJREFUAwCT7fUpk9TrQwAAAABJRU5ErkJggg==", "felix": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAUCAYAAACEYr13AAABj0lEQVR4AXyRO0gDYRCEN2lFfIAP0CSVID4CipX2IhYqYpHeJoUIdlbaWoiiaCGIhZWFiEGwErTRUkPSpBIxaiESrrKwMPIt7M9/uZwHczs3Mzt3P5eUhivb31k3KY6bz4wUBMluscU4zqLBFbAE2n8/hcV0elC/xOcskWEatACRoMHMxmk+efO0oPRWS/DmVCota/dPCrgPX7dlphbQ2JqZkKWzApqc5+Z1xt3IsoOvBZBq9VU2hzOyOzUm8HK5qNM4OkAH7ABXEAQ12ckNycZMr+I/zqLBFbCAuHX5KMtHt9AQfN2yBFwBD4aBnjajodlM1wL+wv51ScP56RFZXxhX7t/Q8NDIsgPXAggCxuldRV4+vpBCQMMjQ9ZMV2BC/TgvhZU52VucDAENz3I2XQH/dXU2K9+Vd/MiE48MWTNdgQkt21dGI7OZ5wo4F+djizcxfZhGhqx5rgDBjL6bLuk4+AkBzc/AQagAwUdQPBHga428acFo7UKAheHAnv0ZKeAYhw/PCQAHcAD3l+F/AAAA//904nhhAAAABklEQVQDALqp1imH1FmKAAAAAElFTkSuQmCC", "hazel": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAUCAYAAACEYr13AAABd0lEQVR4AYySTyjDYRjHn+2glCgOu6xdJBd2ILW708rFmfxJIg5yVtRKrkoTiTgoLg4ucnBlUdJqJ3HQLqK1loscps9bz9vzbmNbffZ+3+/zfb+/91e/qDT5JePdVfgrVldA2HKQSAlYz5b5Ag0QtmjYeppl5gvYzHX2Sq780RRy5CEoGO7/llY4rLxIvliK+AKutDsSZ98Si4kO4Qzh4Ab59zKeoxVNMEoTT+fAzH5WhjKbjv80B/UW/gYcYJAcnZD2gTFkgPU1S8AXsFH6Yl0qg7WR7wse19dc+PpsR/I3p07bPzxmeMcLyywOX8AulZ6W8alV+XwusA3AY0bGDoICBnfnbdIT25ZqZT4AjxkZS1CQuzqR+8KPnQeaGRlrRvmilh6KAgxWMlWWhuhs7+1LgLPuBgjQ9+NJtQ3qkSELZFwBAtTcuJyV9NZkAJ7NoCEowLCUn44ErFerGxYMli4ENIwG3du1roDXyN6+RgANaEDbw+hfAAAA//9vAI8zAAAABklEQVQDAIZd6ynlDI0hAAAAAElFTkSuQmCC", "cora": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAUCAYAAACEYr13AAABgElEQVR4AYyRMS9DYRSGz71DY0FY2sFgERMJC4nFQgyYzFisEv4Av4BEYpJgMBvKaJaYKKPEhHSoixp0EO19TnK+nNveNG369L7fe97z9t42lvQ1OTLchFT29CYLhGPEX1QQQGNyzcNmZIGM3kHtuy7QHiDkYYEMWUDHj69JVBroE7AwgzxsThbY1TtA5C1082xHC7g12rst+Fm13hB28LQAAfZcvWpyoYDlhdGCTA01FPTZzqIA2vssGqHgan9Nvbvqv1xUPlUfnZcFOHjfsvihgIMxVhxUub25KqCH9MP8VIa3FvCLbh1ca3imFAuQ4NsBjQcUkmUHXwsQGAyeklhW5qe1jLCBx4wMWXYgFHCA8sa4zPb/SvHjOQMeMzKeUMD/erK7LPdvP36e0czIkLVBKDBj7+bdZMc1bxYKeC6ejy2+iavHPDJkbRYKMGxwWFuS9cpcBjyfQUOmAMPz9XAq4L12nVswkVwKWBgNdvbXjgIe4/j2JQI0oAHtl9EtAAAA///gp/9wAAAABklEQVQDAK3R5Snkk2p0AAAAAElFTkSuQmCC"};
   var CREWC = { atlas: '#1F8FB4', felix: '#1E8C5A', hazel: '#9A7A00', cora: '#C2601F' };
-  var DCOL = { 1: '#0E1C42', 2: '#6B46C1', 3: '#B05E09', 4: '#8A6A00', 5: '#4E7A1A', 6: '#2F6FDE', 7: '#B03A2E', 8: '#A23B8C', 9: '#2E7D6B', 10: '#117E7E', 11: '#8C2F6E', 12: '#5B6478' };
-  var DNAME = { 2: 'half', 3: 'third', 4: 'fourth', 5: 'fifth', 6: 'sixth', 7: 'seventh', 8: 'eighth', 9: 'ninth', 10: 'tenth', 11: 'eleventh', 12: 'twelfth' };
+  var DCOL = { 1: '#0E1C42', 2: '#6B46C1', 3: '#B05E09', 4: '#8A6A00', 5: '#4E7A1A', 6: '#2F6FDE', 7: '#B03A2E', 8: '#A23B8C', 9: '#2E7D6B', 10: '#117E7E', 11: '#8C2F6E', 12: '#5B6478', 16: '#6D4C41', 20: '#3949AB' };
+  var DNAME = { 2: 'half', 3: 'third', 4: 'fourth', 5: 'fifth', 6: 'sixth', 7: 'seventh', 8: 'eighth', 9: 'ninth', 10: 'tenth', 11: 'eleventh', 12: 'twelfth', 16: 'sixteenth', 20: 'twentieth' };
+  function DPL(d) { return d === 2 ? 'halves' : DNAME[d] + 's'; }
   function $(s, r) { return (r || document).querySelector(s); }
   function $$(s, r) { return [].slice.call((r || document).querySelectorAll(s)); }
   function el(tag, cls, html) { var e = document.createElement(tag); if (cls) e.className = cls; if (html != null) e.innerHTML = html; return e; }
@@ -333,7 +334,7 @@
      Fractions are said as fractions ("2 sevenths"), answer boxes as "blank". Opti's notes are skipped: they have their
      own Listen button. Press again to stop; a tab or station change stops it too. */
   var rd = $('#sb-read'), raTok = 0, raOn = false, raEl = null, raQ = null, raI = 0, raPaused = false, raBox = null, raRate = 0.92;
-  var RA_ORD = { 2: 'half', 3: 'third', 4: 'fourth', 5: 'fifth', 6: 'sixth', 7: 'seventh', 8: 'eighth', 9: 'ninth', 10: 'tenth', 11: 'eleventh', 12: 'twelfth' };
+  var RA_ORD = { 2: 'half', 3: 'third', 4: 'fourth', 5: 'fifth', 6: 'sixth', 7: 'seventh', 8: 'eighth', 9: 'ninth', 10: 'tenth', 11: 'eleventh', 12: 'twelfth', 16: 'sixteenth', 20: 'twentieth' };
   function raMark(e) { if (raEl) raEl.classList.remove('sb-reading'); raEl = e; if (e) e.classList.add('sb-reading'); }
   function raFrac(f) {
     var k = [].filter.call(f.children, function (c) { return c.tagName !== 'I'; }), v = k.map(function (c) { return c.tagName === 'INPUT' ? (c.value.trim() || 'blank') : c.textContent.trim(); });
@@ -1605,16 +1606,17 @@
     box.innerHTML = '<div class="sb-stage sb-tiles"><svg viewBox="0 0 700 ' + H + '" role="group" aria-label="One measure cut ' + D.length + ' ways"></svg></div><div class="sb-readout" aria-live="polite"></div>';
     var svg = $('svg', box), out = $('.sb-readout', box);
     function msg(h, ok) { out.innerHTML = ok ? '<span style="color:#1E7A4C">' + h + '</span>' : h; }
-    function good(i) { return S.k[i] * D[0] === k * D[i]; }
+    function can(i) { return (k * D[i]) % D[0] === 0; }
+    function good(i) { return can(i) ? S.k[i] * D[0] === k * D[i] : S.k[i] > 0; }
     function draw() {
       svg.innerHTML = ''; wholeBar(svg, LX, Y0, BW, RH, '1 whole measure');
       D.forEach(function (d, r) {
         var y = YS[r], w = BW / d;
-        NS('text', { x: LX, y: y - 9, 'font-size': 13, 'font-weight': 900, fill: '#5B6478', text: (DNAME[d] + 's').toUpperCase() + (r ? ' · tap a tile to shade up to it' : ' · already shaded'), 'pointer-events': 'none' }, svg);
+        NS('text', { x: LX, y: y - 9, 'font-size': 13, 'font-weight': 900, fill: '#5B6478', text: DPL(d).toUpperCase() + (r ? ' · tap a tile to shade up to it' : ' · already shaded'), 'pointer-events': 'none' }, svg);
         for (var i = 0; i < d; i++) (function (i) {
           var g = ftile(svg, LX + i * w, y, w, RH, d, i < S.k[r], 'tile part st-r' + r);
           if (!r) return;
-          g.setAttribute('tabindex', 0); g.setAttribute('role', 'button'); g.setAttribute('aria-label', DNAME[d] + 's row, tile ' + (i + 1) + (i < S.k[r] ? ', shaded' : ''));
+          g.setAttribute('tabindex', 0); g.setAttribute('role', 'button'); g.setAttribute('aria-label', DPL(d) + ' row, tile ' + (i + 1) + (i < S.k[r] ? ', shaded' : ''));
           function set() { S.k[r] = S.k[r] === i + 1 ? i : i + 1; save(); pluck(HZ.G4); draw(); }
           g.addEventListener('click', set); g.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); set(); } });
         })(i);
@@ -1625,8 +1627,12 @@
     function report() {
       var all = true;
       D.forEach(function (d, r) { if (!r) return; var ok = good(r); flag(box, 'r' + r, ok); if (ok) flag(box, 'r' + r); else all = false; });
-      var bad = D.map(function (d, r) { return r && S.k[r] && !good(r) ? r : 0; }).filter(Boolean)[0];
-      if (all) msg('Every row is shaded right up to the gold line. Same amount, three names.', true);
+      var bad = D.map(function (d, r) { return r && S.k[r] && can(r) && !good(r) ? r : 0; }).filter(Boolean)[0];
+      var tried = D.map(function (d, r) { return r && S.k[r] && !can(r) ? r : 0; }).filter(Boolean);
+      var no = tried.map(function (r) { var lo = Math.floor(k * D[r] / D[0]), nm = DNAME[D[r]]; var pl = DPL(D[r]); return (lo ? lo + ' ' + (lo > 1 ? pl + ' stop' : nm + ' stops') + ' before the gold line and ' : '') + (lo + 1) + ' ' + (lo + 1 > 1 ? pl + ' go' : nm + ' goes') + ' past it. ' + pl.charAt(0).toUpperCase() + pl.slice(1) + ' can\'t show this amount.'; }).join(' ');
+      if (all && tried.length) msg(no + ' The other ' + (D.length - 1 - tried.length > 1 ? 'rows line' : 'row lines') + ' up right on the gold line.', true);
+      else if (all) msg('Every row is shaded right up to the gold line. Same amount, three names.', true);
+      else if (no && !bad) msg(no + ' Try the next row.');
       else if (bad) msg('The ' + DNAME[D[bad]] + 's row stops ' + (S.k[bad] * D[0] < k * D[bad] ? 'before' : 'after') + ' the gold line.');
       else msg('Shade each row up to the gold line.');
     }
@@ -1638,18 +1644,28 @@
      data-who (a student's wrong pair, e.g. "1,3": ×1 on top, ×3 on the bottom, shown first). Flags: top · bot */
   MODS.arrows = function (box) {
     var a = +box.dataset.a, b = +box.dataset.b, by = +box.dataset.by, c = box.dataset.c, name = box.dataset.name || 'arrows', first = box.dataset.first || 'top';
-    var S = mstate(name, { t: 0, u: 0 }), TAGS = [2, 3, 4, 5];
+    var S = mstate(name, { t: 0, u: 0 }), TAGS = [2, 3, 4, 5], dv = box.dataset.op === 'div', OP = dv ? '÷' : '×';
     function arc(down) { return '<svg class="ar-arc' + (down ? ' dn' : '') + '" viewBox="0 0 160 40" aria-hidden="true"><path d="' + (down ? 'M8 4 Q80 44 150 6' : 'M8 36 Q80 -4 150 34') + '" fill="none" stroke="#0E1C42" stroke-width="3"/><path d="' + (down ? 'M150 6 l-12 2 l6 9 z' : 'M150 34 l-12 -2 l6 -9 z') + '" fill="#0E1C42"/></svg>'; }
     box.innerHTML = '<div class="sb-stage sb-arrows"><div class="ar-grid">' +
       '<div class="ar-f">' + frac(a, b) + '</div>' +
       '<div class="ar-mid"><div class="ar-slot top" data-k="t" aria-label="The arrow over the numerators"></div>' + arc(0) + '<div class="ar-eq">=</div>' + arc(1) + '<div class="ar-slot bot" data-k="u" aria-label="The arrow under the denominators"></div></div>' +
       '<div class="ar-f new">' + frac('?', c || '?') + '</div></div>' +
-      '<div class="sym-cards ar-cards" role="group" aria-label="Tags to drag">' + TAGS.map(function (t) { return '<button type="button" class="sym-card ar-card" data-t="' + t + '" aria-label="times ' + t + '">×' + t + '</button>'; }).join('') + '</div></div><div class="sb-readout" aria-live="polite"></div>';
+      '<div class="sym-cards ar-cards" role="group" aria-label="Tags to drag">' + TAGS.map(function (t) { return '<button type="button" class="sym-card ar-card" data-t="' + t + '" aria-label="' + (dv ? 'divided by ' : 'times ') + t + '">' + OP + t + '</button>'; }).join('') + '</div></div><div class="sb-readout" aria-live="polite"></div>';
     var out = $('.sb-readout', box), slots = { t: $('.ar-slot.top', box), u: $('.ar-slot.bot', box) };
     function msg(h, ok) { out.innerHTML = ok ? '<span style="color:#1E7A4C">' + h + '</span>' : h; }
     function paint() {
-      ['t', 'u'].forEach(function (k) { var v = S[k], s = slots[k], ok = v === by; s.className = 'ar-slot ' + (k === 't' ? 'top' : 'bot') + (v ? ' full ' + (ok ? 'ok' : 'no') : ''); s.innerHTML = v ? '<span>×' + v + '</span>' : '<small>drop here</small>'; });
+      ['t', 'u'].forEach(function (k) { var v = S[k], s = slots[k], ok = v === by; s.className = 'ar-slot ' + (k === 't' ? 'top' : 'bot') + (v ? ' full ' + (ok ? 'ok' : 'no') : ''); s.innerHTML = v ? '<span>' + OP + v + '</span>' : '<small>drop here</small>'; });
       var t = S.t, u = S.u; flag(box, 'top', t === by); if (t === by) flag(box, 'top'); flag(box, 'bot', u === by); if (u === by) flag(box, 'bot');
+      if (dv) {
+        if (t && u && t !== u) msg('÷' + t + ' on the numerator but ÷' + u + ' on the denominator. Different numbers change the amount. Use the same tag on both arrows.');
+        else if (t === by && u === by) msg('÷' + by + ' on the numerator and ÷' + by + ' on the denominator. Every ' + by + ' parts group into 1 bigger part. Same amount, simpler name.', true);
+        else if ((t && a % t) || (u && b % u)) { var z = t && a % t ? [t, a] : [u, b]; msg(z[1] + ' can\'t be split into groups of ' + z[0] + ' with none left over. Try another tag.'); }
+        else if (c && u && b / u !== +c) msg(b + ' ÷ ' + u + ' = ' + (b / u) + ', not ' + c + '. Try another tag.');
+        else if (t && u) msg('÷' + t + ' on both arrows makes an equal fraction, but not the one this job asks for. Try another tag.');
+        else if (t || u) msg('Now put the same tag on the other arrow.');
+        else msg('Both arrows are empty.');
+        return;
+      }
       if (t && u && t !== u) msg('×' + t + ' on the numerator but ×' + u + ' on the denominator. Different numbers change the amount. Use the same tag on both arrows.');
       else if (t === by && u === by) msg('×' + by + ' on the numerator and ×' + by + ' on the denominator. Every part is split into ' + by + '. Same amount, new name.', true);
       else if (c && u && u * b !== +c) msg(b + ' × ' + u + ' = ' + (b * u) + ', not ' + c + '. Try another tag.');
@@ -1738,6 +1754,81 @@
     });
     $('.tt-clear', box).addEventListener('click', function () { S.c = 1; S.kept = []; S.played = 0; save(); draw(); });
     document.addEventListener('sb:step', report); onWidth(box, draw); draw();
+  };
+
+
+  /* trade (3.10.03 wow): one measure of small shaded tiles (data-d, data-k of them; the rest of the measure is a rest).
+     Drag a bigger tile from the tray onto the measure (or tap it): if every shaded tile groups evenly into that size, the whole
+     row trades at once and the old row is kept above as a step of the staircase. ▶ Play: every row, one measure each, every tile
+     a note as long as it is wide. data-sizes "8,4,2,1" (tray). Flags: t<size> (reached that size), whole (one tile fills the
+     measure), simple (no bigger tray tile fits any more), play (played after the last trade) */
+  MODS.trade = function (box) {
+    var d = +box.dataset.d, k = +box.dataset.k, P = box.dataset.pre || '', name = box.dataset.name || 'trade', SZ = (box.dataset.sizes || '8,4,2,1').split(',').map(Number);
+    var S = mstate(name, { rows: [d], played: 0 }), BW = 680, VW = 700, LX = 10, RH = 46, Y0 = 8, GAP = 22, busy = false;
+    // narrow screens: a narrower drawing so the small tiles stay big enough to read
+    function layout() { var nar = (box.clientWidth || 700) < 560; VW = nar ? 420 : 700; BW = VW - 20; }
+    function cur() { return S.rows[S.rows.length - 1]; }
+    function cnt(sz) { return k * sz / d; }
+    function nm(sz, n) { return sz === 1 ? (n === 1 ? '1 whole' : n + ' wholes') : n + ' ' + (n === 1 ? DNAME[sz] : DPL(sz)); }
+    function fits(sz) { var c = cur(); return sz < c && Number.isInteger(cnt(sz)) && Number.isInteger((d - k) * sz / d); }
+    box.innerHTML = '<div class="sb-stage sb-tiles"><svg role="group" aria-label="One measure of tiles to trade for bigger tiles"></svg></div><div class="sb-row" style="margin-top:6px"><button type="button" class="sb-btn tr-play">▶ Play every row</button><button type="button" class="sb-btn ghost tr-clear">↺ Start over</button></div><div class="sb-readout" aria-live="polite"></div>';
+    var svg = $('svg', box), out = $('.sb-readout', box);
+    function msg(h, ok) { out.innerHTML = ok ? '<span style="color:#1E7A4C">' + h + '</span>' : h; }
+    function rowY(i) { return Y0 + RH + GAP + 14 + i * (RH + GAP); }
+    function draw() {
+      layout(); var nR = S.rows.length, MY = rowY(nR - 1), TY = MY + RH + 58, H = TY + RH + 34;
+      svg.setAttribute('viewBox', '0 0 ' + VW + ' ' + H); svg.innerHTML = '';
+      wholeBar(svg, LX, Y0, BW, RH, '1 whole measure');
+      S.rows.forEach(function (sz, i) {
+        var y = rowY(i), w = BW / sz, n = cnt(sz), last = i === nR - 1, rest = (d - k) * sz / d;
+        NS('text', { x: LX, y: y - 6, 'font-size': 13, 'font-weight': 900, fill: last ? '#0E1C42' : '#8A93A8', text: (last ? 'THE MEASURE NOW · ' : '') + nm(sz, n) + (k < d ? ' played' : ''), 'pointer-events': 'none' }, svg);
+        var g = NS('g', { opacity: last ? 1 : 0.55, class: last ? 'tr-row' : '' }, svg);
+        for (var j = 0; j < n; j++) { if (sz === 1) { NS('rect', { x: LX + 1, y: y, width: BW - 2, height: RH, rx: 6, fill: '#0E1C42' }, g); NS('text', { x: LX + BW / 2, y: y + RH / 2 + 6, 'text-anchor': 'middle', 'font-size': 17, 'font-weight': 900, fill: '#fff', text: '1 whole note', 'pointer-events': 'none' }, g); } else ftile(g, LX + j * w, y, w, RH, sz, true, 'tile'); }
+        for (var q = 0; q < rest; q++) { var x = LX + (n + q) * w; NS('rect', { x: x + 1, y: y, width: w - 2, height: RH, rx: 6, fill: '#F6F7FB', stroke: '#AEB6CC', 'stroke-width': 2, 'stroke-dasharray': '5 4' }, g); NS('text', { x: x + w / 2, y: y + RH / 2 + 5, 'text-anchor': 'middle', 'font-size': 13, 'font-weight': 800, fill: '#8A93A8', text: 'rest', 'pointer-events': 'none' }, g); }
+      });
+      NS('text', { x: LX, y: TY - 10, 'font-size': 13, 'font-weight': 900, fill: '#5B6478', text: 'TRAY · drag a bigger tile onto the measure', 'pointer-events': 'none' }, svg);
+      var tx = LX, tw = Math.min(150, (BW - 12 * (SZ.length - 1)) / SZ.length);
+      SZ.forEach(function (sz) {
+        var w = Math.min(BW / sz, tw), g = ftile(svg, tx, TY, w, RH, sz, false, 'tile tr-tray'); g.dataset.t = sz;
+        g.setAttribute('tabindex', 0); g.setAttribute('role', 'button'); g.setAttribute('aria-label', 'Trade for ' + (sz === 1 ? 'the 1 whole tile' : DNAME[sz] + ' tiles'));
+        if (sz === 1) { var lab = $$('text', g); lab.forEach(function (t) { t.remove(); }); $$('line', g).forEach(function (t) { t.remove(); }); NS('text', { x: tx + w / 2, y: TY + RH / 2 + 6, 'text-anchor': 'middle', 'font-size': 15, 'font-weight': 900, fill: '#0E1C42', text: '1 whole', 'pointer-events': 'none' }, g); }
+        var ghost = null, y0 = MY;
+        drag(g, svg, function (pt) { if (!ghost) { ghost = ftile(svg, 0, 0, w, RH, sz, true); ghost.setAttribute('opacity', .8); ghost.style.pointerEvents = 'none'; } ghost.setAttribute('transform', 'translate(' + (pt.x - w / 2) + ',' + (pt.y - RH / 2) + ')'); },
+          function (pt) { if (ghost) ghost.remove(); ghost = null; if (pt && pt.y > y0 - 40 && pt.y < y0 + RH + 40) trade(sz); else if (pt) msg('Drop the tile on the measure.'); }, function () { trade(sz); });
+        g.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); trade(sz); } });
+        tx += w + 12;
+      });
+      report();
+    }
+    function trade(sz) {
+      if (busy) return; var c = cur(), n = cnt(c);
+      if (sz >= c) { msg('That tile is not bigger than the ' + DPL(c) + ' in the measure.'); pluck(HZ.D4); return; }
+      if (!fits(sz)) { var g = c / sz; msg('The ' + n + ' ' + DPL(c) + ' can\'t all go into groups of ' + g + '. ' + (n % g ? (n % g) + ' would be left over' : 'The rest wouldn\'t fit') + ', so ' + (sz === 1 ? 'the 1 whole tile' : DNAME[sz] + ' tiles') + ' won\'t fit.'); S.tried = sz; save(); pluck(HZ.D4); return; }
+      S.rows.push(sz); S.played = 0; save(); bowTone(HZ.G4, 0.5, 0, 0.14); draw();
+    }
+    // the hymn line in long notes, the quick line in short notes (a made-up tune; every row ends on the same beat)
+    var TUNE = [392.0, 440.0, 493.88, 523.25, 587.33, 523.25, 493.88, 440.0];
+    $('.tr-play', box).addEventListener('click', function () {
+      if (busy) return; busy = true; musicDuck(); var M = 2.4;
+      S.rows.forEach(function (sz, m) {
+        var n = cnt(sz); bowTone(130.81, M * 0.97, m * M, 0.12);
+        for (var i = 0; i < n; i++) bowTone(TUNE[(i * 16 / sz) % 8 | 0], M / sz, m * M + i * M / sz, 0.17);
+        setTimeout(function () { var y = rowY(m); playhead(svg, LX, BW, y - 4, y + RH + 4, M); }, m * M * 1000);
+      });
+      setTimeout(function () { busy = false; S.played = 1; save(); report(); }, S.rows.length * M * 1000 + 150);
+    });
+    $('.tr-clear', box).addEventListener('click', function () { S.rows = [d]; S.played = 0; S.tried = 0; save(); draw(); });
+    onWidth(box, draw);
+    function report() {
+      var c = cur(), n = cnt(c), stuck = !SZ.some(fits);
+      SZ.forEach(function (sz) { if (S.rows.indexOf(sz) > -1) flag(box, P + 't' + sz); });
+      if (S.rows.length > 1) flag(box, P + 'traded'); if (c === 1) flag(box, P + 'whole'); if (stuck) flag(box, P + 'simple'); if (stuck && S.played) flag(box, P + 'play');
+      if (c === 1 && k === d) msg('One tile fills the whole measure: ' + d + ' ' + DNAME[d] + 's = 1 whole. Fewer notes, longer notes.' + (S.played ? '' : ' Press ▶ Play every row.'), true);
+      else if (stuck) msg('Now the measure has ' + nm(c, n) + '. No bigger tile fits: ' + n + ' ' + (n === 1 ? DNAME[c] : DPL(c)) + ' can\'t all go into equal groups. That is the simplest form.' + (S.played ? '' : ' Press ▶ Play every row.'), true);
+      else if (S.rows.length > 1) msg('Traded! Now the measure has ' + nm(c, n) + '. Same length as before, fewer tiles.', true);
+      else msg('The measure has ' + n + ' ' + DNAME[d] + 's' + (k < d ? ' played and a rest' : '') + '.');
+    }
+    document.addEventListener('sb:step', report); draw();
   };
 
   $$('[data-mod]').forEach(function (b) { var f = MODS[b.dataset.mod]; if (f) try { f(b); } catch (e) { console.error('model', b.dataset.mod, e); } });

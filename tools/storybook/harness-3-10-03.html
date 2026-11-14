@@ -1,0 +1,118 @@
+<!DOCTYPE html><html><head><meta charset="utf-8">
+<!-- 3.10.03 Learn video: "Fewer, Longer Notes". Frames rendered by render.js from timeline-3-10-03.json (Scribe word times). -->
+<style>
+html,body{margin:0;width:1280px;height:720px;overflow:hidden;background:#FBF6EA;font-family:Nunito,Arial,sans-serif}
+#st{position:absolute;inset:0}
+.cap{position:absolute;left:90px;right:90px;bottom:22px;min-height:52px;background:rgba(14,28,66,.88);color:#fff;border-radius:14px;padding:10px 20px;font-size:26px;font-weight:800;line-height:1.3;text-align:center}
+.cap:empty{display:none}
+.hd{position:absolute;left:40px;top:22px;font-family:'Cormorant Garamond',Georgia,serif;font-size:32px;font-weight:700;color:#3A2A12}
+.hd small{display:block;font-family:Nunito,Arial;font-size:15px;letter-spacing:.18em;color:#B8892E;font-weight:900}
+.book{position:absolute;inset:0;display:none;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 40%,#FFF8E6,#EFE2C6)}
+.book.on{display:flex}
+.bk{display:grid;grid-template-columns:420px 420px;background:#E8DCC0;padding:12px;border-radius:10px;box-shadow:0 20px 40px rgba(60,40,10,.25)}
+.pg{background:#FFFBF1;height:380px;padding:24px;box-sizing:border-box}
+.pg img{width:100%;height:290px;object-fit:cover;border:8px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.2);box-sizing:border-box}
+.pg.r{display:flex;flex-direction:column;justify-content:center}
+.ch{font-family:Georgia,serif;letter-spacing:.2em;color:#B8892E;font-weight:700;font-size:16px}
+.tt{font-family:'Cormorant Garamond',Georgia,serif;font-size:40px;font-weight:700;color:#3A2A12;line-height:1.05;margin:8px 0}
+.q{font-size:22px;font-weight:800;color:#0E1C42;margin-top:10px}
+.owl{position:absolute;width:140px;right:28px;bottom:150px}
+</style></head><body>
+<div id="st"><svg id="sv" width="1280" height="720" viewBox="0 0 1280 720"></svg>
+<div class="hd"><small>CHAPTER 10 · BACH'S MEASURES</small>Fewer, Longer Notes</div></div>
+<div class="book" id="book"><div class="bk"><div class="pg"><img src="../repo/images/storybook/sb-thomas-plate.jpg" style="object-fit:contain;background:#FBF6EA"></div><div class="pg r"><div class="ch">CHAPTER 10 · LESSON 3</div><div class="tt" id="btt">Simplifying Fractions</div><div class="q" id="bq">How can you find a simpler name for a fraction by dividing?</div></div></div><img class="owl" src="../repo/images/storybook/opti-owl.png"></div>
+<div class="cap" id="cap"></div>
+<script>
+var TL=null, NSV='http://www.w3.org/2000/svg';
+function S(tag,a,p){var e=document.createElementNS(NSV,tag);for(var k in a){if(k==='text')e.textContent=a[k];else e.setAttribute(k,a[k]);}(p||sv).appendChild(e);return e;}
+var NAVY='#1F2A44', NV='#0E1C42', CT='#117E7E', CW='#5B6478', C9='#2E7D6B', C2='#6B46C1', C4='#8A6A00', C8='#A23B8C', C5='#4E7A1A', C10='#117E7E', C3='#B05E09', C6='#2F6FDE', C12='#5B6478', C20='#3949AB', RED='#B03A2E', OK='#1E7A4C', GOLD='#B8892E', NO='#B23A2E', X0=200, W=880;
+function sec(s){return TL.secs[s];}
+var M='vid-math';
+function wt(re,n,from){var Wd=sec(M).words,c=0;for(var i=from||0;i<Wd.length;i++){if(re.test(Wd[i].w.replace(/[^\w'-]/g,''))){if(c===(n||0))return Wd[i].t;c++;}}return null;}
+function wi(re,n){var Wd=sec(M).words,c=0;for(var i=0;i<Wd.length;i++){if(re.test(Wd[i].w.replace(/[^\w'-]/g,''))){if(c===(n||0))return i;c++;}}return 0;}
+function ease(x){x=Math.max(0,Math.min(1,x));return x<.5?2*x*x:1-Math.pow(-2*x+2,2)/2;}
+function caption(t){var all=[];['vid-open',M,'vid-close'].forEach(function(s){var Wd=sec(s).words,cur=[];Wd.forEach(function(w,i){cur.push(w);if(/[.!?:]$/.test(w.w)||i===Wd.length-1){all.push(cur);cur=[];}});});
+  for(var i=0;i<all.length;i++){var a=all[i][0].t,b=all[i][all[i].length-1].e+0.35;if(t>=a-0.1&&t<=b)return all[i].map(function(w){return w.w;}).join(' ');}return '';}
+var K={};
+function fr(x,y,nu,de,size,col){col=col||NAVY;S('text',{x:x,y:y,'text-anchor':'middle','font-size':size,'font-weight':900,fill:col,text:String(nu)});S('line',{x1:x-size*0.6,y1:y+size*0.25,x2:x+size*0.6,y2:y+size*0.25,stroke:col,'stroke-width':Math.max(2,size/12)});S('text',{x:x,y:y+size*1.1,'text-anchor':'middle','font-size':size,'font-weight':900,fill:col,text:String(de)});}
+function cursor(x,y,press){var g=S('g',{transform:'translate('+x+','+y+')'});if(press)S('circle',{r:16,fill:'rgba(233,196,106,.55)'},g);S('path',{d:'M0 0 L0 30 L8 23 L14 36 L19 34 L13 21 L23 21 Z',fill:'#fff',stroke:'#111','stroke-width':2},g);}
+function strip(x,y,w,d,k,col,h,lab){h=h||56;var tw=w/d;for(var i=0;i<d;i++)S('rect',{x:x+i*tw+1,y:y,width:tw-2,height:h,rx:6,fill:i<k?col:'#fff',stroke:col,'stroke-width':2.5});
+  if(lab)S('text',{x:x-16,y:y+h/2+8,'text-anchor':'end','font-size':20,'font-weight':900,fill:col,text:lab});}
+function whole(x,y,w,h,txt){S('rect',{x:x+1,y:y,width:w-2,height:h,rx:6,fill:NV});S('text',{x:x+w/2,y:y+h/2+8,'text-anchor':'middle','font-size':22,'font-weight':900,fill:'#fff',text:txt||'1 whole'});}
+function setup(){
+  K.a=sec(M).start; K.close=sec('vid-close').start;
+  K.group=wt(/^group$/,0); K.every=wt(/^Every$/,0); K.count=wt(/^Count$/,0); K.five=wt(/^five$/,0);
+  K.d1=wt(/^Eight$/,1); K.d2=wt(/^Ten$/,0); K.eq1=wt(/^equals$/,0); K.line=wt(/^Line$/,0); K.same1=wt(/^length$/,0);
+  K.here2=wt(/^Here$/,1); K.sofia=wt(/^Sofia$/,0); K.gets1=wt(/^gets$/,0); K.again=wt(/^again$/,1); K.gets2=wt(/^gets$/,1); K.small=wt(/^Small$/,0);
+  K.alex=wt(/^Alex$/,0); K.s16=wt(/^Sixteen$/,0); K.tw=wt(/^Twenty$/,0); K.big=wt(/^big$/,0); K.both=wt(/^Both$/,0);
+  K.can=wt(/^Can$/,0); K.only=wt(/^Only$/,0); K.so=wt(/^So$/,0); K.fewest=wt(/^fewest$/,0);
+  K.watch=wt(/^Watch$/,0); K.divb=wt(/^Divide$/,0); K.ifonly=wt(/^If$/,0); K.take=wt(/^take$/,0);
+}
+function grow(t,t0,y,h){var p=ease((t-t0)/0.7);if(p<1)S('rect',{x:196,y:y-4,width:650,height:(h||50)+10,fill:'#FBF6EA',opacity:1-p});}
+function counts(x,y,k,d,col){S('text',{x:x,y:y+22,'font-size':19,'font-weight':900,fill:col||NAVY,text:k+' shaded'});S('text',{x:x,y:y+44,'font-size':19,'font-weight':900,fill:col||NAVY,text:d+' in all'});}
+// pairs of parts get a thick group line between every g parts; p 0..1 grows them in
+function groups(x,y,w,d,g,h,p){var tw=w/d;for(var q=g;q<d;q+=g){var gx=x+q*tw;S('line',{x1:gx,y1:y+h/2-(h/2+10)*p,x2:gx,y2:y+h/2+(h/2+10)*p,stroke:NV,'stroke-width':7,'stroke-linecap':'round'});}}
+function divArrows(cx,cy,a,b,n,c,d,tTop,tBot,colA,colB,sz){var t=window.__t;sz=sz||64;
+  fr(cx-230,cy-20,a,b,sz,colA||NAVY);fr(cx+230,cy-20,c,d,sz,colB||OK);
+  if(t>=tTop){S('path',{d:'M'+(cx-170)+' '+(cy-30)+' Q '+cx+' '+(cy-120)+' '+(cx+170)+' '+(cy-30),fill:'none',stroke:NV,'stroke-width':5});S('path',{d:'M'+(cx+170)+' '+(cy-30)+' l-20 -4 l8 -16 z',fill:NV});
+    S('rect',{x:cx-42,y:cy-150,width:84,height:44,rx:12,fill:'#E3F4EA',stroke:OK,'stroke-width':3});S('text',{x:cx,y:cy-119,'text-anchor':'middle','font-size':28,'font-weight':900,fill:OK,text:'÷'+n});}
+  if(t>=tBot){S('path',{d:'M'+(cx-170)+' '+(cy+70)+' Q '+cx+' '+(cy+160)+' '+(cx+170)+' '+(cy+70),fill:'none',stroke:NV,'stroke-width':5});S('path',{d:'M'+(cx+170)+' '+(cy+70)+' l-20 4 l8 16 z',fill:NV});
+    S('rect',{x:cx-42,y:cy+146,width:84,height:44,rx:12,fill:'#E3F4EA',stroke:OK,'stroke-width':3});S('text',{x:cx,y:cy+177,'text-anchor':'middle','font-size':28,'font-weight':900,fill:OK,text:'÷'+n});}
+  S('text',{x:cx,y:cy+38,'text-anchor':'middle','font-size':56,'font-weight':900,fill:NAVY,text:'='});}
+function chip(x,y,txt,col){S('rect',{x:x,y:y,width:txt.length*13+30,height:40,rx:20,fill:'#fff',stroke:col,'stroke-width':3});S('text',{x:x+15,y:y+27,'font-size':22,'font-weight':900,fill:col,text:txt});}
+function render(t){
+  window.__t=t;var book=document.getElementById('book'),cap=document.getElementById('cap');
+  cap.textContent=caption(t);
+  var inOpen=t<K.a-0.3, inClose=t>=K.close-0.3;
+  book.classList.toggle('on',inOpen||inClose);
+  if(inClose){document.getElementById('btt').textContent='Your turn';document.getElementById('bq').textContent='Fewer, longer notes. Divide both numbers by the same number.';}
+  sv.innerHTML='';if(inOpen||inClose)return;
+  // ── scene 1: eight-tenths, grouped in twos, is four-fifths
+  if(t<K.here2-0.3){
+    whole(200,100,640,44,'1 whole measure');
+    strip(200,180,640,10,8,C10,56,'tenths');
+    if(t>=K.count-0.4)counts(870,184,8,10,C10);
+    if(t>=K.group-0.1){groups(200,180,640,10,2,56,ease((t-K.group+0.1)/0.8));}
+    if(t>=K.every-0.1&&t<K.count){var p=ease((t-K.every)/1.2);S('rect',{x:200+2,y:174,width:128*p-4,height:68,rx:10,fill:'none',stroke:GOLD,'stroke-width':5});}
+    if(t>=K.count-0.2){strip(200,290,640,5,4,C5,56,'fifths');grow(t,K.count-0.2,290,56);counts(870,294,4,5,C5);}
+    if(t>=K.d1-0.2)S('text',{x:420,y:410,'text-anchor':'middle','font-size':36,'font-weight':900,fill:C10,text:'8 ÷ 2 = 4'});
+    if(t>=K.d2-0.2)S('text',{x:860,y:410,'text-anchor':'middle','font-size':36,'font-weight':900,fill:C5,text:'10 ÷ 2 = 5'});
+    if(t>=K.eq1-0.3){S('rect',{x:390,y:430,width:500,height:128,rx:18,fill:'#FFFDF8',stroke:'#E4D8BF','stroke-width':2});fr(520,474,8,10,40,C10);S('text',{x:640,y:520,'text-anchor':'middle','font-size':52,'font-weight':900,fill:NAVY,text:'='});fr(760,474,4,5,40,C5);}
+    if(t>=K.line-0.2){var gx=200+640*0.8;S('line',{x1:gx,y1:168,x2:gx,y2:358,stroke:GOLD,'stroke-width':5,'stroke-dasharray':'10 7'});}
+    if(t>=K.same1-0.3)S('text',{x:1040,y:270,'text-anchor':'middle','font-size':24,'font-weight':900,fill:OK,text:'same length'});
+  }
+  // ── scene 2: sixteen-twentieths, two ways
+  else if(t<K.can-0.3){
+    S('text',{x:60,y:118,'font-size':28,'font-weight':900,fill:NAVY,text:'Two ways to simplify'});
+    strip(200,150,560,20,16,C20,44,'20ths');fr(820,150,16,20,26,C20);
+    if(t>=K.sofia-0.3){chip(60,220,'Sofia: small steps',C6);}
+    if(t>=K.gets1-0.4){strip(200,280,560,10,8,C10,44,'10ths');grow(t,K.gets1-0.4,280,44);fr(820,280,8,10,26,C10);S('text',{x:900,y:310,'font-size':24,'font-weight':900,fill:C6,text:'÷2'});}
+    if(t>=K.gets2-0.4){strip(200,350,560,5,4,C5,44,'5ths');grow(t,K.gets2-0.4,350,44);fr(820,350,4,5,26,C5);S('text',{x:900,y:380,'font-size':24,'font-weight':900,fill:C6,text:'÷2'});}
+    if(t>=K.alex-0.3){chip(60,440,'Alex: one big step',RED);}
+    if(t>=K.s16-0.2)S('text',{x:400,y:530,'text-anchor':'middle','font-size':34,'font-weight':900,fill:RED,text:'16 ÷ 4 = 4'});
+    if(t>=K.tw-0.2)S('text',{x:760,y:530,'text-anchor':'middle','font-size':34,'font-weight':900,fill:RED,text:'20 ÷ 4 = 5'});
+    if(t>=K.big-0.3){S('path',{d:'M 990 160 Q 1120 270 990 380',fill:'none',stroke:RED,'stroke-width':5});S('path',{d:'M 990 380 l 6 -20 l 14 12 z',fill:RED});S('rect',{x:1060,y:248,width:74,height:44,rx:12,fill:'#FBE7E4',stroke:RED,'stroke-width':3});S('text',{x:1097,y:279,'text-anchor':'middle','font-size':26,'font-weight':900,fill:RED,text:'÷4'});}
+    if(t>=K.both-0.3){var gx=200+560*0.8;S('line',{x1:gx,y1:140,x2:gx,y2:404,stroke:GOLD,'stroke-width':5,'stroke-dasharray':'10 7'});S('text',{x:gx,y:430,'text-anchor':'middle','font-size':22,'font-weight':900,fill:OK,text:'same place'});}
+  }
+  // ── scene 3: simplest form
+  else if(t<K.watch-0.3){
+    fr(300,200,4,5,90,C5);
+    var tags=[2,3,4],x=520;
+    tags.forEach(function(n,i){var t0=K.can+0.4+i*0.55;if(t<t0)return;S('rect',{x:x+i*150,y:150,width:110,height:60,rx:14,fill:'#fff',stroke:NAVY,'stroke-width':3});S('text',{x:x+i*150+55,y:192,'text-anchor':'middle','font-size':32,'font-weight':900,fill:NAVY,text:'÷'+n});
+      if(t>=t0+0.3){S('line',{x1:x+i*150+10,y1:160,x2:x+i*150+100,y2:200,stroke:NO,'stroke-width':4,opacity:.7});S('line',{x1:x+i*150+100,y1:160,x2:x+i*150+10,y2:200,stroke:NO,'stroke-width':4,opacity:.7});}});
+    if(t>=K.only-0.2){S('rect',{x:520,y:240,width:410,height:60,rx:14,fill:'#E3F4EA',stroke:OK,'stroke-width':3});S('text',{x:725,y:281,'text-anchor':'middle','font-size':28,'font-weight':900,fill:OK,text:'Only 1 divides 4 and 5.'});}
+    if(t>=K.so-0.2){S('rect',{x:340,y:350,width:600,height:64,rx:32,fill:GOLD});S('text',{x:640,y:394,'text-anchor':'middle','font-size':34,'font-weight':900,fill:'#fff',text:'simplest form'});}
+    if(t>=K.fewest-0.4){strip(200,450,880,5,4,C5,60);S('text',{x:640,y:550,'text-anchor':'middle','font-size':24,'font-weight':900,fill:C5,text:'the fewest, biggest parts'});}
+  }
+  // ── scene 4: watch out
+  else {
+    S('rect',{x:140,y:100,width:1000,height:62,rx:14,fill:'#FBE7E4',stroke:NO,'stroke-width':3});S('text',{x:640,y:142,'text-anchor':'middle','font-size':32,'font-weight':900,fill:NO,text:'Watch out!'});
+    var gx=640+440*0.8;
+    if(t>=K.divb-0.3){S('text',{x:120,y:232,'font-size':30,'font-weight':900,fill:OK,text:'✓ ÷2 on both:'});fr(395,204,8,10,28,C10);S('text',{x:445,y:234,'font-size':32,'font-weight':900,fill:NAVY,text:'='});fr(495,204,4,5,28,C5);strip(640,196,440,5,4,C5,40);}
+    if(t>=K.ifonly-0.3){S('text',{x:120,y:342,'font-size':30,'font-weight':900,fill:NO,text:'✗ ÷2 on top only:'});fr(440,314,4,10,28,NO);strip(640,306,440,10,4,C10,40);S('text',{x:1100,y:336,'font-size':22,'font-weight':900,fill:NO,text:'too short!'});}
+    if(t>=K.take-0.3){S('text',{x:120,y:452,'font-size':30,'font-weight':900,fill:NO,text:'✗ take away 1:'});fr(400,424,7,9,28,NO);strip(640,416,440,9,7,C9,40);S('text',{x:1100,y:446,'font-size':22,'font-weight':900,fill:NO,text:'short!'});}
+    if(t>=K.divb-0.3)S('line',{x1:gx,y1:186,x2:gx,y2:(t>=K.take-0.3?466:t>=K.ifonly-0.3?356:246),stroke:GOLD,'stroke-width':4,'stroke-dasharray':'8 6'});
+  }
+}
+window.init=function(tl){TL=tl;setup();};
+</script></body></html>
