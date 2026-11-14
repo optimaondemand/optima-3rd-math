@@ -1266,8 +1266,10 @@
     function check(r) { if (S.c[r] === KK[r]) { S.ok[r] = 1; pluck(98 / (KK[r] / NN[r])); } save(); draw(); report(r); }
     function report(r) {
       flag(box, 'top', !!S.ok[0]); if (S.ok[0]) flag(box, 'top'); flag(box, 'bot', !!S.ok[1]); if (S.ok[1]) flag(box, 'bot');
+      if (S.ok[0] && S.ok[1] && KK[0] * NN[1] === KK[1] * NN[0]) { flag(box, 'dots'); msg('Both dots land on the same spot. ' + frac(KK[0], NN[0]) + ' and ' + frac(KK[1], NN[1]) + ' name the same amount.', true); return; }
       if (S.ok[0] && S.ok[1]) { var big = NN[0] < NN[1] ? 0 : 1; flag(box, 'dots'); msg('A one-' + DNAME[NN[big]] + ' jump is longer than a one-' + DNAME[NN[1 - big]] + ' jump. ' + KK[0] + ' long jumps go farther than ' + KK[0] + ' short jumps.', true); return; }
       var c = r == null ? -1 : r;
+      if (c === 1 && box.dataset.same && !S.ok[1] && S.c[1]) { msg('The ' + rows[1].toLowerCase() + ' dot is <b>' + S.c[1] + '</b> jump' + (S.c[1] > 1 ? 's' : '') + ' from 0. It is not under the top dot yet.'); return; }
       if (c > -1 && !S.ok[c] && S.c[c]) { msg('The ' + rows[c].toLowerCase() + ' dot is <b>' + S.c[c] + '</b> jump' + (S.c[c] > 1 ? 's' : '') + ' from 0. That is not ' + frac(KK[c], NN[c]) + '.'); return; }
       msg(S.ok[0] ? 'The top dot is on ' + frac(KK[0], NN[0]) + '. ✓' : '');
     }
@@ -1366,6 +1368,232 @@
     });
     if (climb) notes(); report();
     onWidth(box, function () { R.forEach(draw); notes(); });
+  };
+
+  /* ═══ Unit 10 (Bach's measures): tiles that sound for their length ═══
+     A measure is 1 whole. Every tile plays a bowed-string tone that lasts exactly as long as the tile is long.
+     beat (3.10.01 Think) · fixstrip · group · split · measure                                                  */
+  var MEAS = 3.2;   // seconds for one whole measure
+  function bowTone(freq, dur, when, vol) {
+    var c = ac(); if (!c) return; var t = c.currentTime + (when || 0), o = c.createOscillator(), o2 = c.createOscillator(), f = c.createBiquadFilter(), g = c.createGain();
+    o.type = 'sawtooth'; o.frequency.value = freq; o2.type = 'triangle'; o2.frequency.value = freq * 1.003; f.type = 'lowpass'; f.frequency.value = Math.min(4000, freq * 3.2);
+    var v = vol || 0.22, end = t + Math.max(0.08, dur - 0.04);
+    g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(v, t + 0.03); g.gain.setValueAtTime(v * 0.85, end - 0.02); g.gain.linearRampToValueAtTime(0, end + 0.05);
+    o.connect(f); o2.connect(f); f.connect(g); g.connect(VOL); o.start(t); o2.start(t); o.stop(end + 0.08); o2.stop(end + 0.08);
+  }
+  var HZ = { C4: 261.63, D4: 293.66, E4: 329.63, F4: 349.23, G4: 392, A4: 440, B4: 493.88, C5: 523.25, D5: 587.33, E5: 659.25, F5: 698.46, G5: 783.99, A5: 880 };
+  // one tile, drawn like the Math Tools fraction tiles (white label on a shaded tile)
+  function ftile(p, x, y, w, h, dd, on, cls) {
+    var g = NS('g', { class: cls || 'tile' }, p), f = w >= 44 ? 15 : 12, c = on ? '#fff' : '#0E1C42';
+    NS('rect', { x: x + 1, y: y, width: Math.max(2, w - 2), height: h, rx: 6, fill: on ? DCOL[dd] : '#fff', stroke: DCOL[dd], 'stroke-width': 2 }, g);
+    if (w >= 22) { var lg = NS('g', { 'pointer-events': 'none' }, g); NS('text', { x: x + w / 2, y: y + h / 2 - 4, 'text-anchor': 'middle', 'font-size': f, 'font-weight': 900, fill: c, text: '1' }, lg); NS('line', { x1: x + w / 2 - 8, y1: y + h / 2 + 1, x2: x + w / 2 + 8, y2: y + h / 2 + 1, stroke: c, 'stroke-width': 2 }, lg); NS('text', { x: x + w / 2, y: y + h / 2 + 4 + f, 'text-anchor': 'middle', 'font-size': f, 'font-weight': 900, fill: c, text: String(dd) }, lg); }
+    return g;
+  }
+  function wholeBar(svg, x, y, w, h, label) { NS('rect', { x: x + 1, y: y, width: w - 2, height: h, rx: 6, fill: '#0E1C42' }, svg); NS('text', { x: x + w / 2, y: y + h / 2 + 7, 'text-anchor': 'middle', 'font-size': 19, 'font-weight': 900, fill: '#fff', text: label || '1 whole', 'pointer-events': 'none' }, svg); }
+  function playhead(svg, x0, w, y0, y1, secs) {
+    var ln = NS('line', { x1: x0, y1: y0, x2: x0, y2: y1, stroke: '#C9A227', 'stroke-width': 4, 'pointer-events': 'none' }, svg), t0 = performance.now();
+    (function step() { var p = (performance.now() - t0) / 1000 / secs; if (p >= 1 || !ln.isConnected) { ln.remove(); return; } ln.setAttribute('x1', x0 + p * w); ln.setAttribute('x2', x0 + p * w); requestAnimationFrame(step); })();
+  }
+
+  /* beat: two players share one measure. data-a = top row (comma list of denominators, e.g. "3,3"), data-d = tray tile.
+     Flags: build (bottom row ends on the same beat as the top row), play (pressed Play with both rows ending together) */
+  MODS.beat = function (box) {
+    var A = box.dataset.a.split(',').map(Number), d = +box.dataset.d, name = box.dataset.name || 'beat', S = mstate(name, { n: 0, played: 0 });
+    var aLen = A.reduce(function (s, t) { return s + 1 / t; }, 0), need = Math.round(aLen * d), BW = 680, LX = 10, RH = 46, Y0 = 8, YA = Y0 + RH + 34, YB = YA + RH + 34, TY = YB + RH + 50;
+    box.innerHTML = '<div class="sb-stage sb-tiles"><svg viewBox="0 0 700 ' + (TY + RH + 10) + '" role="group" aria-label="One measure shared by two players"></svg></div><div class="sb-row" style="margin-top:6px"><button type="button" class="sb-btn bt-play">▶ Play both rows</button></div><div class="sb-readout" aria-live="polite"></div>';
+    var svg = $('svg', box), out = $('.sb-readout', box), pb = $('.bt-play', box), busy = false;
+    function msg(h, ok) { out.innerHTML = ok ? '<span style="color:#1E7A4C">' + h + '</span>' : h; }
+    function draw() {
+      svg.innerHTML = ''; wholeBar(svg, LX, Y0, BW, RH, '1 whole measure');
+      NS('text', { x: LX, y: YA - 8, 'font-size': 14, 'font-weight': 900, fill: '#5B6478', text: 'TOP PLAYER' }, svg);
+      var x = LX; A.forEach(function (t) { ftile(svg, x, YA, BW / t, RH, t, true, 'tile bt-a'); x += BW / t; });
+      NS('text', { x: LX, y: YB - 8, 'font-size': 14, 'font-weight': 900, fill: '#5B6478', text: 'BOTTOM PLAYER · tap a tile to take it away' }, svg);
+      NS('rect', { x: LX, y: YB, width: BW, height: RH, rx: 6, fill: '#F6F7FB', stroke: '#AEB6CC', 'stroke-width': 2, 'stroke-dasharray': '6 5' }, svg);
+      NS('line', { x1: LX + aLen * BW, y1: YA - 4, x2: LX + aLen * BW, y2: YB + RH + 4, stroke: '#C9A227', 'stroke-width': 2, 'stroke-dasharray': '5 5', 'pointer-events': 'none' }, svg);
+      x = LX;
+      for (var i = 0; i < S.n; i++) { (function () { var t = ftile(svg, x, YB, BW / d, RH, d, true, 'tile bt-b'); t.setAttribute('tabindex', 0); t.setAttribute('role', 'button'); t.setAttribute('aria-label', 'Take away a one-' + DNAME[d] + ' tile'); function rm() { S.n = Math.max(0, S.n - 1); S.played = 0; save(); draw(); } t.addEventListener('click', rm); t.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); rm(); } }); })(); x += BW / d; }
+      NS('text', { x: LX, y: TY - 10, 'font-size': 13, 'font-weight': 900, fill: '#5B6478', text: 'TRAY · drag or tap to add a one-' + DNAME[d] + ' tile' }, svg);
+      var tr = ftile(svg, LX, TY, BW / d, RH, d, false, 'tile bt-tray'); tr.setAttribute('tabindex', 0); tr.setAttribute('role', 'button'); tr.setAttribute('aria-label', 'Add a one-' + DNAME[d] + ' tile');
+      var ghost = null;
+      drag(tr, svg, function (pt) { if (!ghost) { ghost = ftile(svg, 0, 0, BW / d, RH, d, true); ghost.setAttribute('opacity', .8); ghost.style.pointerEvents = 'none'; } ghost.setAttribute('transform', 'translate(' + (pt.x - BW / d / 2) + ',' + (pt.y - RH / 2) + ')'); },
+        function (pt) { if (ghost) ghost.remove(); ghost = null; if (pt && pt.y > YB - 30 && pt.y < YB + RH + 30) add(); }, add);
+      tr.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); add(); } });
+      report();
+    }
+    function add() { if (S.n >= d) { msg('The row is as long as 1 whole measure. It can\'t hold more.'); return; } S.n++; S.played = 0; save(); pluck(HZ.G4); draw(); }
+    function report() {
+      var ok = S.n === need; flag(box, 'build', ok); if (ok) flag(box, 'build');
+      if (S.played && ok) { flag(box, 'play'); msg('Both rows ended on the same beat. The bottom row has <b>' + S.n + '</b> one-' + DNAME[d] + ' tiles.', true); return; }
+      if (!S.n) msg('The bottom row is empty.');
+      else if (S.n < need) msg('Bottom row: <b>' + S.n + '</b> one-' + DNAME[d] + ' tile' + (S.n > 1 ? 's' : '') + '. It ends before the gold line.');
+      else if (S.n > need) msg('Bottom row: <b>' + S.n + '</b> tiles. It ends after the gold line. Take some away.');
+      else msg('Bottom row: <b>' + S.n + '</b> one-' + DNAME[d] + ' tiles. It ends right on the gold line. Press ▶ Play both rows to hear it.', true);
+    }
+    pb.addEventListener('click', function () {
+      if (busy) return; busy = true; musicDuck(); var x = 0;
+      A.forEach(function (t, i) { bowTone(i % 2 ? HZ.D5 : HZ.G4, MEAS / t, x); x += MEAS / t; });
+      for (var i = 0; i < S.n; i++) bowTone(i % 2 ? HZ.B4 : HZ.D4, MEAS / d, i * MEAS / d, 0.16);
+      playhead(svg, LX, BW, YA - 6, YB + RH + 6, MEAS);
+      setTimeout(function () { busy = false; S.played = 1; save(); report(); if (S.n !== need) msg(S.n < need ? 'The bottom player stopped first. Add more tiles.' : 'The bottom player kept going after the top player stopped. Take some tiles away.'); }, MEAS * 1000 + 150);
+    });
+    document.addEventListener('sb:step', report); draw();
+  };
+
+  /* fixstrip: two strips should show the same amount, but the bottom one is the wrong length and cut unevenly.
+     data-ta / data-da (top: shaded / parts), data-tb / data-db (bottom). Flags: whole (stretched to 1 whole), equal (re-cut evenly) */
+  MODS.fixstrip = function (box) {
+    var ta = +box.dataset.ta, da = +box.dataset.da, tb = +box.dataset.tb, db = +box.dataset.db, name = box.dataset.name || 'fixstrip', S = mstate(name, { whole: 0, equal: 0 });
+    var BW = 680, LX = 10, RH = 46, Y0 = 8, YA = Y0 + RH + 34, YB = YA + RH + 40, SHORT = 0.78;
+    // uneven cut points (fractions of the bar) for the "before" strip
+    var UNEVEN = [0.07, 0.19, 0.27, 0.41, 0.5, 0.58, 0.71, 0.83, 0.9].slice(0, db - 1);
+    box.innerHTML = '<div class="sb-stage sb-tiles"><svg viewBox="0 0 700 ' + (YB + RH + 40) + '" role="group" aria-label="Two strips to compare"></svg></div><div class="sb-row" style="margin-top:6px"><button type="button" class="sb-btn fx-cut">✂ Re-cut into ' + db + ' equal parts</button></div><div class="sb-readout" aria-live="polite"></div>';
+    var svg = $('svg', box), out = $('.sb-readout', box), cut = $('.fx-cut', box);
+    function msg(h, ok) { out.innerHTML = ok ? '<span style="color:#1E7A4C">' + h + '</span>' : h; }
+    function strip(y, len, cuts, shaded, dd) {
+      var pts = [0].concat(cuts, [1]);
+      for (var i = 0; i + 1 < pts.length; i++) { var x = LX + pts[i] * len, w = (pts[i + 1] - pts[i]) * len; NS('rect', { x: x + 1, y: y, width: Math.max(2, w - 2), height: RH, rx: 5, fill: i < shaded ? DCOL[dd] : '#fff', stroke: DCOL[dd], 'stroke-width': 2, 'pointer-events': 'none' }, svg); }
+    }
+    function draw() {
+      svg.innerHTML = ''; wholeBar(svg, LX, Y0, BW, RH);
+      NS('line', { x1: LX + BW, y1: Y0, x2: LX + BW, y2: YB + RH + 12, stroke: '#0E1C42', 'stroke-width': 2, 'stroke-dasharray': '6 5', 'pointer-events': 'none' }, svg);
+      NS('text', { x: LX, y: YA - 8, 'font-size': 14, 'font-weight': 900, fill: DCOL[da], text: ta + ' of ' + da + ' equal parts' }, svg);
+      var ec = []; for (var q = 1; q < da; q++) ec.push(q / da); strip(YA, BW, ec, ta, da);
+      var len = S.whole ? BW : BW * SHORT, cuts = []; if (S.equal) for (q = 1; q < db; q++) cuts.push(q / db); else cuts = UNEVEN;
+      NS('text', { x: LX, y: YB - 8, 'font-size': 14, 'font-weight': 900, fill: DCOL[db], text: tb + ' of ' + db + ' parts' + (S.equal ? ' (equal)' : ' (not equal!)') }, svg);
+      strip(YB, len, cuts, tb, db);
+      if (!S.whole) {
+        var h = NS('g', { class: 'fx-end', tabindex: 0, role: 'button', 'aria-label': 'Stretch the bottom strip to 1 whole' }, svg);
+        NS('rect', { x: LX + len - 10, y: YB - 8, width: 22, height: RH + 16, rx: 6, fill: '#C9A227', stroke: '#6B4A12', 'stroke-width': 2 }, h);
+        NS('text', { x: LX + len + 1, y: YB + RH / 2 + 6, 'text-anchor': 'middle', 'font-size': 16, 'font-weight': 900, fill: '#3A2A12', text: '↔', 'pointer-events': 'none' }, h);
+        var stretch = function () { S.whole = 1; save(); pluck(HZ.G4); draw(); };
+        drag(h, svg, function (pt) { h.setAttribute('transform', 'translate(' + Math.max(0, Math.min(BW - len, pt.x - (LX + len))) + ',0)'); }, function (pt) { if (pt && pt.x > LX + BW - 40) stretch(); else draw(); }, stretch);
+        h.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); stretch(); } });
+      }
+      if (S.whole && S.equal) { var gx = LX + ta / da * BW; NS('line', { x1: gx, y1: YA - 4, x2: gx, y2: YB + RH + 4, stroke: '#C9A227', 'stroke-width': 3, 'stroke-dasharray': '5 5', 'pointer-events': 'none' }, svg); }
+      cut.disabled = !S.whole || !!S.equal;
+      report();
+    }
+    cut.addEventListener('click', function () { if (!S.whole) { msg('First make the bottom strip 1 whole: drag its gold end to the dashed line.'); return; } S.equal = 1; save(); pluck(HZ.D5); draw(); });
+    function report() {
+      flag(box, 'whole', !!S.whole); if (S.whole) flag(box, 'whole'); flag(box, 'equal', !!S.equal); if (S.equal) flag(box, 'equal');
+      if (S.whole && S.equal) msg('Same whole, equal parts. Now the shaded parts end at the same place.', true);
+      else if (S.whole) msg('Now the strip is 1 whole long. But its parts are still not equal.');
+      else msg('The bottom strip is <b>shorter</b> than 1 whole, and its parts are <b>not equal</b>.');
+    }
+    document.addEventListener('sb:step', report); draw();
+  };
+
+  /* group: a strip of tenths (data-d) with some shaded (data-sh). Tap cut marks to make them thick group lines.
+     data-size = parts per group. Flag: group (thick lines exactly every data-size parts) */
+  MODS.group = function (box) {
+    var d = +box.dataset.d, sh = +box.dataset.sh, k = +box.dataset.size, name = box.dataset.name || 'group', S = mstate(name, { g: [] });
+    var BW = 680, LX = 10, RH = 56, Y0 = 8, YS = Y0 + RH + 40, big = d / k;
+    box.innerHTML = '<div class="sb-stage sb-tiles"><svg viewBox="0 0 700 ' + (YS + RH + 70) + '" role="group" aria-label="A strip in ' + DNAME[d] + 's. Tap the lines to group the parts."></svg></div><div class="sb-row" style="margin-top:6px"><button type="button" class="sb-btn ghost gp-clear">↺ Clear my lines</button></div><div class="sb-readout" aria-live="polite"></div>';
+    var svg = $('svg', box), out = $('.sb-readout', box);
+    function msg(h, ok) { out.innerHTML = ok ? '<span style="color:#1E7A4C">' + h + '</span>' : h; }
+    function good() { if (S.g.length !== big - 1) return false; for (var q = 1; q < big; q++) if (S.g.indexOf(q * k) < 0) return false; return true; }
+    function draw() {
+      svg.innerHTML = ''; wholeBar(svg, LX, Y0, BW, 46);
+      var w = BW / d, ok = good();
+      for (var i = 0; i < d; i++) { var on = i < sh; NS('rect', { x: LX + i * w + 1, y: YS, width: w - 2, height: RH, rx: 4, fill: on ? DCOL[d] : '#fff', stroke: DCOL[d], 'stroke-width': 2, 'pointer-events': 'none' }, svg); }
+      for (var q = 1; q < d; q++) { (function (q) {
+        var x = LX + q * w, thick = S.g.indexOf(q) > -1, gl = NS('g', { class: 'gp-line', tabindex: 0, role: 'button', 'aria-pressed': thick, 'aria-label': 'Line after part ' + q + (thick ? ', group line' : '') }, svg);
+        NS('rect', { x: x - 12, y: YS - 16, width: 24, height: RH + 32, fill: 'transparent' }, gl);
+        NS('line', { x1: x, y1: YS - (thick ? 12 : 0), x2: x, y2: YS + RH + (thick ? 12 : 0), stroke: thick ? '#0E1C42' : 'transparent', 'stroke-width': thick ? 7 : 0, 'stroke-linecap': 'round' }, gl);
+        if (!thick) NS('circle', { cx: x, cy: YS - 12, r: 5, fill: '#C9A227' }, gl);
+        function tog() { var j = S.g.indexOf(q); if (j > -1) S.g.splice(j, 1); else S.g.push(q); save(); pluck(thick ? HZ.D4 : HZ.G4); draw(); }
+        gl.addEventListener('click', tog); gl.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); tog(); } });
+      })(q); }
+      if (ok) for (var b = 0; b < big; b++) { var cx = LX + (b + .5) * BW / big, c = b < sh / k ? '#1E7A4C' : '#5B6478'; NS('text', { x: cx, y: YS + RH + 30, 'text-anchor': 'middle', 'font-size': 16, 'font-weight': 900, fill: c, text: '1', 'pointer-events': 'none' }, svg); NS('line', { x1: cx - 9, y1: YS + RH + 35, x2: cx + 9, y2: YS + RH + 35, stroke: c, 'stroke-width': 2 }, svg); NS('text', { x: cx, y: YS + RH + 54, 'text-anchor': 'middle', 'font-size': 16, 'font-weight': 900, fill: c, text: String(big), 'pointer-events': 'none' }, svg); }
+      report();
+    }
+    $('.gp-clear', box).addEventListener('click', function () { S.g = []; save(); draw(); });
+    function report() {
+      var ok = good(); flag(box, 'group', ok); if (ok) flag(box, 'group');
+      if (ok) { msg('Every group holds ' + k + ' ' + DNAME[d] + 's. Now there are <b>' + big + '</b> bigger equal parts.', true); return; }
+      var gs = S.g.slice().sort(function (a, b) { return a - b; }), last = 0, bad = false; gs.concat([d]).forEach(function (p) { if (p - last !== k) bad = true; last = p; });
+      if (!S.g.length) msg('No group lines yet.');
+      else if (bad) msg('The groups are not the same size. Each group must hold <b>' + k + '</b> ' + DNAME[d] + 's.');
+      else msg('Keep going.');
+    }
+    document.addEventListener('sb:step', report); draw();
+  };
+
+  /* split: a strip of data-d parts with data-sh shaded. Buttons split every piece in 2 or 3. Flag: split (split in data-by) */
+  MODS.split = function (box) {
+    var d = +box.dataset.d, sh = +box.dataset.sh, by = +box.dataset.by || 2, name = box.dataset.name || 'split', S = mstate(name, { m: 1 });
+    var BW = 680, LX = 10, RH = 56, Y0 = 8, YS = Y0 + RH + 30;
+    box.innerHTML = '<div class="sb-stage sb-tiles"><svg viewBox="0 0 700 ' + (YS + RH + 14) + '" role="group" aria-label="A strip to split"></svg></div><div class="sb-row" style="margin-top:6px"><button type="button" class="sb-btn sp-2">✂ Split every piece in 2</button><button type="button" class="sb-btn sp-3">✂ Split every piece in 3</button><button type="button" class="sb-btn ghost sp-0">↺ Start over</button></div><div class="sb-readout" aria-live="polite"></div>';
+    var svg = $('svg', box), out = $('.sb-readout', box);
+    function msg(h, ok) { out.innerHTML = ok ? '<span style="color:#1E7A4C">' + h + '</span>' : h; }
+    function draw() {
+      svg.innerHTML = ''; wholeBar(svg, LX, Y0, BW, 46);
+      var n = d * S.m, w = BW / n, on = sh * S.m, col = DCOL[n] || DCOL[d];
+      for (var i = 0; i < n; i++) NS('rect', { x: LX + i * w + 1, y: YS, width: w - 2, height: RH, rx: 4, fill: i < on ? col : '#fff', stroke: col, 'stroke-width': 2, 'pointer-events': 'none' }, svg);
+      for (var j = 1; j < d; j++) NS('line', { x1: LX + j * BW / d, y1: YS - 6, x2: LX + j * BW / d, y2: YS + RH + 6, stroke: '#0E1C42', 'stroke-width': S.m > 1 ? 3 : 0, 'pointer-events': 'none' }, svg);
+      $('.sp-2', box).disabled = $('.sp-3', box).disabled = S.m > 1;
+      report();
+    }
+    function cut(m) { S.m = m; save(); pluck(HZ.D5); draw(); }
+    $('.sp-2', box).addEventListener('click', function () { cut(2); }); $('.sp-3', box).addEventListener('click', function () { cut(3); }); $('.sp-0', box).addEventListener('click', function () { cut(1); });
+    function report() {
+      var n = d * S.m, ok = S.m === by; flag(box, 'split', ok); if (ok) flag(box, 'split');
+      if (S.m === 1) msg('<b>' + sh + '</b> of <b>' + d + '</b> equal parts are shaded.');
+      else if (ok) msg('Every piece is split in ' + by + '. Now there are <b>' + n + '</b> equal parts. The shaded part is the same length as before.', true);
+      else msg('Every piece is split in ' + S.m + '. That makes ' + n + ' equal parts. Press ↺ Start over and split every piece in ' + by + '.');
+    }
+    document.addEventListener('sb:step', report); draw();
+  };
+
+  /* measure: fill one measure with half, quarter and eighth notes (tiles), then play it over the start of
+     Bach's Prelude in C (BWV 846), made in the page. Flags: full (exactly 1 whole), play (played a full measure) */
+  MODS.measure = function (box) {
+    var TR = [2, 4, 8], NOTE = { 2: 'half note', 4: 'quarter note', 8: 'eighth note' }, name = box.dataset.name || 'measure', S = mstate(name, { bt: [], played: 0 });
+    var BW = 680, LX = 10, RH = 46, Y0 = 8, YB = Y0 + RH + 34, TY = YB + RH + 54;
+    box.innerHTML = '<div class="sb-stage sb-tiles"><svg viewBox="0 0 700 ' + (TY + RH + 34) + '" role="group" aria-label="Fill one measure of music"></svg></div><div class="sb-row" style="margin-top:6px"><button type="button" class="sb-btn ms-play">▶ Play my measure with Bach</button><button type="button" class="sb-btn ghost ms-clear">↺ Empty the measure</button></div><div class="sb-readout" aria-live="polite"></div>';
+    var svg = $('svg', box), out = $('.sb-readout', box), busy = false;
+    function sum() { return S.bt.reduce(function (s, t) { return s + 1 / t; }, 0); }
+    function msg(h, ok) { out.innerHTML = ok ? '<span style="color:#1E7A4C">' + h + '</span>' : h; }
+    function draw() {
+      svg.innerHTML = ''; wholeBar(svg, LX, Y0, BW, RH, '1 whole measure');
+      NS('text', { x: LX, y: YB - 8, 'font-size': 14, 'font-weight': 900, fill: '#5B6478', text: 'MY MEASURE · tap a tile to take it away' }, svg);
+      NS('rect', { x: LX, y: YB, width: BW, height: RH, rx: 6, fill: '#F6F7FB', stroke: '#AEB6CC', 'stroke-width': 2, 'stroke-dasharray': '6 5' }, svg);
+      var x = LX; S.bt.forEach(function (t, i) { var g = ftile(svg, x, YB, BW / t, RH, t, true, 'tile ms-t'); g.dataset.i = i; g.setAttribute('tabindex', 0); g.setAttribute('role', 'button'); g.setAttribute('aria-label', 'Take away this ' + NOTE[t]); function rm() { S.bt.splice(i, 1); S.played = 0; save(); draw(); } g.addEventListener('click', rm); g.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); rm(); } }); x += BW / t; });
+      NS('text', { x: LX, y: TY - 10, 'font-size': 13, 'font-weight': 900, fill: '#5B6478', text: 'TRAY · drag or tap a note tile to add it' }, svg);
+      var tx = LX;
+      TR.forEach(function (t) {
+        var w = BW / t, g = ftile(svg, tx, TY, w, RH, t, false, 'tile ms-tray'); g.setAttribute('tabindex', 0); g.setAttribute('role', 'button'); g.setAttribute('aria-label', 'Add a ' + NOTE[t] + ', one-' + DNAME[t] + ' of the measure');
+        NS('text', { x: tx + w / 2, y: TY + RH + 20, 'text-anchor': 'middle', 'font-size': 13, 'font-weight': 800, fill: '#3A2A12', text: NOTE[t], 'pointer-events': 'none' }, svg);
+        var ghost = null;
+        drag(g, svg, function (pt) { if (!ghost) { ghost = ftile(svg, 0, 0, w, RH, t, true); ghost.setAttribute('opacity', .8); ghost.style.pointerEvents = 'none'; } ghost.setAttribute('transform', 'translate(' + (pt.x - w / 2) + ',' + (pt.y - RH / 2) + ')'); },
+          function (pt) { if (ghost) ghost.remove(); ghost = null; if (pt && pt.y > YB - 30 && pt.y < YB + RH + 30) add(t); }, function () { add(t); });
+        g.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); add(t); } });
+        tx += w + 12;
+      });
+      report();
+    }
+    function add(t) { if (sum() + 1 / t > 1 + 1e-9) { msg('That note won\'t fit. The measure is only 1 whole long.'); return; } S.bt.push(t); S.played = 0; save(); bowTone(HZ.G4, MEAS / t * 0.5, 0, 0.14); draw(); }
+    $('.ms-clear', box).addEventListener('click', function () { S.bt = []; S.played = 0; save(); draw(); });
+    // two measures of the Prelude in C: C major, then D minor over C (sixteenth notes)
+    var BACH = [['C4', 'E4', 'G4', 'C5', 'E5', 'G4', 'C5', 'E5'], ['C4', 'D4', 'A4', 'D5', 'F5', 'A4', 'D5', 'F5']], MEL = [['E5', 'G5', 'C5', 'E5', 'G5', 'C5', 'E5', 'G5'], ['F5', 'A5', 'D5', 'F5', 'A5', 'D5', 'F5', 'A5']];
+    $('.ms-play', box).addEventListener('click', function () {
+      if (busy) return; if (Math.abs(sum() - 1) > 1e-9) { msg('Fill the measure first. It must be exactly 1 whole.'); return; }
+      busy = true; musicDuck(); var M = 2.4;
+      for (var m = 0; m < 2; m++) {
+        for (var s = 0; s < 16; s++) pluck(HZ[BACH[m][s % 8]], m * M + s * M / 16);
+        var x = 0; S.bt.forEach(function (t, i) { bowTone(HZ[MEL[m][i % 8]], M / t, m * M + x, 0.2); x += M / t; });
+      }
+      playhead(svg, LX, BW, YB - 6, YB + RH + 6, M); setTimeout(function () { playhead(svg, LX, BW, YB - 6, YB + RH + 6, M); }, M * 1000);
+      setTimeout(function () { busy = false; S.played = 1; save(); report(); }, 2 * M * 1000 + 150);
+    });
+    function report() {
+      var s = sum(), full = Math.abs(s - 1) < 1e-9; flag(box, 'full', full); if (full) flag(box, 'full');
+      if (full && S.played) { flag(box, 'play'); var c = {}; S.bt.forEach(function (t) { c[t] = (c[t] || 0) + 1; }); msg('Your measure: ' + Object.keys(c).map(function (t) { return c[t] + ' ' + NOTE[t] + (c[t] > 1 ? 's' : ''); }).join(', ') + '. It fills exactly 1 whole.' + (Object.keys(c).length < 2 ? ' Tip: for Problem 2, empty the measure and mix two kinds of notes.' : ''), true); return; }
+      if (!S.bt.length) msg('The measure is empty.');
+      else if (full) msg('The measure is full: exactly 1 whole. Press ▶ Play my measure with Bach.', true);
+      else msg('The measure is not full yet.');
+    }
+    document.addEventListener('sb:step', report); draw();
   };
 
   $$('[data-mod]').forEach(function (b) { var f = MODS[b.dataset.mod]; if (f) try { f(b); } catch (e) { console.error('model', b.dataset.mod, e); } });

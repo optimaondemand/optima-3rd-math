@@ -32,6 +32,8 @@ TOOLS = {
  'fbars-9-11': ('fbars', {"d": [9, 11], "lab": 1}, 'Fraction Tiles', 'Try a bar of ninths and a bar of elevenths. Shade 1 tile in each. Which tile is bigger?'),
  'fbars-5-10': ('fbars', {"d": [5, 10], "lab": 1}, 'Fraction Tiles', 'Try a bar of fifths and a bar of tenths. Shade the same number of tiles in each. Are they equal?'),
  'fbars-9-11-12': ('fbars', {"d": [9, 11, 12], "lab": 1}, 'Fraction Tiles', 'Try bars of ninths, elevenths and twelfths. Shade 1 tile in each and line them up from smallest to biggest.'),
+ 'fbars-3-12': ('fbars', {"d": [3, 12], "lab": 1}, 'Fraction Tiles', 'Try a bar of thirds and a bar of twelfths. Shade 2 thirds. How many twelfths reach the same place?'),
+ 'nl-12': NL(0, 1, 12) + ('Try the Number Line in twelfths. Count by twos: every 2 twelfths make 1 sixth.',),
  'fbars-7-12': ('fbars', {"d": [7, 12], "lab": 1}, 'Fraction Tiles', 'Try a bar of sevenths and a bar of twelfths. Shade the same number of tiles in each. Which reaches farther?'),
 }
 def enc(o): return base64.urlsafe_b64encode(json.dumps(o, separators=(',', ':')).encode()).decode().rstrip('=')
@@ -80,6 +82,16 @@ L = {
      {"t": "compare", "d": "To look at two numbers and find out which is greater, which is less, or if they are equal."},
      {"t": "least to greatest", "d": "In order from the smallest amount to the biggest amount."},
      GL_BASE[1], GL_BASE[5]]),
+ '3.10.01': dict(page='math-lesson-3-10-01-equivalent-fractions.html', title='Equivalent Fractions', video='g3math-10-01-learn',
+   glossary=[
+     {"t": "equivalent fractions", "d": "Fractions that name the same amount, like one-fifth and two-tenths. Equivalent sounds like equal.", "key": True},
+     {"t": "equivalent", "d": "Equal in amount. Same amount, new name.", "key": True},
+     {"t": "measure", "d": "In music, one measure is one whole. Notes of different lengths can fill it.", "key": True},
+     GL_BASE[1], GL_BASE[2], GL_BASE[3],
+     {"t": "one whole", "alt": ["1 whole"], "d": "All the equal parts together."},
+     {"t": "half note", "d": "A note that lasts for one-half of a measure."},
+     {"t": "quarter note", "d": "A note that lasts for one-fourth of a measure."},
+     {"t": "eighth note", "d": "A note that lasts for one-eighth of a measure."}]),
 }
 def tool(m):
     t, st, name, tip = TOOLS[m.group(1)]
@@ -112,7 +124,7 @@ def build(lid):
         h = html.replace('{{LEARNVIDEO}}', LV)
         if inline:
             h = re.sub(r'\{\{IMG:([^}]+)\}\}', lambda m: b64(R + 'repo/images/storybook/' + m.group(1), 'image/png' if m.group(1).endswith('png') else 'image/jpeg'), h)
-            for vf, mt in (('assets/video/%s.mp4' % v, 'video/mp4'), ('assets/video/%s.jpg' % v, 'image/jpeg')):
+            for vf, mt in [(f, 'video/mp4' if f.endswith('mp4') else 'image/jpeg') for f in sorted(set(re.findall(r'assets/video/[\w.-]+\.(?:mp4|jpg)', h)))]:
                 if os.path.exists(R + 'repo/' + vf): h = h.replace(vf, b64(R + 'repo/' + vf, mt))
             h = h.replace('{{CSS}}', '<style>' + css + '</style>')
             aud = {}

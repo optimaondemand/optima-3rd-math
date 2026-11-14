@@ -1,0 +1,113 @@
+<!DOCTYPE html><html><head><meta charset="utf-8">
+<!-- 3.10.01 Learn video: "Same Amount, New Name". Frames rendered by render.js from timeline-3-10-01.json (Scribe word times). -->
+<style>
+html,body{margin:0;width:1280px;height:720px;overflow:hidden;background:#FBF6EA;font-family:Nunito,Arial,sans-serif}
+#st{position:absolute;inset:0}
+.cap{position:absolute;left:90px;right:90px;bottom:22px;min-height:52px;background:rgba(14,28,66,.88);color:#fff;border-radius:14px;padding:10px 20px;font-size:26px;font-weight:800;line-height:1.3;text-align:center}
+.cap:empty{display:none}
+.hd{position:absolute;left:40px;top:22px;font-family:'Cormorant Garamond',Georgia,serif;font-size:32px;font-weight:700;color:#3A2A12}
+.hd small{display:block;font-family:Nunito,Arial;font-size:15px;letter-spacing:.18em;color:#B8892E;font-weight:900}
+.book{position:absolute;inset:0;display:none;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 40%,#FFF8E6,#EFE2C6)}
+.book.on{display:flex}
+.bk{display:grid;grid-template-columns:420px 420px;background:#E8DCC0;padding:12px;border-radius:10px;box-shadow:0 20px 40px rgba(60,40,10,.25)}
+.pg{background:#FFFBF1;height:380px;padding:24px;box-sizing:border-box}
+.pg img{width:100%;height:290px;object-fit:cover;border:8px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.2);box-sizing:border-box}
+.pg.r{display:flex;flex-direction:column;justify-content:center}
+.ch{font-family:Georgia,serif;letter-spacing:.2em;color:#B8892E;font-weight:700;font-size:16px}
+.tt{font-family:'Cormorant Garamond',Georgia,serif;font-size:40px;font-weight:700;color:#3A2A12;line-height:1.05;margin:8px 0}
+.q{font-size:22px;font-weight:800;color:#0E1C42;margin-top:10px}
+.owl{position:absolute;width:140px;right:28px;bottom:150px}
+</style></head><body>
+<div id="st"><svg id="sv" width="1280" height="720" viewBox="0 0 1280 720"></svg>
+<div class="hd"><small>CHAPTER 10 · BACH'S MEASURES</small>Same Amount, New Name</div></div>
+<div class="book" id="book"><div class="bk"><div class="pg"><img src="../repo/images/storybook/sb-bach-plate.jpg" style="object-position:50% 20%"></div><div class="pg r"><div class="ch">CHAPTER 10 · LESSON 1</div><div class="tt" id="btt">Equivalent Fractions</div><div class="q" id="bq">How can two fractions with different numbers name the same amount?</div></div></div><img class="owl" src="../repo/images/storybook/opti-owl.png"></div>
+<div class="cap" id="cap"></div>
+<script>
+var TL=null, NSV='http://www.w3.org/2000/svg';
+function S(tag,a,p){var e=document.createElementNS(NSV,tag);for(var k in a){if(k==='text')e.textContent=a[k];else e.setAttribute(k,a[k]);}(p||sv).appendChild(e);return e;}
+var NAVY='#1F2A44', NV='#0E1C42', CT='#117E7E', CW='#5B6478', C9='#2E7D6B', C2='#6B46C1', C4='#8A6A00', C8='#A23B8C', C5='#4E7A1A', C10='#117E7E', OK='#1E7A4C', GOLD='#B8892E', NO='#B23A2E', X0=200, W=880;
+function sec(s){return TL.secs[s];}
+var M='vid-math';
+function wt(re,n,from){var Wd=sec(M).words,c=0;for(var i=from||0;i<Wd.length;i++){if(re.test(Wd[i].w.replace(/[^\w'-]/g,''))){if(c===(n||0))return Wd[i].t;c++;}}return null;}
+function wi(re,n){var Wd=sec(M).words,c=0;for(var i=0;i<Wd.length;i++){if(re.test(Wd[i].w.replace(/[^\w'-]/g,''))){if(c===(n||0))return i;c++;}}return 0;}
+function ease(x){x=Math.max(0,Math.min(1,x));return x<.5?2*x*x:1-Math.pow(-2*x+2,2)/2;}
+function caption(t){var all=[];['vid-open',M,'vid-close'].forEach(function(s){var Wd=sec(s).words,cur=[];Wd.forEach(function(w,i){cur.push(w);if(/[.!?:]$/.test(w.w)||i===Wd.length-1){all.push(cur);cur=[];}});});
+  for(var i=0;i<all.length;i++){var a=all[i][0].t,b=all[i][all[i].length-1].e+0.35;if(t>=a-0.1&&t<=b)return all[i].map(function(w){return w.w;}).join(' ');}return '';}
+var K={};
+function setup(){
+  K.a=sec(M).start; K.close=sec('vid-close').start;
+  K.measure=wt(/^measure$/,0); K.wn=wt(/^note$/,0); K.cut=wt(/^Cut$/,0); K.half1=wt(/^one-half$/i,0); K.shade=wt(/^shade$/,0); K.halfnote=wt(/^note$/,1);
+  K.cut2=wt(/^cut$/,0); K.four=wt(/^four$/,0); K.tf=wt(/^two-fourths$/i,0); K.quarter=wt(/^quarter$/,0);
+  K.cut3=wt(/^Cut$/,1); K.eight=wt(/^Eight$/,0); K.fe=wt(/^Four-eighths$/i,0); K.look=wt(/^Look$/,0); K.never=wt(/^never$/,0);
+  K.oh2=wt(/^One-half$/i,1); K.equiv=wt(/^equivalent$/i,0); K.sounds=wt(/^sounds$/); K.value=wt(/^value$/);
+  K.check=wt(/^check$/); K.halves=wt(/^halves$/); K.fourths=wt(/^fourths$/); K.eighths=wt(/^eighths$/); K.oh3=wt(/^One-half$/i,2); K.land=wt(/^land$/); K.spot=wt(/^spot$/);
+  K.other=wt(/^other$/); K.bar=wt(/^bar$/); K.ten=wt(/^ten$/); K.group=wt(/^Group$/); K.five=wt(/^five$/,0); K.tt=wt(/^Two-tenths$/i,0); K.fifth=wt(/^one-fifth$/i,0);
+  K.watch=wt(/^Watch$/); K.split=wt(/^split$/); K.wholeS=wt(/^whole$/,3); K.then=wt(/^Then$/);
+}
+function fr(x,y,nu,de,size,col){col=col||NAVY;S('text',{x:x,y:y,'text-anchor':'middle','font-size':size,'font-weight':900,fill:col,text:String(nu)});S('line',{x1:x-size*0.6,y1:y+size*0.25,x2:x+size*0.6,y2:y+size*0.25,stroke:col,'stroke-width':Math.max(2,size/12)});S('text',{x:x,y:y+size*1.1,'text-anchor':'middle','font-size':size,'font-weight':900,fill:col,text:String(de)});}
+function cursor(x,y,press){var g=S('g',{transform:'translate('+x+','+y+')'});if(press)S('circle',{r:16,fill:'rgba(233,196,106,.55)'},g);S('path',{d:'M0 0 L0 30 L8 23 L14 36 L19 34 L13 21 L23 21 Z',fill:'#fff',stroke:'#111','stroke-width':2},g);}
+// a strip of d equal parts, k shaded; p = 0..1 how far the new cut lines have grown in
+function strip(x,y,w,d,k,col,h,lab){h=h||56;var tw=w/d;for(var i=0;i<d;i++)S('rect',{x:x+i*tw+1,y:y,width:tw-2,height:h,rx:6,fill:i<k?col:'#fff',stroke:col,'stroke-width':2.5});
+  if(lab)S('text',{x:x-16,y:y+h/2+8,'text-anchor':'end','font-size':20,'font-weight':900,fill:col,text:lab});}
+function whole(x,y,w,h,txt){S('rect',{x:x+1,y:y,width:w-2,height:h,rx:6,fill:NV});S('text',{x:x+w/2,y:y+h/2+8,'text-anchor':'middle','font-size':22,'font-weight':900,fill:'#fff',text:txt||'1 whole'});}
+function nline(LY,d,k,col,t0,lab){S('line',{x1:X0-20,y1:LY,x2:X0+W+20,y2:LY,stroke:NAVY,'stroke-width':5,'stroke-linecap':'round'});
+  for(var q=0;q<=d;q++){var big=q===0||q===d;S('line',{x1:X0+q*W/d,y1:LY-(big?20:12),x2:X0+q*W/d,y2:LY+(big?20:12),stroke:big?NAVY:col,'stroke-width':big?5:3});}
+  S('text',{x:X0-44,y:LY+9,'text-anchor':'middle','font-size':26,'font-weight':900,fill:NAVY,text:'0'});S('text',{x:X0+W+44,y:LY+9,'text-anchor':'middle','font-size':26,'font-weight':900,fill:NAVY,text:'1'});
+  S('text',{x:X0,y:LY-30,'font-size':20,'font-weight':900,fill:col,text:lab});
+  var tt=window.__t;if(t0!=null&&tt>=t0){for(var i=0;i<k;i++){var p=ease((tt-t0-i*0.15)/0.3);if(p<=0)continue;var xa=X0+i*W/d,xb=X0+(i+1)*W/d,dd='M'+(xa+4)+' '+(LY-8)+' Q '+(xa+xb)/2+' '+(LY-46)+' '+(xb-4)+' '+(LY-8),pa=S('path',{d:dd,stroke:col,'stroke-width':4,fill:'none'});if(p<1){var L=pa.getTotalLength();pa.setAttribute('stroke-dasharray',L);pa.setAttribute('stroke-dashoffset',L*(1-p));}}
+    if(tt>=t0+k*0.15+0.3)S('circle',{cx:X0+k*W/d,cy:LY,r:13,fill:col,stroke:'#fff','stroke-width':4});}}
+function render(t){
+  window.__t=t;var book=document.getElementById('book'),cap=document.getElementById('cap');
+  cap.textContent=caption(t);
+  var inOpen=t<K.a-0.3, inClose=t>=K.close-0.3;
+  book.classList.toggle('on',inOpen||inClose);
+  if(inClose){document.getElementById('btt').textContent='Your turn';document.getElementById('bq').textContent='Same length, new name. Split or group every part the same way.';}
+  sv.innerHTML='';if(inOpen||inClose)return;
+  var cur=null,press=false,X=X0,R=[200,300,400];
+  // ── scene 1: one measure, split again and again
+  if(t<K.check-0.4){
+    whole(X,104,W,44,'1 whole measure');
+    var d1=1,k1=0;if(t>=K.cut-0.1)d1=2;if(t>=K.half1+0.6||t>=K.shade+0.3)k1=1;
+    if(t>=K.wn-0.3){strip(X,R[0],W,d1,k1,C2);S('text',{x:X+W+20,y:R[0]+36,'font-size':20,'font-weight':900,fill:C2,text:d1===1?'whole note':''});}
+    if(k1)fr(X+W+52,R[0]+22,1,2,24,C2);
+    if(t>=K.shade-0.2&&t<K.halfnote+0.4){cur=[X+W/4,R[0]+34];press=t>=K.shade+0.2;}
+    if(t>=K.halfnote-0.2&&t<K.cut2-0.2)S('text',{x:X+W/4,y:R[0]+90,'text-anchor':'middle','font-size':22,'font-weight':900,fill:C2,text:'a half note'});
+    if(t>=K.cut2-0.2){var p2=ease((t-K.cut2+0.2)/0.8);S('g',{});strip(X,R[1],W,4,t>=K.four?2:0,C4);if(p2<1)S('rect',{x:X,y:R[1]-4,width:W,height:66,fill:'#FBF6EA',opacity:1-p2});if(t>=K.tf-0.2)fr(X+W+52,R[1]+22,2,4,24,C4);}
+    if(t>=K.quarter-0.2&&t<K.cut3-0.2){S('text',{x:X+W/4,y:R[1]+90,'text-anchor':'middle','font-size':22,'font-weight':900,fill:C4,text:'2 quarter notes = 1 half note'});}
+    if(t>=K.cut3-0.2){var p3=ease((t-K.cut3+0.2)/0.8);strip(X,R[2],W,8,t>=K.eight+1?4:0,C8);if(p3<1)S('rect',{x:X,y:R[2]-4,width:W,height:66,fill:'#FBF6EA',opacity:1-p3});if(t>=K.fe-0.2)fr(X+W+52,R[2]+22,4,8,24,C8);}
+    if(t>=K.never-0.4){var gx=X+W/2;S('line',{x1:gx,y1:R[0]-12,x2:gx,y2:R[2]+70,stroke:GOLD,'stroke-width':5,'stroke-dasharray':'10 7'});S('text',{x:gx+12,y:R[2]+96,'font-size':22,'font-weight':900,fill:GOLD,text:'same length'});}
+    if(t>=K.oh2-0.2){S('rect',{x:140,y:520,width:1000,height:96,rx:18,fill:'#FFFDF8',stroke:'#E4D8BF','stroke-width':2});
+      fr(260,554,1,2,34,C2);S('text',{x:350,y:590,'text-anchor':'middle','font-size':48,'font-weight':900,fill:NAVY,text:'='});fr(440,554,2,4,34,C4);S('text',{x:530,y:590,'text-anchor':'middle','font-size':48,'font-weight':900,fill:NAVY,text:'='});fr(620,554,4,8,34,C8);
+      if(t>=K.equiv-0.2){S('text',{x:880,y:t>=K.sounds-0.2?560:580,'text-anchor':'middle','font-size':30,'font-weight':900,fill:OK,text:'equivalent fractions'});if(t>=K.sounds-0.2)S('text',{x:880,y:598,'text-anchor':'middle','font-size':24,'font-weight':800,fill:OK,text:'equivalent sounds like equal'});}}
+  }
+  // ── scene 2: number lines
+  else if(t<K.other-0.3){
+    S('text',{x:640,y:120,'text-anchor':'middle','font-size':30,'font-weight':900,fill:NAVY,text:'Check on number lines'});
+    if(t>=K.halves-0.3)nline(230,2,1,C2,K.oh3-0.4,'halves');
+    if(t>=K.fourths-0.3)nline(370,4,2,C4,K.oh3+0.5,'fourths');
+    if(t>=K.eighths-0.3)nline(510,8,4,C8,K.oh3+1.4,'eighths');
+    if(t>=K.land-0.2){var x=X0+W/2;S('line',{x1:x,y1:190,x2:x,y2:540,stroke:GOLD,'stroke-width':4,'stroke-dasharray':'10 7'});
+      fr(x-60,560,1,2,22,C2);fr(x,560,2,4,22,C4);fr(x+60,560,4,8,22,C8);}
+  }
+  // ── scene 3: group the tenths
+  else if(t<K.watch-0.3){
+    S('text',{x:640,y:120,'text-anchor':'middle','font-size':30,'font-weight':900,fill:NAVY,text:'The other way: group the parts'});
+    whole(X,160,W,44);
+    if(t>=K.bar-0.3){strip(X,240,W,10,t>=K.ten+1.4?2:0,C10);if(t>=K.ten+1.4)fr(X+W+52,262,2,10,24,C10);}
+    if(t>=K.group-0.1){var n=Math.min(4,Math.floor((t-K.group+0.1)/0.35)+1);for(var g=1;g<=n;g++){var gx=X+g*2*W/10;S('line',{x1:gx,y1:228,x2:gx,y2:308,stroke:NV,'stroke-width':8,'stroke-linecap':'round'});}
+      if(t<K.five)cur=[X+n*2*W/10,236],press=true;}
+    if(t>=K.five-0.2){for(var b=0;b<5;b++)fr(X+(b+0.5)*W/5,350,1,5,22,b<1&&t>=K.five+1.2?OK:'#8C93A6');}
+    if(t>=K.tt-0.2){S('rect',{x:390,y:450,width:500,height:110,rx:18,fill:'#FFFDF8',stroke:'#E4D8BF','stroke-width':2});fr(530,490,2,10,36,C10);S('text',{x:640,y:528,'text-anchor':'middle','font-size':50,'font-weight':900,fill:NAVY,text:'='});fr(750,490,1,5,36,C5);}
+  }
+  // ── scene 4: watch out
+  else {
+    S('rect',{x:140,y:100,width:1000,height:62,rx:14,fill:'#FBE7E4',stroke:NO,'stroke-width':3});S('text',{x:640,y:142,'text-anchor':'middle','font-size':32,'font-weight':900,fill:NO,text:'Watch out!'});
+    if(t>=K.split-0.6){S('text',{x:250,y:250,'font-size':34,'font-weight':900,fill:NAVY,text:'✓  Split or group every part the same way.'});
+      strip(250,280,780,6,0,'#8C93A6',40);[1/6,3/6,5/6].forEach(function(f){S('line',{x1:250+f*780,y1:276,x2:250+f*780,y2:324,stroke:NO,'stroke-width':5});});S('text',{x:1045,y:310,'font-size':34,'font-weight':900,fill:NO,text:'✗'});}
+    if(t>=K.wholeS-0.4){S('text',{x:250,y:400,'font-size':34,'font-weight':900,fill:NAVY,text:'✓  Keep the whole the same size.'});strip(250,420,780,4,2,C4,40);strip(250,470,560,8,4,C8,40);S('text',{x:830,y:500,'font-size':34,'font-weight':900,fill:NO,text:'✗'});}
+    if(t>=K.then-0.2){S('rect',{x:240,y:540,width:800,height:64,rx:14,fill:'#E3F4EA',stroke:OK,'stroke-width':3});S('text',{x:640,y:583,'text-anchor':'middle','font-size':28,'font-weight':900,fill:OK,text:'Then the shaded amount stays the same.'});}
+  }
+  if(cur)cursor(cur[0],cur[1],press);
+}
+window.init=function(tl){TL=tl;setup();};
+</script></body></html>

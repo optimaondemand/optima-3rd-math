@@ -155,10 +155,27 @@ SC['3.09.04']=function(t,K){
     var g=S('g',{opacity:q*(1-ramp(t,K.hear-0.3,0.4))});S('circle',{cx:x0+len+90,cy:(ya+yb)/2+29,r:44,fill:'#FFF4D6',stroke:GOLD,'stroke-width':4},g);S('text',{x:x0+len+90,y:(ya+yb)/2+50,'text-anchor':'middle','font-size':60,'font-weight':900,fill:'#6B4A12',text:'?'},g);}
   if(t>=K.hear-0.2){waves(x0+len+30,ya+29,t,K.hear,1,1);waves(x0+len+30,yb+29,t,K.hear+0.3,1,1);}
 };
+SC['3.10.01']=function(t,K){
+  var HD='CHAPTER 10 · BACH\'S MEASURES';
+  if(t<K.leip-0.3){head('','');owl(1000,380,150,t);book(t,0.1,'sb-bach-plate.jpg','CHAPTER 10 · LESSON 1',['Equivalent','Fractions'],'Bach\'s measures');return;}
+  if(t<K.meet-0.2){head(HD,'A new time and place');owl(1040,420,130,t);var o=fade(t,K.leip-0.3,K.meet-0.2);
+    label(640,300,'Leipzig, Germany',o*ramp(t,K.leip-0.3,0.4),NAVY,44);label(640,420,'about 300 years ago',o*ramp(t,K.ago-0.6,0.4),'#6B4A12',34);return;}
+  if(t<K.one-0.3){head(HD,'Meet Johann Sebastian Bach');owl(null);var o2=fade(t,K.meet-0.2,K.one-0.3);pic('sb-bach-haussmann.jpg',450,100,380,480,1+0.04*(t-K.meet),.5,.2,o2);
+    if(t>=K.wrote-0.2){var q=ramp(t,K.wrote-0.2,0.4)*o2;note(920,300,1.6,q);note(990,260,1.3,q);note(1050,320,1.4,q);}return;}
+  head(HD,t>=K.fill-0.2?'Many ways to fill one measure':'One measure is one whole');owl(null);
+  var x0=240,len=800,y0=170,p0=ramp(t,K.one-0.3,0.5);
+  var g=S('g',{opacity:p0});S('rect',{x:x0,y:y0,width:len,height:58,rx:8,fill:NAVY},g);S('text',{x:x0+len/2,y:y0+38,'text-anchor':'middle','font-size':28,'font-weight':900,fill:'#fff',text:'1 measure = 1 whole'},g);
+  if(t>=K.long-0.3){var a=ramp(t,K.long-0.3,0.5);S('rect',{x:x0,y:y0+100,width:len*a,height:58,rx:8,fill:'#6B46C1'});if(a>=1){S('text',{x:x0+len/2,y:y0+138,'text-anchor':'middle','font-size':26,'font-weight':900,fill:'#fff',text:'one long note'});}}
+  if(t>=K.shorter-0.3){var w=len/6;for(var i=0;i<6;i++){var b=ramp(t,K.shorter-0.3+i*0.22,0.3);if(b<=0)continue;S('rect',{x:x0+i*w+2,y:y0+200,width:(w-4)*b,height:58,rx:8,fill:'#117E7E'});note(x0+i*w+w/2-4,y0+252,0.7,b*0.0);}
+    if(t>=K.same-0.3)S('text',{x:x0+len/2,y:y0+300,'text-anchor':'middle','font-size':26,'font-weight':900,fill:'#117E7E',opacity:ramp(t,K.same-0.3,0.4),text:'shorter notes, same time'});}
+  if(t>=K.same-0.1){var e=ramp(t,K.same-0.1,0.4);S('line',{x1:x0+len,y1:y0-10,x2:x0+len,y2:y0+270,stroke:GOLD,'stroke-width':5,'stroke-dasharray':'10 7',opacity:e});}
+  if(t>=K.listen-0.3){waves(x0+len+40,y0+130,t,K.listen,1,1);}
+};
 var CUES={
  '3.09.01':function(){return{each:wt(/^Each$/),math:wt(/^math$/),today:wt(/^Today's$/),more:wt(/^more$/),meet:wt(/^Meet$/),numbers:wt(/^numbers$/),music:wt(/^music$/),stories:wt(/^Stories$/),string:wt(/^string$/),box:wt(/^box$/),then:wt(/^Then$/),listen:wt(/^listened$/),lets:wt(/^Let's$/)};},
  '3.09.02':function(){return{still:wt(/^We're$/),singing:wt(/^singing$/),last:wt(/^Last$/),cut:wt(/^cut$/),equal:wt(/^equal$/),today:wt(/^Today$/),turns:wt(/^turns$/),line:wt(/^line$/),every:wt(/^Every$/),spot:wt(/^spot$/)};},
  '3.09.03':function(){return{pyth:wt(/^Pythagoras$/),two:wt(/^two$/),length:wt(/^length$/),cut:wt(/^cut$/),number:wt(/^number$/),today:wt(/^Today$/),frac:wt(/^fraction$/),hear:wt(/^hear$/)};},
+ '3.10.01':function(){return{leip:wt(/^Leipzig$/),ago:wt(/^ago$/),meet:wt(/^Meet$/),wrote:wt(/^wrote$/),one:wt(/^one$/,0),fill:wt(/^fill$/),long:wt(/^long$/),shorter:wt(/^shorter$/),same:wt(/^same$/),listen:wt(/^listen$/)};},
  '3.09.04':function(){return{today:wt(/^Today$/),pipes:wt(/^pipes$/),when:wt(/^When$/),cut:wt(/^cut$/),eq:wt(/^equal$/),long:wt(/^long$/),short:wt(/^short$/),find:wt(/^find$/),num:wt(/^numerators$/),hear:wt(/^hear$/)};}
 };
 var K={};
