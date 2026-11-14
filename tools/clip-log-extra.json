@@ -110,5 +110,33 @@
  "g3m-3-10-06-vid-math": {
   "text": "Four apples plus three apples is seven apples. Fractions work the same way. Here is one whole, cut into ninths. Four-ninths are shaded. Now add three more ninths. Count on: five, six, seven. Four-ninths plus three-ninths equals seven-ninths. Ninths are the unit. We counted ninths, so the answer is still in ninths. Now let's take some away. Start at seven-ninths on the number line. Take away five-ninths. Hop back five: six, five, four, three, two. We land on two-ninths. Seven-ninths minus five-ninths equals two-ninths. Watch out! Don't add the denominators. The pieces are still ninths, so the denominator stays nine. And to take away from one whole, cut it into pieces first. One whole is nine-ninths.",
   "voice": "claire"
+ },
+ "g3m-3-10-07-vid-open": {
+  "text": "Hoo! Claire is going to show us how clue words tell you what to do. Listen for them.",
+  "voice": "opti"
+ },
+ "g3m-3-10-07-vid-close": {
+  "text": "Read the whole story, find the clue words, then do one step at a time. Now it's your turn!",
+  "voice": "opti"
+ },
+ "g3m-3-10-07-vid-math": {
+  "text": "Read the whole story first. Here's one. Lena has two-elevenths of a meter of ribbon. She adds seven-elevenths more. Then she cuts off four-elevenths. Adds more means add. Two-elevenths plus seven-elevenths is nine-elevenths. Cuts off means take away. Nine-elevenths minus four-elevenths is five-elevenths. Do one step at a time, and keep elevenths the unit. Now a different clue. One candle is six-sevenths of a foot tall. The other is one-seventh of a foot. How much taller is the first candle? How much more, or how much taller, means find the gap. Line up the two bars. Count the extra pieces: one, two, three, four, five. The first candle is five-sevenths of a foot taller. We found the gap, so we took away. We did not add. Watch out! Check if your answer can be simpler. One-twelfth plus one-twelfth is two-twelfths. Two twelfths fit exactly under one sixth. So the simplest form is one-sixth.",
+  "voice": "claire"
+ },
+ "g3m-3-10-07-words": {
+  "text": "Altogether. ... How much more. ... Clue word.",
+  "voice": "opti"
+ },
+ "g3m-word-altogether": {
+  "text": "Altogether.",
+  "voice": "opti"
+ },
+ "g3m-word-how-much-more": {
+  "text": "How much more.",
+  "voice": "opti"
+ },
+ "g3m-word-clue-word": {
+  "text": "Clue word.",
+  "voice": "opti"
  }
 }
