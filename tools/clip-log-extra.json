@@ -94,5 +94,21 @@
  "g3m-3-10-05-words": {
   "text": "Benchmark. ... One-half. ... Cantata.",
   "voice": "opti"
+ },
+ "g3m-3-10-06-vid-open": {
+  "text": "Hoo! Claire is going to show us how to add and take away fractions. Watch the size of the pieces.",
+  "voice": "opti"
+ },
+ "g3m-3-10-06-vid-close": {
+  "text": "Same-size pieces? Count them, and keep the unit. Now it's your turn.",
+  "voice": "opti"
+ },
+ "g3m-3-10-06-words": {
+  "text": "Unit. ... Sum. ... Difference. ... Copyist.",
+  "voice": "opti"
+ },
+ "g3m-3-10-06-vid-math": {
+  "text": "Four apples plus three apples is seven apples. Fractions work the same way. Here is one whole, cut into ninths. Four-ninths are shaded. Now add three more ninths. Count on: five, six, seven. Four-ninths plus three-ninths equals seven-ninths. Ninths are the unit. We counted ninths, so the answer is still in ninths. Now let's take some away. Start at seven-ninths on the number line. Take away five-ninths. Hop back five: six, five, four, three, two. We land on two-ninths. Seven-ninths minus five-ninths equals two-ninths. Watch out! Don't add the denominators. The pieces are still ninths, so the denominator stays nine. And to take away from one whole, cut it into pieces first. One whole is nine-ninths.",
+  "voice": "claire"
  }
 }

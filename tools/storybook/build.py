@@ -41,6 +41,12 @@ TOOLS = {
  'fbars-6-12': ('fbars', {"d": [6, 12], "lab": 1}, 'Fraction Tiles', 'Try a bar of sixths and a bar of twelfths. Shade some sixths, then find the twelfths that line up.'),
  'fbars-2-5-10': ('fbars', {"d": [2, 5, 10], "lab": 1}, 'Fraction Tiles', 'Try bars of halves, fifths and tenths. Shade 8 tenths. Which other bar can match it?'),
  'fbars-5-10c': ('fbars', {"d": [5, 10], "lab": 1}, 'Fraction Tiles', 'Line up a bar of fifths and a bar of tenths. How many tenths fit under one fifth?'),
+ 'fbars-16': ('fbars', {"bm": "build", "d": [16], "bt": [], "sh": {}}, 'Fraction Tiles', 'Fill a bar with one-sixteenth tiles. Shade 5, then shade 9 more, and count all the shaded tiles.'),
+ 'fbars-7': ('fbars', {"d": [7], "lab": 1}, 'Fraction Tiles', 'Try a bar of sevenths. Shade some tiles, then shade a few more. Count all the shaded sevenths.'),
+ 'fbars-9a': ('fbars', {"d": [9], "lab": 1}, 'Fraction Tiles', 'Try a bar of ninths. Shade 2 tiles, then 6 more. Are the tiles still ninths?'),
+ 'fbars-9c': ('fbars', {"bm": "build", "d": [9], "bt": [], "sh": {}}, 'Fraction Tiles', 'Fill a bar with ninth tiles until it is 1 whole. How many ninths make 1?'),
+ 'nl-12b': NL(0, 1, 12) + ('Try the Number Line in twelfths. Put a dot on a fraction, then hop back to take some away.',),
+ 'nl-11': NL(0, 1, 11) + ('Try the Number Line in elevenths. Start near 1 and hop back two times.',),
  'fbars-half': ('fbars', {"d": [2, 9, 10], "lab": 1}, 'Fraction Tiles', 'Line up a one-half tile with a bar of ninths and a bar of tenths. Which fractions stop before the half tile ends?'),
  'fbars-8': ('fbars', {"d": [8], "lab": 1}, 'Fraction Tiles', 'Try a bar of eighths. Each eighth is as long as 2 sixteenths.'),
  'fbars-9-10': ('fbars', {"d": [9, 10], "lab": 1}, 'Fraction Tiles', 'Try a bar of ninths and a bar of tenths. Shade 1 ninth and 2 tenths. Which reaches farther?'),
@@ -141,6 +147,17 @@ L = {
      {"t": "missing piece", "alt": ["missing pieces"], "d": "The part of a whole that is not shaded. A smaller missing piece means the fraction is closer to 1 whole."},
      {"t": "coffee house", "d": "A place where people met to drink coffee and talk. Bach's music group played in one in Leipzig."},
      {"t": "flute", "d": "A wind instrument you play by blowing across a hole. In Bach's time it was made of wood."}]),
+  '3.10.06': dict(page='math-lesson-3-10-06-adding-subtracting-fractions-part-1.html', title='Adding and Subtracting Fractions, Part 1', video='g3math-10-06-learn',
+   glossary=[
+     {"t": "unit", "d": "The size of the piece you are counting. In 5 sixteenths + 9 sixteenths, the unit is sixteenths.", "key": True},
+     {"t": "sum", "d": "The answer when you add. 4 ninths + 3 ninths: the sum is 7 ninths.", "key": True},
+     {"t": "difference", "d": "The answer when you subtract. 7 ninths − 5 ninths: the difference is 2 ninths.", "key": True},
+     {"t": "copyist", "alt": ["copyists"], "d": "A person who copies music by hand, note by note.", "key": True},
+     GL_BASE[2], GL_BASE[3],
+     {"t": "measure", "d": "In music, one measure is one whole. Notes of different lengths can fill it.", "key": True},
+     {"t": "sixteenth note", "alt": ["sixteenth notes"], "d": "A note that lasts for one-sixteenth of a measure. 16 of them fill one measure."},
+     {"t": "cantata", "d": "A piece of music for singers and players. Bach wrote many of them.", "key": True},
+     {"t": "musette", "d": "A happy dance with a low note that keeps sounding, like bagpipes."}]),
 }
 def tool(m):
     t, st, name, tip = TOOLS[m.group(1)]

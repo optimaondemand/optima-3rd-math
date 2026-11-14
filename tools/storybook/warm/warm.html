@@ -248,7 +248,36 @@ SC['3.10.05']=function(t,K){
     var tt=K[r[2]];if(t>=tt-0.3)label(x0+len+118,y+42,r[2]==='less'?'less than half':r[2]==='more'?'more than half':'almost full',ramp(t,tt-0.3,0.4),col,22);});
   if(t>=K.less-0.5){var e=ramp(t,K.less-0.5,0.4);S('line',{x1:hx,y1:140,x2:hx,y2:520,stroke:GOLD,'stroke-width':4,'stroke-dasharray':'10 7',opacity:e});label(hx,580,'halfway',e,GOLD,24);}
 };
+SC['3.10.06']=function(t,K){
+  var HD='CHAPTER 10 · BACH\'S MEASURES';
+  if(t<K.tomorrow-0.3){head('','');owl(1000,380,150,t);book(t,0.1,'sb-thomas-plate2.jpg','CHAPTER 10 · LESSON 6',['Adding and','Subtracting, Part 1'],'Copying night');return;}
+  if(t<K.but-0.3){head(HD,'St. Thomas School, Leipzig');owl(1060,440,120,t);var o=fade(t,K.tomorrow-0.3,K.but-0.3);pic('sb-thomas-1723.jpg',330,92,420,550,1+0.05*(t-K.tomorrow),.3,.6,o);
+    label(1000,220,'Bach\'s choir',o*ramp(t,K.choir-0.3,0.4),NAVY,30);label(1000,310,'Sunday: a new cantata',o*ramp(t,K.cantata-0.4,0.4),'#6B4A12',26);return;}
+  if(t<K.so-0.3){head(HD,'A part for everyone');owl(null);var o2=fade(t,K.but-0.3,K.so-0.3);
+    [['Soprano',K.but+0.1],['Alto',K.singer+0.3],['Violin',K.player],['Flute',K.player+0.3]].forEach(function(p,i){var e=o2*ramp(t,p[1]-0.3,0.5),x=150+i*250,y=170+(i%2)*30;var g=S('g',{opacity:e});
+      S('rect',{x:x,y:y,width:210,height:280,rx:6,fill:'#FFFBF1',stroke:'#D9C9A3','stroke-width':3,filter:'url(#sh)'},g);S('text',{x:x+105,y:y+40,'text-anchor':'middle','font-family':'Georgia,serif','font-size':26,'font-weight':700,fill:BROWN,text:p[0]},g);
+      for(var r=0;r<4;r++){for(var l=0;l<5;l++)S('line',{x1:x+18,y1:y+70+r*50+l*6,x2:x+192,y2:y+70+r*50+l*6,stroke:'#9C8A66','stroke-width':1.2},g);
+        var nn=Math.max(0,Math.min(8,Math.floor((t-p[1])*6)-r*8));for(var q=0;q<nn;q++){var nx=x+30+q*20,ny=y+70+r*50+((q*3+i+r)%5)*5;S('ellipse',{cx:nx,cy:ny,rx:5,ry:4,fill:BROWN},g);S('line',{x1:nx+5,y1:ny,x2:nx+5,y2:ny-18,stroke:BROWN,'stroke-width':1.5},g);}}});
+    label(640,560,'copied by hand',o2*ramp(t,K.copied-0.3,0.4),GOLD,32);return;}
+  if(t<K.every-0.3){head(HD,'Late into the night');owl(1060,440,120,t);var o3=fade(t,K.so-0.3,K.every-0.3);
+    S('rect',{x:120,y:110,width:840,height:480,rx:16,fill:'#1C2440',opacity:o3});
+    var fl=1+0.08*Math.sin(t*9);S('rect',{x:240,y:330,width:46,height:170,rx:6,fill:'#F3E6C4',opacity:o3});S('ellipse',{cx:263,cy:312,rx:14*fl,ry:30*fl,fill:'#F6C453',opacity:o3});S('ellipse',{cx:263,cy:318,rx:6,ry:14,fill:'#FFF3C4',opacity:o3});
+    S('circle',{cx:263,cy:312,r:120,fill:'#F6C453',opacity:o3*0.12});
+    S('rect',{x:380,y:300,width:470,height:220,rx:6,fill:'#FFFBF1',opacity:o3});for(var l=0;l<5;l++)S('line',{x1:400,y1:360+l*10,x2:830,y2:360+l*10,stroke:'#9C8A66','stroke-width':1.5,opacity:o3});
+    var qn=Math.max(0,Math.floor((t-K.so)*3));for(var q=0;q<Math.min(qn,14);q++){S('ellipse',{cx:420+q*29,cy:380-((q*2)%5)*5,rx:7,ry:5,fill:BROWN,opacity:o3});}
+    label(640,200,'Anna Magdalena Bach',o3*ramp(t,K.anna-0.3,0.4),'#6B4A12',30);label(640,560,'and Bach\'s students',o3*ramp(t,K.students-0.3,0.4),NAVY,26);return;}
+  head(HD,t>=K.today-0.3?'Add pieces, take some away':'One measure = 1 whole');owl(null);
+  var x0=200,len=880,y0=200,y1=300,q=ramp(t,K.every-0.4,0.5),w=len/16;
+  S('rect',{x:x0,y:y0,width:len,height:56,rx:6,fill:NAVY,opacity:q});S('text',{x:x0+len/2,y:y0+36,'text-anchor':'middle','font-size':24,'font-weight':900,fill:'#fff',opacity:q,text:'1 whole measure'});
+  S('rect',{x:x0,y:y1,width:len,height:70,rx:6,fill:'#F6F7FB',stroke:'#AEB6CC','stroke-width':2,'stroke-dasharray':'8 6',opacity:q});
+  var gone=t>=K.take-0.2?ramp(t,K.take-0.2,0.6):0;
+  for(var i=0;i<16;i++){var b=ramp(t,K.every+0.2+i*0.12,0.25);if(b<=0)continue;var out=i>=14?gone:0;S('rect',{x:x0+i*w+1,y:y1,width:w-3,height:70,rx:6,fill:'#6D4C41',opacity:q*b*(1-out)});if(out>0)S('text',{x:x0+i*w+w/2,y:y1+46,'text-anchor':'middle','font-size':30,'font-weight':900,fill:'#B23A2E',opacity:out,text:'✕'});}
+  if(t>=K.whole-0.3)label(640,470,'every measure adds up to 1 whole',ramp(t,K.whole-0.3,0.4),GREEN,28);
+  if(t>=K.add-0.3)label(470,580,'+ add pieces',ramp(t,K.add-0.3,0.4),NAVY,28);
+  if(t>=K.take-0.3)label(820,580,'− take some away',ramp(t,K.take-0.3,0.4),'#B23A2E',28);
+};
 var CUES={
+ '3.10.06':function(){return{tomorrow:wt(/^Tomorrow$/),choir:wt(/^choir$/),cantata:wt(/^cantata$/),but:wt(/^But$/),singer:wt(/^singer$/),player:wt(/^player$/),copied:wt(/^copied$/),so:wt(/^So$/),anna:wt(/^Anna$/),students:wt(/^students$/),every:wt(/^Every$/),whole:wt(/^whole$/),today:wt(/^Today$/),add:wt(/^add$/,1),take:wt(/^take$/)};},
  '3.09.01':function(){return{each:wt(/^Each$/),math:wt(/^math$/),today:wt(/^Today's$/),more:wt(/^more$/),meet:wt(/^Meet$/),numbers:wt(/^numbers$/),music:wt(/^music$/),stories:wt(/^Stories$/),string:wt(/^string$/),box:wt(/^box$/),then:wt(/^Then$/),listen:wt(/^listened$/),lets:wt(/^Let's$/)};},
  '3.09.02':function(){return{still:wt(/^We're$/),singing:wt(/^singing$/),last:wt(/^Last$/),cut:wt(/^cut$/),equal:wt(/^equal$/),today:wt(/^Today$/),turns:wt(/^turns$/),line:wt(/^line$/),every:wt(/^Every$/),spot:wt(/^spot$/)};},
  '3.09.03':function(){return{pyth:wt(/^Pythagoras$/),two:wt(/^two$/),length:wt(/^length$/),cut:wt(/^cut$/),number:wt(/^number$/),today:wt(/^Today$/),frac:wt(/^fraction$/),hear:wt(/^hear$/)};},

@@ -1,0 +1,107 @@
+<!DOCTYPE html><html><head><meta charset="utf-8">
+<!-- 3.10.06 Learn video: "Count the Pieces". Frames rendered by render.js from timeline-3-10-06.json (Scribe word times). -->
+<style>
+html,body{margin:0;width:1280px;height:720px;overflow:hidden;background:#FBF6EA;font-family:Nunito,Arial,sans-serif}
+#st{position:absolute;inset:0}
+.cap{position:absolute;left:90px;right:90px;bottom:22px;min-height:52px;background:rgba(14,28,66,.88);color:#fff;border-radius:14px;padding:10px 20px;font-size:26px;font-weight:800;line-height:1.3;text-align:center}
+.cap:empty{display:none}
+.hd{position:absolute;left:40px;top:22px;font-family:'Cormorant Garamond',Georgia,serif;font-size:32px;font-weight:700;color:#3A2A12}
+.hd small{display:block;font-family:Nunito,Arial;font-size:15px;letter-spacing:.18em;color:#B8892E;font-weight:900}
+.book{position:absolute;inset:0;display:none;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 40%,#FFF8E6,#EFE2C6)}
+.book.on{display:flex}
+.bk{display:grid;grid-template-columns:420px 420px;background:#E8DCC0;padding:12px;border-radius:10px;box-shadow:0 20px 40px rgba(60,40,10,.25)}
+.pg{background:#FFFBF1;height:380px;padding:24px;box-sizing:border-box}
+.pg img{width:100%;height:290px;object-fit:cover;border:8px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.2);box-sizing:border-box}
+.pg.r{display:flex;flex-direction:column;justify-content:center}
+.ch{font-family:Georgia,serif;letter-spacing:.2em;color:#B8892E;font-weight:700;font-size:16px}
+.tt{font-family:'Cormorant Garamond',Georgia,serif;font-size:40px;font-weight:700;color:#3A2A12;line-height:1.05;margin:8px 0}
+.q{font-size:22px;font-weight:800;color:#0E1C42;margin-top:10px}
+.owl{position:absolute;width:140px;right:28px;bottom:150px}
+</style></head><body>
+<div id="st"><svg id="sv" width="1280" height="720" viewBox="0 0 1280 720"></svg>
+<div class="hd"><small>CHAPTER 10 · BACH'S MEASURES</small>Count the Pieces</div></div>
+<div class="book" id="book"><div class="bk"><div class="pg"><img src="../repo/images/storybook/sb-thomas-plate2.jpg" style="object-fit:cover"></div><div class="pg r"><div class="ch">CHAPTER 10 · LESSON 6</div><div class="tt" id="btt">Adding and Subtracting Fractions, Part 1</div><div class="q" id="bq">What happens when you add or take away pieces that are the same size?</div></div></div><img class="owl" src="../repo/images/storybook/opti-owl.png"></div>
+<div class="cap" id="cap"></div>
+<script>
+var TL=null, NSV='http://www.w3.org/2000/svg';
+function S(tag,a,p){var e=document.createElementNS(NSV,tag);for(var k in a){if(k==='text')e.textContent=a[k];else e.setAttribute(k,a[k]);}(p||sv).appendChild(e);return e;}
+var NAVY='#1F2A44', NV='#0E1C42', CT='#117E7E', CW='#5B6478', C9='#2E7D6B', C2='#6B46C1', C4='#8A6A00', C8='#A23B8C', C5='#4E7A1A', C10='#117E7E', C3='#B05E09', C6='#2F6FDE', C12='#5B6478', C20='#3949AB', C11='#8C2F6E', RED='#B03A2E', OK='#1E7A4C', GOLD='#B8892E', NO='#B23A2E', X0=200, W=880;
+function sec(s){return TL.secs[s];}
+var M='vid-math';
+function wt(re,n,from){var Wd=sec(M).words,c=0;for(var i=from||0;i<Wd.length;i++){if(re.test(Wd[i].w.replace(/[^\w'-]/g,''))){if(c===(n||0))return Wd[i].t;c++;}}return null;}
+function wi(re,n){var Wd=sec(M).words,c=0;for(var i=0;i<Wd.length;i++){if(re.test(Wd[i].w.replace(/[^\w'-]/g,''))){if(c===(n||0))return i;c++;}}return 0;}
+function ease(x){x=Math.max(0,Math.min(1,x));return x<.5?2*x*x:1-Math.pow(-2*x+2,2)/2;}
+function caption(t){var all=[];['vid-open',M,'vid-close'].forEach(function(s){var Wd=sec(s).words,cur=[];Wd.forEach(function(w,i){cur.push(w);if(/[.!?:]$/.test(w.w)||i===Wd.length-1){all.push(cur);cur=[];}});});
+  for(var i=0;i<all.length;i++){var a=all[i][0].t,b=all[i][all[i].length-1].e+0.35;if(t>=a-0.1&&t<=b)return all[i].map(function(w){return w.w;}).join(' ');}return '';}
+var K={};
+function fr(x,y,nu,de,size,col){col=col||NAVY;S('text',{x:x,y:y,'text-anchor':'middle','font-size':size,'font-weight':900,fill:col,text:String(nu)});S('line',{x1:x-size*0.6,y1:y+size*0.25,x2:x+size*0.6,y2:y+size*0.25,stroke:col,'stroke-width':Math.max(2,size/12)});S('text',{x:x,y:y+size*1.1,'text-anchor':'middle','font-size':size,'font-weight':900,fill:col,text:String(de)});}
+function cursor(x,y,press){var g=S('g',{transform:'translate('+x+','+y+')'});if(press)S('circle',{r:16,fill:'rgba(233,196,106,.55)'},g);S('path',{d:'M0 0 L0 30 L8 23 L14 36 L19 34 L13 21 L23 21 Z',fill:'#fff',stroke:'#111','stroke-width':2},g);}
+function strip(x,y,w,d,k,col,h,lab){h=h||56;var tw=w/d;for(var i=0;i<d;i++)S('rect',{x:x+i*tw+1,y:y,width:tw-2,height:h,rx:6,fill:i<k?col:'#fff',stroke:col,'stroke-width':2.5});
+  if(lab)S('text',{x:x-16,y:y+h/2+8,'text-anchor':'end','font-size':20,'font-weight':900,fill:col,text:lab});}
+function whole(x,y,w,h,txt){S('rect',{x:x+1,y:y,width:w-2,height:h,rx:6,fill:NV});S('text',{x:x+w/2,y:y+h/2+8,'text-anchor':'middle','font-size':22,'font-weight':900,fill:'#fff',text:txt||'1 whole'});}
+function chip(x,y,txt,col){S('rect',{x:x,y:y,width:txt.length*13+30,height:40,rx:20,fill:'#fff',stroke:col,'stroke-width':3});S('text',{x:x+15,y:y+27,'font-size':22,'font-weight':900,fill:col,text:txt});}
+function wiN(i){return sec(M).words[i];}
+function setup(){
+  K.a=sec(M).start; K.close=sec('vid-close').start;
+  K.ap3=wt(/^three$/,0); K.ap7=wt(/^seven$/,0); K.here=wt(/^Here$/,0); K.sh=wt(/^shaded$/,0); K.add=wt(/^add$/,0);
+  var co=wi(/^Count$/,0); K.c5=wiN(co+2).t; K.c6=wiN(co+3).t; K.c7=wiN(co+4).t;
+  K.eq1=wt(/^Four-ninths$/,1); K.eq1b=wt(/^equals$/,0); K.unit=wt(/^unit$/,0);
+  K.now=wt(/^Now$/,1); K.start=wt(/^Start$/,0); K.take=wt(/^Take$/,0);
+  var hp=wi(/^Hop$/,0); K.hops=[3,4,5,6,7].map(function(o){return wiN(hp+o).t;}); K.land=wt(/^land$/,0); K.eq2=wt(/^Seven-ninths$/,0); K.eq2b=wt(/^equals$/,1);
+  K.watch=wt(/^Watch$/,0); K.dont=wt(/^denominators$/,0); K.stays=wt(/^stays$/,0); K.and=wt(/^And$/,0); K.cut=wt(/^cut$/,1); K.nn=wt(/^nine-ninths$/,0);
+}
+function apple(x,y,c){S('circle',{cx:x,cy:y,r:24,fill:c||'#C0392B'});S('path',{d:'M'+x+' '+(y-22)+' q4 -14 12 -16',stroke:'#5B3A1A','stroke-width':4,fill:'none'});S('ellipse',{cx:x+10,cy:y-28,rx:9,ry:5,fill:'#4E7A1A'});}
+function tile(x,y,w,h,col,on,alpha,lab){S('rect',{x:x+1,y:y,width:w-2,height:h,rx:6,fill:on?col:'#fff','fill-opacity':on?(alpha||1):1,stroke:col,'stroke-width':2.5});if(lab){var c=on&&!alpha?'#fff':NV;S('text',{x:x+w/2,y:y+h/2-4,'text-anchor':'middle','font-size':20,'font-weight':900,fill:c,text:'1'});S('line',{x1:x+w/2-10,y1:y+h/2+2,x2:x+w/2+10,y2:y+h/2+2,stroke:c,'stroke-width':2.5});S('text',{x:x+w/2,y:y+h/2+24,'text-anchor':'middle','font-size':20,'font-weight':900,fill:c,text:'9'});}}
+function eqline(x,y,parts,t0,t){var p=ease((t-t0)/0.5);var g=S('g',{opacity:p});var cx=x;parts.forEach(function(q){if(Array.isArray(q)){var sv0=sv;sv=g;fr(cx,y,q[0],q[1],40,q[2]||NAVY);sv=sv0;cx+=70;}else{S('text',{x:cx,y:y+30,'text-anchor':'middle','font-size':46,'font-weight':900,fill:NAVY,text:q},g);cx+=60;}});}
+var X=200,BW=810,d=9,tw=BW/9;
+function render(t){
+  window.__t=t;var book=document.getElementById('book'),cap=document.getElementById('cap');
+  cap.textContent=caption(t);
+  var inOpen=t<K.a-0.3, inClose=t>=K.close-0.3;
+  book.classList.toggle('on',inOpen||inClose);
+  if(inClose){document.getElementById('btt').textContent='Your turn';document.getElementById('bq').textContent='Same-size pieces? Count them, and keep the unit.';}
+  sv.innerHTML='';if(inOpen||inClose)return;
+  // ── scene 0: apples
+  if(t<K.here-0.3){
+    for(var i=0;i<4;i++)apple(260+i*70,300);
+    S('text',{x:560,y:315,'text-anchor':'middle','font-size':54,'font-weight':900,fill:NAVY,text:'+'});
+    if(t>=K.ap3-0.3)for(var j=0;j<3;j++)apple(640+j*70,300,'#E06A5A');
+    if(t>=K.ap7-0.3){S('text',{x:640,y:440,'text-anchor':'middle','font-size':44,'font-weight':900,fill:OK,text:'4 apples + 3 apples = 7 apples'});}
+    S('text',{x:640,y:200,'text-anchor':'middle','font-size':28,'font-weight':900,fill:'#8A6A00',text:'The unit is apples.'});
+  }
+  // ── scene 1: four-ninths + three-ninths on fraction tiles
+  else if(t<K.now-0.3){
+    whole(X,120,BW,64,'1 whole');
+    S('rect',{x:X,y:220,width:BW,height:72,rx:6,fill:'#F6F7FB',stroke:'#AEB6CC','stroke-width':2,'stroke-dasharray':'8 6'});
+    var k1=t>=K.sh-0.3?4:0;for(var i=0;i<k1;i++)tile(X+i*tw,220,tw,72,C9,true,0,true);
+    if(t>=K.add-0.3){var cnt=[K.c5,K.c6,K.c7];for(var j=0;j<3;j++){var t0=Math.min(K.add+j*0.35,cnt[j]-0.4),p=ease((t-t0)/0.6);if(t<t0)continue;var tx=X+(4+j)*tw,ty=220+(1-p)*190;tile(tx,ty,tw,72,C9,true,0.45,true);}
+      [5,6,7].forEach(function(n,j){if(t>=cnt[j]-0.1)S('text',{x:X+(3+n-4)*tw+tw/2,y:210,'text-anchor':'middle','font-size':30,'font-weight':900,fill:OK,text:String(n)});});
+      if(t<K.c7)tile(X,420,tw,72,C9,false,0,true),S('text',{x:X,y:410,'font-size':18,'font-weight':900,fill:CW,text:'TRAY'});}
+    if(t>=K.eq1-0.3)eqline(420,360,[[4,9,C9],'+',[3,9,C9],'=',[7,9,OK]],K.eq1-0.3,t);
+    if(t>=K.unit-0.3)chip(470,500,'The unit is ninths',GOLD);
+  }
+  // ── scene 2: count back on the number line
+  else if(t<K.watch-0.3){
+    var y=300,x0=160,L=960;S('line',{x1:x0-20,y1:y,x2:x0+L+20,y2:y,stroke:NAVY,'stroke-width':4,'stroke-linecap':'round'});
+    for(var q=0;q<=9;q++){var big=q===0||q===9;S('line',{x1:x0+q*L/9,y1:y-(big?20:13),x2:x0+q*L/9,y2:y+(big?20:13),stroke:big?NAVY:C9,'stroke-width':big?4:3});}
+    S('text',{x:x0,y:y+56,'text-anchor':'middle','font-size':28,'font-weight':900,fill:NAVY,text:'0'});S('text',{x:x0+L,y:y+56,'text-anchor':'middle','font-size':28,'font-weight':900,fill:NAVY,text:'1'});
+    var pos=7,nh=0;K.hops.forEach(function(h,i){if(t>=h-0.15)nh=i+1;});
+    for(var i=0;i<nh;i++){var xa=x0+(7-i)*L/9,xb=x0+(6-i)*L/9;S('path',{d:'M'+xa+' '+(y-10)+' Q '+(xa+xb)/2+' '+(y-80)+' '+xb+' '+(y-10),stroke:RED,'stroke-width':4,fill:'none'});S('text',{x:(xa+xb)/2,y:y-88,'text-anchor':'middle','font-size':24,'font-weight':900,fill:RED,text:String(6-i)});}
+    if(t>=K.start-0.3){var dx=x0+(7-nh)*L/9;S('circle',{cx:dx,cy:y,r:16,fill:nh===5?OK:RED,stroke:'#fff','stroke-width':4});}
+    if(t>=K.start-0.3)fr(x0+7*L/9,y+80,7,9,30,C9);
+    if(t>=K.land-0.3)fr(x0+2*L/9,y+80,2,9,30,OK);
+    if(t>=K.take-0.3)chip(160,140,'take away 5 ninths: hop back 5',RED);
+    if(t>=K.eq2-0.3)eqline(420,470,[[7,9,C9],'−',[5,9,C9],'=',[2,9,OK]],K.eq2-0.3,t);
+  }
+  // ── scene 3: watch out
+  else {
+    S('rect',{x:140,y:96,width:1000,height:62,rx:14,fill:'#FBE7E4',stroke:NO,'stroke-width':3});S('text',{x:640,y:138,'text-anchor':'middle','font-size':32,'font-weight':900,fill:NO,text:'Watch out!'});
+    if(t>=K.dont-0.6){eqline(330,200,[[4,9],'+',[3,9],'≠',[7,18,NO]],K.dont-0.6,t);if(t>=K.dont)S('line',{x1:560,y1:168,x2:622,y2:252,stroke:NO,'stroke-width':6});}
+    if(t>=K.stays-0.3)chip(770,220,'still ninths: 7/9',OK);
+    if(t>=K.and-0.3){var ok=t>=K.nn-0.4;if(!ok)whole(X,380,BW,70,'1 whole');else for(var i=0;i<9;i++)tile(X+i*tw,380,tw,70,C9,true,0,true);
+      if(t>=K.cut-0.2&&!ok){S('text',{x:640,y:370,'text-anchor':'middle','font-size':40,text:'✂'});}
+      if(ok)eqline(470,490,['1','=',[9,9,C9]],K.nn-0.4,t);}
+  }
+}
+window.init=function(tl){TL=tl;setup();};
+</script></body></html>
