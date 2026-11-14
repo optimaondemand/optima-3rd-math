@@ -41,6 +41,7 @@ TOOLS = {
  'fbars-6-12': ('fbars', {"d": [6, 12], "lab": 1}, 'Fraction Tiles', 'Try a bar of sixths and a bar of twelfths. Shade some sixths, then find the twelfths that line up.'),
  'fbars-2-5-10': ('fbars', {"d": [2, 5, 10], "lab": 1}, 'Fraction Tiles', 'Try bars of halves, fifths and tenths. Shade 8 tenths. Which other bar can match it?'),
  'fbars-5-10c': ('fbars', {"d": [5, 10], "lab": 1}, 'Fraction Tiles', 'Line up a bar of fifths and a bar of tenths. How many tenths fit under one fifth?'),
+ 'fbars-half': ('fbars', {"d": [2, 9, 10], "lab": 1}, 'Fraction Tiles', 'Line up a one-half tile with a bar of ninths and a bar of tenths. Which fractions stop before the half tile ends?'),
  'fbars-8': ('fbars', {"d": [8], "lab": 1}, 'Fraction Tiles', 'Try a bar of eighths. Each eighth is as long as 2 sixteenths.'),
  'fbars-9-10': ('fbars', {"d": [9, 10], "lab": 1}, 'Fraction Tiles', 'Try a bar of ninths and a bar of tenths. Shade 1 ninth and 2 tenths. Which reaches farther?'),
 }
@@ -131,6 +132,15 @@ L = {
      {"t": "multiply", "d": "To find the total of equal groups. 4 × 2 means 4 groups of 2."},
      {"t": "invention", "alt": ["inventions"], "d": "A short practice piece Bach wrote with two parts, one for each hand."},
      {"t": "harpsichord", "d": "A keyboard instrument from Bach's time. Its keys pluck the strings inside."}]),
+ '3.10.05': dict(page='math-lesson-3-10-05-comparing-fractions-part-2.html', title='Comparing Fractions, Part 2', video='g3math-10-05-learn',
+   glossary=[
+     {"t": "benchmark", "d": "A number we compare to, like one-half or 1 whole.", "key": True},
+     {"t": "one-half", "alt": ["halfway"], "d": "The halfway point of a whole. To find half of a denominator, divide it by 2.", "key": True},
+     {"t": "cantata", "d": "A piece of music for singers and players. Bach wrote many of them.", "key": True},
+     GL_BASE[2], GL_BASE[3],
+     {"t": "missing piece", "alt": ["missing pieces"], "d": "The part of a whole that is not shaded. A smaller missing piece means the fraction is closer to 1 whole."},
+     {"t": "coffee house", "d": "A place where people met to drink coffee and talk. Bach's music group played in one in Leipzig."},
+     {"t": "flute", "d": "A wind instrument you play by blowing across a hole. In Bach's time it was made of wood."}]),
 }
 def tool(m):
     t, st, name, tip = TOOLS[m.group(1)]

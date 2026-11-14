@@ -78,5 +78,21 @@
  "g3m-3-10-04-words": {
   "text": "Common denominator. ... Common numerator. ... Re-cut.",
   "voice": "opti"
+ },
+ "g3m-3-10-05-vid-math": {
+  "text": "Here are two-ninths and five-sevenths. Each cup is one whole. Let's draw a line at one-half. Half of nine is four and a half. Two-ninths is less than that, so it's less than one-half. Half of seven is three and a half. Five-sevenths is more than that, so it's more than one-half. So five-sevenths is greater. One-half is a benchmark. It's a number we compare to. Now here are nine-tenths and eleven-twelfths. Both are more than one-half, so the halfway line can't help. Look at the missing pieces instead. Each cup is missing one piece. A twelfth is smaller than a tenth. So eleven-twelfths is closer to full. Eleven-twelfths is greater. Watch out! Half of an odd number has a half in it. And the cup with the smaller missing piece is closer to one whole.",
+  "voice": "claire"
+ },
+ "g3m-3-10-05-vid-open": {
+  "text": "Hoo! Claire is going to show us two shortcuts for comparing fractions. Watch the halfway line.",
+  "voice": "opti"
+ },
+ "g3m-3-10-05-vid-close": {
+  "text": "Halfway line, or missing piece. Pick the shortcut that helps. Now it's your turn.",
+  "voice": "opti"
+ },
+ "g3m-3-10-05-words": {
+  "text": "Benchmark. ... One-half. ... Cantata.",
+  "voice": "opti"
  }
 }

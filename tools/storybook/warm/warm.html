@@ -232,10 +232,27 @@ SC['3.10.04']=function(t,K){
   if(t>=K.which-0.3){var e=ramp(t,K.which-0.3,0.4);[x0+len*5/7,x0+len*7/9].forEach(function(gx){S('line',{x1:gx,y1:yR-8,x2:gx,y2:yL+70,stroke:GOLD,'stroke-width':4,'stroke-dasharray':'10 7',opacity:e});});label(x0+len*0.74,yL+130,'Which note is longer?',e,'#6B4A12',28);}
   if(t>=K.today-0.3){var e2=ramp(t,K.today-0.3,0.5);label(640,560,'Today: make the pieces the same size',e2,GREEN,30);}
 };
+SC['3.10.05']=function(t,K){
+  var HD='CHAPTER 10 · BACH\'S MEASURES';
+  if(t<K.about-0.3){head('','');owl(1000,380,150,t);book(t,0.1,'sb-coffee-plate.jpg','CHAPTER 10 · LESSON 5',['Comparing','Fractions, Part 2'],'Cups of coffee');return;}
+  if(t<K.group-0.6){head(HD,'Leipzig, about 1720');owl(1060,440,120,t);var o=fade(t,K.about-0.3,K.group-0.6);pic('sb-coffee-street.jpg',170,96,720,520,1+0.04*(t-K.about),.4,.5,o);
+    label(1040,200,'Katharine Street',o*ramp(t,K.about+0.3,0.4),'#6B4A12',28);return;}
+  if(t<K.wrote-0.3){head(HD,'Zimmermann\'s coffee house');owl(1060,440,120,t);var o2=fade(t,K.group-0.6,K.wrote-0.3);pic('sb-coffee-house.jpg',420,92,300,560,1+0.05*(t-K.group),.5,.4,o2);
+    label(960,230,'Bach\'s music group',o2*ramp(t,K.group-0.3,0.4),NAVY,28);label(960,310,'played here',o2*ramp(t,K.group+0.2,0.4),'#6B4A12',26);return;}
+  if(t<K.today-0.3){head(HD,'The Coffee Cantata');owl(null);var o3=fade(t,K.wrote-0.3,K.today-0.3);pic('sb-bwv211-title.jpg',190,92,350,520,1+0.04*(t-K.wrote),.5,.3,o3);
+    label(880,220,'a funny piece',o3*ramp(t,K.funny-0.2,0.4),GOLD,30);label(880,320,'the father',o3*ramp(t,K.father-0.2,0.4),NAVY,28);label(880,400,'his daughter Lieschen',o3*ramp(t,K.lies-0.3,0.4),'#6B4A12',28);label(880,490,'loves coffee!',o3*ramp(t,K.loves-0.2,0.4),GREEN,28);return;}
+  head(HD,'Cups of coffee');owl(null);
+  var x0=150,len=800,ys=[170,300,430],q=ramp(t,K.today-0.4,0.5),hx=x0+len/2;
+  [[2,7,'less'],[6,9,'more'],[11,12,'almost']].forEach(function(r,i){var k=r[0],n=r[1],y=ys[i],w=len/n,col=['#B03A2E','#2E7D6B','#5B6478'][i];
+    for(var j=0;j<n;j++){var b=j<k?ramp(t,K.today+0.2+i*0.3+j*0.05,0.25):0;S('rect',{x:x0+j*w+1,y:y,width:w-3,height:64,rx:6,fill:'#fff',stroke:col,'stroke-width':2.5,opacity:q});if(b>0)S('rect',{x:x0+j*w+1,y:y,width:(w-3)*b,height:64,rx:6,fill:col,opacity:q});}
+    var tt=K[r[2]];if(t>=tt-0.3)label(x0+len+118,y+42,r[2]==='less'?'less than half':r[2]==='more'?'more than half':'almost full',ramp(t,tt-0.3,0.4),col,22);});
+  if(t>=K.less-0.5){var e=ramp(t,K.less-0.5,0.4);S('line',{x1:hx,y1:140,x2:hx,y2:520,stroke:GOLD,'stroke-width':4,'stroke-dasharray':'10 7',opacity:e});label(hx,580,'halfway',e,GOLD,24);}
+};
 var CUES={
  '3.09.01':function(){return{each:wt(/^Each$/),math:wt(/^math$/),today:wt(/^Today's$/),more:wt(/^more$/),meet:wt(/^Meet$/),numbers:wt(/^numbers$/),music:wt(/^music$/),stories:wt(/^Stories$/),string:wt(/^string$/),box:wt(/^box$/),then:wt(/^Then$/),listen:wt(/^listened$/),lets:wt(/^Let's$/)};},
  '3.09.02':function(){return{still:wt(/^We're$/),singing:wt(/^singing$/),last:wt(/^Last$/),cut:wt(/^cut$/),equal:wt(/^equal$/),today:wt(/^Today$/),turns:wt(/^turns$/),line:wt(/^line$/),every:wt(/^Every$/),spot:wt(/^spot$/)};},
  '3.09.03':function(){return{pyth:wt(/^Pythagoras$/),two:wt(/^two$/),length:wt(/^length$/),cut:wt(/^cut$/),number:wt(/^number$/),today:wt(/^Today$/),frac:wt(/^fraction$/),hear:wt(/^hear$/)};},
+ '3.10.05':function(){return{about:wt(/^About$/),group:wt(/^group$/),wrote:wt(/^wrote$/),funny:wt(/^funny$/),father:wt(/^father$/),lies:wt(/^Lieschen$/),loves:wt(/^loves$/),today:wt(/^Today$/),less:wt(/^less$/),more:wt(/^more$/),almost:wt(/^almost$/)};},
  '3.10.04':function(){return{before:wt(/^Before$/),started:wt(/^started$/),nine:wt(/^nine$/),inside:wt(/^Inside$/),one:wt(/^one$/),each:wt(/^each$/),called:wt(/^called$/),two2:wt(/^Two$/),which:wt(/^Which$/),today:wt(/^Today$/)};},
  '3.10.03':function(){return{its:wt(/^It's$/),called:wt(/^called$/),part:wt(/^part$/),violins:wt(/^violins$/),quick:wt(/^quick$/),singers:wt(/^singers$/),one:wt(/^One$/),group:wt(/^group$/),same:wt(/^same$/),fewer:wt(/^Fewer$/),today:wt(/^Today$/)};},
  '3.10.02':function(){return{printed:wt(/^printed$/),aria:wt(/^starts$/),calm:wt(/^calm$/),thirty:wt(/^thirty$/),low:wt(/^low$/),fills:wt(/^fills$/),same:wt(/^Same$/),today:wt(/^Today$/)};},

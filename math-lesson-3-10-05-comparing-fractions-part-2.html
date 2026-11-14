@@ -1,679 +1,439 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Comparing Fractions, Part 2 · Grade 3 Math Lesson 3.10.05</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/storybook/sb.css?v=e96e1e6d">
+</head>
+<body class="sb">
+<div class="sb-prog" aria-label="Progress"><span class="k">📖 BACH'S MEASURES</span><span class="bar"><i></i></span><span class="n">0 of 8 jobs</span></div>
+<div class="sb-wrap">
 
-<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Optima Academy Online — Grade 3 Math Lesson 3.10.05</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Nunito:wght@400;700;800;900&display=swap');
-*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Nunito',Verdana,sans-serif;background:#F5F8FA;color:#0E1C42;line-height:1.6}.page-wrap{max-width:920px;margin:0 auto;background:#fff;box-shadow:0 0 40px rgba(14,28,66,.08)}
-:root{--mar:#1E5F6E;--mar-light:#D6EAEE;--mar-mid:#7FB8C4;--mar-deep:#0C2E36}
-.progress-wrap{position:sticky;top:0;z-index:200;background:#0E1C42;padding:8px 20px 10px;display:flex;align-items:center;gap:14px}.progress-label{font-size:12px;color:#F5C518;font-weight:800;text-transform:uppercase}.progress-track{flex:1;height:10px;background:rgba(255,255,255,.1);border-radius:10px;overflow:hidden}.progress-fill{height:100%;width:0%;background:linear-gradient(90deg,var(--mar),#7FB8C4,#F5C518,var(--mar));background-size:200% 100%;animation:shimmer 3s linear infinite;border-radius:10px;transition:width .4s}.progress-pct{font-size:13px;color:#F5C518;font-weight:800;min-width:36px;text-align:right}@keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
-.header{background:#0E1C42;border-bottom:6px solid var(--mar);padding:20px 28px 18px}.header-brand{display:flex;align-items:center;gap:12px;margin-bottom:14px}.header-logo{width:52px;height:52px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center}.header-logo img{width:48px;height:38px}.header-org{font-size:22px;color:#fff;font-weight:800}.header-sub{font-size:11px;color:#7FB8C4}.header-title{font-family:'Lora',serif;font-size:28px;color:#fff;font-weight:700;margin-bottom:10px}.header-title em{color:#7FB8C4;font-style:italic}.header-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(122,45,63,.25);border:1.5px solid rgba(216,166,179,.5);border-radius:28px;padding:6px 16px}.header-badge-icon{font-size:22px}.header-badge-text{font-size:18px;color:#fff;font-weight:800}
-.quote-strip{background:linear-gradient(135deg,#D6EAEE,#7FB8C4);border-bottom:2px solid #7FB8C4;padding:14px 28px;text-align:center}.quote-strip-text{font-family:'Lora',serif;font-size:16px;font-style:italic;color:#0C2E36}.quote-strip-attr{font-size:11px;color:var(--mar);font-weight:700;margin-top:4px;text-transform:uppercase}
-.info-strip{display:flex;flex-wrap:wrap;background:#fff;border-bottom:2px solid #E2E8F4}.info-cell{flex:1;min-width:150px;padding:12px 16px;border-right:1px solid #E2E8F4;display:flex;align-items:center;gap:10px}.info-icon{width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px}.info-label{font-size:10px;color:#7A88A8;text-transform:uppercase;font-weight:700}.info-value{font-size:16px;color:#0E1C42;font-weight:800}.info-detail{font-size:11px;color:#3A4A6B}
-.explorer-strip{display:flex;align-items:center;gap:16px;padding:12px 28px;background:linear-gradient(135deg,#1A2340,#0E1C42);border-bottom:3px solid var(--mar)}.explorer-compass{font-size:28px}.explorer-mission-label{font-size:10px;color:#F5C518;text-transform:uppercase;font-weight:800}.explorer-mission-text{font-size:15px;color:#fff;font-weight:700}
-.intro-2col{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:20px 28px 4px}@media(max-width:720px){.intro-2col{grid-template-columns:1fr}}.intro-card{background:#fff;border:2px solid #E2E8F4;border-radius:18px;overflow:hidden}.intro-card-head{display:flex;align-items:center;gap:10px;padding:14px 18px;border-bottom:2px solid}.intro-card-head-icon{width:40px;height:40px;border-radius:50%;color:#fff;font-size:20px;display:flex;align-items:center;justify-content:center}.intro-card-head-label{font-size:10px;color:#7A88A8;text-transform:uppercase;font-weight:700}.intro-card-head-title{font-size:18px;color:#0E1C42;font-weight:800}.intro-card-body{padding:14px 18px}.intro-card-body p{font-size:15px;color:#3A4A6B;line-height:1.65;margin-bottom:8px}.obj-line{display:flex;gap:8px;font-size:15px;color:#0E1C42;line-height:1.55;margin-bottom:8px}.theme-question .intro-card-head{background:#FFF8E6;border-color:#F5E6C8}.theme-question .intro-card-head-icon{background:#F5C518}.theme-objectives .intro-card-head{background:var(--mar-light);border-color:var(--mar-mid)}.theme-objectives .intro-card-head-icon{background:var(--mar)}
-.need-strip{display:flex;flex-wrap:wrap;gap:8px;padding:12px 28px 18px}.need-strip-label{font-size:13px;color:#3A4A6B;font-weight:700}.need-chip{background:#E3F8ED;border:1.5px solid #B8E8CF;border-radius:20px;padding:5px 12px;font-size:13px;color:#0E1C42;font-weight:700}
-.tab-bar{position:sticky;top:38px;z-index:100;background:#fff;border-bottom:3px solid #E2E8F4;display:flex;overflow-x:auto;box-shadow:0 -4px 0 0 #0E1C42}.tab-btn{flex:1;min-width:130px;padding:12px 8px 11px;background:transparent;border:none;border-bottom:4px solid transparent;font-family:'Nunito',sans-serif;font-size:13px;font-weight:700;color:#7A88A8;cursor:pointer;text-align:center}.tab-btn.active{color:#0E1C42;border-bottom-color:var(--mar);background:#fff}.tab-btn .tab-check{display:none;color:#2DB87A;margin-left:4px;font-weight:800}.tab-btn.visited .tab-check{display:inline}.tab-panel{display:none;padding:24px 28px 36px}.tab-panel.active{display:block}
-.activity{background:#fff;border:2px solid #E2E8F4;border-radius:18px;margin-bottom:18px}.activity.bl-mar{border-left:6px solid var(--mar)}.activity.bl-green{border-left:6px solid #2DB87A}.activity.bl-yellow{border-left:6px solid #F5C518}.activity.bl-slate{border-left:6px solid #3A6B9A}.activity.bl-navy{border-left:6px solid #0E1C42}.activity-head{display:flex;align-items:center;gap:12px;padding:14px 20px 14px 18px;border-bottom:1.5px solid #E2E8F4}.activity-num{width:38px;height:38px;border-radius:14px;color:#fff;font-size:18px;font-weight:800;display:flex;align-items:center;justify-content:center}.activity-title{font-size:19px;color:#0E1C42;font-weight:800}.activity-sub{font-size:12px;color:#7A88A8}.activity-body{padding:18px 22px}.activity-body p{font-size:16px;color:#3A4A6B;line-height:1.7;margin-bottom:12px}
-.callout{border-radius:14px;padding:16px 18px;display:flex;gap:12px;margin-bottom:14px}.callout-icon{font-size:28px}.callout p{font-size:15.5px;color:#0E1C42;line-height:1.65;margin:0}.callout-info{background:var(--mar-light);border:2px solid var(--mar-mid)}.callout-think{background:#FFF8E6;border:2px solid #F5E6C8}.callout-tip{background:#E3F8ED;border:2px solid #B8E8CF}
-.key-concept{background:var(--mar-light);border:2px solid var(--mar-mid);border-radius:14px;padding:16px 18px;margin-bottom:14px}.key-concept-label{font-size:12px;color:var(--mar-deep);text-transform:uppercase;font-weight:800;margin-bottom:8px}.key-concept p{font-size:15px;color:#0E1C42;line-height:1.7}
-.socratic-box{background:linear-gradient(135deg,var(--mar-light),#7FB8C4);border:2px solid var(--mar-mid);border-radius:14px;padding:16px 18px;margin-bottom:14px}.socratic-label{font-size:12px;color:var(--mar-deep);text-transform:uppercase;font-weight:800;margin-bottom:8px}.socratic-q{font-size:15.5px;color:#0E1C42;font-style:italic}
-.journal-label{font-size:13px;color:#3A4A6B;font-weight:700;margin:10px 0 4px}.journal-box{width:100%;min-height:80px;border:2px solid #E2E8F4;border-radius:12px;padding:12px 14px;font-family:'Nunito',sans-serif;font-size:15px;color:#0E1C42;resize:vertical}.journal-box:focus{outline:none;border-color:var(--mar)}.saved-dot{width:8px;height:8px;border-radius:50%;background:#E2E8F4;display:inline-block;transition:.3s}.saved-dot.saved{background:#2DB87A}
-.check-btn,.mar-btn,.green-btn,.orange-btn{display:inline-flex;align-items:center;gap:6px;color:#fff;border:none;border-radius:12px;padding:10px 20px;font-size:14px;font-weight:800;cursor:pointer;font-family:'Nunito',sans-serif;margin-top:10px}.check-btn{background:#3A6B9A}.mar-btn{background:var(--mar)}.green-btn{background:#2DB87A}.orange-btn{background:#E07B39}
-.hint-callout{background:#FFF8E6;border:2px solid #F5C518;border-radius:10px;padding:10px 14px;margin:12px 0;font-size:14px;color:#5A4A00;font-weight:700}
-.task-box{background:#FAFBFF;border:2px solid #E2E8F4;border-radius:14px;padding:16px 18px;margin-bottom:14px}.task-label{font-size:12px;color:var(--mar-deep);text-transform:uppercase;font-weight:800;margin-bottom:10px}
-.feedback-branch{display:none;margin-top:16px;border-radius:14px;padding:16px}.feedback-branch.show{display:block;animation:reveal .35s}.feedback-pass{background:#E3F8ED;border:2px solid #B8E8CF}.feedback-retry{background:#FFF0E6;border:2px solid #F5C8A0}
-.value-card-row{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}.value-card{border:2px solid #E2E8F4;background:#fff;border-radius:14px;padding:10px 14px;min-width:110px;text-align:center;cursor:pointer;transition:.2s}.value-card:hover{border-color:var(--mar);background:var(--mar-light)}.value-card.good{background:#E3F8ED;border-color:#2DB87A}.value-card.bad{background:#FFF0E6;border-color:#E07B39;animation:shake .25s}.value-card .big{font-size:22px;font-weight:900;color:#0E1C42}.value-card .small{font-size:12px;color:#3A4A6B;font-weight:800}
-.fill-row{display:flex;align-items:center;gap:8px;background:#FAFBFF;border:2px solid #E2E8F4;border-radius:12px;padding:12px 14px;margin:10px 0;flex-wrap:wrap;font-size:17px;font-weight:800;color:#0E1C42}.fill-input{width:100px;padding:8px 10px;border:2.5px solid var(--mar-mid);border-radius:10px;font-size:17px;font-weight:900;color:var(--mar-deep);text-align:center;font-family:'Nunito',sans-serif;background:#fff}.fill-input:focus{outline:none;border-color:var(--mar)}.fill-input.good{border-color:#2DB87A;background:#E3F8ED;color:#1A8A5A}.fill-input.bad{border-color:#E07B39;background:#FFF0E6;animation:shake .25s}
-.q-block{background:#FAFBFF;border:2px solid #E2E8F4;border-radius:14px;padding:14px 18px;margin-bottom:14px}.q-num{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--mar);color:#fff;font-weight:800;font-size:14px;margin-right:8px;vertical-align:middle}.q-text{font-size:15.5px;color:#0E1C42;line-height:1.65}
-.gathered-box{background:#fff;border:2px solid #E2E8F4;border-radius:18px;overflow:hidden;margin-top:24px}.gathered-head{display:flex;align-items:center;gap:14px;background:linear-gradient(135deg,#0E1C42,#1A2D5A);padding:18px 22px}.gathered-head-icon{font-size:32px}.gathered-head-label{font-size:11px;color:#F5C518;font-weight:800;text-transform:uppercase}.gathered-head-title{font-size:18px;color:#fff;font-weight:800}.gathered-body{padding:16px 22px}.gathered-output{width:100%;min-height:160px;border:2px solid #E2E8F4;border-radius:12px;padding:14px;font-family:monospace;font-size:13px;background:#FAFBFF}
-.tab-next-wrap{text-align:center;padding:24px 0 8px}.tab-transition-voice{font-family:'Lora',serif;font-size:15px;font-style:italic;color:#0C2E36;margin-bottom:12px}.tab-next-btn{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--mar),#A04A5E);color:#fff;border:none;border-radius:28px;padding:13px 28px;font-size:15px;font-weight:800;cursor:pointer;box-shadow:0 4px 14px rgba(122,45,63,.3);animation:float 3s infinite}
-.turn-in-card{background:#fff;border:2px solid #E2E8F4;border-radius:18px;overflow:hidden;margin-top:18px}.turn-in-header{display:flex;align-items:center;gap:14px;background:var(--mar-light);padding:18px 22px;border-bottom:2px solid var(--mar-mid)}.turn-in-header-icon{font-size:36px}.turn-in-header-label{font-size:11px;color:var(--mar-deep);font-weight:800;text-transform:uppercase}.turn-in-header-title{font-family:'Lora',serif;font-size:22px;color:#0E1C42;font-weight:700}.turn-in-body{padding:18px 22px 20px}.turn-in-item{display:flex;align-items:center;gap:14px;padding:12px 16px;background:#FAFBFF;border:1.5px solid #E2E8F4;border-radius:12px;cursor:pointer;margin-bottom:10px}.turn-in-item.checked{background:#E3F8ED;border-color:#B8E8CF}.turn-in-check{width:26px;height:26px;border-radius:8px;border:2px solid var(--mar-mid);background:#fff;display:flex;align-items:center;justify-content:center;font-size:16px}.turn-in-item.checked .turn-in-check{background:#2DB87A;border-color:#2DB87A;color:#fff}
-.footer{background:#0E1C42;border-top:4px solid var(--mar);padding:18px 28px;text-align:center}.footer-main{font-size:14px;color:#fff;margin-bottom:4px}.footer-main span{color:#7FB8C4;font-weight:700}.footer-sub{font-size:12px;color:rgba(255,255,255,.5)}.footer-copy{font-size:11px;color:rgba(255,255,255,.3)}
-.inline-feedback{display:none;margin:12px 0;border-radius:14px;padding:12px 14px;font-weight:800;line-height:1.5}.inline-feedback.show{display:block;animation:reveal .3s}.inline-feedback.good{background:#E3F8ED;border:2px solid #B8E8CF;color:#0E1C42}.inline-feedback.think{background:#FFF3DC;border:2px solid #F5E6C8;color:#5A4A3A}
-.vocab-section{background:#fff;border:2px solid var(--mar-mid);border-left:6px solid var(--mar);border-radius:18px;padding:14px 20px;margin:0 0 20px}.vocab-section-title{font-size:16px;color:#0E1C42;font-weight:900;margin-bottom:4px}
-.bubble-row{display:flex;gap:12px;flex-wrap:wrap;margin:14px 0}.bubble{display:flex;gap:10px;flex:1 1 260px;max-width:340px;background:#fff;border:2px solid #E2E8F4;border-radius:18px;padding:12px 14px}.bubble.atlas{border-left:5px solid #6B3FA0;background:linear-gradient(135deg,#fff,#F8F4FF)}.bubble.hazel{border-left:5px solid #2DB87A;background:linear-gradient(135deg,#fff,#F4FBF7)}.bubble.felix{border-left:5px solid #F5C518;background:linear-gradient(135deg,#fff,#FEFBEB)}.bubble.cora{border-left:5px solid #3A6B9A;background:linear-gradient(135deg,#fff,#F4F8FC)}.bubble-avatar{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:900;color:#fff;flex-shrink:0;font-family:'Lora',serif}.bubble.atlas .bubble-avatar{background:#6B3FA0}.bubble.hazel .bubble-avatar{background:#2DB87A}.bubble.felix .bubble-avatar{background:#F5C518;color:#0E1C42}.bubble.cora .bubble-avatar{background:#3A6B9A}.bubble-body{flex:1;min-width:0}.bubble-name{font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.7px;margin-bottom:3px;color:#6B3FA0}.bubble.hazel .bubble-name{color:#1A8A5A}.bubble.felix .bubble-name{color:#8A6D2B}.bubble.cora .bubble-name{color:#1A6B8E}.bubble-text{font-size:14.5px;color:#0E1C42;line-height:1.5;font-weight:600;font-family:'Lora',serif;font-style:italic}
-/* ═══ VIDEO PLACEHOLDER ═══ */
-.video-placeholder-wrap {
-  display: none;
-  border-radius: 14px; overflow: hidden; margin: 0 0 18px;
-  border: 2px dashed rgba(107,63,160,0.4);
-  background: linear-gradient(135deg, #0E1C42, #1A2D5A);
-}
-.video-placeholder-inner {
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-  text-align: center; padding: 28px 20px;
-}
-.video-placeholder-inner .vp-icon { font-size: 34px; margin-bottom: 6px; }
-.video-placeholder-inner .vp-label {
-  font-size: 10px; color: #F5C518; text-transform: uppercase;
-  letter-spacing: 2px; font-weight: 800; margin-bottom: 4px;
-}
-.video-placeholder-inner .vp-title {
-  font-size: 16px; font-weight: 800; color: #fff; margin-bottom: 8px;
-}
-.video-placeholder-inner .vp-slot {
-  font-family: monospace; font-size: 11px; color: #6B3FA0;
-  background: rgba(107,63,160,0.15);
-  padding: 3px 10px; border-radius: 4px;
-}
-.video-placeholder-inner .vp-notes {
-  font-size: 12px; color: rgba(255,255,255,0.8); font-style: italic;
-  margin-top: 10px; text-align: left; padding: 10px 12px;
-  background: rgba(0,0,0,0.25); border-radius: 6px; border-left: 3px solid #6B3FA0;
-}
-.ex-tbl{width:100%;border-collapse:separate;border-spacing:0;margin:14px 0;background:#fff;border:2px solid #E2E8F4;border-radius:14px;overflow:hidden}.ex-tbl thead th{background:#0E1C42;color:#fff;font-size:12px;padding:12px;text-align:left;text-transform:uppercase;font-weight:900}.ex-tbl tbody td{padding:12px 14px;border-top:1px solid #E2E8F4;font-size:14.5px;color:#0E1C42;line-height:1.5}.ex-tbl tbody td:first-child{font-family:'Lora',serif;font-weight:800;font-size:17px}.ex-tbl tbody td:last-child{text-align:center;font-family:'Lora',serif;font-weight:900;font-size:18px;background:#FAFBFF;border-left:1px dashed #E2E8F4;color:#1A8A5A}
-/* BENCHMARK BUILDER */
-.bb-frame{background:#fff;border:2px solid var(--mar-mid);border-radius:16px;padding:18px;margin:14px 0}
-.bb-task{background:linear-gradient(135deg,#FFFBE6,#FFF3DC);border:2px solid #F5E6C8;border-radius:14px;padding:12px 16px;margin-bottom:14px;font-family:'Lora',serif;font-size:16px;color:#0E1C42;font-weight:700;text-align:center}
-.bb-controls{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:14px}
-.bb-pick{background:var(--mar-light);border:2px solid var(--mar-mid);border-radius:14px;padding:10px 14px;text-align:center;min-width:160px}
-.bb-pick-label{font-size:11px;color:var(--mar-deep);font-weight:900;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
-.bb-stepper{display:flex;align-items:center;justify-content:center;gap:10px}
-.bb-btn{background:#fff;border:2.5px solid var(--mar);color:var(--mar);width:36px;height:36px;border-radius:50%;font-size:18px;font-weight:900;cursor:pointer;font-family:'Nunito',sans-serif}
-.bb-btn:hover{background:var(--mar);color:#fff}
-.bb-val{font-family:'Lora',serif;font-size:28px;font-weight:900;color:#0E1C42;min-width:36px;text-align:center}
-.bb-divider{border:none;border-top:2px dashed var(--mar-mid);margin:16px 0}
-.bb-strip-wrap{background:#FAFBFF;border:2px dashed var(--mar-mid);border-radius:12px;padding:16px 14px;margin-bottom:14px}
-.bb-strip-label{font-size:11px;color:var(--mar-deep);font-weight:900;text-transform:uppercase;text-align:center;margin-bottom:10px;letter-spacing:.5px}
-.bb-strip-row{display:flex;align-items:center;gap:12px;margin-bottom:8px}
-.bb-frac-label{flex-shrink:0;min-width:54px;font-family:'Lora',serif;font-size:20px;font-weight:900;color:var(--mar-deep);text-align:center}
-.bb-strip{position:relative;display:flex;border:3px solid #0E1C42;border-radius:8px;overflow:visible;height:56px;flex:1;background:#fff}
-.bb-part{flex:1;border-right:2px solid #0E1C42;transition:background-color .25s}
-.bb-part:last-child{border-right:none}
-.bb-part.filled{background-color:var(--mar)}
-.bb-half-line{position:absolute;left:50%;top:-8px;bottom:-8px;border-left:2.5px dashed #E07B39;z-index:2;pointer-events:none}
-.bb-half-label{position:absolute;left:50%;top:-22px;transform:translateX(-50%);font-size:13px;font-weight:900;color:#E07B39;font-family:'Lora',serif;z-index:3}
-.bb-flag{display:inline-block;margin-top:6px;padding:5px 14px;border-radius:20px;font-size:13px;font-weight:800;font-family:'Nunito',sans-serif;transition:all .3s}
-.bb-flag.less{background:#FFF0E6;border:2px solid #E07B39;color:#8A4A1A}
-.bb-flag.equal{background:var(--mar-light);border:2px solid var(--mar);color:var(--mar-deep)}
-.bb-flag.greater{background:#E3F8ED;border:2px solid #2DB87A;color:#1A6B3A}
-.bb-compare-btn{display:inline-flex;align-items:center;gap:6px;background:var(--mar);color:#fff;border:none;border-radius:14px;padding:12px 22px;font-size:15px;font-weight:900;cursor:pointer;font-family:'Nunito',sans-serif;box-shadow:0 3px 8px rgba(30,95,110,.25);margin:4px 0 14px}
-.bb-compare-btn:hover{background:var(--mar-deep)}
-.bb-equation{background:linear-gradient(135deg,var(--mar-light),#9CCBD4);border:2px solid var(--mar-mid);border-radius:12px;padding:16px;text-align:center;margin-bottom:8px;font-family:'Lora',serif;font-weight:900;color:#0E1C42;font-size:20px;display:none;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;min-height:56px}
-.bb-equation.show{display:flex;animation:reveal .35s}
-.bb-equation .frac{font-size:22px}
-.bb-equation .sym{font-size:30px;color:var(--mar-deep);font-weight:900;margin:0 6px}
-.bb-words{font-family:'Lora',serif;font-size:14px;color:var(--mar-deep);font-style:italic;text-align:center;background:#fff;border-radius:10px;padding:8px 12px;border:1.5px solid var(--mar-mid);display:none}
-.bb-words.show{display:block;animation:reveal .35s}
-.bb-reset-btn{background:#7A88A8;color:#fff;border:none;border-radius:14px;padding:10px 18px;font-size:14px;font-weight:900;cursor:pointer;font-family:'Nunito',sans-serif;margin-top:6px;display:none}
-.bb-reset-btn.show{display:inline-flex}
-@keyframes reveal{0%{opacity:0;transform:translateY(10px)}100%{opacity:1;transform:translateY(0)}}@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}@keyframes mini{0%{transform:translateY(0) scale(0);opacity:1}50%{transform:translateY(-30px) scale(1.2)}100%{transform:translateY(-60px) scale(.6);opacity:0}}
-.frac{display:inline-flex;flex-direction:column;align-items:center;vertical-align:middle;font-family:'Lora',serif;font-weight:900;line-height:1;margin:0 2px}
-.frac .num{padding:0 6px;font-size:1em}
-.frac .bar{border-top:2.5px solid currentColor;width:100%;min-width:18px;margin:2px 0}
-.frac .den{padding:0 6px;font-size:1em}
-.frac.lg{font-size:28px}.frac.md{font-size:20px}
+<header class="sb-head">
+  <div class="sb-brand"><img alt="" src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png"><div><b>Optima Academy Online</b><small>An Education Experience Company</small></div></div>
+  <h1 class="sb-title">Comparing Fractions, Part 2</h1>
+  <div class="sb-chips">
+    <span class="sb-chip lead">Lesson 3.10.05 · Unit 10 · Lesson 5</span>
+    <button type="button" class="sb-chip" id="sb-read">🔊 Read aloud</button>
+    <button type="button" class="sb-chip" data-pop="#sb-std" aria-expanded="false">Standards ▾</button>
+    <button type="button" class="sb-chip" id="sb-music" aria-pressed="false">🎵 Music: off</button>
+    <button type="button" class="sb-chip" id="sb-motion" aria-pressed="true">✨ Motion: on</button>
+  </div>
+  <div class="sb-pop" id="sb-std"><b>MA.3.FR.2.1</b> Plot, order and compare fractional numbers with the same numerator or the same denominator.<br><b>MA.3.FR.2.2</b> Identify equivalent fractions and explain why they are equivalent.<br><small>Today: compare fractions to the benchmarks one-half and 1. Dimensions Math 3B, Chapter 10, Lesson 5 · Comparing Fractions, Part 2</small></div>
+</header>
 
-.practice-note { font-size: 12px; color: #8899AA; text-align: center; margin: 6px 0 2px; font-style: italic; line-height: 1.4; }
-</style>
-<style id="fluencyStyles">
-.fluency-box{background:#fff;border:2px solid #F5C518;border-radius:18px;overflow:hidden;margin-bottom:22px;font-family:'Nunito',sans-serif}
-.fluency-head{display:flex;align-items:center;gap:12px;background:linear-gradient(135deg,#F5C518,#E8B723);padding:14px 20px;flex-wrap:wrap}
-.fluency-head-icon{font-size:26px;line-height:1}
-.fluency-head-label{font-size:10px;color:#0E1C42;font-weight:800;text-transform:uppercase;letter-spacing:0.5px}
-.fluency-head-title{font-size:15px;color:#0E1C42;font-weight:800}
-.fluency-timer-ui{margin-left:auto;display:flex;align-items:center;gap:10px}
-.fluency-timer-display{font-size:20px;font-weight:800;color:#0E1C42;min-width:46px;text-align:center}
-.fluency-start-btn{background:#0E1C42;color:#fff;border:none;border-radius:10px;padding:8px 14px;font-weight:700;font-size:12px;cursor:pointer}
-.fluency-start-btn:disabled{opacity:0.55;cursor:default}
-.fluency-body{padding:16px 20px}
-.fluency-instructions{font-size:13px;color:#4A5568;margin:0 0 12px}
-.fluency-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(128px,1fr));gap:10px;margin-bottom:14px}
-.fluency-item{display:flex;align-items:center;gap:6px;background:#FAFBFF;border:1.5px solid #E2E8F4;border-radius:10px;padding:8px 10px}
-.fluency-item.fluency-correct{border-color:#2DB87A;background:#EAFBF3}
-.fluency-item.fluency-wrong{border-color:#E07B39;background:#FDF1E9}
-.fluency-q{font-size:13px;font-weight:700;color:#0E1C42;white-space:nowrap}
-.fluency-input{width:46px;border:1.5px solid #CBD5E8;border-radius:6px;padding:4px;font-size:14px;text-align:center;font-family:'Nunito',sans-serif}
-.fluency-input:disabled{background:#F0F2F8}
-.fluency-check-btn{background:#2DB87A;color:#fff;border:none;border-radius:10px;padding:10px 18px;font-weight:800;font-size:13px;cursor:pointer}
-.fluency-check-btn:disabled{opacity:0.55;cursor:default}
-.fluency-result{margin-top:10px;font-size:14px;color:#0E1C42;font-weight:700}
-</style></head><body>
-<div class="page-wrap">
-
-<!-- ═══════════════════════════════════════════════════════════════════════
-     OPTIMA READ-ALOUD PLAYER — drop-in snippet for GitHub-hosted lesson pages
-     ═══════════════════════════════════════════════════════════════════════ -->
-<div id="optima-read-aloud">
-<style>
-    #optima-read-aloud { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 14px 18px; margin: 0 0 20px 0; }
-    #optima-read-aloud .ora-kicker { font-size: 11px; color: #1B6A94; letter-spacing: 0.4px; margin-bottom: 10px; }
-    #optima-read-aloud .ora-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
-    #optima-read-aloud .ora-controls button { border-radius: 8px; padding: 8px 16px; font-size: 14px; cursor: pointer; font-family: inherit; transition: all 0.15s; }
-    #ora-play { background: #0E1C42; color: #FFFFFF; border: 1.5px solid #0E1C42; }
-    #ora-play:hover:enabled { background: #1B2D5E; }
-    #ora-play:disabled { background: #D0D9E8; border-color: #D0D9E8; color: #6b7a99; cursor: default; }
-    #ora-stop { background: #FFFFFF; color: #0E1C42; border: 1.5px solid #D0D9E8; }
-    #ora-stop:hover:enabled { background: #F4F6FA; border-color: #55C8E8; }
-    #ora-stop:disabled { color: #999; border-color: #E4E9F2; cursor: default; }
-    #optima-read-aloud .ora-speed { font-size: 12px; color: #6b7a99; display: flex; align-items: center; gap: 6px; }
-    #ora-rate { font-family: inherit; font-size: 13px; color: #0E1C42; border: 1.5px solid #D0D9E8; border-radius: 6px; padding: 5px 8px; background: #FFFFFF; }
-    #ora-status { font-size: 12px; color: #666; }
-    .ora-highlight { background: #FDF3E3 !important; box-shadow: inset 4px 0 0 #C7922C; border-radius: 4px; transition: background 0.2s; }
-</style>
-    <div class="ora-kicker">&#128266; READ ALOUD &mdash; LISTEN TO THIS PAGE</div>
-    <div class="ora-controls">
-        <button id="ora-play" type="button" aria-label="Listen to this page">&#9654;&#65039; Listen</button>
-<p class="practice-note">Interactive practice tools on this page won't save if you leave — your written answers below are saved automatically.</p>
-
-        <button id="ora-stop" type="button" aria-label="Stop reading" disabled>&#9632; Stop</button>
-        <label class="ora-speed">Speed
-            <select id="ora-rate" aria-label="Reading speed">
-                <option value="0.8">Slower</option>
-                <option value="1" selected>Normal</option>
-                <option value="1.25">Faster</option>
-            </select>
-        </label>
-        <span id="ora-status" role="status" aria-live="polite"></span>
+<!-- the open book -->
+<div class="sb-book" aria-label="Opti's storybook, open to Chapter 10">
+  <div class="sb-book-in">
+    <div class="sb-pg">
+      <figure class="sb-plate"><img src="images/storybook/sb-coffee-plate.jpg" alt="An old black-and-white print of a street with tall, fancy houses, horses and carriages, and people walking."><figcaption>Katharine Street, Leipzig, printed about 1720</figcaption></figure>
     </div>
-<script>
-(function () {
-    "use strict";
-    var playBtn  = document.getElementById("ora-play");
-    var stopBtn  = document.getElementById("ora-stop");
-    var rateSel  = document.getElementById("ora-rate");
-    var statusEl = document.getElementById("ora-status");
-
-    if (!("speechSynthesis" in window) || !("SpeechSynthesisUtterance" in window)) {
-        playBtn.disabled = true;
-        rateSel.disabled = true;
-        statusEl.textContent = "Read-aloud is not supported in this browser.";
-        return;
-    }
-
-    var LABEL_PLAY   = "▶️ Listen";
-    var LABEL_PAUSE  = "⏸️ Pause";
-    var LABEL_RESUME = "▶️ Resume";
-    var BLOCK_SEL = "p, li, h1, h2, h3, h4, h5, h6, blockquote, td, th, dt, dd, figcaption, div";
-    var SKIP_SEL  = "#optima-read-aloud, [data-ra-skip], button, script, style, select, noscript, iframe";
-
-    var queue = [];
-    var idx = 0;
-    var playing = false, paused = false, stopping = false;
-    var currentBlock = null;
-    var currentUtterance = null;
-
-    var voices = [];
-    function loadVoices() { voices = window.speechSynthesis.getVoices(); }
-    loadVoices();
-    if ("onvoiceschanged" in window.speechSynthesis) {
-        window.speechSynthesis.onvoiceschanged = loadVoices;
-    }
-    function pickVoice() {
-        if (!voices.length) loadVoices();
-        var en = voices.filter(function (v) { return /^en/i.test(v.lang); });
-        return en.filter(function (v) { return /natural/i.test(v.name); })[0]
-            || en.filter(function (v) { return /google us english/i.test(v.name); })[0]
-            || en.filter(function (v) { return v.default; })[0]
-            || en[0] || null;
-    }
-
-    function isVisible(el) {
-        return !!(el.offsetWidth || el.offsetHeight || el.getClientRects().length);
-    }
-
-    function collectQueue() {
-        var root = document.querySelector("[data-readaloud-root]")
-                || document.querySelector(".canvas-frame")
-                || document.body;
-        var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null, false);
-        var items = [];
-        var node;
-        while ((node = walker.nextNode())) {
-            if (!/\S/.test(node.textContent)) continue;
-            var el = node.parentElement;
-            if (!el || el.closest(SKIP_SEL)) continue;
-            if (!isVisible(el)) continue;
-            var block = el.closest(BLOCK_SEL) || root;
-            var last = items[items.length - 1];
-            if (last && last.el === block) last.text += " " + node.textContent;
-            else items.push({ el: block, text: node.textContent });
-        }
-        var q = [];
-        items.forEach(function (item) {
-            var clean = item.text.replace(/[\u{1F600}-\u{1F64F}\u{1F300}-\u{1F5FF}\u{1F680}-\u{1F6FF}\u{1F1E0}-\u{1F1FF}\u{1F900}-\u{1F9FF}\u{1FA00}-\u{1FA6F}\u{1FA70}-\u{1FAFF}\u{2600}-\u{27BF}\u{2300}-\u{23FF}\u{2B50}\u{2B55}\u{25A0}-\u{25FF}\u{2702}-\u{27B0}\u{FE00}-\u{FE0F}\u{200D}\u{20E3}\u{E0020}-\u{E007F}]/gu, "").replace(/\s+/g, " ").trim();
-            if (!clean) return;
-            var sentences = clean.match(/[^.!?]+[.!?]+["”’')\]]*\s*|[^.!?]+$/g) || [clean];
-            sentences.forEach(function (s) {
-                s = s.trim();
-                if (s) q.push({ el: item.el, text: s });
-            });
-        });
-        return q;
-    }
-
-    function highlight(el) {
-        if (el === currentBlock) return;
-        clearHighlight();
-        currentBlock = el;
-        if (el && el !== document.body) {
-            el.classList.add("ora-highlight");
-            try { el.scrollIntoView({ behavior: "smooth", block: "nearest" }); } catch (e) {}
-        }
-    }
-    function clearHighlight() {
-        if (currentBlock) currentBlock.classList.remove("ora-highlight");
-        currentBlock = null;
-    }
-
-    function speakNext() {
-        if (idx >= queue.length) { finish("Finished reading this page."); return; }
-        var item = queue[idx];
-        highlight(item.el);
-        var u = new SpeechSynthesisUtterance(item.text);
-        u.rate = parseFloat(rateSel.value) || 1;
-        var v = pickVoice();
-        if (v) u.voice = v;
-        u.onend = function () {
-            if (stopping) return;
-            idx++;
-            speakNext();
-        };
-        u.onerror = function (e) {
-            if (stopping || e.error === "canceled" || e.error === "interrupted") return;
-            idx++;
-            speakNext();
-        };
-        currentUtterance = u;
-        window.speechSynthesis.speak(u);
-        statusEl.textContent = "Reading… " + (idx + 1) + " / " + queue.length;
-    }
-
-    function finish(message) {
-        playing = false;
-        paused = false;
-        clearHighlight();
-        playBtn.textContent = LABEL_PLAY;
-        stopBtn.disabled = true;
-        statusEl.textContent = message || "";
-        currentUtterance = null;
-    }
-
-    playBtn.addEventListener("click", function () {
-        if (playing && !paused) {
-            window.speechSynthesis.pause();
-            paused = true;
-            playBtn.textContent = LABEL_RESUME;
-            statusEl.textContent = "Paused";
-            return;
-        }
-        if (playing && paused) {
-            window.speechSynthesis.resume();
-            paused = false;
-            playBtn.textContent = LABEL_PAUSE;
-            statusEl.textContent = "Reading… " + (idx + 1) + " / " + queue.length;
-            return;
-        }
-        queue = collectQueue();
-        if (!queue.length) { statusEl.textContent = "Nothing to read on this page."; return; }
-        idx = 0;
-        stopping = false;
-        playing = true;
-        paused = false;
-        window.speechSynthesis.cancel();
-        playBtn.textContent = LABEL_PAUSE;
-        stopBtn.disabled = false;
-        speakNext();
-    });
-
-    stopBtn.addEventListener("click", function () {
-        stopping = true;
-        window.speechSynthesis.cancel();
-        finish("");
-    });
-
-    rateSel.addEventListener("change", function () {
-        if (!playing || paused) return;
-        stopping = true;
-        window.speechSynthesis.cancel();
-        setTimeout(function () { stopping = false; speakNext(); }, 60);
-    });
-
-    window.addEventListener("pagehide", function () { window.speechSynthesis.cancel(); });
-})();
-</script>
+    <div class="sb-pg r">
+      <div class="sb-chap">Chapter 10</div>
+      <div class="sb-chap-t">Bach's Measures</div>
+      <div class="sb-orn" aria-hidden="true"></div>
+      <p class="sb-chap-s">Leipzig, Germany · about 300 years ago</p>
+      <div class="sb-chap-l">Lesson 5 · Comparing Fractions, Part 2</div>
+    </div>
+  </div>
+  <img class="sb-owl" src="images/storybook/opti-owl.png" alt="Opti the owl, sitting on the open book">
 </div>
-<!-- ═══ END OPTIMA READ-ALOUD PLAYER ═══ -->
 
-<div class="progress-wrap"><span class="progress-label">Lesson Progress</span><div class="progress-track"><div class="progress-fill" id="pf"></div></div><span class="progress-pct" id="pp">0%</span></div>
-<div class="header">
-<div class="header-brand"><div class="header-logo"><img alt="Optima" src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png"/></div><div><div class="header-org">Optima Academy Online</div><div class="header-sub">An Education Experience Company</div></div></div>
-<div class="header-title"><em>Comparing Fractions Part 2</em></div>
-<div class="header-badge"><span class="header-badge-icon">🦉</span><span class="header-badge-text">Lesson 3.10.05 · U10 Apply</span></div>
-</div>
-<div class="quote-strip"><div class="quote-strip-text">"You don’t always have to re-cut. Sometimes you can just look at the fractions and know."</div><div class="quote-strip-attr">Reasoning shortcuts</div></div>
-<div class="info-strip">
-<div class="info-cell"><div class="info-icon" style="background:var(--mar-light);">🧭</div><div><div class="info-label">Unit</div><div class="info-value">Unit 10</div><div class="info-detail">Equivalence</div></div></div>
-<div class="info-cell"><div class="info-icon" style="background:#E3F8ED;">📅</div><div><div class="info-label">Lesson</div><div class="info-value">3.10.05</div><div class="info-detail">U3 Apply</div></div></div>
-<div class="info-cell"><div class="info-icon" style="background:#EAF0FF;">📐</div><div><div class="info-label">Standards</div><div class="info-value" style="font-size:13px;line-height:1.35">MA.3.FR.2.1, MA.3.FR.2.2</div><div class="info-detail">compare</div></div></div>
-<div class="info-cell"><div class="info-icon" style="background:#FFF8E6;">⚖️</div><div><div class="info-label">Tool</div><div class="info-value">Benchmark</div><div class="info-detail">shortcuts</div></div></div>
-</div>
-<div class="explorer-strip"><span class="explorer-compass">🧭</span><div><div class="explorer-mission-label">Today’s Mission</div><div class="explorer-mission-text">Three shortcuts for comparing fractions — without re-cutting every time.</div></div></div>
-<div class="intro-2col">
-<div class="intro-card theme-question"><div class="intro-card-head"><div class="intro-card-head-icon">❓</div><div><div class="intro-card-head-label">Essential Question</div><div class="intro-card-head-title">Can you compare without re-cutting?</div></div></div><div class="intro-card-body"><p>Re-cutting always works — but sometimes you can tell which fraction is bigger just by looking at the numerators, the denominators, or the halfway mark.</p></div></div>
-<div class="intro-card theme-objectives"><div class="intro-card-head"><div class="intro-card-head-icon">🎯</div><div><div class="intro-card-head-label">Today’s Objectives</div><div class="intro-card-head-title">You will…</div></div></div><div class="intro-card-body">
-<div class="obj-line"><span style="flex-shrink:0">⚖️</span><span><strong>Use</strong> same-denominator reasoning to compare.</span></div>
-<div class="obj-line"><span style="flex-shrink:0">🔍</span><span><strong>Use</strong> same-numerator reasoning to compare.</span></div>
-<div class="obj-line"><span style="flex-shrink:0">📏</span><span><strong>Use</strong> the benchmark <span class="frac"><span class="num">1</span><span class="bar"></span><span class="den">2</span></span> to compare.</span></div>
-</div></div>
-</div>
-<div class="need-strip"><span class="need-strip-label">You’ll need:</span><span class="need-chip">📓 Math Journal</span><span class="need-chip">✏️ Pencil</span></div>
-<div class="tab-bar" id="tabBar">
-<button class="tab-btn active" data-tab="warmup" onclick="switchTab('warmup')">🔍 Warm-Up <span class="tab-check">✓</span></button>
-<button class="tab-btn" data-tab="learn" onclick="switchTab('learn')">📐 Learn <span class="tab-check">✓</span></button>
-
-<button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">🌟 Show What You Know <span class="tab-check">✓</span></button>
-</div>
-<!-- WARM-UP TAB -->
-<div class="tab-panel active" id="tab-warmup">
-<!-- ═══ INTRODUCTION VIDEO ═══ -->
-<div class="video-placeholder-wrap">
-<!-- slot: g3math-10-05 -->
-<div class="video-placeholder-inner">
-  <span class="vp-icon">&#x1F3AC;</span>
-  <div class="vp-label">Introduction Video</div>
-  <div class="vp-title">Optima Academy Online — Grade 3 Math Lesson 3.10.05</div>
-  <div class="vp-slot">g3math-10-05</div>
-  <div class="vp-notes">
-    <strong>Teacher recording notes:</strong> Introduction video for this lesson.
+<div class="sb-intro">
+  <div class="sb-card sb-eq">
+    <span class="sb-k">Essential Question</span>
+    <h3>How can you compare fractions without re-cutting?</h3>
+    <svg viewBox="0 0 680 134" role="img" aria-label="Two cups of the same size with a gold line at one-half. One-sixth stops before the line. Seven-twelfths goes past it." style="display:block;width:100%;max-width:680px"><rect x="10.0" y="8" width="98.3" height="36" fill="#2F6FDE" stroke="#2F6FDE" stroke-width="2"/><rect x="108.3" y="8" width="98.3" height="36" fill="#fff" stroke="#2F6FDE" stroke-width="2"/><rect x="206.7" y="8" width="98.3" height="36" fill="#fff" stroke="#2F6FDE" stroke-width="2"/><rect x="305.0" y="8" width="98.3" height="36" fill="#fff" stroke="#2F6FDE" stroke-width="2"/><rect x="403.3" y="8" width="98.3" height="36" fill="#fff" stroke="#2F6FDE" stroke-width="2"/><rect x="501.7" y="8" width="98.3" height="36" fill="#fff" stroke="#2F6FDE" stroke-width="2"/><text x="640" y="21" text-anchor="middle" font-size="14" font-weight="900" fill="#2F6FDE">1</text><line x1="632" y1="26" x2="648" y2="26" stroke="#2F6FDE" stroke-width="2"/><text x="640" y="41" text-anchor="middle" font-size="14" font-weight="900" fill="#2F6FDE">6</text><rect x="10.0" y="60" width="49.2" height="36" fill="#5B6478" stroke="#5B6478" stroke-width="2"/><rect x="59.2" y="60" width="49.2" height="36" fill="#5B6478" stroke="#5B6478" stroke-width="2"/><rect x="108.3" y="60" width="49.2" height="36" fill="#5B6478" stroke="#5B6478" stroke-width="2"/><rect x="157.5" y="60" width="49.2" height="36" fill="#5B6478" stroke="#5B6478" stroke-width="2"/><rect x="206.7" y="60" width="49.2" height="36" fill="#5B6478" stroke="#5B6478" stroke-width="2"/><rect x="255.8" y="60" width="49.2" height="36" fill="#5B6478" stroke="#5B6478" stroke-width="2"/><rect x="305.0" y="60" width="49.2" height="36" fill="#5B6478" stroke="#5B6478" stroke-width="2"/><rect x="354.2" y="60" width="49.2" height="36" fill="#fff" stroke="#5B6478" stroke-width="2"/><rect x="403.3" y="60" width="49.2" height="36" fill="#fff" stroke="#5B6478" stroke-width="2"/><rect x="452.5" y="60" width="49.2" height="36" fill="#fff" stroke="#5B6478" stroke-width="2"/><rect x="501.7" y="60" width="49.2" height="36" fill="#fff" stroke="#5B6478" stroke-width="2"/><rect x="550.8" y="60" width="49.2" height="36" fill="#fff" stroke="#5B6478" stroke-width="2"/><text x="640" y="73" text-anchor="middle" font-size="14" font-weight="900" fill="#5B6478">7</text><line x1="632" y1="78" x2="648" y2="78" stroke="#5B6478" stroke-width="2"/><text x="640" y="93" text-anchor="middle" font-size="14" font-weight="900" fill="#5B6478">12</text><line x1="305.0" y1="2" x2="305.0" y2="116" stroke="#C9A227" stroke-width="1.5"/><text x="305.0" y="130" text-anchor="middle" font-size="13" font-weight="900" fill="#8A6A00">one-half</text></svg>
+    <p style="margin:4px 0 0">One-sixth stops before the halfway line. Seven-twelfths goes past it. So seven-twelfths is greater, and you didn't have to re-cut.</p>
+  </div>
+  <div class="sb-card sb-obj">
+    <span class="sb-k">Today's Objectives</span>
+    <h3>You will…</h3>
+    <ul>
+      <li><b>Find</b> half of a denominator.</li>
+      <li><b>Compare</b> a fraction to the benchmark one-half.</li>
+      <li><b>Look at the missing piece</b> to tell which fraction is closer to 1.</li>
+    </ul>
   </div>
 </div>
+
+<div class="sb-tabs" role="tablist" aria-label="Lesson sections">
+  <button class="sb-tab" role="tab" data-tab="warmup" aria-controls="tab-warmup">🔍 Warm-Up <span class="ck">✓</span></button>
+  <button class="sb-tab" role="tab" data-tab="learn" aria-controls="tab-learn">📐 Lesson <span class="ck">✓</span></button>
+  <button class="sb-tab" role="tab" data-tab="swyk" aria-controls="tab-swyk">🌟 Show What You Know <span class="ck">✓</span></button>
 </div>
 
-<div class="fluency-box" data-timed="false">
-<div class="fluency-head">
-<div class="fluency-head-icon">✍️</div>
-<div><div class="fluency-head-label">FLUENCY WARM-UP</div><div class="fluency-head-title">Multiples of Ten (like 7 × 40)</div></div>
-</div>
-<div class="fluency-body">
-<p class="fluency-instructions">Warm up your fact fluency before today’s lesson. Work through these, then check your answers.</p>
-<div class="fluency-grid" id="fluencyGrid">
-<div class="fluency-item"><span class="fluency-q">7 × 40 =</span><input autocomplete="off" class="fluency-input" data-answer="280" inputmode="numeric" type="text"/></div>
-<div class="fluency-item"><span class="fluency-q">6 × 30 =</span><input autocomplete="off" class="fluency-input" data-answer="180" inputmode="numeric" type="text"/></div>
-<div class="fluency-item"><span class="fluency-q">8 × 50 =</span><input autocomplete="off" class="fluency-input" data-answer="400" inputmode="numeric" type="text"/></div>
-<div class="fluency-item"><span class="fluency-q">9 × 20 =</span><input autocomplete="off" class="fluency-input" data-answer="180" inputmode="numeric" type="text"/></div>
-<div class="fluency-item"><span class="fluency-q">5 × 60 =</span><input autocomplete="off" class="fluency-input" data-answer="300" inputmode="numeric" type="text"/></div>
-<div class="fluency-item"><span class="fluency-q">4 × 70 =</span><input autocomplete="off" class="fluency-input" data-answer="280" inputmode="numeric" type="text"/></div>
-<div class="fluency-item"><span class="fluency-q">3 × 90 =</span><input autocomplete="off" class="fluency-input" data-answer="270" inputmode="numeric" type="text"/></div>
-<div class="fluency-item"><span class="fluency-q">6 × 80 =</span><input autocomplete="off" class="fluency-input" data-answer="480" inputmode="numeric" type="text"/></div>
-<div class="fluency-item"><span class="fluency-q">7 × 20 =</span><input autocomplete="off" class="fluency-input" data-answer="140" inputmode="numeric" type="text"/></div>
-<div class="fluency-item"><span class="fluency-q">9 × 30 =</span><input autocomplete="off" class="fluency-input" data-answer="270" inputmode="numeric" type="text"/></div>
-</div>
-<button class="fluency-check-btn" id="fluencyCheckBtn" onclick="fluencyCheck()">Check My Answers</button>
-<div class="fluency-result" id="fluencyResult"></div>
-</div>
-<textarea class="journal-box" data-label="Fluency Warm-Up (Multiples of Ten (like 7 × 40))" id="fluencyJournal" readonly="" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;"></textarea>
+<!-- ══════════════ WARM-UP ══════════════ -->
+<section class="sb-panel tab-panel" id="tab-warmup" role="tabpanel">
+
+<div class="sb-opti" data-slot="warm-1">Hoo, welcome to a coffee house in Leipzig! About three hundred years ago, people came here to drink coffee and hear music. Bach's music group often played here. Bach wrote a funny piece called the Coffee Cantata. A father wants his daughter Lieschen to stop drinking coffee. But she loves it! Today we'll look at cups of coffee. Is a cup less than half full, more than half full, or almost full?</div>
+
+<div class="sb-video pq-vslot" data-slot="warm">
+  <video controls preload="metadata" playsinline poster="assets/video/g3math-10-05-warm.jpg" src="assets/video/g3math-10-05-warm.mp4"></video>
+  <div class="cap">🎬 Opti Opens Lesson 5: Cups of Coffee</div>
 </div>
 
-<div class="activity bl-yellow"><div class="activity-head"><div class="activity-num" style="background:#F5C518;color:#0E1C42;">🔎</div><div><div class="activity-title">Readiness Check</div><div class="activity-sub">Tap the card.</div></div></div><div class="activity-body">
-<p><strong>Which is bigger: <span class="frac md"><span class="num">3</span><span class="bar"></span><span class="den">6</span></span> or <span class="frac md"><span class="num">1</span><span class="bar"></span><span class="den">2</span></span>?</strong></p>
-<div class="value-card-row">
-<div class="value-card" onclick="rA(this,false)"><div class="big"><span class="frac md"><span class="num">3</span><span class="bar"></span><span class="den">6</span></span></div></div>
-<div class="value-card" onclick="rA(this,false)"><div class="big"><span class="frac md"><span class="num">1</span><span class="bar"></span><span class="den">2</span></span></div></div>
-<div class="value-card" onclick="rA(this,true)"><div class="big">They’re equal</div></div>
-</div>
-<div class="inline-feedback" id="rA-fb"></div>
-<div class="hint-callout"><span class="frac"><span class="num">3</span><span class="bar"></span><span class="den">6</span></span> and <span class="frac"><span class="num">1</span><span class="bar"></span><span class="den">2</span></span> shade the same length on the strip. They’re equivalent.</div>
-</div></div>
-<div class="activity bl-yellow"><div class="activity-head"><div class="activity-num" style="background:#F5C518;color:#0E1C42;">🤔</div><div><div class="activity-title">Think About It</div></div></div><div class="activity-body">
-<div class="callout callout-think"><span class="callout-icon">🧠</span><p>Felix says: "I can tell <span class="frac"><span class="num">5</span><span class="bar"></span><span class="den">8</span></span> is bigger than <span class="frac"><span class="num">3</span><span class="bar"></span><span class="den">8</span></span> without re-cutting. They already have the same bottom." Is Felix right?</p></div>
-<div class="value-card-row">
-<div class="value-card" onclick="rT(this,true)"><div class="big">Yes</div></div>
-<div class="value-card" onclick="rT(this,false)"><div class="big">No</div></div>
-</div>
-<div class="inline-feedback" id="rT-fb"></div>
-<div class="olt-nudge"><a href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=pattern&amp;st=1" target="_blank" rel="noopener" title="Open the Pattern Blocks to build the shape and find symmetry."><span aria-hidden="true">🧮</span> Try the <b>Pattern Blocks</b> <span aria-hidden="true">↗</span></a></div><div class="journal-label">✏️ Why? <span class="saved-dot" id="dt"></span></div>
-<textarea class="journal-box" data-label="Warm-Up think" id="j-t05" oninput="autoSave(this,'dt')" placeholder=""></textarea>
-</div></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Same bottom. Same top. Halfway mark. Three shortcuts.</p><button class="tab-next-btn" onclick="switchTab('learn')">Continue to 📐 Learn →</button></div>
-</div>
-<!-- LEARN TAB -->
-<div class="tab-panel" id="tab-learn">
-<div class="vocab-section"><div class="vocab-section-title">Vocabulary: Three Comparing Shortcuts</div>
-<p style="font-size:14px;color:#3A4A6B;font-family:'Lora',serif;font-style:italic;margin-bottom:10px;"><strong>Same denominator</strong> — same bottom means same-size pieces. Compare the tops: more shaded pieces wins.</p>
-<p style="font-size:14px;color:#3A4A6B;font-family:'Lora',serif;font-style:italic;margin-bottom:10px;"><strong>Same numerator</strong> — same top means the same count of pieces. Compare piece sizes: bigger pieces (smaller denominator) wins.</p>
-<p style="font-size:14px;color:#3A4A6B;font-family:'Lora',serif;font-style:italic;"><strong>Benchmark comparison</strong> — compare each fraction to <span class="frac"><span class="num">1</span><span class="bar"></span><span class="den">2</span></span>. One past half and one short? The one past half is bigger.</p>
+<div class="sb-card">
+  <span class="sb-k">From the book</span>
+  <h3>Why Bach?</h3>
+  <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>A real print of Katharine Street in Leipzig, made about 1720. The house marked 2 was Zimmermann's coffee house. Starting in 1729, Bach led a music group that played there, and people listened while they drank coffee. The other picture is Bach's own title page for the Coffee Cantata. It names the father, Schlendrian, and his daughter, Lieschen.</p></div>
+  <div class="sb-art">
+    <figure class="sb-fig"><img src="images/storybook/sb-coffee-house.jpg" alt="A close look at a tall, fancy house with many windows and a big doorway, with carriages in the street." style="object-fit:contain;background:#fff"><figcaption>Zimmermann's coffee house.<small>Johann Georg Schreiber, Katharine Street, Leipzig, engraving, about 1720 (detail). Public domain, via Wikimedia Commons.</small></figcaption></figure>
+    <figure class="sb-fig"><img src="images/storybook/sb-bwv211-title.jpg" alt="A gray-blue page with old handwriting in brown ink, written in lines down the middle." style="object-fit:contain;background:#FBF6EA"><figcaption>Bach's title page for the Coffee Cantata.<small>Johann Sebastian Bach, autograph score of BWV 211, about 1734. Staatsbibliothek zu Berlin. Public domain, via Wikimedia Commons.</small></figcaption></figure>
+  </div>
+  <p style="margin:6px 0 0">Bach wrote the Coffee Cantata in the early 1730s. It is a funny story told by singers and players. A father tries to make his daughter stop drinking coffee, and she won't. In one song, Lieschen sings about how sweet her coffee tastes, and a flute plays along.</p>
+  <p style="margin:6px 0 0"><b>Today's math:</b> each cup is one whole. Is it less than half full, more than half full, or almost full? Those questions let you compare without re-cutting.</p>
 </div>
 
-<div class="callout callout-info"><span class="callout-icon">🍫</span><p><strong>How the Benchmark Builder works.</strong> Pick a denominator — the strip re-cuts. Then shade pieces one at a time by changing the numerator. Watch where your fraction lands compared to the ½ mark. Build a second fraction below and compare both.</p></div>
-<!-- CENTERPIECE: Benchmark Builder -->
-<div class="activity bl-mar"><div class="activity-head"><div class="activity-num" style="background:var(--mar);">⚖️</div><div><div class="activity-title">Benchmark Builder</div></div></div><div class="activity-body">
-<p style="font-family:'Lora',serif;font-size:14.5px;font-style:italic;color:var(--mar-deep);margin-bottom:8px;">Build two fractions. Watch the strips and the halfway mark. Then click "Compare" to see which shortcut applies.</p>
-<div class="bb-frame">
-<div class="bb-task" id="bb-task">Build Fraction A, then Fraction B. Click "Compare" when ready.</div>
-<div class="bb-controls">
-<div class="bb-pick"><div class="bb-pick-label">Bottom (denominator)</div><div class="bb-stepper"><button class="bb-btn" onclick="bbStep('aDen',-1)">▼</button><span class="bb-val" id="bb-aDen-val">4</span><button class="bb-btn" onclick="bbStep('aDen',1)">▲</button></div></div>
-<div class="bb-pick"><div class="bb-pick-label">Top (numerator)</div><div class="bb-stepper"><button class="bb-btn" onclick="bbStep('aNum',-1)">▼</button><span class="bb-val" id="bb-aNum-val">1</span><button class="bb-btn" onclick="bbStep('aNum',1)">▲</button></div></div>
-</div>
-<div class="bb-strip-wrap"><div class="bb-strip-label">Fraction A</div><div class="bb-strip-row"><div class="bb-frac-label" id="bb-labelA"><span class="frac md"><span class="num">1</span><span class="bar"></span><span class="den">4</span></span></div><div class="bb-strip" id="bb-stripA"><div class="bb-half-label">½</div><div class="bb-half-line"></div></div></div><div style="text-align:center;"><span class="bb-flag less" id="bb-flagA">less than ½</span></div></div>
-<hr class="bb-divider"/>
-<div class="bb-controls">
-<div class="bb-pick"><div class="bb-pick-label">Bottom (denominator)</div><div class="bb-stepper"><button class="bb-btn" onclick="bbStep('bDen',-1)">▼</button><span class="bb-val" id="bb-bDen-val">3</span><button class="bb-btn" onclick="bbStep('bDen',1)">▲</button></div></div>
-<div class="bb-pick"><div class="bb-pick-label">Top (numerator)</div><div class="bb-stepper"><button class="bb-btn" onclick="bbStep('bNum',-1)">▼</button><span class="bb-val" id="bb-bNum-val">1</span><button class="bb-btn" onclick="bbStep('bNum',1)">▲</button></div></div>
-</div>
-<div class="bb-strip-wrap"><div class="bb-strip-label">Fraction B</div><div class="bb-strip-row"><div class="bb-frac-label" id="bb-labelB"><span class="frac md"><span class="num">1</span><span class="bar"></span><span class="den">3</span></span></div><div class="bb-strip" id="bb-stripB"><div class="bb-half-label">½</div><div class="bb-half-line"></div></div></div><div style="text-align:center;"><span class="bb-flag less" id="bb-flagB">less than ½</span></div></div>
-<div style="text-align:center;"><button class="bb-compare-btn" id="bb-compare-btn" onclick="bbCompare()">⚖️ Compare!</button></div>
-<div class="bb-equation" id="bb-equation"></div>
-<div class="bb-words" id="bb-words"></div>
-<div style="text-align:center;"><button class="bb-reset-btn" id="bb-reset-btn" onclick="bbReset()">↩ Reset</button></div>
-</div>
-</div></div>
-<div class="activity bl-slate"><div class="activity-head"><div class="activity-num" style="background:#3A6B9A;">📋</div><div><div class="activity-title">Three Shortcuts at a Glance</div></div></div><div class="activity-body">
-<table class="ex-tbl">
-<thead><tr><th>Shortcut</th><th>How it works</th><th>Example</th></tr></thead>
-<tbody>
-<tr><td>Same bottom</td><td>Same-size pieces. Compare the tops — more pieces wins.</td><td><span class="frac"><span class="num">5</span><span class="bar"></span><span class="den">8</span></span> &gt; <span class="frac"><span class="num">3</span><span class="bar"></span><span class="den">8</span></span></td></tr>
-<tr><td>Same top</td><td>Same count of pieces. Bigger pieces (smaller bottom) wins.</td><td><span class="frac"><span class="num">2</span><span class="bar"></span><span class="den">3</span></span> &gt; <span class="frac"><span class="num">2</span><span class="bar"></span><span class="den">5</span></span></td></tr>
-<tr><td>Benchmark ½</td><td>One past half, one short of half? The one past half wins.</td><td><span class="frac"><span class="num">5</span><span class="bar"></span><span class="den">8</span></span> &gt; <span class="frac"><span class="num">3</span><span class="bar"></span><span class="den">8</span></span></td></tr>
-</tbody>
-</table>
-</div></div>
-<div class="key-concept"><div class="key-concept-label">📐 What You Just Saw</div>
-<p><strong>Three shortcuts: (1) Same bottom — compare tops. (2) Same top — bigger pieces win (smaller bottom number). (3) Compare to <span class="frac"><span class="num">1</span><span class="bar"></span><span class="den">2</span></span> — one past half, one short? Done.</strong></p>
+<div class="video-placeholder-wrap">
+<!-- slot: g3math-10-05 -->
+<div class="video-placeholder-inner"><div class="vp-label">🎬 Welcome Video</div><div class="vp-slot">g3math-10-05</div><div class="vp-notes"><b>Teacher recording notes:</b> Welcome to Lesson 5! Warm up by finding half of even numbers. Then look at three cups of coffee and show the halfway line.</div></div>
 </div>
 
-<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">🧠</div><div><div class="activity-title">Worked Example: Compare <span class="frac"><span class="num">3</span><span class="bar"></span><span class="den">5</span></span> and <span class="frac"><span class="num">1</span><span class="bar"></span><span class="den">3</span></span></div></div></div><div class="activity-body">
-<div class="task-box"><div class="task-label">Problem</div><p>Compare <span class="frac"><span class="num">3</span><span class="bar"></span><span class="den">5</span></span> and <span class="frac"><span class="num">1</span><span class="bar"></span><span class="den">3</span></span>. Who has more candy?</p></div>
-<div class="bubble-row">
-<div class="bubble atlas"><div class="bubble-avatar">A</div><div class="bubble-body"><div class="bubble-name">Atlas</div><div class="bubble-text">"Different bottoms and different tops. No quick match."</div></div></div>
-<div class="bubble hazel"><div class="bubble-avatar">H</div><div class="bubble-body"><div class="bubble-name">Hazel</div><div class="bubble-text">"Check the halfway mark. Half of 5 is 2½. The top is 3 — past half! So <span class="frac"><span class="num">3</span><span class="bar"></span><span class="den">5</span></span> is more than ½."</div></div></div>
+<div class="fluency-box">
+  <div class="fluency-head"><div class="fluency-head-icon">✍️</div><div><div class="fluency-head-label">FACT WARM-UP</div><div class="fluency-head-title">Today's Helpers: Half of a Number</div></div></div>
+  <div class="fluency-body">
+    <p class="fluency-instructions">Today you'll find half of a number a lot. Half means divide by 2. Type each answer, then check. You can fix any answer and check again.</p>
+    <div class="fluency-grid" id="fluencyGrid">
+      <div class="fluency-item"><span class="fluency-q">Half of 8 =</span><input class="fluency-input" data-answer="4" inputmode="numeric" autocomplete="off" aria-label="Half of 8"></div>
+      <div class="fluency-item"><span class="fluency-q">Half of 12 =</span><input class="fluency-input" data-answer="6" inputmode="numeric" autocomplete="off" aria-label="Half of 12"></div>
+      <div class="fluency-item"><span class="fluency-q">Half of 10 =</span><input class="fluency-input" data-answer="5" inputmode="numeric" autocomplete="off" aria-label="Half of 10"></div>
+      <div class="fluency-item"><span class="fluency-q">Half of 14 =</span><input class="fluency-input" data-answer="7" inputmode="numeric" autocomplete="off" aria-label="Half of 14"></div>
+      <div class="fluency-item"><span class="fluency-q">Half of 18 =</span><input class="fluency-input" data-answer="9" inputmode="numeric" autocomplete="off" aria-label="Half of 18"></div>
+      <div class="fluency-item"><span class="fluency-q">Half of 16 =</span><input class="fluency-input" data-answer="8" inputmode="numeric" autocomplete="off" aria-label="Half of 16"></div>
+      <div class="fluency-item"><span class="fluency-q">Half of 20 =</span><input class="fluency-input" data-answer="10" inputmode="numeric" autocomplete="off" aria-label="Half of 20"></div>
+      <div class="fluency-item"><span class="fluency-q">Half of 22 =</span><input class="fluency-input" data-answer="11" inputmode="numeric" autocomplete="off" aria-label="Half of 22"></div>
+    </div>
+    <div class="sb-help"><button type="button" class="sb-btn check" data-fluency-check>Check my answers</button></div>
+    <div class="sb-fb" aria-live="polite"></div>
+  </div>
 </div>
-<div class="bubble-row">
-<div class="bubble felix"><div class="bubble-avatar">F</div><div class="bubble-body"><div class="bubble-name">Felix</div><div class="bubble-text">"Half of 3 is 1½. The top is 1 — short of half. So <span class="frac"><span class="num">1</span><span class="bar"></span><span class="den">3</span></span> is less than ½."</div></div></div>
-<div class="bubble cora"><div class="bubble-avatar">C</div><div class="bubble-body"><div class="bubble-name">Cora</div><div class="bubble-text">"One past ½, one short. <span class="frac"><span class="num">3</span><span class="bar"></span><span class="den">5</span></span> wins without re-cutting."</div></div></div>
+
+<div class="sb-card sb-qgroup" data-done="review" data-ok="✓ Yes! Re-cut each fifth into 4, and one-fifth is 4 twentieths. Re-cutting always works. Today you'll learn two faster ways.">
+  <span class="sb-k">Remember from Lesson 3.10.04</span>
+  <h3>Re-cut to compare</h3>
+  <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>Three bars, the same length. One-fifth is shaded on the top bar. In the middle bar, each fifth is cut into 4 pieces. The bottom bar shows three-twentieths.</p></div>
+  <svg viewBox="0 0 680 150" role="img" aria-label="Three bars of the same length. One-fifth of the top bar is shaded. In the middle bar each fifth is cut into 4, and four-twentieths stop at the same place. The bottom bar has three-twentieths shaded." style="display:block;width:100%;max-width:680px"><rect x="10.0" y="6" width="118.0" height="34" fill="#4E7A1A" stroke="#4E7A1A" stroke-width="2"/><rect x="128.0" y="6" width="118.0" height="34" fill="#fff" stroke="#4E7A1A" stroke-width="2"/><rect x="246.0" y="6" width="118.0" height="34" fill="#fff" stroke="#4E7A1A" stroke-width="2"/><rect x="364.0" y="6" width="118.0" height="34" fill="#fff" stroke="#4E7A1A" stroke-width="2"/><rect x="482.0" y="6" width="118.0" height="34" fill="#fff" stroke="#4E7A1A" stroke-width="2"/><rect x="10.0" y="52" width="29.5" height="34" fill="#3949AB" stroke="#3949AB" stroke-width="2"/><rect x="39.5" y="52" width="29.5" height="34" fill="#3949AB" stroke="#3949AB" stroke-width="2"/><rect x="69.0" y="52" width="29.5" height="34" fill="#3949AB" stroke="#3949AB" stroke-width="2"/><rect x="98.5" y="52" width="29.5" height="34" fill="#3949AB" stroke="#3949AB" stroke-width="2"/><rect x="128.0" y="52" width="29.5" height="34" fill="#fff" stroke="#3949AB" stroke-width="2"/><rect x="157.5" y="52" width="29.5" height="34" fill="#fff" stroke="#3949AB" stroke-width="2"/><rect x="187.0" y="52" width="29.5" height="34" fill="#fff" stroke="#3949AB" stroke-width="2"/><rect x="216.5" y="52" width="29.5" height="34" fill="#fff" stroke="#3949AB" stroke-width="2"/><rect x="246.0" y="52" width="29.5" height="34" fill="#fff" stroke="#3949AB" stroke-width="2"/><rect x="275.5" y="52" width="29.5" height="34" fill="#fff" stroke="#3949AB" stroke-width="2"/><rect x="305.0" y="52" width="29.5" height="34" fill="#fff" stroke="#3949AB" stroke-width="2"/><rect x="334.5" y="52" width="29.5" height="34" fill="#fff" stroke="#3949AB" stroke-width="2"/><rect x="364.0" y="52" width="29.5" height="34" fill="#fff" stroke="#3949AB" stroke-width="2"/><rect x="393.5" y="52" width="29.5" height="34" fill="#fff" stroke="#3949AB" stroke-width="2"/><rect x="423.0" y="52" width="29.5" height="34" fill="#fff" stroke="#3949AB" stroke-width="2"/><rect x="452.5" y="52" width="29.5" height="34" fill="#fff" stroke="#3949AB" stroke-width="2"/><rect x="482.0" y="52" width="29.5" height="34" fill="#fff" stroke="#3949AB" stroke-width="2"/><rect x="511.5" y="52" width="29.5" height="34" fill="#fff" stroke="#3949AB" stroke-width="2"/><rect x="541.0" y="52" width="29.5" height="34" fill="#fff" stroke="#3949AB" stroke-width="2"/><rect x="570.5" y="52" width="29.5" height="34" fill="#fff" stroke="#3949AB" stroke-width="2"/><rect x="10.0" y="98" width="29.5" height="34" fill="#3949AB" stroke="#3949AB" stroke-width="2"/><rect x="39.5" y="98" width="29.5" height="34" fill="#3949AB" stroke="#3949AB" stroke-width="2"/><rect x="69.0" y="98" width="29.5" height="34" fill="#3949AB" stroke="#3949AB" stroke-width="2"/><rect x="98.5" y="98" width="29.5" height="34" fill="#fff" stroke="#3949AB" stroke-width="2"/><rect x="128.0" y="98" width="29.5" height="34" fill="#fff" stroke="#3949AB" stroke-width="2"/><rect x="157.5" y="98" width="29.5" height="34" fill="#fff" stroke="#3949AB" stroke-width="2"/><rect x="187.0" y="98" width="29.5" height="34" fill="#fff" stroke="#3949AB" stroke-width="2"/><rect x="216.5" y="98" width="29.5" height="34" fill="#fff" stroke="#3949AB" stroke-width="2"/><rect x="246.0" y="98" width="29.5" height="34" fill="#fff" stroke="#3949AB" stroke-width="2"/><rect x="275.5" y="98" width="29.5" height="34" fill="#fff" stroke="#3949AB" stroke-width="2"/><rect x="305.0" y="98" width="29.5" height="34" fill="#fff" stroke="#3949AB" stroke-width="2"/><rect x="334.5" y="98" width="29.5" height="34" fill="#fff" stroke="#3949AB" stroke-width="2"/><rect x="364.0" y="98" width="29.5" height="34" fill="#fff" stroke="#3949AB" stroke-width="2"/><rect x="393.5" y="98" width="29.5" height="34" fill="#fff" stroke="#3949AB" stroke-width="2"/><rect x="423.0" y="98" width="29.5" height="34" fill="#fff" stroke="#3949AB" stroke-width="2"/><rect x="452.5" y="98" width="29.5" height="34" fill="#fff" stroke="#3949AB" stroke-width="2"/><rect x="482.0" y="98" width="29.5" height="34" fill="#fff" stroke="#3949AB" stroke-width="2"/><rect x="511.5" y="98" width="29.5" height="34" fill="#fff" stroke="#3949AB" stroke-width="2"/><rect x="541.0" y="98" width="29.5" height="34" fill="#fff" stroke="#3949AB" stroke-width="2"/><rect x="570.5" y="98" width="29.5" height="34" fill="#fff" stroke="#3949AB" stroke-width="2"/><line x1="128.0" y1="2" x2="128.0" y2="148" stroke="#C9A227" stroke-width="3" stroke-dasharray="5 4"/></svg>
+  <div class="sb-q">One-fifth = <span class="sb-frac"><input class="sb-ans" data-a="4" inputmode="numeric" autocomplete="off" aria-label="top number" data-hint="Count the shaded twentieths in the middle bar. Then count all its pieces."><i></i><input class="sb-ans" data-a="20" inputmode="numeric" autocomplete="off" aria-label="bottom number" data-hint="Count the shaded twentieths in the middle bar. Then count all its pieces."></span></div>
+  <div class="sb-q">So one-fifth <input class="sb-ans word" data-a=">" autocomplete="off" aria-label="word" data-hint="4 twentieths is more than 3 twentieths. Use the greater than symbol."> three-twentieths. (Type &lt;, &gt; or =.)</div>
+  <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div>
+  <div class="sb-fb" aria-live="polite"></div>
 </div>
-<p style="font-family:'Lora',serif;background:#FAFBFF;border:2px solid #E2E8F4;border-radius:12px;padding:10px;text-align:center;font-size:20px;font-weight:900;margin-top:14px;"><span class="frac md" style="color:#1A8A5A;"><span class="num">3</span><span class="bar"></span><span class="den">5</span></span>  &gt;  <span class="frac md" style="color:#1A8A5A;"><span class="num">1</span><span class="bar"></span><span class="den">3</span></span></p>
-</div></div>
-<div class="socratic-box"><div class="socratic-label">🔮 Cora’s Question</div><p class="socratic-q">When would the benchmark trick NOT help you compare two fractions?</p><div class="olt-nudge"><a href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=fbars&amp;st=1" target="_blank" rel="noopener" title="Open the Fraction Tiles to compare fractions and find equal ones."><span aria-hidden="true">🧮</span> Try the <b>Fraction Tiles</b> <span aria-hidden="true">↗</span></a></div><div class="journal-label">✏️ <span class="saved-dot" id="ds1"></span></div><textarea class="journal-box" data-label="Learn socratic" id="j-s105" oninput="autoSave(this,'ds1')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Three tricks. Pick the fastest one.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
+
+<!-- JOB 1 · THINK -->
+<section class="sb-card sb-job" data-job="1">
+  <div class="sb-jh"><span class="sb-jn">JOB 1</span><div><h3>Think: Three Cups</h3><span class="sb-kind">🔨 Do · ✏️ Write</span></div><span class="sb-donechip"></span></div>
+  <div class="sb-opti" data-slot="think-1">Here are three cups of coffee. Each cup is one whole. Press the button to show the halfway line. Which cups are more than half full? Which one is closest to full?</div>
+  <p class="sb-story">At the coffee house, Lieschen, her father and a friend each have a cup. Lieschen's cup is two-ninths full. Her father's is five-sevenths full. The friend's is nine-tenths full.</p>
+  <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>Three cups of coffee as fraction tiles. Each bar is one whole cup. The shaded tiles show the coffee. The cups are cut into different-size pieces.</p></div>
+  <div data-mod="bench" data-fr="2/9,5/7,9/10" data-rows="Lieschen's cup,Father's cup,Friend's cup" data-btns="half,gap" data-name="think" data-for="half gap"></div>
+  <div class="sb-steps">
+    <div class="sb-step" data-need="half"><h4>Show the halfway line</h4><p>Press <b>½ Show the halfway line</b>.</p></div>
+    <div class="sb-step"><h4>Count the cups past half</h4>
+      <div class="sb-q"><input class="sb-ans" data-a="2" inputmode="numeric" autocomplete="off" aria-label="number" data-hint="Count the cups whose coffee goes past the gold line."> cups are more than half full.</div>
+      <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+    <div class="sb-step" data-need="gap"><h4>Show the missing pieces</h4><p>Press <b>Show the missing pieces</b>.</p></div>
+    <div class="sb-step"><h4>Which cup is closest to full?</h4>
+      <div class="sb-q">The cup closest to full is <span class="sb-frac"><input class="sb-ans" data-a="9" inputmode="numeric" autocomplete="off" aria-label="top number" data-hint="Look for the red box that is the smallest. Which cup is that?"><i></i><input class="sb-ans" data-a="10" inputmode="numeric" autocomplete="off" aria-label="bottom number" data-hint="Look for the red box that is the smallest. Which cup is that?"></span> full.</div>
+      <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+    <div class="sb-step"><h4>Tell how you know</h4>
+      <label class="sb-write-l" for="w-think">How do you know that cup is closest to full?</label>
+      <textarea class="sb-write" id="w-think" data-req data-label="Closest to full" placeholder="It is missing only… and that piece is…"></textarea>
+      <div class="sb-chips2">Remember to tell: <span>missing piece</span><span>smallest</span></div>
+      <div class="sb-help"><button type="button" class="sb-btn check">Done</button></div><div class="sb-fb" aria-live="polite"></div></div>
+    <div class="sb-locked"></div>
+  </div>
+  <div class="sb-help"><button type="button" class="sb-btn ghost" data-hints='["The gold line is halfway across every cup. Coffee that goes past it is more than half.", "Lieschen&#39;s coffee stops before the line. The other two go past it.", "The friend&#39;s cup is missing one tenth. That is the smallest red box."]'>💡 Need a hint?</button><a class="sb-tool" href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=fbars&amp;st=1#s=eyJkIjpbMiw5LDEwXSwibGFiIjoxfQ" target="_blank" rel="noopener" title="Line up a one-half tile with a bar of ninths and a bar of tenths. Which fractions stop before the half tile ends?">🧮 Try the Fraction Tiles ↗</a><button type="button" class="sb-btn ghost sb-tipbtn" data-tip="#tip-1">💬 Hazel has a tip</button></div>
+  <div class="sb-hintbox"></div>
+  <div class="sb-tip" id="tip-1" data-who="hazel">I don't re-cut right away. First I ask: is it more or less than half?</div>
+  <div class="sb-payoff" data-after-job="1">
+    <div class="sb-art" style="margin:0"><div><svg viewBox="0 0 680 186" role="img" aria-label="The three cups with the halfway line: two-ninths stops before it, five-sevenths and nine-tenths go past it." style="display:block;width:100%;max-width:680px"><rect x="10.0" y="8" width="65.6" height="36" fill="#2E7D6B" stroke="#2E7D6B" stroke-width="2"/><rect x="75.6" y="8" width="65.6" height="36" fill="#2E7D6B" stroke="#2E7D6B" stroke-width="2"/><rect x="141.1" y="8" width="65.6" height="36" fill="#fff" stroke="#2E7D6B" stroke-width="2"/><rect x="206.7" y="8" width="65.6" height="36" fill="#fff" stroke="#2E7D6B" stroke-width="2"/><rect x="272.2" y="8" width="65.6" height="36" fill="#fff" stroke="#2E7D6B" stroke-width="2"/><rect x="337.8" y="8" width="65.6" height="36" fill="#fff" stroke="#2E7D6B" stroke-width="2"/><rect x="403.3" y="8" width="65.6" height="36" fill="#fff" stroke="#2E7D6B" stroke-width="2"/><rect x="468.9" y="8" width="65.6" height="36" fill="#fff" stroke="#2E7D6B" stroke-width="2"/><rect x="534.4" y="8" width="65.6" height="36" fill="#fff" stroke="#2E7D6B" stroke-width="2"/><text x="640" y="21" text-anchor="middle" font-size="14" font-weight="900" fill="#2E7D6B">2</text><line x1="632" y1="26" x2="648" y2="26" stroke="#2E7D6B" stroke-width="2"/><text x="640" y="41" text-anchor="middle" font-size="14" font-weight="900" fill="#2E7D6B">9</text><rect x="10.0" y="60" width="84.3" height="36" fill="#B03A2E" stroke="#B03A2E" stroke-width="2"/><rect x="94.3" y="60" width="84.3" height="36" fill="#B03A2E" stroke="#B03A2E" stroke-width="2"/><rect x="178.6" y="60" width="84.3" height="36" fill="#B03A2E" stroke="#B03A2E" stroke-width="2"/><rect x="262.9" y="60" width="84.3" height="36" fill="#B03A2E" stroke="#B03A2E" stroke-width="2"/><rect x="347.1" y="60" width="84.3" height="36" fill="#B03A2E" stroke="#B03A2E" stroke-width="2"/><rect x="431.4" y="60" width="84.3" height="36" fill="#fff" stroke="#B03A2E" stroke-width="2"/><rect x="515.7" y="60" width="84.3" height="36" fill="#fff" stroke="#B03A2E" stroke-width="2"/><text x="640" y="73" text-anchor="middle" font-size="14" font-weight="900" fill="#B03A2E">5</text><line x1="632" y1="78" x2="648" y2="78" stroke="#B03A2E" stroke-width="2"/><text x="640" y="93" text-anchor="middle" font-size="14" font-weight="900" fill="#B03A2E">7</text><rect x="10.0" y="112" width="59.0" height="36" fill="#117E7E" stroke="#117E7E" stroke-width="2"/><rect x="69.0" y="112" width="59.0" height="36" fill="#117E7E" stroke="#117E7E" stroke-width="2"/><rect x="128.0" y="112" width="59.0" height="36" fill="#117E7E" stroke="#117E7E" stroke-width="2"/><rect x="187.0" y="112" width="59.0" height="36" fill="#117E7E" stroke="#117E7E" stroke-width="2"/><rect x="246.0" y="112" width="59.0" height="36" fill="#117E7E" stroke="#117E7E" stroke-width="2"/><rect x="305.0" y="112" width="59.0" height="36" fill="#117E7E" stroke="#117E7E" stroke-width="2"/><rect x="364.0" y="112" width="59.0" height="36" fill="#117E7E" stroke="#117E7E" stroke-width="2"/><rect x="423.0" y="112" width="59.0" height="36" fill="#117E7E" stroke="#117E7E" stroke-width="2"/><rect x="482.0" y="112" width="59.0" height="36" fill="#117E7E" stroke="#117E7E" stroke-width="2"/><rect x="541.0" y="112" width="59.0" height="36" fill="#fff" stroke="#117E7E" stroke-width="2"/><text x="640" y="125" text-anchor="middle" font-size="14" font-weight="900" fill="#117E7E">9</text><line x1="632" y1="130" x2="648" y2="130" stroke="#117E7E" stroke-width="2"/><text x="640" y="145" text-anchor="middle" font-size="14" font-weight="900" fill="#117E7E">10</text><line x1="305.0" y1="2" x2="305.0" y2="168" stroke="#C9A227" stroke-width="1.5"/><text x="305.0" y="182" text-anchor="middle" font-size="13" font-weight="900" fill="#8A6A00">one-half</text></svg></div><div><svg viewBox="0 0 680 186" role="img" aria-label="The three cups with their missing pieces outlined. Nine-tenths is missing the smallest piece." style="display:block;width:100%;max-width:680px"><rect x="10.0" y="8" width="65.6" height="36" fill="#2E7D6B" stroke="#2E7D6B" stroke-width="2"/><rect x="75.6" y="8" width="65.6" height="36" fill="#2E7D6B" stroke="#2E7D6B" stroke-width="2"/><rect x="141.1" y="8" width="65.6" height="36" fill="#fff" stroke="#2E7D6B" stroke-width="2"/><rect x="206.7" y="8" width="65.6" height="36" fill="#fff" stroke="#2E7D6B" stroke-width="2"/><rect x="272.2" y="8" width="65.6" height="36" fill="#fff" stroke="#2E7D6B" stroke-width="2"/><rect x="337.8" y="8" width="65.6" height="36" fill="#fff" stroke="#2E7D6B" stroke-width="2"/><rect x="403.3" y="8" width="65.6" height="36" fill="#fff" stroke="#2E7D6B" stroke-width="2"/><rect x="468.9" y="8" width="65.6" height="36" fill="#fff" stroke="#2E7D6B" stroke-width="2"/><rect x="534.4" y="8" width="65.6" height="36" fill="#fff" stroke="#2E7D6B" stroke-width="2"/><rect x="140.1" y="4" width="460.9" height="44" rx="6" fill="none" stroke="#B23A2E" stroke-width="3" stroke-dasharray="6 4"/><text x="640" y="21" text-anchor="middle" font-size="14" font-weight="900" fill="#2E7D6B">2</text><line x1="632" y1="26" x2="648" y2="26" stroke="#2E7D6B" stroke-width="2"/><text x="640" y="41" text-anchor="middle" font-size="14" font-weight="900" fill="#2E7D6B">9</text><rect x="10.0" y="60" width="84.3" height="36" fill="#B03A2E" stroke="#B03A2E" stroke-width="2"/><rect x="94.3" y="60" width="84.3" height="36" fill="#B03A2E" stroke="#B03A2E" stroke-width="2"/><rect x="178.6" y="60" width="84.3" height="36" fill="#B03A2E" stroke="#B03A2E" stroke-width="2"/><rect x="262.9" y="60" width="84.3" height="36" fill="#B03A2E" stroke="#B03A2E" stroke-width="2"/><rect x="347.1" y="60" width="84.3" height="36" fill="#B03A2E" stroke="#B03A2E" stroke-width="2"/><rect x="431.4" y="60" width="84.3" height="36" fill="#fff" stroke="#B03A2E" stroke-width="2"/><rect x="515.7" y="60" width="84.3" height="36" fill="#fff" stroke="#B03A2E" stroke-width="2"/><rect x="430.4" y="56" width="170.6" height="44" rx="6" fill="none" stroke="#B23A2E" stroke-width="3" stroke-dasharray="6 4"/><text x="640" y="73" text-anchor="middle" font-size="14" font-weight="900" fill="#B03A2E">5</text><line x1="632" y1="78" x2="648" y2="78" stroke="#B03A2E" stroke-width="2"/><text x="640" y="93" text-anchor="middle" font-size="14" font-weight="900" fill="#B03A2E">7</text><rect x="10.0" y="112" width="59.0" height="36" fill="#117E7E" stroke="#117E7E" stroke-width="2"/><rect x="69.0" y="112" width="59.0" height="36" fill="#117E7E" stroke="#117E7E" stroke-width="2"/><rect x="128.0" y="112" width="59.0" height="36" fill="#117E7E" stroke="#117E7E" stroke-width="2"/><rect x="187.0" y="112" width="59.0" height="36" fill="#117E7E" stroke="#117E7E" stroke-width="2"/><rect x="246.0" y="112" width="59.0" height="36" fill="#117E7E" stroke="#117E7E" stroke-width="2"/><rect x="305.0" y="112" width="59.0" height="36" fill="#117E7E" stroke="#117E7E" stroke-width="2"/><rect x="364.0" y="112" width="59.0" height="36" fill="#117E7E" stroke="#117E7E" stroke-width="2"/><rect x="423.0" y="112" width="59.0" height="36" fill="#117E7E" stroke="#117E7E" stroke-width="2"/><rect x="482.0" y="112" width="59.0" height="36" fill="#117E7E" stroke="#117E7E" stroke-width="2"/><rect x="541.0" y="112" width="59.0" height="36" fill="#fff" stroke="#117E7E" stroke-width="2"/><rect x="540.0" y="108" width="61.0" height="44" rx="6" fill="none" stroke="#B23A2E" stroke-width="3" stroke-dasharray="6 4"/><text x="640" y="125" text-anchor="middle" font-size="14" font-weight="900" fill="#117E7E">9</text><line x1="632" y1="130" x2="648" y2="130" stroke="#117E7E" stroke-width="2"/><text x="640" y="145" text-anchor="middle" font-size="14" font-weight="900" fill="#117E7E">10</text><line x1="305.0" y1="2" x2="305.0" y2="168" stroke="#C9A227" stroke-width="1.5"/><text x="305.0" y="182" text-anchor="middle" font-size="13" font-weight="900" fill="#8A6A00">one-half</text></svg></div></div>
+    <p style="margin:8px 0 0"><b>Two shortcuts.</b> The halfway line tells which cups are more than one-half. The missing piece tells which cup is closest to full.</p>
+  </div>
+  <div class="sb-opti" data-slot="think-done" data-after="1">Nice work! Two cups are past the halfway line. Nine-tenths is missing just one small piece, so it is closest to full. You compared without re-cutting!</div>
+</section>
+
+<div class="sb-next"><button type="button" class="sb-btn gold" data-go-tab="learn" data-go-st="1">Next: the Lesson →</button></div>
+</section>
+
+<!-- ══════════════ LESSON ══════════════ -->
+<section class="sb-panel tab-panel" id="tab-learn" role="tabpanel">
+<div class="sb-path" role="list">
+  <button type="button" class="sb-pstep" data-st="1" role="listitem"><span class="num">1</span><span><b>Learn it</b><small>Learn + Your Turn</small></span></button>
+  <button type="button" class="sb-pstep" data-st="2" role="listitem"><span class="num">2</span><span><b>Practice together</b><small>Fix 3 mix-ups</small></span></button>
+  <button type="button" class="sb-pstep" data-st="3" role="listitem"><span class="num">3</span><span><b>On your own</b><small>1 job</small></span></button>
 </div>
-<!-- PRACTICE TAB -->
-<!-- SHOW WHAT YOU KNOW TAB -->
-<div class="tab-panel" id="tab-assignment">
-<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">🎯</div><div><div class="activity-title">Ready Check</div></div></div><div class="activity-body">
-<div class="q-block"><p class="q-text"><span class="q-num">A</span>Which is bigger: <span class="frac md"><span class="num">4</span><span class="bar"></span><span class="den">6</span></span> or <span class="frac md"><span class="num">1</span><span class="bar"></span><span class="den">6</span></span>?</p><div class="value-card-row"><div class="value-card" onclick="eA(this,true)"><div class="big"><span class="frac md"><span class="num">4</span><span class="bar"></span><span class="den">6</span></span></div></div><div class="value-card" onclick="eA(this,false)"><div class="big"><span class="frac md"><span class="num">1</span><span class="bar"></span><span class="den">6</span></span></div></div><div class="value-card" onclick="eA(this,false)"><div class="big">Equal</div></div></div><div class="inline-feedback" id="eA-fb"></div></div>
-<div class="q-block"><p class="q-text"><span class="q-num">B</span>Which is bigger: <span class="frac md"><span class="num">3</span><span class="bar"></span><span class="den">8</span></span> or <span class="frac md"><span class="num">3</span><span class="bar"></span><span class="den">5</span></span>?</p><div class="value-card-row"><div class="value-card" onclick="eB(this,false)"><div class="big"><span class="frac md"><span class="num">3</span><span class="bar"></span><span class="den">8</span></span></div></div><div class="value-card" onclick="eB(this,true)"><div class="big"><span class="frac md"><span class="num">3</span><span class="bar"></span><span class="den">5</span></span></div></div><div class="value-card" onclick="eB(this,false)"><div class="big">Equal</div></div></div><div class="inline-feedback" id="eB-fb"></div></div>
-</div></div>
-<div class="activity bl-navy"><div class="activity-head"><div class="activity-num" style="background:#0E1C42;">📬</div><div><div class="activity-title">Show What You Know</div></div></div><div class="activity-body">
-<div class="q-block"><p class="q-text"><span class="q-num">1</span><strong>Fluency.</strong> Which is bigger: <span class="frac"><span class="num">5</span><span class="bar"></span><span class="den">6</span></span> or <span class="frac"><span class="num">2</span><span class="bar"></span><span class="den">6</span></span>? Name the shortcut you used.</p><div class="olt-nudge"><a href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=numberline&amp;st=1" target="_blank" rel="noopener" title="Open the Number Line to place, compare, or hop between the numbers."><span aria-hidden="true">🧮</span> Try the <b>Number Line</b> <span aria-hidden="true">↗</span></a></div><div class="journal-label">✏️ <span class="saved-dot" id="da1"></span></div><textarea class="journal-box" data-label="SWYK 1" id="j-a105" oninput="autoSave(this,'da1')" placeholder=""></textarea></div>
-<div class="q-block"><p class="q-text"><span class="q-num">2</span><strong>Transfer.</strong> Atlas has <span class="frac"><span class="num">3</span><span class="bar"></span><span class="den">4</span></span> of a pizza. Felix has <span class="frac"><span class="num">2</span><span class="bar"></span><span class="den">5</span></span> of the same pizza. Without re-cutting, who has more? Explain which shortcut you used.</p><div class="journal-label">✏️ <span class="saved-dot" id="da2"></span></div><textarea class="journal-box" data-label="SWYK 2" id="j-a205" oninput="autoSave(this,'da2')" placeholder=""></textarea></div>
 
-<div class="activity bl-slate" style="margin-top:18px;border-left-color:#F5A36F;"><div class="activity-head"><div class="activity-num" style="background:#F5A36F;color:#0E1C42;">🗺️</div><div><div class="activity-title">Connection Forward</div><div class="activity-sub">Preview Lesson 3.10.06 — Adding and Subtracting Fractions Part 1</div></div></div><div class="activity-body">
-<p>Next: fractions with the same bottom can be added and subtracted. The shortcut skills you built today — same bottom, same top, benchmark — will help you check your answers.</p>
-</div></div>
-</div></div>
-<div class="gathered-box"><div class="gathered-head"><div class="gathered-head-icon">📋</div><div><div class="gathered-head-label">Math Journal</div><div class="gathered-head-title">All Answers</div></div></div><div class="gathered-body"><textarea class="gathered-output" id="gO" readonly="">Click "Gather" to collect.</textarea><div style="display:flex;gap:10px;margin-top:12px;"><button class="mar-btn" onclick="gather()">📋 Gather</button><button class="green-btn" onclick="copyA()">Copy</button><button class="check-btn" onclick="dl()">Download</button></div></div></div>
-<div class="turn-in-card"><div class="turn-in-header"><div class="turn-in-header-icon">✅</div><div><div class="turn-in-header-label">Turn-In</div><div class="turn-in-header-title">Ready?</div></div></div><div class="turn-in-body">
-<div class="turn-in-item" onclick="tg(this)"><span class="turn-in-check">✓</span><span>I completed Show What You Know.</span></div>
-<div class="turn-in-item" onclick="tg(this)"><span class="turn-in-check">✓</span><span>I can name at least one shortcut for comparing fractions.</span></div>
-</div></div>
+<!-- STATION 1 -->
+<div class="sb-station" data-st="1">
+  <div class="sb-opti" data-slot="learn-1">Welcome to the Lesson. First, Claire shows two shortcuts: the halfway line and the missing piece. Next, we fix some mix-ups. Then you try one on your own.</div>
+
+  <div class="sb-video pq-vslot" data-slot="learn">
+    <video controls preload="metadata" playsinline poster="assets/video/g3math-10-05-learn.jpg" src="assets/video/g3math-10-05-learn.mp4"></video>
+    <div class="cap">🎬 Halfway or Missing Piece</div>
+  </div>
+
+  <div class="sb-card">
+    <span class="sb-k">Learn</span>
+    <h3>Compare to one-half. Or look at the missing piece.</h3>
+    <svg viewBox="0 0 680 134" role="img" aria-label="Two-ninths stops before the halfway line. Five-sevenths goes past it." style="display:block;width:100%;max-width:680px"><rect x="10.0" y="8" width="65.6" height="36" fill="#2E7D6B" stroke="#2E7D6B" stroke-width="2"/><rect x="75.6" y="8" width="65.6" height="36" fill="#2E7D6B" stroke="#2E7D6B" stroke-width="2"/><rect x="141.1" y="8" width="65.6" height="36" fill="#fff" stroke="#2E7D6B" stroke-width="2"/><rect x="206.7" y="8" width="65.6" height="36" fill="#fff" stroke="#2E7D6B" stroke-width="2"/><rect x="272.2" y="8" width="65.6" height="36" fill="#fff" stroke="#2E7D6B" stroke-width="2"/><rect x="337.8" y="8" width="65.6" height="36" fill="#fff" stroke="#2E7D6B" stroke-width="2"/><rect x="403.3" y="8" width="65.6" height="36" fill="#fff" stroke="#2E7D6B" stroke-width="2"/><rect x="468.9" y="8" width="65.6" height="36" fill="#fff" stroke="#2E7D6B" stroke-width="2"/><rect x="534.4" y="8" width="65.6" height="36" fill="#fff" stroke="#2E7D6B" stroke-width="2"/><text x="640" y="21" text-anchor="middle" font-size="14" font-weight="900" fill="#2E7D6B">2</text><line x1="632" y1="26" x2="648" y2="26" stroke="#2E7D6B" stroke-width="2"/><text x="640" y="41" text-anchor="middle" font-size="14" font-weight="900" fill="#2E7D6B">9</text><rect x="10.0" y="60" width="84.3" height="36" fill="#B03A2E" stroke="#B03A2E" stroke-width="2"/><rect x="94.3" y="60" width="84.3" height="36" fill="#B03A2E" stroke="#B03A2E" stroke-width="2"/><rect x="178.6" y="60" width="84.3" height="36" fill="#B03A2E" stroke="#B03A2E" stroke-width="2"/><rect x="262.9" y="60" width="84.3" height="36" fill="#B03A2E" stroke="#B03A2E" stroke-width="2"/><rect x="347.1" y="60" width="84.3" height="36" fill="#B03A2E" stroke="#B03A2E" stroke-width="2"/><rect x="431.4" y="60" width="84.3" height="36" fill="#fff" stroke="#B03A2E" stroke-width="2"/><rect x="515.7" y="60" width="84.3" height="36" fill="#fff" stroke="#B03A2E" stroke-width="2"/><text x="640" y="73" text-anchor="middle" font-size="14" font-weight="900" fill="#B03A2E">5</text><line x1="632" y1="78" x2="648" y2="78" stroke="#B03A2E" stroke-width="2"/><text x="640" y="93" text-anchor="middle" font-size="14" font-weight="900" fill="#B03A2E">7</text><line x1="305.0" y1="2" x2="305.0" y2="116" stroke="#C9A227" stroke-width="1.5"/><text x="305.0" y="130" text-anchor="middle" font-size="13" font-weight="900" fill="#8A6A00">one-half</text></svg>
+    <svg viewBox="0 0 680 134" role="img" aria-label="Nine-tenths and eleven-twelfths, both past the halfway line. Nine-tenths is missing one tenth. Eleven-twelfths is missing one twelfth, a smaller piece." style="display:block;width:100%;max-width:680px"><rect x="10.0" y="8" width="59.0" height="36" fill="#117E7E" stroke="#117E7E" stroke-width="2"/><rect x="69.0" y="8" width="59.0" height="36" fill="#117E7E" stroke="#117E7E" stroke-width="2"/><rect x="128.0" y="8" width="59.0" height="36" fill="#117E7E" stroke="#117E7E" stroke-width="2"/><rect x="187.0" y="8" width="59.0" height="36" fill="#117E7E" stroke="#117E7E" stroke-width="2"/><rect x="246.0" y="8" width="59.0" height="36" fill="#117E7E" stroke="#117E7E" stroke-width="2"/><rect x="305.0" y="8" width="59.0" height="36" fill="#117E7E" stroke="#117E7E" stroke-width="2"/><rect x="364.0" y="8" width="59.0" height="36" fill="#117E7E" stroke="#117E7E" stroke-width="2"/><rect x="423.0" y="8" width="59.0" height="36" fill="#117E7E" stroke="#117E7E" stroke-width="2"/><rect x="482.0" y="8" width="59.0" height="36" fill="#117E7E" stroke="#117E7E" stroke-width="2"/><rect x="541.0" y="8" width="59.0" height="36" fill="#fff" stroke="#117E7E" stroke-width="2"/><rect x="540.0" y="4" width="61.0" height="44" rx="6" fill="none" stroke="#B23A2E" stroke-width="3" stroke-dasharray="6 4"/><text x="640" y="21" text-anchor="middle" font-size="14" font-weight="900" fill="#117E7E">9</text><line x1="632" y1="26" x2="648" y2="26" stroke="#117E7E" stroke-width="2"/><text x="640" y="41" text-anchor="middle" font-size="14" font-weight="900" fill="#117E7E">10</text><rect x="10.0" y="60" width="49.2" height="36" fill="#5B6478" stroke="#5B6478" stroke-width="2"/><rect x="59.2" y="60" width="49.2" height="36" fill="#5B6478" stroke="#5B6478" stroke-width="2"/><rect x="108.3" y="60" width="49.2" height="36" fill="#5B6478" stroke="#5B6478" stroke-width="2"/><rect x="157.5" y="60" width="49.2" height="36" fill="#5B6478" stroke="#5B6478" stroke-width="2"/><rect x="206.7" y="60" width="49.2" height="36" fill="#5B6478" stroke="#5B6478" stroke-width="2"/><rect x="255.8" y="60" width="49.2" height="36" fill="#5B6478" stroke="#5B6478" stroke-width="2"/><rect x="305.0" y="60" width="49.2" height="36" fill="#5B6478" stroke="#5B6478" stroke-width="2"/><rect x="354.2" y="60" width="49.2" height="36" fill="#5B6478" stroke="#5B6478" stroke-width="2"/><rect x="403.3" y="60" width="49.2" height="36" fill="#5B6478" stroke="#5B6478" stroke-width="2"/><rect x="452.5" y="60" width="49.2" height="36" fill="#5B6478" stroke="#5B6478" stroke-width="2"/><rect x="501.7" y="60" width="49.2" height="36" fill="#5B6478" stroke="#5B6478" stroke-width="2"/><rect x="550.8" y="60" width="49.2" height="36" fill="#fff" stroke="#5B6478" stroke-width="2"/><rect x="549.8" y="56" width="51.2" height="44" rx="6" fill="none" stroke="#B23A2E" stroke-width="3" stroke-dasharray="6 4"/><text x="640" y="73" text-anchor="middle" font-size="14" font-weight="900" fill="#5B6478">11</text><line x1="632" y1="78" x2="648" y2="78" stroke="#5B6478" stroke-width="2"/><text x="640" y="93" text-anchor="middle" font-size="14" font-weight="900" fill="#5B6478">12</text><line x1="305.0" y1="2" x2="305.0" y2="116" stroke="#C9A227" stroke-width="1.5"/><text x="305.0" y="130" text-anchor="middle" font-size="13" font-weight="900" fill="#8A6A00">one-half</text></svg>
+    <ol class="sb-steps4">
+      <li><b>Find half of the denominator.</b> Half of 9 is 4 and a half. Half of 7 is 3 and a half.</li>
+      <li><b>Compare each fraction to one-half.</b> Two-ninths is less than half. Five-sevenths is more than half. The one past half is greater. One-half is a <b>benchmark</b>: a number we compare to.</li>
+      <li><b>Both on the same side?</b> Look at the missing pieces. Nine-tenths is missing one tenth. Eleven-twelfths is missing one twelfth. The smaller missing piece is closer to 1 whole, so eleven-twelfths is greater.</li>
+      <li><b>Still stuck?</b> Re-cut, like in Lesson 3.10.04. Re-cutting always works.</li>
+    </ol>
+  </div>
+
+  <div class="sb-card">
+    <span class="sb-k">The Math Crew</span>
+    <h3>Four ways to see the three cups</h3>
+    <div class="sb-crew">
+      <div class="sb-mate" data-who="atlas"><span>Half of 9 is 4 and a half. Two-ninths stops way before the line.</span></div>
+      <div class="sb-mate" data-who="felix"><span>Half of 7 is 3 and a half. Five-sevenths goes past it.</span></div>
+      <div class="sb-mate" data-who="hazel"><span>One cup on each side of the line? The one past half is greater.</span></div>
+      <div class="sb-mate" data-who="cora"><span>Both past half? I check the missing pieces. Smaller missing piece, fuller cup.</span></div>
+    </div>
+    <label class="sb-write-l" for="w-crew">Which Crew way helps you most? Why?</label>
+    <textarea class="sb-write" id="w-crew" data-label="Which Crew way helps me most" placeholder="I like… because…"></textarea>
+  </div>
+
+  <!-- JOB 2 · YOUR TURN -->
+  <section class="sb-card sb-job" data-job="2">
+    <div class="sb-jh"><span class="sb-jn">JOB 2</span><div><h3>Your Turn: Which Side of Half?</h3><span class="sb-kind">🔨 Do</span></div><span class="sb-donechip"></span></div>
+    <p class="sb-story">Lieschen pours two more cups. One is three-tenths full. The other is six-elevenths full. Which cup has more coffee?</p>
+    <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>Two cups as fraction tiles: tenths on top, elevenths below. Under them is a box for a symbol.</p></div>
+    <div data-mod="bench" data-fr="3/10,6/11" data-rows="Three-tenths,Six-elevenths" data-btns="half" data-name="yt" data-for="half"></div>
+    <div data-mod="sym" data-a="3/10" data-b="6/11" data-ans="<" data-name="yt-sym" data-for="sym"></div>
+    <div class="sb-steps">
+      <div class="sb-step" data-need="half"><h4>Show the halfway line</h4><p>Press <b>½ Show the halfway line</b>.</p></div>
+      <div class="sb-step"><h4>Check three-tenths</h4>
+        <div class="sb-q">Half of 10 is <input class="sb-ans" data-a="5" inputmode="numeric" autocomplete="off" aria-label="number" data-hint="10 ÷ 2">.</div>
+        <div class="sb-q">3 is less than 5, so three-tenths is <input class="sb-ans word" data-a="less|less than|smaller|smaller than" autocomplete="off" aria-label="word" data-hint="Is 3 more or less than 5?"> than one-half.</div>
+        <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-step"><h4>Check six-elevenths</h4>
+        <div class="sb-q">Half of 11 is 5 and a half. 6 is more than that, so six-elevenths is <input class="sb-ans word" data-a="more|more than|greater|greater than|bigger|bigger than" autocomplete="off" aria-label="word" data-hint="Is 6 more or less than 5 and a half?"> than one-half.</div>
+        <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-step" data-need="sym" data-cue=".sym-cards"><h4>Compare</h4><p>Drag &lt;, &gt; or = into the box between three-tenths and six-elevenths.</p></div>
+      <div class="sb-locked"></div>
+    </div>
+    <div class="sb-help"><button type="button" class="sb-btn ghost" data-hints='["The gold line is one-half. Which cup&#39;s coffee goes past it?", "Three-tenths stops before the line. Six-elevenths goes past it.", "The one past half is greater: three-tenths is less than six-elevenths."]'>💡 Need a hint?</button><a class="sb-tool" href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=fbars&amp;st=1#s=eyJkIjpbMiw5LDEwXSwibGFiIjoxfQ" target="_blank" rel="noopener" title="Line up a one-half tile with a bar of ninths and a bar of tenths. Which fractions stop before the half tile ends?">🧮 Try the Fraction Tiles ↗</a><button type="button" class="sb-btn ghost sb-tipbtn" data-tip="#tip-2">💬 Felix has a tip</button></div>
+    <div class="sb-hintbox"></div>
+    <div class="sb-tip" id="tip-2" data-who="felix">One fraction on each side of half? Done! The one past half is greater.</div>
+  </section>
+  <div class="sb-next"><button type="button" class="sb-btn gold" data-next-st="2">Next station: Practice together →</button></div>
 </div>
-<div class="footer"><div class="footer-main">🏫 <span>Optima Academy Online</span></div><div class="footer-sub">Math · Grade 3 · 3.10.05 · U10 Apply</div><div class="footer-copy">© 2025 Optima Academy Online</div></div>
+
+<!-- STATION 2 -->
+<div class="sb-station" data-st="2">
+  <div class="sb-opti" data-slot="practice-1">Each job has a mix-up kids often make. Here's a clue. Half of an odd number has a half in it. And when both fractions are past the halfway line, look at the missing pieces.</div>
+
+  <!-- JOB 3 -->
+  <section class="sb-card sb-job" data-job="3">
+    <div class="sb-jh"><span class="sb-jn">JOB 3</span><div><h3>Juno Picks the Bigger Missing Piece</h3><span class="sb-kind">🔨 Do · ✏️ Write</span></div><span class="sb-donechip"></span></div>
+    <p class="sb-story">Juno compares two cups. One is six-sevenths full. The other is eight-ninths full. Juno says, "Six-sevenths is closer to full, because sevenths are bigger pieces."</p>
+    <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>Juno's two cups as fraction tiles: sevenths on top, ninths below. Juno's symbol is already in the box.</p></div>
+    <div data-mod="bench" data-fr="6/7,8/9" data-rows="Six-sevenths,Eight-ninths" data-btns="gap" data-name="juno" data-for="gap"></div>
+    <div data-mod="sym" data-a="6/7" data-b="8/9" data-ans="<" data-wrong=">" data-who="Juno" data-name="juno-sym" data-for="sym"></div>
+    <div class="sb-steps">
+      <div class="sb-step" data-need="gap"><h4>Show the missing pieces</h4><p>Press <b>Show the missing pieces</b>.</p></div>
+      <div class="sb-step"><h4>Name the missing pieces</h4>
+        <div class="sb-q">Six-sevenths is missing one <input class="sb-ans word" data-a="seventh|1 seventh|one seventh" autocomplete="off" aria-label="word" data-hint="Look at the red box on the top cup.">.</div>
+        <div class="sb-q">Eight-ninths is missing one <input class="sb-ans word" data-a="ninth|1 ninth|one ninth" autocomplete="off" aria-label="word" data-hint="Look at the red box on the bottom cup.">.</div>
+        <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-step"><h4>Which is closer to full?</h4>
+        <div class="sb-q">A ninth is smaller than a seventh, so <span class="sb-frac"><input class="sb-ans" data-a="8" inputmode="numeric" autocomplete="off" aria-label="top number" data-hint="The cup with the smaller missing piece is closer to full."><i></i><input class="sb-ans" data-a="9" inputmode="numeric" autocomplete="off" aria-label="bottom number" data-hint="The cup with the smaller missing piece is closer to full."></span> is closer to full.</div>
+        <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-step" data-need="sym" data-cue=".sym-cards"><h4>Fix Juno's symbol</h4><p>Drag the right symbol into the box over Juno's.</p></div>
+      <div class="sb-step"><h4>Help Juno</h4><label class="sb-write-l" for="w-juno">Tell Juno why the bigger missing piece is farther from full.</label><textarea class="sb-write" id="w-juno" data-req data-label="Help Juno" placeholder="Six-sevenths is missing… Eight-ninths is missing… so…"></textarea><div class="sb-chips2">Remember to tell: <span>missing piece</span><span>smaller gap</span></div>
+        <div class="sb-help"><button type="button" class="sb-btn check">Done</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-locked"></div>
+    </div>
+    <div class="sb-help"><button type="button" class="sb-btn ghost" data-hints='["Juno is right that sevenths are bigger pieces. But a bigger piece is missing from that cup!", "Six-sevenths is missing one seventh. Eight-ninths is missing one ninth.", "A smaller gap means a fuller cup. Eight-ninths is closer to full."]'>💡 Need a hint?</button><a class="sb-tool" href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=fbars&amp;st=1#s=eyJkIjpbMiw5LDEwXSwibGFiIjoxfQ" target="_blank" rel="noopener" title="Line up a one-half tile with a bar of ninths and a bar of tenths. Which fractions stop before the half tile ends?">🧮 Try the Fraction Tiles ↗</a><button type="button" class="sb-btn ghost sb-tipbtn" data-tip="#tip-3">💬 Atlas has a tip</button></div>
+    <div class="sb-hintbox"></div>
+    <div class="sb-tip" id="tip-3" data-who="atlas">When cups are almost full, I look at what's missing, not what's there.</div>
+  </section>
+
+  <!-- JOB 4 -->
+  <section class="sb-card sb-job" data-job="4">
+    <div class="sb-jh"><span class="sb-jn">JOB 4</span><div><h3>Kai Stops at the Halfway Line</h3><span class="sb-kind">🔨 Do · ✏️ Write</span></div><span class="sb-donechip"></span></div>
+    <p class="sb-story">Kai compares seven-ninths and nine-elevenths. Kai says, "Both are more than half, so they are equal."</p>
+    <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>Kai's two cups as fraction tiles: ninths on top, elevenths below. Kai's symbol is already in the box.</p></div>
+    <div data-mod="bench" data-fr="7/9,9/11" data-rows="Seven-ninths,Nine-elevenths" data-btns="half,gap" data-name="kai" data-for="half gap"></div>
+    <div data-mod="sym" data-a="7/9" data-b="9/11" data-ans="<" data-wrong="=" data-who="Kai" data-name="kai-sym" data-for="sym"></div>
+    <div class="sb-steps">
+      <div class="sb-step" data-need="half"><h4>Show the halfway line</h4><p>Press <b>½ Show the halfway line</b>.</p></div>
+      <div class="sb-step"><h4>Can the halfway line help?</h4>
+        <div class="sb-q">Are both cups past the halfway line? <input class="sb-ans word" data-a="yes|yep|yes they are" autocomplete="off" aria-label="word" data-hint="Look at where each cup's coffee stops."></div>
+        <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-step" data-need="gap"><h4>Show the missing pieces</h4><p>Press <b>Show the missing pieces</b>.</p></div>
+      <div class="sb-step"><h4>Compare the missing pieces</h4>
+        <div class="sb-q">Each cup is missing <input class="sb-ans" data-a="2" inputmode="numeric" autocomplete="off" aria-label="number" data-hint="Count the tiles in each red box."> pieces.</div>
+        <div class="sb-q">Two ninths is <input class="sb-ans word" data-a="more|bigger|more than|bigger than|larger|larger than" autocomplete="off" aria-label="word" data-hint="Ninths are bigger pieces than elevenths."> than two elevenths, so seven-ninths is farther from full.</div>
+        <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-step" data-need="sym" data-cue=".sym-cards"><h4>Fix Kai's symbol</h4><p>Drag the right symbol into the box over Kai's.</p></div>
+      <div class="sb-step"><h4>Help Kai</h4><label class="sb-write-l" for="w-kai">Tell Kai why "both more than half" does not mean equal.</label><textarea class="sb-write" id="w-kai" data-req data-label="Help Kai" placeholder="Both are past half, but… The missing pieces…"></textarea><div class="sb-chips2">Remember to tell: <span>same side of half</span><span>missing pieces</span></div><div class="sb-help"><button type="button" class="sb-btn check">Done</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-locked"></div>
+    </div>
+    <div class="sb-help"><button type="button" class="sb-btn ghost" data-hints='["The halfway line only tells which side of half a fraction is on.", "When both are past half, use the missing pieces.", "Two elevenths is a smaller gap than two ninths, so nine-elevenths is greater."]'>💡 Need a hint?</button><a class="sb-tool" href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=fbars&amp;st=1#s=eyJkIjpbMiw5LDEwXSwibGFiIjoxfQ" target="_blank" rel="noopener" title="Line up a one-half tile with a bar of ninths and a bar of tenths. Which fractions stop before the half tile ends?">🧮 Try the Fraction Tiles ↗</a><button type="button" class="sb-btn ghost sb-tipbtn" data-tip="#tip-4">💬 Cora has a tip</button></div>
+    <div class="sb-hintbox"></div>
+    <div class="sb-tip" id="tip-4" data-who="cora">Same side of half? I need a second shortcut: the missing piece, or re-cutting.</div>
+  </section>
+
+  <!-- JOB 5 -->
+  <section class="sb-card sb-job" data-job="5">
+    <div class="sb-jh"><span class="sb-jn">JOB 5</span><div><h3>Leo Finds Half of Nine</h3><span class="sb-kind">🔨 Do · ✏️ Write</span></div><span class="sb-donechip"></span></div>
+    <p class="sb-story">Leo's cup is four-ninths full. Leo says, "Half of 9 is 4, so four-ninths is exactly one-half."</p>
+    <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>Leo's cup as fraction tiles cut into ninths. Leo's symbol is already in the box.</p></div>
+    <div data-mod="bench" data-fr="4/9" data-rows="Leo's cup" data-btns="half" data-name="leo" data-for="half"></div>
+    <div data-mod="sym" data-a="4/9" data-b="1/2" data-ans="<" data-wrong="=" data-who="Leo" data-name="leo-sym" data-for="sym"></div>
+    <div class="sb-steps">
+      <div class="sb-step" data-need="half"><h4>Show the halfway line</h4><p>Press <b>½ Show the halfway line</b>.</p></div>
+      <div class="sb-step"><h4>Where is half of 9?</h4>
+        <div class="sb-q">The gold line goes through the middle of a tile. Half of 9 is 4 and a <input class="sb-ans word" data-a="half|1/2" autocomplete="off" aria-label="word" data-hint="The line splits a tile in two.">.</div>
+        <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-step"><h4>Compare to half</h4>
+        <div class="sb-q">4 is less than 4 and a half, so four-ninths is <input class="sb-ans word" data-a="less|less than|smaller|smaller than" autocomplete="off" aria-label="word" data-hint="Does Leo's coffee reach the gold line?"> than one-half.</div>
+        <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-step" data-need="sym" data-cue=".sym-cards"><h4>Fix Leo's symbol</h4><p>Drag the right symbol into the box over Leo's.</p></div>
+      <div class="sb-step"><h4>Help Leo</h4><label class="sb-write-l" for="w-leo">What did Leo forget about half of 9?</label><textarea class="sb-write" id="w-leo" data-req data-label="Help Leo" placeholder="Half of 9 is… so four-ninths…"></textarea><div class="sb-chips2">Remember to tell: <span>4 and a half</span><span>odd number</span></div>
+        <div class="sb-help"><button type="button" class="sb-btn check">Done</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-locked"></div>
+    </div>
+    <div class="sb-help"><button type="button" class="sb-btn ghost" data-hints='["9 is an odd number. It can&#39;t be split into two equal whole numbers.", "Half of 9 is 4 and a half. The gold line splits the 5th tile.", "4 is less than 4 and a half, so four-ninths is less than one-half."]'>💡 Need a hint?</button><a class="sb-tool" href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=fbars&amp;st=1#s=eyJkIjpbMiw5LDEwXSwibGFiIjoxfQ" target="_blank" rel="noopener" title="Line up a one-half tile with a bar of ninths and a bar of tenths. Which fractions stop before the half tile ends?">🧮 Try the Fraction Tiles ↗</a><button type="button" class="sb-btn ghost sb-tipbtn" data-tip="#tip-5">💬 Hazel has a tip</button></div>
+    <div class="sb-hintbox"></div>
+    <div class="sb-tip" id="tip-5" data-who="hazel">An odd denominator never has a tile that ends right on the halfway line.</div>
+  </section>
+  <div class="sb-next"><button type="button" class="sb-btn gold" data-next-st="3">Next station: On your own →</button></div>
 </div>
-<script>
-var LS='g3-3-10-05-';
-function mini(el){if(!el)return;var em=['⭐','✨','🍫','🎨'];for(var i=0;i<8;i++){var s=document.createElement('span');s.textContent=em[Math.floor(Math.random()*em.length)];s.style.cssText='position:absolute;font-size:'+(16+Math.random()*14)+'px;pointer-events:none;z-index:999;animation:mini .7s ease-out forwards;left:'+(20+Math.random()*60)+'%;top:'+(Math.random()*40)+'%;';el.style.position='relative';el.style.overflow='visible';el.appendChild(s);setTimeout(function(x){x.remove()}.bind(null,s),800);}}
-function switchTab(t){document.querySelectorAll('.tab-panel').forEach(function(p){p.classList.remove('active');});document.getElementById('tab-'+t).classList.add('active');document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active');if(b.dataset.tab===t){b.classList.add('active');b.classList.add('visited');}});var bs=[].slice.call(document.querySelectorAll('.tab-btn'));var i=bs.findIndex(function(b){return b.classList.contains('active');});var p=Math.round(((i+1)/bs.length)*100);document.getElementById('pf').style.width=p+'%';document.getElementById('pp').textContent=p+'%';window.scrollTo({top:0,behavior:'smooth'});}
-function autoSave(el,d){try{localStorage.setItem(LS+el.id,el.value);}catch(e){}var dt=document.getElementById(d);if(dt){dt.classList.add('saved');setTimeout(function(){dt.classList.remove('saved')},900);}}
-function restore(){document.querySelectorAll('textarea.journal-box').forEach(function(t){try{var v=localStorage.getItem(LS+t.id);if(v)t.value=v;}catch(e){}});}
-function showBranch(id){document.getElementById(id).classList.add('show');}
-function hideBranches(p){['pass','retry'].forEach(function(x){var e=document.getElementById(p+'-'+x);if(e)e.classList.remove('show');});}
-function fracSpan(n,d){return '<span class="frac"><span class="num">'+n+'</span><span class="bar"></span><span class="den">'+d+'</span></span>';}
 
-function rA(c,ok){c.parentElement.querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});var f=document.getElementById('rA-fb');if(ok){c.classList.add('good');f.className='inline-feedback show good';f.innerHTML='<strong>✅</strong> '+fracSpan(3,6)+' and '+fracSpan(1,2)+' shade the same length. They\'re equivalent.';mini(c);}else{c.classList.add('bad');f.className='inline-feedback show think';f.innerHTML='Think about it: 3 is half of 6. So '+fracSpan(3,6)+' = '+fracSpan(1,2)+'. They\'re the same amount.';}}
-function rT(c,ok){c.parentElement.querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});var f=document.getElementById('rT-fb');if(ok){c.classList.add('good');f.className='inline-feedback show good';f.innerHTML='<strong>✅</strong> Same bottom → same-size pieces. Just count: 5 pieces > 3 pieces.';mini(c);}else{c.classList.add('bad');f.className='inline-feedback show think';f.innerHTML='Both fractions already have 8 as the bottom. The pieces are the same size — so just compare the tops.';}}
+<!-- STATION 3 -->
+<div class="sb-station" data-st="3">
+  <div class="sb-opti" data-slot="own-1">Your turn to work on your own. Find half of each denominator. Is each fraction less than half, or more? Then compare.</div>
 
-/* Benchmark Builder */
-var bb={aDen:4,aNum:1,bDen:3,bNum:1,compared:false};
-function bbStep(field,dir){
-  if(bb.compared)return;
-  if(field==='aDen'){bb.aDen=Math.max(2,Math.min(8,bb.aDen+dir));if(bb.aNum>=bb.aDen)bb.aNum=bb.aDen-1;}
-  else if(field==='aNum'){bb.aNum=Math.max(1,Math.min(bb.aDen-1,bb.aNum+dir));}
-  else if(field==='bDen'){bb.bDen=Math.max(2,Math.min(8,bb.bDen+dir));if(bb.bNum>=bb.bDen)bb.bNum=bb.bDen-1;}
-  else if(field==='bNum'){bb.bNum=Math.max(1,Math.min(bb.bDen-1,bb.bNum+dir));}
-  bbRender();
-}
-function bbFracHtml(n,d){return '<span class="frac md"><span class="num">'+n+'</span><span class="bar"></span><span class="den">'+d+'</span></span>';}
-function bbRenderStrip(stripId,num,den,flagId){
-  var strip=document.getElementById(stripId);
-  strip.innerHTML='<div class="bb-half-label">½</div><div class="bb-half-line"></div>';
-  for(var i=0;i<den;i++){var p=document.createElement('div');p.className='bb-part'+(i<num?' filled':'');strip.appendChild(p);}
-  var flag=document.getElementById(flagId);var val=num/den;
-  if(Math.abs(val-0.5)<0.001){flag.className='bb-flag equal';flag.textContent='equal to ½';}
-  else if(val<0.5){flag.className='bb-flag less';flag.textContent='less than ½';}
-  else{flag.className='bb-flag greater';flag.textContent='greater than ½';}
-}
-function bbRender(){
-  document.getElementById('bb-aDen-val').textContent=bb.aDen;
-  document.getElementById('bb-aNum-val').textContent=bb.aNum;
-  document.getElementById('bb-bDen-val').textContent=bb.bDen;
-  document.getElementById('bb-bNum-val').textContent=bb.bNum;
-  document.getElementById('bb-labelA').innerHTML=bbFracHtml(bb.aNum,bb.aDen);
-  document.getElementById('bb-labelB').innerHTML=bbFracHtml(bb.bNum,bb.bDen);
-  bbRenderStrip('bb-stripA',bb.aNum,bb.aDen,'bb-flagA');
-  bbRenderStrip('bb-stripB',bb.bNum,bb.bDen,'bb-flagB');
-}
-function bbCompare(){
-  bb.compared=true;
-  var aVal=bb.aNum/bb.aDen,bVal=bb.bNum/bb.bDen;
-  var sym;
-  if(aVal>bVal)sym='>';else if(aVal<bVal)sym='<';else sym='=';
-  var shortcut;
-  if(bb.aDen===bb.bDen){
-    shortcut='Same bottom → compare the tops. '+bb.aNum+(bb.aNum>bb.bNum?' > ':(bb.aNum<bb.bNum?' < ':' = '))+bb.bNum+'.';
-  }else if(bb.aNum===bb.bNum){
-    if(bb.aDen<bb.bDen)shortcut='Same top → bigger pieces win. A strip cut into '+bb.aDen+' pieces has bigger pieces than one cut into '+bb.bDen+'.';
-    else if(bb.aDen>bb.bDen)shortcut='Same top → bigger pieces win. A strip cut into '+bb.bDen+' pieces has bigger pieces than one cut into '+bb.aDen+'.';
-    else shortcut='Same top and same bottom — they\'re equal.';
-  }else{
-    var aHalf=aVal>0.501?'past':(aVal<0.499?'short of':'equal to');
-    var bHalf=bVal>0.501?'past':(bVal<0.499?'short of':'equal to');
-    if((aHalf==='past'&&bHalf==='short of')||(aHalf==='short of'&&bHalf==='past'))shortcut='Benchmark: Fraction A is '+aHalf+' ½. Fraction B is '+bHalf+' ½. The one past ½ wins.';
-    else if(aHalf==='equal to'||bHalf==='equal to')shortcut='One fraction equals ½. Compare the other to ½.';
-    else shortcut='Both fractions are '+aHalf+' ½ — the benchmark alone doesn\'t settle it. Try re-cutting to a common bottom.';
-  }
-  var symHtml=sym==='>'?'&gt;':(sym==='<'?'&lt;':'=');
-  var eq=document.getElementById('bb-equation');
-  eq.innerHTML=bbFracHtml(bb.aNum,bb.aDen)+' <span class="sym">'+symHtml+'</span> '+bbFracHtml(bb.bNum,bb.bDen);
-  eq.classList.add('show');
-  var words=document.getElementById('bb-words');words.textContent=shortcut;words.classList.add('show');
-  document.getElementById('bb-reset-btn').classList.add('show');
-  document.getElementById('bb-task').textContent='Result:';
-  mini(eq);
-}
-function bbReset(){
-  bb.aDen=4;bb.aNum=1;bb.bDen=3;bb.bNum=1;bb.compared=false;
-  document.getElementById('bb-equation').classList.remove('show');document.getElementById('bb-equation').innerHTML='';
-  document.getElementById('bb-words').classList.remove('show');document.getElementById('bb-words').textContent='';
-  document.getElementById('bb-reset-btn').classList.remove('show');
-  document.getElementById('bb-task').textContent='Build Fraction A, then Fraction B. Click "Compare" when ready.';
-  bbRender();
-}
+  <!-- JOB 6 -->
+  <section class="sb-card sb-job" data-job="6">
+    <div class="sb-jh"><span class="sb-jn">JOB 6</span><div><h3>Which Cup Has More?</h3><span class="sb-kind">🔨 Do · ✏️ Write</span></div><span class="sb-donechip"></span></div>
+    <p class="sb-story">One cup is <b>five-twelfths</b> full. Another is <b>seven-elevenths</b> full. Which cup has more coffee?</p>
+    <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>Two cups as fraction tiles: twelfths on top, elevenths below. Under them is a box for a symbol.</p></div>
+    <div data-mod="bench" data-fr="5/12,7/11" data-rows="Five-twelfths,Seven-elevenths" data-btns="half" data-name="own" data-for="half"></div>
+    <div data-mod="sym" data-a="5/12" data-b="7/11" data-ans="<" data-name="own-sym" data-for="sym"></div>
+    <div class="sb-steps">
+      <div class="sb-step" data-need="half"><h4>Show the halfway line</h4><p>Press <b>½ Show the halfway line</b>.</p></div>
+      <div class="sb-step"><h4>Compare each cup to half</h4>
+        <div class="sb-q">Half of 12 is <input class="sb-ans" data-a="6" inputmode="numeric" autocomplete="off" aria-label="number" data-hint="12 ÷ 2">, so five-twelfths is <input class="sb-ans word" data-a="less|less than|smaller|smaller than" autocomplete="off" aria-label="word" data-hint="Is 5 more or less than half of 12?"> than one-half.</div>
+        <div class="sb-q">Half of 11 is 5 and a half, so seven-elevenths is <input class="sb-ans word" data-a="more|more than|greater|greater than|bigger|bigger than" autocomplete="off" aria-label="word" data-hint="Is 7 more or less than 5 and a half?"> than one-half.</div>
+        <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-step" data-need="sym" data-cue=".sym-cards"><h4>Compare</h4><p>Drag &lt;, &gt; or = into the box between five-twelfths and seven-elevenths.</p></div>
+      <div class="sb-step"><h4>Tell how you know</h4><label class="sb-write-l" for="w-own">Which cup has more coffee? Tell how you know.</label><textarea class="sb-write" id="w-own" data-req data-label="Which cup has more" placeholder="The … cup has more because…"></textarea><div class="sb-help"><button type="button" class="sb-btn check">Done</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-locked"></div>
+    </div>
+    <div class="sb-help"><button type="button" class="sb-btn ghost" data-hints='["Find half of 12 and half of 11.", "Five-twelfths is less than half. Seven-elevenths is more than half.", "The one past half is greater."]'>💡 Need a hint?</button><a class="sb-tool" href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=fbars&amp;st=1#s=eyJkIjpbMiw5LDEwXSwibGFiIjoxfQ" target="_blank" rel="noopener" title="Line up a one-half tile with a bar of ninths and a bar of tenths. Which fractions stop before the half tile ends?">🧮 Try the Fraction Tiles ↗</a></div>
+    <div class="sb-hintbox"></div>
+  </section>
 
-var p1A={'p1A-num':5,'p1A-ans':5};
-function checkP1(){hideBranches('p1');var ok=true;Object.keys(p1A).forEach(function(id){var el=document.getElementById(id);el.classList.remove('good','bad');if(parseInt(el.value,10)===p1A[id]){el.classList.add('good');}else{el.classList.add('bad');ok=false;}});if(ok){showBranch('p1-pass');mini(document.getElementById('p1-pass'));}else{showBranch('p1-retry');}}
-function resetP1(){Object.keys(p1A).forEach(function(id){var el=document.getElementById(id);el.value='';el.classList.remove('good','bad');});hideBranches('p1');}
+  <div class="sb-next"><button type="button" class="sb-btn gold" data-go-tab="swyk">Next: Show What You Know →</button></div>
+</div>
+</section>
 
-function eA(c,ok){c.parentElement.querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});var f=document.getElementById('eA-fb');if(ok){c.classList.add('good');f.className='inline-feedback show good';f.innerHTML='<strong>✅</strong> Same bottom. 4 > 1.';mini(c);}else{c.classList.add('bad');f.className='inline-feedback show think';f.innerHTML='Both fractions have 6 as the bottom. Same-size pieces — which has more?';}}
-function eB(c,ok){c.parentElement.querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});var f=document.getElementById('eB-fb');if(ok){c.classList.add('good');f.className='inline-feedback show good';f.innerHTML='<strong>✅</strong> Same top. Fifths are bigger pieces than eighths.';mini(c);}else{c.classList.add('bad');f.className='inline-feedback show think';f.innerHTML='Same top = 3. Which denominator gives you bigger pieces — 5 or 8?';}}
+<!-- ══════════════ SHOW WHAT YOU KNOW ══════════════ -->
+<section class="sb-panel tab-panel" id="tab-swyk" role="tabpanel">
+<div class="sb-opti" data-slot="swyk-1">Last stop! Sort the coffee cups. Less than half full goes on the left of the halfway line. More than half full goes on the right. Then press Play.</div>
 
-function gather(){var o='Lesson 3.10.05 — Comparing Fractions Part 2\n\n';document.querySelectorAll('textarea.journal-box').forEach(function(t){o+=(t.dataset.label||t.id)+'\n'+((t.value||'').trim()||'[empty]')+'\n\n';});document.getElementById('gO').value=o;}
-function copyA(){gather();var text=document.getElementById('gO').value;if(!text||text.indexOf('Click')===0){return;}try{var ta=document.createElement('textarea');ta.value=text;ta.style.position='fixed';ta.style.left='-9999px';document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);var btn=document.querySelector('.green-btn');if(btn){btn.textContent='\u2705 Copied!';setTimeout(function(){btn.textContent='Copy All Answers';},2000);}}catch(e){var btn2=document.querySelector('.green-btn');if(btn2){btn2.textContent='\u274c Could not copy';setTimeout(function(){btn2.textContent='Copy All Answers';},2000);}}}
-function dl(){gather();var text=document.getElementById('gO').value;if(!text||text.indexOf('Click')===0){return;}var blob=new Blob([text],{type:'text/plain'});var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=(window.lessonKey||'math-journal')+'.txt';document.body.appendChild(a);a.click();document.body.removeChild(a);URL.revokeObjectURL(a.href);}
-function tg(i){i.classList.toggle('checked');var c=i.querySelector('.turn-in-check');if(c)c.textContent=i.classList.contains('checked')?'✓':'';}
+<!-- JOB 7 -->
+<section class="sb-card sb-job" data-job="7">
+  <div class="sb-jh"><span class="sb-jn">JOB 7</span><div><h3>The Halfway Sorter</h3><span class="sb-kind">🔨 Do · ✏️ Write</span></div><span class="sb-donechip"></span></div>
+  <p class="sb-story">At the end of the night, six cups are left on the coffee house tables. Sort them for the waiter: less than half full, or more than half full.</p>
+  <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>A whole cup with a gold halfway line. Under it are two boxes: less than one-half and more than one-half. Each card shows a cup as a fraction and as a little bar. A wrong card goes back and tells you why.</p></div>
+  <div data-mod="halfsort" data-cards="5/9,1/6,9/10,4/11,7/12,2/7" data-name="sorter" data-for="sorted play"></div>
+  <div class="sb-steps">
+    <div class="sb-step" data-need="sorted" data-cue=".hs-tray"><h4>Problem 1 · Sort the cups</h4><p>Drag each card into <b>Less than one-half</b> or <b>More than one-half</b>.</p></div>
+    <div class="sb-step" data-need="play"><h4>Problem 1 · Listen</h4><p>Press <b>▶ Play the cups</b>. Each cup plays as one note, from least to greatest.</p></div>
+    <div class="sb-step"><h4>Problem 2 · Closest to full</h4><div class="sb-q">The cup closest to full is <span class="sb-frac"><input class="sb-ans" data-a="9" inputmode="numeric" autocomplete="off" aria-label="top number" data-hint="Which card is missing only one small piece?"><i></i><input class="sb-ans" data-a="10" inputmode="numeric" autocomplete="off" aria-label="bottom number" data-hint="Which card is missing only one small piece?"></span>.</div><div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+    <div class="sb-step"><h4>Problem 2 · Tell how you sorted</h4><label class="sb-write-l" for="w-sort">Pick one card from each side. Tell how you knew where it goes.</label><textarea class="sb-write" id="w-sort" data-req data-label="How I sorted" placeholder="… is less than half because half of … is … Then … is more than half because…"></textarea><div class="sb-chips2">Remember to tell: <span>half of the denominator</span><span>less or more</span></div><div class="sb-help"><button type="button" class="sb-btn check">Done</button></div><div class="sb-fb" aria-live="polite"></div></div>
+    <div class="sb-locked"></div>
+  </div>
+</section>
 
-async function loadVideoManifest(){try{var res=await fetch('video-manifest.md',{cache:'no-store'});if(!res.ok)return;var txt=await res.text();var map=parseManifest(txt);document.querySelectorAll('.video-wrap[data-video-slot]').forEach(function(w){var slot=w.dataset.videoSlot;if(map[slot]){var ratio=w.querySelector('.video-ratio');ratio.innerHTML=map[slot].trim();var iframe=ratio.querySelector('iframe');if(iframe){iframe.classList.add('video-iframe');iframe.setAttribute('allowfullscreen','');iframe.setAttribute('loading','lazy');}}});}catch(e){}}
-function parseManifest(txt){var map={};var lines=txt.split(/\r?\n/);var current=null,buf=[];function commit(){if(current&&buf.join('\n').trim()){map[current]=buf.join('\n').trim();}buf=[];}for(var i=0;i<lines.length;i++){var line=lines[i];var m=line.match(/^([A-Za-z0-9-]+):\s*$/);if(m){commit();current=m[1];}else if(current){buf.push(line);}}commit();return map;}
+<!-- JOB 8 -->
+<section class="sb-card sb-job" data-job="8">
+  <div class="sb-jh"><span class="sb-jn">JOB 8</span><div><h3>Prove It</h3><span class="sb-kind">✏️ Write</span></div><span class="sb-donechip"></span></div>
+  <svg viewBox="0 0 680 186" role="img" aria-label="The three cups: two-ninths, five-sevenths and nine-tenths, with the halfway line." style="display:block;width:100%;max-width:680px"><rect x="10.0" y="8" width="65.6" height="36" fill="#2E7D6B" stroke="#2E7D6B" stroke-width="2"/><rect x="75.6" y="8" width="65.6" height="36" fill="#2E7D6B" stroke="#2E7D6B" stroke-width="2"/><rect x="141.1" y="8" width="65.6" height="36" fill="#fff" stroke="#2E7D6B" stroke-width="2"/><rect x="206.7" y="8" width="65.6" height="36" fill="#fff" stroke="#2E7D6B" stroke-width="2"/><rect x="272.2" y="8" width="65.6" height="36" fill="#fff" stroke="#2E7D6B" stroke-width="2"/><rect x="337.8" y="8" width="65.6" height="36" fill="#fff" stroke="#2E7D6B" stroke-width="2"/><rect x="403.3" y="8" width="65.6" height="36" fill="#fff" stroke="#2E7D6B" stroke-width="2"/><rect x="468.9" y="8" width="65.6" height="36" fill="#fff" stroke="#2E7D6B" stroke-width="2"/><rect x="534.4" y="8" width="65.6" height="36" fill="#fff" stroke="#2E7D6B" stroke-width="2"/><text x="640" y="21" text-anchor="middle" font-size="14" font-weight="900" fill="#2E7D6B">2</text><line x1="632" y1="26" x2="648" y2="26" stroke="#2E7D6B" stroke-width="2"/><text x="640" y="41" text-anchor="middle" font-size="14" font-weight="900" fill="#2E7D6B">9</text><rect x="10.0" y="60" width="84.3" height="36" fill="#B03A2E" stroke="#B03A2E" stroke-width="2"/><rect x="94.3" y="60" width="84.3" height="36" fill="#B03A2E" stroke="#B03A2E" stroke-width="2"/><rect x="178.6" y="60" width="84.3" height="36" fill="#B03A2E" stroke="#B03A2E" stroke-width="2"/><rect x="262.9" y="60" width="84.3" height="36" fill="#B03A2E" stroke="#B03A2E" stroke-width="2"/><rect x="347.1" y="60" width="84.3" height="36" fill="#B03A2E" stroke="#B03A2E" stroke-width="2"/><rect x="431.4" y="60" width="84.3" height="36" fill="#fff" stroke="#B03A2E" stroke-width="2"/><rect x="515.7" y="60" width="84.3" height="36" fill="#fff" stroke="#B03A2E" stroke-width="2"/><text x="640" y="73" text-anchor="middle" font-size="14" font-weight="900" fill="#B03A2E">5</text><line x1="632" y1="78" x2="648" y2="78" stroke="#B03A2E" stroke-width="2"/><text x="640" y="93" text-anchor="middle" font-size="14" font-weight="900" fill="#B03A2E">7</text><rect x="10.0" y="112" width="59.0" height="36" fill="#117E7E" stroke="#117E7E" stroke-width="2"/><rect x="69.0" y="112" width="59.0" height="36" fill="#117E7E" stroke="#117E7E" stroke-width="2"/><rect x="128.0" y="112" width="59.0" height="36" fill="#117E7E" stroke="#117E7E" stroke-width="2"/><rect x="187.0" y="112" width="59.0" height="36" fill="#117E7E" stroke="#117E7E" stroke-width="2"/><rect x="246.0" y="112" width="59.0" height="36" fill="#117E7E" stroke="#117E7E" stroke-width="2"/><rect x="305.0" y="112" width="59.0" height="36" fill="#117E7E" stroke="#117E7E" stroke-width="2"/><rect x="364.0" y="112" width="59.0" height="36" fill="#117E7E" stroke="#117E7E" stroke-width="2"/><rect x="423.0" y="112" width="59.0" height="36" fill="#117E7E" stroke="#117E7E" stroke-width="2"/><rect x="482.0" y="112" width="59.0" height="36" fill="#117E7E" stroke="#117E7E" stroke-width="2"/><rect x="541.0" y="112" width="59.0" height="36" fill="#fff" stroke="#117E7E" stroke-width="2"/><text x="640" y="125" text-anchor="middle" font-size="14" font-weight="900" fill="#117E7E">9</text><line x1="632" y1="130" x2="648" y2="130" stroke="#117E7E" stroke-width="2"/><text x="640" y="145" text-anchor="middle" font-size="14" font-weight="900" fill="#117E7E">10</text><line x1="305.0" y1="2" x2="305.0" y2="168" stroke="#C9A227" stroke-width="1.5"/><text x="305.0" y="182" text-anchor="middle" font-size="13" font-weight="900" fill="#8A6A00">one-half</text></svg>
+  <div class="sb-steps">
+    <div class="sb-step"><h4>Problem 3 · Prove It</h4>
+      <label class="sb-write-l" for="w-prove">Look back at the three cups. Explain why five-sevenths is more than two-ninths, and why nine-tenths is closest to full.</label><textarea class="sb-write" id="w-prove" data-req data-label="Prove It" placeholder="Half of 9 is… Half of 7 is… Nine-tenths is missing…"></textarea><div class="sb-chips2">Remember to tell: <span>halfway line</span><span>missing piece</span></div>
+      <div class="sb-help"><button type="button" class="sb-btn check">Done</button></div><div class="sb-fb" aria-live="polite"></div></div>
+    <div class="sb-locked"></div>
+  </div>
+</section>
 
-window.addEventListener('DOMContentLoaded',function(){loadVideoManifest();restore();bbRender();});
-</script>
-<script id="fluencyScript">
-(function(){
-var FLUENCY_TIMED = false;
-var FLUENCY_TITLE = "Multiples of Ten (like 7 × 40)";
-var fluencyInterval = null;
-var fluencySecondsLeft = 60;
+<div class="sb-card sb-qgroup" data-done="bonus" data-ok="✓ Yes! Each is missing one piece. A twelfth is smaller than an eleventh, so eleven-twelfths is closer to full.">
+  <span class="sb-k">Bonus · optional</span>
+  <h3>Almost Full</h3>
+  <p>Compare ten-elevenths and eleven-twelfths. Use the missing piece.</p>
+  <div class="sb-q" style="font-size:22px"><span class="fr"><span>10</span><span>11</span></span> <input class="sb-ans word" data-a="<" autocomplete="off" aria-label="word" data-hint="Each cup is missing one piece. Which missing piece is smaller?"> <span class="fr"><span>11</span><span>12</span></span> (Type &lt;, &gt; or =.)</div>
+  <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div>
+</div>
 
-window.fluencyStart = function(){
-  if(!FLUENCY_TIMED) return;
-  var grid = document.getElementById('fluencyGrid');
-  if(!grid) return;
-  grid.querySelectorAll('.fluency-input').forEach(function(i){ i.disabled = false; });
-  var btn = document.getElementById('fluencyStartBtn');
-  if(btn){ btn.disabled = true; btn.textContent = 'Timer Running\u2026'; }
-  var checkBtn = document.getElementById('fluencyCheckBtn');
-  if(checkBtn) checkBtn.disabled = false;
-  fluencySecondsLeft = 60;
-  fluencyUpdateDisplay();
-  fluencyInterval = setInterval(function(){
-    fluencySecondsLeft--;
-    fluencyUpdateDisplay();
-    if(fluencySecondsLeft <= 0){
-      clearInterval(fluencyInterval);
-      grid.querySelectorAll('.fluency-input').forEach(function(i){ i.disabled = true; });
-      window.fluencyCheck();
-    }
-  }, 1000);
-};
+<div class="sb-card">
+  <span class="sb-k">How to turn in</span>
+  <h3>Turn in your work</h3>
+  <ol class="sb-steps4">
+    <li>Check the list below. Jobs 1 to 8 are required. The Bonus is optional.</li>
+    <li>Press <b>📋 Gather my answers</b>, then <b>📋 Copy</b>. Or press <b>🖨️ Print or save as PDF</b>.</li>
+    <li>Open this lesson's assignment in Canvas.</li>
+    <li>Paste your answers (or upload your PDF and journal photo), then press <b>Submit</b>.</li>
+  </ol>
+</div>
 
-function fluencyUpdateDisplay(){
-  var el = document.getElementById('fluencyTimerDisplay');
-  if(el) el.textContent = fluencySecondsLeft + 's';
-}
+<div class="sb-card sb-journal">
+  <span class="sb-k">Math journal</span>
+  <h3>All my answers</h3>
+  <div class="sb-help"><button type="button" class="sb-btn" data-journal="gather">📋 Gather my answers</button><button type="button" class="sb-btn ghost" data-journal="copy">📋 Copy</button><button type="button" class="sb-btn ghost" data-journal="download">⬇️ Download as text</button><button type="button" class="sb-btn ghost" data-journal="print">🖨️ Print or save as PDF</button></div>
+  <textarea id="sb-journal-out" readonly aria-label="All my answers">Press Gather my answers to collect everything here.</textarea>
+  <p class="sb-saved">Your answers and your work on this page save on this device as you go.</p>
+</div>
 
-window.fluencyCheck = function(){
-  if(fluencyInterval){ clearInterval(fluencyInterval); fluencyInterval = null; }
-  var items = document.querySelectorAll('#fluencyGrid .fluency-item');
-  var correct = 0, attempted = 0, total = items.length;
-  var lines = [];
-  items.forEach(function(item){
-    var input = item.querySelector('.fluency-input');
-    var qText = item.querySelector('.fluency-q').textContent;
-    var given = (input.value || '').trim();
-    var ans = input.dataset.answer;
-    var ok = given !== '' && given === ans;
-    if(given !== '') attempted++;
-    item.classList.remove('fluency-correct','fluency-wrong');
-    if(ok){ correct++; item.classList.add('fluency-correct'); }
-    else if(given !== ''){ item.classList.add('fluency-wrong'); }
-    lines.push(qText + ' ' + ans + '   [answered: ' + (given || 'blank') + ']' + (ok ? ' \u2713' : (given ? ' \u2717' : '')));
-  });
-  var pct = total ? Math.round((correct/total)*100) : 0;
-  var timeStr = FLUENCY_TIMED ? (' in ' + (60 - fluencySecondsLeft) + ' seconds') : '';
-  var summary = 'Fluency Warm-Up \u2014 ' + FLUENCY_TITLE + '\n' + correct + ' / ' + total + ' correct (' + pct + '%)' + timeStr + '\n\n' + lines.join('\n');
-  var j = document.getElementById('fluencyJournal');
-  if(j) j.value = summary;
-  var resEl = document.getElementById('fluencyResult');
-  if(resEl) resEl.innerHTML = correct + ' / ' + total + ' correct (' + pct + '%)' + timeStr;
-  var checkBtn = document.getElementById('fluencyCheckBtn');
-  if(checkBtn) checkBtn.disabled = true;
-  var startBtn = document.getElementById('fluencyStartBtn');
-  if(startBtn) startBtn.textContent = 'Done';
-};
-})();
-</script>
-<!-- Video Manifest Loader -->
+<div class="sb-card">
+  <span class="sb-k">Checklist</span>
+  <h3>Before you turn in</h3>
+  <ul class="sb-check">
+    <li><span class="bx"></span><span>I finished Jobs 1 to 8.</span></li>
+    <li><span class="bx"></span><span>I drew a halfway line on two fractions in my math journal.</span></li>
+    <li><span class="bx"></span><span>I used the missing piece to compare two fractions that were both more than half.</span></li>
+    <li><span class="bx"></span><span>I tried the Bonus. <span class="opt">(optional)</span></span></li>
+  </ul>
+</div>
+
+<div class="sb-card">
+  <span class="sb-k">Coming up next</span>
+  <h3>Lesson 3.10.06 · Adding and Subtracting Fractions, Part 1</h3>
+  <p>Today you compared cups of coffee. Next, you'll add and subtract fractions that have the same denominator.</p>
+</div>
+
+<div class="sb-opti" data-slot="end-1">Before you go, listen to Lieschen's song from the Coffee Cantata. She sings about how sweet her coffee tastes, and a flute plays along. It's played here with a soft flute and harpsichord sound. Press play, and stop whenever you like.</div>
+<div class="sb-card sb-listen" data-src="bach-coffee-aria-bwv211.mp3">
+  <img src="images/storybook/sb-coffee-house.jpg" alt="Zimmermann's coffee house in Leipzig" style="object-fit:contain;background:#fff">
+  <div style="flex:1">
+    <span class="sb-k">Listening corner</span>
+    <h3>Bach · Coffee Cantata: Lieschen's song</h3>
+    <p style="margin:2px 0">"Ah, how sweet the coffee tastes." The flute's part and the low part, played here with a soft flute and harpsichord sound.</p>
+    <div class="meter"><i></i></div><div class="sb-row"><button type="button" class="sb-btn play">▶ Play the music</button><button type="button" class="sb-btn ghost stop">■ Stop</button><span class="time" style="font-weight:800;color:#5B6478">0:00</span></div>
+    <p class="sb-credits">Johann Sebastian Bach, "Ei! wie schmeckt der Coffee süße," from Schweigt stille, plaudert nicht (Coffee Cantata), BWV 211. Played with a flute and harpsichord sound made for this page from Michel Rondeau's arrangement files on IMSLP (CC BY-SA 4.0). This recording is shared under the same license.</p>
+  </div>
+</div>
+</section>
+
+<footer class="sb-foot footer"><b>🏫 Optima Academy Online</b><br>Math · Grade 3 · Lesson 3.10.05 · Unit 10<br><span style="font-size:12px">Art: Johann Georg Schreiber, Katharine Street, Leipzig (about 1720), and Bach's autograph title page of BWV 211 (about 1734, Staatsbibliothek zu Berlin), public domain, via Wikimedia Commons. Music: Bach, Coffee Cantata, BWV 211, aria "Ei! wie schmeckt der Coffee süße," played from Michel Rondeau's arrangement (IMSLP, CC BY-SA 4.0). The Halfway Sorter: notes played in the page.</span></footer>
+</div>
+
+<script type="application/json" id="sb-data">{"lesson": "3.10.05", "key": "g3sb-3-10-05", "title": "Comparing Fractions, Part 2", "audioBase": "audio/storybook/", "imgBase": "images/storybook/", "music": "bach-cello-suite-1-prelude.mp3", "audioReady": true, "glossary": [{"t": "benchmark", "d": "A number we compare to, like one-half or 1 whole.", "key": true}, {"t": "one-half", "alt": ["halfway"], "d": "The halfway point of a whole. To find half of a denominator, divide it by 2.", "key": true}, {"t": "cantata", "d": "A piece of music for singers and players. Bach wrote many of them.", "key": true}, {"t": "numerator", "d": "The top number of a fraction. It tells how many parts you are counting.", "key": true}, {"t": "denominator", "d": "The bottom number of a fraction. It tells how many equal parts make the whole.", "key": true}, {"t": "missing piece", "alt": ["missing pieces"], "d": "The part of a whole that is not shaded. A smaller missing piece means the fraction is closer to 1 whole."}, {"t": "coffee house", "d": "A place where people met to drink coffee and talk. Bach's music group played in one in Leipzig."}, {"t": "flute", "d": "A wind instrument you play by blowing across a hole. In Bach's time it was made of wood."}], "cueWords": {"warm-1": [0, 0.8, 1.44, 1.6, 1.76, 2.08, 2.4, 2.56, 3.84, 4.08, 4.32, 4.64, 5.04, 5.6, 5.92, 6.16, 6.4, 6.6, 6.8, 7.36, 7.52, 7.76, 8.88, 9.28, 9.68, 10, 10.48, 10.76, 11.6, 11.92, 12.16, 12.32, 12.72, 12.96, 13.44, 13.6, 14, 15.28, 15.64, 15.92, 16.24, 16.48, 16.72, 17.28, 17.52, 17.84, 18.44, 19.12, 19.28, 19.6, 19.92, 20.8, 21.28, 21.52, 21.72, 21.88, 22.2, 22.4, 23.36, 23.48, 23.6, 23.92, 24.24, 24.48, 24.8, 25.52, 25.76, 26, 26.32, 27, 27.36, 27.68], "think-1": [0, 0.32, 0.6, 0.8, 1.12, 1.28, 2.36, 2.56, 3.04, 3.28, 3.6, 4.64, 4.92, 5.04, 5.44, 5.6, 5.8, 5.92, 6.48, 7.44, 7.76, 8.16, 8.4, 8.72, 8.96, 9.28, 10.32, 10.56, 10.72, 10.96, 11.52, 11.68], "think-done": [0, 0.4, 1.44, 1.68, 2.08, 2.32, 2.52, 2.64, 3.12, 4.08, 4.88, 5.04, 5.44, 5.76, 6.08, 6.48, 7.2, 7.52, 7.68, 7.92, 8.48, 8.64, 9.6, 9.76, 10.4, 10.88], "learn-1": [0, 0.48, 0.6, 0.72, 1.76, 2.48, 3, 3.32, 3.52, 4.68, 4.8, 5.28, 5.84, 6, 6.08, 6.48, 7.6, 8.32, 8.52, 8.72, 8.88, 10, 10.48, 10.76, 10.96, 11.12, 11.28, 11.52], "practice-1": [0, 0.4, 0.8, 0.96, 1.16, 1.6, 1.92, 2.24, 3.04, 3.32, 3.44, 4.4, 4.76, 4.88, 5.12, 5.36, 6, 6.2, 6.4, 6.76, 6.88, 7.68, 7.88, 8.08, 8.4, 8.96, 9.2, 9.4, 9.52, 10, 10.88, 11, 11.08, 11.2, 11.6], "own-1": [0, 0.32, 0.6, 0.8, 1.04, 1.2, 1.36, 2.16, 2.56, 2.96, 3.2, 3.44, 4.8, 5.04, 5.2, 5.76, 6.08, 6.24, 6.96, 7.12, 8, 8.32], "swyk-1": [0, 0.32, 1.2, 1.48, 1.6, 1.92, 2.72, 2.96, 3.2, 3.52, 3.92, 4.16, 4.28, 4.48, 4.8, 4.92, 5.04, 5.52, 6.32, 6.56, 6.72, 6.96, 7.44, 7.68, 7.8, 7.92, 8.72, 9.28, 9.6], "end-1": [0, 0.4, 0.56, 1.28, 1.6, 1.76, 2.52, 2.8, 2.96, 3.12, 3.44, 4.72, 4.96, 5.2, 5.52, 5.84, 6.24, 6.56, 6.8, 7.56, 7.68, 7.84, 8.24, 8.56, 9.6, 9.88, 10.08, 10.4, 10.56, 10.72, 11.04, 11.52, 11.68, 12.4, 13.48, 13.68, 14.32, 14.56, 15.04, 15.44, 15.68]}}</script>
+
+<script src="assets/storybook/sb.js?v=e96e1e6d"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   fetch('https://raw.githubusercontent.com/bbirchum1/optima-3rd-math/main/video-manifest.json?v=' + Date.now())
@@ -685,15 +445,11 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!m) return;
         var entry = manifest[m[1]];
         if (!entry || entry.status !== 'ready' || !entry.embed) return;
-        var temp = document.createElement('div');
-        temp.innerHTML = entry.embed;
-        var iframe = temp.querySelector('iframe');
-        if (!iframe) return;
-        iframe.removeAttribute('width');
-        iframe.removeAttribute('height');
+        var temp = document.createElement('div'); temp.innerHTML = entry.embed;
+        var iframe = temp.querySelector('iframe'); if (!iframe) return;
+        iframe.removeAttribute('width'); iframe.removeAttribute('height');
         iframe.style.cssText = 'display:block;width:100%;aspect-ratio:16/9;border:none;';
-        wrap.innerHTML = '';
-        wrap.style.cssText = 'display:block;border:none;background:#000;border-radius:14px;overflow:hidden;margin:0 0 18px;';
+        wrap.innerHTML = ''; wrap.style.cssText = 'display:block;border:none;background:#000;border-radius:14px;overflow:hidden;margin:0 0 18px;';
         wrap.appendChild(iframe);
       });
     })
@@ -702,4 +458,6 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 <!-- OAO math tools for this lesson (manipulatives library) -->
 <script src="https://optimaondemand.github.io/optima-4th-math/manipulatives/lesson-tools.js" defer></script>
-</body></html>
+</body>
+</html>
+

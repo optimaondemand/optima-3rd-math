@@ -1,0 +1,92 @@
+<!DOCTYPE html><html><head><meta charset="utf-8">
+<!-- 3.10.05 Learn video: "Halfway or Missing Piece". Frames rendered by render.js from timeline-3-10-04.json (Scribe word times). -->
+<style>
+html,body{margin:0;width:1280px;height:720px;overflow:hidden;background:#FBF6EA;font-family:Nunito,Arial,sans-serif}
+#st{position:absolute;inset:0}
+.cap{position:absolute;left:90px;right:90px;bottom:22px;min-height:52px;background:rgba(14,28,66,.88);color:#fff;border-radius:14px;padding:10px 20px;font-size:26px;font-weight:800;line-height:1.3;text-align:center}
+.cap:empty{display:none}
+.hd{position:absolute;left:40px;top:22px;font-family:'Cormorant Garamond',Georgia,serif;font-size:32px;font-weight:700;color:#3A2A12}
+.hd small{display:block;font-family:Nunito,Arial;font-size:15px;letter-spacing:.18em;color:#B8892E;font-weight:900}
+.book{position:absolute;inset:0;display:none;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 40%,#FFF8E6,#EFE2C6)}
+.book.on{display:flex}
+.bk{display:grid;grid-template-columns:420px 420px;background:#E8DCC0;padding:12px;border-radius:10px;box-shadow:0 20px 40px rgba(60,40,10,.25)}
+.pg{background:#FFFBF1;height:380px;padding:24px;box-sizing:border-box}
+.pg img{width:100%;height:290px;object-fit:cover;border:8px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.2);box-sizing:border-box}
+.pg.r{display:flex;flex-direction:column;justify-content:center}
+.ch{font-family:Georgia,serif;letter-spacing:.2em;color:#B8892E;font-weight:700;font-size:16px}
+.tt{font-family:'Cormorant Garamond',Georgia,serif;font-size:40px;font-weight:700;color:#3A2A12;line-height:1.05;margin:8px 0}
+.q{font-size:22px;font-weight:800;color:#0E1C42;margin-top:10px}
+.owl{position:absolute;width:140px;right:28px;bottom:150px}
+</style></head><body>
+<div id="st"><svg id="sv" width="1280" height="720" viewBox="0 0 1280 720"></svg>
+<div class="hd"><small>CHAPTER 10 · BACH'S MEASURES</small>Halfway or Missing Piece</div></div>
+<div class="book" id="book"><div class="bk"><div class="pg"><img src="../repo/images/storybook/sb-coffee-plate.jpg" style="object-fit:contain;background:#FBF6EA"></div><div class="pg r"><div class="ch">CHAPTER 10 · LESSON 5</div><div class="tt" id="btt">Comparing Fractions, Part 2</div><div class="q" id="bq">How can you compare fractions without re-cutting?</div></div></div><img class="owl" src="../repo/images/storybook/opti-owl.png"></div>
+<div class="cap" id="cap"></div>
+<script>
+var TL=null, NSV='http://www.w3.org/2000/svg';
+function S(tag,a,p){var e=document.createElementNS(NSV,tag);for(var k in a){if(k==='text')e.textContent=a[k];else e.setAttribute(k,a[k]);}(p||sv).appendChild(e);return e;}
+var NAVY='#1F2A44', NV='#0E1C42', CT='#117E7E', CW='#5B6478', C9='#2E7D6B', C2='#6B46C1', C4='#8A6A00', C8='#A23B8C', C5='#4E7A1A', C10='#117E7E', C3='#B05E09', C6='#2F6FDE', C12='#5B6478', C20='#3949AB', C11='#8C2F6E', RED='#B03A2E', OK='#1E7A4C', GOLD='#B8892E', NO='#B23A2E', X0=200, W=880;
+function sec(s){return TL.secs[s];}
+var M='vid-math';
+function wt(re,n,from){var Wd=sec(M).words,c=0;for(var i=from||0;i<Wd.length;i++){if(re.test(Wd[i].w.replace(/[^\w'-]/g,''))){if(c===(n||0))return Wd[i].t;c++;}}return null;}
+function wi(re,n){var Wd=sec(M).words,c=0;for(var i=0;i<Wd.length;i++){if(re.test(Wd[i].w.replace(/[^\w'-]/g,''))){if(c===(n||0))return i;c++;}}return 0;}
+function ease(x){x=Math.max(0,Math.min(1,x));return x<.5?2*x*x:1-Math.pow(-2*x+2,2)/2;}
+function caption(t){var all=[];['vid-open',M,'vid-close'].forEach(function(s){var Wd=sec(s).words,cur=[];Wd.forEach(function(w,i){cur.push(w);if(/[.!?:]$/.test(w.w)||i===Wd.length-1){all.push(cur);cur=[];}});});
+  for(var i=0;i<all.length;i++){var a=all[i][0].t,b=all[i][all[i].length-1].e+0.35;if(t>=a-0.1&&t<=b)return all[i].map(function(w){return w.w;}).join(' ');}return '';}
+var K={};
+function fr(x,y,nu,de,size,col){col=col||NAVY;S('text',{x:x,y:y,'text-anchor':'middle','font-size':size,'font-weight':900,fill:col,text:String(nu)});S('line',{x1:x-size*0.6,y1:y+size*0.25,x2:x+size*0.6,y2:y+size*0.25,stroke:col,'stroke-width':Math.max(2,size/12)});S('text',{x:x,y:y+size*1.1,'text-anchor':'middle','font-size':size,'font-weight':900,fill:col,text:String(de)});}
+function cursor(x,y,press){var g=S('g',{transform:'translate('+x+','+y+')'});if(press)S('circle',{r:16,fill:'rgba(233,196,106,.55)'},g);S('path',{d:'M0 0 L0 30 L8 23 L14 36 L19 34 L13 21 L23 21 Z',fill:'#fff',stroke:'#111','stroke-width':2},g);}
+function strip(x,y,w,d,k,col,h,lab){h=h||56;var tw=w/d;for(var i=0;i<d;i++)S('rect',{x:x+i*tw+1,y:y,width:tw-2,height:h,rx:6,fill:i<k?col:'#fff',stroke:col,'stroke-width':2.5});
+  if(lab)S('text',{x:x-16,y:y+h/2+8,'text-anchor':'end','font-size':20,'font-weight':900,fill:col,text:lab});}
+function whole(x,y,w,h,txt){S('rect',{x:x+1,y:y,width:w-2,height:h,rx:6,fill:NV});S('text',{x:x+w/2,y:y+h/2+8,'text-anchor':'middle','font-size':22,'font-weight':900,fill:'#fff',text:txt||'1 whole'});}
+function setup(){
+  K.a=sec(M).start; K.close=sec('vid-close').start;
+  K.draw=wt(/^draw$/,0); K.h9=wt(/^Half$/,0); K.tn=wt(/^Two-ninths$/,0); K.h7=wt(/^Half$/,1); K.fs=wt(/^Five-sevenths$/,0); K.so1=wt(/^So$/,0); K.bm=wt(/^benchmark$/,0);
+  K.now=wt(/^Now$/,0); K.cant=wt(/^can't$/,0); K.look=wt(/^Look$/,0); K.each=wt(/^Each$/,1); K.tw=wt(/^twelfth$/,0); K.so2=wt(/^So$/,1); K.great2=wt(/^Eleven-twelfths$/,0);
+  K.watch=wt(/^Watch$/,0); K.h3=wt(/^Half$/,2); K.and=wt(/^And$/,0);
+}
+function grow(t,t0,y,h){var p=ease((t-t0)/0.7);if(p<1)S('rect',{x:196,y:y-4,width:700,height:(h||50)+10,fill:'#FBF6EA',opacity:1-p});}
+function cup(x,y,w,d,k,col,h,lab){strip(x,y,w,d,k,col,h,lab);}
+function gap(x,y,w,d,k,h){S('rect',{x:x+w*k/d-2,y:y-6,width:w*(d-k)/d+4,height:h+12,rx:8,fill:'none',stroke:NO,'stroke-width':4,'stroke-dasharray':'9 6'});}
+function halfline(x,w,y0,y1){var hx=x+w/2;S('line',{x1:hx,y1:y0,x2:hx,y2:y1,stroke:GOLD,'stroke-width':5,'stroke-dasharray':'10 7'});S('text',{x:hx,y:y1+26,'text-anchor':'middle','font-size':22,'font-weight':900,fill:GOLD,text:'one-half'});}
+function tag(x,y,txt,col){S('rect',{x:x,y:y,width:txt.length*12+28,height:40,rx:12,fill:'#fff',stroke:col,'stroke-width':3});S('text',{x:x+14,y:y+27,'font-size':21,'font-weight':900,fill:col,text:txt});}
+function chip(x,y,txt,col){S('rect',{x:x,y:y,width:txt.length*13+30,height:40,rx:20,fill:'#fff',stroke:col,'stroke-width':3});S('text',{x:x+15,y:y+27,'font-size':22,'font-weight':900,fill:col,text:txt});}
+function render(t){
+  window.__t=t;var book=document.getElementById('book'),cap=document.getElementById('cap');
+  cap.textContent=caption(t);
+  var inOpen=t<K.a-0.3, inClose=t>=K.close-0.3;
+  book.classList.toggle('on',inOpen||inClose);
+  if(inClose){document.getElementById('btt').textContent='Your turn';document.getElementById('bq').textContent='Halfway line, or missing piece. Pick the shortcut that helps.';}
+  sv.innerHTML='';if(inOpen||inClose)return;
+  var X=200,Wd=630;
+  // ── scene 1: two-ninths and five-sevenths, compared to one-half
+  if(t<K.now-0.3){
+    cup(X,130,Wd,9,2,C9,60,'ninths'); cup(X,250,Wd,7,5,RED,60,'sevenths');
+    if(t>=K.draw-0.2)halfline(X,Wd,110,330);
+    if(t>=K.h9-0.2){tag(870,136,'half of 9 = 4½',C9);S('circle',{cx:X+Wd*4.5/9,cy:200,r:7,fill:C9});}
+    if(t>=K.tn-0.2)tag(870,186,'2 < 4½: less than ½',NO);
+    if(t>=K.h7-0.2){tag(870,256,'half of 7 = 3½',RED);S('circle',{cx:X+Wd*3.5/7,cy:320,r:7,fill:RED});}
+    if(t>=K.fs-0.2)tag(870,306,'5 > 3½: more than ½',OK);
+    if(t>=K.so1-0.3){S('rect',{x:470,y:400,width:250,height:110,rx:18,fill:'#FFFDF8',stroke:'#E4D8BF','stroke-width':2});fr(540,436,5,7,36,RED);S('text',{x:595,y:476,'text-anchor':'middle','font-size':44,'font-weight':900,fill:NAVY,text:'>'});fr(650,436,2,9,36,C9);}
+    if(t>=K.bm-0.3)chip(420,540,'One-half is a benchmark',GOLD);
+  }
+  // ── scene 2: nine-tenths and eleven-twelfths, the missing pieces
+  else if(t<K.watch-0.3){
+    cup(X,130,Wd,10,9,C10,60,'tenths'); cup(X,250,Wd,12,11,C12,60,'twelfths');
+    halfline(X,Wd,110,330);
+    if(t>=K.cant-0.3)S('text',{x:870,y:120,'font-size':22,'font-weight':900,fill:NO,text:'both past half'});
+    if(t>=K.look-0.2){gap(X,130,Wd,10,9,60);gap(X,250,Wd,12,11,60);}
+    if(t>=K.each-0.2){S('text',{x:870,y:170,'font-size':22,'font-weight':900,fill:NO,text:'missing 1 tenth'});S('text',{x:870,y:290,'font-size':22,'font-weight':900,fill:NO,text:'missing 1 twelfth'});}
+    if(t>=K.tw-0.3)S('text',{x:870,y:330,'font-size':22,'font-weight':900,fill:OK,text:'smaller gap!'});
+    if(t>=K.so2-0.3)S('text',{x:870,y:370,'font-size':22,'font-weight':900,fill:OK,text:'closer to full'});
+    if(t>=K.great2-0.3){S('rect',{x:470,y:420,width:270,height:110,rx:18,fill:'#FFFDF8',stroke:'#E4D8BF','stroke-width':2});fr(545,456,11,12,36,C12);S('text',{x:605,y:496,'text-anchor':'middle','font-size':44,'font-weight':900,fill:NAVY,text:'>'});fr(665,456,9,10,36,C10);}
+  }
+  // ── scene 3: watch out
+  else {
+    S('rect',{x:140,y:96,width:1000,height:62,rx:14,fill:'#FBE7E4',stroke:NO,'stroke-width':3});S('text',{x:640,y:138,'text-anchor':'middle','font-size':32,'font-weight':900,fill:NO,text:'Watch out!'});
+    if(t>=K.h3-0.3){[['7','3½'],['9','4½'],['11','5½']].forEach(function(p,i){S('text',{x:200+i*300,y:230,'font-size':32,'font-weight':900,fill:NAVY,text:'half of '+p[0]+' = '+p[1]});});}
+    if(t>=K.and-0.3){cup(X,300,Wd,7,6,RED,50,'');gap(X,300,Wd,7,6,50);cup(X,390,Wd,9,8,C9,50,'');gap(X,390,Wd,9,8,50);S('text',{x:870,y:432,'font-size':24,'font-weight':900,fill:OK,text:'smaller gap: fuller'});}
+  }
+}
+window.init=function(tl){TL=tl;setup();};
+</script></body></html>
