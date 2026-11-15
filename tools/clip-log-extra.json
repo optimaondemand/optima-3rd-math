@@ -142,5 +142,69 @@
  "g3m-3-11-01-vid-math": {
   "text": "This is a meter stick. It is one meter long. Look at the tiny spaces. Each one is one centimeter. Let's count them by tens. Ten, twenty, thirty, forty, fifty, sixty, seventy, eighty, ninety, one hundred. One meter is one hundred centimeters. Here's a rope. It is longer than one meter stick. Lay the meter stick at the end of the rope. That's one meter. Measure the rest with a centimeter ruler, starting at zero. It's forty-six centimeters. So the rope is one meter forty-six centimeters. In centimeters, that's one hundred plus forty-six, or one hundred forty-six centimeters. Now go the other way. A garden path is nine hundred thirty-five centimeters long. How many meters? Every hundred centimeters makes one meter. Nine hundreds make nine meters. Thirty-five centimeters are left over. So the path is nine meters thirty-five centimeters. Watch out! Eight meters three centimeters is not eighty-three centimeters. Eight meters is eight hundred centimeters. Add three more, and you get eight hundred three centimeters.",
   "voice": "claire"
+ },
+ "g3m-3-11-02-warm-1": {
+  "text": "Hoo! It's the day after we saw the marble meter. Now we're in a ribbon shop in Paris. The rolls of ribbon are measured in whole meters. But customers ask for pieces in centimeters. Look at the old picture of a busy Paris shop, full of ribbons and cloth. Today you'll cut pieces off whole meters and find out how much is left.",
+  "voice": "opti"
+ },
+ "g3m-3-11-02-think-1": {
+  "text": "Here's the first order. The roll has nine whole meters. The customer wants forty-seven centimeters. You can't cut centimeters from a whole meter, so break one meter first.",
+  "voice": "opti"
+ },
+ "g3m-3-11-02-think-done": {
+  "text": "Well done! You broke one meter into one hundred centimeters. You cut off forty-seven, and fifty-three were left. Eight whole meters are still on the roll. So eight meters fifty-three centimeters remain.",
+  "voice": "opti"
+ },
+ "g3m-3-11-02-learn-1": {
+  "text": "Welcome to the Lesson. First, Claire shows two ways to take centimeters away from meters. Next, we fix some mix-ups. Then you cut an order on your own.",
+  "voice": "opti"
+ },
+ "g3m-3-11-02-practice-1": {
+  "text": "Each job has a mix-up kids often make. Here's a clue. Break only one meter, and keep the other meters. Then check by adding back.",
+  "voice": "opti"
+ },
+ "g3m-3-11-02-own-1": {
+  "text": "Your turn to work on your own. Take away the meters first. Then break a meter for the centimeters.",
+  "voice": "opti"
+ },
+ "g3m-3-11-02-swyk-1": {
+  "text": "Last stop! The orders are coming in. Cut each one from the roll, and say what's left.",
+  "voice": "opti"
+ },
+ "g3m-3-11-02-end-1": {
+  "text": "The shop is closing for the night. Listen to music by Joseph Haydn, first played in London in 1792. It's soft and quiet, and then, surprise, one big loud chord! Stories say he wanted to wake up sleepy listeners. Press play, and stop whenever you like.",
+  "voice": "opti"
+ },
+ "g3m-3-11-02-vid-open": {
+  "text": "Hoo! Claire is going to show us how to take centimeters away from meters. Watch the meter break.",
+  "voice": "opti"
+ },
+ "g3m-3-11-02-vid-math": {
+  "text": "A ribbon roll has nine meters. A customer wants twenty-eight centimeters. We can't take centimeters from a whole meter. So break one meter into one hundred centimeters. Now we have eight meters and one hundred centimeters. Take twenty-eight from the hundred. Count up from twenty-eight: two more makes thirty, and seventy more makes one hundred. Two and seventy is seventy-two. So seventy-two centimeters are left, and the eight meters are still there. Nine meters minus twenty-eight centimeters is eight meters seventy-two centimeters. Here's another way. Take away one whole meter. That leaves eight meters. But we only needed twenty-eight centimeters, so we took too much. Give back the extra seventy-two centimeters. Eight meters and seventy-two centimeters again. Watch out! Don't forget to break a meter. Nine meters minus twenty-eight centimeters is not nine meters seventy-two centimeters. One of the nine meters was broken, so only eight are left.",
+  "voice": "claire"
+ },
+ "g3m-3-11-02-vid-close": {
+  "text": "Break one meter, keep the rest, and check by adding back. Now it's your turn!",
+  "voice": "opti"
+ },
+ "g3m-3-11-02-words": {
+  "text": "Subtract. ... Remaining. ... Break a meter. ... Compound units.",
+  "voice": "opti"
+ },
+ "g3m-word-subtract": {
+  "text": "Subtract.",
+  "voice": "opti"
+ },
+ "g3m-word-remaining": {
+  "text": "Remaining.",
+  "voice": "opti"
+ },
+ "g3m-word-break-a-meter": {
+  "text": "Break a meter.",
+  "voice": "opti"
+ },
+ "g3m-word-compound-units": {
+  "text": "Compound units.",
+  "voice": "opti"
  }
 }

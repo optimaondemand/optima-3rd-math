@@ -59,6 +59,7 @@ TOOLS = {
  'ruler-cm': ('ruler', {"u": "cm", "a": 0, "b": 11, "len": 11}, 'Rulers', 'Drag the ribbon so its left end is on 0, then read the other end.'),
  'bond-m': ('bond', {"parts": 2, "w": "163 cm", "p": ["100 cm", "?"]}, 'Number Bond', 'Split 163 cm into 100 cm and the rest. The 100 cm is 1 meter.'),
  'bond-m2': ('bond', {"parts": 2, "w": "628 cm", "p": ["600 cm", "?"]}, 'Number Bond', 'Split 628 cm into hundreds and the rest. Each hundred centimeters is 1 meter.'),
+ 'bond-100': ('bond', {"parts": 2, "w": "100 cm", "p": ["23 cm", "?"]}, 'Number Bond', 'One meter is 100 cm. Split it into 23 cm and the rest. Count up to 100.'),
  'fbars-9-10': ('fbars', {"d": [9, 10], "lab": 1}, 'Fraction Tiles', 'Try a bar of ninths and a bar of tenths. Shade 1 ninth and 2 tenths. Which reaches farther?'),
 }
 def enc(o): return base64.urlsafe_b64encode(json.dumps(o, separators=(',', ':')).encode()).decode().rstrip('=')
@@ -178,6 +179,16 @@ L = {
      {"t": "marble", "d": "A hard, smooth stone. It does not shrink or bend, so it makes a good measuring stick."},
      {"t": "quill pen", "d": "A pen made from a long bird feather. People dipped it in ink to write."},
      {"t": "unit", "d": "The size you measure with, like a meter or a centimeter."}]),
+  '3.11.02': dict(page='math-lesson-3-11-02-subtracting-from-meters.html', title='Subtracting from Meters', video='g3math-11-02-learn', music='haydn-94-surprise-andante.mp3',
+   glossary=[
+     {"t": "subtract", "d": "To take away. 9 m − 47 cm means take 47 cm away from 9 m.", "key": True},
+     {"t": "remaining", "d": "What is left after you take some away. After a cut, the ribbon still on the roll is the remaining ribbon.", "key": True},
+     {"t": "break a meter", "d": "Change one whole meter into 100 centimeters so you can take centimeters away.", "key": True},
+     {"t": "compound units", "d": "Two units used together to write one length, like 8 m 72 cm.", "key": True},
+     {"t": "meter", "alt": ["meters"], "d": "A unit for measuring length. 1 meter is 100 centimeters."},
+     {"t": "centimeter", "alt": ["centimeters"], "d": "A small unit of length. 100 centimeters make 1 meter."},
+     {"t": "roll", "d": "A long piece of ribbon or cloth wound up so it is easy to store and cut."},
+     {"t": "trim", "d": "Ribbon or lace sewn onto clothes and hats to decorate them."}]),
   '3.10.07': dict(page='math-lesson-3-10-07-adding-subtracting-fractions-part-2.html', title='Adding and Subtracting Fractions, Part 2', video='g3math-10-07-learn',
    glossary=[
      {"t": "clue word", "alt": ["clue words"], "d": "A word in a story problem that tells you what to do, like more (add) or left (take away).", "key": True},

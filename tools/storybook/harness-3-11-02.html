@@ -1,0 +1,119 @@
+<!DOCTYPE html><html><head><meta charset="utf-8">
+<!-- 3.11.02 Learn video: "Break a Meter". Frames rendered by render.js from timeline-3-11-02.json (Scribe word times). -->
+<style>
+html,body{margin:0;width:1280px;height:720px;overflow:hidden;background:#FBF6EA;font-family:Nunito,Arial,sans-serif}
+#st{position:absolute;inset:0}
+.cap{position:absolute;left:90px;right:90px;bottom:22px;min-height:52px;background:rgba(14,28,66,.88);color:#fff;border-radius:14px;padding:10px 20px;font-size:26px;font-weight:800;line-height:1.3;text-align:center}
+.cap:empty{display:none}
+.hd{position:absolute;left:40px;top:22px;font-family:'Cormorant Garamond',Georgia,serif;font-size:32px;font-weight:700;color:#3A2A12}
+.hd small{display:block;font-family:Nunito,Arial;font-size:15px;letter-spacing:.18em;color:#B8892E;font-weight:900}
+.book{position:absolute;inset:0;display:none;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 40%,#FFF8E6,#EFE2C6)}
+.book.on{display:flex}
+.bk{display:grid;grid-template-columns:420px 420px;background:#E8DCC0;padding:12px;border-radius:10px;box-shadow:0 20px 40px rgba(60,40,10,.25)}
+.pg{background:#FFFBF1;height:380px;padding:24px;box-sizing:border-box}
+.pg img{width:100%;height:290px;object-fit:cover;border:8px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.2);box-sizing:border-box}
+.pg.r{display:flex;flex-direction:column;justify-content:center}
+.ch{font-family:Georgia,serif;letter-spacing:.2em;color:#B8892E;font-weight:700;font-size:16px}
+.tt{font-family:'Cormorant Garamond',Georgia,serif;font-size:40px;font-weight:700;color:#3A2A12;line-height:1.05;margin:8px 0}
+.q{font-size:22px;font-weight:800;color:#0E1C42;margin-top:10px}
+.owl{position:absolute;width:140px;right:28px;bottom:150px}
+</style></head><body>
+<div id="st"><svg id="sv" width="1280" height="720" viewBox="0 0 1280 720"></svg>
+<div class="hd"><small>CHAPTER 11 · THE METER OF PARIS</small>Break a Meter</div></div>
+<div class="book" id="book"><div class="bk"><div class="pg"><img src="../repo/images/storybook/sb-marchande-plate.jpg" style="object-fit:cover"></div><div class="pg r"><div class="ch">CHAPTER 11 · LESSON 2</div><div class="tt" id="btt">Subtracting from Meters</div><div class="q" id="bq">How do you take centimeters away from whole meters?</div></div></div><img class="owl" src="../repo/images/storybook/opti-owl.png"></div>
+<div class="cap" id="cap"></div>
+<script>
+var TL=null, NSV='http://www.w3.org/2000/svg';
+function S(tag,a,p){var e=document.createElementNS(NSV,tag);for(var k in a){if(k==='text')e.textContent=a[k];else e.setAttribute(k,a[k]);}(p||sv).appendChild(e);return e;}
+var NAVY='#1F2A44', NV='#0E1C42', CT='#117E7E', CW='#5B6478', C9='#2E7D6B', C2='#6B46C1', C4='#8A6A00', C8='#A23B8C', C5='#4E7A1A', C10='#117E7E', C3='#B05E09', C6='#2F6FDE', C12='#5B6478', C20='#3949AB', C11='#8C2F6E', RED='#B03A2E', OK='#1E7A4C', GOLD='#B8892E', NO='#B23A2E', X0=200, W=880;
+function sec(s){return TL.secs[s];}
+var M='vid-math';
+function wt(re,n,from){var Wd=sec(M).words,c=0;for(var i=from||0;i<Wd.length;i++){if(re.test(Wd[i].w.replace(/[^\w'-]/g,''))){if(c===(n||0))return Wd[i].t;c++;}}return null;}
+function wi(re,n){var Wd=sec(M).words,c=0;for(var i=0;i<Wd.length;i++){if(re.test(Wd[i].w.replace(/[^\w'-]/g,''))){if(c===(n||0))return i;c++;}}return 0;}
+function ease(x){x=Math.max(0,Math.min(1,x));return x<.5?2*x*x:1-Math.pow(-2*x+2,2)/2;}
+function caption(t){var all=[];['vid-open',M,'vid-close'].forEach(function(s){var Wd=sec(s).words,cur=[];Wd.forEach(function(w,i){cur.push(w);if(/[.!?:]$/.test(w.w)||i===Wd.length-1){all.push(cur);cur=[];}});});
+  for(var i=0;i<all.length;i++){var a=all[i][0].t,b=all[i][all[i].length-1].e+0.35;if(t>=a-0.1&&t<=b)return all[i].map(function(w){return w.w;}).join(' ');}return '';}
+var K={};
+var MW='#F6DE94',MS='#B8902A',RW='#EAF3FF',RS='#8FB2DA',BLUE='#1D4FA8',BROWN2='#5A4300';
+function stick(x,y,w,cm,kind,v0,h,op,endLab,labsUpTo){h=h||64;var g=S('g',{opacity:op==null?1:op});var k=w/cm;S('rect',{x:x,y:y,width:w,height:h,rx:4,fill:kind==='meter'?MW:RW,stroke:kind==='meter'?MS:RS,'stroke-width':3},g);
+  for(var i=0;i<=cm;i++){var v=(v0||0)+i,big=v%10===0,mid=v%5===0,xx=x+i*k;S('line',{x1:xx,y1:y,x2:xx,y2:y+(big?h*.5:mid?h*.34:h*.2),stroke:NV,'stroke-width':big?2.4:1.2},g);
+    if(big&&(i>0||kind!=='meter')&&(i<cm||endLab)&&(labsUpTo==null||v<=labsUpTo))S('text',{x:xx,y:y+h-9,'text-anchor':'middle','font-size':20,'font-weight':900,fill:NV,text:String(v)},g);}return g;}
+function chip(x,y,txt,col,op){var g=S('g',{opacity:op==null?1:op});var w=txt.length*14+34;S('rect',{x:x-w/2,y:y,width:w,height:44,rx:22,fill:'#fff',stroke:col,'stroke-width':3},g);S('text',{x:x,y:y+30,'text-anchor':'middle','font-size':24,'font-weight':900,fill:col,text:txt},g);return g;}
+function big(x,y,txt,col,size,op){return S('text',{x:x,y:y,'text-anchor':'middle','font-size':size||40,'font-weight':900,fill:col||NV,opacity:op==null?1:op,text:txt});}
+function fadeIn(t,a,d){return ease((t-a)/(d||0.4));}
+function setup(){
+  K.a=sec(M).start; K.close=sec('vid-close').start;
+  K.ribbon=wt(/^ribbon$/,0); K.wants=wt(/^wants$/,0); K.cant=wt(/^can't$/,0); K.brk=wt(/^break$/,0); K.now=wt(/^Now$/,0);
+  K.take=wt(/^Take$/,0); K.count=wt(/^Count$/,0); K.two=wt(/^two$/,0); K.seventy=wt(/^seventy$/,0); K.two2=wt(/^Two$/,0); K.so=wt(/^So$/,1); K.nine=wt(/^Nine$/,0);
+  K.here=wt(/^Here's$/,0); K.take2=wt(/^Take$/,1); K.leaves=wt(/^leaves$/,0); K.but=wt(/^But$/,0); K.took=wt(/^took$/,0); K.give=wt(/^Give$/,0); K.eight=wt(/^Eight$/,0);
+  K.watch=wt(/^Watch$/,0); K.nine2=wt(/^Nine$/,1); K.not=wt(/^not$/,0); K.one=wt(/^One$/,0); K.broken=wt(/^broken$/,0); K.only=wt(/^only$/,1);
+}
+var X=170,BW=940;
+// a row of meter blocks: kinds[i] = 'm' whole, 'o' open, 'g' taken away
+function blocks(kinds,y,op,lab){var n=kinds.length,gap=8,u=(BW-gap*(n-1))/n,g=S('g',{opacity:op==null?1:op});
+  kinds.forEach(function(k,i){var x=X+i*(u+gap);
+    if(k==='x'){S('rect',{x:x,y:y,width:u,height:58,rx:6,fill:'none',stroke:C2,'stroke-width':2,'stroke-dasharray':'8 6',opacity:.5},g);}
+    else if(k==='g'){S('rect',{x:x,y:y,width:u,height:58,rx:6,fill:'#F1ECFA',stroke:C2,'stroke-width':3,'stroke-dasharray':'8 6'},g);S('text',{x:x+u/2,y:y+37,'text-anchor':'middle','font-size':18,'font-weight':900,fill:C2,text:'taken'},g);}
+    else if(k==='o'){S('rect',{x:x,y:y,width:u,height:58,rx:6,fill:RW,stroke:RS,'stroke-width':3},g);S('text',{x:x+u/2,y:y+37,'text-anchor':'middle','font-size':20,'font-weight':900,fill:BLUE,text:'open'},g);}
+    else {S('rect',{x:x,y:y,width:u,height:58,rx:6,fill:MW,stroke:MS,'stroke-width':3},g);for(var t=1;t<10;t++)S('line',{x1:x+t*u/10,y1:y,x2:x+t*u/10,y2:y+(t===5?17:10),stroke:'#8A6A00','stroke-width':1.4},g);S('text',{x:x+u/2,y:y+39,'text-anchor':'middle','font-size':22,'font-weight':900,fill:BROWN2,text:'1 m'},g);}
+  });return {u:u,gap:gap,x:function(i){return X+i*(u+gap);}};}
+// the open meter, drawn large: 100 cm
+function strip(y,op,cut){var k=BW/100,g=S('g',{opacity:op==null?1:op});S('rect',{x:X,y:y,width:BW,height:66,rx:4,fill:RW,stroke:RS,'stroke-width':3},g);
+  if(cut)S('rect',{x:X,y:y,width:cut*k,height:66,fill:C2,opacity:.55},g);
+  for(var i=0;i<=100;i++){var big=i%10===0,mid=i%5===0,xx=X+i*k;S('line',{x1:xx,y1:y,x2:xx,y2:y+(big?33:mid?22:13),stroke:NV,'stroke-width':big?2.4:1.2},g);if(big)S('text',{x:xx,y:y+58,'text-anchor':'middle','font-size':19,'font-weight':900,fill:NV,text:String(i)},g);}
+  return g;}
+function arc(a,b,y,lab,col,op){var k=BW/100,x1=X+a*k,x2=X+b*k,h=16+(x2-x1)*0.07,g=S('g',{opacity:op});S('path',{d:'M'+x1+' '+y+' Q'+((x1+x2)/2)+' '+(y-2*h)+' '+x2+' '+y,fill:'none',stroke:col,'stroke-width':4},g);S('text',{x:(x1+x2)/2,y:y-h-8,'text-anchor':'middle','font-size':24,'font-weight':900,fill:col,text:lab},g);return g;}
+function render(t){
+  window.__t=t;var book=document.getElementById('book'),cap=document.getElementById('cap');
+  cap.textContent=window.NOCAP?'':caption(t);
+  var inOpen=t<K.a-0.3, inClose=t>=K.close-0.3;
+  book.classList.toggle('on',inOpen||inClose);
+  if(inClose){document.getElementById('btt').textContent='Your turn';document.getElementById('bq').textContent='Break one meter, keep the rest, and check by adding back.';}
+  sv.innerHTML='';if(inOpen||inClose)return;
+  var k=BW/100;
+  // ── scene 1: break a meter, then count up
+  if(t<K.here-0.3){
+    var open=t>=K.brk-0.1, kinds=[];for(var i=0;i<9;i++)kinds.push(open&&i===0?'o':'m');
+    S('text',{x:X,y:140,'font-size':24,'font-weight':900,fill:CW,opacity:fadeIn(t,K.ribbon-0.3),text:'RIBBON ROLL · 9 METERS'});
+    var B=blocks(kinds,156,fadeIn(t,K.ribbon-0.3));
+    if(t>=K.wants-0.3)chip(1010,82,'order: 28 cm',C2,fadeIn(t,K.wants-0.3));
+    if(t>=K.cant-0.3&&!open){var o=fadeIn(t,K.cant-0.3);S('line',{x1:B.x(0)+10,y1:166,x2:B.x(0)+B.u-10,y2:204,stroke:NO,'stroke-width':6,opacity:o});S('line',{x1:B.x(0)+B.u-10,y1:166,x2:B.x(0)+10,y2:204,stroke:NO,'stroke-width':6,opacity:o});}
+    if(open){var po=fadeIn(t,K.brk,0.8),ys=400;
+      S('polygon',{points:B.x(0)+','+214+' '+(B.x(0)+B.u)+','+214+' '+(X+BW)+','+ys+' '+X+','+ys,fill:RS,opacity:.22*po});
+      var cut=t>=K.take-0.2?Math.min(28,28*fadeIn(t,K.take-0.2,0.9)):0;
+      strip(ys,po,cut);
+      if(t>=K.now-0.3){var on=fadeIn(t,K.now-0.3);chip(B.x(5)-B.gap/2,232,'8 m',BROWN2,on);chip(X+70,ys-60,'100 cm',BLUE,fadeIn(t,K.now+1.2));}
+      if(t>=K.take+0.6)chip(X+14*k,ys+80,'28 cm',C2,fadeIn(t,K.take+0.6));
+      if(t>=K.two-0.3)arc(28,30,ys-4,'+2',OK,fadeIn(t,K.two-0.3));
+      if(t>=K.seventy-0.3)arc(30,100,ys-4,'+70',OK,fadeIn(t,K.seventy-0.3));
+      if(t>=K.two2-0.3)chip(X+64*k,ys+80,'72 cm left',BLUE,fadeIn(t,K.two2-0.3));
+      if(t>=K.nine-0.3){S('rect',{x:240,y:548,width:800,height:74,rx:16,fill:'#fff',stroke:OK,'stroke-width':4,opacity:fadeIn(t,K.nine-0.3)});big(640,600,'9 m − 28 cm = 8 m 72 cm',OK,42,fadeIn(t,K.nine-0.3));}
+    }
+  }
+  // ── scene 2: take a whole meter, give back the extra
+  else if(t<K.watch-0.3){
+    big(640,128,'Another way',NV,34,fadeIn(t,K.here-0.3));
+    var gone=t>=K.take2+0.3, kinds2=[];for(var j=0;j<9;j++)kinds2.push(gone&&j===8?'g':'m');
+    if(t>=K.give+0.9)kinds2[8]='x';
+    var B2=blocks(kinds2,160,1);
+    if(t>=K.leaves-0.3)chip(B2.x(4)-B2.gap/2+B2.u/2,236,'8 m',BROWN2,fadeIn(t,K.leaves-0.3));
+    if(t>=K.but-0.3){var yb=360,ob=fadeIn(t,K.but-0.3);S('text',{x:X,y:yb-20,'font-size':22,'font-weight':900,fill:C2,opacity:ob,text:'THE METER WE TOOK'});
+      var back=t>=K.give-0.2?fadeIn(t,K.give-0.2,1.2):0;
+      var g=S('g',{opacity:ob});S('rect',{x:X,y:yb,width:28*k,height:56,fill:'#B9A6E8',stroke:C2,'stroke-width':3},g);S('text',{x:X+14*k,y:yb+36,'text-anchor':'middle','font-size':22,'font-weight':900,fill:C2,text:'28 cm needed'},g);
+      if(t>=K.took-0.3){var e=ease(back),gx=X+28*k+(B2.x(8)-X-28*k)*e,gy=yb+(160-yb)*e,gw=72*k+(B2.u*0.72-72*k)*e,ot=fadeIn(t,K.took-0.3);
+        S('rect',{x:gx,y:gy,width:gw,height:56+2*e,rx:4*e,fill:RW,stroke:RS,'stroke-width':3,opacity:ot});S('text',{x:gx+gw/2,y:gy+36,'text-anchor':'middle','font-size':22-4*e,'font-weight':900,fill:BLUE,opacity:ot,text:back>0.5?'72 cm':'72 cm extra'});
+        if(back>0.9)chip(B2.x(8)+B2.u/2,236,'back on the roll',BLUE,fadeIn(t,K.give+1.0));}
+    }
+    if(t>=K.eight-0.3){S('rect',{x:240,y:530,width:800,height:74,rx:16,fill:'#fff',stroke:OK,'stroke-width':4,opacity:fadeIn(t,K.eight-0.3)});big(640,582,'8 m + 72 cm = 8 m 72 cm',OK,42,fadeIn(t,K.eight-0.3));}
+  }
+  // ── scene 3: watch out, a meter was broken
+  else {
+    S('rect',{x:140,y:96,width:1000,height:62,rx:14,fill:'#FBE7E4',stroke:NO,'stroke-width':3});big(640,138,"Watch out! Don't forget to break a meter.",NO,30);
+    if(t>=K.nine2-0.3)big(470,240,'9 m − 28 cm',NV,44,fadeIn(t,K.nine2-0.3));
+    if(t>=K.not-0.3){var on2=fadeIn(t,K.not-0.3);big(670,240,'≠',NO,52,on2);big(860,240,'9 m 72 cm',NO,44,on2);S('line',{x1:755,y1:212,x2:965,y2:250,stroke:NO,'stroke-width':5,opacity:on2});}
+    if(t>=K.one-0.3){var ob3=t>=K.broken-0.2,k3=[];for(var q=0;q<9;q++)k3.push(ob3&&q===0?'o':'m');blocks(k3,320,fadeIn(t,K.one-0.3));
+      if(t>=K.only-0.3){var B3u=(BW-64)/9;chip(X+B3u+8+4*(B3u+8)-4+B3u/2,400,'only 8 whole meters',BROWN2,fadeIn(t,K.only-0.3));}}
+  }
+}
+window.init=function(tl){TL=tl;setup();};
+</script></body></html>

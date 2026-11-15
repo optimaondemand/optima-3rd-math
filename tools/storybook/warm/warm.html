@@ -301,6 +301,37 @@ SC['3.10.07']=function(t,K){
   if(t>=K.take-0.3)label(820,440,'step 2: take away',ramp(t,K.take-0.3,0.4),'#B23A2E',28);
   if(t>=K.step-0.3)label(640,530,'one step at a time',ramp(t,K.step-0.3,0.4),GREEN,28);
 };
+SC['3.11.02']=function(t,K){
+  var HD='CHAPTER 11 · THE METER OF PARIS';
+  function mblocks(x,y,n,u,h,op,openIdx,po){var g=S('g',{opacity:op});for(var i=0;i<n;i++){var bx=x+i*(u+8),o=i===openIdx&&po>0;
+      S('rect',{x:bx,y:y,width:u,height:h,rx:6,fill:o?'#EAF3FF':'#F6DE94',stroke:o?'#8FB2DA':'#B8902A','stroke-width':3},g);
+      if(!o){for(var k=1;k<10;k++)S('line',{x1:bx+k*u/10,y1:y,x2:bx+k*u/10,y2:y+(k===5?h*.3:h*.18),stroke:'#8A6A00','stroke-width':1.5},g);S('text',{x:bx+u/2,y:y+h/2+9,'text-anchor':'middle','font-size':26,'font-weight':900,fill:'#5A4300',text:'1 m'},g);}
+      else S('text',{x:bx+u/2,y:y+h/2+8,'text-anchor':'middle','font-size':22,'font-weight':900,fill:'#1D4FA8',text:'open'},g);}return g;}
+  function cmstrip(x,y,w,h,op,cut){var g=S('g',{opacity:op});S('rect',{x:x,y:y,width:w,height:h,rx:4,fill:'#EAF3FF',stroke:'#8FB2DA','stroke-width':3},g);
+    if(cut)S('rect',{x:x,y:y,width:cut*w/100,height:h,fill:'#6B46C1',opacity:.5},g);
+    for(var i=0;i<=100;i++){var big=i%10===0,mid=i%5===0,xx=x+i*w/100;S('line',{x1:xx,y1:y,x2:xx,y2:y+(big?h*.5:mid?h*.34:h*.2),stroke:NAVY,'stroke-width':big?2.4:1.2},g);if(big)S('text',{x:xx,y:y+h-8,'text-anchor':'middle','font-size':18,'font-weight':900,fill:NAVY,text:String(i)},g);}return g;}
+  if(t<K.now-0.3){head('','');owl(1000,380,150,t);book(t,0.1,'sb-marchande-plate.jpg','CHAPTER 11 · LESSON 2',['Subtracting','from Meters'],'A ribbon shop in Paris');return;}
+  if(t<K.rolls-0.3){head(HD,'A ribbon shop in Paris');owl(1080,470,110,t);var o=fade(t,K.now-0.3,K.rolls-0.3);
+    pic('sb-marchande-wide.jpg',140,110,1000,535,1+0.03*(t-K.now),.5,.5,o);
+    label(640,640,'a ribbon shop',o*ramp(t,K.shop-0.3,0.4),'#6B4A12',28);return;}
+  if(t<K.look-0.3){head(HD,'Whole meters on the roll');owl(null);var o2=fade(t,K.rolls-0.3,K.look-0.3);
+    var nb=Math.max(0,Math.min(7,Math.floor((t-K.rolls)*3)));
+    S('circle',{cx:150,cy:250,r:70,fill:'#6B46C1',opacity:o2});S('circle',{cx:150,cy:250,r:24,fill:'#FBF6EA',opacity:o2});
+    mblocks(230,222,nb,124,58,o2,-1,0);
+    if(t>=K.whole-0.3)label(640,380,'whole meters',o2*ramp(t,K.whole-0.3,0.4),'#5A4300',30);
+    if(t>=K.but-0.3){var ob=o2*ramp(t,K.but-0.3,0.5);S('rect',{x:470,y:450,width:120,height:40,rx:20,fill:'#6B46C1',opacity:ob});
+      label(780,486,'a piece in centimeters?',o2*ramp(t,K.cm-0.3,0.4),'#6B46C1',28);}
+    return;}
+  if(t<K.today-0.3){head(HD,'A print from Paris, 1769');owl(null);var o3=fade(t,K.look-0.3,K.today-0.3);
+    pic('sb-marchande-detail.jpg',200,82,380,534,1+0.05*(t-K.look),.5,.4,o3);
+    label(900,260,'ribbons',o3*ramp(t,K.ribbons-0.3,0.4),'#6B46C1',30);label(900,360,'and cloth',o3*ramp(t,K.cloth-0.3,0.4),'#6B4A12',30);return;}
+  head(HD,t>=K.left-0.3?'How much is left?':'Cut a piece off');owl(null);
+  var q=ramp(t,K.today-0.4,0.5),po=ramp(t,K.cut-0.2,0.6);
+  mblocks(150,130,7,130,58,q,0,po);
+  if(po>0){S('polygon',{points:'150,188 280,188 1130,300 150,300',fill:'#8FB2DA',opacity:.2*po});cmstrip(150,300,980,70,po,ramp(t,K.cut+0.6,0.8)*60);}
+  if(t>=K.cut+0.6){var sx=150+ramp(t,K.cut+0.6,0.8)*60*9.8;S('text',{x:sx,y:290,'text-anchor':'middle','font-size':40,opacity:ramp(t,K.cut+0.6,0.3),text:'✂'});}
+  if(t>=K.left-0.3)label(640,500,'how much is left?',ramp(t,K.left-0.3,0.4),GREEN,30);
+};
 SC['3.11.01']=function(t,K){
   var HD='CHAPTER 11 · THE METER OF PARIS';
   function mstick(x,y,w,h,op,upto){var g=S('g',{opacity:op});S('rect',{x:x,y:y,width:w,height:h,rx:4,fill:'#F6DE94',stroke:'#B8902A','stroke-width':3},g);
@@ -331,6 +362,7 @@ SC['3.11.01']=function(t,K){
   if(t>=K.two-0.3)label(640,540,'say it two ways',ramp(t,K.two-0.3,0.4),GREEN,30);
 };
 var CUES={
+ '3.11.02':function(){return{now:wt(/^Now$/),shop:wt(/^shop$/,0),rolls:wt(/^rolls$/),whole:wt(/^whole$/,0),but:wt(/^But$/),cm:wt(/^centimeters$/),look:wt(/^Look$/),ribbons:wt(/^ribbons$/),cloth:wt(/^cloth$/),today:wt(/^Today$/),cut:wt(/^cut$/),left:wt(/^left$/)};},
  '3.11.01':function(){return{workers:wt(/^Workers$/),marble:wt(/^marble$/),meter:wt(/^meter$/,0),shop:wt(/^Shopkeepers$/),check:wt(/^check$/),look:wt(/^Look$/),cloth:wt(/^cloth$/),stick:wt(/^stick$/),today:wt(/^Today$/),meters:wt(/^meters$/),cm:wt(/^centimeters$/),two:wt(/^two$/)};},
  '3.10.07':function(){return{bells:wt(/^bells$/)-0.25,thomas:wt(/^Thomas$/),ringing:wt(/^ringing$/),today:wt(/^Today$/,0),players:wt(/^players$/,0),cantata:wt(/^cantata$/),copied:wt(/^copied$/),look:wt(/^Look$/),singers:wt(/^Singers$/),players2:wt(/^players$/,1),loft:wt(/^loft$/),but:wt(/^But$/),today2:wt(/^Today$/,1),add:wt(/^add$/),take:wt(/^take$/),step:wt(/^step$/)};},
  '3.10.06':function(){return{tomorrow:wt(/^Tomorrow$/),choir:wt(/^choir$/),cantata:wt(/^cantata$/),but:wt(/^But$/),singer:wt(/^singer$/),player:wt(/^player$/),copied:wt(/^copied$/),so:wt(/^So$/),anna:wt(/^Anna$/),students:wt(/^students$/),every:wt(/^Every$/),whole:wt(/^whole$/),today:wt(/^Today$/),add:wt(/^add$/,1),take:wt(/^take$/)};},
