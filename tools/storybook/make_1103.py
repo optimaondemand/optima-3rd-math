@@ -1,0 +1,479 @@
+# builds src/lesson-3-11-03.html (3.11.03 Kilometers, Chapter 11 "The Meter of Paris", Lesson 3: Chappe's telegraph, 1793)
+# Story stays on the Warm-Up. The Lesson and Show What You Know tabs are plain math: roads built from 100 m pieces.
+import json
+src = open('/home/claude/g3sb/tools/make_1101.py').read()
+exec(src[:src.index("html = open(")])          # svgw, bond … and the colors
+exec(open('/home/claude/s3.py').read().split('on=sum')[0])   # O (Opti notes), V, K
+GOLDT, BLUE = '#5A4300', '#1D4FA8'
+
+def fm(m):
+    k, r = divmod(m, 1000)
+    return ('%d km' % k + (' %d m' % r if r else '')) if k else '%d m' % m
+
+def roadsvg(length, mx, aria, W=690, goal=None, label=True):
+    # a road built from 100 m pieces: gold 1 km bars, grey 100 m pieces, a ruler with km stones
+    k = (W - 30) / mx; x0 = 15; y = 30 if goal else 10; h = 34; o = []
+    km, rest = divmod(length, 1000)
+    for i in range(km):
+        o.append('<rect x="%.1f" y="%d" width="%.1f" height="%d" rx="4" fill="%s" stroke="%s" stroke-width="2"/><text x="%.1f" y="%d" text-anchor="middle" font-size="14" font-weight="900" fill="%s">1 km</text>' % (x0 + i * 1000 * k, y, 1000 * k, h, MW, MS, x0 + (i + .5) * 1000 * k, y + 22, GOLDT))
+    for p, m in enumerate(range(0, rest, 100)):
+        o.append('<rect x="%.1f" y="%d" width="%.1f" height="%d" rx="2" fill="%s" stroke="#7B8DB0" stroke-width="1.5"/>' % (x0 + (km * 1000 + m) * k, y + 2, min(100, rest - m) * k, h - 4, '#C9D3E6' if p % 2 else '#DCE4F2'))
+    if goal:
+        gx = x0 + length * k
+        o.append('<line x1="%.1f" y1="4" x2="%.1f" y2="%d" stroke="#1E7A4C" stroke-width="3"/><text x="%.1f" y="16" text-anchor="middle" font-size="12" font-weight="900" fill="#3A2A12">%s</text>' % (gx, gx, y + h + 4, gx, goal))
+    ys = y + h + 8
+    o.append('<line x1="%d" y1="%d" x2="%.1f" y2="%d" stroke="#5B6478" stroke-width="2"/>' % (x0, ys, x0 + mx * k, ys))
+    for m in range(0, mx + 1, 100):
+        big = m % 1000 == 0; xx = x0 + m * k
+        o.append('<line x1="%.1f" y1="%d" x2="%.1f" y2="%d" stroke="#5B6478" stroke-width="%s"/>' % (xx, ys, xx, ys + (12 if big else 6), 2 if big else 1))
+        if big: o.append('<rect x="%.1f" y="%d" width="36" height="20" rx="6" fill="#EDEAE3" stroke="#9A938A" stroke-width="1.5"/><text x="%.1f" y="%d" text-anchor="middle" font-size="11" font-weight="900" fill="#3F3A33">%d km</text>' % (xx - 18, ys + 14, xx, ys + 28, m // 1000))
+    if label: o.append('<text x="%d" y="%d" font-size="13" font-weight="900" fill="#5B6478">Each grey piece is 100 m. Ten pieces make 1 km.</text>' % (x0, ys + 54))
+    return svgw(W, ys + (62 if label else 40), aria, ''.join(o))
+
+html = open('/home/claude/g3sb/src/lesson-3-11-02.html').read()
+head = html[:html.index('<div class="sb-prog"')]
+tail = html[html.index('<script type="application/json" id="sb-data">'):]
+head = head.replace('Subtracting from Meters · Grade 3 Math Lesson 3.11.02', 'Kilometers · Grade 3 Math Lesson 3.11.03')
+assert 'Lesson 3.11.03' in head
+
+def N(a, h): return '[[n:%s|%s~%s]]' % (a, '{:,}'.format(int(a)), h) if int(a) >= 1000 else '[[n:%s~%s]]' % (a, h)
+
+body = r'''<div class="sb-prog" aria-label="Progress"><span class="k">📖 THE METER OF PARIS</span><span class="bar"><i></i></span><span class="n">0 of 8 jobs</span></div>
+<div class="sb-wrap">
+
+<header class="sb-head">
+  <div class="sb-brand"><img alt="" src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png"><div><b>Optima Academy Online</b><small>An Education Experience Company</small></div></div>
+  <h1 class="sb-title">Kilometers</h1>
+  <div class="sb-chips">
+    <span class="sb-chip lead">Lesson 3.11.03 · Unit 11 · Lesson 3</span>
+    <button type="button" class="sb-chip" id="sb-read">🔊 Read aloud</button>
+    <button type="button" class="sb-chip" data-pop="#sb-std" aria-expanded="false">Standards ▾</button>
+    <button type="button" class="sb-chip" id="sb-music" aria-pressed="false">🎵 Music: off</button>
+    <button type="button" class="sb-chip" id="sb-motion" aria-pressed="true">✨ Motion: on</button>
+  </div>
+  <div class="sb-pop" id="sb-std"><b>MA.3.M.1.1</b> Select and use appropriate tools to measure the length of an object, the volume of liquid within a beaker and temperature on a thermometer.<br><small>Today: use kilometers for long distances, change between kilometers and meters (1 km = 1,000 m), and tell travel distance from direct distance. Dimensions Math 3B, Chapter 11, Lesson 3 · Kilometers</small></div>
+</header>
+
+<!-- the open book -->
+<div class="sb-book" aria-label="Opti's storybook, open to Chapter 11">
+  <div class="sb-book-in">
+    <div class="sb-pg">
+      <figure class="sb-plate"><img src="{{IMG:sb-chappe-plate.jpg}}" alt="An old black-and-white engraving. Inside a stone tower, men work wooden handles and wheels, and one man looks through a long telescope toward a far-off tower on a hill."><figcaption>Testing Chappe's telegraph, Paris, July 1793 (engraving from the 1800s)</figcaption></figure>
+    </div>
+    <div class="sb-pg r">
+      <div class="sb-chap">Chapter 11</div>
+      <div class="sb-chap-t">The Meter of Paris</div>
+      <div class="sb-orn" aria-hidden="true"></div>
+      <p class="sb-chap-s">Paris, France · about 230 years ago</p>
+      <div class="sb-chap-l">Lesson 3 · Kilometers</div>
+    </div>
+  </div>
+  <img class="sb-owl" src="{{IMG:opti-owl.png}}" alt="Opti the owl, sitting on the open book">
+</div>
+
+<div class="sb-intro">
+  <div class="sb-card sb-eq">
+    <span class="sb-k">Essential Question</span>
+    <h3>How are meters and kilometers related?</h3>
+    EQSVG
+    <p style="margin:4px 0 0">Ten pieces of 100 m make 1,000 m, and 1,000 m is 1 kilometer. We use kilometers for long distances.</p>
+  </div>
+  <div class="sb-card sb-obj">
+    <span class="sb-k">Today's Objectives</span>
+    <h3>You will…</h3>
+    <ul>
+      <li><b>Build</b> a kilometer out of 100 m pieces.</li>
+      <li><b>Change</b> kilometers and meters both ways: 1 km = 1,000 m.</li>
+      <li><b>Compare</b> distances in the same unit, and tell a winding road from a straight path.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="sb-tabs" role="tablist" aria-label="Lesson sections">
+  <button class="sb-tab" role="tab" data-tab="warmup" aria-controls="tab-warmup">🔍 Warm-Up <span class="ck">✓</span></button>
+  <button class="sb-tab" role="tab" data-tab="learn" aria-controls="tab-learn">📐 Lesson <span class="ck">✓</span></button>
+  <button class="sb-tab" role="tab" data-tab="swyk" aria-controls="tab-swyk">🌟 Show What You Know <span class="ck">✓</span></button>
+</div>
+
+<!-- ══════════════ WARM-UP ══════════════ -->
+<section class="sb-panel tab-panel" id="tab-warmup" role="tabpanel">
+
+<div class="sb-opti" data-slot="warm-1">OPTI_WARM</div>
+
+<div class="sb-video pq-vslot" data-slot="warm">
+  <video controls preload="metadata" playsinline poster="assets/video/g3math-11-03-warm.jpg" src="assets/video/g3math-11-03-warm.mp4"></video>
+  <div class="cap">🎬 Opti Opens Chapter 11: The Telegraph Towers</div>
+</div>
+
+<div class="sb-card">
+  <span class="sb-k">From the book</span>
+  <h3>Why the telegraph?</h3>
+  <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>On the left is an old engraving of the first test of Claude Chappe's telegraph in July 1793. It was drawn many years later, for a science book in the 1800s. Inside the tower, men move the handles that turn the arms on the roof. On the right, a close-up: a man looks through a telescope at the next tower, far away on a hill.</p></div>
+  <div class="sb-art">
+    <figure class="sb-fig"><img src="{{IMG:sb-chappe-full.jpg}}" alt="Men inside a stone tower work wooden handles and wheels. One kneels and looks through a telescope out of a doorway toward a tower on a distant hill." style="object-fit:contain;background:#FBF6EA"><figcaption>The first test of the telegraph, Paris, 1793.<small>Engraving from Louis Figuier's Les Merveilles de la science (1800s). Musée Carnavalet, Paris, CC0, via Wikimedia Commons.</small></figcaption></figure>
+    <figure class="sb-fig"><img src="{{IMG:sb-chappe-detail.jpg}}" alt="A man kneels and looks through a long telescope. Far away, a small tower stands on top of a hill." style="object-fit:contain;background:#FBF6EA"><figcaption>Watching the next tower through a telescope.<small>Detail of the same engraving.</small></figcaption></figure>
+  </div>
+  <p style="margin:6px 0 0">Chappe's towers stood far apart, so far that people could only see the next tower through a telescope. By 1794 a line of towers sent messages from Paris all the way to the city of Lille. Distances like that are measured in kilometers.</p>
+  <p style="margin:6px 0 0"><b>Today's math:</b> ten pieces of 100 m make 1,000 m, and 1,000 m is 1 kilometer. A kilometer is about a 15-minute walk.</p>
+</div>
+
+<div class="video-placeholder-wrap">
+<!-- slot: g3math-11-03 -->
+<div class="video-placeholder-inner"><div class="vp-label">🎬 Welcome Video</div><div class="vp-slot">g3math-11-03</div><div class="vp-notes"><b>Teacher recording notes:</b> Welcome to kilometers! Warm up with thousands and hundreds. Then build a path from 100 m pieces and see what happens at ten.</div></div>
+</div>
+
+<div class="fluency-box">
+  <div class="fluency-head"><div class="fluency-head-icon">✍️</div><div><div class="fluency-head-label">FACT WARM-UP</div><div class="fluency-head-title">Today's Helpers: Thousands and Hundreds</div></div></div>
+  <div class="fluency-body">
+    <p class="fluency-instructions">A kilometer is 1,000 meters, so today you'll use thousands and hundreds. Type each answer, then check. You can fix any answer and check again.</p>
+    <div class="fluency-grid" id="fluencyGrid">
+      FLUENCY
+    </div>
+    <div class="sb-help"><button type="button" class="sb-btn check" data-fluency-check>Check my answers</button></div>
+    <div class="sb-fb" aria-live="polite"></div>
+  </div>
+</div>
+
+<div class="sb-card sb-qgroup" data-done="review" data-ok="✓ Yes! 1 m = 100 cm, so 900 cm is 9 hundreds of centimeters: 9 m. Today the jump is bigger: 1 km = 1,000 m.">
+  <span class="sb-k">Remember from Lesson 3.11.01</span>
+  <h3>Meters and centimeters</h3>
+  <div class="sb-q">1 m = [[n:100~How many centimeters in one meter stick?]] cm</div>
+  <div class="sb-q">900 cm = [[n:9~Every 100 cm makes 1 m.]] m</div>
+  <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div>
+  <div class="sb-fb" aria-live="polite"></div>
+</div>
+
+<!-- JOB 1 · THINK -->
+<section class="sb-card sb-job" data-job="1">
+  <div class="sb-jh"><span class="sb-jn">JOB 1</span><div><h3>Think: The Path to the Tower</h3><span class="sb-kind">🔨 Do · ✏️ Write</span></div><span class="sb-donechip"></span></div>
+  <div class="sb-opti" data-slot="think-1">OPTI_THINK</div>
+  <p class="sb-story">Paris, 1793. A messenger runs a note from the workshop up to the tower. The path is <b>1,900 m</b> long.</p>
+  <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>An empty path with a green flag at the tower. Drag the ▶ end to lay the path, 100 m at a time. Watch what happens when ten pieces are down.</p></div>
+  <div data-mod="kmroad" data-mode="build" data-max="2000" data-t="1900" data-goal="TOWER" data-name="think" data-for="road"></div>
+  <div class="sb-steps">
+    <div class="sb-step" data-need="road"><h4>Build the path</h4><p>Drag the end of the road to the tower.</p></div>
+    <div class="sb-step"><h4>What happened at ten?</h4>
+      <div class="sb-q">Ten pieces of 100 m make NA1000 m. That is 1 km.</div>
+      <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+    <div class="sb-step"><h4>Say it in kilometers and meters</h4>
+      <div class="sb-q">1,900 m = [[n:1~Count the gold 1 km bars.]] km [[n:900~Count the grey 100 m pieces after the kilometer.]] m</div>
+      <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+    <div class="sb-step"><h4>Tell how</h4>
+      <label class="sb-write-l" for="w-think">How do you know 1,900 m is 1 km 900 m?</label>
+      <textarea class="sb-write" id="w-think" data-req data-label="The Path to the Tower" placeholder="Ten pieces of 100 m make … so … The rest is …"></textarea>
+      <div class="sb-chips2">Remember to tell: <span>10 pieces</span><span>1,000 m</span><span>1 km</span></div>
+      <div class="sb-help"><button type="button" class="sb-btn check">Done</button></div><div class="sb-fb" aria-live="polite"></div></div>
+    <div class="sb-locked"></div>
+  </div>
+  <div class="sb-help"><button type="button" class="sb-btn ghost" data-hints='["Each piece is 100 m. Count the pieces as you drag: 100, 200, 300 …", "Ten pieces of 100 m make 1,000 m. They join into one gold bar: 1 km.", "1,900 m is 1,000 m and 900 m more: 1 km 900 m."]'>💡 Need a hint?</button><button type="button" class="sb-btn ghost sb-tipbtn" data-tip="#tip-1">💬 Felix has a tip</button></div>
+  <div class="sb-hintbox"></div>
+  <div class="sb-tip" id="tip-1" data-who="felix">I count by hundreds. When I get to a thousand, that's one whole kilometer.</div>
+  <div class="sb-payoff" data-after-job="1">
+    <div class="sb-art" style="margin:0">PAY1</div>
+    <p style="margin:8px 0 0"><b>1,900 m = 1 km 900 m.</b> Ten pieces of 100 m joined into 1 km. Nine more pieces made 900 m.</p>
+  </div>
+  <div class="sb-opti" data-slot="think-done" data-after="1">OPTI_THINKDONE</div>
+</section>
+
+<div class="sb-next"><button type="button" class="sb-btn gold" data-go-tab="learn" data-go-st="1">Next: the Lesson →</button></div>
+</section>
+
+<!-- ══════════════ LESSON ══════════════ -->
+<section class="sb-panel tab-panel" id="tab-learn" role="tabpanel">
+<div class="sb-path" role="list">
+  <button type="button" class="sb-pstep" data-st="1" role="listitem"><span class="num">1</span><span><b>Learn it</b><small>Learn + Your Turn</small></span></button>
+  <button type="button" class="sb-pstep" data-st="2" role="listitem"><span class="num">2</span><span><b>Practice together</b><small>Fix 3 mix-ups</small></span></button>
+  <button type="button" class="sb-pstep" data-st="3" role="listitem"><span class="num">3</span><span><b>On your own</b><small>1 job</small></span></button>
+</div>
+
+<!-- STATION 1 -->
+<div class="sb-station" data-st="1">
+  <div class="sb-opti" data-slot="learn-1">OPTI_LEARN</div>
+
+  <div class="sb-video pq-vslot" data-slot="learn">
+    {{LEARNVIDEO}}
+    <div class="cap">🎬 Meters Make Kilometers</div>
+  </div>
+
+  <div class="sb-card">
+    <span class="sb-k">Learn</span>
+    <h3>1 kilometer = 1,000 meters</h3>
+    KEYSVG
+    <ol class="sb-steps4">
+      <li><b>Ten hundreds make a thousand.</b> Ten pieces of 100 m make 1,000 m. 1,000 m = 1 km. A kilometer is about a 15-minute walk.</li>
+      <li><b>Meters to kilometers and meters.</b> Find the thousands: they are the kilometers. 3,400 m = 3 km 400 m.</li>
+      <li><b>Kilometers and meters to meters.</b> Every kilometer is 1,000 m. 3 km 400 m = 3,000 m + 400 m = 3,400 m.</li>
+      <li><b>Not 100!</b> 6 km is 6,000 m, not 600 m.</li>
+      <li><b>Compare in the same unit.</b> Change both distances to meters first.</li>
+      <li><b>Travel distance and direct distance.</b> The distance along a road or a curved path is the travel distance. The distance along a straight line is the direct distance.</li>
+    </ol>
+    BONDSVG
+    <p style="margin:4px 0 0">A distance written with two units, like 3 km 400 m, uses <b>compound units</b>.</p>
+  </div>
+
+  <div class="sb-card">
+    <span class="sb-k">The Math Crew</span>
+    <h3>Four ways to work with kilometers</h3>
+    <div class="sb-crew">
+      <div class="sb-mate" data-who="felix"><span>I count by hundreds. Ten hundreds is a thousand, so that's 1 km.</span></div>
+      <div class="sb-mate" data-who="hazel"><span>I split a big number of meters: the thousands are kilometers, the rest are meters.</span></div>
+      <div class="sb-mate" data-who="atlas"><span>For every kilometer I write 1,000 meters. Then I add the extra meters.</span></div>
+      <div class="sb-mate" data-who="cora"><span>Before I compare, I write both distances in meters.</span></div>
+    </div>
+    <label class="sb-write-l" for="w-crew">Which Crew way helps you most? Why?</label>
+    <textarea class="sb-write" id="w-crew" data-label="Which Crew way helps me most" placeholder="I like… because…"></textarea>
+  </div>
+
+  <!-- JOB 2 · YOUR TURN -->
+  <section class="sb-card sb-job" data-job="2">
+    <div class="sb-jh"><span class="sb-jn">JOB 2</span><div><h3>Your Turn: A 2,600 m Road</h3><span class="sb-kind">🔨 Do</span></div><span class="sb-donechip"></span></div>
+    <p class="sb-story">A road is <b>2,600 m</b> long. Build it, then write its length both ways.</p>
+    <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>An empty road with a green flag at the end. Drag the ▶ end to lay pieces of 100 m.</p></div>
+    <div data-mod="kmroad" data-mode="build" data-max="3000" data-t="2600" data-goal="END" data-name="yt" data-for="road"></div>
+    <div class="sb-steps">
+      <div class="sb-step" data-need="road"><h4>Build the road</h4><p>Drag the end of the road to the flag.</p></div>
+      <div class="sb-step"><h4>Kilometers and meters</h4>
+        <div class="sb-q">2,600 m = [[n:2~How many gold 1 km bars?]] km [[n:600~How many meters are left after the kilometers?]] m</div>
+        <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-step"><h4>Now back to meters</h4>
+        <div class="sb-q">2 km 600 m = 2,000 m + 600 m = NB2600 m</div>
+        <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-locked"></div>
+    </div>
+    <div class="sb-help"><button type="button" class="sb-btn ghost" data-hints='["Every ten pieces join into 1 km.", "2,600 = 2,000 + 600. The 2,000 is 2 km.", "2 km 600 m. Going back: 2,000 + 600 = 2,600."]'>💡 Need a hint?</button>{{TOOL:bond-km}}<button type="button" class="sb-btn ghost sb-tipbtn" data-tip="#tip-2">💬 Hazel has a tip</button></div>
+    <div class="sb-hintbox"></div>
+    <div class="sb-tip" id="tip-2" data-who="hazel">I split 2,600 into 2,000 and 600. The 2,000 is 2 kilometers.</div>
+  </section>
+  <div class="sb-next"><button type="button" class="sb-btn gold" data-next-st="2">Next station: Practice together →</button></div>
+</div>
+
+<!-- STATION 2 -->
+<div class="sb-station" data-st="2">
+  <div class="sb-opti" data-slot="practice-1">OPTI_PRACTICE</div>
+
+  <!-- JOB 3 -->
+  <section class="sb-card sb-job" data-job="3">
+    <div class="sb-jh"><span class="sb-jn">JOB 3</span><div><h3>Kai Picks the Bigger Number</h3><span class="sb-kind">🔨 Do · ✏️ Write</span></div><span class="sb-donechip"></span></div>
+    <p class="sb-story">Road A is <b>900 m</b> long. Road B is <b>1 km 20 m</b> long. Kai says, "Road A is longer, because 900 is bigger than 1."</p>
+    <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>Both roads laid on the same ruler, starting at 0. The gold lines show where each road ends.</p></div>
+    <div data-mod="kmroad" data-mode="show" data-max="1200" data-roads="900,1020" data-labs="Road A · 900 m|Road B · 1 km 20 m" data-name="kai"></div>
+    <div class="sb-steps">
+      <div class="sb-step"><h4>Same unit first</h4>
+        <div class="sb-q">Road B: 1 km 20 m = 1,000 m + 20 m = NC1020 m</div>
+        <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-step" data-need="sym"><h4>Compare</h4><p>Drag the right symbol into the box.</p></div>
+      <div class="sb-step"><h4>Help Kai</h4><label class="sb-write-l" for="w-kai">Tell Kai what he did wrong, and how to compare the roads.</label><textarea class="sb-write" id="w-kai" data-req data-label="Help Kai" placeholder="Kai compared … but … First change …"></textarea><div class="sb-chips2">Remember to tell: <span>same unit</span><span>1,000 m</span></div>
+        <div class="sb-help"><button type="button" class="sb-btn check">Done</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-locked"></div>
+    </div>
+    <div data-mod="sym" data-a="1,020 m" data-b="900 m" data-ans=">" data-wrong="<" data-who="Kai" data-name="kai-sym" data-for="sym"></div>
+    <div class="sb-help"><button type="button" class="sb-btn ghost" data-hints='["The 1 in 1 km 20 m is a whole kilometer, not 1 meter.", "1 km is 1,000 m. Add the 20 m.", "1,020 m is more than 900 m, so Road B is longer."]'>💡 Need a hint?</button><button type="button" class="sb-btn ghost sb-tipbtn" data-tip="#tip-3">💬 Cora has a tip</button></div>
+    <div class="sb-hintbox"></div>
+    <div class="sb-tip" id="tip-3" data-who="cora">I never compare kilometers with meters. I change them to the same unit first.</div>
+  </section>
+
+  <!-- JOB 4 -->
+  <section class="sb-card sb-job" data-job="4">
+    <div class="sb-jh"><span class="sb-jn">JOB 4</span><div><h3>Leo Uses 100</h3><span class="sb-kind">🔨 Do · ✏️ Write</span></div><span class="sb-donechip"></span></div>
+    <p class="sb-story">Leo remembers that 1 m = 100 cm. He says, "So 9 km must be 900 m."</p>
+    <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>An empty road with a green flag at the first km stone. Build one kilometer and count the pieces.</p></div>
+    <div data-mod="kmroad" data-mode="build" data-max="1500" data-t="1000" data-goal="1 KM" data-name="leo" data-for="road"></div>
+    <div class="sb-steps">
+      <div class="sb-step" data-need="road"><h4>Build one kilometer</h4><p>Drag the end of the road to the flag.</p></div>
+      <div class="sb-step"><h4>How many meters?</h4>
+        <div class="sb-q">It took ten pieces of 100 m. 1 km = ND1000 m</div>
+        <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-step"><h4>Now 9 kilometers</h4>
+        <div class="sb-q">9 km = NE9000 m. Leo's 900 m is [[w:less|shorter|smaller|less than|shorter than~Look at the road. Where would 900 m end?]] than even 1 km.</div>
+        <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-step"><h4>Help Leo</h4><label class="sb-write-l" for="w-leo">Tell Leo why 9 km is not 900 m.</label><textarea class="sb-write" id="w-leo" data-req data-label="Help Leo" placeholder="A kilometer is … meters, not … So 9 km is …"></textarea><div class="sb-chips2">Remember to tell: <span>1,000 m</span><span>not 100</span></div><div class="sb-help"><button type="button" class="sb-btn check">Done</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-locked"></div>
+    </div>
+    <div class="sb-help"><button type="button" class="sb-btn ghost" data-hints='["Centimeters to meters uses 100. Meters to kilometers uses 1,000.", "One kilometer took ten pieces of 100 m: 1,000 m.", "9 km is 9 thousands: 9,000 m."]'>💡 Need a hint?</button><button type="button" class="sb-btn ghost sb-tipbtn" data-tip="#tip-4">💬 Atlas has a tip</button></div>
+    <div class="sb-hintbox"></div>
+    <div class="sb-tip" id="tip-4" data-who="atlas">A meter is 100 centimeters, but a kilometer is 1,000 meters. Kilometers are much bigger.</div>
+  </section>
+
+  <!-- JOB 5 -->
+  <section class="sb-card sb-job" data-job="5">
+    <div class="sb-jh"><span class="sb-jn">JOB 5</span><div><h3>Juno's Two Routes</h3><span class="sb-kind">🔨 Do · ✏️ Write</span></div><span class="sb-donechip"></span></div>
+    <p class="sb-story">A winding road goes from Start to End in four parts. A straight path goes from Start to End too. Juno says, "They go to the same place, so they must be the same distance."</p>
+    <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>The brown road bends four times, and each part shows its length. The blue dashed line is the straight path.</p></div>
+    <div data-mod="kmroad" data-mode="route" data-max="3000" data-legs="900,500,900,500" data-direct="2100" data-name="juno" data-for="straight"></div>
+    <div class="sb-steps">
+      <div class="sb-step" data-need="straight" data-cue=".kr-go"><h4>Lay the road out straight</h4><p>Press Lay the road out straight.</p></div>
+      <div class="sb-step"><h4>The travel distance</h4>
+        <div class="sb-q">The road: 900 m + 500 m + 900 m + 500 m = NF2800 m = [[n:2~How many thousands?]] km [[n:800~What is left after the thousands?]] m</div>
+        <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-step"><h4>Which is shorter?</h4>
+        <div class="sb-q">The straight path is 2 km 100 m. The [[w:straight path|straight|path|the straight path|direct distance|direct~Look at the two bars. Which one stops sooner?]] is shorter.</div>
+        <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-step"><h4>Help Juno</h4><label class="sb-write-l" for="w-juno">Tell Juno why the two routes are not the same distance.</label><textarea class="sb-write" id="w-juno" data-req data-label="Help Juno" placeholder="The road bends, so … The straight path …"></textarea><div class="sb-chips2">Remember to tell: <span>travel distance</span><span>direct distance</span></div>
+        <div class="sb-help"><button type="button" class="sb-btn check">Done</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-locked"></div>
+    </div>
+    <div class="sb-help"><button type="button" class="sb-btn ghost" data-hints='["Going the same place does not mean going the same distance.", "Add the four parts of the road: 900 + 500 + 900 + 500.", "2,800 m = 2 km 800 m. The straight path, 2 km 100 m, is shorter."]'>💡 Need a hint?</button><button type="button" class="sb-btn ghost sb-tipbtn" data-tip="#tip-5">💬 Hazel has a tip</button></div>
+    <div class="sb-hintbox"></div>
+    <div class="sb-tip" id="tip-5" data-who="hazel">A road that bends is longer than a straight line between the same two places.</div>
+  </section>
+  <div class="sb-next"><button type="button" class="sb-btn gold" data-next-st="3">Next station: On your own →</button></div>
+</div>
+
+<!-- STATION 3 -->
+<div class="sb-station" data-st="3">
+  <div class="sb-opti" data-slot="own-1">OPTI_OWN</div>
+
+  <!-- JOB 6 -->
+  <section class="sb-card sb-job" data-job="6">
+    <div class="sb-jh"><span class="sb-jn">JOB 6</span><div><h3>On Your Own: Both Ways</h3><span class="sb-kind">✏️ Write</span></div><span class="sb-donechip"></span></div>
+    <p class="sb-story">A bike trail is <b>7 km 300 m</b> long. A hiking trail is <b>6,300 m</b> long. Write each one the other way.</p>
+    <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>The bike trail drawn as gold 1 km bars and grey 100 m pieces on a ruler.</p></div>
+    OWNSVG
+    <div class="sb-steps">
+      <div class="sb-step"><h4>The bike trail</h4>
+        <div class="sb-q">7 km 300 m = NG7300 m</div>
+        <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-step"><h4>The hiking trail</h4>
+        <div class="sb-q">6,300 m = [[n:6~How many thousands are in 6,300?]] km [[n:300~What is left after the thousands?]] m</div>
+        <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-step"><h4>Tell how you know</h4><label class="sb-write-l" for="w-own">Tell how you changed 6,300 m into kilometers and meters.</label><textarea class="sb-write" id="w-own" data-req data-label="Both ways" placeholder="6,300 has … thousands, so … The rest …"></textarea><div class="sb-help"><button type="button" class="sb-btn check">Done</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-locked"></div>
+    </div>
+    <div class="sb-help"><button type="button" class="sb-btn ghost" data-hints='["Every kilometer is 1,000 m.", "7 km 300 m = 7,000 + 300. 6,300 = 6,000 + 300.", "7,300 m. 6,300 m = 6 km 300 m."]'>💡 Need a hint?</button>{{TOOL:bond-km2}}</div>
+    <div class="sb-hintbox"></div>
+  </section>
+
+  <div class="sb-next"><button type="button" class="sb-btn gold" data-go-tab="swyk">Next: Show What You Know →</button></div>
+</div>
+</section>
+
+<!-- ══════════════ SHOW WHAT YOU KNOW ══════════════ -->
+<section class="sb-panel tab-panel" id="tab-swyk" role="tabpanel">
+<div class="sb-opti" data-slot="swyk-1">OPTI_SWYK</div>
+
+<!-- JOB 7 -->
+<section class="sb-card sb-job" data-job="7">
+  <div class="sb-jh"><span class="sb-jn">JOB 7</span><div><h3>Three Stops</h3><span class="sb-kind">🔨 Do</span></div><span class="sb-donechip"></span></div>
+  <p class="sb-story">A message has to travel along a road to three stops. Stop 1 is at 900 m, Stop 2 is at 2 km 500 m, and Stop 3 is at 2,900 m. Move it to each stop in order.</p>
+  <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>An empty road with three red flags. Drag the ▶ end of the road. A flag turns green when the message reaches it.</p></div>
+  <div data-mod="kmroad" data-mode="build" data-max="3000" data-t="900,2500,2900" data-name="wow" data-for="stop1 stop2 stop3"></div>
+  <div class="sb-steps">
+    <div class="sb-step" data-need="stop1"><h4>Problem 1 · Stop 1</h4><p>Drag the end of the road to Stop 1.</p></div>
+    <div class="sb-step"><h4>Problem 1 · How far?</h4>
+      <div class="sb-q">Stop 1 is 900 m away. That is [[w:less|less than|shorter|shorter than~Did the road reach the 1 km stone?]] than 1 km.</div>
+      <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+    <div class="sb-step" data-need="stop2"><h4>Problem 2 · Stop 2</h4><p>Drag the end of the road to Stop 2.</p></div>
+    <div class="sb-step"><h4>Problem 2 · In meters</h4>
+      <div class="sb-q">Stop 2: 2 km 500 m = NH2500 m</div>
+      <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+    <div class="sb-step" data-need="stop3"><h4>Problem 3 · Stop 3</h4><p>Drag the end of the road to Stop 3.</p></div>
+    <div class="sb-step"><h4>Problem 3 · In kilometers and meters</h4>
+      <div class="sb-q">Stop 3: 2,900 m = [[n:2~Count the gold 1 km bars.]] km [[n:900~Count the grey pieces after them.]] m</div>
+      <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+    <div class="sb-locked"></div>
+  </div>
+  <div class="sb-help"><button type="button" class="sb-btn ghost" data-hints='["Each piece is 100 m. Ten pieces make 1 km.", "2 km 500 m is two gold bars and five more pieces: 2,000 + 500.", "900 m is less than 1 km. 2,500 m. 2,900 m = 2 km 900 m."]'>💡 Need a hint?</button></div>
+  <div class="sb-hintbox"></div>
+</section>
+
+<!-- JOB 8 -->
+<section class="sb-card sb-job" data-job="8">
+  <div class="sb-jh"><span class="sb-jn">JOB 8</span><div><h3>Prove It</h3><span class="sb-kind">✏️ Write</span></div><span class="sb-donechip"></span></div>
+  PROVESVG
+  <div class="sb-steps">
+    <div class="sb-step"><h4>Problem 4 · Prove It</h4>
+      <label class="sb-write-l" for="w-prove">Look back at the path in Job 1. Show why 1,900 m is the same as 1 km 900 m. Use words, numbers or a picture.</label><textarea class="sb-write" id="w-prove" data-req data-label="Prove It" placeholder="First … ten pieces … Then … So 1,900 m is …"></textarea><div class="sb-chips2">Remember to tell: <span>100 m pieces</span><span>1,000 m = 1 km</span></div>
+      <div class="sb-help"><button type="button" class="sb-btn check">Done</button></div><div class="sb-fb" aria-live="polite"></div></div>
+    <div class="sb-locked"></div>
+  </div>
+</section>
+
+<div class="sb-card sb-qgroup" data-done="bonus" data-ok="✓ Yes! 7 km 90 m is 7,000 + 90 = 7,090 m. 7,900 m is longer, and 7,900 − 7,090 = 810, so it is 810 m longer.">
+  <span class="sb-k">Bonus · optional</span>
+  <h3>Watch the Zero</h3>
+  <p>One trail is 7 km 90 m long. Another is 7,900 m long. Which is longer, and by how many meters?</p>
+  <div class="sb-q">7 km 90 m = NI7090 m. The longer trail is NJ7900 m long. It is longer by [[n:810~Subtract: 7,900 − 7,090.]] m.</div>
+  <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div>
+</div>
+
+<div class="sb-card">
+  <span class="sb-k">How to turn in</span>
+  <h3>Turn in your work</h3>
+  <ol class="sb-steps4">
+    <li>Check the list below. Jobs 1 to 8 are required. The Bonus is optional.</li>
+    <li>Press <b>📋 Gather my answers</b>, then <b>📋 Copy</b>. Or press <b>🖨️ Print or save as PDF</b>.</li>
+    <li>Open this lesson's assignment in Canvas.</li>
+    <li>Paste your answers (or upload your PDF and journal photo), then press <b>Submit</b>.</li>
+  </ol>
+</div>
+
+<div class="sb-card sb-journal">
+  <span class="sb-k">Math journal</span>
+  <h3>All my answers</h3>
+  <div class="sb-help"><button type="button" class="sb-btn" data-journal="gather">📋 Gather my answers</button><button type="button" class="sb-btn ghost" data-journal="copy">📋 Copy</button><button type="button" class="sb-btn ghost" data-journal="download">⬇️ Download as text</button><button type="button" class="sb-btn ghost" data-journal="print">🖨️ Print or save as PDF</button></div>
+  <textarea id="sb-journal-out" readonly aria-label="All my answers">Press Gather my answers to collect everything here.</textarea>
+  <p class="sb-saved">Your answers and your work on this page save on this device as you go.</p>
+</div>
+
+<div class="sb-card">
+  <span class="sb-k">Checklist</span>
+  <h3>Before you turn in</h3>
+  <ul class="sb-check">
+    <li><span class="bx"></span><span>I finished Jobs 1 to 8.</span></li>
+    <li><span class="bx"></span><span>I built a kilometer from 100 m pieces and changed kilometers and meters both ways.</span></li>
+    <li><span class="bx"></span><span>I compared two distances in the same unit.</span></li>
+    <li><span class="bx"></span><span>I tried the Bonus. <span class="opt">(optional)</span></span></li>
+  </ul>
+</div>
+
+<div class="sb-card">
+  <span class="sb-k">Coming up next</span>
+  <h3>Lesson 3.11.04 · Subtracting from Kilometers</h3>
+  <p>Next time, you'll take meters away from whole kilometers and find out how far is left to go.</p>
+</div>
+
+<div class="sb-opti" data-slot="end-1">OPTI_END</div>
+<div class="sb-card sb-listen" data-src="mozart-34-andante.mp3">
+  <img src="{{IMG:sb-chappe-plate.jpg}}" alt="Testing Chappe's telegraph, Paris, July 1793" style="object-fit:cover;background:#FBF6EA">
+  <div style="flex:1">
+    <span class="sb-k">Listening corner</span>
+    <h3>Mozart's Symphony No. 34</h3>
+    <p style="margin:2px 0">The slow part of a symphony by Wolfgang Amadeus Mozart, written in 1780. Only the strings and a few woodwinds play, soft and smooth.</p>
+    <div class="meter"><i></i></div><div class="sb-row"><button type="button" class="sb-btn play">▶ Play the music</button><button type="button" class="sb-btn ghost stop">■ Stop</button><span class="time" style="font-weight:800;color:#5B6478">0:00</span></div>
+    <p class="sb-credits">Symphony No. 34 in C major, K. 338, second part (Andante di molto), Wolfgang Amadeus Mozart (1780). Recording from the European Archive (Musopen), public domain, via Wikimedia Commons.</p>
+  </div>
+</div>
+</section>
+
+<footer class="sb-foot footer"><b>🏫 Optima Academy Online</b><br>Math · Grade 3 · Lesson 3.11.03 · Unit 11<br><span style="font-size:12px">Art: Expérience du télégraphe de Chappe faite le 12 juillet 1793, engraving from Louis Figuier's Les Merveilles de la science (1800s), Musée Carnavalet, Paris, CC0, via Wikimedia Commons. Music: Mozart, Symphony No. 34, K. 338, II. Andante di molto, European Archive (Musopen), public domain, via Wikimedia Commons.</span></footer>
+</div>
+
+'''
+NUMS = {'NA1000': N(1000, 'Count by hundreds: 100, 200 … ten of them.'), 'NB2600': N(2600, '2,000 m and 600 m more.'),
+        'NC1020': N(1020, '1,000 m and 20 m more.'), 'ND1000': N(1000, 'Ten pieces of 100 m.'), 'NE9000': N(9000, '9 thousands of meters.'),
+        'NF2800': N(2800, 'Add the four parts.'), 'NG7300': N(7300, '7 km is 7,000 m. Add the 300 m.'), 'NH2500': N(2500, '2 km is 2,000 m. Add 500 m.'),
+        'NI7090': N(7090, '7 km is 7,000 m. Add 90 m. There are no hundreds.'), 'NJ7900': N(7900, 'Compare 7,090 and 7,900.')}
+for k2, v2 in NUMS.items():
+    assert k2 in body, k2
+    body = body.replace(k2, v2)
+FL = [('10 × 100', 1000), ('5 × 100', 500), ('1,000 − 100', 900), ('1,000 − 900', 100), ('1,000 − 500', 500), ('6,000 + 400', 6400), ('7,000 + 50', 7050), ('8,000 + 30', 8030), ('9,000 + 4', 9004), ('6,000 + 900', 6900)]
+flu = ['<div class="fluency-item"><span class="fluency-q">%s =</span><input class="fluency-input" data-answer="%d" inputmode="numeric" autocomplete="off" aria-label="%s"></div>' % (q, a, q.replace('×', 'times').replace('−', 'minus').replace('+', 'plus')) for q, a in FL]
+rep = {
+ 'OPTI_WARM': O['warm-1'], 'OPTI_THINKDONE': O['think-done'], 'OPTI_THINK': O['think-1'], 'OPTI_LEARN': O['learn-1'],
+ 'OPTI_PRACTICE': O['practice-1'], 'OPTI_OWN': O['own-1'], 'OPTI_SWYK': O['swyk-1'], 'OPTI_END': O['end-1'],
+ 'EQSVG': roadsvg(1000, 1000, 'Ten pieces of 100 meters laid end to end make one gold bar: 1 kilometer, which is 1,000 meters.', label=True).replace('<rect x="15.0" y="10"', '<rect x="15.0" y="10"'),
+ 'FLUENCY': '\n      '.join(flu),
+ 'PAY1': roadsvg(1900, 2000, 'The finished path: one gold 1 kilometer bar and nine grey 100 meter pieces, ending at 1,900 meters.', goal='TOWER'),
+ 'KEYSVG': roadsvg(3400, 4000, 'A road of 3,400 meters: three gold 1 kilometer bars and four grey 100 meter pieces.'),
+ 'BONDSVG': bond('3,400 m', '3,000 m = 3 km', '400 m', '3,400 meters splits into 3,000 meters, which is 3 kilometers, and 400 meters.'),
+ 'OWNSVG': roadsvg(7300, 8000, 'The bike trail: seven gold 1 kilometer bars and three grey 100 meter pieces.'),
+ 'PROVESVG': roadsvg(1900, 2000, 'The path from Job 1: one gold kilometer bar and nine grey 100 meter pieces.', goal='TOWER'),
+}
+for kk in ['OPTI_THINKDONE']:
+    body = body.replace(kk, rep.pop(kk))
+for kk, vv in rep.items():
+    assert kk in body, kk
+    body = body.replace(kk, vv)
+out = head + body + tail
+open('/home/claude/g3sb/src/lesson-3-11-03.html', 'w').write(out)
+print('ok', len(out))

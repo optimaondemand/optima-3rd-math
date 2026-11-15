@@ -206,5 +206,69 @@
  "g3m-word-compound-units": {
   "text": "Compound units.",
   "voice": "opti"
+ },
+ "g3m-3-11-03-warm-1": {
+  "text": "Hoo! It's Paris in the summer of 1793. On the highest hill in the city, Claude Chappe and his brothers built a wooden tower with arms that move. Each way the arms point stands for a signal. Far away, another tower watches through a telescope and copies the signal. Look at the old picture of their test. Today you'll measure long distances in kilometers and meters.",
+  "voice": "opti"
+ },
+ "g3m-3-11-03-think-1": {
+  "text": "Before the test, a messenger runs a note from the workshop up to the tower. The path is one thousand nine hundred meters long. Build it out of hundred-meter pieces, and watch what happens at ten.",
+  "voice": "opti"
+ },
+ "g3m-3-11-03-think-done": {
+  "text": "You did it! Ten pieces of one hundred meters made one kilometer. Nine more pieces made nine hundred meters. So one thousand nine hundred meters is one kilometer nine hundred meters.",
+  "voice": "opti"
+ },
+ "g3m-3-11-03-learn-1": {
+  "text": "Welcome to the Lesson. First, Claire shows how meters build up to kilometers. Next, we fix some mix-ups. Then you work on your own.",
+  "voice": "opti"
+ },
+ "g3m-3-11-03-practice-1": {
+  "text": "Each job has a mix-up kids often make. Here's a clue. A kilometer is one thousand meters, not one hundred. And always compare in the same unit.",
+  "voice": "opti"
+ },
+ "g3m-3-11-03-own-1": {
+  "text": "Your turn to work on your own. Find the thousands first. Those are the kilometers.",
+  "voice": "opti"
+ },
+ "g3m-3-11-03-swyk-1": {
+  "text": "Last stop! A message has to reach three stops along a road. Move it to each one, and say how far it went.",
+  "voice": "opti"
+ },
+ "g3m-3-11-03-end-1": {
+  "text": "Here's music from about the same time as the towers. It's a slow part of a symphony by Wolfgang Amadeus Mozart, written in 1780. Listen to the strings, soft and smooth, like a signal passing from tower to tower. Press play, and stop whenever you like.",
+  "voice": "opti"
+ },
+ "g3m-3-11-03-vid-open": {
+  "text": "Hoo! Claire is going to show us how meters add up to kilometers. Watch the road grow.",
+  "voice": "opti"
+ },
+ "g3m-3-11-03-vid-math": {
+  "text": "Here is a road made of pieces. Each piece is one hundred meters long. Let's count by hundreds: one hundred, two hundred, three hundred, and so on, all the way to one thousand. Ten pieces of one hundred meters make one thousand meters. One thousand meters is one kilometer. A kilometer is about a fifteen-minute walk. Now let's build a longer road, three thousand four hundred meters long. Every ten pieces make a kilometer, so we have three kilometers. Four pieces are left over. That's four hundred meters. Three thousand four hundred meters is three kilometers four hundred meters. To go the other way, think of every kilometer as one thousand meters. Three kilometers four hundred meters is three thousand meters and four hundred meters, so three thousand four hundred meters. Watch out! A kilometer is not one hundred meters. Six kilometers is six thousand meters, not six hundred meters.",
+  "voice": "claire"
+ },
+ "g3m-3-11-03-vid-close": {
+  "text": "Ten hundreds make a thousand, and a thousand meters make a kilometer. Now it's your turn!",
+  "voice": "opti"
+ },
+ "g3m-3-11-03-words": {
+  "text": "Kilometer. ... Distance. ... Travel distance. ... Direct distance.",
+  "voice": "opti"
+ },
+ "g3m-word-kilometer": {
+  "text": "Kilometer.",
+  "voice": "opti"
+ },
+ "g3m-word-distance": {
+  "text": "Distance.",
+  "voice": "opti"
+ },
+ "g3m-word-travel-distance": {
+  "text": "Travel distance.",
+  "voice": "opti"
+ },
+ "g3m-word-direct-distance": {
+  "text": "Direct distance.",
+  "voice": "opti"
  }
 }

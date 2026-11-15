@@ -60,6 +60,8 @@ TOOLS = {
  'bond-m': ('bond', {"parts": 2, "w": "163 cm", "p": ["100 cm", "?"]}, 'Number Bond', 'Split 163 cm into 100 cm and the rest. The 100 cm is 1 meter.'),
  'bond-m2': ('bond', {"parts": 2, "w": "628 cm", "p": ["600 cm", "?"]}, 'Number Bond', 'Split 628 cm into hundreds and the rest. Each hundred centimeters is 1 meter.'),
  'bond-100': ('bond', {"parts": 2, "w": "100 cm", "p": ["23 cm", "?"]}, 'Number Bond', 'One meter is 100 cm. Split it into 23 cm and the rest. Count up to 100.'),
+ 'bond-km': ('bond', {"parts": 2, "w": "4,300 m", "p": ["4,000 m", "?"]}, 'Number Bond', 'Split 4,300 m into the thousands and the rest. Every 1,000 m is 1 km.'),
+ 'bond-km2': ('bond', {"parts": 2, "w": "8,600 m", "p": ["8,000 m", "?"]}, 'Number Bond', 'Split 8,600 m into the thousands and the rest. The thousands are the kilometers.'),
  'fbars-9-10': ('fbars', {"d": [9, 10], "lab": 1}, 'Fraction Tiles', 'Try a bar of ninths and a bar of tenths. Shade 1 ninth and 2 tenths. Which reaches farther?'),
 }
 def enc(o): return base64.urlsafe_b64encode(json.dumps(o, separators=(',', ':')).encode()).decode().rstrip('=')
@@ -189,6 +191,16 @@ L = {
      {"t": "centimeter", "alt": ["centimeters"], "d": "A small unit of length. 100 centimeters make 1 meter."},
      {"t": "roll", "d": "A long piece of ribbon or cloth wound up so it is easy to store and cut."},
      {"t": "trim", "d": "Ribbon or lace sewn onto clothes and hats to decorate them."}]),
+  '3.11.03': dict(page='math-lesson-3-11-03-kilometers.html', title='Kilometers', video='g3math-11-03-learn', music='mozart-34-andante.mp3',
+   glossary=[
+     {"t": "kilometer", "alt": ["kilometers"], "d": "A unit for long distances. 1 kilometer is 1,000 meters, about a 15-minute walk. We write km.", "key": True},
+     {"t": "distance", "d": "How far it is from one place to another.", "key": True},
+     {"t": "travel distance", "d": "The distance along a road or a curved path from one place to another.", "key": True},
+     {"t": "direct distance", "d": "The distance along a straight line from one place to another.", "key": True},
+     {"t": "meter", "alt": ["meters"], "d": "A unit of length. 1,000 meters make 1 kilometer."},
+     {"t": "compound units", "d": "Two units used together to write one distance, like 3 km 400 m."},
+     {"t": "telegraph", "d": "A way to send messages far away. Chappe's telegraph used towers with moving arms."},
+     {"t": "telescope", "d": "A tube with lenses that makes faraway things look closer."}]),
   '3.10.07': dict(page='math-lesson-3-10-07-adding-subtracting-fractions-part-2.html', title='Adding and Subtracting Fractions, Part 2', video='g3math-10-07-learn',
    glossary=[
      {"t": "clue word", "alt": ["clue words"], "d": "A word in a story problem that tells you what to do, like more (add) or left (take away).", "key": True},
