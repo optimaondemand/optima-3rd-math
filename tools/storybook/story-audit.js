@@ -1,7 +1,7 @@
 // story audit: is the story on the Warm-Up, and out of the way on the Lesson + Show What You Know tabs?
 const {chromium}=require('playwright');const fs=require('fs');
 (async()=>{const b=await chromium.launch();
-for(const L of ['3-10-06','3-10-07']){const p=await (await b.newContext({viewport:{width:1150,height:900}})).newPage();
+for(const L of ['3-10-07','3-11-01']){const p=await (await b.newContext({viewport:{width:1150,height:900}})).newPage();
 await p.route(/googleapis|gstatic|githubusercontent|github\.io/,r=>r.abort());
 await p.goto('file:///home/claude/g3sb/build/g3-storybook-preview-'+L+'.html');await p.waitForTimeout(900);
 await p.evaluate(()=>{const d=document.getElementById('sb-start');if(d)d.open=false;});

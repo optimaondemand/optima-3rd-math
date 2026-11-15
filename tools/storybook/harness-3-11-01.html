@@ -1,0 +1,111 @@
+<!DOCTYPE html><html><head><meta charset="utf-8">
+<!-- 3.11.01 Learn video: "One Meter, One Hundred Centimeters". Frames rendered by render.js from timeline-3-11-01.json (Scribe word times). -->
+<style>
+html,body{margin:0;width:1280px;height:720px;overflow:hidden;background:#FBF6EA;font-family:Nunito,Arial,sans-serif}
+#st{position:absolute;inset:0}
+.cap{position:absolute;left:90px;right:90px;bottom:22px;min-height:52px;background:rgba(14,28,66,.88);color:#fff;border-radius:14px;padding:10px 20px;font-size:26px;font-weight:800;line-height:1.3;text-align:center}
+.cap:empty{display:none}
+.hd{position:absolute;left:40px;top:22px;font-family:'Cormorant Garamond',Georgia,serif;font-size:32px;font-weight:700;color:#3A2A12}
+.hd small{display:block;font-family:Nunito,Arial;font-size:15px;letter-spacing:.18em;color:#B8892E;font-weight:900}
+.book{position:absolute;inset:0;display:none;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 40%,#FFF8E6,#EFE2C6)}
+.book.on{display:flex}
+.bk{display:grid;grid-template-columns:420px 420px;background:#E8DCC0;padding:12px;border-radius:10px;box-shadow:0 20px 40px rgba(60,40,10,.25)}
+.pg{background:#FFFBF1;height:380px;padding:24px;box-sizing:border-box}
+.pg img{width:100%;height:290px;object-fit:cover;border:8px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.2);box-sizing:border-box}
+.pg.r{display:flex;flex-direction:column;justify-content:center}
+.ch{font-family:Georgia,serif;letter-spacing:.2em;color:#B8892E;font-weight:700;font-size:16px}
+.tt{font-family:'Cormorant Garamond',Georgia,serif;font-size:40px;font-weight:700;color:#3A2A12;line-height:1.05;margin:8px 0}
+.q{font-size:22px;font-weight:800;color:#0E1C42;margin-top:10px}
+.owl{position:absolute;width:140px;right:28px;bottom:150px}
+</style></head><body>
+<div id="st"><svg id="sv" width="1280" height="720" viewBox="0 0 1280 720"></svg>
+<div class="hd"><small>CHAPTER 11 · THE METER OF PARIS</small>One Meter, One Hundred Centimeters</div></div>
+<div class="book" id="book"><div class="bk"><div class="pg"><img src="../repo/images/storybook/sb-mesures-plate.jpg" style="object-fit:cover"></div><div class="pg r"><div class="ch">CHAPTER 11 · LESSON 1</div><div class="tt" id="btt">Meters and Centimeters</div><div class="q" id="bq">How are meters and centimeters related?</div></div></div><img class="owl" src="../repo/images/storybook/opti-owl.png"></div>
+<div class="cap" id="cap"></div>
+<script>
+var TL=null, NSV='http://www.w3.org/2000/svg';
+function S(tag,a,p){var e=document.createElementNS(NSV,tag);for(var k in a){if(k==='text')e.textContent=a[k];else e.setAttribute(k,a[k]);}(p||sv).appendChild(e);return e;}
+var NAVY='#1F2A44', NV='#0E1C42', CT='#117E7E', CW='#5B6478', C9='#2E7D6B', C2='#6B46C1', C4='#8A6A00', C8='#A23B8C', C5='#4E7A1A', C10='#117E7E', C3='#B05E09', C6='#2F6FDE', C12='#5B6478', C20='#3949AB', C11='#8C2F6E', RED='#B03A2E', OK='#1E7A4C', GOLD='#B8892E', NO='#B23A2E', X0=200, W=880;
+function sec(s){return TL.secs[s];}
+var M='vid-math';
+function wt(re,n,from){var Wd=sec(M).words,c=0;for(var i=from||0;i<Wd.length;i++){if(re.test(Wd[i].w.replace(/[^\w'-]/g,''))){if(c===(n||0))return Wd[i].t;c++;}}return null;}
+function wi(re,n){var Wd=sec(M).words,c=0;for(var i=0;i<Wd.length;i++){if(re.test(Wd[i].w.replace(/[^\w'-]/g,''))){if(c===(n||0))return i;c++;}}return 0;}
+function ease(x){x=Math.max(0,Math.min(1,x));return x<.5?2*x*x:1-Math.pow(-2*x+2,2)/2;}
+function caption(t){var all=[];['vid-open',M,'vid-close'].forEach(function(s){var Wd=sec(s).words,cur=[];Wd.forEach(function(w,i){cur.push(w);if(/[.!?:]$/.test(w.w)||i===Wd.length-1){all.push(cur);cur=[];}});});
+  for(var i=0;i<all.length;i++){var a=all[i][0].t,b=all[i][all[i].length-1].e+0.35;if(t>=a-0.1&&t<=b)return all[i].map(function(w){return w.w;}).join(' ');}return '';}
+var K={};
+var MW='#F6DE94',MS='#B8902A',RW='#EAF3FF',RS='#8FB2DA',BLUE='#1D4FA8',BROWN2='#5A4300';
+function stick(x,y,w,cm,kind,v0,h,op,endLab,labsUpTo){h=h||64;var g=S('g',{opacity:op==null?1:op});var k=w/cm;S('rect',{x:x,y:y,width:w,height:h,rx:4,fill:kind==='meter'?MW:RW,stroke:kind==='meter'?MS:RS,'stroke-width':3},g);
+  for(var i=0;i<=cm;i++){var v=(v0||0)+i,big=v%10===0,mid=v%5===0,xx=x+i*k;S('line',{x1:xx,y1:y,x2:xx,y2:y+(big?h*.5:mid?h*.34:h*.2),stroke:NV,'stroke-width':big?2.4:1.2},g);
+    if(big&&(i>0||kind!=='meter')&&(i<cm||endLab)&&(labsUpTo==null||v<=labsUpTo))S('text',{x:xx,y:y+h-9,'text-anchor':'middle','font-size':20,'font-weight':900,fill:NV,text:String(v)},g);}return g;}
+function chip(x,y,txt,col,op){var g=S('g',{opacity:op==null?1:op});var w=txt.length*14+34;S('rect',{x:x-w/2,y:y,width:w,height:44,rx:22,fill:'#fff',stroke:col,'stroke-width':3},g);S('text',{x:x,y:y+30,'text-anchor':'middle','font-size':24,'font-weight':900,fill:col,text:txt},g);return g;}
+function big(x,y,txt,col,size,op){return S('text',{x:x,y:y,'text-anchor':'middle','font-size':size||40,'font-weight':900,fill:col||NV,opacity:op==null?1:op,text:txt});}
+function fadeIn(t,a,d){return ease((t-a)/(d||0.4));}
+function setup(){
+  K.a=sec(M).start; K.close=sec('vid-close').start;
+  K.long=wt(/^long$/,0); K.tiny=wt(/^tiny$/,0); K.each=wt(/^Each$/,0); K.count=wt(/^count$/,0);
+  var tens=['Ten','twenty','thirty','forty','fifty','sixty','seventy','eighty','ninety'];K.tens=tens.map(function(w){return wt(new RegExp('^'+w+'$','i'),0);});K.tens.push(wt(/^hundred$/,0));
+  K.eq1=wt(/^One$/,0);
+  K.rope=wt(/^rope$/,0); K.lay=wt(/^Lay$/,0); K.thats=wt(/^That's$/,0); K.measure=wt(/^Measure$/,0); K.zero=wt(/^zero$/,0); K.f46=wt(/^forty-six$/,0);
+  K.so=wt(/^So$/,0); K.incm=wt(/^In$/,0); K.plus=wt(/^plus$/,0); K.or=wt(/^or$/,0);
+  K.now=wt(/^Now$/,0); K.path=wt(/^path$/,0); K.every=wt(/^Every$/,0); K.nine=wt(/^Nine$/,0); K.left=wt(/^left$/,0); K.so2=wt(/^So$/,1);
+  K.watch=wt(/^Watch$/,0); K.not=wt(/^not$/,0); K.eight2=wt(/^Eight$/,1); K.add=wt(/^Add$/,0); K.get=wt(/^get$/,0);
+}
+var X=170,BW=940;
+function render(t){
+  window.__t=t;var book=document.getElementById('book'),cap=document.getElementById('cap');
+  cap.textContent=window.NOCAP?'':caption(t);
+  var inOpen=t<K.a-0.3, inClose=t>=K.close-0.3;
+  book.classList.toggle('on',inOpen||inClose);
+  if(inClose){document.getElementById('btt').textContent='Your turn';document.getElementById('bq').textContent='Meters are hundreds of centimeters. Start at 0, and say it both ways.';}
+  sv.innerHTML='';if(inOpen||inClose)return;
+  // ── scene 1: the meter stick, counted by tens
+  if(t<K.rope-0.3){
+    var y=250,k=BW/100;
+    S('text',{x:X,y:y-20,'font-size':24,'font-weight':900,fill:BROWN2,text:'METER STICK'});
+    var nT=0;K.tens.forEach(function(h,i){if(t>=h-0.1)nT=i+1;});
+    stick(X,y,BW,100,'meter',0,80,1,nT>=10,t>=K.count-0.3?nT*10:100);
+    if(t>=K.long-0.3)S('path',{d:'M'+X+' '+(y+100)+' v12 h'+BW+' v-12',stroke:NV,'stroke-width':3,fill:'none',opacity:fadeIn(t,K.long-0.3)});
+    if(t>=K.long-0.3)big(X+BW/2,y+150,'1 meter',NV,34,fadeIn(t,K.long-0.3));
+    if(t>=K.tiny-0.3&&t<K.count-0.3){var o=fadeIn(t,K.tiny-0.3);S('rect',{x:X+42*k,y:y-6,width:k,height:92,fill:'none',stroke:NO,'stroke-width':3,opacity:o});if(t>=K.each-0.3)chip(X+42*k,y-80,'1 centimeter',NO,fadeIn(t,K.each-0.3));}
+    for(var i=0;i<nT;i++)S('rect',{x:X+i*10*k+1,y:y-6,width:10*k-2,height:8,rx:3,fill:i%2?'#C9A227':'#8A6A00'});
+    if(t>=K.eq1-0.3)chip(640,470,'1 m = 100 cm',OK,fadeIn(t,K.eq1-0.3));
+  }
+  // ── scene 2: a rope longer than one meter stick
+  else if(t<K.now-0.3){
+    var k2=BW/165,yR=200,yS=262,L=146;
+    S('text',{x:X,y:yR-14,'font-size':22,'font-weight':900,fill:CW,text:'ROPE'});
+    S('rect',{x:X,y:yR,width:L*k2,height:44,rx:22,fill:'#C9A46A',stroke:'#5A3A1A','stroke-width':3});
+    for(var q=0;q*14<L*k2;q++)S('line',{x1:X+q*14,y1:yR+3,x2:X+q*14+12,y2:yR+41,stroke:'#8A6A3A','stroke-width':2.5,opacity:.6});
+    var ps=fadeIn(t,K.lay-0.1,0.8);if(t>=K.lay-0.3)stick(X,yS+(1-ps)*180,100*k2,100,'meter',0,60,1);
+    if(t>=K.thats-0.3)chip(X+50*k2,yS+82,'1 meter',BROWN2,fadeIn(t,K.thats-0.3));
+    var pr=fadeIn(t,K.measure+0.2,0.8);if(t>=K.measure)stick(X+100*k2,yS+(1-pr)*180,60*k2,60,'ruler',0,60,1);
+    if(t>=K.zero-0.4&&t<K.f46)S('circle',{cx:X+100*k2,cy:yS+30,r:26,fill:'none',stroke:NO,'stroke-width':4,opacity:fadeIn(t,K.zero-0.4)});
+    if(t>=K.f46-0.3){var ex=X+L*k2;S('line',{x1:ex,y1:yR-6,x2:ex,y2:yS+70,stroke:'#C9A227','stroke-width':4,'stroke-dasharray':'8 6'});chip(ex,yS+82,'46 cm',BLUE,fadeIn(t,K.f46-0.3));}
+    if(t>=K.so-0.3)big(640,450,'1 m 46 cm',NV,44,fadeIn(t,K.so-0.3));
+    if(t>=K.plus-0.4)big(640,520,'100 cm + 46 cm'+(t>=K.or-0.2?' = 146 cm':''),OK,38,fadeIn(t,K.plus-0.4));
+  }
+  // ── scene 3: 935 cm, the other way
+  else if(t<K.watch-0.3){
+    if(t>=K.path-0.5){var o3=fadeIn(t,K.path-0.5);big(640,150,'A garden path: 935 cm',NV,40,o3);}
+    if(t>=K.every-0.3){var o4=fadeIn(t,K.every-0.3);S('line',{x1:640,y1:236,x2:430,y2:300,stroke:CW,'stroke-width':4,opacity:o4});S('line',{x1:640,y1:236,x2:850,y2:300,stroke:CW,'stroke-width':4,opacity:o4});
+      chip(640,186,'935 cm',NV,o4);chip(430,300,'900 cm',BROWN2,o4);chip(850,300,'35 cm',BLUE,fadeIn(t,K.left-0.3));}
+    if(t>=K.nine-0.3){var u=(BW-20)/9.4;for(var i=0;i<9;i++){var oi=fadeIn(t,K.nine-0.3+i*0.12,0.3);var g=S('g',{opacity:oi});S('rect',{x:X+i*u,y:380,width:u,height:46,rx:3,fill:MW,stroke:MS,'stroke-width':2.5},g);S('text',{x:X+i*u+u/2,y:411,'text-anchor':'middle','font-size':20,'font-weight':900,fill:BROWN2,text:'1 m'},g);}
+      chip(X+4.5*u,440,'9 meters',BROWN2,fadeIn(t,K.nine+0.6));
+      if(t>=K.left-0.3){S('rect',{x:X+9*u,y:380,width:u*0.35,height:46,rx:3,fill:RW,stroke:RS,'stroke-width':2.5,opacity:fadeIn(t,K.left-0.3)});}}
+    if(t>=K.so2-0.3)big(640,555,'935 cm = 9 m 35 cm',OK,40,fadeIn(t,K.so2-0.3));
+  }
+  // ── scene 4: watch out for the zero
+  else {
+    S('rect',{x:140,y:96,width:1000,height:62,rx:14,fill:'#FBE7E4',stroke:NO,'stroke-width':3});big(640,138,'Watch out! Keep the zero.',NO,32);
+    if(t>=K.watch+0.4){big(460,240,'8 m 3 cm',NV,46,fadeIn(t,K.watch+0.4));}
+    if(t>=K.not-0.3){var on=fadeIn(t,K.not-0.3);big(640,240,'≠',NO,52,on);big(820,240,'83 cm',NO,46,on);S('line',{x1:745,y1:212,x2:895,y2:248,stroke:NO,'stroke-width':5,opacity:on});}
+    if(t>=K.eight2-0.3){var u2=(BW-20)/8.6;for(var i=0;i<8;i++){var g2=S('g',{opacity:fadeIn(t,K.eight2-0.3+i*0.1,0.3)});S('rect',{x:X+i*u2,y:300,width:u2,height:44,rx:3,fill:MW,stroke:MS,'stroke-width':2.5},g2);S('text',{x:X+i*u2+u2/2,y:330,'text-anchor':'middle','font-size':20,'font-weight':900,fill:BROWN2,text:'1 m'},g2);}
+      chip(X+4*u2,354,'800 cm',BROWN2,fadeIn(t,K.eight2+0.8));
+      if(t>=K.add-0.3)S('rect',{x:X+8*u2,y:300,width:u2*0.12,height:44,rx:2,fill:RW,stroke:RS,'stroke-width':2.5,opacity:fadeIn(t,K.add-0.3)});}
+    if(t>=K.add-0.3)big(640,470,'800 cm + 3 cm',NV,40,fadeIn(t,K.add-0.3));
+    if(t>=K.get-0.3){var og=fadeIn(t,K.get-0.3);S('text',{x:640,y:550,'text-anchor':'middle','font-size':48,'font-weight':900,fill:OK,opacity:og},sv).innerHTML='= 8<tspan fill="#B23A2E" text-decoration="underline">0</tspan>3 cm';}
+  }
+}
+window.init=function(tl){TL=tl;setup();};
+</script></body></html>

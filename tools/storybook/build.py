@@ -55,6 +55,10 @@ TOOLS = {
  'fbars-12g': ('fbars', {"d": [12], "lab": 1}, 'Fraction Tiles', 'Try two bars of twelfths. Shade a different number in each. How many more tiles does the longer bar have?'),
  'fbars-8-16': ('fbars', {"d": [8, 16], "lab": 1}, 'Fraction Tiles', 'Line up a bar of eighths and a bar of sixteenths. How many sixteenths fit under one eighth?'),
  'nl-11b': NL(0, 1, 11) + ('Try the Number Line in elevenths. Put a dot on a fraction, hop back, then hop forward.',),
+ 'ruler-m': ('ruler', {"u": "m", "a": 0, "b": 91, "len": 91}, 'Rulers', 'Measure a ribbon on the meter stick. Is it more or less than 1 meter? How many centimeters is 1 meter?'),
+ 'ruler-cm': ('ruler', {"u": "cm", "a": 0, "b": 11, "len": 11}, 'Rulers', 'Drag the ribbon so its left end is on 0, then read the other end.'),
+ 'bond-m': ('bond', {"parts": 2, "w": "163 cm", "p": ["100 cm", "?"]}, 'Number Bond', 'Split 163 cm into 100 cm and the rest. The 100 cm is 1 meter.'),
+ 'bond-m2': ('bond', {"parts": 2, "w": "628 cm", "p": ["600 cm", "?"]}, 'Number Bond', 'Split 628 cm into hundreds and the rest. Each hundred centimeters is 1 meter.'),
  'fbars-9-10': ('fbars', {"d": [9, 10], "lab": 1}, 'Fraction Tiles', 'Try a bar of ninths and a bar of tenths. Shade 1 ninth and 2 tenths. Which reaches farther?'),
 }
 def enc(o): return base64.urlsafe_b64encode(json.dumps(o, separators=(',', ':')).encode()).decode().rstrip('=')
@@ -164,6 +168,16 @@ L = {
      {"t": "sixteenth note", "alt": ["sixteenth notes"], "d": "A note that lasts for one-sixteenth of a measure. 16 of them fill one measure."},
      {"t": "cantata", "d": "A piece of music for singers and players. Bach wrote many of them.", "key": True},
      {"t": "musette", "d": "A happy dance with a low note that keeps sounding, like bagpipes."}]),
+  '3.11.01': dict(page='math-lesson-3-11-01-meters-and-centimeters.html', title='Meters and Centimeters', video='g3math-11-01-learn', music='haydn-101-clock-andante.mp3',
+   glossary=[
+     {"t": "meter", "alt": ["meters"], "d": "A unit for measuring length. 1 meter is 100 centimeters, about the width of a door.", "key": True},
+     {"t": "centimeter", "alt": ["centimeters"], "d": "A small unit of length, about as wide as your smallest fingernail. 100 centimeters make 1 meter.", "key": True},
+     {"t": "length", "d": "How long something is from one end to the other.", "key": True},
+     {"t": "meter stick", "alt": ["meter sticks"], "d": "A ruler that is exactly 1 meter long, with marks for every centimeter.", "key": True},
+     {"t": "centimeter ruler", "d": "A short ruler with marks for every centimeter. Start measuring at its 0."},
+     {"t": "marble", "d": "A hard, smooth stone. It does not shrink or bend, so it makes a good measuring stick."},
+     {"t": "quill pen", "d": "A pen made from a long bird feather. People dipped it in ink to write."},
+     {"t": "unit", "d": "The size you measure with, like a meter or a centimeter."}]),
   '3.10.07': dict(page='math-lesson-3-10-07-adding-subtracting-fractions-part-2.html', title='Adding and Subtracting Fractions, Part 2', video='g3math-10-07-learn',
    glossary=[
      {"t": "clue word", "alt": ["clue words"], "d": "A word in a story problem that tells you what to do, like more (add) or left (take away).", "key": True},
@@ -198,7 +212,7 @@ def build(lid):
     html = re.sub(r'\[\[(.*?)\]\]', tok, html)
     html = re.sub(r'\{\{TOOL:([^}]+)\}\}', tool, html)
     data = {"lesson": lid, "key": "g3sb-" + slug, "title": c['title'], "audioBase": "audio/storybook/", "imgBase": "images/storybook/",
-            "music": "bach-cello-suite-1-prelude.mp3", "audioReady": True, "glossary": c['glossary'], "cueWords": {}}
+            "music": c.get("music", "bach-cello-suite-1-prelude.mp3"), "audioReady": True, "glossary": c['glossary'], "cueWords": {}}
     for cw in (R + 'build/cuewords-%s.json' % slug, R + 'build/cuewords.json' if lid == '3.09.01' else ''):
         if cw and os.path.exists(cw): data['cueWords'] = json.load(open(cw)); break
     html = html.replace('{{DATA}}', json.dumps(data))

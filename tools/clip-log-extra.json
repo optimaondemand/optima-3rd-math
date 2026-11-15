@@ -138,5 +138,9 @@
  "g3m-word-clue-word": {
   "text": "Clue word.",
   "voice": "opti"
+ },
+ "g3m-3-11-01-vid-math": {
+  "text": "This is a meter stick. It is one meter long. Look at the tiny spaces. Each one is one centimeter. Let's count them by tens. Ten, twenty, thirty, forty, fifty, sixty, seventy, eighty, ninety, one hundred. One meter is one hundred centimeters. Here's a rope. It is longer than one meter stick. Lay the meter stick at the end of the rope. That's one meter. Measure the rest with a centimeter ruler, starting at zero. It's forty-six centimeters. So the rope is one meter forty-six centimeters. In centimeters, that's one hundred plus forty-six, or one hundred forty-six centimeters. Now go the other way. A garden path is nine hundred thirty-five centimeters long. How many meters? Every hundred centimeters makes one meter. Nine hundreds make nine meters. Thirty-five centimeters are left over. So the path is nine meters thirty-five centimeters. Watch out! Eight meters three centimeters is not eighty-three centimeters. Eight meters is eight hundred centimeters. Add three more, and you get eight hundred three centimeters.",
+  "voice": "claire"
  }
 }
