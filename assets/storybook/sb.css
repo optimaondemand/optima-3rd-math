@@ -498,3 +498,6 @@ html.sb-still *{animation:none!important;transition:none!important}
 /* 3.11.05 beaker + thermometer */
 .sb-bk svg .bk-bot:focus-visible,.sb-bk svg .drag:focus-visible,.sb-th svg .drag:focus-visible{outline:3px solid #C9A227;outline-offset:2px}
 .bk-tools{display:flex;gap:8px;flex-wrap:wrap}
+
+/* 3.11.06 scale + balance */
+.sb-wg svg .wg-w:focus-visible,.sb-wg svg .wg-item:focus-visible,.sb-wg svg .wg-on:focus-visible{outline:3px solid #C9A227;outline-offset:2px}

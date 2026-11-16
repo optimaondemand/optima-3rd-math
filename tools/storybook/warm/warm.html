@@ -301,6 +301,40 @@ SC['3.10.07']=function(t,K){
   if(t>=K.take-0.3)label(820,440,'step 2: take away',ramp(t,K.take-0.3,0.4),'#B23A2E',28);
   if(t>=K.step-0.3)label(640,530,'one step at a time',ramp(t,K.step-0.3,0.4),GREEN,28);
 };
+SC['3.11.06']=function(t,K){
+  var HD='CHAPTER 11 · THE METER OF PARIS';
+  function wgt(x,y,h,w,txt,o){var g=S('g',{opacity:o});S('rect',{x:x-w/2,y:y-h,width:w,height:h,rx:8,fill:'#C9A36A',stroke:'#7A5A2A','stroke-width':3},g);S('rect',{x:x-w*.18,y:y-h-12,width:w*.36,height:14,rx:4,fill:'#A9844E'},g);if(txt)S('text',{x:x,y:y+40,'text-anchor':'middle','font-size':26,'font-weight':900,fill:NAVY,text:txt},g);return g;}
+  function bal(cx,y,tilt,o,L,R){var g=S('g',{opacity:o}),arm=230,dy=Math.sin(tilt)*arm;S('rect',{x:cx-10,y:y,width:20,height:230,fill:'#8C96A8'},g);S('rect',{x:cx-90,y:y+226,width:180,height:16,rx:6,fill:'#5B6478'},g);
+    S('line',{x1:cx-arm,y1:y+dy,x2:cx+arm,y2:y-dy,stroke:'#3A2A12','stroke-width':8,'stroke-linecap':'round'},g);S('circle',{cx:cx,cy:y,r:10,fill:GOLD},g);
+    [[-1,L],[1,R]].forEach(function(s){var px=cx+s[0]*arm,py=y+s[0]*-dy*-1*(s[0]<0?-1:1);py=y+(s[0]<0?dy:-dy);S('line',{x1:px,y1:py,x2:px-80,y2:py+110,stroke:'#5B6478','stroke-width':2},g);S('line',{x1:px,y1:py,x2:px+80,y2:py+110,stroke:'#5B6478','stroke-width':2},g);
+      S('path',{d:'M'+(px-95)+' '+(py+110)+' Q'+px+' '+(py+136)+' '+(px+95)+' '+(py+110)+' Z',fill:'#D7DEEA',stroke:'#5B6478','stroke-width':3},g);if(s[1])s[1](px,py+112,g);});return g;}
+  if(t<K.sci-0.3){head('','');owl(1000,380,150,t);book(t,0.1,'sb-lavoisier-plate.jpg','CHAPTER 11 · LESSON 6',['Kilograms and','Grams'],'France, the 1790s');return;}
+  if(t<K.antoine-0.3){head(HD,'New weights for everyone');owl(1060,440,120,t);var o=fade(t,K.sci-0.3,K.antoine-0.3),sm=ramp(t,K.same-0.2,0.8);
+    [['one town',300,150,96],['another town',640,110,80],['a third town',980,180,110]].forEach(function(a,i){var h=a[2]+(150-a[2])*sm,w=a[3]+(100-a[3])*sm;wgt(a[1],470,h,w,a[0],o*ramp(t,K.sci+0.3*i,0.5));});
+    if(t>=K.same-0.3)label(640,180,'the same everywhere',o*ramp(t,K.same-0.3,0.4),GREEN,34);return;}
+  if(t<K.idea-0.3){head(HD,'Antoine Lavoisier, a chemist');owl(null);var o2=fade(t,K.antoine-0.3,K.idea-0.3);
+    pic('sb-lavoisier-full.jpg',200,82,400,528,1+0.04*(t-K.antoine),.5,.4,o2);
+    label(930,260,'he weighed things carefully',o2*ramp(t,K.balance-0.4,0.4),'#6B4A12',28);label(930,360,'he helped plan the new weights',o2*ramp(t,K.helps-0.3,0.4),NAVY,26);return;}
+  if(t<K.look-0.3){head(HD,t<K.thousand-0.3?'One gram':'A thousand grams');owl(null);var o3=fade(t,K.idea-0.3,K.look-0.3);
+    var q=o3*ramp(t,K.gram-0.4,0.5),cx=t<K.thousand-0.3?640:330,cy=360,s=110;var g=S('g',{opacity:q});
+    S('path',{d:'M'+(cx-s/2)+' '+(cy-s/2+30)+' l'+s+' 0 l0 '+s+' l'+(-s)+' 0 Z',fill:'#9CC8EE',stroke:'#3B7DC4','stroke-width':4},g);
+    S('path',{d:'M'+(cx-s/2)+' '+(cy-s/2+30)+' l30 -30 l'+s+' 0 l-30 30 Z',fill:'#C4E0F7',stroke:'#3B7DC4','stroke-width':4},g);
+    S('path',{d:'M'+(cx+s/2)+' '+(cy-s/2+30)+' l30 -30 l0 '+s+' l-30 30 Z',fill:'#7FB3E2',stroke:'#3B7DC4','stroke-width':4},g);
+    if(t>=K.side-0.6)S('text',{x:cx,y:cy+s/2+80,'text-anchor':'middle','font-size':26,'font-weight':900,fill:NAVY,opacity:ramp(t,K.side-0.6,0.4),text:'1 cm on each side'},g);
+    if(t<K.thousand-0.3)label(cx,cy-120,'water: 1 gram',q*ramp(t,K.gram,0.4),'#1D4FA8',30);
+    if(t>=K.thousand-0.3){var o4=o3*ramp(t,K.thousand-0.3,0.6),B=S('g',{opacity:o4});var bx=720,by=200,bs=26;
+      for(var r=0;r<10;r++)for(var c=0;c<10;c++)S('rect',{x:bx+c*bs,y:by+r*bs,width:bs,height:bs,fill:'#9CC8EE',stroke:'#3B7DC4','stroke-width':1.2},B);
+      S('path',{d:'M'+bx+' '+by+' l60 -60 l'+(10*bs)+' 0 l-60 60 Z',fill:'#C4E0F7',stroke:'#3B7DC4','stroke-width':3},B);S('path',{d:'M'+(bx+10*bs)+' '+by+' l60 -60 l0 '+(10*bs)+' l-60 60 Z',fill:'#7FB3E2',stroke:'#3B7DC4','stroke-width':3},B);
+      if(t>=K.kg-0.4)label(880,560,'1,000 grams = 1 kilogram',o3*ramp(t,K.kg-0.4,0.4),GREEN,30);}
+    return;}
+  if(t<K.today-0.3){head(HD,'Glass and brass tools');owl(null);var o5=fade(t,K.look-0.3,K.today-0.3);
+    pic('sb-lavoisier-detail.jpg',220,82,322,528,1+0.05*(t-K.look),.5,.4,o5);
+    label(890,260,'Lavoisier’s table',o5*ramp(t,K.table-0.3,0.4),'#6B4A12',30);label(890,360,'glass and brass tools',o5*ramp(t,K.tools-0.6,0.4),NAVY,30);return;}
+  head(HD,'Kilograms and grams');owl(null);var q6=ramp(t,K.today-0.4,0.5),lev=ramp(t,K.weigh+0.4,1.2),tilt=0.18*(1-lev);
+  bal(640,250,tilt,q6,function(x,y,g){S('rect',{x:x-50,y:y-80,width:100,height:80,rx:4,fill:'#C49A6C',stroke:'#7A5A2A','stroke-width':3},g);},
+    function(x,y,g){if(lev>0){wgt(x-30,y,46,48,'',lev).setAttribute('transform','');g.appendChild(sv.lastChild);wgt(x+28,y,34,36,'',lev);g.appendChild(sv.lastChild);}});
+  if(t>=K.weigh+1.4)label(640,610,'level: both sides weigh the same',ramp(t,K.weigh+1.4,0.4),GREEN,28);
+};
 SC['3.11.05']=function(t,K){
   var HD='CHAPTER 11 · THE METER OF PARIS';
   function jug(x,y,w,h,col,txt,o,cross){var g=S('g',{opacity:o});S('path',{d:'M'+(x-w/2)+' '+(y-h)+' L'+(x+w/2)+' '+(y-h)+' L'+(x+w/2-6)+' '+y+' L'+(x-w/2+6)+' '+y+' Z',fill:col,stroke:'#5B6478','stroke-width':4,'stroke-linejoin':'round'},g);
@@ -451,6 +485,7 @@ SC['3.11.01']=function(t,K){
   if(t>=K.two-0.3)label(640,540,'say it two ways',ramp(t,K.two-0.3,0.4),GREEN,30);
 };
 var CUES={
+ '3.11.06':function(){return{sci:wt(/^Scientists$/),same:wt(/^same$/),antoine:wt(/^Antoine$/),balance:wt(/^balance$/),helps:wt(/^helps$/),idea:wt(/^idea$/),gram:wt(/^gram$/,0),side:wt(/^side$/),thousand:wt(/^thousand$/),kg:wt(/^kilogram$/),look:wt(/^Look$/),table:wt(/^table$/),tools:wt(/^tools$/),today:wt(/^Today$/),weigh:wt(/^weigh$/)};},
  '3.11.05':function(){return{france:wt(/^France$/),measure:wt(/^measure$/),called:wt(/^called$/),shop:wt(/^Shopkeepers$/),pour:wt(/^pour$/),inpic:wt(/^In$/),funnel:wt(/^funnel$/),fill:wt(/^fill$/,0),today:wt(/^Today$/),beaker:wt(/^beaker$/),fill2:wt(/^fill$/,1)};},
  '3.11.04':function(){return{jean:wt(/^Jean-Baptiste$/),land:wt(/^land$/),meter:wt(/^meter$/),near:wt(/^Near$/),twelve:wt(/^twelve$/),lay:wt(/^lay$/),again:wt(/^again$/,0),look:wt(/^Look$/),today:wt(/^Today$/),km:wt(/^subtract$/)};},
  '3.11.03':function(){return{on:wt(/^On$/),arms:wt(/^arms$/,0),each:wt(/^Each$/),signal:wt(/^signal$/,0),far:wt(/^Far$/),tele:wt(/^telescope$/),copies:wt(/^copies$/),look:wt(/^Look$/),picture:wt(/^picture$/),today:wt(/^Today$/),km:wt(/^kilometers$/)};},

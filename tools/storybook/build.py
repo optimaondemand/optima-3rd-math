@@ -66,6 +66,8 @@ TOOLS = {
  'beaker-50': ('beaker', {"u": "ml", "mx": 1000, "tk": 50, "a0": 0}, 'Beakers', 'Fill a beaker that holds 1,000 mL. Its marks go up by 50: count 50, 100, 150 as the water rises.'),
  'beaker-2l': ('beaker', {"u": "ml", "mx": 2000, "tk": 50, "a0": 0}, 'Beakers', 'Fill a beaker past 1,000 mL. Every 1,000 mL is 1 liter, and the rest are milliliters.'),
  'bond-ml': ('bond', {"parts": 2, "w": "8,300 mL", "p": ["8,000 mL", "?"]}, 'Number Bond', 'Split 8,300 mL into the thousands and the rest. Every 1,000 mL is 1 liter.'),
+ 'scale-dial': ('scale', {"m": "dial", "u": "kg", "mx": 5, "tk": 100, "w": 2300}, 'Scale & Balance', 'Put something on the scale. Count the small marks from 0 to 1 kg to find what each one is worth.'),
+ 'bond-g': ('bond', {"parts": 2, "w": "8,020 g", "p": ["8,000 g", "?"]}, 'Number Bond', 'Split 8,020 g into the thousands and the rest. Every 1,000 g is 1 kilogram.'),
  'fbars-9-10': ('fbars', {"d": [9, 10], "lab": 1}, 'Fraction Tiles', 'Try a bar of ninths and a bar of tenths. Shade 1 ninth and 2 tenths. Which reaches farther?'),
 }
 def enc(o): return base64.urlsafe_b64encode(json.dumps(o, separators=(',', ':')).encode()).decode().rstrip('=')
@@ -214,6 +216,16 @@ L = {
      {"t": "subtract", "d": "To take away. 3 km − 450 m means take 450 m away from 3 km."},
      {"t": "compound units", "d": "Two units used together to write one distance, like 2 km 550 m."},
      {"t": "ruler", "alt": ["rulers"], "d": "A straight strip marked with equal units, used to measure length."}]),
+  '3.11.06': dict(page='math-lesson-3-11-06-kilograms-and-grams.html', title='Kilograms and Grams', video='g3math-11-06-learn', music='mozart-k525-romanze.mp3',
+   glossary=[
+     {"t": "kilogram", "alt": ["kilograms"], "d": "A unit for how heavy something is. 1 kilogram is 1,000 grams. We write kg.", "key": True},
+     {"t": "gram", "alt": ["grams"], "d": "A tiny unit for how heavy something is. A paper clip weighs about 1 gram. We write g.", "key": True},
+     {"t": "mass", "d": "How heavy a thing is. We measure mass in grams and kilograms.", "key": True},
+     {"t": "scale", "alt": ["scales"], "d": "A tool that weighs things. A dial scale has a pointer that turns to show the weight.", "key": True},
+     {"t": "balance", "d": "A tool with two pans. When both pans weigh the same, the beam is level.", "key": True},
+     {"t": "weight", "alt": ["weights"], "d": "How heavy something is. Also, a metal block with its weight marked on it, like a 500 g weight."},
+     {"t": "level", "d": "Flat and even. A balance is level when both pans weigh the same."},
+     {"t": "chemist", "d": "A scientist who studies what things are made of and how they change."}]),
   '3.11.05': dict(page='math-lesson-3-11-05-liters-and-milliliters.html', title='Liters and Milliliters', video='g3math-11-05-learn', music='handel-water-music-air.mp3',
    glossary=[
      {"t": "liter", "alt": ["liters"], "d": "A unit for how much liquid there is. 1 liter is 1,000 milliliters. We write L.", "key": True},

@@ -1,0 +1,110 @@
+<!DOCTYPE html><html><head><meta charset="utf-8">
+<!-- 3.11.06 Learn video: "Make a Kilogram". Frames rendered by render.js from timeline-3-11-06.json (Scribe word times). -->
+<style>
+html,body{margin:0;width:1280px;height:720px;overflow:hidden;background:#FBF6EA;font-family:Nunito,Arial,sans-serif}
+#st{position:absolute;inset:0}
+.cap{position:absolute;left:90px;right:90px;bottom:22px;min-height:52px;background:rgba(14,28,66,.88);color:#fff;border-radius:14px;padding:10px 20px;font-size:26px;font-weight:800;line-height:1.3;text-align:center}
+.cap:empty{display:none}
+.hd{position:absolute;left:40px;top:22px;font-family:'Cormorant Garamond',Georgia,serif;font-size:32px;font-weight:700;color:#3A2A12}
+.hd small{display:block;font-family:Nunito,Arial;font-size:15px;letter-spacing:.18em;color:#B8892E;font-weight:900}
+.book{position:absolute;inset:0;display:none;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 40%,#FFF8E6,#EFE2C6)}
+.book.on{display:flex}
+.bk{display:grid;grid-template-columns:420px 420px;background:#E8DCC0;padding:12px;border-radius:10px;box-shadow:0 20px 40px rgba(60,40,10,.25)}
+.pg{background:#FFFBF1;height:380px;padding:24px;box-sizing:border-box}
+.pg img{width:100%;height:290px;object-fit:cover;border:8px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.2);box-sizing:border-box}
+.pg.r{display:flex;flex-direction:column;justify-content:center}
+.ch{font-family:Georgia,serif;letter-spacing:.2em;color:#B8892E;font-weight:700;font-size:16px}
+.tt{font-family:'Cormorant Garamond',Georgia,serif;font-size:40px;font-weight:700;color:#3A2A12;line-height:1.05;margin:8px 0}
+.q{font-size:22px;font-weight:800;color:#0E1C42;margin-top:10px}
+.owl{position:absolute;width:140px;right:28px;bottom:150px}
+</style></head><body>
+<div id="st"><svg id="sv" width="1280" height="720" viewBox="0 0 1280 720"></svg>
+<div class="hd"><small>CHAPTER 11 · THE METER OF PARIS</small>Make a Kilogram</div></div>
+<div class="book" id="book"><div class="bk"><div class="pg"><img src="../repo/images/storybook/sb-lavoisier-plate.jpg" style="object-fit:cover"></div><div class="pg r"><div class="ch">CHAPTER 11 · LESSON 6</div><div class="tt" id="btt">Kilograms and Grams</div><div class="q" id="bq">How many grams make a kilogram?</div></div></div><img class="owl" src="../repo/images/storybook/opti-owl.png"></div>
+<div class="cap" id="cap"></div>
+<script>
+var TL=null, NSV='http://www.w3.org/2000/svg';
+function S(tag,a,p){var e=document.createElementNS(NSV,tag);for(var k in a){if(k==='text')e.textContent=a[k];else e.setAttribute(k,a[k]);}(p||sv).appendChild(e);return e;}
+var NAVY='#1F2A44', NV='#0E1C42', CT='#117E7E', CW='#5B6478', C9='#2E7D6B', C2='#6B46C1', C4='#8A6A00', C8='#A23B8C', C5='#4E7A1A', C10='#117E7E', C3='#B05E09', C6='#2F6FDE', C12='#5B6478', C20='#3949AB', C11='#8C2F6E', RED='#B03A2E', OK='#1E7A4C', GOLD='#B8892E', NO='#B23A2E', X0=200, W=880;
+function sec(s){return TL.secs[s];}
+var M='vid-math';
+function wt(re,n,from){var Wd=sec(M).words,c=0;for(var i=from||0;i<Wd.length;i++){if(re.test(Wd[i].w.replace(/[^\w'-]/g,''))){if(c===(n||0))return Wd[i].t;c++;}}return null;}
+function wi(re,n){var Wd=sec(M).words,c=0;for(var i=0;i<Wd.length;i++){if(re.test(Wd[i].w.replace(/[^\w'-]/g,''))){if(c===(n||0))return i;c++;}}return 0;}
+function ease(x){x=Math.max(0,Math.min(1,x));return x<.5?2*x*x:1-Math.pow(-2*x+2,2)/2;}
+function caption(t){var all=[];['vid-open',M,'vid-close'].forEach(function(s){var Wd=sec(s).words,cur=[];Wd.forEach(function(w,i){cur.push(w);if(/[.!?:]$/.test(w.w)||i===Wd.length-1){all.push(cur);cur=[];}});});
+  for(var i=0;i<all.length;i++){var a=all[i][0].t,b=all[i][all[i].length-1].e+0.35;if(t>=a-0.1&&t<=b)return all[i].map(function(w){return w.w;}).join(' ');}return '';}
+var K={};
+function setup(){
+  K.a=sec(M).start; K.close=sec('vid-close').start;
+  K.each=wt(/^Each$/,0); K.flour=wt(/^flour$/,0); K.ptr=wt(/^pointer$/,0); K.three=wt(/^three$/,0); K.weighs=wt(/^weighs$/,0);
+  K.add=wt(/^Add$/,0); K.five=wt(/^five$/,0); K.two=wt(/^two$/,0); K.now1=wt(/^Now$/,0); K.kg1=wt(/^kilogram$/,0);
+  K.now2=wt(/^Now$/,1); K.passes=wt(/^passes$/,0); K.seven=wt(/^seven$/,0); K.thats=wt(/^That's$/,0); K.back=wt(/^back$/,0);
+  K.watch=wt(/^Watch$/,0); K.Seven=wt(/^Seven$/,0); K.not1=wt(/^Not$/,0); K.not2=wt(/^not$/,0);
+}
+function chip(x,y,txt,col,op){var g=S('g',{opacity:op==null?1:op});var w=txt.length*14+34;S('rect',{x:x-w/2,y:y,width:w,height:44,rx:22,fill:'#fff',stroke:col,'stroke-width':3},g);S('text',{x:x,y:y+30,'text-anchor':'middle','font-size':24,'font-weight':900,fill:col,text:txt},g);return g;}
+function big(x,y,txt,col,size,op){return S('text',{x:x,y:y,'text-anchor':'middle','font-size':size||40,'font-weight':900,fill:col||NV,opacity:op==null?1:op,text:txt});}
+function fadeIn(t,a,d){return ease((t-a)/(d||0.4));}
+var BLUE='#1D4FA8';
+function f3(n){return String(n).replace(/\B(?=(\d{3})+(?!\d))/g,',');}
+function box(y,txt,op,col){col=col||OK;var fs=txt.length>30?27:32,w=Math.max(380,txt.length*fs*.52+50);S('rect',{x:1240-w,y:y,width:w,height:66,rx:16,fill:'#fff',stroke:col,'stroke-width':4,opacity:op});big(1240-w/2,y+44,txt,col,fs,op);}
+function lerp(a,b,x){return a+(b-a)*ease(x);}
+function ang(g,mx){return (-150+300*Math.min(1,g/mx))*Math.PI/180;}
+// a dial scale: platform on top, dial below; marks every tk, numbers at each kilogram; lit = marks lit gold between lit[0] and lit[1]
+function scale(cx,py,r,mx,tk,g,op,lit){var gg=S('g',{opacity:op==null?1:op}),cy=py+50+r,pw=2*r+60;
+  S('rect',{x:cx-20,y:py+12,width:40,height:30,fill:'#AEB6CC'},gg);
+  S('rect',{x:cx-r-34,y:cy-r-22,width:2*r+68,height:2*r+60,rx:28,fill:'#E9EEF5',stroke:'#5B6478','stroke-width':4},gg);
+  S('rect',{x:cx-pw/2,y:py,width:pw,height:18,rx:6,fill:'#8C96A8',stroke:'#5B6478','stroke-width':3},gg);
+  S('circle',{cx:cx,cy:cy,r:r,fill:'#fff',stroke:NAVY,'stroke-width':4},gg);
+  for(var m=0;m<=mx;m+=tk){var a=ang(m,mx),bg=m%1000===0,md=m%500===0,l=bg?30:md?22:14,on=lit&&m>lit[0]&&m<=lit[1];
+    S('line',{x1:cx+Math.sin(a)*r,y1:cy-Math.cos(a)*r,x2:cx+Math.sin(a)*(r-l),y2:cy-Math.cos(a)*(r-l),stroke:on?GOLD:NAVY,'stroke-width':on?6:bg?4:md?3:2},gg);
+    if(bg)S('text',{x:cx+Math.sin(a)*(r-56),y:cy-Math.cos(a)*(r-56)+9,'text-anchor':'middle','font-size':26,'font-weight':900,fill:NV,text:m?(m/1000)+' kg':'0'},gg);}
+  var pa=ang(g,mx);S('line',{x1:cx,y1:cy,x2:cx+Math.sin(pa)*(r-18),y2:cy-Math.cos(pa)*(r-18),stroke:'#C0392B','stroke-width':6,'stroke-linecap':'round'},gg);S('circle',{cx:cx,cy:cy,r:11,fill:'#C0392B'},gg);
+  return {cx:cx,cy:cy,r:r,py:py};}
+function weight(g,x,y,s,op){var k=g>=1000,h=(k?54:g>=500?46:g>=200?40:g>=100?34:g>=50?30:26)*s,w=(k?56:g>=500?48:g>=200?42:g>=100?36:g>=50?32:28)*s,gg=S('g',{opacity:op==null?1:op});
+  S('rect',{x:x-w/2,y:y-h,width:w,height:h,rx:6*s,fill:k?'#E2B33C':'#C9A36A',stroke:k?'#8A6A00':'#7A5A2A','stroke-width':2.5},gg);
+  S('rect',{x:x-w*.18,y:y-h-8*s,width:w*.36,height:9*s,rx:3,fill:k?'#C99A2A':'#A9844E'},gg);
+  S('text',{x:x,y:y-h/2+6*s,'text-anchor':'middle','font-size':(k?15:12)*s,'font-weight':900,fill:'#3A2A12',text:k?(g/1000)+' kg':g+' g'},gg);return w;}
+function sack(x,y,w,h,lab,col,op){var gg=S('g',{opacity:op==null?1:op});S('path',{d:'M'+(x-w/2+8)+' '+y+' Q'+(x-w/2-6)+' '+(y-h*.6)+' '+(x-w*.28)+' '+(y-h)+' L'+(x+w*.28)+' '+(y-h)+' Q'+(x+w/2+6)+' '+(y-h*.6)+' '+(x+w/2-8)+' '+y+' Z',fill:col,stroke:'#8A6A3A','stroke-width':3},gg);S('text',{x:x,y:y-h*.35,'text-anchor':'middle','font-size':22,'font-weight':900,fill:'#3A2A12',text:lab},gg);}
+function render(t){
+  window.__t=t;var book=document.getElementById('book'),cap=document.getElementById('cap');
+  cap.textContent=window.NOCAP?'':caption(t);
+  var inOpen=t<K.a-0.3, inClose=t>=K.close-0.3;
+  book.classList.toggle('on',inOpen||inClose);
+  if(inClose){document.getElementById('btt').textContent='Your turn';document.getElementById('bq').textContent='Find what each mark is worth. 1,000 g make 1 kg.';}
+  sv.innerHTML='';if(inOpen||inClose)return;
+  // ── scene 1: flour 300 g, add 500 g and 200 g: 1,000 g = 1 kg
+  if(t<K.now2-0.3){
+    var g=0;if(t>=K.flour-0.2)g=lerp(0,300,(t-K.flour)/1.2);if(t>=K.five)g=lerp(300,800,(t-K.five)/1.2);if(t>=K.two)g=lerp(800,1000,(t-K.two)/1.0);
+    var lit=t>=K.three-0.2&&t<K.add-0.3?[0,300]:null;
+    var D=scale(430,140,165,2000,100,g,fadeIn(t,K.a-0.3),lit);
+    if(t>=K.each-0.3&&t<K.add-0.3)chip(900,250,'each small mark = 100 g',GOLD,fadeIn(t,K.each-0.3));
+    var on=[];if(t>=K.five-0.2)on.push(500);if(t>=K.two-0.2)on.push(200);
+    var x=D.cx-40;if(t>=K.flour-0.4)sack(on.length?D.cx-60:D.cx,D.py,120,90,'flour','#F4EBD6',fadeIn(t,K.flour-0.4));
+    var xx=D.cx+30;on.forEach(function(w){var ww=weight(w,0,-999,1.3,0);xx+=ww/2;weight(w,xx,D.py,1.3,1);xx+=ww/2+8;});
+    if(t>=K.weighs-0.3&&t<K.add-0.3)chip(900,330,'flour: 300 g',BLUE,fadeIn(t,K.weighs-0.3));
+    if(t>=K.add-0.3&&t<K.now1-0.3){var o=fadeIn(t,K.add-0.3);weight(500,880,420,1.6,o*(t<K.five-0.2?1:0.35));weight(200,980,420,1.6,o*(t<K.two-0.2?1:0.35));}
+    if(t>=K.now1-0.3)chip(900,330,'1,000 g',BLUE,fadeIn(t,K.now1-0.3));
+    if(t>=K.kg1-0.6)box(40,'300 g + 500 g + 200 g = 1,000 g = 1 kg',fadeIn(t,K.kg1-0.6));
+  }
+  // ── scene 2: potatoes 1,700 g = 1 kg 700 g and back
+  else if(t<K.watch-0.3){
+    var g2=lerp(0,1700,(t-K.now2-0.4)/2.2);
+    var lit2=t>=K.seven-0.3&&t<K.back-0.3?[1000,1700]:null;
+    var D2=scale(430,140,165,2000,100,g2,fadeIn(t,K.now2-0.3),lit2);
+    sack(D2.cx,D2.py,150,100,'potatoes','#D9C08A',fadeIn(t,K.now2-0.3));
+    if(t>=K.passes)chip(900,260,'past 1 kg',BLUE,fadeIn(t,K.passes));
+    if(t>=K.seven-0.3)chip(900,330,'7 more marks = 700 g',GOLD,fadeIn(t,K.seven-0.3));
+    if(t>=K.thats-0.3&&t<K.back-0.3)box(40,'1,700 g = 1 kg 700 g',fadeIn(t,K.thats-0.3));
+    if(t>=K.back-0.3)box(40,'1 kg 700 g = 1,000 g + 700 g = 1,700 g',fadeIn(t,K.back-0.3),C2);
+  }
+  // ── scene 3: watch out, the zeros
+  else {
+    S('rect',{x:140,y:96,width:1000,height:62,rx:14,fill:'#FBE7E4',stroke:NO,'stroke-width':3});big(640,138,'Watch out! Each kilogram is 1,000 g.',NO,30);
+    var o3=fadeIn(t,K.Seven-0.3);for(var b=0;b<7;b++)weight(1000,250+b*100,400,1.5,o3);weight(50,960,400,1.6,o3);weight(10,1040,400,1.6,o3);
+    if(t>=K.Seven-0.3)big(640,480,'7 kg 60 g = 7,000 g + 60 g = 7,060 g',OK,40,fadeIn(t,K.Seven+0.6));
+    if(t>=K.not1-0.3){var n1=fadeIn(t,K.not1-0.3);chip(470,528,'not 760',NO,n1);S('line',{x1:405,y1:550,x2:535,y2:550,stroke:NO,'stroke-width':4,opacity:n1});}
+    if(t>=K.not2-0.3){var n2=fadeIn(t,K.not2-0.3);chip(810,528,'not 7,600',NO,n2);S('line',{x1:730,y1:550,x2:890,y2:550,stroke:NO,'stroke-width':4,opacity:n2});}
+  }
+}
+window.init=function(tl){TL=tl;setup();};
+</script></body></html>
