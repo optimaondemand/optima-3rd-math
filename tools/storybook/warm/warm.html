@@ -301,6 +301,37 @@ SC['3.10.07']=function(t,K){
   if(t>=K.take-0.3)label(820,440,'step 2: take away',ramp(t,K.take-0.3,0.4),'#B23A2E',28);
   if(t>=K.step-0.3)label(640,530,'one step at a time',ramp(t,K.step-0.3,0.4),GREEN,28);
 };
+SC['3.11.05']=function(t,K){
+  var HD='CHAPTER 11 · THE METER OF PARIS';
+  function jug(x,y,w,h,col,txt,o,cross){var g=S('g',{opacity:o});S('path',{d:'M'+(x-w/2)+' '+(y-h)+' L'+(x+w/2)+' '+(y-h)+' L'+(x+w/2-6)+' '+y+' L'+(x-w/2+6)+' '+y+' Z',fill:col,stroke:'#5B6478','stroke-width':4,'stroke-linejoin':'round'},g);
+    S('path',{d:'M'+(x+w/2)+' '+(y-h+18)+' q34 10 0 '+(h*0.55),fill:'none',stroke:'#5B6478','stroke-width':6},g);S('ellipse',{cx:x,cy:y-h,rx:w/2,ry:8,fill:'#F7FAFD',stroke:'#5B6478','stroke-width':3},g);
+    if(txt)S('text',{x:x,y:y+40,'text-anchor':'middle','font-size':28,'font-weight':900,fill:NAVY,text:txt},g);
+    if(cross){S('line',{x1:x-w/2-14,y1:y-h-10,x2:x+w/2+14,y2:y+10,stroke:'#B23A2E','stroke-width':7,opacity:cross},g);}return g;}
+  if(t<K.france-0.3){head('','');owl(1000,380,150,t);book(t,0.1,'sb-litre-plate.jpg','CHAPTER 11 · LESSON 5',['Liters and','Milliliters'],'Paris, 1795');return;}
+  if(t<K.shop-0.3){head(HD,'A new way to measure');owl(1060,440,120,t);var o=fade(t,K.france-0.3,K.shop-0.3);
+    var m=ramp(t,K.measure-0.3,0.5);jug(380,470,120,170,'#FBF8EE','milk',o*m);jug(640,470,120,170,'#BFDDF5','water',o*ramp(t,K.measure+0.4,0.5));jug(900,470,120,170,'#F6C77A','juice',o*ramp(t,K.measure+1.0,0.5));
+    if(t>=K.called-0.3)label(640,200,'a new unit: the liter',o*ramp(t,K.called-0.3,0.4),GREEN,34);return;}
+  if(t<K.inpic-0.3){head(HD,'Old pint pots, new liter measures');owl(null);var o2=fade(t,K.shop-0.3,K.inpic-0.3);
+    jug(420,470,110,150,'#C9C2B4','old pint pot',o2,ramp(t,K.pour-0.6,0.5));
+    if(t>=K.pour-0.3)jug(860,470,130,180,'#D7E9F7','new liter',o2*ramp(t,K.pour-0.3,0.5));
+    return;}
+  if(t<K.today-0.3){head(HD,'A print from Paris, 1800');owl(null);var o3=fade(t,K.inpic-0.3,K.today-0.3);
+    pic('sb-litre-panel.jpg',230,82,250,528,1+0.06*(t-K.inpic),.5,.45,o3);
+    label(860,250,'a man pours through a funnel',o3*ramp(t,K.funnel-0.3,0.4),'#6B4A12',28);label(860,350,'to fill a bottle',o3*ramp(t,K.fill-0.3,0.4),NAVY,30);return;}
+  head(HD,'Milliliters fill a liter');owl(null);
+  var q=ramp(t,K.today-0.4,0.5),x=330,y0=150,h=380,w=170,yB=y0+h,g=S('g',{opacity:q});
+  var v=1000*ramp(t,K.beaker,Math.max(0.8,K.fill2-K.beaker)),pour=ramp(t,K.fill2+0.2,1.4),bv=v*(1-pour);
+  S('path',{d:'M'+(x-8)+' '+(y0-6)+' L'+x+' '+y0+' L'+x+' '+(yB-12)+' Q'+x+' '+yB+' '+(x+12)+' '+yB+' L'+(x+w-12)+' '+yB+' Q'+(x+w)+' '+yB+' '+(x+w)+' '+(yB-12)+' L'+(x+w)+' '+y0,fill:'#F7FAFD',stroke:'#5B6478','stroke-width':4},g);
+  if(bv>1){var wy=yB-bv/1000*h;S('rect',{x:x+2,y:wy,width:w-4,height:yB-2-wy,rx:8,fill:'#9CC8EE'},g);S('line',{x1:x+2,y1:wy,x2:x+w-2,y2:wy,stroke:'#3B7DC4','stroke-width':3},g);}
+  for(var mm=50;mm<=1000;mm+=50){var yy=yB-mm/1000*h,bg=mm%100===0;S('line',{x1:x,y1:yy,x2:x+(bg?34:18),y2:yy,stroke:NAVY,'stroke-width':bg?2.6:1.6},g);if(mm%200===0)S('text',{x:x-12,y:yy+8,'text-anchor':'end','font-size':22,'font-weight':900,fill:NAVY,text:mm===1000?'1,000':String(mm)},g);}
+  S('text',{x:x+w/2,y:y0-22,'text-anchor':'middle','font-size':22,'font-weight':900,fill:'#5B6478',text:'BEAKER · MILLILITERS'},g);
+  var cx=880,yb=yB,ow=120,bh=260,nk=46,top=yb-bh;var bo=ramp(t,K.fill2-0.4,0.5);var bg2=S('g',{opacity:q*bo});
+  S('path',{d:'M'+(cx-ow/2)+' '+(yb-14)+' L'+(cx-ow/2)+' '+(top+26)+' Q'+(cx-ow/2)+' '+top+' '+(cx-nk/2)+' '+(top-12)+' L'+(cx-nk/2)+' '+(top-48)+' L'+(cx+nk/2)+' '+(top-48)+' L'+(cx+nk/2)+' '+(top-12)+' Q'+(cx+ow/2)+' '+top+' '+(cx+ow/2)+' '+(top+26)+' L'+(cx+ow/2)+' '+(yb-14)+' Q'+(cx+ow/2)+' '+yb+' '+(cx+ow/2-14)+' '+yb+' L'+(cx-ow/2+14)+' '+yb+' Q'+(cx-ow/2)+' '+yb+' '+(cx-ow/2)+' '+(yb-14),fill:'#F3FAF5',stroke:'#4C7A5A','stroke-width':4},bg2);
+  if(pour>0){var lh=(bh-8)*pour;S('rect',{x:cx-ow/2+3,y:yb-3-lh,width:ow-6,height:lh,rx:10,fill:'#9CC8EE',stroke:'#3B7DC4','stroke-width':2},bg2);}
+  S('rect',{x:cx-44,y:top+14,width:88,height:34,rx:6,fill:'#fff',stroke:'#4C7A5A','stroke-width':2},bg2);S('text',{x:cx,y:top+40,'text-anchor':'middle','font-size':24,'font-weight':900,fill:'#2E5B3C',text:'1 L'},bg2);
+  if(pour>0.05){S('path',{d:'M560 300 L740 300',stroke:'#1D4FA8','stroke-width':5,opacity:pour},sv);S('path',{d:'M760 300 l-20 -12 l0 24 Z',fill:'#1D4FA8',opacity:pour},sv);}
+  if(pour>=1)label(640,600-470+20,'1,000 milliliters fill 1 liter',ramp(t,K.fill2+1.6,0.4),GREEN,30);
+};
 SC['3.11.04']=function(t,K){
   var HD='CHAPTER 11 · THE METER OF PARIS';
   if(t<K.jean-0.3){head('','');owl(1000,380,150,t);book(t,0.1,'sb-melun-plate.jpg','CHAPTER 11 · LESSON 4',['Subtracting from','Kilometers'],'France, 1798');return;}
@@ -420,6 +451,7 @@ SC['3.11.01']=function(t,K){
   if(t>=K.two-0.3)label(640,540,'say it two ways',ramp(t,K.two-0.3,0.4),GREEN,30);
 };
 var CUES={
+ '3.11.05':function(){return{france:wt(/^France$/),measure:wt(/^measure$/),called:wt(/^called$/),shop:wt(/^Shopkeepers$/),pour:wt(/^pour$/),inpic:wt(/^In$/),funnel:wt(/^funnel$/),fill:wt(/^fill$/,0),today:wt(/^Today$/),beaker:wt(/^beaker$/),fill2:wt(/^fill$/,1)};},
  '3.11.04':function(){return{jean:wt(/^Jean-Baptiste$/),land:wt(/^land$/),meter:wt(/^meter$/),near:wt(/^Near$/),twelve:wt(/^twelve$/),lay:wt(/^lay$/),again:wt(/^again$/,0),look:wt(/^Look$/),today:wt(/^Today$/),km:wt(/^subtract$/)};},
  '3.11.03':function(){return{on:wt(/^On$/),arms:wt(/^arms$/,0),each:wt(/^Each$/),signal:wt(/^signal$/,0),far:wt(/^Far$/),tele:wt(/^telescope$/),copies:wt(/^copies$/),look:wt(/^Look$/),picture:wt(/^picture$/),today:wt(/^Today$/),km:wt(/^kilometers$/)};},
  '3.11.02':function(){return{now:wt(/^Now$/),shop:wt(/^shop$/,0),rolls:wt(/^rolls$/),whole:wt(/^whole$/,0),but:wt(/^But$/),cm:wt(/^centimeters$/),look:wt(/^Look$/),ribbons:wt(/^ribbons$/),cloth:wt(/^cloth$/),today:wt(/^Today$/),cut:wt(/^cut$/),left:wt(/^left$/)};},

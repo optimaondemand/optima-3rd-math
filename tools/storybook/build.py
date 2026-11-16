@@ -63,6 +63,9 @@ TOOLS = {
  'bond-km': ('bond', {"parts": 2, "w": "4,300 m", "p": ["4,000 m", "?"]}, 'Number Bond', 'Split 4,300 m into the thousands and the rest. Every 1,000 m is 1 km.'),
  'bond-km2': ('bond', {"parts": 2, "w": "8,600 m", "p": ["8,000 m", "?"]}, 'Number Bond', 'Split 8,600 m into the thousands and the rest. The thousands are the kilometers.'),
  'bond-1000': ('bond', {"parts": 2, "w": "1,000 m", "p": ["650 m", "?"]}, 'Number Bond', 'One kilometer is 1,000 m. Split it into 650 m and the rest. Count up to 1,000.'),
+ 'beaker-50': ('beaker', {"u": "ml", "mx": 1000, "tk": 50, "a0": 0}, 'Beakers', 'Fill a beaker that holds 1,000 mL. Its marks go up by 50: count 50, 100, 150 as the water rises.'),
+ 'beaker-2l': ('beaker', {"u": "ml", "mx": 2000, "tk": 50, "a0": 0}, 'Beakers', 'Fill a beaker past 1,000 mL. Every 1,000 mL is 1 liter, and the rest are milliliters.'),
+ 'bond-ml': ('bond', {"parts": 2, "w": "8,300 mL", "p": ["8,000 mL", "?"]}, 'Number Bond', 'Split 8,300 mL into the thousands and the rest. Every 1,000 mL is 1 liter.'),
  'fbars-9-10': ('fbars', {"d": [9, 10], "lab": 1}, 'Fraction Tiles', 'Try a bar of ninths and a bar of tenths. Shade 1 ninth and 2 tenths. Which reaches farther?'),
 }
 def enc(o): return base64.urlsafe_b64encode(json.dumps(o, separators=(',', ':')).encode()).decode().rstrip('=')
@@ -211,6 +214,18 @@ L = {
      {"t": "subtract", "d": "To take away. 3 km − 450 m means take 450 m away from 3 km."},
      {"t": "compound units", "d": "Two units used together to write one distance, like 2 km 550 m."},
      {"t": "ruler", "alt": ["rulers"], "d": "A straight strip marked with equal units, used to measure length."}]),
+  '3.11.05': dict(page='math-lesson-3-11-05-liters-and-milliliters.html', title='Liters and Milliliters', video='g3math-11-05-learn', music='handel-water-music-air.mp3',
+   glossary=[
+     {"t": "liter", "alt": ["liters"], "d": "A unit for how much liquid there is. 1 liter is 1,000 milliliters. We write L.", "key": True},
+     {"t": "milliliter", "alt": ["milliliters"], "d": "A tiny unit for liquid. 1,000 milliliters fill 1 liter. We write mL.", "key": True},
+     {"t": "capacity", "d": "How much a container can hold when it is full.", "key": True},
+     {"t": "beaker", "alt": ["beakers"], "d": "A clear cup with marks on the side, used to measure liquid.", "key": True},
+     {"t": "thermometer", "d": "A tool that shows how hot or cold something is.", "key": True},
+     {"t": "degree", "alt": ["degrees"], "d": "The unit on a thermometer. We write °. 70 °F means 70 degrees Fahrenheit.", "key": True},
+     {"t": "temperature", "d": "How hot or cold something is."},
+     {"t": "Fahrenheit", "d": "One scale on a thermometer, written °F. Water freezes at 32 °F."},
+     {"t": "Celsius", "d": "Another scale on a thermometer, written °C. Water freezes at 0 °C."},
+     {"t": "pint", "d": "An old measure for liquid. The old Paris pint was a little smaller than a liter."}]),
   '3.10.07': dict(page='math-lesson-3-10-07-adding-subtracting-fractions-part-2.html', title='Adding and Subtracting Fractions, Part 2', video='g3math-10-07-learn',
    glossary=[
      {"t": "clue word", "alt": ["clue words"], "d": "A word in a story problem that tells you what to do, like more (add) or left (take away).", "key": True},

@@ -1,5 +1,4 @@
 ﻿repo,voice,text,chars,file,kind,script_source,md5
-optima-3rd-math,opti,,0,Claude outputs/_x1104/audio/storybook/haydn-104-andante.mp3,speech,,0c37918eabda942a2bf1008d3adfde48
 optima-3rd-math,opti,,0,audio/storybook/bach-brandenburg-3-1.mp3,not-speech,,e36a09fd6ff15d8e211c701604778746
 optima-3rd-math,opti,,0,audio/storybook/bach-bwv147-jesus-bleibet.mp3,not-speech,,07d42678b7f20acdbc57ce545e4f12a8
 optima-3rd-math,opti,,0,audio/storybook/bach-cello-suite-1-prelude.mp3,not-speech,,ee750db4f496c2d6de2f7c3351398597
@@ -171,6 +170,19 @@ optima-3rd-math,claire,"Here is a road six kilometers long. We need to take away
 optima-3rd-math,opti,Hoo! Claire is going to show us how to subtract meters from kilometers. Watch a kilometer break open.,101,audio/storybook/g3m-3-11-04-vid-open.mp3,speech,tools/clip-log-extra.json,9afc793267346e42af1b1d6e9d24e131
 optima-3rd-math,opti,"Hoo! It's France in 1798. Jean-Baptiste Delambre and his team are measuring the land to find out how long a meter should be. Near the town of Melun, they measure a straight road almost twelve kilometers long. They lay metal rulers end to end, again and again. Look at an old picture of a team doing the same kind of job. Today you'll subtract meters from kilometers.",366,audio/storybook/g3m-3-11-04-warm-1.mp3,speech,tools/clip-log-extra.json,8775a943bdd88aa44744760235e22e15
 optima-3rd-math,opti,Break a kilometer. ... Survey. ... Baseline.,44,audio/storybook/g3m-3-11-04-words.mp3,speech,tools/clip-log-extra.json,0e199531986d7b8acd9ad826c06fd6f7
+optima-3rd-math,opti,"Here's music about water. George Frideric Handel wrote the Water Music for a king's boat ride on a river in London, in 1717. This part is the Air. It's calm and flowing, like water poured slowly. It's a very old recording, so you'll hear some crackle. Press play, and stop whenever you like.",291,audio/storybook/g3m-3-11-05-end-1.mp3,speech,tools/storybook/g3m-3-11-05-words-timing.json,98135c574ad43732777e792ecca03e81
+optima-3rd-math,opti,"Welcome to the Lesson. First, Claire shows how to read a beaker and fill a liter. Next, we fix some mix-ups. Then you work on your own.",135,audio/storybook/g3m-3-11-05-learn-1.mp3,speech,tools/storybook/g3m-3-11-05-words-timing.json,84059a77e6359550e665ae7cc4b569bc
+optima-3rd-math,opti,"Your turn to work on your own. Read the beaker carefully. Then read a thermometer. It has marks too, and they tell how hot or cold it is.",137,audio/storybook/g3m-3-11-05-own-1.mp3,speech,tools/storybook/g3m-3-11-05-words-timing.json,49dd157ab4ec5132f31210a6a1c29554
+optima-3rd-math,opti,"Each job has a mix-up kids often make. Here's a clue. Before you count, find what each little mark is worth. And one liter is one thousand milliliters, just like a kilometer is one thousand meters.",197,audio/storybook/g3m-3-11-05-practice-1.mp3,speech,tools/storybook/g3m-3-11-05-words-timing.json,890e0c18e49d83c797d51cb81d0e0809
+optima-3rd-math,opti,Last stop! Pour two beakers into one liter bottle. The bottle fills up before the second beaker is empty. Then say how much there is in liters and milliliters.,159,audio/storybook/g3m-3-11-05-swyk-1.mp3,speech,tools/storybook/g3m-3-11-05-words-timing.json,6b052debe832bc79ef0287498a1ba5ec
+optima-3rd-math,opti,A milk seller has a big jug of milk. She pours it into a beaker to measure it. Read the marks to find how much milk there is. Then pour it into liter bottles.,158,audio/storybook/g3m-3-11-05-think-1.mp3,speech,tools/storybook/g3m-3-11-05-words-timing.json,022b042812f6112ed7d5ed62a3210777
+optima-3rd-math,opti,"You did it! The beaker showed one thousand eight hundred fifty milliliters. One thousand filled a liter bottle, and eight hundred fifty were left. So the seller has one liter eight hundred fifty milliliters of milk.",215,audio/storybook/g3m-3-11-05-think-done.mp3,speech,tools/storybook/g3m-3-11-05-words-timing.json,d374ac6de1c8bec6818ddbe65e65749e
+optima-3rd-math,opti,Find what each mark is worth. One thousand milliliters fill one liter. Now it's your turn!,90,audio/storybook/g3m-3-11-05-vid-close.mp3,speech,tools/storybook/g3m-3-11-05-words-timing.json,06633487bd65c1284325567308ea6c81
+optima-3rd-math,opti,"Here is a beaker. It holds one thousand milliliters. Each small mark is fifty milliliters, so count by fifties. Fifty, one hundred, one hundred fifty, two hundred. The water is at six hundred milliliters. Pour in more, up to the top. Now there are one thousand milliliters. Pour it into this bottle. It's full. One thousand milliliters fill one liter. Now the beaker has one thousand three hundred fifty milliliters. Pour it into an empty bottle. The bottle fills up, and three hundred fifty milliliters are left. So one thousand three hundred fifty milliliters is one liter three hundred fifty milliliters. To go back, one liter is one thousand milliliters, plus three hundred fifty. Watch out! Six liters forty milliliters is six thousand forty milliliters. Not six hundred forty, and not six thousand four hundred. Each liter is one thousand milliliters.",857,audio/storybook/g3m-3-11-05-vid-math.mp3,speech,tools/storybook/g3m-3-11-05-words-timing.json,af3f4a9587c39e5a71470742bd5e8293
+optima-3rd-math,opti,Hoo! Claire is going to show us how to read a beaker and fill a liter. Watch the water rise.,92,audio/storybook/g3m-3-11-05-vid-open.mp3,speech,tools/storybook/g3m-3-11-05-words-timing.json,696ee4a9897be889785bf3054cef3e85
+optima-3rd-math,opti,"Hoo! It's Paris in 1795. France has a brand-new way to measure milk, water and juice. It's called the liter. Shopkeepers put away their old pint pots and pour with new liter measures instead. In this old picture, a man pours through a funnel to fill a bottle. Today you'll read the marks on a beaker and see how milliliters fill a liter.",337,audio/storybook/g3m-3-11-05-warm-1.mp3,speech,tools/storybook/g3m-3-11-05-words-timing.json,6bb7c9485dad3eeac182c4415fd5d464
+optima-3rd-math,opti,Liter. ... Milliliter. ... Capacity. ... Beaker. ... Thermometer. ... Degree.,77,audio/storybook/g3m-3-11-05-words.mp3,speech,tools/storybook/g3m-3-11-05-words-timing.json,6219ffd85730b0e8a3b3f84ba1a4e955
+optima-3rd-math,opti,,0,audio/storybook/handel-water-music-air.mp3,speech,,860d7b3c2cfa7655e73379b479aff2f2
 optima-3rd-math,opti,,0,audio/storybook/haydn-101-clock-andante.mp3,speech,,c140d8a123721e4066c7bb08f660a3ab
 optima-3rd-math,opti,,0,audio/storybook/haydn-104-andante.mp3,speech,,0c37918eabda942a2bf1008d3adfde48
 optima-3rd-math,opti,,0,audio/storybook/haydn-94-surprise-andante.mp3,speech,,5ca6e3c59df01162c7d0986c229e5d12
@@ -179,10 +191,12 @@ optima-3rd-math,opti,,0,audio/storybook/words/g3m-3-10-01-words.mp3,speech,,da41
 optima-3rd-math,opti,Multiply. ... Variation.,24,audio/storybook/words/g3m-3-10-02-words.mp3,speech,tools/storybook/g3m-3-10-02-words-timing.json,321716cdf11514c33463f36dae0b6f90
 optima-3rd-math,opti,Altogether.,11,audio/storybook/words/g3m-word-altogether.mp3,speech,tools/clip-log-extra.json,46ed176e52b2bdf8094580a7324c246d
 optima-3rd-math,opti,Baseline.,9,audio/storybook/words/g3m-word-baseline.mp3,speech,tools/clip-log-extra.json,463e90b7349f8ea7db2782b659529cdd
+optima-3rd-math,opti,beaker,6,audio/storybook/words/g3m-word-beaker.mp3,speech,file name,71c10ead6c9b61c6b221e292513bb8a2
 optima-3rd-math,opti,benchmark,9,audio/storybook/words/g3m-word-benchmark.mp3,speech,file name,8ad92b4c5bf252f5fe742702b5dd91e8
 optima-3rd-math,opti,Break a kilometer.,18,audio/storybook/words/g3m-word-break-a-kilometer.mp3,speech,tools/clip-log-extra.json,ce5f62379e38716007d6b2973c4bc8d6
 optima-3rd-math,opti,Break a meter.,14,audio/storybook/words/g3m-word-break-a-meter.mp3,speech,tools/clip-log-extra.json,e922c983629b353a9b20169d46cf2f65
 optima-3rd-math,opti,cantata,7,audio/storybook/words/g3m-word-cantata.mp3,speech,file name,7a2b771654f4e3ea019ef4479696e159
+optima-3rd-math,opti,capacity,8,audio/storybook/words/g3m-word-capacity.mp3,speech,file name,fedeaeaca1fde4758e628302ee468abe
 optima-3rd-math,opti,centimeter,10,audio/storybook/words/g3m-word-centimeter.mp3,speech,file name,3ba15c71ef388fbb13257c574b52e189
 optima-3rd-math,opti,Clue word.,10,audio/storybook/words/g3m-word-clue-word.mp3,speech,tools/clip-log-extra.json,58750decee4146a1dde7602b65b8b529
 optima-3rd-math,opti,common denominator,18,audio/storybook/words/g3m-word-common-denominator.mp3,speech,file name,dc17314f97d60b6ccde41edd4200206c
@@ -190,6 +204,7 @@ optima-3rd-math,opti,common numerator,16,audio/storybook/words/g3m-word-common-n
 optima-3rd-math,opti,compare,7,audio/storybook/words/g3m-word-compare.mp3,speech,file name,02fb9044eb80e952b380830056e3ef77
 optima-3rd-math,opti,Compound units.,15,audio/storybook/words/g3m-word-compound-units.mp3,speech,tools/clip-log-extra.json,f17ee14bc273837b4c23eec5d1729de0
 optima-3rd-math,opti,copyist,7,audio/storybook/words/g3m-word-copyist.mp3,speech,file name,88b8478ea1f5305039494924488cd53d
+optima-3rd-math,opti,degree,6,audio/storybook/words/g3m-word-degree.mp3,speech,file name,0cdea3e7dffa9ff5301091bfeac30d6d
 optima-3rd-math,opti,denominator,11,audio/storybook/words/g3m-word-denominator.mp3,speech,file name,833dd9a0f451346b48827ea858a6b3e1
 optima-3rd-math,opti,difference,10,audio/storybook/words/g3m-word-difference.mp3,speech,file name,ce3c9d965dbccfc5c75928b32c2239e0
 optima-3rd-math,opti,Direct distance.,16,audio/storybook/words/g3m-word-direct-distance.mp3,speech,tools/clip-log-extra.json,a285c9253f5fbfca1cd756a2b57f9b3d
@@ -204,9 +219,11 @@ optima-3rd-math,opti,How much more.,14,audio/storybook/words/g3m-word-how-much-m
 optima-3rd-math,opti,Kilometer.,10,audio/storybook/words/g3m-word-kilometer.mp3,speech,tools/clip-log-extra.json,8bd6a26ed0a19f7e74278701234db3f1
 optima-3rd-math,opti,length,6,audio/storybook/words/g3m-word-length.mp3,speech,file name,3f50eacef72aff66a6ad5cc8b1f9a21f
 optima-3rd-math,opti,less than,9,audio/storybook/words/g3m-word-less-than.mp3,speech,file name,5352bd8e05b5ddee6e1c07606bef292d
+optima-3rd-math,opti,liter,5,audio/storybook/words/g3m-word-liter.mp3,speech,file name,12889cf7b207bfb76dbf3a3d679e41f3
 optima-3rd-math,opti,Measure.,8,audio/storybook/words/g3m-word-measure.mp3,speech,tools/clip-log-extra.json,f436c0f3c2efdff1e4a6b39dbd996ff0
 optima-3rd-math,opti,meter stick,11,audio/storybook/words/g3m-word-meter-stick.mp3,speech,file name,b8b40ab7e7c7cb59d5aae0e03ab48015
 optima-3rd-math,opti,meter,5,audio/storybook/words/g3m-word-meter.mp3,speech,file name,88ad936f874f7113f36f194f92c298a4
+optima-3rd-math,opti,milliliter,10,audio/storybook/words/g3m-word-milliliter.mp3,speech,file name,62b7a2ef7dff6f948ce17c70c509428e
 optima-3rd-math,opti,multiply,8,audio/storybook/words/g3m-word-multiply.mp3,speech,file name,3766d0d9b66e2ae6aaff471c0776ef6f
 optima-3rd-math,opti,note,4,audio/storybook/words/g3m-word-note.mp3,speech,file name,c53cebb3b2fa4bde8607add411557d68
 optima-3rd-math,opti,number line,11,audio/storybook/words/g3m-word-number-line.mp3,speech,file name,0d4a38cf844f8d28f2cc591594ef007b
@@ -222,6 +239,7 @@ optima-3rd-math,opti,string,6,audio/storybook/words/g3m-word-string.mp3,speech,f
 optima-3rd-math,opti,Subtract.,9,audio/storybook/words/g3m-word-subtract.mp3,speech,tools/clip-log-extra.json,12e146446c3caceba217fc3437a07ad1
 optima-3rd-math,opti,sum,3,audio/storybook/words/g3m-word-sum.mp3,speech,file name,70899948c7430cd2cc188f38e42b47bb
 optima-3rd-math,opti,Survey.,7,audio/storybook/words/g3m-word-survey.mp3,speech,tools/clip-log-extra.json,b1246689ed905fa209b5a667ae2ca3d7
+optima-3rd-math,opti,thermometer,11,audio/storybook/words/g3m-word-thermometer.mp3,speech,file name,bec443af2d9803fbe2956cec6e874508
 optima-3rd-math,opti,tick mark,9,audio/storybook/words/g3m-word-tick-mark.mp3,speech,file name,edb6c3a9721cebca97941f009b053835
 optima-3rd-math,opti,Travel distance.,16,audio/storybook/words/g3m-word-travel-distance.mp3,speech,tools/clip-log-extra.json,4d6965b6e48d9fc228f8b2032e20d09d
 optima-3rd-math,opti,unit fraction,13,audio/storybook/words/g3m-word-unit-fraction.mp3,speech,file name,cb3961535bae5691a6e3d528b326a8ec
