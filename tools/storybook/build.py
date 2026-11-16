@@ -62,6 +62,7 @@ TOOLS = {
  'bond-100': ('bond', {"parts": 2, "w": "100 cm", "p": ["23 cm", "?"]}, 'Number Bond', 'One meter is 100 cm. Split it into 23 cm and the rest. Count up to 100.'),
  'bond-km': ('bond', {"parts": 2, "w": "4,300 m", "p": ["4,000 m", "?"]}, 'Number Bond', 'Split 4,300 m into the thousands and the rest. Every 1,000 m is 1 km.'),
  'bond-km2': ('bond', {"parts": 2, "w": "8,600 m", "p": ["8,000 m", "?"]}, 'Number Bond', 'Split 8,600 m into the thousands and the rest. The thousands are the kilometers.'),
+ 'bond-1000': ('bond', {"parts": 2, "w": "1,000 m", "p": ["650 m", "?"]}, 'Number Bond', 'One kilometer is 1,000 m. Split it into 650 m and the rest. Count up to 1,000.'),
  'fbars-9-10': ('fbars', {"d": [9, 10], "lab": 1}, 'Fraction Tiles', 'Try a bar of ninths and a bar of tenths. Shade 1 ninth and 2 tenths. Which reaches farther?'),
 }
 def enc(o): return base64.urlsafe_b64encode(json.dumps(o, separators=(',', ':')).encode()).decode().rstrip('=')
@@ -201,6 +202,15 @@ L = {
      {"t": "compound units", "d": "Two units used together to write one distance, like 3 km 400 m."},
      {"t": "telegraph", "d": "A way to send messages far away. Chappe's telegraph used towers with moving arms."},
      {"t": "telescope", "d": "A tube with lenses that makes faraway things look closer."}]),
+  '3.11.04': dict(page='math-lesson-3-11-04-subtracting-from-kilometers.html', title='Subtracting from Kilometers', video='g3math-11-04-learn', music='haydn-104-andante.mp3',
+   glossary=[
+     {"t": "break a kilometer", "d": "Change one whole kilometer into 1,000 meters so you can take meters away.", "key": True},
+     {"t": "survey", "d": "A big job of measuring the land: how far, how high and which way.", "key": True},
+     {"t": "baseline", "d": "One straight line measured very carefully, step by step, at the start of a survey.", "key": True},
+     {"t": "kilometer", "alt": ["kilometers"], "d": "A unit for long distances. 1 kilometer is 1,000 meters. We write km."},
+     {"t": "subtract", "d": "To take away. 3 km − 450 m means take 450 m away from 3 km."},
+     {"t": "compound units", "d": "Two units used together to write one distance, like 2 km 550 m."},
+     {"t": "ruler", "alt": ["rulers"], "d": "A straight strip marked with equal units, used to measure length."}]),
   '3.10.07': dict(page='math-lesson-3-10-07-adding-subtracting-fractions-part-2.html', title='Adding and Subtracting Fractions, Part 2', video='g3math-10-07-learn',
    glossary=[
      {"t": "clue word", "alt": ["clue words"], "d": "A word in a story problem that tells you what to do, like more (add) or left (take away).", "key": True},

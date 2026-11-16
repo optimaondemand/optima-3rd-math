@@ -301,6 +301,31 @@ SC['3.10.07']=function(t,K){
   if(t>=K.take-0.3)label(820,440,'step 2: take away',ramp(t,K.take-0.3,0.4),'#B23A2E',28);
   if(t>=K.step-0.3)label(640,530,'one step at a time',ramp(t,K.step-0.3,0.4),GREEN,28);
 };
+SC['3.11.04']=function(t,K){
+  var HD='CHAPTER 11 · THE METER OF PARIS';
+  if(t<K.jean-0.3){head('','');owl(1000,380,150,t);book(t,0.1,'sb-melun-plate.jpg','CHAPTER 11 · LESSON 4',['Subtracting from','Kilometers'],'France, 1798');return;}
+  if(t<K.near-0.3){head(HD,'Measuring the land');owl(1060,440,120,t);var o=fade(t,K.jean-0.3,K.near-0.3);
+    var x=640,y0=150,y1=560,p=ramp(t,K.land-0.4,1.6);
+    S('line',{x1:x,y1:y0,x2:x,y2:y0+(y1-y0)*p,stroke:GOLD,'stroke-width':5,'stroke-dasharray':'14 10',opacity:o});
+    [['DUNKIRK',y0,0],['PARIS',y0+90,0.2],['BARCELONA',y1,1]].forEach(function(c){if(p>=c[2]-0.02){S('circle',{cx:x,cy:c[1],r:12,fill:NAVY,opacity:o});S('text',{x:x+26,y:c[1]+9,'font-size':26,'font-weight':900,fill:NAVY,opacity:o,text:c[0]});}});
+    if(t>=K.meter-0.3)label(330,360,'how long is a meter?',o*ramp(t,K.meter-0.3,0.4),'#6B4A12',28);return;}
+  if(t<K.look-0.3){head(HD,t<K.lay-0.3?'A straight road near Melun':'Rulers, end to end');owl(null);var o2=fade(t,K.near-0.3,K.look-0.3);
+    S('path',{d:'M0 330 Q320 300 640 320 T1280 310 L1280 720 L0 720 Z',fill:'#D9CDB4',opacity:o2});
+    S('rect',{x:80,y:400,width:1120,height:70,rx:8,fill:'#C9B48C',stroke:'#8A6A3A','stroke-width':3,opacity:o2});
+    if(t>=K.twelve-0.3)label(640,360,'almost 12 kilometers long',o2*ramp(t,K.twelve-0.3,0.4),'#6B4A12',28);
+    if(t>=K.lay-0.3){var n=Math.min(22,Math.floor((t-K.lay+0.3)*3.2));for(var i=0;i<n;i++){var rx=90+i*50;S('rect',{x:rx,y:424,width:46,height:20,rx:3,fill:i%2?'#B8C3D6':'#D7DEEA',stroke:'#5B6478','stroke-width':2,opacity:o2});}
+      label(640,560,'end to end, again and again',o2*ramp(t,K.again-0.3,0.4),NAVY,26);}
+    return;}
+  if(t<K.today-0.3){head(HD,'An old picture, 1740');owl(null);var o3=fade(t,K.look-0.3,K.today-0.3);
+    pic('sb-melun-wide.jpg',190,110,900,460,1.05+0.05*(t-K.look),.62,.75,o3);return;}
+  head(HD,'Kilometers and meters');owl(null);
+  var q=ramp(t,K.today-0.4,0.5),x0=190,y=230,u=210,g=S('g',{opacity:q}),op=t>=K.km-0.2;
+  for(var j=0;j<4;j++){var bx=x0+j*(u+20),open=op&&j===0;S('rect',{x:bx,y:y,width:u,height:70,rx:6,fill:open?'#EAF3FF':'#F6DE94',stroke:open?'#8FB2DA':'#B8902A','stroke-width':3},g);S('text',{x:bx+u/2,y:y+45,'text-anchor':'middle','font-size':28,'font-weight':900,fill:open?'#1D4FA8':'#5A4300',text:open?'open':'1 km'},g);}
+  if(op){var p2=ramp(t,K.km-0.2,0.8),ys=420,W=900;S('polygon',{points:x0+','+(y+70)+' '+(x0+u)+','+(y+70)+' '+(x0+W)+','+ys+' '+x0+','+ys,fill:'#8FB2DA',opacity:.25*p2});
+    S('rect',{x:x0,y:ys,width:W,height:60,rx:4,fill:'#EAF3FF',stroke:'#8FB2DA','stroke-width':3,opacity:p2});
+    for(var m=0;m<=1000;m+=50){var xx=x0+m*W/1000,bg=m%100===0;S('line',{x1:xx,y1:ys,x2:xx,y2:ys+(bg?30:16),stroke:NAVY,'stroke-width':bg?2.4:1.2,opacity:p2});if(m%200===0)S('text',{x:xx,y:ys+54,'text-anchor':'middle','font-size':18,'font-weight':900,fill:NAVY,opacity:p2,text:m===1000?'1,000':String(m)});}
+    label(640,560,'1 kilometer = 1,000 meters',ramp(t,K.km+0.3,0.4),GREEN,30);}
+};
 SC['3.11.03']=function(t,K){
   var HD='CHAPTER 11 · THE METER OF PARIS';
   function tower(x,y,s,ang,op){var g=S('g',{opacity:op});S('rect',{x:x-26*s,y:y,width:52*s,height:110*s,fill:'#CDBF9F',stroke:'#7A6A4F','stroke-width':3},g);S('polygon',{points:(x-34*s)+','+y+' '+(x+34*s)+','+y+' '+x+','+(y-26*s),fill:'#8A6A3A'},g);
@@ -395,6 +420,7 @@ SC['3.11.01']=function(t,K){
   if(t>=K.two-0.3)label(640,540,'say it two ways',ramp(t,K.two-0.3,0.4),GREEN,30);
 };
 var CUES={
+ '3.11.04':function(){return{jean:wt(/^Jean-Baptiste$/),land:wt(/^land$/),meter:wt(/^meter$/),near:wt(/^Near$/),twelve:wt(/^twelve$/),lay:wt(/^lay$/),again:wt(/^again$/,0),look:wt(/^Look$/),today:wt(/^Today$/),km:wt(/^subtract$/)};},
  '3.11.03':function(){return{on:wt(/^On$/),arms:wt(/^arms$/,0),each:wt(/^Each$/),signal:wt(/^signal$/,0),far:wt(/^Far$/),tele:wt(/^telescope$/),copies:wt(/^copies$/),look:wt(/^Look$/),picture:wt(/^picture$/),today:wt(/^Today$/),km:wt(/^kilometers$/)};},
  '3.11.02':function(){return{now:wt(/^Now$/),shop:wt(/^shop$/,0),rolls:wt(/^rolls$/),whole:wt(/^whole$/,0),but:wt(/^But$/),cm:wt(/^centimeters$/),look:wt(/^Look$/),ribbons:wt(/^ribbons$/),cloth:wt(/^cloth$/),today:wt(/^Today$/),cut:wt(/^cut$/),left:wt(/^left$/)};},
  '3.11.01':function(){return{workers:wt(/^Workers$/),marble:wt(/^marble$/),meter:wt(/^meter$/,0),shop:wt(/^Shopkeepers$/),check:wt(/^check$/),look:wt(/^Look$/),cloth:wt(/^cloth$/),stick:wt(/^stick$/),today:wt(/^Today$/),meters:wt(/^meters$/),cm:wt(/^centimeters$/),two:wt(/^two$/)};},

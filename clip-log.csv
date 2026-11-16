@@ -1,4 +1,5 @@
 ﻿repo,voice,text,chars,file,kind,script_source,md5
+optima-3rd-math,opti,,0,Claude outputs/_x1104/audio/storybook/haydn-104-andante.mp3,speech,,0c37918eabda942a2bf1008d3adfde48
 optima-3rd-math,opti,,0,audio/storybook/bach-brandenburg-3-1.mp3,not-speech,,e36a09fd6ff15d8e211c701604778746
 optima-3rd-math,opti,,0,audio/storybook/bach-bwv147-jesus-bleibet.mp3,not-speech,,07d42678b7f20acdbc57ce545e4f12a8
 optima-3rd-math,opti,,0,audio/storybook/bach-cello-suite-1-prelude.mp3,not-speech,,ee750db4f496c2d6de2f7c3351398597
@@ -158,38 +159,53 @@ optima-3rd-math,claire,"Here is a road made of pieces. Each piece is one hundred
 optima-3rd-math,opti,Hoo! Claire is going to show us how meters add up to kilometers. Watch the road grow.,85,audio/storybook/g3m-3-11-03-vid-open.mp3,speech,tools/clip-log-extra.json,76f84dc71e45853b60d6f8722d904230
 optima-3rd-math,opti,"Hoo! It's Paris in the summer of 1793. On the highest hill in the city, Claude Chappe and his brothers built a wooden tower with arms that move. Each way the arms point stands for a signal. Far away, another tower watches through a telescope and copies the signal. Look at the old picture of their test. Today you'll measure long distances in kilometers and meters.",365,audio/storybook/g3m-3-11-03-warm-1.mp3,speech,tools/clip-log-extra.json,2f540690cb120799543830649d0e4f78
 optima-3rd-math,opti,Kilometer. ... Distance. ... Travel distance. ... Direct distance.,66,audio/storybook/g3m-3-11-03-words.mp3,speech,tools/clip-log-extra.json,ffb417a242385791c0796850e250d0d7
+optima-3rd-math,opti,"Here's music from the same years as the survey. It's the slow part of the London Symphony by Joseph Haydn, written in 1795. Listen to the calm, steady tune, like a team laying its rulers down a long, straight road. Press play, and stop whenever you like.",254,audio/storybook/g3m-3-11-04-end-1.mp3,speech,tools/clip-log-extra.json,79bd9c9073c6322e1bfe6d885dc717f3
+optima-3rd-math,opti,"Welcome to the Lesson. First, Claire shows how to break a kilometer. Next, we fix some mix-ups. Then you work on your own.",122,audio/storybook/g3m-3-11-04-learn-1.mp3,speech,tools/clip-log-extra.json,b0e72eb90428889e623b8a54548a0422
+optima-3rd-math,opti,Your turn to work on your own. Take away the whole kilometers first. Then break one kilometer for the meters.,109,audio/storybook/g3m-3-11-04-own-1.mp3,speech,tools/clip-log-extra.json,e62d0098ba3ebe45c3c0d4ad48054f76
+optima-3rd-math,opti,"Each job has a mix-up kids often make. Here's a clue. A kilometer breaks into one thousand meters, not one hundred. And once you break it, that kilometer is gone.",162,audio/storybook/g3m-3-11-04-practice-1.mp3,speech,tools/clip-log-extra.json,f254686d33c2ba14f2c112147ab5af45
+optima-3rd-math,opti,"Last stop! A road gets measured in two parts. Cut off each part, one after the other, and say how much road is left each time.",126,audio/storybook/g3m-3-11-04-swyk-1.mp3,speech,tools/clip-log-extra.json,5970407b09fda4da84c9b7d6c0a60c5f
+optima-3rd-math,opti,"Today the team has three kilometers of road to measure. By lunch, they have measured four hundred fifty meters. How much road is left? Break a kilometer to find out.",165,audio/storybook/g3m-3-11-04-think-1.mp3,speech,tools/clip-log-extra.json,7affbb3a9dacbf26627f205fa8fe1cfb
+optima-3rd-math,opti,"You did it! You broke one kilometer into one thousand meters and cut off four hundred fifty. Five hundred fifty meters were left, plus two whole kilometers. So two kilometers five hundred fifty meters of road are left.",218,audio/storybook/g3m-3-11-04-think-done.mp3,speech,tools/clip-log-extra.json,05a80e09a57129d1c1a629bed9ad7ca5
+optima-3rd-math,opti,"Break a kilometer into one thousand meters, then take away. Now it's your turn!",79,audio/storybook/g3m-3-11-04-vid-close.mp3,speech,tools/clip-log-extra.json,9d2aa5d0c48c0e09229148f45f4b17c9
+optima-3rd-math,claire,"Here is a road six kilometers long. We need to take away one kilometer two hundred forty meters. First, take away the whole kilometer. Now five kilometers are left. Next, we need two hundred forty meters, but every piece here is a whole kilometer. So we break one kilometer. One kilometer is one thousand meters. Now we have four kilometers and one thousand meters. Cut off two hundred forty meters. One thousand minus two hundred forty is seven hundred sixty. So four kilometers seven hundred sixty meters are left. You can also use numbers. Six kilometers is six thousand meters. One kilometer two hundred forty meters is one thousand two hundred forty meters. Six thousand minus one thousand two hundred forty is four thousand seven hundred sixty meters. That's four kilometers seven hundred sixty meters, the same answer. Watch out! A broken kilometer is one thousand meters, not one hundred. And once you break it, that kilometer is gone. Count what's left in whole kilometers.",982,audio/storybook/g3m-3-11-04-vid-math.mp3,speech,tools/clip-log-extra.json,3cdb7c0d059a39975e2da825acaca3ac
+optima-3rd-math,opti,Hoo! Claire is going to show us how to subtract meters from kilometers. Watch a kilometer break open.,101,audio/storybook/g3m-3-11-04-vid-open.mp3,speech,tools/clip-log-extra.json,9afc793267346e42af1b1d6e9d24e131
+optima-3rd-math,opti,"Hoo! It's France in 1798. Jean-Baptiste Delambre and his team are measuring the land to find out how long a meter should be. Near the town of Melun, they measure a straight road almost twelve kilometers long. They lay metal rulers end to end, again and again. Look at an old picture of a team doing the same kind of job. Today you'll subtract meters from kilometers.",366,audio/storybook/g3m-3-11-04-warm-1.mp3,speech,tools/clip-log-extra.json,8775a943bdd88aa44744760235e22e15
+optima-3rd-math,opti,Break a kilometer. ... Survey. ... Baseline.,44,audio/storybook/g3m-3-11-04-words.mp3,speech,tools/clip-log-extra.json,0e199531986d7b8acd9ad826c06fd6f7
 optima-3rd-math,opti,,0,audio/storybook/haydn-101-clock-andante.mp3,speech,,c140d8a123721e4066c7bb08f660a3ab
+optima-3rd-math,opti,,0,audio/storybook/haydn-104-andante.mp3,speech,,0c37918eabda942a2bf1008d3adfde48
 optima-3rd-math,opti,,0,audio/storybook/haydn-94-surprise-andante.mp3,speech,,5ca6e3c59df01162c7d0986c229e5d12
 optima-3rd-math,opti,,0,audio/storybook/mozart-34-andante.mp3,speech,,8fbfa116516668ee428b9905b6e6242e
 optima-3rd-math,opti,,0,audio/storybook/words/g3m-3-10-01-words.mp3,speech,,da41079974b253bf6ae8a6398e7536cf
 optima-3rd-math,opti,Multiply. ... Variation.,24,audio/storybook/words/g3m-3-10-02-words.mp3,speech,tools/storybook/g3m-3-10-02-words-timing.json,321716cdf11514c33463f36dae0b6f90
 optima-3rd-math,opti,Altogether.,11,audio/storybook/words/g3m-word-altogether.mp3,speech,tools/clip-log-extra.json,46ed176e52b2bdf8094580a7324c246d
+optima-3rd-math,opti,Baseline.,9,audio/storybook/words/g3m-word-baseline.mp3,speech,tools/clip-log-extra.json,463e90b7349f8ea7db2782b659529cdd
 optima-3rd-math,opti,benchmark,9,audio/storybook/words/g3m-word-benchmark.mp3,speech,file name,8ad92b4c5bf252f5fe742702b5dd91e8
-optima-3rd-math,opti,Break a meter.,14,audio/storybook/words/g3m-word-break-a-meter.mp3,speech,tools/clip-log-extra.json,3d5647be76377837aaf583954d7d970b
+optima-3rd-math,opti,Break a kilometer.,18,audio/storybook/words/g3m-word-break-a-kilometer.mp3,speech,tools/clip-log-extra.json,ce5f62379e38716007d6b2973c4bc8d6
+optima-3rd-math,opti,Break a meter.,14,audio/storybook/words/g3m-word-break-a-meter.mp3,speech,tools/clip-log-extra.json,e922c983629b353a9b20169d46cf2f65
 optima-3rd-math,opti,cantata,7,audio/storybook/words/g3m-word-cantata.mp3,speech,file name,7a2b771654f4e3ea019ef4479696e159
-optima-3rd-math,opti,centimeter,10,audio/storybook/words/g3m-word-centimeter.mp3,speech,file name,acac6fcc3282beefd7242f7ccb5e4fe4
-optima-3rd-math,opti,Clue word.,10,audio/storybook/words/g3m-word-clue-word.mp3,speech,tools/clip-log-extra.json,cd28489d92cd4c095e31bd1f031a110d
+optima-3rd-math,opti,centimeter,10,audio/storybook/words/g3m-word-centimeter.mp3,speech,file name,3ba15c71ef388fbb13257c574b52e189
+optima-3rd-math,opti,Clue word.,10,audio/storybook/words/g3m-word-clue-word.mp3,speech,tools/clip-log-extra.json,58750decee4146a1dde7602b65b8b529
 optima-3rd-math,opti,common denominator,18,audio/storybook/words/g3m-word-common-denominator.mp3,speech,file name,dc17314f97d60b6ccde41edd4200206c
 optima-3rd-math,opti,common numerator,16,audio/storybook/words/g3m-word-common-numerator.mp3,speech,file name,3de4819d8f1a0c6515e517a8a69c5407
 optima-3rd-math,opti,compare,7,audio/storybook/words/g3m-word-compare.mp3,speech,file name,02fb9044eb80e952b380830056e3ef77
-optima-3rd-math,opti,Compound units.,15,audio/storybook/words/g3m-word-compound-units.mp3,speech,tools/clip-log-extra.json,7b50d802b2ea3ab5225fc36d0bcf95ea
-optima-3rd-math,opti,copyist,7,audio/storybook/words/g3m-word-copyist.mp3,speech,file name,f6b334934173b50b8b2ab0ccc2445d76
+optima-3rd-math,opti,Compound units.,15,audio/storybook/words/g3m-word-compound-units.mp3,speech,tools/clip-log-extra.json,f17ee14bc273837b4c23eec5d1729de0
+optima-3rd-math,opti,copyist,7,audio/storybook/words/g3m-word-copyist.mp3,speech,file name,88b8478ea1f5305039494924488cd53d
 optima-3rd-math,opti,denominator,11,audio/storybook/words/g3m-word-denominator.mp3,speech,file name,833dd9a0f451346b48827ea858a6b3e1
-optima-3rd-math,opti,difference,10,audio/storybook/words/g3m-word-difference.mp3,speech,file name,da0e14af305d31b178a3a43d483f7ac6
-optima-3rd-math,opti,Direct distance.,16,audio/storybook/words/g3m-word-direct-distance.mp3,speech,tools/clip-log-extra.json,519d49f7a907bf193f7559817994c3f2
-optima-3rd-math,opti,Distance.,9,audio/storybook/words/g3m-word-distance.mp3,speech,tools/clip-log-extra.json,29ac5957eb692a607903c316dd97f545
+optima-3rd-math,opti,difference,10,audio/storybook/words/g3m-word-difference.mp3,speech,file name,ce3c9d965dbccfc5c75928b32c2239e0
+optima-3rd-math,opti,Direct distance.,16,audio/storybook/words/g3m-word-direct-distance.mp3,speech,tools/clip-log-extra.json,a285c9253f5fbfca1cd756a2b57f9b3d
+optima-3rd-math,opti,Distance.,9,audio/storybook/words/g3m-word-distance.mp3,speech,tools/clip-log-extra.json,1f90744e5afae258e6b8fc1271333cb4
 optima-3rd-math,opti,equal parts,11,audio/storybook/words/g3m-word-equal-parts.mp3,speech,file name,bc4180d1f142dce7d37674663158549c
 optima-3rd-math,opti,equal to,8,audio/storybook/words/g3m-word-equal-to.mp3,speech,file name,5a3f7e0ee964a7be8572abcbf344bea1
 optima-3rd-math,opti,Equivalent fractions.,21,audio/storybook/words/g3m-word-equivalent-fractions.mp3,speech,tools/clip-log-extra.json,d979f8db74b97f2f69b0d91586900356
 optima-3rd-math,opti,Equivalent.,11,audio/storybook/words/g3m-word-equivalent.mp3,speech,tools/clip-log-extra.json,d00fc3c51f9f37c0e192156e7d923702
 optima-3rd-math,opti,fraction,8,audio/storybook/words/g3m-word-fraction.mp3,speech,file name,7d37ace7d0004395a61500f141950704
 optima-3rd-math,opti,greater than,12,audio/storybook/words/g3m-word-greater-than.mp3,speech,file name,a10ecd6ead596d94d5d892cef4748fbe
-optima-3rd-math,opti,How much more.,14,audio/storybook/words/g3m-word-how-much-more.mp3,speech,tools/clip-log-extra.json,76f948b818de195645b82ba0184ac69d
+optima-3rd-math,opti,How much more.,14,audio/storybook/words/g3m-word-how-much-more.mp3,speech,tools/clip-log-extra.json,3e5caedb117da613064243d7efde8a51
 optima-3rd-math,opti,Kilometer.,10,audio/storybook/words/g3m-word-kilometer.mp3,speech,tools/clip-log-extra.json,8bd6a26ed0a19f7e74278701234db3f1
-optima-3rd-math,opti,length,6,audio/storybook/words/g3m-word-length.mp3,speech,file name,8e49c90c84b2ecd3b8e106537dc05c15
+optima-3rd-math,opti,length,6,audio/storybook/words/g3m-word-length.mp3,speech,file name,3f50eacef72aff66a6ad5cc8b1f9a21f
 optima-3rd-math,opti,less than,9,audio/storybook/words/g3m-word-less-than.mp3,speech,file name,5352bd8e05b5ddee6e1c07606bef292d
 optima-3rd-math,opti,Measure.,8,audio/storybook/words/g3m-word-measure.mp3,speech,tools/clip-log-extra.json,f436c0f3c2efdff1e4a6b39dbd996ff0
-optima-3rd-math,opti,meter stick,11,audio/storybook/words/g3m-word-meter-stick.mp3,speech,file name,be8176a0c23c29116ec5d85ac50eadcc
+optima-3rd-math,opti,meter stick,11,audio/storybook/words/g3m-word-meter-stick.mp3,speech,file name,b8b40ab7e7c7cb59d5aae0e03ab48015
 optima-3rd-math,opti,meter,5,audio/storybook/words/g3m-word-meter.mp3,speech,file name,88ad936f874f7113f36f194f92c298a4
 optima-3rd-math,opti,multiply,8,audio/storybook/words/g3m-word-multiply.mp3,speech,file name,3766d0d9b66e2ae6aaff471c0776ef6f
 optima-3rd-math,opti,note,4,audio/storybook/words/g3m-word-note.mp3,speech,file name,c53cebb3b2fa4bde8607add411557d68
@@ -198,15 +214,16 @@ optima-3rd-math,opti,numerator,9,audio/storybook/words/g3m-word-numerator.mp3,sp
 optima-3rd-math,opti,one half,8,audio/storybook/words/g3m-word-one-half.mp3,speech,file name,02c713044ee82da6ec0cc8bfe13e949e
 optima-3rd-math,opti,one whole,9,audio/storybook/words/g3m-word-one-whole.mp3,speech,file name,2c47a2e3f18dfb5bf8d350df82f898f3
 optima-3rd-math,opti,re cut,6,audio/storybook/words/g3m-word-re-cut.mp3,speech,file name,30d2159bea0c524e21c82f3ab5fb8ec7
-optima-3rd-math,opti,Remaining.,10,audio/storybook/words/g3m-word-remaining.mp3,speech,tools/clip-log-extra.json,856d981d97729136964bc1c2fa9f9537
+optima-3rd-math,opti,Remaining.,10,audio/storybook/words/g3m-word-remaining.mp3,speech,tools/clip-log-extra.json,7c7dcb167878aa8269ca12667d93c2c5
 optima-3rd-math,opti,same denominator,16,audio/storybook/words/g3m-word-same-denominator.mp3,speech,file name,b6a600940a73f4b2df939bcd573c502f
 optima-3rd-math,opti,simplest form,13,audio/storybook/words/g3m-word-simplest-form.mp3,speech,file name,88acca3e9be316cf84c51dbe0da95199
 optima-3rd-math,opti,simplify,8,audio/storybook/words/g3m-word-simplify.mp3,speech,file name,9ea93fea11371cb9ac08a4c5252e2534
 optima-3rd-math,opti,string,6,audio/storybook/words/g3m-word-string.mp3,speech,file name,187c1da7199cd569f557f7c8f9767273
 optima-3rd-math,opti,Subtract.,9,audio/storybook/words/g3m-word-subtract.mp3,speech,tools/clip-log-extra.json,12e146446c3caceba217fc3437a07ad1
-optima-3rd-math,opti,sum,3,audio/storybook/words/g3m-word-sum.mp3,speech,file name,b815a363671e2feb4ab07e6d62eb9d47
+optima-3rd-math,opti,sum,3,audio/storybook/words/g3m-word-sum.mp3,speech,file name,70899948c7430cd2cc188f38e42b47bb
+optima-3rd-math,opti,Survey.,7,audio/storybook/words/g3m-word-survey.mp3,speech,tools/clip-log-extra.json,b1246689ed905fa209b5a667ae2ca3d7
 optima-3rd-math,opti,tick mark,9,audio/storybook/words/g3m-word-tick-mark.mp3,speech,file name,edb6c3a9721cebca97941f009b053835
-optima-3rd-math,opti,Travel distance.,16,audio/storybook/words/g3m-word-travel-distance.mp3,speech,tools/clip-log-extra.json,5ae1750cf5f67724e34337cddf2f5479
+optima-3rd-math,opti,Travel distance.,16,audio/storybook/words/g3m-word-travel-distance.mp3,speech,tools/clip-log-extra.json,4d6965b6e48d9fc228f8b2032e20d09d
 optima-3rd-math,opti,unit fraction,13,audio/storybook/words/g3m-word-unit-fraction.mp3,speech,file name,cb3961535bae5691a6e3d528b326a8ec
 optima-3rd-math,opti,unit,4,audio/storybook/words/g3m-word-unit.mp3,speech,file name,b835786ea549fc5cf8d66f23b8cbe925
 optima-3rd-math,opti,variation,9,audio/storybook/words/g3m-word-variation.mp3,speech,file name,a0563d029716fa2d137fbd537cd5b13a

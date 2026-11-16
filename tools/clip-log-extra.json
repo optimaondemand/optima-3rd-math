@@ -270,5 +270,65 @@
  "g3m-word-direct-distance": {
   "text": "Direct distance.",
   "voice": "opti"
+ },
+ "g3m-3-11-04-warm-1": {
+  "text": "Hoo! It's France in 1798. Jean-Baptiste Delambre and his team are measuring the land to find out how long a meter should be. Near the town of Melun, they measure a straight road almost twelve kilometers long. They lay metal rulers end to end, again and again. Look at an old picture of a team doing the same kind of job. Today you'll subtract meters from kilometers.",
+  "voice": "opti"
+ },
+ "g3m-3-11-04-think-1": {
+  "text": "Today the team has three kilometers of road to measure. By lunch, they have measured four hundred fifty meters. How much road is left? Break a kilometer to find out.",
+  "voice": "opti"
+ },
+ "g3m-3-11-04-think-done": {
+  "text": "You did it! You broke one kilometer into one thousand meters and cut off four hundred fifty. Five hundred fifty meters were left, plus two whole kilometers. So two kilometers five hundred fifty meters of road are left.",
+  "voice": "opti"
+ },
+ "g3m-3-11-04-learn-1": {
+  "text": "Welcome to the Lesson. First, Claire shows how to break a kilometer. Next, we fix some mix-ups. Then you work on your own.",
+  "voice": "opti"
+ },
+ "g3m-3-11-04-practice-1": {
+  "text": "Each job has a mix-up kids often make. Here's a clue. A kilometer breaks into one thousand meters, not one hundred. And once you break it, that kilometer is gone.",
+  "voice": "opti"
+ },
+ "g3m-3-11-04-own-1": {
+  "text": "Your turn to work on your own. Take away the whole kilometers first. Then break one kilometer for the meters.",
+  "voice": "opti"
+ },
+ "g3m-3-11-04-swyk-1": {
+  "text": "Last stop! A road gets measured in two parts. Cut off each part, one after the other, and say how much road is left each time.",
+  "voice": "opti"
+ },
+ "g3m-3-11-04-end-1": {
+  "text": "Here's music from the same years as the survey. It's the slow part of the London Symphony by Joseph Haydn, written in 1795. Listen to the calm, steady tune, like a team laying its rulers down a long, straight road. Press play, and stop whenever you like.",
+  "voice": "opti"
+ },
+ "g3m-3-11-04-vid-open": {
+  "text": "Hoo! Claire is going to show us how to subtract meters from kilometers. Watch a kilometer break open.",
+  "voice": "opti"
+ },
+ "g3m-3-11-04-vid-math": {
+  "text": "Here is a road six kilometers long. We need to take away one kilometer two hundred forty meters. First, take away the whole kilometer. Now five kilometers are left. Next, we need two hundred forty meters, but every piece here is a whole kilometer. So we break one kilometer. One kilometer is one thousand meters. Now we have four kilometers and one thousand meters. Cut off two hundred forty meters. One thousand minus two hundred forty is seven hundred sixty. So four kilometers seven hundred sixty meters are left. You can also use numbers. Six kilometers is six thousand meters. One kilometer two hundred forty meters is one thousand two hundred forty meters. Six thousand minus one thousand two hundred forty is four thousand seven hundred sixty meters. That's four kilometers seven hundred sixty meters, the same answer. Watch out! A broken kilometer is one thousand meters, not one hundred. And once you break it, that kilometer is gone. Count what's left in whole kilometers.",
+  "voice": "claire"
+ },
+ "g3m-3-11-04-vid-close": {
+  "text": "Break a kilometer into one thousand meters, then take away. Now it's your turn!",
+  "voice": "opti"
+ },
+ "g3m-3-11-04-words": {
+  "text": "Break a kilometer. ... Survey. ... Baseline.",
+  "voice": "opti"
+ },
+ "g3m-word-break-a-kilometer": {
+  "text": "Break a kilometer.",
+  "voice": "opti"
+ },
+ "g3m-word-survey": {
+  "text": "Survey.",
+  "voice": "opti"
+ },
+ "g3m-word-baseline": {
+  "text": "Baseline.",
+  "voice": "opti"
  }
 }

@@ -4,6 +4,20 @@
 "grade": "3",
 "subject": "math",
 "voice": "opti",
+"file": "Claude outputs/_x1104/audio/storybook/haydn-104-andante.mp3",
+"text": "",
+"key": "",
+"chars": 0,
+"kind": "speech",
+"script_source": "",
+"bytes": 5161293,
+"md5": "0c37918eabda942a2bf1008d3adfde48"
+},
+{
+"repo": "optima-3rd-math",
+"grade": "3",
+"subject": "math",
+"voice": "opti",
 "file": "audio/storybook/bach-brandenburg-3-1.mp3",
 "text": "",
 "key": "",
@@ -2230,6 +2244,174 @@
 "grade": "3",
 "subject": "math",
 "voice": "opti",
+"file": "audio/storybook/g3m-3-11-04-end-1.mp3",
+"text": "Here's music from the same years as the survey. It's the slow part of the London Symphony by Joseph Haydn, written in 1795. Listen to the calm, steady tune, like a team laying its rulers down a long, straight road. Press play, and stop whenever you like.",
+"key": "here's music from the same years as the survey. it's the slow part of the london symphony by joseph haydn, written in 1795. listen to the calm, steady tune, like a team laying its rulers down a long, straight road. press play, and stop whenever you like",
+"chars": 254,
+"kind": "speech",
+"script_source": "tools/clip-log-extra.json",
+"bytes": 322697,
+"md5": "79bd9c9073c6322e1bfe6d885dc717f3"
+},
+{
+"repo": "optima-3rd-math",
+"grade": "3",
+"subject": "math",
+"voice": "opti",
+"file": "audio/storybook/g3m-3-11-04-learn-1.mp3",
+"text": "Welcome to the Lesson. First, Claire shows how to break a kilometer. Next, we fix some mix-ups. Then you work on your own.",
+"key": "welcome to the lesson. first, claire shows how to break a kilometer. next, we fix some mix-ups. then you work on your own",
+"chars": 122,
+"kind": "speech",
+"script_source": "tools/clip-log-extra.json",
+"bytes": 168052,
+"md5": "b0e72eb90428889e623b8a54548a0422"
+},
+{
+"repo": "optima-3rd-math",
+"grade": "3",
+"subject": "math",
+"voice": "opti",
+"file": "audio/storybook/g3m-3-11-04-own-1.mp3",
+"text": "Your turn to work on your own. Take away the whole kilometers first. Then break one kilometer for the meters.",
+"key": "your turn to work on your own. take away the whole kilometers first. then break one kilometer for the meters",
+"chars": 109,
+"kind": "speech",
+"script_source": "tools/clip-log-extra.json",
+"bytes": 142556,
+"md5": "e62d0098ba3ebe45c3c0d4ad48054f76"
+},
+{
+"repo": "optima-3rd-math",
+"grade": "3",
+"subject": "math",
+"voice": "opti",
+"file": "audio/storybook/g3m-3-11-04-practice-1.mp3",
+"text": "Each job has a mix-up kids often make. Here's a clue. A kilometer breaks into one thousand meters, not one hundred. And once you break it, that kilometer is gone.",
+"key": "each job has a mix-up kids often make. here's a clue. a kilometer breaks into one thousand meters, not one hundred. and once you break it, that kilometer is gone",
+"chars": 162,
+"kind": "speech",
+"script_source": "tools/clip-log-extra.json",
+"bytes": 209012,
+"md5": "f254686d33c2ba14f2c112147ab5af45"
+},
+{
+"repo": "optima-3rd-math",
+"grade": "3",
+"subject": "math",
+"voice": "opti",
+"file": "audio/storybook/g3m-3-11-04-swyk-1.mp3",
+"text": "Last stop! A road gets measured in two parts. Cut off each part, one after the other, and say how much road is left each time.",
+"key": "last stop! a road gets measured in two parts. cut off each part, one after the other, and say how much road is left each time",
+"chars": 126,
+"kind": "speech",
+"script_source": "tools/clip-log-extra.json",
+"bytes": 178083,
+"md5": "5970407b09fda4da84c9b7d6c0a60c5f"
+},
+{
+"repo": "optima-3rd-math",
+"grade": "3",
+"subject": "math",
+"voice": "opti",
+"file": "audio/storybook/g3m-3-11-04-think-1.mp3",
+"text": "Today the team has three kilometers of road to measure. By lunch, they have measured four hundred fifty meters. How much road is left? Break a kilometer to find out.",
+"key": "today the team has three kilometers of road to measure. by lunch, they have measured four hundred fifty meters. how much road is left? break a kilometer to find out",
+"chars": 165,
+"kind": "speech",
+"script_source": "tools/clip-log-extra.json",
+"bytes": 203996,
+"md5": "7affbb3a9dacbf26627f205fa8fe1cfb"
+},
+{
+"repo": "optima-3rd-math",
+"grade": "3",
+"subject": "math",
+"voice": "opti",
+"file": "audio/storybook/g3m-3-11-04-think-done.mp3",
+"text": "You did it! You broke one kilometer into one thousand meters and cut off four hundred fifty. Five hundred fifty meters were left, plus two whole kilometers. So two kilometers five hundred fifty meters of road are left.",
+"key": "you did it! you broke one kilometer into one thousand meters and cut off four hundred fifty. five hundred fifty meters were left, plus two whole kilometers. so two kilometers five hundred fifty meters of road are left",
+"chars": 218,
+"kind": "speech",
+"script_source": "tools/clip-log-extra.json",
+"bytes": 263764,
+"md5": "05a80e09a57129d1c1a629bed9ad7ca5"
+},
+{
+"repo": "optima-3rd-math",
+"grade": "3",
+"subject": "math",
+"voice": "opti",
+"file": "audio/storybook/g3m-3-11-04-vid-close.mp3",
+"text": "Break a kilometer into one thousand meters, then take away. Now it's your turn!",
+"key": "break a kilometer into one thousand meters, then take away. now it's your turn",
+"chars": 79,
+"kind": "speech",
+"script_source": "tools/clip-log-extra.json",
+"bytes": 117897,
+"md5": "9d2aa5d0c48c0e09229148f45f4b17c9"
+},
+{
+"repo": "optima-3rd-math",
+"grade": "3",
+"subject": "math",
+"voice": "claire",
+"file": "audio/storybook/g3m-3-11-04-vid-math.mp3",
+"text": "Here is a road six kilometers long. We need to take away one kilometer two hundred forty meters. First, take away the whole kilometer. Now five kilometers are left. Next, we need two hundred forty meters, but every piece here is a whole kilometer. So we break one kilometer. One kilometer is one thousand meters. Now we have four kilometers and one thousand meters. Cut off two hundred forty meters. One thousand minus two hundred forty is seven hundred sixty. So four kilometers seven hundred sixty meters are left. You can also use numbers. Six kilometers is six thousand meters. One kilometer two hundred forty meters is one thousand two hundred forty meters. Six thousand minus one thousand two hundred forty is four thousand seven hundred sixty meters. That's four kilometers seven hundred sixty meters, the same answer. Watch out! A broken kilometer is one thousand meters, not one hundred. And once you break it, that kilometer is gone. Count what's left in whole kilometers.",
+"key": "here is a road six kilometers long. we need to take away one kilometer two hundred forty meters. first, take away the whole kilometer. now five kilometers are left. next, we need two hundred forty meters, but every piece here is a whole kilometer. so we break one kilometer. one kilometer is one thousand meters. now we have four kilometers and one thousand meters. cut off two hundred forty meters. one thousand minus two hundred forty is seven hundred sixty. so four kilometers seven hundred sixty meters are left. you can also use numbers. six kilometers is six thousand meters. one kilometer two hundred forty meters is one thousand two hundred forty meters. six thousand minus one thousand two hundred forty is four thousand seven hundred sixty meters. that's four kilometers seven hundred sixty meters, the same answer. watch out! a broken kilometer is one thousand meters, not one hundred. and once you break it, that kilometer is gone. count what's left in whole kilometers",
+"chars": 982,
+"kind": "speech",
+"script_source": "tools/clip-log-extra.json",
+"bytes": 1221309,
+"md5": "3cdb7c0d059a39975e2da825acaca3ac"
+},
+{
+"repo": "optima-3rd-math",
+"grade": "3",
+"subject": "math",
+"voice": "opti",
+"file": "audio/storybook/g3m-3-11-04-vid-open.mp3",
+"text": "Hoo! Claire is going to show us how to subtract meters from kilometers. Watch a kilometer break open.",
+"key": "hoo! claire is going to show us how to subtract meters from kilometers. watch a kilometer break open",
+"chars": 101,
+"kind": "speech",
+"script_source": "tools/clip-log-extra.json",
+"bytes": 138377,
+"md5": "9afc793267346e42af1b1d6e9d24e131"
+},
+{
+"repo": "optima-3rd-math",
+"grade": "3",
+"subject": "math",
+"voice": "opti",
+"file": "audio/storybook/g3m-3-11-04-warm-1.mp3",
+"text": "Hoo! It's France in 1798. Jean-Baptiste Delambre and his team are measuring the land to find out how long a meter should be. Near the town of Melun, they measure a straight road almost twelve kilometers long. They lay metal rulers end to end, again and again. Look at an old picture of a team doing the same kind of job. Today you'll subtract meters from kilometers.",
+"key": "hoo! it's france in 1798. jean-baptiste delambre and his team are measuring the land to find out how long a meter should be. near the town of melun, they measure a straight road almost twelve kilometers long. they lay metal rulers end to end, again and again. look at an old picture of a team doing the same kind of job. today you'll subtract meters from kilometers",
+"chars": 366,
+"kind": "speech",
+"script_source": "tools/clip-log-extra.json",
+"bytes": 446831,
+"md5": "8775a943bdd88aa44744760235e22e15"
+},
+{
+"repo": "optima-3rd-math",
+"grade": "3",
+"subject": "math",
+"voice": "opti",
+"file": "audio/storybook/g3m-3-11-04-words.mp3",
+"text": "Break a kilometer. ... Survey. ... Baseline.",
+"key": "break a kilometer. ... survey. ... baseline",
+"chars": 44,
+"kind": "speech",
+"script_source": "tools/clip-log-extra.json",
+"bytes": 81116,
+"md5": "0e199531986d7b8acd9ad826c06fd6f7"
+},
+{
+"repo": "optima-3rd-math",
+"grade": "3",
+"subject": "math",
+"voice": "opti",
 "file": "audio/storybook/haydn-101-clock-andante.mp3",
 "text": "",
 "key": "",
@@ -2238,6 +2420,20 @@
 "script_source": "",
 "bytes": 5312205,
 "md5": "c140d8a123721e4066c7bb08f660a3ab"
+},
+{
+"repo": "optima-3rd-math",
+"grade": "3",
+"subject": "math",
+"voice": "opti",
+"file": "audio/storybook/haydn-104-andante.mp3",
+"text": "",
+"key": "",
+"chars": 0,
+"kind": "speech",
+"script_source": "",
+"bytes": 5161293,
+"md5": "0c37918eabda942a2bf1008d3adfde48"
 },
 {
 "repo": "optima-3rd-math",
@@ -2314,6 +2510,20 @@
 "grade": "3",
 "subject": "math",
 "voice": "opti",
+"file": "audio/storybook/words/g3m-word-baseline.mp3",
+"text": "Baseline.",
+"key": "baseline",
+"chars": 9,
+"kind": "speech",
+"script_source": "tools/clip-log-extra.json",
+"bytes": 19688,
+"md5": "463e90b7349f8ea7db2782b659529cdd"
+},
+{
+"repo": "optima-3rd-math",
+"grade": "3",
+"subject": "math",
+"voice": "opti",
 "file": "audio/storybook/words/g3m-word-benchmark.mp3",
 "text": "benchmark",
 "key": "benchmark",
@@ -2328,14 +2538,28 @@
 "grade": "3",
 "subject": "math",
 "voice": "opti",
+"file": "audio/storybook/words/g3m-word-break-a-kilometer.mp3",
+"text": "Break a kilometer.",
+"key": "break a kilometer",
+"chars": 18,
+"kind": "speech",
+"script_source": "tools/clip-log-extra.json",
+"bytes": 22195,
+"md5": "ce5f62379e38716007d6b2973c4bc8d6"
+},
+{
+"repo": "optima-3rd-math",
+"grade": "3",
+"subject": "math",
+"voice": "opti",
 "file": "audio/storybook/words/g3m-word-break-a-meter.mp3",
 "text": "Break a meter.",
 "key": "break a meter",
 "chars": 14,
 "kind": "speech",
 "script_source": "tools/clip-log-extra.json",
-"bytes": 20942,
-"md5": "3d5647be76377837aaf583954d7d970b"
+"bytes": 19688,
+"md5": "e922c983629b353a9b20169d46cf2f65"
 },
 {
 "repo": "optima-3rd-math",
@@ -2362,8 +2586,8 @@
 "chars": 10,
 "kind": "speech",
 "script_source": "file name",
-"bytes": 19270,
-"md5": "acac6fcc3282beefd7242f7ccb5e4fe4"
+"bytes": 18016,
+"md5": "3ba15c71ef388fbb13257c574b52e189"
 },
 {
 "repo": "optima-3rd-math",
@@ -2376,8 +2600,8 @@
 "chars": 10,
 "kind": "speech",
 "script_source": "tools/clip-log-extra.json",
-"bytes": 15508,
-"md5": "cd28489d92cd4c095e31bd1f031a110d"
+"bytes": 15926,
+"md5": "58750decee4146a1dde7602b65b8b529"
 },
 {
 "repo": "optima-3rd-math",
@@ -2432,8 +2656,8 @@
 "chars": 15,
 "kind": "speech",
 "script_source": "tools/clip-log-extra.json",
-"bytes": 23449,
-"md5": "7b50d802b2ea3ab5225fc36d0bcf95ea"
+"bytes": 23031,
+"md5": "f17ee14bc273837b4c23eec5d1729de0"
 },
 {
 "repo": "optima-3rd-math",
@@ -2446,8 +2670,8 @@
 "chars": 7,
 "kind": "speech",
 "script_source": "file name",
-"bytes": 14672,
-"md5": "f6b334934173b50b8b2ab0ccc2445d76"
+"bytes": 15090,
+"md5": "88b8478ea1f5305039494924488cd53d"
 },
 {
 "repo": "optima-3rd-math",
@@ -2474,8 +2698,8 @@
 "chars": 10,
 "kind": "speech",
 "script_source": "file name",
-"bytes": 18016,
-"md5": "da0e14af305d31b178a3a43d483f7ac6"
+"bytes": 15090,
+"md5": "ce3c9d965dbccfc5c75928b32c2239e0"
 },
 {
 "repo": "optima-3rd-math",
@@ -2489,7 +2713,7 @@
 "kind": "speech",
 "script_source": "tools/clip-log-extra.json",
 "bytes": 24285,
-"md5": "519d49f7a907bf193f7559817994c3f2"
+"md5": "a285c9253f5fbfca1cd756a2b57f9b3d"
 },
 {
 "repo": "optima-3rd-math",
@@ -2502,8 +2726,8 @@
 "chars": 9,
 "kind": "speech",
 "script_source": "tools/clip-log-extra.json",
-"bytes": 16344,
-"md5": "29ac5957eb692a607903c316dd97f545"
+"bytes": 15090,
+"md5": "1f90744e5afae258e6b8fc1271333cb4"
 },
 {
 "repo": "optima-3rd-math",
@@ -2600,8 +2824,8 @@
 "chars": 14,
 "kind": "speech",
 "script_source": "tools/clip-log-extra.json",
-"bytes": 21777,
-"md5": "76f948b818de195645b82ba0184ac69d"
+"bytes": 20942,
+"md5": "3e5caedb117da613064243d7efde8a51"
 },
 {
 "repo": "optima-3rd-math",
@@ -2628,8 +2852,8 @@
 "chars": 6,
 "kind": "speech",
 "script_source": "file name",
-"bytes": 15508,
-"md5": "8e49c90c84b2ecd3b8e106537dc05c15"
+"bytes": 14254,
+"md5": "3f50eacef72aff66a6ad5cc8b1f9a21f"
 },
 {
 "repo": "optima-3rd-math",
@@ -2670,8 +2894,8 @@
 "chars": 11,
 "kind": "speech",
 "script_source": "file name",
-"bytes": 15926,
-"md5": "be8176a0c23c29116ec5d85ac50eadcc"
+"bytes": 16762,
+"md5": "b8b40ab7e7c7cb59d5aae0e03ab48015"
 },
 {
 "repo": "optima-3rd-math",
@@ -2796,8 +3020,8 @@
 "chars": 10,
 "kind": "speech",
 "script_source": "tools/clip-log-extra.json",
-"bytes": 16762,
-"md5": "856d981d97729136964bc1c2fa9f9537"
+"bytes": 15508,
+"md5": "7c7dcb167878aa8269ca12667d93c2c5"
 },
 {
 "repo": "optima-3rd-math",
@@ -2880,8 +3104,22 @@
 "chars": 3,
 "kind": "speech",
 "script_source": "file name",
-"bytes": 11328,
-"md5": "b815a363671e2feb4ab07e6d62eb9d47"
+"bytes": 12164,
+"md5": "70899948c7430cd2cc188f38e42b47bb"
+},
+{
+"repo": "optima-3rd-math",
+"grade": "3",
+"subject": "math",
+"voice": "opti",
+"file": "audio/storybook/words/g3m-word-survey.mp3",
+"text": "Survey.",
+"key": "survey",
+"chars": 7,
+"kind": "speech",
+"script_source": "tools/clip-log-extra.json",
+"bytes": 14672,
+"md5": "b1246689ed905fa209b5a667ae2ca3d7"
 },
 {
 "repo": "optima-3rd-math",
@@ -2908,8 +3146,8 @@
 "chars": 16,
 "kind": "speech",
 "script_source": "tools/clip-log-extra.json",
-"bytes": 23031,
-"md5": "5ae1750cf5f67724e34337cddf2f5479"
+"bytes": 22195,
+"md5": "4d6965b6e48d9fc228f8b2032e20d09d"
 },
 {
 "repo": "optima-3rd-math",
