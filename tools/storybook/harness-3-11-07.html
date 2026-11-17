@@ -1,0 +1,105 @@
+<!DOCTYPE html><html><head><meta charset="utf-8">
+<!-- 3.11.07 Learn video: "Four Steps". Frames rendered by render.js from timeline-3-11-06.json (Scribe word times). -->
+<style>
+html,body{margin:0;width:1280px;height:720px;overflow:hidden;background:#FBF6EA;font-family:Nunito,Arial,sans-serif}
+#st{position:absolute;inset:0}
+.cap{position:absolute;left:90px;right:90px;bottom:22px;min-height:52px;background:rgba(14,28,66,.88);color:#fff;border-radius:14px;padding:10px 20px;font-size:26px;font-weight:800;line-height:1.3;text-align:center}
+.cap:empty{display:none}
+.hd{position:absolute;left:40px;top:22px;font-family:'Cormorant Garamond',Georgia,serif;font-size:32px;font-weight:700;color:#3A2A12}
+.hd small{display:block;font-family:Nunito,Arial;font-size:15px;letter-spacing:.18em;color:#B8892E;font-weight:900}
+.book{position:absolute;inset:0;display:none;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 40%,#FFF8E6,#EFE2C6)}
+.book.on{display:flex}
+.bk{display:grid;grid-template-columns:420px 420px;background:#E8DCC0;padding:12px;border-radius:10px;box-shadow:0 20px 40px rgba(60,40,10,.25)}
+.pg{background:#FFFBF1;height:380px;padding:24px;box-sizing:border-box}
+.pg img{width:100%;height:290px;object-fit:cover;border:8px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.2);box-sizing:border-box}
+.pg.r{display:flex;flex-direction:column;justify-content:center}
+.ch{font-family:Georgia,serif;letter-spacing:.2em;color:#B8892E;font-weight:700;font-size:16px}
+.tt{font-family:'Cormorant Garamond',Georgia,serif;font-size:40px;font-weight:700;color:#3A2A12;line-height:1.05;margin:8px 0}
+.q{font-size:22px;font-weight:800;color:#0E1C42;margin-top:10px}
+.owl{position:absolute;width:140px;right:28px;bottom:150px}
+</style></head><body>
+<div id="st"><svg id="sv" width="1280" height="720" viewBox="0 0 1280 720"></svg>
+<div class="hd"><small>CHAPTER 11 · THE METER OF PARIS</small>Four Steps for Word Problems</div></div>
+<div class="book" id="book"><div class="bk"><div class="pg"><img src="../repo/images/storybook/sb-mesures-row-plate.jpg" style="object-fit:cover"></div><div class="pg r"><div class="ch">CHAPTER 11 · LESSON 7</div><div class="tt" id="btt">Word Problems</div><div class="q" id="bq">How do I solve a measurement word problem?</div></div></div><img class="owl" src="../repo/images/storybook/opti-owl.png"></div>
+<div class="cap" id="cap"></div>
+<script>
+var TL=null, NSV='http://www.w3.org/2000/svg';
+function S(tag,a,p){var e=document.createElementNS(NSV,tag);for(var k in a){if(k==='text')e.textContent=a[k];else e.setAttribute(k,a[k]);}(p||sv).appendChild(e);return e;}
+var NAVY='#1F2A44', NV='#0E1C42', CT='#117E7E', CW='#5B6478', C9='#2E7D6B', C2='#6B46C1', C4='#8A6A00', C8='#A23B8C', C5='#4E7A1A', C10='#117E7E', C3='#B05E09', C6='#2F6FDE', C12='#5B6478', C20='#3949AB', C11='#8C2F6E', RED='#B03A2E', OK='#1E7A4C', GOLD='#B8892E', NO='#B23A2E', X0=200, W=880;
+function sec(s){return TL.secs[s];}
+var M='vid-math';
+function wt(re,n,from){var Wd=sec(M).words,c=0;for(var i=from||0;i<Wd.length;i++){if(re.test(Wd[i].w.replace(/[^\w'-]/g,''))){if(c===(n||0))return Wd[i].t;c++;}}return null;}
+function wi(re,n){var Wd=sec(M).words,c=0;for(var i=0;i<Wd.length;i++){if(re.test(Wd[i].w.replace(/[^\w'-]/g,''))){if(c===(n||0))return i;c++;}}return 0;}
+function ease(x){x=Math.max(0,Math.min(1,x));return x<.5?2*x*x:1-Math.pow(-2*x+2,2)/2;}
+function caption(t){var all=[];['vid-open',M,'vid-close'].forEach(function(s){var Wd=sec(s).words,cur=[];Wd.forEach(function(w,i){cur.push(w);if(/[.!?:]$/.test(w.w)||i===Wd.length-1){all.push(cur);cur=[];}});});
+  for(var i=0;i<all.length;i++){var a=all[i][0].t,b=all[i][all[i].length-1].e+0.35;if(t>=a-0.1&&t<=b)return all[i].map(function(w){return w.w;}).join(' ');}return '';}
+var K={};
+function chip(x,y,txt,col,op){var g=S('g',{opacity:op==null?1:op});var w=txt.length*14+34;S('rect',{x:x-w/2,y:y,width:w,height:44,rx:22,fill:'#fff',stroke:col,'stroke-width':3},g);S('text',{x:x,y:y+30,'text-anchor':'middle','font-size':24,'font-weight':900,fill:col,text:txt},g);return g;}
+function big(x,y,txt,col,size,op){return S('text',{x:x,y:y,'text-anchor':'middle','font-size':size||40,'font-weight':900,fill:col||NV,opacity:op==null?1:op,text:txt});}
+function fadeIn(t,a,d){return ease((t-a)/(d||0.4));}
+var BLUE='#1D4FA8';
+function setup(){
+  K.a=sec(M).start; K.close=sec('vid-close').start;
+  K.s1=wt(/^Step$/,0); K.s2=wt(/^Step$/,1); K.whole=wt(/^whole$/,0); K.pieces=wt(/^pieces$/,0); K.qm=wt(/^question$/,1);
+  K.s3=wt(/^Step$/,2); K.six=wt(/^Six$/,0); K.min1=wt(/^minus$/,0); K.min2=wt(/^Minus$/,0); K.s4=wt(/^Step$/,3);
+  K.same=wt(/^same$/,0); K.mia=wt(/^Mia$/,0); K.two=wt(/^Two$/,0); K.watch=wt(/^Watch$/,0); K.one=wt(/^One$/,0); K.write=wt(/^Write$/,0);
+  K.ben=wt(/^Ben$/,0); K.how=wt(/^How$/,0);
+}
+function lerp(a,b,x){return a+(b-a)*ease(x);}
+function box(y,txt,op,col){col=col||OK;var fs=txt.length>30?27:32,w=Math.max(380,txt.length*fs*.52+50);S('rect',{x:1240-w,y:y,width:w,height:66,rx:16,fill:'#fff',stroke:col,'stroke-width':4,opacity:op});big(1240-w/2,y+44,txt,col,fs,op);}
+var COL=['#2F6FDE','#2E7D6B','#B05E09'];
+// a bar model: whole label over a brace, parts with labels; ops gives each part's opacity, wop the whole's
+function bar(x,y,w,whole,parts,wop,ops){var tot=parts.reduce(function(a,p){return a+p[1];},0),xx=x;
+  S('path',{d:'M'+x+' '+(y-10)+' L'+x+' '+(y-30)+' L'+(x+w)+' '+(y-30)+' L'+(x+w)+' '+(y-10),fill:'none',stroke:NV,'stroke-width':4,opacity:wop});
+  var lw=whole.length*15+40;S('rect',{x:x+w/2-lw/2,y:y-82,width:lw,height:44,rx:10,fill:'#fff',stroke:OK,'stroke-width':3,opacity:wop});big(x+w/2,y-51,whole,NV,26,wop);
+  S('rect',{x:x-4,y:y-4,width:w+8,height:78,rx:8,fill:'#fff',stroke:NV,'stroke-width':4});
+  parts.forEach(function(p,i){var pw=w*p[1]/tot;S('rect',{x:xx+3,y:y+2,width:pw-6,height:66,rx:6,fill:COL[i%3],opacity:ops[i]});
+    var lw2=p[0].length*13+30;S('rect',{x:xx+pw/2-lw2/2,y:y+14,width:lw2,height:42,rx:9,fill:'#fff',stroke:OK,'stroke-width':3,opacity:ops[i]});big(xx+pw/2,y+44,p[0],NV,24,ops[i]);xx+=pw;});}
+function line(y,txt,op,col,size){big(640,y,txt,col||NV,size||36,op);}
+function render(t){
+  window.__t=t;var book=document.getElementById('book'),cap=document.getElementById('cap');
+  cap.textContent=window.NOCAP?'':caption(t);
+  var inOpen=t<K.a-0.3, inClose=t>=K.close-0.3;
+  book.classList.toggle('on',inOpen||inClose);
+  if(inClose){document.getElementById('btt').textContent='Your turn';document.getElementById('bq').textContent='Read it, draw it, convert, solve and write it tidy.';}
+  sv.innerHTML='';if(inOpen||inClose)return;
+  // the four steps strip along the top
+  function steps(cur){['1 Read','2 Draw','3 Convert & solve','4 Write it tidy'].forEach(function(s,i){var x=330+i*215,on=i+1===cur,done=i+1<cur;S('rect',{x:x-100,y:92,width:200,height:44,rx:22,fill:on?'#FFF4D6':done?'#E6F4EC':'#fff',stroke:on?GOLD:done?OK:'#C9CFDF','stroke-width':3});big(x,122,(done?'✓ ':'')+s,on?'#6B4A12':done?OK:CW,20);});}
+  // ── scene 1+2: the rope problem
+  if(t<K.same-0.3){
+    var cur=t<K.s1-0.2?0:t<K.s2-0.2?1:t<K.s3-0.2?2:t<K.s4-0.2?3:4;steps(cur);
+    var o=fadeIn(t,K.a-0.3);
+    S('rect',{x:140,y:160,width:1000,height:96,rx:14,fill:'#fff',stroke:'#D9C79F','stroke-width':2,opacity:o});
+    big(640,198,'A rope is 6 m 20 cm long. Ben cuts off 2 m 55 cm,',NV,26,o);big(640,236,'then 1 m 70 cm. How much rope is left?',NV,26,o);
+    if(t>=K.s1-0.2&&t<K.s3-0.3){var q=fadeIn(t,K.s1);S('rect',{x:598,y:214,width:300,height:32,rx:8,fill:'none',stroke:GOLD,'stroke-width':3,opacity:q});}
+    if(t<K.s2-0.3){var ro=fadeIn(t,K.a+0.5);S('path',{d:'M190 380 Q 640 360 1090 380',stroke:'#A9844E','stroke-width':12,fill:'none','stroke-linecap':'round',opacity:ro});
+      if(t>=K.ben){var c1=fadeIn(t,K.ben+0.6);S('line',{x1:560,y1:350,x2:560,y2:410,stroke:NO,'stroke-width':4,'stroke-dasharray':'8 5',opacity:c1});S('line',{x1:810,y1:350,x2:810,y2:410,stroke:NO,'stroke-width':4,'stroke-dasharray':'8 5',opacity:fadeIn(t,K.ben+2.2)});big(375,440,'cut off',NO,22,c1);big(685,440,'cut off',NO,22,fadeIn(t,K.ben+2.2));big(950,440,'left?',BLUE,22,fadeIn(t,K.how));}}
+    if(t>=K.s2-0.3){var bo=fadeIn(t,K.s2-0.3);var y0=t<K.s3-0.3?400:350;
+      bar(190,y0,900,'6 m 20 cm',[['2 m 55 cm',255],['1 m 70 cm',170],['?',195]],bo*fadeIn(t,K.whole-0.3),[bo*fadeIn(t,K.pieces-0.3),bo*fadeIn(t,K.pieces),bo*fadeIn(t,K.qm-0.3)]);}
+    if(t>=K.s3-0.3){var l1=fadeIn(t,K.six);line(500,'6 m 20 cm = 620 cm',NV,l1,32);
+      if(t>=K.min1-0.6)line(548,'620 − 255 = 365',NV,fadeIn(t,K.min1-0.6),32);
+      if(t>=K.min2-0.4)line(596,'365 − 170 = 195 cm',NV,fadeIn(t,K.min2-0.4),32);}
+    if(t>=K.s4-0.3)box(470,'195 cm = 1 m 95 cm',fadeIn(t,K.s4));
+  }
+  // ── scene 3: liters, same steps
+  else if(t<K.watch-0.3){steps(4);
+    var o3=fadeIn(t,K.same-0.3);
+    S('rect',{x:140,y:160,width:1000,height:96,rx:14,fill:'#fff',stroke:'#D9C79F','stroke-width':2,opacity:o3});
+    big(640,198,'A jug has 2 L 350 mL of juice.',NV,26,o3);big(640,236,'Mia pours out 1 L 760 mL. How much is left?',NV,26,o3);
+    if(t>=K.mia)bar(190,370,900,'2 L 350 mL',[['1 L 760 mL',1760],['?',590]],fadeIn(t,K.mia),[fadeIn(t,K.mia+0.4),fadeIn(t,K.mia+0.8)]);
+    if(t>=K.two-0.3)line(530,'2,350 mL − 1,760 mL = 590 mL',OK,fadeIn(t,K.two-0.3),36);
+  }
+  // ── scene 4: watch out, tidy answers
+  else {
+    S('rect',{x:140,y:96,width:1000,height:62,rx:14,fill:'#FBE7E4',stroke:NO,'stroke-width':3});big(640,138,'Watch out! Write it the tidy way.',NO,30);
+    var o4=fadeIn(t,K.watch);
+    function stick(x,y,w,lab,op,col){S('rect',{x:x,y:y,width:w,height:40,rx:5,fill:col||'#F6DE94',stroke:'#B8902A','stroke-width':3,opacity:op});big(x+w/2,y+28,lab,'#5A4300',20,op);}
+    for(var i=0;i<3;i++)stick(160+i*250,230,240,'1 m',o4);stick(910,230,264,'110 cm',o4,'#EAF3FF');
+    big(640,330,'3 m 110 cm',NO,40,o4);
+    if(t>=K.one-0.3){var x1=fadeIn(t,K.one-0.3);S('line',{x1:520,y1:318,x2:760,y2:318,stroke:NO,'stroke-width':5,opacity:x1});
+      for(var k=0;k<4;k++)stick(110+k*230,400,220,'1 m',x1);stick(1035,400,26,'',x1,'#EAF3FF');big(1048,470,'10 cm',BLUE,20,x1);}
+    if(t>=K.write-0.4)big(640,540,'4 m 10 cm',OK,48,fadeIn(t,K.write-0.4));
+  }
+}
+window.init=function(tl){TL=tl;setup();};
+</script></body></html>

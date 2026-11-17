@@ -68,6 +68,11 @@ TOOLS = {
  'bond-ml': ('bond', {"parts": 2, "w": "8,300 mL", "p": ["8,000 mL", "?"]}, 'Number Bond', 'Split 8,300 mL into the thousands and the rest. Every 1,000 mL is 1 liter.'),
  'scale-dial': ('scale', {"m": "dial", "u": "kg", "mx": 5, "tk": 100, "w": 2300}, 'Scale & Balance', 'Put something on the scale. Count the small marks from 0 to 1 kg to find what each one is worth.'),
  'bond-g': ('bond', {"parts": 2, "w": "8,020 g", "p": ["8,000 g", "?"]}, 'Number Bond', 'Split 8,020 g into the thousands and the rest. Every 1,000 g is 1 kilogram.'),
+ 'bond-100b': ('bond', {"parts": 2, "w": "100 cm", "p": ["48 cm", "?"]}, 'Number Bond', 'One meter is 100 cm. Split it into 48 cm and the rest. Count up to 100.'),
+ 'bar-yt': ('bar', {"bars": [{"n": "", "t": "?", "tp": "above", "p": [{"v": "", "l": "1 km 490 m", "c": 1}, {"v": "", "l": "880 m", "c": 2}]}], "cmp": {"on": 0, "a": 0, "b": 1, "l": ""}}, 'Bar Model', 'Draw the two rides as parts of one bar. The total is the ?.'),
+ 'bar-kai': ('bar', {"bars": [{"n": "", "t": "3 m 10 cm", "tp": "above", "p": [{"v": "", "l": "45 cm", "c": 1}, {"v": "", "l": "?", "c": 0}]}], "cmp": {"on": 0, "a": 0, "b": 1, "l": ""}}, 'Bar Model', 'The plank is the whole bar. One part is cut off; the ? is what is left.'),
+ 'bar-leo': ('bar', {"bars": [{"n": "", "t": "?", "tp": "above", "p": [{"v": "", "l": "2 kg 840 g", "c": 1}, {"v": "", "l": "1 kg 370 g", "c": 2}]}], "cmp": {"on": 0, "a": 0, "b": 1, "l": ""}}, 'Bar Model', 'Put the two bags side by side as parts. The total weight is the ?.'),
+ 'bar-own': ('bar', {"bars": [{"n": "", "t": "5 L", "tp": "above", "p": [{"v": "", "l": "2 L 600 mL", "c": 1}, {"v": "", "l": "1 L 900 mL", "c": 2}, {"v": "", "l": "?", "c": 0}]}], "cmp": {"on": 0, "a": 0, "b": 1, "l": ""}}, 'Bar Model', 'The tank is the whole bar. The two pours are parts; the ? is the empty space.'),
  'fbars-9-10': ('fbars', {"d": [9, 10], "lab": 1}, 'Fraction Tiles', 'Try a bar of ninths and a bar of tenths. Shade 1 ninth and 2 tenths. Which reaches farther?'),
 }
 def enc(o): return base64.urlsafe_b64encode(json.dumps(o, separators=(',', ':')).encode()).decode().rstrip('=')
@@ -216,6 +221,17 @@ L = {
      {"t": "subtract", "d": "To take away. 3 km − 450 m means take 450 m away from 3 km."},
      {"t": "compound units", "d": "Two units used together to write one distance, like 2 km 550 m."},
      {"t": "ruler", "alt": ["rulers"], "d": "A straight strip marked with equal units, used to measure length."}]),
+  '3.11.07': dict(page='math-lesson-3-11-07-word-problems.html', title='Word Problems', video='g3math-11-07-learn', music='gluck-blessed-spirits.mp3',
+   glossary=[
+     {"t": "bar model", "alt": ["bar models"], "d": "A drawing of a word problem: a long bar for the whole, split into pieces for the parts. A ? shows what you need to find.", "key": True},
+     {"t": "total", "d": "The amount you get when you put all the parts together.", "key": True},
+     {"t": "convert", "alt": ["converted"], "d": "To change a measure into another unit, like 2 m 52 cm into 252 cm.", "key": True},
+     {"t": "compound units", "d": "Two units used together to write one amount, like 4 kg 210 g.", "key": True},
+     {"t": "difference", "d": "How much more one amount is than another. You find it by subtracting.", "key": True},
+     {"t": "subtract", "d": "To take away. 310 cm − 45 cm means take 45 cm away from 310 cm.", "key": True},
+     {"t": "word problem", "alt": ["word problems"], "d": "A math problem told as a little story, with a question to answer."},
+     {"t": "temperature", "d": "How hot or cold something is. We read it on a thermometer in degrees."},
+     {"t": "tidy", "d": "An answer is tidy when the small unit is less than one big unit, like 4 m 10 cm, not 3 m 110 cm."}]),
   '3.11.06': dict(page='math-lesson-3-11-06-kilograms-and-grams.html', title='Kilograms and Grams', video='g3math-11-06-learn', music='mozart-k525-romanze.mp3',
    glossary=[
      {"t": "kilogram", "alt": ["kilograms"], "d": "A unit for how heavy something is. 1 kilogram is 1,000 grams. We write kg.", "key": True},

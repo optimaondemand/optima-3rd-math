@@ -301,6 +301,26 @@ SC['3.10.07']=function(t,K){
   if(t>=K.take-0.3)label(820,440,'step 2: take away',ramp(t,K.take-0.3,0.4),'#B23A2E',28);
   if(t>=K.step-0.3)label(640,530,'one step at a time',ramp(t,K.step-0.3,0.4),GREEN,28);
 };
+SC['3.11.07']=function(t,K){
+  var HD='CHAPTER 11 · THE METER OF PARIS';
+  if(t<K.nw-0.3){head('','');owl(1000,380,150,t);book(t,0.1,'sb-mesures-row-plate.jpg','CHAPTER 11 · LESSON 7',['Word','Problems'],'Paris, 1800');return;}
+  if(t<K.look-0.3){head(HD,'The new measures, everywhere');owl(1060,440,120,t);var o=fade(t,K.nw-0.3,K.look-0.3);
+    [['meter',330,'#F6DE94','#B8902A'],['liter',640,'#EAF3FF','#3B7DC4'],['gram',950,'#F3E3C7','#7A5A2A']].forEach(function(u,i){var q=o*ramp(t,K.nw+0.35*i,0.5),g=S('g',{opacity:q});S('circle',{cx:u[1],cy:380,r:96,fill:u[2],stroke:u[3],'stroke-width':5},g);S('text',{x:u[1],y:392,'text-anchor':'middle','font-size':38,'font-weight':900,fill:NAVY,text:u[0]},g);});
+    if(t>=K.every-0.3)label(640,580,'used all over France',o*ramp(t,K.every-0.3,0.4),GREEN,30);return;}
+  if(t<K.market-0.3){var fx=t<K.weighs-0.3?0.02:t<K.meas-0.3?0.5:0.98,lab=t<K.pours-0.3?'A print from Paris, 1800':t<K.weighs-0.3?'Pouring a liter':t<K.meas-0.3?'Weighing in grams':'Measuring with a meter';
+    head(HD,lab);owl(null);var o2=fade(t,K.look-0.3,K.market-0.3),z=t<K.pours-0.3?1+0.03*(t-K.look):2.1;
+    pic('sb-mesures-row-plate.jpg',t<K.pours-0.3?250:340,t<K.pours-0.3?82:110,t<K.pours-0.3?780:600,t<K.pours-0.3?528:470,z,t<K.pours-0.3?0.5:fx,0.35,o2);return;}
+  if(t<K.today-0.3){head(HD,'All the measures at once');owl(null);var o3=fade(t,K.market-0.3,K.today-0.3);
+    var g1=S('g',{opacity:o3*ramp(t,K.market,0.5)});S('path',{d:'M250 300 L250 520 Q250 540 270 540 L390 540 Q410 540 410 520 L410 300',fill:'#F7FAFD',stroke:'#5B6478','stroke-width':5},g1);S('rect',{x:254,y:400,width:152,height:138,rx:8,fill:'#9CC8EE'},g1);
+    var g2=S('g',{opacity:o3*ramp(t,K.market+0.4,0.5)});S('rect',{x:540,y:330,width:200,height:210,rx:24,fill:'#E9EEF5',stroke:'#5B6478','stroke-width':4},g2);S('rect',{x:520,y:312,width:240,height:16,rx:6,fill:'#8C96A8'},g2);S('circle',{cx:640,cy:440,r:70,fill:'#fff',stroke:NAVY,'stroke-width':4},g2);S('line',{x1:640,y1:440,x2:690,y2:400,stroke:'#C0392B','stroke-width':5},g2);
+    var g3=S('g',{opacity:o3*ramp(t,K.market+0.8,0.5)});S('rect',{x:860,y:500,width:300,height:40,rx:5,fill:'#F6DE94',stroke:'#B8902A','stroke-width':3},g3);for(var m=0;m<=10;m++)S('line',{x1:860+m*30,y1:500,x2:860+m*30,y2:m%5?512:520,stroke:NAVY,'stroke-width':2},g3);
+    if(t>=K.word-0.3)label(640,220,'word problems mix them too',o3*ramp(t,K.word-0.3,0.4),GREEN,30);return;}
+  head(HD,'Read, draw a bar model, solve');owl(null);var q=ramp(t,K.today-0.4,0.5),b=ramp(t,K.bar-0.3,0.6);
+  var g=S('g',{opacity:q*b});S('path',{d:'M240 300 L240 280 L1040 280 L1040 300',fill:'none',stroke:NAVY,'stroke-width':4},g);
+  S('rect',{x:600,y:222,width:80,height:44,rx:10,fill:'#fff',stroke:'#1E7A4C','stroke-width':3},g);S('text',{x:640,y:253,'text-anchor':'middle','font-size':28,'font-weight':900,fill:NAVY,text:'?'},g);
+  S('rect',{x:236,y:316,width:808,height:82,rx:8,fill:'#fff',stroke:NAVY,'stroke-width':4},g);S('rect',{x:242,y:322,width:470,height:70,rx:6,fill:'#2F6FDE'},g);S('rect',{x:718,y:322,width:320,height:70,rx:6,fill:'#2E7D6B'},g);
+  if(t>=K.solve-0.3)label(640,520,'one step at a time',ramp(t,K.solve-0.3,0.4),GREEN,30);
+};
 SC['3.11.06']=function(t,K){
   var HD='CHAPTER 11 · THE METER OF PARIS';
   function wgt(x,y,h,w,txt,o){var g=S('g',{opacity:o});S('rect',{x:x-w/2,y:y-h,width:w,height:h,rx:8,fill:'#C9A36A',stroke:'#7A5A2A','stroke-width':3},g);S('rect',{x:x-w*.18,y:y-h-12,width:w*.36,height:14,rx:4,fill:'#A9844E'},g);if(txt)S('text',{x:x,y:y+40,'text-anchor':'middle','font-size':26,'font-weight':900,fill:NAVY,text:txt},g);return g;}
@@ -485,6 +505,7 @@ SC['3.11.01']=function(t,K){
   if(t>=K.two-0.3)label(640,540,'say it two ways',ramp(t,K.two-0.3,0.4),GREEN,30);
 };
 var CUES={
+ '3.11.07':function(){return{nw:wt(/^new$/),every:wt(/^everywhere$/),look:wt(/^Look$/),pours:wt(/^pours$/),weighs:wt(/^weighs$/),meas:wt(/^measures$/,1),market:wt(/^market$/),word:wt(/^Word$/),today:wt(/^Today$/),bar:wt(/^bar$/),solve:wt(/^solve$/)};},
  '3.11.06':function(){return{sci:wt(/^Scientists$/),same:wt(/^same$/),antoine:wt(/^Antoine$/),balance:wt(/^balance$/),helps:wt(/^helps$/),idea:wt(/^idea$/),gram:wt(/^gram$/,0),side:wt(/^side$/),thousand:wt(/^thousand$/),kg:wt(/^kilogram$/),look:wt(/^Look$/),table:wt(/^table$/),tools:wt(/^tools$/),today:wt(/^Today$/),weigh:wt(/^weigh$/)};},
  '3.11.05':function(){return{france:wt(/^France$/),measure:wt(/^measure$/),called:wt(/^called$/),shop:wt(/^Shopkeepers$/),pour:wt(/^pour$/),inpic:wt(/^In$/),funnel:wt(/^funnel$/),fill:wt(/^fill$/,0),today:wt(/^Today$/),beaker:wt(/^beaker$/),fill2:wt(/^fill$/,1)};},
  '3.11.04':function(){return{jean:wt(/^Jean-Baptiste$/),land:wt(/^land$/),meter:wt(/^meter$/),near:wt(/^Near$/),twelve:wt(/^twelve$/),lay:wt(/^lay$/),again:wt(/^again$/,0),look:wt(/^Look$/),today:wt(/^Today$/),km:wt(/^subtract$/)};},

@@ -3005,6 +3005,7 @@
     function putItem(i) {
       if (S.on.indexOf(i) > -1) return;
       if (CMP && i === 1 && S.on.indexOf(0) < 0) { msg('Put ' + IT[0].l + ' on the left pan first.'); return; }
+      if (box.dataset.inorder && i > 0 && S.on.indexOf(i - 1) < 0) { msg('Put the ' + IT[i - 1].l + ' on the scale first.'); return; }
       S.on.push(i); save(); pluck(HZ.C4); after();
     }
     function after() { draw(); say(); }
@@ -3015,7 +3016,7 @@
         msg(!R ? 'The box is on the left pan. Add weights to the right pan.' : R === L ? '✓ The pans are level.' : R < L ? 'The right pan is still too light. Add more.' : 'Too heavy! Tap a weight on the right pan to take it off.', R === L);
         return;
       }
-      if (K === 'dial') { var n = S.w.length; msg(itemsOn().length ? 'The ' + itemsOn()[0].l + (/s$/.test(itemsOn()[0].l) ? ' are' : ' is') + ' on the scale. Read the dial.' : n ? 'Weights on the scale: ' + S.w.slice().sort(function (a, b) { return b - a; }).map(wl).join(', ') + '.' : 'Nothing is on the scale yet.', T ? load() === T : itemsOn().length > 0); return; }
+      if (K === 'dial') { var n = S.w.length; msg(itemsOn().length ? (itemsOn().length > 1 ? 'The ' + itemsOn().map(function (x) { return x.l; }).join(' and the ') + ' are' : 'The ' + itemsOn()[0].l + (/s$/.test(itemsOn()[0].l) ? ' are' : ' is')) + ' on the scale. Read the dial.' : n ? 'Weights on the scale: ' + S.w.slice().sort(function (a, b) { return b - a; }).map(wl).join(', ') + '.' : 'Nothing is on the scale yet.', T ? load() === T : itemsOn().length > 0); return; }
       var cnt = {}; S.w.forEach(function (g) { cnt[g] = (cnt[g] || 0) + 1; });
       msg(S.w.length ? 'On the mat: ' + Object.keys(cnt).map(Number).sort(function (a, b) { return b - a; }).map(function (g) { return cnt[g] + ' × ' + wl(g); }).join(', ') + '.' : 'The mat is empty.', T && load() === T);
     }
@@ -3033,6 +3034,12 @@
       if (it.n === 'jar') {
         NS('path', { d: 'M' + (x - w / 2 + 8) + ' ' + (y - h) + ' L' + (x + w / 2 - 8) + ' ' + (y - h) + ' L' + (x + w / 2) + ' ' + (y - 10) + ' Q' + (x + w / 2) + ' ' + y + ' ' + (x + w / 2 - 10) + ' ' + y + ' L' + (x - w / 2 + 10) + ' ' + y + ' Q' + (x - w / 2) + ' ' + y + ' ' + (x - w / 2) + ' ' + (y - 10) + ' Z', fill: '#DCEBF8', stroke: '#5B6478', 'stroke-width': 2.5 }, gg);
         NS('rect', { x: x - w / 2 + 3, y: y - h * 0.72, width: w - 6, height: h * 0.72 - 3, rx: 6, fill: '#9CC8EE' }, gg);
+      } else if (it.n === 'bucket') {
+        NS('path', { d: 'M' + (x - w / 2) + ' ' + (y - h) + ' L' + (x + w / 2) + ' ' + (y - h) + ' L' + (x + w / 2 - 12) + ' ' + y + ' L' + (x - w / 2 + 12) + ' ' + y + ' Z', fill: '#C9CFDA', stroke: '#5B6478', 'stroke-width': 2.5 }, gg);
+        NS('path', { d: 'M' + (x - w / 2 + 6) + ' ' + (y - h) + ' Q' + x + ' ' + (y - h - 34 * s) + ' ' + (x + w / 2 - 6) + ' ' + (y - h), fill: 'none', stroke: '#5B6478', 'stroke-width': 3 }, gg);
+      } else if (it.n === 'water') {
+        NS('path', { d: 'M' + (x - w / 2 + 10) + ' ' + (y - h) + ' L' + (x + w / 2 - 10) + ' ' + (y - h) + ' L' + (x + w / 2 - 4) + ' ' + y + ' L' + (x - w / 2 + 4) + ' ' + y + ' Z', fill: '#F7FAFD', stroke: '#5B6478', 'stroke-width': 2.5 }, gg);
+        NS('rect', { x: x - w / 2 + 8, y: y - h * 0.78, width: w - 16, height: h * 0.78 - 2, fill: '#9CC8EE' }, gg);
       } else if (it.n === 'box') {
         NS('rect', { x: x - w / 2, y: y - h, width: w, height: h, rx: 4, fill: '#C49A6C', stroke: '#7A5A2A', 'stroke-width': 2.5 }, gg);
         NS('line', { x1: x - w / 2, y1: y - h * 0.7, x2: x + w / 2, y2: y - h * 0.7, stroke: '#7A5A2A', 'stroke-width': 2 }, gg);
@@ -3071,7 +3078,7 @@
         target = [cx - pw / 2 - 20, 0, cx + pw / 2 + 20, cy + r + 30];
         // what is on the platform
         var xx = cx - (itemsOn().length ? 0 : 0);
-        itemsOn().forEach(function (it) { item(it, cx, py, s * 0.9, svg); });
+        var ion = itemsOn(), iw = 104 * s * 0.9; ion.forEach(function (it, j) { item(it, cx + (j - (ion.length - 1) / 2) * iw, py, s * 0.9, svg); });
         if (!itemsOn().length && S.w.length) {
           var sp = 0; S.w.forEach(function (g) { sp += weight(g, 0, 0, s * 0.8, NS('g', {}, null)).w + 6; });
           var x0 = cx - sp / 2;
@@ -3127,7 +3134,7 @@
       IT.forEach(function (it, i) {
         if (S.on.indexOf(i) > -1 || (K === 'balance' && !CMP)) return;
         var g = item(it, tx + 46 * s, base, s * 0.85, svg); tx += 110 * s;
-        var need = !CMP || (i === 0 ? S.on.indexOf(0) < 0 : S.on.indexOf(0) > -1);
+        var need = box.dataset.inorder ? (i === 0 || S.on.indexOf(i - 1) > -1) : !CMP || (i === 0 ? S.on.indexOf(0) < 0 : S.on.indexOf(0) > -1);
         g.setAttribute('class', 'wg-item' + (need && !next ? ' wg-next' : '')); g.setAttribute('role', 'button'); g.setAttribute('tabindex', 0); g.setAttribute('aria-label', it.l + '. Drag it onto the ' + (K === 'balance' ? (i === 0 ? 'left' : 'right') + ' pan' : 'scale') + '.'); g.style.cursor = 'grab';
         if (need && !next) next = g;
         dropOn(g, target, function () { putItem(i); });
@@ -3141,12 +3148,55 @@
       svg.setAttribute('viewBox', '0 0 700 ' + (ty + th + 8));
       // flags
       if (K === 'dial' && IT.length && itemsOn().length) flag(box, 'on');
+      if (K === 'dial' && IT.length && itemsOn().length === IT.length) flag(box, 'all');
       if ((K === 'dial' || K === 'mat') && T && load() === T) flag(box, 'w');
       if (K === 'balance' && CMP) { if (S.on.indexOf(0) > -1) flag(box, 'a'); if (S.on.length === 2) flag(box, 'tip'); }
       if (K === 'balance' && !CMP && sumW() && sumW() === leftG()) flag(box, 'level');
       if (!out.innerHTML) say();
     }
     onWidth(box, draw); draw();
+  };
+
+  /* ── bar (3.11.07 word problems): drag the labels onto a bar model. data-whole, data-parts "label:size;…". Flag: bar ── */
+  MODS.bar = function (box) {
+    var name = box.dataset.name || 'bar', W = box.dataset.whole || '?';
+    var P = (box.dataset.parts || '').split(';').filter(Boolean).map(function (p) { var i = p.lastIndexOf(':'); return { l: p.slice(0, i), s: +p.slice(i + 1) || 1 }; });
+    var L = [{ k: 'w', l: W }].concat(P.map(function (p, i) { return { k: 'p' + i, l: p.l }; }));
+    var ORD = L.map(function (c, i) { return i; }); ORD.push(ORD.shift()); if (ORD.length > 2) ORD.reverse();
+    var S = mstate(name, { at: {} }), sel = null;
+    var COL = ['#2F6FDE', '#2E7D6B', '#B05E09', '#6B46C1'];
+    box.innerHTML = '<div class="sb-stage sb-bm"><div class="bm-wrap">' +
+      '<div class="bm-top"><span class="bm-slot" data-k="w" role="button" tabindex="0" aria-label="The whole: drop a label here"></span><span class="bm-brace" aria-hidden="true"></span></div>' +
+      '<div class="bm-bar">' + P.map(function (p, i) { return '<div class="bm-seg" style="flex:' + p.s + ';background:' + COL[i % 4] + '"><span class="bm-slot" data-k="p' + i + '" role="button" tabindex="0" aria-label="Part ' + (i + 1) + ': drop a label here"></span></div>'; }).join('') + '</div>' +
+      '</div><div class="bm-chips" role="group" aria-label="Labels to drag">' + ORD.map(function (i) { var c = L[i]; return '<button type="button" class="bm-chip" data-k="' + c.k + '">' + esc(c.l) + '</button>'; }).join('') + '</div></div>' +
+      '<div class="sb-readout" aria-live="polite"></div>';
+    var out = $('.sb-readout', box);
+    function why(c, k) {
+      if (c === 'w') return 'That is the whole amount. It goes on top, over the whole bar.';
+      if (k === 'w') return c && L.filter(function (x) { return x.k === c; })[0].l === '?' ? 'The ? is a part we don\'t know yet. The top already tells the whole.' : 'That is only one part. The top is for the whole amount.';
+      return L.filter(function (x) { return x.k === c; })[0].l === '?' ? 'The ? is the part we don\'t know yet. Which piece of the bar is missing?' : 'Look at the sizes. A longer piece of the bar is a bigger amount.';
+    }
+    function place(c, k) {
+      if (S.at[k]) return;
+      if (c !== k) { out.innerHTML = why(c, k); pluck(HZ.D4); return; }
+      S.at[k] = 1; save(); pluck(HZ.C5); sel = null; paint();
+    }
+    function paint() {
+      $$('.bm-slot', box).forEach(function (s) { var k = s.dataset.k, l = L.filter(function (x) { return x.k === k; })[0]; s.className = 'bm-slot' + (S.at[k] ? ' full' : '') + (sel && !S.at[k] ? ' open' : ''); s.innerHTML = S.at[k] ? esc(l.l) : '<small>drop here</small>'; });
+      $$('.bm-chip', box).forEach(function (c) { c.hidden = !!S.at[c.dataset.k]; c.classList.toggle('sel', c.dataset.k === sel); c.classList.toggle('bm-next', !S.at[c.dataset.k] && !$('.bm-chip:not([hidden]).bm-next', box)); });
+      var n = L.filter(function (c) { return S.at[c.k]; }).length;
+      if (n === L.length) { out.innerHTML = '<span style="color:#1E7A4C">✓ The bar model is ready: ' + (W === '?' ? 'the parts are known, the whole is ?' : P.some(function (p) { return p.l === '?'; }) ? 'the whole is known, one part is ?' : 'every amount is on it') + '.</span>'; flag(box, 'bar'); }
+      else if (!out.innerHTML || n) out.innerHTML = n ? 'Placed ' + n + ' of ' + L.length + ' labels.' : '';
+    }
+    $$('.bm-chip', box).forEach(function (c) {
+      hdrag(c, function (t) { var s = t && t.closest && t.closest('.bm-slot'); if (s && box.contains(s)) place(c.dataset.k, s.dataset.k); },
+        function () { sel = sel === c.dataset.k ? null : c.dataset.k; out.innerHTML = sel ? 'Now tap the spot on the bar model where it goes.' : ''; paint(); });
+    });
+    $$('.bm-slot', box).forEach(function (s) {
+      function go() { if (sel) place(sel, s.dataset.k); }
+      s.addEventListener('click', go); s.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } });
+    });
+    paint();
   };
 
   $$('[data-mod]').forEach(function (b) { var f = MODS[b.dataset.mod]; if (f) try { f(b); } catch (e) { console.error('model', b.dataset.mod, e); } });
