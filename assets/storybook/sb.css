@@ -519,3 +519,13 @@ html.sb-still *{animation:none!important;transition:none!important}
 .bm-chip.sel{background:#FFF4D6;border-color:#C9A227}
 .bm-chip.dragging{position:relative;z-index:5}
 @media (max-width:560px){.bm-seg{min-width:78px}.bm-seg .bm-slot{min-width:0}.bm-slot{min-width:64px;font-size:14px;padding:3px 5px}.bm-chip{font-size:15px;padding:6px 10px}}
+/* ── circ (3.12.01 circles) ── */
+.sb-ci .ci-btns{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:0 0 8px}
+.sb-ci .ci-btns:empty{display:none}
+.sb-ci .ci-chips:empty{display:none}
+.sb-ci svg .ci-slot{cursor:pointer}
+.sb-ci svg .drag{cursor:grab}
+.sb-ci svg .drag:focus-visible,.sb-ci svg .ci-slot:focus-visible,.sb-ci svg .ci-cross:focus-visible,.sb-ci svg .ci-tapc:focus-visible{outline:3px solid #C9A227;outline-offset:2px}
+.sb-ci svg .ci-cross{animation:ciPulse 1.6s ease-in-out infinite}
+@keyframes ciPulse{50%{opacity:.55}}
+@media (prefers-reduced-motion:reduce){.sb-ci svg .ci-cross{animation:none}}

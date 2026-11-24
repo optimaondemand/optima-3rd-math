@@ -74,6 +74,9 @@ TOOLS = {
  'bar-leo': ('bar', {"bars": [{"n": "", "t": "?", "tp": "above", "p": [{"v": "", "l": "2 kg 840 g", "c": 1}, {"v": "", "l": "1 kg 370 g", "c": 2}]}], "cmp": {"on": 0, "a": 0, "b": 1, "l": ""}}, 'Bar Model', 'Put the two bags side by side as parts. The total weight is the ?.'),
  'bar-own': ('bar', {"bars": [{"n": "", "t": "5 L", "tp": "above", "p": [{"v": "", "l": "2 L 600 mL", "c": 1}, {"v": "", "l": "1 L 900 mL", "c": 2}, {"v": "", "l": "?", "c": 0}]}], "cmp": {"on": 0, "a": 0, "b": 1, "l": ""}}, 'Bar Model', 'The tank is the whole bar. The two pours are parts; the ? is the empty space.'),
  'fbars-9-10': ('fbars', {"d": [9, 10], "lab": 1}, 'Fraction Tiles', 'Try a bar of ninths and a bar of tenths. Shade 1 ninth and 2 tenths. Which reaches farther?'),
+ 'compass-1': ('compass', {"r": 2, "circ": [[9, 6, 2]], "lines": True}, 'Compass', 'This circle has a radius of 2 cm. Count the squares from one side to the other. How many radii fit across?'),
+ 'compass-2': ('compass', {"r": 1, "lines": True}, 'Compass', 'Draw a circle with a radius of 1 cm. Then open the compass to 2 cm and draw another circle around the same center. Which one is twice as wide?'),
+ 'compass-own': ('compass', {"r": 2, "lines": True}, 'Compass', 'Open the compass, then drag the pencil all the way around. Read the radius and the diameter under the tool.'),
 }
 def enc(o): return base64.urlsafe_b64encode(json.dumps(o, separators=(',', ':')).encode()).decode().rstrip('=')
 GL_BASE = [
@@ -232,6 +235,17 @@ L = {
      {"t": "word problem", "alt": ["word problems"], "d": "A math problem told as a little story, with a question to answer."},
      {"t": "temperature", "d": "How hot or cold something is. We read it on a thermometer in degrees."},
      {"t": "tidy", "d": "An answer is tidy when the small unit is less than one big unit, like 4 m 10 cm, not 3 m 110 cm."}]),
+  '3.12.01': dict(page='math-lesson-3-12-01-circles.html', title='Circles', video='g3math-12-01-learn', music='el-grillo.mp3',
+   glossary=[
+     {"t": "circle", "alt": ["circles"], "d": "A round shape. Every point on it is the same distance from the center.", "key": True},
+     {"t": "center", "alt": ["centre"], "d": "The point in the middle of a circle. Every point on the circle is the same distance from it.", "key": True},
+     {"t": "radius", "alt": ["radii"], "d": "A straight line from the center of a circle to its edge. Two of them are called radii.", "key": True},
+     {"t": "diameter", "alt": ["diameters"], "d": "A straight line all the way across a circle, through the center. It is as long as 2 radii.", "key": True},
+     {"t": "compass", "d": "A tool with two legs for drawing circles. One leg has a sharp point. The other holds a pencil.", "key": True},
+     {"t": "geometry", "d": "The part of math about shapes, lines, angles and space."},
+     {"t": "fold", "alt": ["folds"], "d": "The line left on paper when you bend it flat. It is also called a crease."},
+     {"t": "edge", "d": "The outside line of a shape. On a circle, the edge is the round line."},
+     {"t": "slate", "d": "A small flat board of dark stone. Long ago, students wrote and drew on it."}]),
   '3.11.06': dict(page='math-lesson-3-11-06-kilograms-and-grams.html', title='Kilograms and Grams', video='g3math-11-06-learn', music='mozart-k525-romanze.mp3',
    glossary=[
      {"t": "kilogram", "alt": ["kilograms"], "d": "A unit for how heavy something is. 1 kilogram is 1,000 grams. We write kg.", "key": True},

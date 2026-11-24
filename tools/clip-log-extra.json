@@ -330,5 +330,29 @@
  "g3m-word-baseline": {
   "text": "Baseline.",
   "voice": "opti"
+ },
+ "g3m-3-12-01-words": {
+  "text": "Circle. ... Center. ... Radius. ... Diameter. ... Compass.",
+  "voice": "LRkukhGJZOFsyrZCwQaZ"
+ },
+ "g3m-word-circle": {
+  "text": "Circle.",
+  "voice": "LRkukhGJZOFsyrZCwQaZ"
+ },
+ "g3m-word-center": {
+  "text": "Center.",
+  "voice": "LRkukhGJZOFsyrZCwQaZ"
+ },
+ "g3m-word-radius": {
+  "text": "Radius.",
+  "voice": "LRkukhGJZOFsyrZCwQaZ"
+ },
+ "g3m-word-diameter": {
+  "text": "Diameter.",
+  "voice": "LRkukhGJZOFsyrZCwQaZ"
+ },
+ "g3m-word-compass": {
+  "text": "Compass.",
+  "voice": "LRkukhGJZOFsyrZCwQaZ"
  }
 }

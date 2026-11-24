@@ -8,6 +8,7 @@ optima-3rd-math,opti,,0,audio/storybook/bach-invention-1-bwv772.mp3,not-speech,,
 optima-3rd-math,opti,,0,audio/storybook/bach-musette-anh126.mp3,not-speech,,f2c1aa5eb81bfc79fc2d88509b4f13cc
 optima-3rd-math,opti,,0,audio/storybook/bach-organ-bwv659.mp3,not-speech,,69fc3e2e5bf008e68c142b7ca2fd64b0
 optima-3rd-math,opti,,0,audio/storybook/bach-wachet-auf-bwv645.mp3,not-speech,,c166637ac401bd4f4c4ea2b3cf97effc
+optima-3rd-math,opti,,0,audio/storybook/el-grillo.mp3,speech,,c7286601ed89145383649a512e5e8704
 optima-3rd-math,opti,"Before you go, listen to this. It's music by Johann Sebastian Bach, played on a cello. A cello has four strings. A player presses a string to make the part that plays shorter, and a shorter part sings a higher note. Just like Pythagoras's string. Press play, and press stop whenever you like.",292,audio/storybook/g3m-3-09-01-end-1.mp3,speech,math-lesson-3-09-01-fractions-of-a-whole.html,583bf22d2b43441562d9ac99906ebe8c
 optima-3rd-math,opti,"Welcome to the Lesson. It has three stops. First, learn how to name a fraction. Next, we fix some mix-ups together. Then you try one on your own. Let's begin.",158,audio/storybook/g3m-3-09-01-learn-1.mp3,speech,math-lesson-3-09-01-fractions-of-a-whole.html,5afb53223807704f139b935f337799b4
 optima-3rd-math,opti,"Now it's your turn to work on your own. Use what you learned: equal parts, how many, and of what. You've got this.",114,audio/storybook/g3m-3-09-01-own-1.mp3,speech,math-lesson-3-09-01-fractions-of-a-whole.html,ae830eb92551362f52f3959e2c4d73d5
@@ -206,6 +207,18 @@ optima-3rd-math,opti,"Here is a word problem. A rope is six meters twenty centim
 optima-3rd-math,opti,Hoo! Claire is going to show us four steps that solve a measurement word problem.,81,audio/storybook/g3m-3-11-07-vid-open.mp3,speech,tools/storybook/g3m-3-11-07-words-timing.json,60552dea967d95df0795dc550ee3a57b
 optima-3rd-math,opti,"Hoo! It's Paris in the year 1800. The new measures are everywhere now. Look at this old print. A man pours with a liter. A woman weighs with grams on a balance. A man measures cloth with a meter stick. At the market, people need all the measures at once. Word problems are like that. Today you'll read a problem, draw a bar model, and solve it.",344,audio/storybook/g3m-3-11-07-warm-1.mp3,speech,tools/storybook/g3m-3-11-07-words-timing.json,974bdad1762fdaea8d00f1865588070c
 optima-3rd-math,opti,Bar model. ... Total. ... Convert.,34,audio/storybook/g3m-3-11-07-words.mp3,speech,tools/storybook/g3m-3-11-07-words-timing.json,3376c1fb93111de75f291841464414d2
+optima-3rd-math,opti,"That's the first lesson in Chapter 12. Here's a song printed in Venice, Italy, in 1505. It's called El Grillo. That means The Cricket. Listen for the singers chirping like a cricket! Press play, and stop whenever you like.",222,audio/storybook/g3m-3-12-01-end-1.mp3,speech,math-lesson-3-12-01-circles.html,61ca476e8df5bf497df9001f6ecbfde3
+optima-3rd-math,opti,"Welcome to the Lesson. First, Claire draws a circle with a compass and names its parts. Next, we fix some mix-ups. Then you draw a circle on your own.",150,audio/storybook/g3m-3-12-01-learn-1.mp3,speech,math-lesson-3-12-01-circles.html,568b62014925a85ee3f2a3b2e683b0ed
+optima-3rd-math,opti,Your turn to draw a circle on your own. Find the radius first. Then open the compass to the radius and swing it all the way around.,131,audio/storybook/g3m-3-12-01-own-1.mp3,speech,math-lesson-3-12-01-circles.html,473a9a881e9047cdd550fafa67653c1b
+optima-3rd-math,opti,"Each job has a mix-up kids often make. Here's a clue. The diameter goes all the way across, right through the center. So it's as long as two radii.",147,audio/storybook/g3m-3-12-01-practice-1.mp3,speech,math-lesson-3-12-01-circles.html,a31d9d76830d5693bd00daa4248ecab8
+optima-3rd-math,opti,Last stop! Here's the very first thing Euclid draws in his book. Two circles the same size. Each circle's center sits on the other circle's edge. What can you find out?,168,audio/storybook/g3m-3-12-01-swyk-1.mp3,speech,math-lesson-3-12-01-circles.html,0c90511955ecb32cb4d315acf2a385ef
+optima-3rd-math,opti,"Euclid's students start with a paper circle. Fold it in half. Then fold it a different way. Where the two folds cross is a special point. Measure from that point to the edge, three different ways.",196,audio/storybook/g3m-3-12-01-think-1.mp3,speech,math-lesson-3-12-01-circles.html,212c20395d719a1320f7048224785a7d
+optima-3rd-math,opti,You found the center! Every line from the center to the edge was eleven centimeters long. And both folds went right through the center.,135,audio/storybook/g3m-3-12-01-think-done.mp3,speech,math-lesson-3-12-01-circles.html,7af45350d253746e043fd8b7cb207479
+optima-3rd-math,opti,,0,audio/storybook/g3m-3-12-01-vid-close.mp3,speech,,6a68857d1965ca8264f06edd640ba25d
+optima-3rd-math,opti,,0,audio/storybook/g3m-3-12-01-vid-math.mp3,speech,,80f09f41611030512cb57bee631766dc
+optima-3rd-math,opti,,0,audio/storybook/g3m-3-12-01-vid-open.mp3,speech,,426bab60818dc248425d4afebdc131db
+optima-3rd-math,opti,"Hoo! Welcome to a new chapter. We're in Alexandria, Egypt, about 2,300 years ago. A teacher named Euclid wrote a famous geometry book, and it starts with circles. Look at this painting. A teacher bends over a slate with a compass. Many people think it shows Euclid. A compass draws a perfect circle. Today you'll find the center, the radius, and the diameter of a circle.",371,audio/storybook/g3m-3-12-01-warm-1.mp3,speech,math-lesson-3-12-01-circles.html,6cdae3b0c2daf1b9119f7246830f8d8c
+optima-3rd-math,LRkukhGJZOFsyrZCwQaZ,Circle. ... Center. ... Radius. ... Diameter. ... Compass.,58,audio/storybook/g3m-3-12-01-words.mp3,speech,tools/clip-log-extra.json,639b4d4c8414d8dda360da5763fdc383
 optima-3rd-math,opti,,0,audio/storybook/gluck-blessed-spirits.mp3,speech,,ad37e6ba777d242a6686f4177a5377be
 optima-3rd-math,opti,,0,audio/storybook/handel-water-music-air.mp3,speech,,860d7b3c2cfa7655e73379b479aff2f2
 optima-3rd-math,opti,,0,audio/storybook/haydn-101-clock-andante.mp3,speech,,c140d8a123721e4066c7bb08f660a3ab
@@ -225,16 +238,20 @@ optima-3rd-math,opti,Break a kilometer.,18,audio/storybook/words/g3m-word-break-
 optima-3rd-math,opti,Break a meter.,14,audio/storybook/words/g3m-word-break-a-meter.mp3,speech,tools/clip-log-extra.json,e922c983629b353a9b20169d46cf2f65
 optima-3rd-math,opti,cantata,7,audio/storybook/words/g3m-word-cantata.mp3,speech,file name,7a2b771654f4e3ea019ef4479696e159
 optima-3rd-math,opti,capacity,8,audio/storybook/words/g3m-word-capacity.mp3,speech,file name,fedeaeaca1fde4758e628302ee468abe
+optima-3rd-math,LRkukhGJZOFsyrZCwQaZ,Center.,7,audio/storybook/words/g3m-word-center.mp3,speech,tools/clip-log-extra.json,054a385a9aee88b5c4300c8a7e1357fc
 optima-3rd-math,opti,centimeter,10,audio/storybook/words/g3m-word-centimeter.mp3,speech,file name,3ba15c71ef388fbb13257c574b52e189
+optima-3rd-math,LRkukhGJZOFsyrZCwQaZ,Circle.,7,audio/storybook/words/g3m-word-circle.mp3,speech,tools/clip-log-extra.json,b577321e6e9b4ccf20ef318f6edcad5a
 optima-3rd-math,opti,Clue word.,10,audio/storybook/words/g3m-word-clue-word.mp3,speech,tools/clip-log-extra.json,58750decee4146a1dde7602b65b8b529
 optima-3rd-math,opti,common denominator,18,audio/storybook/words/g3m-word-common-denominator.mp3,speech,file name,dc17314f97d60b6ccde41edd4200206c
 optima-3rd-math,opti,common numerator,16,audio/storybook/words/g3m-word-common-numerator.mp3,speech,file name,3de4819d8f1a0c6515e517a8a69c5407
 optima-3rd-math,opti,compare,7,audio/storybook/words/g3m-word-compare.mp3,speech,file name,02fb9044eb80e952b380830056e3ef77
+optima-3rd-math,LRkukhGJZOFsyrZCwQaZ,Compass.,8,audio/storybook/words/g3m-word-compass.mp3,speech,tools/clip-log-extra.json,68208cb69ab385e22b77bc51ac07331b
 optima-3rd-math,opti,Compound units.,15,audio/storybook/words/g3m-word-compound-units.mp3,speech,tools/clip-log-extra.json,f17ee14bc273837b4c23eec5d1729de0
 optima-3rd-math,opti,convert,7,audio/storybook/words/g3m-word-convert.mp3,speech,file name,0c3a242780221c595c03a4645e4b0138
 optima-3rd-math,opti,copyist,7,audio/storybook/words/g3m-word-copyist.mp3,speech,file name,88b8478ea1f5305039494924488cd53d
 optima-3rd-math,opti,degree,6,audio/storybook/words/g3m-word-degree.mp3,speech,file name,0cdea3e7dffa9ff5301091bfeac30d6d
 optima-3rd-math,opti,denominator,11,audio/storybook/words/g3m-word-denominator.mp3,speech,file name,833dd9a0f451346b48827ea858a6b3e1
+optima-3rd-math,LRkukhGJZOFsyrZCwQaZ,Diameter.,9,audio/storybook/words/g3m-word-diameter.mp3,speech,tools/clip-log-extra.json,b8c5dcf85a6c4f8841749079a4927000
 optima-3rd-math,opti,difference,10,audio/storybook/words/g3m-word-difference.mp3,speech,file name,ce3c9d965dbccfc5c75928b32c2239e0
 optima-3rd-math,opti,Direct distance.,16,audio/storybook/words/g3m-word-direct-distance.mp3,speech,tools/clip-log-extra.json,a285c9253f5fbfca1cd756a2b57f9b3d
 optima-3rd-math,opti,Distance.,9,audio/storybook/words/g3m-word-distance.mp3,speech,tools/clip-log-extra.json,1f90744e5afae258e6b8fc1271333cb4
@@ -262,6 +279,7 @@ optima-3rd-math,opti,number line,11,audio/storybook/words/g3m-word-number-line.m
 optima-3rd-math,opti,numerator,9,audio/storybook/words/g3m-word-numerator.mp3,speech,file name,de1a4f16ea8ba77ead9ce615e8ee9bd6
 optima-3rd-math,opti,one half,8,audio/storybook/words/g3m-word-one-half.mp3,speech,file name,02c713044ee82da6ec0cc8bfe13e949e
 optima-3rd-math,opti,one whole,9,audio/storybook/words/g3m-word-one-whole.mp3,speech,file name,2c47a2e3f18dfb5bf8d350df82f898f3
+optima-3rd-math,LRkukhGJZOFsyrZCwQaZ,Radius.,7,audio/storybook/words/g3m-word-radius.mp3,speech,tools/clip-log-extra.json,d1ca8b65c1e17eaf9107f9b8dcb61329
 optima-3rd-math,opti,re cut,6,audio/storybook/words/g3m-word-re-cut.mp3,speech,file name,30d2159bea0c524e21c82f3ab5fb8ec7
 optima-3rd-math,opti,Remaining.,10,audio/storybook/words/g3m-word-remaining.mp3,speech,tools/clip-log-extra.json,7c7dcb167878aa8269ca12667d93c2c5
 optima-3rd-math,opti,same denominator,16,audio/storybook/words/g3m-word-same-denominator.mp3,speech,file name,b6a600940a73f4b2df939bcd573c502f

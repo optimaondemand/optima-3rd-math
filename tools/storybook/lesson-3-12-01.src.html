@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Circles · Grade 3 Math Lesson 3.12.01</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+{{CSS}}
+</head>
+<body class="sb">
+<div class="sb-prog" aria-label="Progress"><span class="k">📖 EUCLID'S COMPASS</span><span class="bar"><i></i></span><span class="n">0 of 8 jobs</span></div>
+<div class="sb-wrap">
+
+<header class="sb-head">
+  <div class="sb-brand"><img alt="" src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png"><div><b>Optima Academy Online</b><small>An Education Experience Company</small></div></div>
+  <h1 class="sb-title">Circles</h1>
+  <div class="sb-chips">
+    <span class="sb-chip lead">Lesson 3.12.01 · Unit 12 · Lesson 1</span>
+    <button type="button" class="sb-chip" id="sb-read">🔊 Read aloud</button>
+    <button type="button" class="sb-chip" data-pop="#sb-std" aria-expanded="false">Standards ▾</button>
+    <button type="button" class="sb-chip" id="sb-music" aria-pressed="false">🎵 Music: off</button>
+    <button type="button" class="sb-chip" id="sb-motion" aria-pressed="true">✨ Motion: on</button>
+  </div>
+  <div class="sb-pop" id="sb-std"><b>Enrichment</b> Circles are not a Grade 3 B.E.S.T. benchmark. This lesson gets students ready for Unit 12's shapes and angles (MA.3.GR.1.1, MA.3.GR.1.2) and uses doubling and halving facts (MA.3.NSO.2.4).<br><b>MA.K12.MTR.2.1</b> Show math in many ways. <b>MTR.5.1</b> Use patterns and structure. <b>MTR.6.1</b> Check that answers make sense.<br><small>Today: find the center of a circle, name the radius and the diameter, and see that the diameter is as long as two radii. Dimensions Math 3B, Chapter 12, Lesson 1 · Circles</small></div>
+</header>
+
+<!-- the open book -->
+<div class="sb-book" aria-label="Opti's storybook, open to Chapter 12">
+  <div class="sb-book-in">
+    <div class="sb-pg">
+      <figure class="sb-plate"><img src="{{IMG:sb-athens-geometer.jpg}}" alt="Part of an old painting. A bald man in a red robe bends down and draws on a small slate on the floor with a compass. Young students lean in around him to watch."><figcaption>The geometer with the compass, from "The School of Athens"</figcaption></figure>
+    </div>
+    <div class="sb-pg r">
+      <div class="sb-chap">Chapter 12</div>
+      <div class="sb-chap-t">Euclid's Compass</div>
+      <div class="sb-orn" aria-hidden="true"></div>
+      <p class="sb-chap-s">Alexandria, Egypt · about 300 BC</p>
+      <div class="sb-chap-l">Lesson 1 · Circles</div>
+    </div>
+  </div>
+  <img class="sb-owl" src="{{IMG:opti-owl.png}}" alt="Opti the owl, sitting on the open book">
+</div>
+
+<div class="sb-intro">
+  <div class="sb-card sb-eq">
+    <span class="sb-k">Essential Question</span>
+    <h3>What makes a circle a circle?</h3>
+    <div class="sb-stage" role="img" aria-label="A circle with a dot in the middle and three lines from the dot to the edge, all the same length." style="margin:6px 0;max-width:260px"><svg viewBox="0 0 260 200"><circle cx="130" cy="100" r="80" fill="#FBF6EA" stroke="#0E1C42" stroke-width="4"/><line x1="130" y1="100" x2="190" y2="47" stroke="#1E8C5A" stroke-width="4"/><line x1="130" y1="100" x2="58" y2="135" stroke="#1E8C5A" stroke-width="4"/><line x1="130" y1="100" x2="150" y2="176" stroke="#1E8C5A" stroke-width="4"/><circle cx="130" cy="100" r="6" fill="#0E1C42"/></svg></div>
+    <p style="margin:4px 0 0">Every point on a circle is the same distance from one point: the center.</p>
+  </div>
+  <div class="sb-card sb-obj">
+    <span class="sb-k">Today's Objectives</span>
+    <h3>You will…</h3>
+    <ul>
+      <li><b>Find</b> the center of a circle.</li>
+      <li><b>Name</b> the radius and the diameter.</li>
+      <li><b>Use</b> the rule: the diameter is as long as 2 radii.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="sb-tabs" role="tablist" aria-label="Lesson sections">
+  <button class="sb-tab" role="tab" data-tab="warmup" aria-controls="tab-warmup">🔍 Warm-Up <span class="ck">✓</span></button>
+  <button class="sb-tab" role="tab" data-tab="learn" aria-controls="tab-learn">📐 Lesson <span class="ck">✓</span></button>
+  <button class="sb-tab" role="tab" data-tab="swyk" aria-controls="tab-swyk">🌟 Show What You Know <span class="ck">✓</span></button>
+</div>
+
+<!-- ══════════════ WARM-UP ══════════════ -->
+<section class="sb-panel tab-panel" id="tab-warmup" role="tabpanel">
+
+<div class="sb-opti" data-slot="warm-1">Hoo! Welcome to a new chapter. We're in Alexandria, Egypt, about 2,300 years ago. A teacher named Euclid wrote a famous geometry book, and it starts with circles. Look at this painting. A teacher bends over a slate with a compass. Many people think it shows Euclid. A compass draws a perfect circle. Today you'll find the center, the radius, and the diameter of a circle.</div>
+
+<div class="sb-video pq-vslot" data-slot="warm">
+  <video controls preload="metadata" playsinline poster="assets/video/g3math-12-01-warm.jpg" src="assets/video/g3math-12-01-warm.mp4"></video>
+  <div class="cap">🎬 Opti Opens Chapter 12: Euclid's Compass</div>
+</div>
+
+<div class="sb-card">
+  <span class="sb-k">From the book</span>
+  <h3>Why Euclid?</h3>
+  <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>The big picture is a painting on a wall in Rome, made by Raphael about 500 years ago. It shows thinkers from long ago. In the corner, a teacher draws on a slate with a compass while students watch. Many people think he is Euclid. The small picture is a page from Euclid's book, printed in color in London in 1847.</p></div>
+  <div class="sb-art">
+    <figure class="sb-fig"><img src="{{IMG:sb-athens-full.jpg}}" alt="A huge painting of a grand hall with arches. Many people in robes stand and talk on wide steps. In the lower right corner, a man bends over a slate with a compass." style="object-fit:contain;background:#FBF6EA"><figcaption>"The School of Athens," Raphael, 1509 to 1511.<small>Vatican Museums. Public domain, via Wikimedia Commons.</small></figcaption></figure>
+    <figure class="sb-fig"><img src="{{IMG:sb-byrne-circle.jpg}}" alt="An old printed page. On the left, words about the circle. On the right, a red circle with a blue line across it and colored lines from the middle to the edge." style="object-fit:contain;background:#FBF6EA"><figcaption>Euclid's rule for a circle, from Oliver Byrne's book, London, 1847.<small>Public domain, via Wikimedia Commons.</small></figcaption></figure>
+  </div>
+  <p style="margin:6px 0 0">Euclid taught in Alexandria, Egypt, about 2,300 years ago. We know very little about his life, but his geometry book is famous. Near the very start, it says what a circle is: a round shape with one point inside, where every straight line from that point out to the edge is the same length. That point is the center.</p>
+  <p style="margin:6px 0 0"><b>Today's math:</b> find the center, then measure the radius and the diameter.</p>
+</div>
+
+<div class="video-placeholder-wrap">
+<!-- slot: g3math-12-01 -->
+<div class="video-placeholder-inner"><div class="vp-label">🎬 Welcome Video</div><div class="vp-slot">g3math-12-01</div><div class="vp-notes"><b>Teacher recording notes:</b> Welcome to circles! Warm up with doubles and halves. Then fold a paper circle to find its center.</div></div>
+</div>
+
+<div class="fluency-box">
+  <div class="fluency-head"><div class="fluency-head-icon">✍️</div><div><div class="fluency-head-label">FACT WARM-UP</div><div class="fluency-head-title">Today's Helpers: Doubles and Halves</div></div></div>
+  <div class="fluency-body">
+    <p class="fluency-instructions">Today you'll double numbers and cut them in half. Type each answer, then check. You can fix any answer and check again.</p>
+    <div class="fluency-grid" id="fluencyGrid">
+      <div class="fluency-item"><span class="fluency-q">2 × 11 =</span><input class="fluency-input" data-answer="22" inputmode="numeric" autocomplete="off" aria-label="2 times 11"></div>
+      <div class="fluency-item"><span class="fluency-q">2 × 25 =</span><input class="fluency-input" data-answer="50" inputmode="numeric" autocomplete="off" aria-label="2 times 25"></div>
+      <div class="fluency-item"><span class="fluency-q">2 × 40 =</span><input class="fluency-input" data-answer="80" inputmode="numeric" autocomplete="off" aria-label="2 times 40"></div>
+      <div class="fluency-item"><span class="fluency-q">2 × 35 =</span><input class="fluency-input" data-answer="70" inputmode="numeric" autocomplete="off" aria-label="2 times 35"></div>
+      <div class="fluency-item"><span class="fluency-q">2 × 45 =</span><input class="fluency-input" data-answer="90" inputmode="numeric" autocomplete="off" aria-label="2 times 45"></div>
+      <div class="fluency-item"><span class="fluency-q">44 ÷ 2 =</span><input class="fluency-input" data-answer="22" inputmode="numeric" autocomplete="off" aria-label="44 divided by 2"></div>
+      <div class="fluency-item"><span class="fluency-q">70 ÷ 2 =</span><input class="fluency-input" data-answer="35" inputmode="numeric" autocomplete="off" aria-label="70 divided by 2"></div>
+      <div class="fluency-item"><span class="fluency-q">100 ÷ 2 =</span><input class="fluency-input" data-answer="50" inputmode="numeric" autocomplete="off" aria-label="100 divided by 2"></div>
+      <div class="fluency-item"><span class="fluency-q">34 ÷ 2 =</span><input class="fluency-input" data-answer="17" inputmode="numeric" autocomplete="off" aria-label="34 divided by 2"></div>
+      <div class="fluency-item"><span class="fluency-q">2 × 21 =</span><input class="fluency-input" data-answer="42" inputmode="numeric" autocomplete="off" aria-label="2 times 21"></div>
+    </div>
+    <div class="sb-help"><button type="button" class="sb-btn check" data-fluency-check>Check my answers</button></div>
+    <div class="sb-fb" aria-live="polite"></div>
+  </div>
+</div>
+
+<div class="sb-card sb-qgroup" data-done="review" data-ok="✓ Yes! Two equal parts of a whole are called halves. Each part is one half.">
+  <span class="sb-k">Remember from 2nd grade</span>
+  <h3>Halves of a circle</h3>
+  <p>A round loaf of bread is cut into 2 equal slices. Drag 1 slice onto the plate.</p>
+  <div data-mod="circle" data-n="2" data-eat="1" data-name="review-pie"></div>
+  <div class="sb-q">The slice on the plate is one [[w:half|one half|1 half~2 equal parts of a whole are called halves.]] of the loaf.</div>
+  <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div>
+  <div class="sb-fb" aria-live="polite"></div>
+</div>
+
+<!-- JOB 1 · THINK -->
+<section class="sb-card sb-job" data-job="1">
+  <div class="sb-jh"><span class="sb-jn">JOB 1</span><div><h3>Think: The Paper Circle</h3><span class="sb-kind">🔨 Do · ✏️ Write</span></div><span class="sb-donechip"></span></div>
+  <div class="sb-opti" data-slot="think-1">Euclid's students start with a paper circle. Fold it in half. Then fold it a different way. Where the two folds cross is a special point. Measure from that point to the edge, three different ways.</div>
+  <p class="sb-story">Euclid's students have a paper circle. How can they find the exact middle of it without a ruler?</p>
+  <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>A round piece of paper. Folding it leaves a crease, shown as a dashed line. After you find the middle, three gold dots on the edge show where to measure.</p></div>
+  <div data-mod="circ" data-do="fold" data-r="11" data-name="think" data-for="fold1 fold2 center measured"></div>
+  <div class="sb-steps">
+    <div class="sb-step" data-need="fold1" data-cue=".ci-fold"><h4>Fold it in half</h4><p>Press 📄 Fold in half.</p></div>
+    <div class="sb-step" data-need="fold2" data-cue=".ci-fold2"><h4>Fold it again</h4><p>Press 📄 Fold a different way.</p></div>
+    <div class="sb-step" data-need="center" data-cue=".ci-tapc"><h4>Find the special point</h4><p>Tap the spot where the two dashed fold lines cross.</p></div>
+    <div class="sb-step" data-need="measured" data-cue=".ci-meas"><h4>Measure to the edge</h4><p>Press 📏 Measure to the next dot. Stop when all 3 gold dots are measured.</p></div>
+    <div class="sb-step"><h4>What do you notice?</h4>
+      <div class="sb-q">Every line from the middle point to the edge is [[n:11~Read the blue labels next to the dots.]] cm long.</div>
+      <div class="sb-q">The point where the folds cross is called the [[w:center|centre~It is the middle point of the circle. Look at the Essential Question.]] of the circle.</div>
+      <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+    <div class="sb-step"><h4>Tell how</h4>
+      <label class="sb-write-l" for="w-think">Tell how you found the center of the paper circle.</label>
+      <textarea class="sb-write" id="w-think" data-req data-label="The Paper Circle" placeholder="I folded … The folds crossed at … Every line from there to the edge was …"></textarea>
+      <div class="sb-chips2">Remember to tell: <span>two folds</span><span>center</span><span>11 cm</span></div>
+      <div class="sb-help"><button type="button" class="sb-btn check">Done</button></div><div class="sb-fb" aria-live="polite"></div></div>
+    <div class="sb-locked"></div>
+  </div>
+  <div class="sb-help"><button type="button" class="sb-btn ghost" data-hints='["A fold through the middle splits the circle into two equal halves. Two different folds both go through the middle.", "Look for the one point that is on both dashed lines. That is where they cross.", "All three lines from the center to the edge are 11 cm. The point is the center."]'>💡 Need a hint?</button>{{TOOL:compass-1}}<button type="button" class="sb-btn ghost sb-tipbtn" data-tip="#tip-1">💬 Hazel has a tip</button></div>
+  <div class="sb-hintbox"></div>
+  <div class="sb-tip" id="tip-1" data-who="hazel">Every fold that makes two equal halves goes right through the middle. So two folds have to cross at the middle.</div>
+  <div class="sb-payoff" data-after-job="1">
+    <p style="margin:0"><b>You found the center.</b> Both folds went through it, and every line from the center to the edge was the same length: 11 cm.</p>
+  </div>
+  <div class="sb-opti" data-slot="think-done" data-after="1">You found the center! Every line from the center to the edge was eleven centimeters long. And both folds went right through the center.</div>
+</section>
+
+<div class="sb-next"><button type="button" class="sb-btn gold" data-go-tab="learn" data-go-st="1">Next: the Lesson →</button></div>
+</section>
+
+<!-- ══════════════ LESSON ══════════════ -->
+<section class="sb-panel tab-panel" id="tab-learn" role="tabpanel">
+<div class="sb-path" role="list">
+  <button type="button" class="sb-pstep" data-st="1" role="listitem"><span class="num">1</span><span><b>Learn it</b><small>Learn + Your Turn</small></span></button>
+  <button type="button" class="sb-pstep" data-st="2" role="listitem"><span class="num">2</span><span><b>Practice together</b><small>3 jobs</small></span></button>
+  <button type="button" class="sb-pstep" data-st="3" role="listitem"><span class="num">3</span><span><b>On your own</b><small>1 job</small></span></button>
+</div>
+
+<!-- STATION 1 -->
+<div class="sb-station" data-st="1">
+  <div class="sb-opti" data-slot="learn-1">Welcome to the Lesson. First, Claire draws a circle with a compass and names its parts. Next, we fix some mix-ups. Then you draw a circle on your own.</div>
+
+  <div class="sb-video pq-vslot" data-slot="learn">
+    {{LEARNVIDEO}}
+    <div class="cap">🎬 Draw It with a Compass</div>
+  </div>
+
+  <div class="sb-card">
+    <span class="sb-k">Learn</span>
+    <h3>The parts of a circle</h3>
+    <div class="sb-stage" role="img" aria-label="A circle drawn with a compass. A dot marks the center. A green line from the center to the edge is a radius, 2 cm. A violet line all the way across through the center is a diameter, 4 cm." style="margin:6px 0"><svg viewBox="0 0 640 300"><circle cx="230" cy="150" r="120" fill="#fff" stroke="#0E1C42" stroke-width="4"/><line x1="110" y1="150" x2="350" y2="150" stroke="#6B46C1" stroke-width="5"/><line x1="230" y1="150" x2="315" y2="65" stroke="#1E8C5A" stroke-width="5"/><circle cx="230" cy="150" r="7" fill="#0E1C42"/><text x="400" y="70" font-size="20" font-weight="900" fill="#1E8C5A">radius: 2 cm</text><text x="400" y="96" font-size="15" font-weight="700" fill="#5B6478">center to edge</text><text x="400" y="150" font-size="20" font-weight="900" fill="#6B46C1">diameter: 4 cm</text><text x="400" y="176" font-size="15" font-weight="700" fill="#5B6478">all the way across,</text><text x="400" y="196" font-size="15" font-weight="700" fill="#5B6478">through the center</text><text x="400" y="240" font-size="20" font-weight="900" fill="#0E1C42">center</text><text x="400" y="264" font-size="15" font-weight="700" fill="#5B6478">the dot in the middle</text></svg></div>
+    <ul class="sb-steps4" style="list-style:none;padding-left:0">
+      <li><b>Center:</b> the point in the middle. Every point on the circle is the same distance from it.</li>
+      <li><b>Radius:</b> a straight line from the center to the edge. Every radius of a circle is the same length. Two of them are called radii.</li>
+      <li><b>Diameter:</b> a straight line all the way across the circle, through the center. It is as long as 2 radii.</li>
+    </ul>
+    <p style="margin:6px 0 0"><b>Know the radius?</b> Double it: radius 2 cm, diameter 2 × 2 = 4 cm.<br><b>Know the diameter?</b> Cut it in half: a fountain 50 ft across has a radius of 50 ÷ 2 = 25 ft.</p>
+    <p style="margin:6px 0 0"><b>Watch out:</b> a circle with a radius of 35 in is not the same size as a circle with a diameter of 35 in. The one with the 35 in radius is twice as wide.</p>
+  </div>
+
+  <div class="sb-card">
+    <span class="sb-k">The Math Crew</span>
+    <h3>Four ways to stay on track</h3>
+    <div class="sb-crew">
+      <div class="sb-mate" data-who="atlas"><span>I check that a diameter goes through the center. If it misses, it isn't a diameter.</span></div>
+      <div class="sb-mate" data-who="felix"><span>Radius to diameter? I double it.</span></div>
+      <div class="sb-mate" data-who="hazel"><span>Diameter to radius? I cut it in half.</span></div>
+      <div class="sb-mate" data-who="cora"><span>I read the word: is the number a radius or a diameter? Same number, different circle.</span></div>
+    </div>
+    <label class="sb-write-l" for="w-crew">Which Crew way helps you most? Why?</label>
+    <textarea class="sb-write" id="w-crew" data-label="Which Crew way helps me most" placeholder="I like… because…"></textarea>
+  </div>
+
+  <!-- JOB 2 · YOUR TURN -->
+  <section class="sb-card sb-job" data-job="2">
+    <div class="sb-jh"><span class="sb-jn">JOB 2</span><div><h3>Your Turn: Label the Circle</h3><span class="sb-kind">🔨 Do</span></div><span class="sb-donechip"></span></div>
+    <p class="sb-story">Euclid's student drew a circle with a dot and two lines. The radius of this circle is <b>17 cm</b>. Label each part. Then find the diameter.</p>
+    <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>A circle with a dot in the middle, a green line from the dot to the edge, and a violet line all the way across. Three empty label spots point to the parts.</p></div>
+    <div data-mod="circ" data-do="parts" data-name="yt" data-for="labels"></div>
+    <div class="sb-steps">
+      <div class="sb-step" data-need="labels" data-cue=".ci-chip.ci-next"><h4>Label the parts</h4><p>Drag each label to the spot that points to its part: center, radius and diameter.</p></div>
+      <div class="sb-step"><h4>Find the diameter</h4>
+        <div class="sb-q">The radius is 17 cm. The diameter is as long as 2 radii: 17 cm + 17 cm = [[n:34~Double 17: 17 + 17. Think 10 + 10 and 7 + 7.]] cm.</div>
+        <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-locked"></div>
+    </div>
+    <div class="sb-help"><button type="button" class="sb-btn ghost" data-hints='["The center is the dot. A radius stops at the center. A diameter goes all the way across.", "The diameter is 2 radii: 17 + 17.", "17 + 17 = 34. The diameter is 34 cm."]'>💡 Need a hint?</button>{{TOOL:compass-1}}<button type="button" class="sb-btn ghost sb-tipbtn" data-tip="#tip-2">💬 Felix has a tip</button></div>
+    <div class="sb-hintbox"></div>
+    <div class="sb-tip" id="tip-2" data-who="felix">To double 17, I double the tens and the ones: 10 + 10 = 20 and 7 + 7 = 14. 20 + 14 = 34.</div>
+  </section>
+  <div class="sb-next"><button type="button" class="sb-btn gold" data-next-st="2">Next station: Practice together →</button></div>
+</div>
+
+<!-- STATION 2 -->
+<div class="sb-station" data-st="2">
+  <div class="sb-opti" data-slot="practice-1">Each job has a mix-up kids often make. Here's a clue. The diameter goes all the way across, right through the center. So it's as long as two radii.</div>
+
+  <!-- JOB 3 -->
+  <section class="sb-card sb-job" data-job="3">
+    <div class="sb-jh"><span class="sb-jn">JOB 3</span><div><h3>Ben Forgets to Double</h3><span class="sb-kind">🔨 Do · ✏️ Write</span></div><span class="sb-donechip"></span></div>
+    <p class="sb-story">A round table has a radius of <b>40 cm</b>. Ben says, "The radius is 40 cm, so the diameter is 40 cm too."</p>
+    <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>The tabletop as a circle. One radius goes from the center to the right edge. A second radius starts at the center too, and you can turn it.</p></div>
+    <div data-mod="circ" data-do="ben" data-r="40" data-name="ben" data-for="line"></div>
+    <div class="sb-steps">
+      <div class="sb-step" data-need="line" data-cue=".ci-end"><h4>Make a straight line</h4><p>Drag the end of the second radius around the edge until the two radii make one straight line across the table.</p></div>
+      <div class="sb-step"><h4>How long is it across?</h4>
+        <div class="sb-q">40 cm + 40 cm = [[n:80~Two radii make the diameter. Add 40 and 40.]] cm. The diameter is [[n:80~Two radii make the diameter.]] cm, not 40 cm.</div>
+        <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-step"><h4>Help Ben</h4><label class="sb-write-l" for="w-ben">Tell Ben why the diameter can't be 40 cm.</label><textarea class="sb-write" id="w-ben" data-req data-label="Help Ben" placeholder="A radius only goes … The diameter goes … so it is …"></textarea><div class="sb-chips2">Remember to tell: <span>center to edge</span><span>all the way across</span><span>80 cm</span></div><div class="sb-help"><button type="button" class="sb-btn check">Done</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-locked"></div>
+    </div>
+    <div class="sb-help"><button type="button" class="sb-btn ghost" data-hints='["A radius only reaches from the center to the edge. That is half of the way across.", "Turn the second radius until it points the opposite way. Now the two radii go all the way across.", "40 + 40 = 80. The diameter is 80 cm."]'>💡 Need a hint?</button>{{TOOL:compass-2}}<button type="button" class="sb-btn ghost sb-tipbtn" data-tip="#tip-3">💬 Atlas has a tip</button></div>
+    <div class="sb-hintbox"></div>
+    <div class="sb-tip" id="tip-3" data-who="atlas">A radius gets me only halfway across. I need a second radius on the other side to reach all the way.</div>
+  </section>
+
+  <!-- JOB 4 -->
+  <section class="sb-card sb-job" data-job="4">
+    <div class="sb-jh"><span class="sb-jn">JOB 4</span><div><h3>Mia's Line Misses the Center</h3><span class="sb-kind">🔨 Do · ✏️ Write</span></div><span class="sb-donechip"></span></div>
+    <p class="sb-story">A round mirror has a radius of <b>14 cm</b>. Mia draws a line across it and says, "This line is 20 cm long, so the diameter is 20 cm." But her line does not go through the center.</p>
+    <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>The mirror as a circle with a dot at the center. Mia's red line goes across the circle but misses the dot. One end of the line can move along the edge.</p></div>
+    <div data-mod="circ" data-do="chord" data-r="14" data-len="20" data-name="mia" data-for="through"></div>
+    <div class="sb-steps">
+      <div class="sb-step" data-need="through" data-cue=".ci-end"><h4>Move the line</h4><p>Drag the moving end of the red line along the edge until the line goes through the center dot.</p></div>
+      <div class="sb-step"><h4>The real diameter</h4>
+        <div class="sb-q">The diameter is 2 radii: 14 cm + 14 cm = [[n:28~Double 14: 14 + 14.]] cm.</div>
+        <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-step"><h4>Help Mia</h4><label class="sb-write-l" for="w-mia">Tell Mia why her 20 cm line is not a diameter.</label><textarea class="sb-write" id="w-mia" data-req data-label="Help Mia" placeholder="A diameter has to go through … Mia's line … The diameter is …"></textarea><div class="sb-chips2">Remember to tell: <span>through the center</span><span>longest</span><span>28 cm</span></div><div class="sb-help"><button type="button" class="sb-btn check">Done</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-locked"></div>
+    </div>
+    <div class="sb-help"><button type="button" class="sb-btn ghost" data-hints='["Watch the length as you drag. The line gets longer as it gets closer to the center.", "When the line goes through the center dot, it is a diameter. It is the longest line across.", "14 + 14 = 28. The diameter is 28 cm."]'>💡 Need a hint?</button>{{TOOL:compass-1}}<button type="button" class="sb-btn ghost sb-tipbtn" data-tip="#tip-4">💬 Cora has a tip</button></div>
+    <div class="sb-hintbox"></div>
+    <div class="sb-tip" id="tip-4" data-who="cora">A line across that misses the center is always shorter than the diameter. The diameter is the longest line across a circle.</div>
+  </section>
+
+  <!-- JOB 5 -->
+  <section class="sb-card sb-job" data-job="5">
+    <div class="sb-jh"><span class="sb-jn">JOB 5</span><div><h3>Kai's Two Circles</h3><span class="sb-kind">🔨 Do · ✏️ Write</span></div><span class="sb-donechip"></span></div>
+    <p class="sb-story">Circle A has a <b>radius of 21 cm</b>. Circle B has a <b>diameter of 21 cm</b>. Kai says, "Both say 21, so they are the same size."</p>
+    <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>Grid paper and a compass, like the Compass tool on the tools site. Each square is 1 cm. Circle B is already drawn, with its diameter. The compass will draw circle A.</p></div>
+    <div data-mod="circ" data-do="compass" data-t="21" data-max="24" data-given="d:21" data-name="kai" data-for="open drawn"></div>
+    <div class="sb-steps">
+      <div class="sb-step" data-need="open" data-cue=".ci-pen"><h4>Open the compass</h4><p>Drag the yellow pencil away from the point until the compass is open 21 cm.</p></div>
+      <div class="sb-step" data-need="drawn" data-cue=".ci-pen"><h4>Draw circle A</h4><p>Drag the yellow pencil all the way around the point.</p></div>
+      <div class="sb-step"><h4>Compare the circles</h4>
+        <div class="sb-q">Circle A's diameter is 21 cm + 21 cm = [[n:42~Two radii of 21 cm.]] cm. Circle B's diameter is 21 cm.</div>
+        <div class="sb-q">The bigger circle is circle [[w:A|a~Look at the diameters: which one is longer?]].</div>
+        <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-step"><h4>Help Kai</h4><label class="sb-write-l" for="w-kai">Tell Kai why the two circles are not the same size.</label><textarea class="sb-write" id="w-kai" data-req data-label="Help Kai" placeholder="Circle A's 21 cm is a … Circle B's 21 cm is a … So circle A is …"></textarea><div class="sb-chips2">Remember to tell: <span>radius</span><span>diameter</span><span>twice as wide</span></div><div class="sb-help"><button type="button" class="sb-btn check">Done</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-locked"></div>
+    </div>
+    <div class="sb-help"><button type="button" class="sb-btn ghost" data-hints='["Circle A&apos;s 21 cm goes from the center to the edge. Circle B&apos;s 21 cm goes all the way across.", "Circle A&apos;s diameter is 21 + 21 = 42 cm.", "42 cm is longer than 21 cm, so circle A is bigger. It is twice as wide."]'>💡 Need a hint?</button>{{TOOL:compass-2}}<button type="button" class="sb-btn ghost sb-tipbtn" data-tip="#tip-5">💬 Cora has a tip</button></div>
+    <div class="sb-hintbox"></div>
+    <div class="sb-tip" id="tip-5" data-who="cora">I always ask: is this number a radius or a diameter? The same number can make a small circle or a big one.</div>
+  </section>
+  <div class="sb-next"><button type="button" class="sb-btn gold" data-next-st="3">Next station: On your own →</button></div>
+</div>
+
+<!-- STATION 3 -->
+<div class="sb-station" data-st="3">
+  <div class="sb-opti" data-slot="own-1">Your turn to draw a circle on your own. Find the radius first. Then open the compass to the radius and swing it all the way around.</div>
+
+  <!-- JOB 6 -->
+  <section class="sb-card sb-job" data-job="6">
+    <div class="sb-jh"><span class="sb-jn">JOB 6</span><div><h3>On Your Own: The Round Rug</h3><span class="sb-kind">🔨 Do · ✏️ Write</span></div><span class="sb-donechip"></span></div>
+    <p class="sb-story">A round rug is <b>38 inches across</b>. Draw the rug with a compass.</p>
+    <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>Grid paper and a compass. Here each square is 1 inch. The gray point is the center of the rug.</p></div>
+    <div data-mod="circ" data-do="compass" data-t="19" data-max="25" data-u="in" data-name="own" data-for="open drawn"></div>
+    <div class="sb-steps">
+      <div class="sb-step"><h4>Find the radius</h4>
+        <div class="sb-q">38 inches across is the diameter. The radius is 38 ÷ 2 = [[n:19~Cut 38 in half: half of 30 is 15, and half of 8 is 4.]] inches.</div>
+        <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-step" data-need="open" data-cue=".ci-pen"><h4>Open the compass</h4><p>Drag the yellow pencil away from the point until the compass is open 19 inches.</p></div>
+      <div class="sb-step" data-need="drawn" data-cue=".ci-pen"><h4>Draw the rug</h4><p>Drag the yellow pencil all the way around the point.</p></div>
+      <div class="sb-step"><h4>Tell how you know</h4><label class="sb-write-l" for="w-own">Tell why you opened the compass to 19 inches, not 38.</label><textarea class="sb-write" id="w-own" data-req data-label="The Round Rug" placeholder="38 inches is the … The compass opens to the … so …"></textarea><div class="sb-help"><button type="button" class="sb-btn check">Done</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-locked"></div>
+    </div>
+    <div class="sb-help"><button type="button" class="sb-btn ghost" data-hints='["Across means all the way across: that is the diameter.", "The radius is half of the diameter. 38 ÷ 2 = 19.", "Open the compass to 19 inches: the distance from the point to the pencil is the radius."]'>💡 Need a hint?</button>{{TOOL:compass-own}}</div>
+    <div class="sb-hintbox"></div>
+  </section>
+
+  <div class="sb-next"><button type="button" class="sb-btn gold" data-go-tab="swyk">Next: Show What You Know →</button></div>
+</div>
+</section>
+
+<!-- ══════════════ SHOW WHAT YOU KNOW ══════════════ -->
+<section class="sb-panel tab-panel" id="tab-swyk" role="tabpanel">
+<div class="sb-opti" data-slot="swyk-1">Last stop! Here's the very first thing Euclid draws in his book. Two circles the same size. Each circle's center sits on the other circle's edge. What can you find out?</div>
+
+<!-- JOB 7 -->
+<section class="sb-card sb-job" data-job="7">
+  <div class="sb-jh"><span class="sb-jn">JOB 7</span><div><h3>Euclid's Two Circles</h3><span class="sb-kind">🔨 Do</span></div><span class="sb-donechip"></span></div>
+  <p class="sb-story">Draw circle A with a <b>radius of 15 cm</b>. Then put the compass point on the edge of circle A and draw circle B, the same size.</p>
+  <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>Grid paper and a compass. Each square is 1 cm. This is the very first drawing in Euclid's book. Look for it on the old page below.</p></div>
+  <div class="sb-steps">
+    <div class="sb-step" data-need="open" data-cue=".ci-pen"><h4>Problem 1 · Open the compass</h4><p>Drag the yellow pencil away from the point until the compass is open 15 cm.</p></div>
+    <div class="sb-step" data-need="drawn" data-cue=".ci-pen"><h4>Problem 1 · Draw circle A</h4><p>Drag the yellow pencil all the way around the point.</p></div>
+    <div class="sb-step" data-need="moved" data-cue=".ci-pt"><h4>Problem 1 · Move the point</h4><p>Drag the gray compass point onto the gold dot on the edge of circle A.</p></div>
+    <div class="sb-step" data-need="drawn2" data-cue=".ci-pen"><h4>Problem 1 · Draw circle B</h4><p>Drag the yellow pencil all the way around the point.</p></div>
+    <div class="sb-step"><h4>Problem 1 · How far apart?</h4>
+      <div class="sb-q">Circle B's center sits on circle A's edge. So the two centers are [[n:15~From circle A's center to its edge is one radius of circle A.]] cm apart.</div>
+      <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+    <div class="sb-step" data-need="cross" data-cue=".ci-cross"><h4>Problem 2 · Where the circles cross</h4><p>Tap the gold point at the top, where the two circles cross.</p></div>
+    <div class="sb-step"><h4>Problem 2 · Two new lines</h4>
+      <div class="sb-q">The green line goes from circle A's center to the crossing point. It is a radius of circle A, so it is [[n:15~The crossing point is on circle A's edge.]] cm.</div>
+      <div class="sb-q">The red line goes from circle B's center to the crossing point. It is a radius of circle B, so it is [[n:15~The crossing point is on circle B's edge too.]] cm.</div>
+      <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+    <div class="sb-locked"></div>
+  </div>
+  <div data-mod="circ" data-do="compass" data-euclid="1" data-t="15" data-max="20" data-name="wow" data-for="open drawn moved drawn2 cross"></div>
+  <figure class="sb-fig" style="max-width:340px;margin:10px auto 0"><img src="{{IMG:sb-byrne-prop1.jpg}}" alt="An old printed page titled Euclid, Book 1, Proposition 1. A blue circle and a red circle overlap. A yellow triangle sits between their centers and the top crossing point." style="object-fit:contain;background:#FBF6EA"><figcaption>Euclid's first drawing, Book 1, from Oliver Byrne's book, London, 1847.<small>Public domain, via Wikimedia Commons.</small></figcaption></figure>
+  <div class="sb-help"><button type="button" class="sb-btn ghost" data-hints='["Circle B&apos;s center is ON circle A&apos;s edge. The distance from A&apos;s center to its edge is a radius: 15 cm.", "The crossing point is on both circles, so it is 15 cm from both centers.", "All three sides of the triangle are 15 cm."]'>💡 Need a hint?</button></div>
+  <div class="sb-hintbox"></div>
+</section>
+
+<!-- JOB 8 -->
+<section class="sb-card sb-job" data-job="8">
+  <div class="sb-jh"><span class="sb-jn">JOB 8</span><div><h3>Prove It</h3><span class="sb-kind">✏️ Write</span></div><span class="sb-donechip"></span></div>
+  <div class="sb-stage" role="img" aria-label="Two same-size circles. Each center is on the other circle's edge. A dashed line joins the two centers." style="margin:6px 0;max-width:420px"><svg viewBox="0 0 420 240"><circle cx="160" cy="120" r="90" fill="none" stroke="#0E1C42" stroke-width="4"/><circle cx="250" cy="120" r="90" fill="none" stroke="#B23A2E" stroke-width="4"/><line x1="160" y1="120" x2="250" y2="120" stroke="#0E1C42" stroke-width="3" stroke-dasharray="7 5"/><circle cx="160" cy="120" r="6" fill="#0E1C42"/><circle cx="250" cy="120" r="6" fill="#B23A2E"/></svg></div>
+  <div class="sb-steps">
+    <div class="sb-step"><h4>Problem 3 · Prove It</h4>
+      <label class="sb-write-l" for="w-prove">Look back at Job 7. Tell how you knew the two centers were 15 cm apart without measuring.</label><textarea class="sb-write" id="w-prove" data-req data-label="Prove It" placeholder="Circle B's center is on … The line from circle A's center to its edge is a … so it is …"></textarea><div class="sb-chips2">Remember to tell: <span>edge</span><span>radius</span><span>15 cm</span></div>
+      <div class="sb-help"><button type="button" class="sb-btn check">Done</button></div><div class="sb-fb" aria-live="polite"></div></div>
+    <div class="sb-locked"></div>
+  </div>
+</section>
+
+<div class="sb-card sb-qgroup" data-done="bonus" data-ok="✓ Yes! Two diameters fill the 92 cm box, so each diameter is 92 ÷ 2 = 46 cm. The radius is half of that: 46 ÷ 2 = 23 cm.">
+  <span class="sb-k">Bonus · optional</span>
+  <h3>Two Plates in a Box</h3>
+  <p>Two same-size round plates fit side by side in a box that is 92 cm long. They touch each other and both ends of the box. What is the radius of each plate?</p>
+  <div class="sb-q">Each plate's diameter is 92 ÷ 2 = [[n:46~Two diameters fill the box. Cut 92 in half.]] cm. Each plate's radius is [[n:23~The radius is half of the diameter.]] cm.</div>
+  <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div>
+</div>
+
+<div class="sb-card">
+  <span class="sb-k">How to turn in</span>
+  <h3>Turn in your work</h3>
+  <ol class="sb-steps4">
+    <li>Check the list below. Jobs 1 to 8 are required. The Bonus is optional.</li>
+    <li>Press <b>📋 Gather my answers</b>, then <b>📋 Copy</b>. Or press <b>🖨️ Print or save as PDF</b>.</li>
+    <li>Open this lesson's assignment in Canvas.</li>
+    <li>Paste your answers (or upload your PDF and journal photo), then press <b>Submit</b>.</li>
+  </ol>
+</div>
+
+<div class="sb-card sb-journal">
+  <span class="sb-k">Math journal</span>
+  <h3>All my answers</h3>
+  <div class="sb-help"><button type="button" class="sb-btn" data-journal="gather">📋 Gather my answers</button><button type="button" class="sb-btn ghost" data-journal="copy">📋 Copy</button><button type="button" class="sb-btn ghost" data-journal="download">⬇️ Download as text</button><button type="button" class="sb-btn ghost" data-journal="print">🖨️ Print or save as PDF</button></div>
+  <textarea id="sb-journal-out" readonly aria-label="All my answers">Press Gather my answers to collect everything here.</textarea>
+  <p class="sb-saved">Your answers and your work on this page save on this device as you go.</p>
+</div>
+
+<div class="sb-card">
+  <span class="sb-k">Checklist</span>
+  <h3>Before you turn in</h3>
+  <ul class="sb-check">
+    <li><span class="bx"></span><span>I finished Jobs 1 to 8.</span></li>
+    <li><span class="bx"></span><span>I can find the center, a radius and a diameter.</span></li>
+    <li><span class="bx"></span><span>I doubled the radius to find the diameter.</span></li>
+    <li><span class="bx"></span><span>I cut the diameter in half to find the radius.</span></li>
+    <li><span class="bx"></span><span>I tried the Bonus. <span class="opt">(optional)</span></span></li>
+  </ul>
+</div>
+
+<div class="sb-card">
+  <span class="sb-k">Coming up next</span>
+  <h3>Lesson 3.12.02 · Angles</h3>
+  <p>Next, you'll see what happens where two straight lines meet: an angle.</p>
+</div>
+
+<div class="sb-opti" data-slot="end-1">That's the first lesson in Chapter 12. Here's a song printed in Venice, Italy, in 1505. It's called El Grillo. That means The Cricket. Listen for the singers chirping like a cricket! Press play, and stop whenever you like.</div>
+<div class="sb-card sb-listen" data-src="el-grillo.mp3">
+  <img src="{{IMG:sb-athens-geometer.jpg}}" alt="The geometer with the compass, from The School of Athens" style="object-fit:cover;background:#FBF6EA">
+  <div style="flex:1">
+    <span class="sb-k">Listening corner</span>
+    <h3>El Grillo (The Cricket)</h3>
+    <p style="margin:2px 0">A short, happy song for four voices, printed in Venice in 1505. The words tell about a cricket that sings and sings. Listen for the quick, chirping notes.</p>
+    <div class="meter"><i></i></div><div class="sb-row"><button type="button" class="sb-btn play">▶ Play the music</button><button type="button" class="sb-btn ghost stop">■ Stop</button><span class="time" style="font-weight:800;color:#5B6478">0:00</span></div>
+    <p class="sb-credits">"El Grillo," printed by Ottaviano Petrucci in Venice in 1505, usually credited to Josquin des Prez. Sung by the dwsChorale. CC BY-SA 3.0, via Wikimedia Commons.</p>
+  </div>
+</div>
+</section>
+
+<footer class="sb-foot footer"><b>🏫 Optima Academy Online</b><br>Math · Grade 3 · Lesson 3.12.01 · Unit 12<br><span style="font-size:12px">Art: Raphael, "The School of Athens" (1509 to 1511), Vatican Museums, public domain; Oliver Byrne, "The First Six Books of the Elements of Euclid" (London, 1847), public domain; both via Wikimedia Commons. Music: "El Grillo" (Venice, 1505), sung by the dwsChorale, CC BY-SA 3.0, via Wikimedia Commons.</span></footer>
+</div>
+
+<script type="application/json" id="sb-data">{{DATA}}</script>
+{{PRE}}
+{{JS}}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetch('https://raw.githubusercontent.com/bbirchum1/optima-3rd-math/main/video-manifest.json?v=' + Date.now())
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      var manifest = data.videos || data;
+      document.querySelectorAll('.video-placeholder-wrap').forEach(function(wrap) {
+        var m = wrap.innerHTML.match(/<!--\s*slot:\s*([\w-]+)\s*-->/);
+        if (!m) return;
+        var entry = manifest[m[1]];
+        if (!entry || entry.status !== 'ready' || !entry.embed) return;
+        var temp = document.createElement('div'); temp.innerHTML = entry.embed;
+        var iframe = temp.querySelector('iframe'); if (!iframe) return;
+        iframe.removeAttribute('width'); iframe.removeAttribute('height');
+        iframe.style.cssText = 'display:block;width:100%;aspect-ratio:16/9;border:none;';
+        wrap.innerHTML = ''; wrap.style.cssText = 'display:block;border:none;background:#000;border-radius:14px;overflow:hidden;margin:0 0 18px;';
+        wrap.appendChild(iframe);
+      });
+    })
+    .catch(function(err) { console.warn('Video manifest load failed:', err); });
+});
+</script>
+<!-- OAO math tools for this lesson (manipulatives library) -->
+<script src="https://optimaondemand.github.io/optima-4th-math/manipulatives/lesson-tools.js" defer></script>
+</body>
+</html>

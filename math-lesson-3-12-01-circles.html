@@ -1,597 +1,425 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Circles · Grade 3 Math Lesson 3.12.01</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/storybook/sb.css?v=92a96ac2">
+</head>
+<body class="sb">
+<div class="sb-prog" aria-label="Progress"><span class="k">📖 EUCLID'S COMPASS</span><span class="bar"><i></i></span><span class="n">0 of 8 jobs</span></div>
+<div class="sb-wrap">
 
-<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Optima Academy Online — Grade 3 Math Lesson 3.12.01</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Nunito:wght@400;700;800;900&display=swap');
-*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Nunito',Verdana,sans-serif;background:#F5F8FA;color:#0E1C42;line-height:1.6}.page-wrap{max-width:920px;margin:0 auto;background:#fff;box-shadow:0 0 40px rgba(14,28,66,.08)}
-:root{--geo:#5B52A8;--geo-light:#EEEDFA;--geo-mid:#9A92D0;--geo-deep:#2D2A5E}
-.progress-wrap{position:sticky;top:0;z-index:200;background:#0E1C42;padding:8px 20px 10px;display:flex;align-items:center;gap:14px}.progress-label{font-size:12px;color:#F5C518;font-weight:800;text-transform:uppercase}.progress-track{flex:1;height:10px;background:rgba(255,255,255,.1);border-radius:10px;overflow:hidden}.progress-fill{height:100%;width:0%;background:linear-gradient(90deg,var(--geo),#9A92D0,#F5C518,var(--geo));background-size:200% 100%;animation:shimmer 3s linear infinite;border-radius:10px;transition:width .4s}.progress-pct{font-size:13px;color:#F5C518;font-weight:800;min-width:36px;text-align:right}@keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
-.header{background:#0E1C42;border-bottom:6px solid var(--geo);padding:20px 28px 18px}.header-brand{display:flex;align-items:center;gap:12px;margin-bottom:14px}.header-logo{width:52px;height:52px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center}.header-logo img{width:48px;height:38px}.header-org{font-size:22px;color:#fff;font-weight:800}.header-sub{font-size:11px;color:var(--geo-mid)}.header-title{font-family:'Lora',serif;font-size:28px;color:#fff;font-weight:700;margin-bottom:10px}.header-title em{color:var(--geo-mid);font-style:italic}.header-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(91,82,168,.25);border:1.5px solid rgba(154,146,208,.5);border-radius:28px;padding:6px 16px}.header-badge-icon{font-size:22px}.header-badge-text{font-size:18px;color:#fff;font-weight:800}
-.quote-strip{background:linear-gradient(135deg,var(--geo-light),var(--geo-mid));border-bottom:2px solid var(--geo-mid);padding:14px 28px;text-align:center}.quote-strip-text{font-family:'Lora',serif;font-size:16px;font-style:italic;color:var(--geo-deep)}.quote-strip-attr{font-size:11px;color:var(--geo);font-weight:700;margin-top:4px;text-transform:uppercase}
-.info-strip{display:flex;flex-wrap:wrap;background:#fff;border-bottom:2px solid #E2E8F4}.info-cell{flex:1;min-width:150px;padding:12px 16px;border-right:1px solid #E2E8F4;display:flex;align-items:center;gap:10px}.info-icon{width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px}.info-label{font-size:10px;color:#7A88A8;text-transform:uppercase;font-weight:700}.info-value{font-size:16px;color:#0E1C42;font-weight:800}.info-detail{font-size:11px;color:#3A4A6B}
-.explorer-strip{display:flex;align-items:center;gap:16px;padding:12px 28px;background:linear-gradient(135deg,#1A2340,#0E1C42);border-bottom:3px solid var(--geo)}.explorer-compass{font-size:28px}.explorer-mission-label{font-size:10px;color:#F5C518;text-transform:uppercase;font-weight:800}.explorer-mission-text{font-size:15px;color:#fff;font-weight:700}
-.intro-2col{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:20px 28px 4px}@media(max-width:720px){.intro-2col{grid-template-columns:1fr}}.intro-card{background:#fff;border:2px solid #E2E8F4;border-radius:18px;overflow:hidden}.intro-card-head{display:flex;align-items:center;gap:10px;padding:14px 18px;border-bottom:2px solid}.intro-card-head-icon{width:40px;height:40px;border-radius:50%;color:#fff;font-size:20px;display:flex;align-items:center;justify-content:center}.intro-card-head-label{font-size:10px;color:#7A88A8;text-transform:uppercase;font-weight:700}.intro-card-head-title{font-size:18px;color:#0E1C42;font-weight:800}.intro-card-body{padding:14px 18px}.intro-card-body p{font-size:15px;color:#3A4A6B;line-height:1.65;margin-bottom:8px}.obj-line{display:flex;gap:8px;font-size:15px;color:#0E1C42;line-height:1.55;margin-bottom:8px}.theme-question .intro-card-head{background:#FFF8E6;border-color:#F5E6C8}.theme-question .intro-card-head-icon{background:#F5C518}.theme-objectives .intro-card-head{background:var(--geo-light);border-color:var(--geo-mid)}.theme-objectives .intro-card-head-icon{background:var(--geo)}
-.need-strip{display:flex;flex-wrap:wrap;gap:8px;padding:12px 28px 18px}.need-strip-label{font-size:13px;color:#3A4A6B;font-weight:700}.need-chip{background:#E3F8ED;border:1.5px solid #B8E8CF;border-radius:20px;padding:5px 12px;font-size:13px;color:#0E1C42;font-weight:700}
-.tab-bar{position:sticky;top:38px;z-index:100;background:#fff;border-bottom:3px solid #E2E8F4;display:flex;overflow-x:auto;box-shadow:0 -4px 0 0 #0E1C42}.tab-btn{flex:1;min-width:130px;padding:12px 8px 11px;background:transparent;border:none;border-bottom:4px solid transparent;font-family:'Nunito',sans-serif;font-size:13px;font-weight:700;color:#7A88A8;cursor:pointer;text-align:center}.tab-btn.active{color:#0E1C42;border-bottom-color:var(--geo);background:#fff}.tab-btn .tab-check{display:none;color:#2DB87A;margin-left:4px;font-weight:800}.tab-btn.visited .tab-check{display:inline}.tab-panel{display:none;padding:24px 28px 36px}.tab-panel.active{display:block}
-.activity{background:#fff;border:2px solid #E2E8F4;border-radius:18px;margin-bottom:18px}.activity.bl-geo{border-left:6px solid var(--geo)}.activity.bl-green{border-left:6px solid #2DB87A}.activity.bl-yellow{border-left:6px solid #F5C518}.activity.bl-slate{border-left:6px solid #3A6B9A}.activity.bl-navy{border-left:6px solid #0E1C42}.activity-head{display:flex;align-items:center;gap:12px;padding:14px 20px 14px 18px;border-bottom:1.5px solid #E2E8F4}.activity-num{width:38px;height:38px;border-radius:14px;color:#fff;font-size:18px;font-weight:800;display:flex;align-items:center;justify-content:center}.activity-title{font-size:19px;color:#0E1C42;font-weight:800}.activity-sub{font-size:12px;color:#7A88A8}.activity-body{padding:18px 22px}.activity-body p{font-size:16px;color:#3A4A6B;line-height:1.7;margin-bottom:12px}
-.callout{border-radius:14px;padding:16px 18px;display:flex;gap:12px;margin-bottom:14px}.callout-icon{font-size:28px}.callout p{font-size:15.5px;color:#0E1C42;line-height:1.65;margin:0}.callout-info{background:var(--geo-light);border:2px solid var(--geo-mid)}.callout-think{background:#FFF8E6;border:2px solid #F5E6C8}.callout-tip{background:#E3F8ED;border:2px solid #B8E8CF}
-.key-concept{background:var(--geo-light);border:2px solid var(--geo-mid);border-radius:14px;padding:16px 18px;margin-bottom:14px}.key-concept-label{font-size:12px;color:var(--geo-deep);text-transform:uppercase;font-weight:800;margin-bottom:8px}.key-concept p{font-size:15px;color:#0E1C42;line-height:1.7}
-.socratic-box{background:linear-gradient(135deg,var(--geo-light),var(--geo-mid));border:2px solid var(--geo-mid);border-radius:14px;padding:16px 18px;margin-bottom:14px}.socratic-label{font-size:12px;color:var(--geo-deep);text-transform:uppercase;font-weight:800;margin-bottom:8px}.socratic-q{font-size:15.5px;color:#0E1C42;font-style:italic}
-.journal-label{font-size:13px;color:#3A4A6B;font-weight:700;margin:10px 0 4px}.journal-box{width:100%;min-height:80px;border:2px solid #E2E8F4;border-radius:12px;padding:12px 14px;font-family:'Nunito',sans-serif;font-size:15px;color:#0E1C42;resize:vertical}.journal-box:focus{outline:none;border-color:var(--geo)}.saved-dot{width:8px;height:8px;border-radius:50%;background:#E2E8F4;display:inline-block;transition:.3s}.saved-dot.saved{background:#2DB87A}
-.check-btn,.geo-btn,.green-btn,.orange-btn{display:inline-flex;align-items:center;gap:6px;color:#fff;border:none;border-radius:12px;padding:10px 20px;font-size:14px;font-weight:800;cursor:pointer;font-family:'Nunito',sans-serif;margin-top:10px}.check-btn{background:#3A6B9A}.geo-btn{background:var(--geo)}.green-btn{background:#2DB87A}.orange-btn{background:#E07B39}
-.hint-callout{background:#FFF8E6;border:2px solid #F5C518;border-radius:10px;padding:10px 14px;margin:12px 0;font-size:14px;color:#5A4A00;font-weight:700}
-.task-box{background:#FAFBFF;border:2px solid #E2E8F4;border-radius:14px;padding:16px 18px;margin-bottom:14px}.task-label{font-size:12px;color:var(--geo-deep);text-transform:uppercase;font-weight:800;margin-bottom:10px}
-.feedback-branch{display:none;margin-top:16px;border-radius:14px;padding:16px}.feedback-branch.show{display:block;animation:reveal .35s}.feedback-pass{background:#E3F8ED;border:2px solid #B8E8CF}.feedback-retry{background:#FFF0E6;border:2px solid #F5C8A0}
-.value-card-row{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}.value-card{border:2px solid #E2E8F4;background:#fff;border-radius:14px;padding:10px 14px;min-width:110px;text-align:center;cursor:pointer;transition:.2s}.value-card:hover{border-color:var(--geo);background:var(--geo-light)}.value-card.good{background:#E3F8ED;border-color:#2DB87A}.value-card.bad{background:#FFF0E6;border-color:#E07B39;animation:shake .25s}.value-card .big{font-size:22px;font-weight:900;color:#0E1C42}.value-card .small{font-size:12px;color:#3A4A6B;font-weight:800}
-.fill-row{display:flex;align-items:center;gap:8px;background:#FAFBFF;border:2px solid #E2E8F4;border-radius:12px;padding:12px 14px;margin:10px 0;flex-wrap:wrap;font-size:17px;font-weight:800;color:#0E1C42}.fill-input{width:100px;padding:8px 10px;border:2.5px solid var(--geo-mid);border-radius:10px;font-size:17px;font-weight:900;color:var(--geo-deep);text-align:center;font-family:'Nunito',sans-serif;background:#fff}.fill-input:focus{outline:none;border-color:var(--geo)}.fill-input.good{border-color:#2DB87A;background:#E3F8ED;color:#1A8A5A}.fill-input.bad{border-color:#E07B39;background:#FFF0E6;animation:shake .25s}
-.q-block{background:#FAFBFF;border:2px solid #E2E8F4;border-radius:14px;padding:14px 18px;margin-bottom:14px}.q-num{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--geo);color:#fff;font-weight:800;font-size:14px;margin-right:8px;vertical-align:middle}.q-text{font-size:15.5px;color:#0E1C42;line-height:1.65}
-.gathered-box{background:#fff;border:2px solid #E2E8F4;border-radius:18px;overflow:hidden;margin-top:24px}.gathered-head{display:flex;align-items:center;gap:14px;background:linear-gradient(135deg,#0E1C42,#1A2D5A);padding:18px 22px}.gathered-head-icon{font-size:32px}.gathered-head-label{font-size:11px;color:#F5C518;font-weight:800;text-transform:uppercase}.gathered-head-title{font-size:18px;color:#fff;font-weight:800}.gathered-body{padding:16px 22px}.gathered-output{width:100%;min-height:160px;border:2px solid #E2E8F4;border-radius:12px;padding:14px;font-family:monospace;font-size:13px;background:#FAFBFF}
-.tab-next-wrap{text-align:center;padding:24px 0 8px}.tab-transition-voice{font-family:'Lora',serif;font-size:15px;font-style:italic;color:var(--geo-deep);margin-bottom:12px}.tab-next-btn{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--geo),#2D2A5E);color:#fff;border:none;border-radius:28px;padding:13px 28px;font-size:15px;font-weight:800;cursor:pointer;box-shadow:0 4px 14px rgba(45,42,94,.3);animation:float 3s infinite}
-.turn-in-card{background:#fff;border:2px solid #E2E8F4;border-radius:18px;overflow:hidden;margin-top:18px}.turn-in-header{display:flex;align-items:center;gap:14px;background:var(--geo-light);padding:18px 22px;border-bottom:2px solid var(--geo-mid)}.turn-in-header-icon{font-size:36px}.turn-in-header-label{font-size:11px;color:var(--geo-deep);font-weight:800;text-transform:uppercase}.turn-in-header-title{font-family:'Lora',serif;font-size:22px;color:#0E1C42;font-weight:700}.turn-in-body{padding:18px 22px 20px}.turn-in-item{display:flex;align-items:center;gap:14px;padding:12px 16px;background:#FAFBFF;border:1.5px solid #E2E8F4;border-radius:12px;cursor:pointer;margin-bottom:10px}.turn-in-item.checked{background:#E3F8ED;border-color:#B8E8CF}.turn-in-check{width:26px;height:26px;border-radius:8px;border:2px solid var(--geo-mid);background:#fff;display:flex;align-items:center;justify-content:center;font-size:16px}.turn-in-item.checked .turn-in-check{background:#2DB87A;border-color:#2DB87A;color:#fff}
-.footer{background:#0E1C42;border-top:4px solid var(--geo);padding:18px 28px;text-align:center}.footer-main{font-size:14px;color:#fff;margin-bottom:4px}.footer-main span{color:var(--geo-mid);font-weight:700}.footer-sub{font-size:12px;color:rgba(255,255,255,.5)}.footer-copy{font-size:11px;color:rgba(255,255,255,.3)}
-.inline-feedback{display:none;margin:12px 0;border-radius:14px;padding:12px 14px;font-weight:800;line-height:1.5}.inline-feedback.show{display:block;animation:reveal .3s}.inline-feedback.good{background:#E3F8ED;border:2px solid #B8E8CF;color:#0E1C42}.inline-feedback.think{background:#FFF3DC;border:2px solid #F5E6C8;color:#5A4A3A}
-.vocab-section{background:#fff;border:2px solid var(--geo-mid);border-left:6px solid var(--geo);border-radius:18px;padding:14px 20px;margin:0 0 20px}.vocab-section-title{font-size:16px;color:#0E1C42;font-weight:900;margin-bottom:4px}
-.bubble-row{display:flex;gap:12px;flex-wrap:wrap;margin:14px 0}.bubble{display:flex;gap:10px;flex:1 1 260px;max-width:340px;background:#fff;border:2px solid #E2E8F4;border-radius:18px;padding:12px 14px}.bubble.atlas{border-left:5px solid #6B3FA0;background:linear-gradient(135deg,#fff,#F8F4FF)}.bubble.hazel{border-left:5px solid #2DB87A;background:linear-gradient(135deg,#fff,#F4FBF7)}.bubble.felix{border-left:5px solid #F5C518;background:linear-gradient(135deg,#fff,#FEFBEB)}.bubble.cora{border-left:5px solid #3A6B9A;background:linear-gradient(135deg,#fff,#F4F8FC)}.bubble-avatar{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:900;color:#fff;flex-shrink:0;font-family:'Lora',serif}.bubble.atlas .bubble-avatar{background:#6B3FA0}.bubble.hazel .bubble-avatar{background:#2DB87A}.bubble.felix .bubble-avatar{background:#F5C518;color:#0E1C42}.bubble.cora .bubble-avatar{background:#3A6B9A}.bubble-body{flex:1;min-width:0}.bubble-name{font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.7px;margin-bottom:3px;color:#6B3FA0}.bubble.hazel .bubble-name{color:#1A8A5A}.bubble.felix .bubble-name{color:#8A6D2B}.bubble.cora .bubble-name{color:#1A6B8E}.bubble-text{font-size:14.5px;color:#0E1C42;line-height:1.5;font-weight:600;font-family:'Lora',serif;font-style:italic}
-/* ═══ VIDEO PLACEHOLDER ═══ */
-.video-placeholder-wrap {
-  display: none;
-  border-radius: 14px; overflow: hidden; margin: 0 0 18px;
-  border: 2px dashed rgba(107,63,160,0.4);
-  background: linear-gradient(135deg, #0E1C42, #1A2D5A);
-}
-.video-placeholder-inner {
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-  text-align: center; padding: 28px 20px;
-}
-.video-placeholder-inner .vp-icon { font-size: 34px; margin-bottom: 6px; }
-.video-placeholder-inner .vp-label {
-  font-size: 10px; color: #F5C518; text-transform: uppercase;
-  letter-spacing: 2px; font-weight: 800; margin-bottom: 4px;
-}
-.video-placeholder-inner .vp-title {
-  font-size: 16px; font-weight: 800; color: #fff; margin-bottom: 8px;
-}
-.video-placeholder-inner .vp-slot {
-  font-family: monospace; font-size: 11px; color: #6B3FA0;
-  background: rgba(107,63,160,0.15);
-  padding: 3px 10px; border-radius: 4px;
-}
-.video-placeholder-inner .vp-notes {
-  font-size: 12px; color: rgba(255,255,255,0.8); font-style: italic;
-  margin-top: 10px; text-align: left; padding: 10px 12px;
-  background: rgba(0,0,0,0.25); border-radius: 6px; border-left: 3px solid #6B3FA0;
-}
+<header class="sb-head">
+  <div class="sb-brand"><img alt="" src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png"><div><b>Optima Academy Online</b><small>An Education Experience Company</small></div></div>
+  <h1 class="sb-title">Circles</h1>
+  <div class="sb-chips">
+    <span class="sb-chip lead">Lesson 3.12.01 · Unit 12 · Lesson 1</span>
+    <button type="button" class="sb-chip" id="sb-read">🔊 Read aloud</button>
+    <button type="button" class="sb-chip" data-pop="#sb-std" aria-expanded="false">Standards ▾</button>
+    <button type="button" class="sb-chip" id="sb-music" aria-pressed="false">🎵 Music: off</button>
+    <button type="button" class="sb-chip" id="sb-motion" aria-pressed="true">✨ Motion: on</button>
+  </div>
+  <div class="sb-pop" id="sb-std"><b>Enrichment</b> Circles are not a Grade 3 B.E.S.T. benchmark. This lesson gets students ready for Unit 12's shapes and angles (MA.3.GR.1.1, MA.3.GR.1.2) and uses doubling and halving facts (MA.3.NSO.2.4).<br><b>MA.K12.MTR.2.1</b> Show math in many ways. <b>MTR.5.1</b> Use patterns and structure. <b>MTR.6.1</b> Check that answers make sense.<br><small>Today: find the center of a circle, name the radius and the diameter, and see that the diameter is as long as two radii. Dimensions Math 3B, Chapter 12, Lesson 1 · Circles</small></div>
+</header>
 
-/* CIRCLE BUILDER */
-.circle-frame{background:#fff;border:2px solid var(--geo-mid);border-radius:16px;padding:18px;margin:14px 0}
-.circle-controls{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:14px;align-items:center}
-.circle-pick{background:var(--geo-light);border:2px solid var(--geo-mid);border-radius:14px;padding:10px 14px;text-align:center;min-width:140px}
-.circle-pick-label{font-size:11px;color:var(--geo-deep);font-weight:900;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
-.circle-stepper{display:flex;align-items:center;justify-content:center;gap:10px}
-.circle-btn{background:#fff;border:2.5px solid var(--geo);color:var(--geo);width:36px;height:36px;border-radius:50%;font-size:18px;font-weight:900;cursor:pointer;font-family:'Nunito',sans-serif}.circle-btn:hover{background:var(--geo);color:#fff}
-.circle-val{font-family:'Lora',serif;font-size:28px;font-weight:900;color:#0E1C42;min-width:50px;text-align:center}
-.circle-canvas-wrap{background:#FAFBFF;border:2px dashed var(--geo-mid);border-radius:12px;padding:16px 14px;margin-bottom:14px;display:flex;justify-content:center}
-.circle-readout{background:linear-gradient(135deg,var(--geo-light),#9A92D0);border:2px solid var(--geo-mid);border-radius:12px;padding:16px;text-align:center;margin-bottom:8px;font-family:'Lora',serif;font-weight:900;color:#0E1C42;font-size:22px}
-.circle-reset-btn{background:#7A88A8;color:#fff;border:none;border-radius:14px;padding:10px 18px;font-size:14px;font-weight:900;cursor:pointer;font-family:'Nunito',sans-serif;margin-top:6px}
-
-@keyframes reveal{0%{opacity:0;transform:translateY(10px)}100%{opacity:1;transform:translateY(0)}}@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}@keyframes mini{0%{transform:translateY(0) scale(0);opacity:1}50%{transform:translateY(-30px) scale(1.2)}100%{transform:translateY(-60px) scale(.6);opacity:0}}
-
-.practice-note { font-size: 12px; color: #8899AA; text-align: center; margin: 6px 0 2px; font-style: italic; line-height: 1.4; }
-</style>
-<style id="fluencyStyles">
-.fluency-box{background:#fff;border:2px solid #F5C518;border-radius:18px;overflow:hidden;margin-bottom:22px;font-family:'Nunito',sans-serif}
-.fluency-head{display:flex;align-items:center;gap:12px;background:linear-gradient(135deg,#F5C518,#E8B723);padding:14px 20px;flex-wrap:wrap}
-.fluency-head-icon{font-size:26px;line-height:1}
-.fluency-head-label{font-size:10px;color:#0E1C42;font-weight:800;text-transform:uppercase;letter-spacing:0.5px}
-.fluency-head-title{font-size:15px;color:#0E1C42;font-weight:800}
-.fluency-timer-ui{margin-left:auto;display:flex;align-items:center;gap:10px}
-.fluency-timer-display{font-size:20px;font-weight:800;color:#0E1C42;min-width:46px;text-align:center}
-.fluency-start-btn{background:#0E1C42;color:#fff;border:none;border-radius:10px;padding:8px 14px;font-weight:700;font-size:12px;cursor:pointer}
-.fluency-start-btn:disabled{opacity:0.55;cursor:default}
-.fluency-body{padding:16px 20px}
-.fluency-instructions{font-size:13px;color:#4A5568;margin:0 0 12px}
-.fluency-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(128px,1fr));gap:10px;margin-bottom:14px}
-.fluency-item{display:flex;align-items:center;gap:6px;background:#FAFBFF;border:1.5px solid #E2E8F4;border-radius:10px;padding:8px 10px}
-.fluency-item.fluency-correct{border-color:#2DB87A;background:#EAFBF3}
-.fluency-item.fluency-wrong{border-color:#E07B39;background:#FDF1E9}
-.fluency-q{font-size:13px;font-weight:700;color:#0E1C42;white-space:nowrap}
-.fluency-input{width:46px;border:1.5px solid #CBD5E8;border-radius:6px;padding:4px;font-size:14px;text-align:center;font-family:'Nunito',sans-serif}
-.fluency-input:disabled{background:#F0F2F8}
-.fluency-check-btn{background:#2DB87A;color:#fff;border:none;border-radius:10px;padding:10px 18px;font-weight:800;font-size:13px;cursor:pointer}
-.fluency-check-btn:disabled{opacity:0.55;cursor:default}
-.fluency-result{margin-top:10px;font-size:14px;color:#0E1C42;font-weight:700}
-</style></head><body>
-<div class="page-wrap">
-
-<!-- ═══════════════════════════════════════════════════════════════════════
-     OPTIMA READ-ALOUD PLAYER — drop-in snippet for GitHub-hosted lesson pages
-     ═══════════════════════════════════════════════════════════════════════ -->
-<div id="optima-read-aloud">
-<style>
-    #optima-read-aloud { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 14px 18px; margin: 0 0 20px 0; }
-    #optima-read-aloud .ora-kicker { font-size: 11px; color: #1B6A94; letter-spacing: 0.4px; margin-bottom: 10px; }
-    #optima-read-aloud .ora-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
-    #optima-read-aloud .ora-controls button { border-radius: 8px; padding: 8px 16px; font-size: 14px; cursor: pointer; font-family: inherit; transition: all 0.15s; }
-    #ora-play { background: #0E1C42; color: #FFFFFF; border: 1.5px solid #0E1C42; }
-    #ora-play:hover:enabled { background: #1B2D5E; }
-    #ora-play:disabled { background: #D0D9E8; border-color: #D0D9E8; color: #6b7a99; cursor: default; }
-    #ora-stop { background: #FFFFFF; color: #0E1C42; border: 1.5px solid #D0D9E8; }
-    #ora-stop:hover:enabled { background: #F4F6FA; border-color: #55C8E8; }
-    #ora-stop:disabled { color: #999; border-color: #E4E9F2; cursor: default; }
-    #optima-read-aloud .ora-speed { font-size: 12px; color: #6b7a99; display: flex; align-items: center; gap: 6px; }
-    #ora-rate { font-family: inherit; font-size: 13px; color: #0E1C42; border: 1.5px solid #D0D9E8; border-radius: 6px; padding: 5px 8px; background: #FFFFFF; }
-    #ora-status { font-size: 12px; color: #666; }
-    .ora-highlight { background: #FDF3E3 !important; box-shadow: inset 4px 0 0 #C7922C; border-radius: 4px; transition: background 0.2s; }
-</style>
-    <div class="ora-kicker">&#128266; READ ALOUD &mdash; LISTEN TO THIS PAGE</div>
-    <div class="ora-controls">
-        <button id="ora-play" type="button" aria-label="Listen to this page">&#9654;&#65039; Listen</button>
-<p class="practice-note">Interactive practice tools on this page won't save if you leave — your written answers below are saved automatically.</p>
-
-        <button id="ora-stop" type="button" aria-label="Stop reading" disabled>&#9632; Stop</button>
-        <label class="ora-speed">Speed
-            <select id="ora-rate" aria-label="Reading speed">
-                <option value="0.8">Slower</option>
-                <option value="1" selected>Normal</option>
-                <option value="1.25">Faster</option>
-            </select>
-        </label>
-        <span id="ora-status" role="status" aria-live="polite"></span>
+<!-- the open book -->
+<div class="sb-book" aria-label="Opti's storybook, open to Chapter 12">
+  <div class="sb-book-in">
+    <div class="sb-pg">
+      <figure class="sb-plate"><img src="images/storybook/sb-athens-geometer.jpg" alt="Part of an old painting. A bald man in a red robe bends down and draws on a small slate on the floor with a compass. Young students lean in around him to watch."><figcaption>The geometer with the compass, from "The School of Athens"</figcaption></figure>
     </div>
-<script>
-(function () {
-    "use strict";
-    var playBtn  = document.getElementById("ora-play");
-    var stopBtn  = document.getElementById("ora-stop");
-    var rateSel  = document.getElementById("ora-rate");
-    var statusEl = document.getElementById("ora-status");
-
-    if (!("speechSynthesis" in window) || !("SpeechSynthesisUtterance" in window)) {
-        playBtn.disabled = true;
-        rateSel.disabled = true;
-        statusEl.textContent = "Read-aloud is not supported in this browser.";
-        return;
-    }
-
-    var LABEL_PLAY   = "▶️ Listen";
-    var LABEL_PAUSE  = "⏸️ Pause";
-    var LABEL_RESUME = "▶️ Resume";
-    var BLOCK_SEL = "p, li, h1, h2, h3, h4, h5, h6, blockquote, td, th, dt, dd, figcaption, div";
-    var SKIP_SEL  = "#optima-read-aloud, [data-ra-skip], button, script, style, select, noscript, iframe";
-
-    var queue = [];
-    var idx = 0;
-    var playing = false, paused = false, stopping = false;
-    var currentBlock = null;
-    var currentUtterance = null;
-
-    var voices = [];
-    function loadVoices() { voices = window.speechSynthesis.getVoices(); }
-    loadVoices();
-    if ("onvoiceschanged" in window.speechSynthesis) {
-        window.speechSynthesis.onvoiceschanged = loadVoices;
-    }
-    function pickVoice() {
-        if (!voices.length) loadVoices();
-        var en = voices.filter(function (v) { return /^en/i.test(v.lang); });
-        return en.filter(function (v) { return /natural/i.test(v.name); })[0]
-            || en.filter(function (v) { return /google us english/i.test(v.name); })[0]
-            || en.filter(function (v) { return v.default; })[0]
-            || en[0] || null;
-    }
-
-    function isVisible(el) {
-        return !!(el.offsetWidth || el.offsetHeight || el.getClientRects().length);
-    }
-
-    function collectQueue() {
-        var root = document.querySelector("[data-readaloud-root]")
-                || document.querySelector(".canvas-frame")
-                || document.body;
-        var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null, false);
-        var items = [];
-        var node;
-        while ((node = walker.nextNode())) {
-            if (!/\S/.test(node.textContent)) continue;
-            var el = node.parentElement;
-            if (!el || el.closest(SKIP_SEL)) continue;
-            if (!isVisible(el)) continue;
-            var block = el.closest(BLOCK_SEL) || root;
-            var last = items[items.length - 1];
-            if (last && last.el === block) last.text += " " + node.textContent;
-            else items.push({ el: block, text: node.textContent });
-        }
-        var q = [];
-        items.forEach(function (item) {
-            var clean = item.text.replace(/[\u{1F600}-\u{1F64F}\u{1F300}-\u{1F5FF}\u{1F680}-\u{1F6FF}\u{1F1E0}-\u{1F1FF}\u{1F900}-\u{1F9FF}\u{1FA00}-\u{1FA6F}\u{1FA70}-\u{1FAFF}\u{2600}-\u{27BF}\u{2300}-\u{23FF}\u{2B50}\u{2B55}\u{25A0}-\u{25FF}\u{2702}-\u{27B0}\u{FE00}-\u{FE0F}\u{200D}\u{20E3}\u{E0020}-\u{E007F}]/gu, "").replace(/\s+/g, " ").trim();
-            if (!clean) return;
-            var sentences = clean.match(/[^.!?]+[.!?]+["”’')\]]*\s*|[^.!?]+$/g) || [clean];
-            sentences.forEach(function (s) {
-                s = s.trim();
-                if (s) q.push({ el: item.el, text: s });
-            });
-        });
-        return q;
-    }
-
-    function highlight(el) {
-        if (el === currentBlock) return;
-        clearHighlight();
-        currentBlock = el;
-        if (el && el !== document.body) {
-            el.classList.add("ora-highlight");
-            try { el.scrollIntoView({ behavior: "smooth", block: "nearest" }); } catch (e) {}
-        }
-    }
-    function clearHighlight() {
-        if (currentBlock) currentBlock.classList.remove("ora-highlight");
-        currentBlock = null;
-    }
-
-    function speakNext() {
-        if (idx >= queue.length) { finish("Finished reading this page."); return; }
-        var item = queue[idx];
-        highlight(item.el);
-        var u = new SpeechSynthesisUtterance(item.text);
-        u.rate = parseFloat(rateSel.value) || 1;
-        var v = pickVoice();
-        if (v) u.voice = v;
-        u.onend = function () {
-            if (stopping) return;
-            idx++;
-            speakNext();
-        };
-        u.onerror = function (e) {
-            if (stopping || e.error === "canceled" || e.error === "interrupted") return;
-            idx++;
-            speakNext();
-        };
-        currentUtterance = u;
-        window.speechSynthesis.speak(u);
-        statusEl.textContent = "Reading… " + (idx + 1) + " / " + queue.length;
-    }
-
-    function finish(message) {
-        playing = false;
-        paused = false;
-        clearHighlight();
-        playBtn.textContent = LABEL_PLAY;
-        stopBtn.disabled = true;
-        statusEl.textContent = message || "";
-        currentUtterance = null;
-    }
-
-    playBtn.addEventListener("click", function () {
-        if (playing && !paused) {
-            window.speechSynthesis.pause();
-            paused = true;
-            playBtn.textContent = LABEL_RESUME;
-            statusEl.textContent = "Paused";
-            return;
-        }
-        if (playing && paused) {
-            window.speechSynthesis.resume();
-            paused = false;
-            playBtn.textContent = LABEL_PAUSE;
-            statusEl.textContent = "Reading… " + (idx + 1) + " / " + queue.length;
-            return;
-        }
-        queue = collectQueue();
-        if (!queue.length) { statusEl.textContent = "Nothing to read on this page."; return; }
-        idx = 0;
-        stopping = false;
-        playing = true;
-        paused = false;
-        window.speechSynthesis.cancel();
-        playBtn.textContent = LABEL_PAUSE;
-        stopBtn.disabled = false;
-        speakNext();
-    });
-
-    stopBtn.addEventListener("click", function () {
-        stopping = true;
-        window.speechSynthesis.cancel();
-        finish("");
-    });
-
-    rateSel.addEventListener("change", function () {
-        if (!playing || paused) return;
-        stopping = true;
-        window.speechSynthesis.cancel();
-        setTimeout(function () { stopping = false; speakNext(); }, 60);
-    });
-
-    window.addEventListener("pagehide", function () { window.speechSynthesis.cancel(); });
-})();
-</script>
+    <div class="sb-pg r">
+      <div class="sb-chap">Chapter 12</div>
+      <div class="sb-chap-t">Euclid's Compass</div>
+      <div class="sb-orn" aria-hidden="true"></div>
+      <p class="sb-chap-s">Alexandria, Egypt · about 300 BC</p>
+      <div class="sb-chap-l">Lesson 1 · Circles</div>
+    </div>
+  </div>
+  <img class="sb-owl" src="images/storybook/opti-owl.png" alt="Opti the owl, sitting on the open book">
 </div>
-<!-- ═══ END OPTIMA READ-ALOUD PLAYER ═══ -->
 
-<div class="progress-wrap"><span class="progress-label">Lesson Progress</span><div class="progress-track"><div class="progress-fill" id="pf"></div></div><span class="progress-pct" id="pp">0%</span></div>
-<div class="header">
-<div class="header-brand"><div class="header-logo"><img alt="Optima" src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png"/></div><div><div class="header-org">Optima Academy Online</div><div class="header-sub">An Education Experience Company</div></div></div>
-<div class="header-title"><em>Circles</em></div>
-<div class="header-badge"><span class="header-badge-icon">⭕</span><span class="header-badge-text">Lesson 3.12.01 · U12 Anchor</span></div>
-</div>
-<div class="quote-strip"><div class="quote-strip-text">"A circle is a set of points that are all the same distance from one special point — the center."</div><div class="quote-strip-attr">Geometry fact</div></div>
-<div class="info-strip">
-<div class="info-cell"><div class="info-icon" style="background:var(--geo-light);">🟣</div><div><div class="info-label">Unit</div><div class="info-value">Unit 12</div><div class="info-detail">Geometry</div></div></div>
-<div class="info-cell"><div class="info-icon" style="background:#E3F8ED;">📅</div><div><div class="info-label">Lesson</div><div class="info-value">3.12.01</div><div class="info-detail">U1 Anchor</div></div></div>
-<div class="info-cell"><div class="info-icon" style="background:#EAF0FF;">📐</div><div><div class="info-label">Standards</div><div class="info-value">Enrichment</div><div class="info-detail">circles, radius, diameter</div></div></div>
-<div class="info-cell"><div class="info-icon" style="background:#FFF8E6;">🔧</div><div><div class="info-label">Tool</div><div class="info-value">Circle Builder</div><div class="info-detail">set radius, watch it grow</div></div></div>
-</div>
-<div class="explorer-strip"><span class="explorer-compass">🧭</span><div><div class="explorer-mission-label">Today’s Mission</div><div class="explorer-mission-text">Find what makes every circle tick — the center and the radius.</div></div></div>
-<div class="intro-2col">
-<div class="intro-card theme-question"><div class="intro-card-head"><div class="intro-card-head-icon">❓</div><div><div class="intro-card-head-label">Essential Question</div><div class="intro-card-head-title">What makes a circle a circle?</div></div></div><div class="intro-card-body"><p>Every point on the edge sits the same distance from the center. That one rule is all it takes.</p></div></div>
-<div class="intro-card theme-objectives"><div class="intro-card-head"><div class="intro-card-head-icon">🎯</div><div><div class="intro-card-head-label">Today’s Objectives</div><div class="intro-card-head-title">You will…</div></div></div><div class="intro-card-body">
-<div class="obj-line"><span style="flex-shrink:0">⭕</span><span><strong>Identify</strong> the center, radius, and diameter of a circle.</span></div>
-<div class="obj-line"><span style="flex-shrink:0">📏</span><span><strong>Draw</strong> circles with a given radius.</span></div>
-</div></div>
-</div>
-<div class="need-strip"><span class="need-strip-label">You’ll need:</span><span class="need-chip">📓 Math Journal</span><span class="need-chip">✏️ Pencil</span></div>
-<div class="tab-bar" id="tabBar">
-<button class="tab-btn active" data-tab="warmup" onclick="switchTab('warmup')">🔍 Warm-Up <span class="tab-check">✓</span></button>
-<button class="tab-btn" data-tab="learn" onclick="switchTab('learn')">📐 Learn <span class="tab-check">✓</span></button>
-
-<button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">🌟 Show What You Know <span class="tab-check">✓</span></button>
-</div>
-<!-- WARM-UP TAB -->
-<div class="tab-panel active" id="tab-warmup">
-<!-- ═══ INTRODUCTION VIDEO ═══ -->
-<div class="video-placeholder-wrap">
-<!-- slot: g3math-12-01 -->
-<div class="video-placeholder-inner">
-  <span class="vp-icon">&#x1F3AC;</span>
-  <div class="vp-label">Introduction Video</div>
-  <div class="vp-title">Optima Academy Online — Grade 3 Math Lesson 3.12.01</div>
-  <div class="vp-slot">g3math-12-01</div>
-  <div class="vp-notes">
-    <strong>Teacher recording notes:</strong> Welcome to today&#x27;s lesson: Optima Academy Online — Grade 3 Math Lesson 3.12.01. You&#x27;ll start with a fluency warm-up: Missing-Number Equations. Pay close attention to each step and use your math tools to work through the problems. Show your thinking in the journal boxes.
+<div class="sb-intro">
+  <div class="sb-card sb-eq">
+    <span class="sb-k">Essential Question</span>
+    <h3>What makes a circle a circle?</h3>
+    <div class="sb-stage" role="img" aria-label="A circle with a dot in the middle and three lines from the dot to the edge, all the same length." style="margin:6px 0;max-width:260px"><svg viewBox="0 0 260 200"><circle cx="130" cy="100" r="80" fill="#FBF6EA" stroke="#0E1C42" stroke-width="4"/><line x1="130" y1="100" x2="190" y2="47" stroke="#1E8C5A" stroke-width="4"/><line x1="130" y1="100" x2="58" y2="135" stroke="#1E8C5A" stroke-width="4"/><line x1="130" y1="100" x2="150" y2="176" stroke="#1E8C5A" stroke-width="4"/><circle cx="130" cy="100" r="6" fill="#0E1C42"/></svg></div>
+    <p style="margin:4px 0 0">Every point on a circle is the same distance from one point: the center.</p>
+  </div>
+  <div class="sb-card sb-obj">
+    <span class="sb-k">Today's Objectives</span>
+    <h3>You will…</h3>
+    <ul>
+      <li><b>Find</b> the center of a circle.</li>
+      <li><b>Name</b> the radius and the diameter.</li>
+      <li><b>Use</b> the rule: the diameter is as long as 2 radii.</li>
+    </ul>
   </div>
 </div>
-</div>
-<div class="fluency-box" data-timed="false">
-<div class="fluency-head">
-<div class="fluency-head-icon">✍️</div>
-<div><div class="fluency-head-label">FLUENCY WARM-UP</div><div class="fluency-head-title">Missing-Number Equations</div></div>
-</div>
-<div class="fluency-body">
-<p class="fluency-instructions">Warm up your fact fluency before today’s lesson. Work through these, then check your answers.</p>
-<div class="fluency-grid" id="fluencyGrid">
-<div class="fluency-item"><span class="fluency-q">6 × ___ = 42 =</span><input autocomplete="off" class="fluency-input" data-answer="7" inputmode="numeric" type="text"/></div>
-<div class="fluency-item"><span class="fluency-q">___ ÷ 8 = 6 =</span><input autocomplete="off" class="fluency-input" data-answer="48" inputmode="numeric" type="text"/></div>
-<div class="fluency-item"><span class="fluency-q">54 ÷ ___ = 9 =</span><input autocomplete="off" class="fluency-input" data-answer="6" inputmode="numeric" type="text"/></div>
-<div class="fluency-item"><span class="fluency-q">___ × 7 = 49 =</span><input autocomplete="off" class="fluency-input" data-answer="7" inputmode="numeric" type="text"/></div>
-<div class="fluency-item"><span class="fluency-q">8 + ___ = 15 =</span><input autocomplete="off" class="fluency-input" data-answer="7" inputmode="numeric" type="text"/></div>
-<div class="fluency-item"><span class="fluency-q">___ - 6 = 9 =</span><input autocomplete="off" class="fluency-input" data-answer="15" inputmode="numeric" type="text"/></div>
-<div class="fluency-item"><span class="fluency-q">9 × ___ = 63 =</span><input autocomplete="off" class="fluency-input" data-answer="7" inputmode="numeric" type="text"/></div>
-<div class="fluency-item"><span class="fluency-q">___ ÷ 6 = 8 =</span><input autocomplete="off" class="fluency-input" data-answer="48" inputmode="numeric" type="text"/></div>
-<div class="fluency-item"><span class="fluency-q">7 + ___ = 13 =</span><input autocomplete="off" class="fluency-input" data-answer="6" inputmode="numeric" type="text"/></div>
-<div class="fluency-item"><span class="fluency-q">___ × 5 = 45 =</span><input autocomplete="off" class="fluency-input" data-answer="9" inputmode="numeric" type="text"/></div>
-</div>
-<button class="fluency-check-btn" id="fluencyCheckBtn" onclick="fluencyCheck()">Check My Answers</button>
-<div class="fluency-result" id="fluencyResult"></div>
-</div>
-<textarea class="journal-box" data-label="Fluency Warm-Up (Missing-Number Equations)" id="fluencyJournal" readonly="" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;"></textarea>
-</div>
-<div class="activity bl-yellow"><div class="activity-head"><div class="activity-num" style="background:#F5C518;color:#0E1C42;">🔎</div><div><div class="activity-title">Readiness Check</div><div class="activity-sub">Tap the card.</div></div></div><div class="activity-body">
-<p>Which of these shapes is a circle?</p>
-<div class="value-card-row">
-<div class="value-card" onclick="rA(this,true)"><div class="big">●</div><div class="small">Circle</div></div>
-<div class="value-card" onclick="rA(this,false)"><div class="big">⬬</div><div class="small">Oval</div></div>
-<div class="value-card" onclick="rA(this,false)"><div class="big">■</div><div class="small">Square</div></div>
-<div class="value-card" onclick="rA(this,false)"><div class="big">▲</div><div class="small">Triangle</div></div>
-</div>
-<div class="inline-feedback" id="rA-fb"></div>
-<div class="hint-callout">A circle is perfectly round — every point on the edge is the same distance from the center.</div>
-</div></div>
 
-<div class="activity bl-yellow"><div class="activity-head"><div class="activity-num" style="background:#F5C518;color:#0E1C42;">🤔</div><div><div class="activity-title">Think About It</div></div></div><div class="activity-body">
-<div class="callout callout-think"><span class="callout-icon">🧠</span><p>Hazel is planning a circular garden. She wants it to be the same width in every direction. What measurement matters most?</p></div>
-<div class="value-card-row">
-<div class="value-card" onclick="rT(this,true)"><div class="big">The radius</div></div>
-<div class="value-card" onclick="rT(this,false)"><div class="big">The perimeter</div></div>
-</div>
-<div class="inline-feedback" id="rT-fb"></div>
-<div class="olt-nudge"><a href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=compass&amp;st=1" target="_blank" rel="noopener" title="Open the Compass to set the radius and draw the circle."><span aria-hidden="true">🧮</span> Try the <b>Compass</b> <span aria-hidden="true">↗</span></a></div><div class="journal-label">✏️ How do you know? <span class="saved-dot" id="dt"></span></div>
-<textarea class="journal-box" data-label="Warm-Up journal" id="j-t01" oninput="autoSave(this,'dt')" placeholder=""></textarea>
-</div></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Round and even — every direction the same.</p><button class="tab-next-btn" onclick="switchTab('learn')">Continue to 📐 Learn →</button></div>
-</div>
-<!-- LEARN TAB -->
-<div class="tab-panel" id="tab-learn">
-<div class="vocab-section"><div class="vocab-section-title">Vocabulary</div>
-<p style="font-size:14px;color:#3A4A6B;font-family:'Lora',serif;font-style:italic;margin-bottom:10px;"><strong>Center</strong> — the exact middle point of a circle.</p>
-<p style="font-size:14px;color:#3A4A6B;font-family:'Lora',serif;font-style:italic;margin-bottom:10px;"><strong>Radius</strong> — the distance from the center to the edge of a circle.</p>
-<p style="font-size:14px;color:#3A4A6B;font-family:'Lora',serif;font-style:italic;margin-bottom:10px;"><strong>Diameter</strong> — the distance across the circle through the center. Always twice the radius.</p>
-<p style="font-size:14px;color:#3A4A6B;font-family:'Lora',serif;font-style:italic;"><strong>Chord</strong> — a line segment connecting two points on a circle.</p>
+<div class="sb-tabs" role="tablist" aria-label="Lesson sections">
+  <button class="sb-tab" role="tab" data-tab="warmup" aria-controls="tab-warmup">🔍 Warm-Up <span class="ck">✓</span></button>
+  <button class="sb-tab" role="tab" data-tab="learn" aria-controls="tab-learn">📐 Lesson <span class="ck">✓</span></button>
+  <button class="sb-tab" role="tab" data-tab="swyk" aria-controls="tab-swyk">🌟 Show What You Know <span class="ck">✓</span></button>
 </div>
 
-<div class="callout callout-info"><span class="callout-icon">🔧</span><p><strong>Try the Circle Builder.</strong> Set a radius and watch the circle grow.</p></div>
-<!-- CENTERPIECE: Circle Builder -->
-<div class="activity bl-geo"><div class="activity-head"><div class="activity-num" style="background:var(--geo);">⭕</div><div><div class="activity-title">Circle Builder</div></div></div><div class="activity-body">
-<p style="font-family:'Lora',serif;font-size:14.5px;font-style:italic;color:var(--geo-deep);margin-bottom:8px;">Set a radius. Watch the circle appear on the grid. Count the squares to check.</p>
-<div class="circle-frame">
-<div class="circle-controls">
-<div class="circle-pick"><div class="circle-pick-label">Radius (units)</div><div class="circle-stepper"><button class="circle-btn" onclick="cbStep(-1)">−</button><span class="circle-val" id="cb-val">1</span><button class="circle-btn" onclick="cbStep(1)">+</button></div></div>
-</div>
-<div class="circle-canvas-wrap"><svg height="340" id="cb-svg" viewbox="0 0 340 340" width="340"></svg></div>
-<div class="circle-readout" id="cb-readout">Radius: 1 unit  |  Diameter: 2 units</div>
-<div style="text-align:center;"><button class="circle-reset-btn" onclick="cbReset()">↩ Reset</button></div>
-</div>
-</div></div>
-<div class="key-concept"><div class="key-concept-label">📐 Key Concept — What You Just Saw</div>
-<p>A circle is a shape where every point on the edge is the same distance from the center. That distance is the <strong>radius</strong>. The <strong>diameter</strong> stretches all the way across through the center. Diameter = 2 × radius.</p>
+<!-- ══════════════ WARM-UP ══════════════ -->
+<section class="sb-panel tab-panel" id="tab-warmup" role="tabpanel">
+
+<div class="sb-opti" data-slot="warm-1">Hoo! Welcome to a new chapter. We're in Alexandria, Egypt, about 2,300 years ago. A teacher named Euclid wrote a famous geometry book, and it starts with circles. Look at this painting. A teacher bends over a slate with a compass. Many people think it shows Euclid. A compass draws a perfect circle. Today you'll find the center, the radius, and the diameter of a circle.</div>
+
+<div class="sb-video pq-vslot" data-slot="warm">
+  <video controls preload="metadata" playsinline poster="assets/video/g3math-12-01-warm.jpg" src="assets/video/g3math-12-01-warm.mp4"></video>
+  <div class="cap">🎬 Opti Opens Chapter 12: Euclid's Compass</div>
 </div>
 
-<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">🧠</div><div><div class="activity-title">Worked Example: Hazel’s Garden</div></div></div><div class="activity-body">
-<div class="task-box"><div class="task-label">Problem</div><p>Hazel wants a circular garden with a radius of 4 feet. What is the diameter?</p></div>
-<div class="bubble-row">
-<div class="bubble atlas"><div class="bubble-avatar">A</div><div class="bubble-body"><div class="bubble-name">Atlas</div><div class="bubble-text">“The radius is 4 feet — that’s center to edge.”</div></div></div>
-<div class="bubble hazel"><div class="bubble-avatar">H</div><div class="bubble-body"><div class="bubble-name">Hazel</div><div class="bubble-text">“Diameter = 2 × radius. 2 × 4 = 8 feet.”</div></div></div>
+<div class="sb-card">
+  <span class="sb-k">From the book</span>
+  <h3>Why Euclid?</h3>
+  <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>The big picture is a painting on a wall in Rome, made by Raphael about 500 years ago. It shows thinkers from long ago. In the corner, a teacher draws on a slate with a compass while students watch. Many people think he is Euclid. The small picture is a page from Euclid's book, printed in color in London in 1847.</p></div>
+  <div class="sb-art">
+    <figure class="sb-fig"><img src="images/storybook/sb-athens-full.jpg" alt="A huge painting of a grand hall with arches. Many people in robes stand and talk on wide steps. In the lower right corner, a man bends over a slate with a compass." style="object-fit:contain;background:#FBF6EA"><figcaption>"The School of Athens," Raphael, 1509 to 1511.<small>Vatican Museums. Public domain, via Wikimedia Commons.</small></figcaption></figure>
+    <figure class="sb-fig"><img src="images/storybook/sb-byrne-circle.jpg" alt="An old printed page. On the left, words about the circle. On the right, a red circle with a blue line across it and colored lines from the middle to the edge." style="object-fit:contain;background:#FBF6EA"><figcaption>Euclid's rule for a circle, from Oliver Byrne's book, London, 1847.<small>Public domain, via Wikimedia Commons.</small></figcaption></figure>
+  </div>
+  <p style="margin:6px 0 0">Euclid taught in Alexandria, Egypt, about 2,300 years ago. We know very little about his life, but his geometry book is famous. Near the very start, it says what a circle is: a round shape with one point inside, where every straight line from that point out to the edge is the same length. That point is the center.</p>
+  <p style="margin:6px 0 0"><b>Today's math:</b> find the center, then measure the radius and the diameter.</p>
 </div>
-<div class="bubble-row">
-<div class="bubble felix"><div class="bubble-avatar">F</div><div class="bubble-body"><div class="bubble-name">Felix</div><div class="bubble-text">“So the garden is 8 feet across.”</div></div></div>
-<div class="bubble cora"><div class="bubble-avatar">C</div><div class="bubble-body"><div class="bubble-name">Cora</div><div class="bubble-text">“And every point on the edge is exactly 4 feet from the center.”</div></div></div>
+
+<div class="video-placeholder-wrap">
+<!-- slot: g3math-12-01 -->
+<div class="video-placeholder-inner"><div class="vp-label">🎬 Welcome Video</div><div class="vp-slot">g3math-12-01</div><div class="vp-notes"><b>Teacher recording notes:</b> Welcome to circles! Warm up with doubles and halves. Then fold a paper circle to find its center.</div></div>
 </div>
-<p style="font-family:'Lora',serif;background:#FAFBFF;border:2px solid #E2E8F4;border-radius:12px;padding:10px;text-align:center;font-size:20px;font-weight:900;margin-top:14px;">Radius = 4 ft → Diameter = 8 ft</p>
-</div></div>
-<div class="socratic-box"><div class="socratic-label">🔮 Think Deeper</div><p class="socratic-q">If you doubled the radius, what would happen to the diameter?</p><div class="olt-nudge"><a href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=geoboard&amp;st=1" target="_blank" rel="noopener" title="Open the Geoboard to stretch bands into shapes and check the sides."><span aria-hidden="true">🧮</span> Try the <b>Geoboard</b> <span aria-hidden="true">↗</span></a></div><div class="journal-label">✏️ <span class="saved-dot" id="ds1"></span></div><textarea class="journal-box" data-label="Learn socratic" id="j-s101" oninput="autoSave(this,'ds1')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Center, radius, diameter — three parts, one round shape.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
+
+<div class="fluency-box">
+  <div class="fluency-head"><div class="fluency-head-icon">✍️</div><div><div class="fluency-head-label">FACT WARM-UP</div><div class="fluency-head-title">Today's Helpers: Doubles and Halves</div></div></div>
+  <div class="fluency-body">
+    <p class="fluency-instructions">Today you'll double numbers and cut them in half. Type each answer, then check. You can fix any answer and check again.</p>
+    <div class="fluency-grid" id="fluencyGrid">
+      <div class="fluency-item"><span class="fluency-q">2 × 11 =</span><input class="fluency-input" data-answer="22" inputmode="numeric" autocomplete="off" aria-label="2 times 11"></div>
+      <div class="fluency-item"><span class="fluency-q">2 × 25 =</span><input class="fluency-input" data-answer="50" inputmode="numeric" autocomplete="off" aria-label="2 times 25"></div>
+      <div class="fluency-item"><span class="fluency-q">2 × 40 =</span><input class="fluency-input" data-answer="80" inputmode="numeric" autocomplete="off" aria-label="2 times 40"></div>
+      <div class="fluency-item"><span class="fluency-q">2 × 35 =</span><input class="fluency-input" data-answer="70" inputmode="numeric" autocomplete="off" aria-label="2 times 35"></div>
+      <div class="fluency-item"><span class="fluency-q">2 × 45 =</span><input class="fluency-input" data-answer="90" inputmode="numeric" autocomplete="off" aria-label="2 times 45"></div>
+      <div class="fluency-item"><span class="fluency-q">44 ÷ 2 =</span><input class="fluency-input" data-answer="22" inputmode="numeric" autocomplete="off" aria-label="44 divided by 2"></div>
+      <div class="fluency-item"><span class="fluency-q">70 ÷ 2 =</span><input class="fluency-input" data-answer="35" inputmode="numeric" autocomplete="off" aria-label="70 divided by 2"></div>
+      <div class="fluency-item"><span class="fluency-q">100 ÷ 2 =</span><input class="fluency-input" data-answer="50" inputmode="numeric" autocomplete="off" aria-label="100 divided by 2"></div>
+      <div class="fluency-item"><span class="fluency-q">34 ÷ 2 =</span><input class="fluency-input" data-answer="17" inputmode="numeric" autocomplete="off" aria-label="34 divided by 2"></div>
+      <div class="fluency-item"><span class="fluency-q">2 × 21 =</span><input class="fluency-input" data-answer="42" inputmode="numeric" autocomplete="off" aria-label="2 times 21"></div>
+    </div>
+    <div class="sb-help"><button type="button" class="sb-btn check" data-fluency-check>Check my answers</button></div>
+    <div class="sb-fb" aria-live="polite"></div>
+  </div>
 </div>
-<!-- PRACTICE TAB -->
-<!-- SHOW WHAT YOU KNOW TAB -->
-<div class="tab-panel" id="tab-assignment">
-<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">🎯</div><div><div class="activity-title">Ready Check</div></div></div><div class="activity-body">
-<div class="q-block"><p class="q-text"><span class="q-num">A</span>A circle has a radius of 9 cm. What is its diameter?</p><div class="value-card-row"><div class="value-card" onclick="eA(this,true)"><div class="big">18 cm</div></div><div class="value-card" onclick="eA(this,false)"><div class="big">4.5 cm</div></div><div class="value-card" onclick="eA(this,false)"><div class="big">81 cm</div></div></div><div class="inline-feedback" id="eA-fb"></div></div>
-<div class="q-block"><p class="q-text"><span class="q-num">B</span>A circle has a diameter of 20 cm. What is its radius?</p><div class="value-card-row"><div class="value-card" onclick="eB(this,true)"><div class="big">10 cm</div></div><div class="value-card" onclick="eB(this,false)"><div class="big">40 cm</div></div><div class="value-card" onclick="eB(this,false)"><div class="big">5 cm</div></div></div><div class="inline-feedback" id="eB-fb"></div></div>
-</div></div>
-<div class="activity bl-navy"><div class="activity-head"><div class="activity-num" style="background:#0E1C42;">📬</div><div><div class="activity-title">Show What You Know</div></div></div><div class="activity-body">
-<div class="q-block"><p class="q-text"><span class="q-num">1</span><strong>Fluency.</strong> A circle has a radius of 7 inches. What is its diameter? Show your thinking.</p><div class="olt-nudge"><a href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=tangram&amp;st=1" target="_blank" rel="noopener" title="Open the Tangrams to slide, turn, and flip the pieces into the shape."><span aria-hidden="true">🧮</span> Try the <b>Tangrams</b> <span aria-hidden="true">↗</span></a></div><div class="journal-label">✏️ <span class="saved-dot" id="da1"></span></div><textarea class="journal-box" data-label="SWYK 1" id="j-a101" oninput="autoSave(this,'da1')" placeholder=""></textarea></div>
-<div class="q-block"><p class="q-text"><span class="q-num">2</span><strong>Transfer.</strong> Cora draws two circles. One has a radius of 8 cm. The other has a diameter of 8 cm. Are the circles the same size? Explain.</p><div class="journal-label">✏️ <span class="saved-dot" id="da2"></span></div><textarea class="journal-box" data-label="SWYK 2" id="j-a201" oninput="autoSave(this,'da2')" placeholder=""></textarea></div>
 
-<div class="activity bl-slate" style="margin-top:18px;border-left-color:#F5A36F;"><div class="activity-head"><div class="activity-num" style="background:#F5A36F;color:#0E1C42;">🗺️</div><div><div class="activity-title">Connection Forward</div><div class="activity-sub">Next: Lesson 3.12.02</div></div></div><div class="activity-body">
-<p>Now you know circles — center, radius, diameter. Next lesson: what happens where two lines meet? That’s an angle.</p>
-</div></div>
-</div></div>
-<div class="gathered-box"><div class="gathered-head"><div class="gathered-head-icon">📋</div><div><div class="gathered-head-label">Math Journal</div><div class="gathered-head-title">All Answers</div></div></div><div class="gathered-body"><textarea class="gathered-output" id="gO" readonly="">Click “Gather” to collect.</textarea><div style="display:flex;gap:10px;margin-top:12px;"><button class="geo-btn" onclick="gather()">📋 Gather</button><button class="green-btn" onclick="copyA()">Copy</button><button class="check-btn" onclick="dl()">Download</button></div></div></div>
-<div class="turn-in-card"><div class="turn-in-header"><div class="turn-in-header-icon">✅</div><div><div class="turn-in-header-label">Turn-In</div><div class="turn-in-header-title">Ready?</div></div></div><div class="turn-in-body">
-<div class="turn-in-item" onclick="tg(this)"><span class="turn-in-check">✓</span><span>I completed Show What You Know.</span></div>
-<div class="turn-in-item" onclick="tg(this)"><span class="turn-in-check">✓</span><span>I can find the radius and diameter of a circle.</span></div>
-</div></div>
+<div class="sb-card sb-qgroup" data-done="review" data-ok="✓ Yes! Two equal parts of a whole are called halves. Each part is one half.">
+  <span class="sb-k">Remember from 2nd grade</span>
+  <h3>Halves of a circle</h3>
+  <p>A round loaf of bread is cut into 2 equal slices. Drag 1 slice onto the plate.</p>
+  <div data-mod="circle" data-n="2" data-eat="1" data-name="review-pie"></div>
+  <div class="sb-q">The slice on the plate is one <input class="sb-ans word" data-a="half|one half|1 half" autocomplete="off" aria-label="word" data-hint="2 equal parts of a whole are called halves."> of the loaf.</div>
+  <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div>
+  <div class="sb-fb" aria-live="polite"></div>
 </div>
-<div class="footer"><div class="footer-main">🏫 <span>Optima Academy Online</span></div><div class="footer-sub">Math · Grade 3 · 3.12.01 · U12 Anchor</div><div class="footer-copy">© 2025 Optima Academy Online</div></div>
+
+<!-- JOB 1 · THINK -->
+<section class="sb-card sb-job" data-job="1">
+  <div class="sb-jh"><span class="sb-jn">JOB 1</span><div><h3>Think: The Paper Circle</h3><span class="sb-kind">🔨 Do · ✏️ Write</span></div><span class="sb-donechip"></span></div>
+  <div class="sb-opti" data-slot="think-1">Euclid's students start with a paper circle. Fold it in half. Then fold it a different way. Where the two folds cross is a special point. Measure from that point to the edge, three different ways.</div>
+  <p class="sb-story">Euclid's students have a paper circle. How can they find the exact middle of it without a ruler?</p>
+  <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>A round piece of paper. Folding it leaves a crease, shown as a dashed line. After you find the middle, three gold dots on the edge show where to measure.</p></div>
+  <div data-mod="circ" data-do="fold" data-r="11" data-name="think" data-for="fold1 fold2 center measured"></div>
+  <div class="sb-steps">
+    <div class="sb-step" data-need="fold1" data-cue=".ci-fold"><h4>Fold it in half</h4><p>Press 📄 Fold in half.</p></div>
+    <div class="sb-step" data-need="fold2" data-cue=".ci-fold2"><h4>Fold it again</h4><p>Press 📄 Fold a different way.</p></div>
+    <div class="sb-step" data-need="center" data-cue=".ci-tapc"><h4>Find the special point</h4><p>Tap the spot where the two dashed fold lines cross.</p></div>
+    <div class="sb-step" data-need="measured" data-cue=".ci-meas"><h4>Measure to the edge</h4><p>Press 📏 Measure to the next dot. Stop when all 3 gold dots are measured.</p></div>
+    <div class="sb-step"><h4>What do you notice?</h4>
+      <div class="sb-q">Every line from the middle point to the edge is <input class="sb-ans" data-a="11" inputmode="numeric" autocomplete="off" aria-label="number" data-hint="Read the blue labels next to the dots."> cm long.</div>
+      <div class="sb-q">The point where the folds cross is called the <input class="sb-ans word" data-a="center|centre" autocomplete="off" aria-label="word" data-hint="It is the middle point of the circle. Look at the Essential Question."> of the circle.</div>
+      <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+    <div class="sb-step"><h4>Tell how</h4>
+      <label class="sb-write-l" for="w-think">Tell how you found the center of the paper circle.</label>
+      <textarea class="sb-write" id="w-think" data-req data-label="The Paper Circle" placeholder="I folded … The folds crossed at … Every line from there to the edge was …"></textarea>
+      <div class="sb-chips2">Remember to tell: <span>two folds</span><span>center</span><span>11 cm</span></div>
+      <div class="sb-help"><button type="button" class="sb-btn check">Done</button></div><div class="sb-fb" aria-live="polite"></div></div>
+    <div class="sb-locked"></div>
+  </div>
+  <div class="sb-help"><button type="button" class="sb-btn ghost" data-hints='["A fold through the middle splits the circle into two equal halves. Two different folds both go through the middle.", "Look for the one point that is on both dashed lines. That is where they cross.", "All three lines from the center to the edge are 11 cm. The point is the center."]'>💡 Need a hint?</button><a class="sb-tool" href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=compass&amp;st=1#s=eyJyIjoyLCJjaXJjIjpbWzksNiwyXV0sImxpbmVzIjp0cnVlfQ" target="_blank" rel="noopener" title="This circle has a radius of 2 cm. Count the squares from one side to the other. How many radii fit across?">🧮 Try the Compass ↗</a><button type="button" class="sb-btn ghost sb-tipbtn" data-tip="#tip-1">💬 Hazel has a tip</button></div>
+  <div class="sb-hintbox"></div>
+  <div class="sb-tip" id="tip-1" data-who="hazel">Every fold that makes two equal halves goes right through the middle. So two folds have to cross at the middle.</div>
+  <div class="sb-payoff" data-after-job="1">
+    <p style="margin:0"><b>You found the center.</b> Both folds went through it, and every line from the center to the edge was the same length: 11 cm.</p>
+  </div>
+  <div class="sb-opti" data-slot="think-done" data-after="1">You found the center! Every line from the center to the edge was eleven centimeters long. And both folds went right through the center.</div>
+</section>
+
+<div class="sb-next"><button type="button" class="sb-btn gold" data-go-tab="learn" data-go-st="1">Next: the Lesson →</button></div>
+</section>
+
+<!-- ══════════════ LESSON ══════════════ -->
+<section class="sb-panel tab-panel" id="tab-learn" role="tabpanel">
+<div class="sb-path" role="list">
+  <button type="button" class="sb-pstep" data-st="1" role="listitem"><span class="num">1</span><span><b>Learn it</b><small>Learn + Your Turn</small></span></button>
+  <button type="button" class="sb-pstep" data-st="2" role="listitem"><span class="num">2</span><span><b>Practice together</b><small>3 jobs</small></span></button>
+  <button type="button" class="sb-pstep" data-st="3" role="listitem"><span class="num">3</span><span><b>On your own</b><small>1 job</small></span></button>
 </div>
-<script>
-var LS='g3-3-12-01-';
-function mini(el){if(!el)return;var em=['&#x2B50;','&#x2728;','&#x1F389;','&#x1F9E9;'];for(var i=0;i<8;i++){var s=document.createElement('span');s.textContent=em[Math.floor(Math.random()*em.length)];s.style.cssText='position:absolute;font-size:'+(16+Math.random()*14)+'px;pointer-events:none;z-index:999;animation:mini .7s ease-out forwards;left:'+(20+Math.random()*60)+'%;top:'+(Math.random()*40)+'%;';el.style.position='relative';el.style.overflow='visible';el.appendChild(s);setTimeout(function(x){x.remove()}.bind(null,s),800);}}
-function switchTab(t){document.querySelectorAll('.tab-panel').forEach(function(p){p.classList.remove('active');});document.getElementById('tab-'+t).classList.add('active');document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active');if(b.dataset.tab===t){b.classList.add('active');b.classList.add('visited');}});var bs=[].slice.call(document.querySelectorAll('.tab-btn'));var i=bs.findIndex(function(b){return b.classList.contains('active');});var p=Math.round(((i+1)/bs.length)*100);document.getElementById('pf').style.width=p+'%';document.getElementById('pp').textContent=p+'%';window.scrollTo({top:0,behavior:'smooth'});}
-function autoSave(el,d){try{localStorage.setItem(LS+el.id,el.value);}catch(e){}var dt=document.getElementById(d);if(dt){dt.classList.add('saved');setTimeout(function(){dt.classList.remove('saved')},900);}}
-function restore(){document.querySelectorAll('textarea.journal-box').forEach(function(t){try{var v=localStorage.getItem(LS+t.id);if(v)t.value=v;}catch(e){}});}
-function showBranch(id){document.getElementById(id).classList.add('show');}
-function hideBranches(p){['pass','retry'].forEach(function(x){var e=document.getElementById(p+'-'+x);if(e)e.classList.remove('show');});}
 
-/* Warm-Up */
-function rA(c,ok){c.parentElement.querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});var f=document.getElementById('rA-fb');if(ok){c.classList.add('good');f.className='inline-feedback show good';f.innerHTML='<strong>&#x2705;</strong> A circle is perfectly round &#8212; every point on the edge is the same distance from the center.';mini(c);}else{c.classList.add('bad');f.className='inline-feedback show think';f.innerHTML='Look for the shape that&#8217;s perfectly round &#8212; no corners, no stretching.';}}
-function rT(c,ok){c.parentElement.querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});var f=document.getElementById('rT-fb');if(ok){c.classList.add('good');f.className='inline-feedback show good';f.innerHTML='<strong>&#x2705;</strong> The radius tells you how far from center to edge. Same radius in every direction = same width everywhere.';mini(c);}else{c.classList.add('bad');f.className='inline-feedback show think';f.innerHTML='A circle is the same width in every direction. Which measurement goes from center to edge?';}}
+<!-- STATION 1 -->
+<div class="sb-station" data-st="1">
+  <div class="sb-opti" data-slot="learn-1">Welcome to the Lesson. First, Claire draws a circle with a compass and names its parts. Next, we fix some mix-ups. Then you draw a circle on your own.</div>
 
-/* ========== CIRCLE BUILDER ========== */
-var cb={r:1};
-function cbStep(d){cb.r=Math.max(1,Math.min(10,cb.r+d));cbRender();}
-function cbReset(){cb.r=1;cbRender();}
-function cbRender(){
-  document.getElementById('cb-val').textContent=cb.r;
-  var svg=document.getElementById('cb-svg');
-  var size=340,cx=size/2,cy=size/2,unit=15;
-  var html='';
-  // grid dots
-  for(var gx=unit;gx<size;gx+=unit){for(var gy=unit;gy<size;gy+=unit){html+='<circle cx="'+gx+'" cy="'+gy+'" r="1.5" fill="#D0CEE8" opacity=".5"/>';}}
-  // circle
-  var rPx=cb.r*unit;
-  html+='<circle cx="'+cx+'" cy="'+cy+'" r="'+rPx+'" fill="rgba(91,82,168,.12)" stroke="var(--geo)" stroke-width="3"/>';
-  // center dot
-  html+='<circle cx="'+cx+'" cy="'+cy+'" r="5" fill="var(--geo-deep)"/>';
-  html+='<text x="'+cx+'" y="'+(cy-10)+'" text-anchor="middle" font-size="11" font-weight="800" fill="var(--geo-deep)">center</text>';
-  // radius line
-  html+='<line x1="'+cx+'" y1="'+cy+'" x2="'+(cx+rPx)+'" y2="'+cy+'" stroke="var(--geo)" stroke-width="2.5" stroke-dasharray="6,4"/>';
-  html+='<text x="'+(cx+rPx/2)+'" y="'+(cy-8)+'" text-anchor="middle" font-size="12" font-weight="900" fill="var(--geo-deep)">radius = '+cb.r+'</text>';
-  // diameter line
-  html+='<line x1="'+(cx-rPx)+'" y1="'+(cy+16)+'" x2="'+(cx+rPx)+'" y2="'+(cy+16)+'" stroke="#E07B39" stroke-width="2" stroke-dasharray="4,3"/>';
-  html+='<text x="'+cx+'" y="'+(cy+32)+'" text-anchor="middle" font-size="12" font-weight="900" fill="#E07B39">diameter = '+(cb.r*2)+'</text>';
-  svg.innerHTML=html;
-  document.getElementById('cb-readout').innerHTML='Radius: '+cb.r+' unit'+(cb.r>1?'s':'')+' &nbsp;|&nbsp; Diameter: '+(cb.r*2)+' units';
-}
+  <div class="sb-video pq-vslot" data-slot="learn">
+    <video controls preload="metadata" playsinline poster="assets/video/g3math-12-01-learn.jpg" src="assets/video/g3math-12-01-learn.mp4"></video>
+    <div class="cap">🎬 Draw It with a Compass</div>
+  </div>
 
-/* Practice */
-function checkP1(){hideBranches('p1');var v=parseInt(document.getElementById('p1-ans').value,10);var el=document.getElementById('p1-ans');el.classList.remove('good','bad');if(v===10){el.classList.add('good');showBranch('p1-pass');mini(el);}else{el.classList.add('bad');showBranch('p1-retry');}}
-function checkP2(){hideBranches('p2');var v=parseInt(document.getElementById('p2-ans').value,10);var el=document.getElementById('p2-ans');el.classList.remove('good','bad');if(v===7){el.classList.add('good');showBranch('p2-pass');mini(el);}else{el.classList.add('bad');showBranch('p2-retry');}}
-function p3(c,ok){c.parentElement.querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});if(ok){c.classList.add('good');showBranch('p3-pass');mini(c);}else{c.classList.add('bad');showBranch('p3-retry');}}
-function resetP(n){if(n===1){document.getElementById('p1-ans').value='';document.getElementById('p1-ans').classList.remove('good','bad');hideBranches('p1');}
-if(n===2){document.getElementById('p2-ans').value='';document.getElementById('p2-ans').classList.remove('good','bad');hideBranches('p2');}
-if(n===3){document.querySelectorAll('.REMOVED-PRACTICE').forEach(function(x){x.classList.remove('good','bad');});document.getElementById('p3-fb').className='inline-feedback';hideBranches('p3');}}
+  <div class="sb-card">
+    <span class="sb-k">Learn</span>
+    <h3>The parts of a circle</h3>
+    <div class="sb-stage" role="img" aria-label="A circle drawn with a compass. A dot marks the center. A green line from the center to the edge is a radius, 2 cm. A violet line all the way across through the center is a diameter, 4 cm." style="margin:6px 0"><svg viewBox="0 0 640 300"><circle cx="230" cy="150" r="120" fill="#fff" stroke="#0E1C42" stroke-width="4"/><line x1="110" y1="150" x2="350" y2="150" stroke="#6B46C1" stroke-width="5"/><line x1="230" y1="150" x2="315" y2="65" stroke="#1E8C5A" stroke-width="5"/><circle cx="230" cy="150" r="7" fill="#0E1C42"/><text x="400" y="70" font-size="20" font-weight="900" fill="#1E8C5A">radius: 2 cm</text><text x="400" y="96" font-size="15" font-weight="700" fill="#5B6478">center to edge</text><text x="400" y="150" font-size="20" font-weight="900" fill="#6B46C1">diameter: 4 cm</text><text x="400" y="176" font-size="15" font-weight="700" fill="#5B6478">all the way across,</text><text x="400" y="196" font-size="15" font-weight="700" fill="#5B6478">through the center</text><text x="400" y="240" font-size="20" font-weight="900" fill="#0E1C42">center</text><text x="400" y="264" font-size="15" font-weight="700" fill="#5B6478">the dot in the middle</text></svg></div>
+    <ul class="sb-steps4" style="list-style:none;padding-left:0">
+      <li><b>Center:</b> the point in the middle. Every point on the circle is the same distance from it.</li>
+      <li><b>Radius:</b> a straight line from the center to the edge. Every radius of a circle is the same length. Two of them are called radii.</li>
+      <li><b>Diameter:</b> a straight line all the way across the circle, through the center. It is as long as 2 radii.</li>
+    </ul>
+    <p style="margin:6px 0 0"><b>Know the radius?</b> Double it: radius 2 cm, diameter 2 × 2 = 4 cm.<br><b>Know the diameter?</b> Cut it in half: a fountain 50 ft across has a radius of 50 ÷ 2 = 25 ft.</p>
+    <p style="margin:6px 0 0"><b>Watch out:</b> a circle with a radius of 35 in is not the same size as a circle with a diameter of 35 in. The one with the 35 in radius is twice as wide.</p>
+  </div>
 
-/* Ready Check */
-function eA(c,ok){c.parentElement.querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});var f=document.getElementById('eA-fb');if(ok){c.classList.add('good');f.className='inline-feedback show good';f.innerHTML='<strong>&#x2705;</strong> 2 &times; 9 = 18 cm.';mini(c);}else{c.classList.add('bad');f.className='inline-feedback show think';f.innerHTML='Diameter = 2 &times; radius. What is 2 &times; 9?';}}
-function eB(c,ok){c.parentElement.querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});var f=document.getElementById('eB-fb');if(ok){c.classList.add('good');f.className='inline-feedback show good';f.innerHTML='<strong>&#x2705;</strong> 20 &divide; 2 = 10 cm.';mini(c);}else{c.classList.add('bad');f.className='inline-feedback show think';f.innerHTML='Radius = half the diameter. What is half of 20?';}}
+  <div class="sb-card">
+    <span class="sb-k">The Math Crew</span>
+    <h3>Four ways to stay on track</h3>
+    <div class="sb-crew">
+      <div class="sb-mate" data-who="atlas"><span>I check that a diameter goes through the center. If it misses, it isn't a diameter.</span></div>
+      <div class="sb-mate" data-who="felix"><span>Radius to diameter? I double it.</span></div>
+      <div class="sb-mate" data-who="hazel"><span>Diameter to radius? I cut it in half.</span></div>
+      <div class="sb-mate" data-who="cora"><span>I read the word: is the number a radius or a diameter? Same number, different circle.</span></div>
+    </div>
+    <label class="sb-write-l" for="w-crew">Which Crew way helps you most? Why?</label>
+    <textarea class="sb-write" id="w-crew" data-label="Which Crew way helps me most" placeholder="I like… because…"></textarea>
+  </div>
 
-/* Gather / Copy / Download */
-function gather(){var o='Lesson 3.12.01 — Circles\n\n';document.querySelectorAll('textarea.journal-box').forEach(function(t){o+=(t.dataset.label||t.id)+'\n'+((t.value||'').trim()||'[empty]')+'\n\n';});document.getElementById('gO').value=o;}
-function copyA(){gather();var text=document.getElementById('gO').value;if(!text||text.indexOf('Click')===0){return;}try{var ta=document.createElement('textarea');ta.value=text;ta.style.position='fixed';ta.style.left='-9999px';document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);var btn=document.querySelector('.green-btn');if(btn){btn.textContent='\u2705 Copied!';setTimeout(function(){btn.textContent='Copy All Answers';},2000);}}catch(e){var btn2=document.querySelector('.green-btn');if(btn2){btn2.textContent='\u274c Could not copy';setTimeout(function(){btn2.textContent='Copy All Answers';},2000);}}}
-function dl(){gather();var text=document.getElementById('gO').value;if(!text||text.indexOf('Click')===0){return;}var blob=new Blob([text],{type:'text/plain'});var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=(window.lessonKey||'math-journal')+'.txt';document.body.appendChild(a);a.click();document.body.removeChild(a);URL.revokeObjectURL(a.href);}
-function tg(i){i.classList.toggle('checked');var c=i.querySelector('.turn-in-check');if(c)c.textContent=i.classList.contains('checked')?'✓':'';}
+  <!-- JOB 2 · YOUR TURN -->
+  <section class="sb-card sb-job" data-job="2">
+    <div class="sb-jh"><span class="sb-jn">JOB 2</span><div><h3>Your Turn: Label the Circle</h3><span class="sb-kind">🔨 Do</span></div><span class="sb-donechip"></span></div>
+    <p class="sb-story">Euclid's student drew a circle with a dot and two lines. The radius of this circle is <b>17 cm</b>. Label each part. Then find the diameter.</p>
+    <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>A circle with a dot in the middle, a green line from the dot to the edge, and a violet line all the way across. Three empty label spots point to the parts.</p></div>
+    <div data-mod="circ" data-do="parts" data-name="yt" data-for="labels"></div>
+    <div class="sb-steps">
+      <div class="sb-step" data-need="labels" data-cue=".ci-chip.ci-next"><h4>Label the parts</h4><p>Drag each label to the spot that points to its part: center, radius and diameter.</p></div>
+      <div class="sb-step"><h4>Find the diameter</h4>
+        <div class="sb-q">The radius is 17 cm. The diameter is as long as 2 radii: 17 cm + 17 cm = <input class="sb-ans" data-a="34" inputmode="numeric" autocomplete="off" aria-label="number" data-hint="Double 17: 17 + 17. Think 10 + 10 and 7 + 7."> cm.</div>
+        <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-locked"></div>
+    </div>
+    <div class="sb-help"><button type="button" class="sb-btn ghost" data-hints='["The center is the dot. A radius stops at the center. A diameter goes all the way across.", "The diameter is 2 radii: 17 + 17.", "17 + 17 = 34. The diameter is 34 cm."]'>💡 Need a hint?</button><a class="sb-tool" href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=compass&amp;st=1#s=eyJyIjoyLCJjaXJjIjpbWzksNiwyXV0sImxpbmVzIjp0cnVlfQ" target="_blank" rel="noopener" title="This circle has a radius of 2 cm. Count the squares from one side to the other. How many radii fit across?">🧮 Try the Compass ↗</a><button type="button" class="sb-btn ghost sb-tipbtn" data-tip="#tip-2">💬 Felix has a tip</button></div>
+    <div class="sb-hintbox"></div>
+    <div class="sb-tip" id="tip-2" data-who="felix">To double 17, I double the tens and the ones: 10 + 10 = 20 and 7 + 7 = 14. 20 + 14 = 34.</div>
+  </section>
+  <div class="sb-next"><button type="button" class="sb-btn gold" data-next-st="2">Next station: Practice together →</button></div>
+</div>
 
-async function loadVideoManifest(){try{var res=await fetch('video-manifest.md',{cache:'no-store'});if(!res.ok)return;var txt=await res.text();var map=parseManifest(txt);document.querySelectorAll('.video-wrap[data-video-slot]').forEach(function(w){var slot=w.dataset.videoSlot;if(map[slot]){var ratio=w.querySelector('.video-ratio');ratio.innerHTML=map[slot].trim();var iframe=ratio.querySelector('iframe');if(iframe){iframe.classList.add('video-iframe');iframe.setAttribute('allowfullscreen','');iframe.setAttribute('loading','lazy');}}});}catch(e){}}
-function parseManifest(txt){var map={};var lines=txt.split(/\r?\n/);var current=null,buf=[];function commit(){if(current&&buf.join('\n').trim()){map[current]=buf.join('\n').trim();}buf=[];}for(var i=0;i<lines.length;i++){var line=lines[i];var m=line.match(/^([A-Za-z0-9-]+):\s*$/);if(m){commit();current=m[1];}else if(current){buf.push(line);}}commit();return map;}
+<!-- STATION 2 -->
+<div class="sb-station" data-st="2">
+  <div class="sb-opti" data-slot="practice-1">Each job has a mix-up kids often make. Here's a clue. The diameter goes all the way across, right through the center. So it's as long as two radii.</div>
 
-window.addEventListener('DOMContentLoaded',function(){loadVideoManifest();restore();cbRender();});
-</script>
-<script id="fluencyScript">
-(function(){
-var FLUENCY_TIMED = false;
-var FLUENCY_TITLE = "Missing-Number Equations";
-var fluencyInterval = null;
-var fluencySecondsLeft = 60;
+  <!-- JOB 3 -->
+  <section class="sb-card sb-job" data-job="3">
+    <div class="sb-jh"><span class="sb-jn">JOB 3</span><div><h3>Ben Forgets to Double</h3><span class="sb-kind">🔨 Do · ✏️ Write</span></div><span class="sb-donechip"></span></div>
+    <p class="sb-story">A round table has a radius of <b>40 cm</b>. Ben says, "The radius is 40 cm, so the diameter is 40 cm too."</p>
+    <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>The tabletop as a circle. One radius goes from the center to the right edge. A second radius starts at the center too, and you can turn it.</p></div>
+    <div data-mod="circ" data-do="ben" data-r="40" data-name="ben" data-for="line"></div>
+    <div class="sb-steps">
+      <div class="sb-step" data-need="line" data-cue=".ci-end"><h4>Make a straight line</h4><p>Drag the end of the second radius around the edge until the two radii make one straight line across the table.</p></div>
+      <div class="sb-step"><h4>How long is it across?</h4>
+        <div class="sb-q">40 cm + 40 cm = <input class="sb-ans" data-a="80" inputmode="numeric" autocomplete="off" aria-label="number" data-hint="Two radii make the diameter. Add 40 and 40."> cm. The diameter is <input class="sb-ans" data-a="80" inputmode="numeric" autocomplete="off" aria-label="number" data-hint="Two radii make the diameter."> cm, not 40 cm.</div>
+        <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-step"><h4>Help Ben</h4><label class="sb-write-l" for="w-ben">Tell Ben why the diameter can't be 40 cm.</label><textarea class="sb-write" id="w-ben" data-req data-label="Help Ben" placeholder="A radius only goes … The diameter goes … so it is …"></textarea><div class="sb-chips2">Remember to tell: <span>center to edge</span><span>all the way across</span><span>80 cm</span></div><div class="sb-help"><button type="button" class="sb-btn check">Done</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-locked"></div>
+    </div>
+    <div class="sb-help"><button type="button" class="sb-btn ghost" data-hints='["A radius only reaches from the center to the edge. That is half of the way across.", "Turn the second radius until it points the opposite way. Now the two radii go all the way across.", "40 + 40 = 80. The diameter is 80 cm."]'>💡 Need a hint?</button><a class="sb-tool" href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=compass&amp;st=1#s=eyJyIjoxLCJsaW5lcyI6dHJ1ZX0" target="_blank" rel="noopener" title="Draw a circle with a radius of 1 cm. Then open the compass to 2 cm and draw another circle around the same center. Which one is twice as wide?">🧮 Try the Compass ↗</a><button type="button" class="sb-btn ghost sb-tipbtn" data-tip="#tip-3">💬 Atlas has a tip</button></div>
+    <div class="sb-hintbox"></div>
+    <div class="sb-tip" id="tip-3" data-who="atlas">A radius gets me only halfway across. I need a second radius on the other side to reach all the way.</div>
+  </section>
 
-window.fluencyStart = function(){
-  if(!FLUENCY_TIMED) return;
-  var grid = document.getElementById('fluencyGrid');
-  if(!grid) return;
-  grid.querySelectorAll('.fluency-input').forEach(function(i){ i.disabled = false; });
-  var btn = document.getElementById('fluencyStartBtn');
-  if(btn){ btn.disabled = true; btn.textContent = 'Timer Running\u2026'; }
-  var checkBtn = document.getElementById('fluencyCheckBtn');
-  if(checkBtn) checkBtn.disabled = false;
-  fluencySecondsLeft = 60;
-  fluencyUpdateDisplay();
-  fluencyInterval = setInterval(function(){
-    fluencySecondsLeft--;
-    fluencyUpdateDisplay();
-    if(fluencySecondsLeft <= 0){
-      clearInterval(fluencyInterval);
-      grid.querySelectorAll('.fluency-input').forEach(function(i){ i.disabled = true; });
-      window.fluencyCheck();
-    }
-  }, 1000);
-};
+  <!-- JOB 4 -->
+  <section class="sb-card sb-job" data-job="4">
+    <div class="sb-jh"><span class="sb-jn">JOB 4</span><div><h3>Mia's Line Misses the Center</h3><span class="sb-kind">🔨 Do · ✏️ Write</span></div><span class="sb-donechip"></span></div>
+    <p class="sb-story">A round mirror has a radius of <b>14 cm</b>. Mia draws a line across it and says, "This line is 20 cm long, so the diameter is 20 cm." But her line does not go through the center.</p>
+    <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>The mirror as a circle with a dot at the center. Mia's red line goes across the circle but misses the dot. One end of the line can move along the edge.</p></div>
+    <div data-mod="circ" data-do="chord" data-r="14" data-len="20" data-name="mia" data-for="through"></div>
+    <div class="sb-steps">
+      <div class="sb-step" data-need="through" data-cue=".ci-end"><h4>Move the line</h4><p>Drag the moving end of the red line along the edge until the line goes through the center dot.</p></div>
+      <div class="sb-step"><h4>The real diameter</h4>
+        <div class="sb-q">The diameter is 2 radii: 14 cm + 14 cm = <input class="sb-ans" data-a="28" inputmode="numeric" autocomplete="off" aria-label="number" data-hint="Double 14: 14 + 14."> cm.</div>
+        <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-step"><h4>Help Mia</h4><label class="sb-write-l" for="w-mia">Tell Mia why her 20 cm line is not a diameter.</label><textarea class="sb-write" id="w-mia" data-req data-label="Help Mia" placeholder="A diameter has to go through … Mia's line … The diameter is …"></textarea><div class="sb-chips2">Remember to tell: <span>through the center</span><span>longest</span><span>28 cm</span></div><div class="sb-help"><button type="button" class="sb-btn check">Done</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-locked"></div>
+    </div>
+    <div class="sb-help"><button type="button" class="sb-btn ghost" data-hints='["Watch the length as you drag. The line gets longer as it gets closer to the center.", "When the line goes through the center dot, it is a diameter. It is the longest line across.", "14 + 14 = 28. The diameter is 28 cm."]'>💡 Need a hint?</button><a class="sb-tool" href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=compass&amp;st=1#s=eyJyIjoyLCJjaXJjIjpbWzksNiwyXV0sImxpbmVzIjp0cnVlfQ" target="_blank" rel="noopener" title="This circle has a radius of 2 cm. Count the squares from one side to the other. How many radii fit across?">🧮 Try the Compass ↗</a><button type="button" class="sb-btn ghost sb-tipbtn" data-tip="#tip-4">💬 Cora has a tip</button></div>
+    <div class="sb-hintbox"></div>
+    <div class="sb-tip" id="tip-4" data-who="cora">A line across that misses the center is always shorter than the diameter. The diameter is the longest line across a circle.</div>
+  </section>
 
-function fluencyUpdateDisplay(){
-  var el = document.getElementById('fluencyTimerDisplay');
-  if(el) el.textContent = fluencySecondsLeft + 's';
-}
+  <!-- JOB 5 -->
+  <section class="sb-card sb-job" data-job="5">
+    <div class="sb-jh"><span class="sb-jn">JOB 5</span><div><h3>Kai's Two Circles</h3><span class="sb-kind">🔨 Do · ✏️ Write</span></div><span class="sb-donechip"></span></div>
+    <p class="sb-story">Circle A has a <b>radius of 21 cm</b>. Circle B has a <b>diameter of 21 cm</b>. Kai says, "Both say 21, so they are the same size."</p>
+    <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>Grid paper and a compass, like the Compass tool on the tools site. Each square is 1 cm. Circle B is already drawn, with its diameter. The compass will draw circle A.</p></div>
+    <div data-mod="circ" data-do="compass" data-t="21" data-max="24" data-given="d:21" data-name="kai" data-for="open drawn"></div>
+    <div class="sb-steps">
+      <div class="sb-step" data-need="open" data-cue=".ci-pen"><h4>Open the compass</h4><p>Drag the yellow pencil away from the point until the compass is open 21 cm.</p></div>
+      <div class="sb-step" data-need="drawn" data-cue=".ci-pen"><h4>Draw circle A</h4><p>Drag the yellow pencil all the way around the point.</p></div>
+      <div class="sb-step"><h4>Compare the circles</h4>
+        <div class="sb-q">Circle A's diameter is 21 cm + 21 cm = <input class="sb-ans" data-a="42" inputmode="numeric" autocomplete="off" aria-label="number" data-hint="Two radii of 21 cm."> cm. Circle B's diameter is 21 cm.</div>
+        <div class="sb-q">The bigger circle is circle <input class="sb-ans word" data-a="A|a" autocomplete="off" aria-label="word" data-hint="Look at the diameters: which one is longer?">.</div>
+        <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-step"><h4>Help Kai</h4><label class="sb-write-l" for="w-kai">Tell Kai why the two circles are not the same size.</label><textarea class="sb-write" id="w-kai" data-req data-label="Help Kai" placeholder="Circle A's 21 cm is a … Circle B's 21 cm is a … So circle A is …"></textarea><div class="sb-chips2">Remember to tell: <span>radius</span><span>diameter</span><span>twice as wide</span></div><div class="sb-help"><button type="button" class="sb-btn check">Done</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-locked"></div>
+    </div>
+    <div class="sb-help"><button type="button" class="sb-btn ghost" data-hints='["Circle A&apos;s 21 cm goes from the center to the edge. Circle B&apos;s 21 cm goes all the way across.", "Circle A&apos;s diameter is 21 + 21 = 42 cm.", "42 cm is longer than 21 cm, so circle A is bigger. It is twice as wide."]'>💡 Need a hint?</button><a class="sb-tool" href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=compass&amp;st=1#s=eyJyIjoxLCJsaW5lcyI6dHJ1ZX0" target="_blank" rel="noopener" title="Draw a circle with a radius of 1 cm. Then open the compass to 2 cm and draw another circle around the same center. Which one is twice as wide?">🧮 Try the Compass ↗</a><button type="button" class="sb-btn ghost sb-tipbtn" data-tip="#tip-5">💬 Cora has a tip</button></div>
+    <div class="sb-hintbox"></div>
+    <div class="sb-tip" id="tip-5" data-who="cora">I always ask: is this number a radius or a diameter? The same number can make a small circle or a big one.</div>
+  </section>
+  <div class="sb-next"><button type="button" class="sb-btn gold" data-next-st="3">Next station: On your own →</button></div>
+</div>
 
-window.fluencyCheck = function(){
-  if(fluencyInterval){ clearInterval(fluencyInterval); fluencyInterval = null; }
-  var items = document.querySelectorAll('#fluencyGrid .fluency-item');
-  var correct = 0, attempted = 0, total = items.length;
-  var lines = [];
-  items.forEach(function(item){
-    var input = item.querySelector('.fluency-input');
-    var qText = item.querySelector('.fluency-q').textContent;
-    var given = (input.value || '').trim();
-    var ans = input.dataset.answer;
-    var ok = given !== '' && given === ans;
-    if(given !== '') attempted++;
-    item.classList.remove('fluency-correct','fluency-wrong');
-    if(ok){ correct++; item.classList.add('fluency-correct'); }
-    else if(given !== ''){ item.classList.add('fluency-wrong'); }
-    lines.push(qText + ' ' + ans + '   [answered: ' + (given || 'blank') + ']' + (ok ? ' \u2713' : (given ? ' \u2717' : '')));
-  });
-  var pct = total ? Math.round((correct/total)*100) : 0;
-  var timeStr = FLUENCY_TIMED ? (' in ' + (60 - fluencySecondsLeft) + ' seconds') : '';
-  var summary = 'Fluency Warm-Up \u2014 ' + FLUENCY_TITLE + '\n' + correct + ' / ' + total + ' correct (' + pct + '%)' + timeStr + '\n\n' + lines.join('\n');
-  var j = document.getElementById('fluencyJournal');
-  if(j) j.value = summary;
-  var resEl = document.getElementById('fluencyResult');
-  if(resEl) resEl.innerHTML = correct + ' / ' + total + ' correct (' + pct + '%)' + timeStr;
-  var checkBtn = document.getElementById('fluencyCheckBtn');
-  if(checkBtn) checkBtn.disabled = true;
-  var startBtn = document.getElementById('fluencyStartBtn');
-  if(startBtn) startBtn.textContent = 'Done';
-};
-})();
-</script>
-<!-- Video Manifest Loader -->
+<!-- STATION 3 -->
+<div class="sb-station" data-st="3">
+  <div class="sb-opti" data-slot="own-1">Your turn to draw a circle on your own. Find the radius first. Then open the compass to the radius and swing it all the way around.</div>
+
+  <!-- JOB 6 -->
+  <section class="sb-card sb-job" data-job="6">
+    <div class="sb-jh"><span class="sb-jn">JOB 6</span><div><h3>On Your Own: The Round Rug</h3><span class="sb-kind">🔨 Do · ✏️ Write</span></div><span class="sb-donechip"></span></div>
+    <p class="sb-story">A round rug is <b>38 inches across</b>. Draw the rug with a compass.</p>
+    <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>Grid paper and a compass. Here each square is 1 inch. The gray point is the center of the rug.</p></div>
+    <div data-mod="circ" data-do="compass" data-t="19" data-max="25" data-u="in" data-name="own" data-for="open drawn"></div>
+    <div class="sb-steps">
+      <div class="sb-step"><h4>Find the radius</h4>
+        <div class="sb-q">38 inches across is the diameter. The radius is 38 ÷ 2 = <input class="sb-ans" data-a="19" inputmode="numeric" autocomplete="off" aria-label="number" data-hint="Cut 38 in half: half of 30 is 15, and half of 8 is 4."> inches.</div>
+        <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-step" data-need="open" data-cue=".ci-pen"><h4>Open the compass</h4><p>Drag the yellow pencil away from the point until the compass is open 19 inches.</p></div>
+      <div class="sb-step" data-need="drawn" data-cue=".ci-pen"><h4>Draw the rug</h4><p>Drag the yellow pencil all the way around the point.</p></div>
+      <div class="sb-step"><h4>Tell how you know</h4><label class="sb-write-l" for="w-own">Tell why you opened the compass to 19 inches, not 38.</label><textarea class="sb-write" id="w-own" data-req data-label="The Round Rug" placeholder="38 inches is the … The compass opens to the … so …"></textarea><div class="sb-help"><button type="button" class="sb-btn check">Done</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-locked"></div>
+    </div>
+    <div class="sb-help"><button type="button" class="sb-btn ghost" data-hints='["Across means all the way across: that is the diameter.", "The radius is half of the diameter. 38 ÷ 2 = 19.", "Open the compass to 19 inches: the distance from the point to the pencil is the radius."]'>💡 Need a hint?</button><a class="sb-tool" href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=compass&amp;st=1#s=eyJyIjoyLCJsaW5lcyI6dHJ1ZX0" target="_blank" rel="noopener" title="Open the compass, then drag the pencil all the way around. Read the radius and the diameter under the tool.">🧮 Try the Compass ↗</a></div>
+    <div class="sb-hintbox"></div>
+  </section>
+
+  <div class="sb-next"><button type="button" class="sb-btn gold" data-go-tab="swyk">Next: Show What You Know →</button></div>
+</div>
+</section>
+
+<!-- ══════════════ SHOW WHAT YOU KNOW ══════════════ -->
+<section class="sb-panel tab-panel" id="tab-swyk" role="tabpanel">
+<div class="sb-opti" data-slot="swyk-1">Last stop! Here's the very first thing Euclid draws in his book. Two circles the same size. Each circle's center sits on the other circle's edge. What can you find out?</div>
+
+<!-- JOB 7 -->
+<section class="sb-card sb-job" data-job="7">
+  <div class="sb-jh"><span class="sb-jn">JOB 7</span><div><h3>Euclid's Two Circles</h3><span class="sb-kind">🔨 Do</span></div><span class="sb-donechip"></span></div>
+  <p class="sb-story">Draw circle A with a <b>radius of 15 cm</b>. Then put the compass point on the edge of circle A and draw circle B, the same size.</p>
+  <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>Grid paper and a compass. Each square is 1 cm. This is the very first drawing in Euclid's book. Look for it on the old page below.</p></div>
+  <div class="sb-steps">
+    <div class="sb-step" data-need="open" data-cue=".ci-pen"><h4>Problem 1 · Open the compass</h4><p>Drag the yellow pencil away from the point until the compass is open 15 cm.</p></div>
+    <div class="sb-step" data-need="drawn" data-cue=".ci-pen"><h4>Problem 1 · Draw circle A</h4><p>Drag the yellow pencil all the way around the point.</p></div>
+    <div class="sb-step" data-need="moved" data-cue=".ci-pt"><h4>Problem 1 · Move the point</h4><p>Drag the gray compass point onto the gold dot on the edge of circle A.</p></div>
+    <div class="sb-step" data-need="drawn2" data-cue=".ci-pen"><h4>Problem 1 · Draw circle B</h4><p>Drag the yellow pencil all the way around the point.</p></div>
+    <div class="sb-step"><h4>Problem 1 · How far apart?</h4>
+      <div class="sb-q">Circle B's center sits on circle A's edge. So the two centers are <input class="sb-ans" data-a="15" inputmode="numeric" autocomplete="off" aria-label="number" data-hint="From circle A's center to its edge is one radius of circle A."> cm apart.</div>
+      <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+    <div class="sb-step" data-need="cross" data-cue=".ci-cross"><h4>Problem 2 · Where the circles cross</h4><p>Tap the gold point at the top, where the two circles cross.</p></div>
+    <div class="sb-step"><h4>Problem 2 · Two new lines</h4>
+      <div class="sb-q">The green line goes from circle A's center to the crossing point. It is a radius of circle A, so it is <input class="sb-ans" data-a="15" inputmode="numeric" autocomplete="off" aria-label="number" data-hint="The crossing point is on circle A's edge."> cm.</div>
+      <div class="sb-q">The red line goes from circle B's center to the crossing point. It is a radius of circle B, so it is <input class="sb-ans" data-a="15" inputmode="numeric" autocomplete="off" aria-label="number" data-hint="The crossing point is on circle B's edge too."> cm.</div>
+      <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+    <div class="sb-locked"></div>
+  </div>
+  <div data-mod="circ" data-do="compass" data-euclid="1" data-t="15" data-max="20" data-name="wow" data-for="open drawn moved drawn2 cross"></div>
+  <figure class="sb-fig" style="max-width:340px;margin:10px auto 0"><img src="images/storybook/sb-byrne-prop1.jpg" alt="An old printed page titled Euclid, Book 1, Proposition 1. A blue circle and a red circle overlap. A yellow triangle sits between their centers and the top crossing point." style="object-fit:contain;background:#FBF6EA"><figcaption>Euclid's first drawing, Book 1, from Oliver Byrne's book, London, 1847.<small>Public domain, via Wikimedia Commons.</small></figcaption></figure>
+  <div class="sb-help"><button type="button" class="sb-btn ghost" data-hints='["Circle B&apos;s center is ON circle A&apos;s edge. The distance from A&apos;s center to its edge is a radius: 15 cm.", "The crossing point is on both circles, so it is 15 cm from both centers.", "All three sides of the triangle are 15 cm."]'>💡 Need a hint?</button></div>
+  <div class="sb-hintbox"></div>
+</section>
+
+<!-- JOB 8 -->
+<section class="sb-card sb-job" data-job="8">
+  <div class="sb-jh"><span class="sb-jn">JOB 8</span><div><h3>Prove It</h3><span class="sb-kind">✏️ Write</span></div><span class="sb-donechip"></span></div>
+  <div class="sb-stage" role="img" aria-label="Two same-size circles. Each center is on the other circle's edge. A dashed line joins the two centers." style="margin:6px 0;max-width:420px"><svg viewBox="0 0 420 240"><circle cx="160" cy="120" r="90" fill="none" stroke="#0E1C42" stroke-width="4"/><circle cx="250" cy="120" r="90" fill="none" stroke="#B23A2E" stroke-width="4"/><line x1="160" y1="120" x2="250" y2="120" stroke="#0E1C42" stroke-width="3" stroke-dasharray="7 5"/><circle cx="160" cy="120" r="6" fill="#0E1C42"/><circle cx="250" cy="120" r="6" fill="#B23A2E"/></svg></div>
+  <div class="sb-steps">
+    <div class="sb-step"><h4>Problem 3 · Prove It</h4>
+      <label class="sb-write-l" for="w-prove">Look back at Job 7. Tell how you knew the two centers were 15 cm apart without measuring.</label><textarea class="sb-write" id="w-prove" data-req data-label="Prove It" placeholder="Circle B's center is on … The line from circle A's center to its edge is a … so it is …"></textarea><div class="sb-chips2">Remember to tell: <span>edge</span><span>radius</span><span>15 cm</span></div>
+      <div class="sb-help"><button type="button" class="sb-btn check">Done</button></div><div class="sb-fb" aria-live="polite"></div></div>
+    <div class="sb-locked"></div>
+  </div>
+</section>
+
+<div class="sb-card sb-qgroup" data-done="bonus" data-ok="✓ Yes! Two diameters fill the 92 cm box, so each diameter is 92 ÷ 2 = 46 cm. The radius is half of that: 46 ÷ 2 = 23 cm.">
+  <span class="sb-k">Bonus · optional</span>
+  <h3>Two Plates in a Box</h3>
+  <p>Two same-size round plates fit side by side in a box that is 92 cm long. They touch each other and both ends of the box. What is the radius of each plate?</p>
+  <div class="sb-q">Each plate's diameter is 92 ÷ 2 = <input class="sb-ans" data-a="46" inputmode="numeric" autocomplete="off" aria-label="number" data-hint="Two diameters fill the box. Cut 92 in half."> cm. Each plate's radius is <input class="sb-ans" data-a="23" inputmode="numeric" autocomplete="off" aria-label="number" data-hint="The radius is half of the diameter."> cm.</div>
+  <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div>
+</div>
+
+<div class="sb-card">
+  <span class="sb-k">How to turn in</span>
+  <h3>Turn in your work</h3>
+  <ol class="sb-steps4">
+    <li>Check the list below. Jobs 1 to 8 are required. The Bonus is optional.</li>
+    <li>Press <b>📋 Gather my answers</b>, then <b>📋 Copy</b>. Or press <b>🖨️ Print or save as PDF</b>.</li>
+    <li>Open this lesson's assignment in Canvas.</li>
+    <li>Paste your answers (or upload your PDF and journal photo), then press <b>Submit</b>.</li>
+  </ol>
+</div>
+
+<div class="sb-card sb-journal">
+  <span class="sb-k">Math journal</span>
+  <h3>All my answers</h3>
+  <div class="sb-help"><button type="button" class="sb-btn" data-journal="gather">📋 Gather my answers</button><button type="button" class="sb-btn ghost" data-journal="copy">📋 Copy</button><button type="button" class="sb-btn ghost" data-journal="download">⬇️ Download as text</button><button type="button" class="sb-btn ghost" data-journal="print">🖨️ Print or save as PDF</button></div>
+  <textarea id="sb-journal-out" readonly aria-label="All my answers">Press Gather my answers to collect everything here.</textarea>
+  <p class="sb-saved">Your answers and your work on this page save on this device as you go.</p>
+</div>
+
+<div class="sb-card">
+  <span class="sb-k">Checklist</span>
+  <h3>Before you turn in</h3>
+  <ul class="sb-check">
+    <li><span class="bx"></span><span>I finished Jobs 1 to 8.</span></li>
+    <li><span class="bx"></span><span>I can find the center, a radius and a diameter.</span></li>
+    <li><span class="bx"></span><span>I doubled the radius to find the diameter.</span></li>
+    <li><span class="bx"></span><span>I cut the diameter in half to find the radius.</span></li>
+    <li><span class="bx"></span><span>I tried the Bonus. <span class="opt">(optional)</span></span></li>
+  </ul>
+</div>
+
+<div class="sb-card">
+  <span class="sb-k">Coming up next</span>
+  <h3>Lesson 3.12.02 · Angles</h3>
+  <p>Next, you'll see what happens where two straight lines meet: an angle.</p>
+</div>
+
+<div class="sb-opti" data-slot="end-1">That's the first lesson in Chapter 12. Here's a song printed in Venice, Italy, in 1505. It's called El Grillo. That means The Cricket. Listen for the singers chirping like a cricket! Press play, and stop whenever you like.</div>
+<div class="sb-card sb-listen" data-src="el-grillo.mp3">
+  <img src="images/storybook/sb-athens-geometer.jpg" alt="The geometer with the compass, from The School of Athens" style="object-fit:cover;background:#FBF6EA">
+  <div style="flex:1">
+    <span class="sb-k">Listening corner</span>
+    <h3>El Grillo (The Cricket)</h3>
+    <p style="margin:2px 0">A short, happy song for four voices, printed in Venice in 1505. The words tell about a cricket that sings and sings. Listen for the quick, chirping notes.</p>
+    <div class="meter"><i></i></div><div class="sb-row"><button type="button" class="sb-btn play">▶ Play the music</button><button type="button" class="sb-btn ghost stop">■ Stop</button><span class="time" style="font-weight:800;color:#5B6478">0:00</span></div>
+    <p class="sb-credits">"El Grillo," printed by Ottaviano Petrucci in Venice in 1505, usually credited to Josquin des Prez. Sung by the dwsChorale. CC BY-SA 3.0, via Wikimedia Commons.</p>
+  </div>
+</div>
+</section>
+
+<footer class="sb-foot footer"><b>🏫 Optima Academy Online</b><br>Math · Grade 3 · Lesson 3.12.01 · Unit 12<br><span style="font-size:12px">Art: Raphael, "The School of Athens" (1509 to 1511), Vatican Museums, public domain; Oliver Byrne, "The First Six Books of the Elements of Euclid" (London, 1847), public domain; both via Wikimedia Commons. Music: "El Grillo" (Venice, 1505), sung by the dwsChorale, CC BY-SA 3.0, via Wikimedia Commons.</span></footer>
+</div>
+
+<script type="application/json" id="sb-data">{"lesson": "3.12.01", "key": "g3sb-3-12-01", "title": "Circles", "audioBase": "audio/storybook/", "imgBase": "images/storybook/", "music": "el-grillo.mp3", "audioReady": true, "glossary": [{"t": "circle", "alt": ["circles"], "d": "A round shape. Every point on it is the same distance from the center.", "key": true}, {"t": "center", "alt": ["centre"], "d": "The point in the middle of a circle. Every point on the circle is the same distance from it.", "key": true}, {"t": "radius", "alt": ["radii"], "d": "A straight line from the center of a circle to its edge. Two of them are called radii.", "key": true}, {"t": "diameter", "alt": ["diameters"], "d": "A straight line all the way across a circle, through the center. It is as long as 2 radii.", "key": true}, {"t": "compass", "d": "A tool with two legs for drawing circles. One leg has a sharp point. The other holds a pencil.", "key": true}, {"t": "geometry", "d": "The part of math about shapes, lines, angles and space."}, {"t": "fold", "alt": ["folds"], "d": "The line left on paper when you bend it flat. It is also called a crease."}, {"t": "edge", "d": "The outside line of a shape. On a circle, the edge is the round line."}, {"t": "slate", "d": "A small flat board of dark stone. Long ago, students wrote and drew on it."}], "cueWords": {"warm-1": [0, 1.04, 1.52, 1.72, 1.92, 2.24, 3.28, 3.52, 3.76, 5.04, 5.68, 5.92, 7.36, 7.6, 8.56, 8.72, 9.12, 9.44, 10.08, 10.32, 10.48, 10.88, 11.44, 12.04, 12.16, 12.32, 12.96, 13.28, 14.64, 14.8, 14.88, 15.12, 16.24, 16.56, 16.88, 17.28, 17.52, 17.68, 18.12, 18.24, 18.6, 19.44, 19.68, 20.08, 20.32, 20.56, 20.8, 21.92, 22.08, 22.64, 22.96, 23.2, 23.68, 24.8, 25.44, 25.72, 25.88, 26, 26.76, 26.88, 27.64, 27.76, 27.84, 28.64, 28.76, 28.88], "think-1": [0, 0.56, 1.12, 1.52, 1.653, 1.76, 2.16, 3.2, 3.48, 3.6, 3.76, 4.8, 5.2, 5.48, 5.6, 5.68, 6.08, 6.96, 7.2, 7.36, 7.52, 8, 8.64, 8.8, 8.96, 9.44, 10.48, 10.8, 11.08, 11.28, 11.64, 11.76, 11.92, 12.72, 13.04, 13.44], "think-done": [0, 0.32, 0.6, 0.8, 1.92, 2.24, 2.56, 2.72, 2.88, 3.28, 3.4, 3.52, 3.92, 4.24, 4.72, 5.36, 6.24, 6.48, 6.8, 7.32, 7.6, 7.92, 8.2, 8.32], "learn-1": [0, 0.52, 0.6, 0.72, 2, 2.64, 3.04, 3.28, 3.44, 3.92, 4.04, 4.16, 4.84, 5.12, 5.4, 5.76, 6.72, 7.36, 7.52, 7.84, 8, 9.36, 9.68, 9.92, 10.08, 10.24, 10.6, 10.72, 11.04], "practice-1": [0, 0.4, 0.8, 0.96, 1.04, 1.6, 2, 2.24, 3.04, 3.32, 3.44, 4.48, 4.6, 5.2, 5.6, 5.8, 5.92, 6.12, 6.96, 7.28, 7.48, 7.6, 8.56, 9.04, 9.24, 9.44, 9.84, 10.08, 10.4], "own-1": [0, 0.32, 0.64, 0.8, 1, 1.12, 1.52, 1.68, 1.84, 2.72, 3, 3.12, 3.68, 4.64, 5.12, 5.4, 5.52, 5.92, 6.04, 6.36, 6.88, 7.2, 7.44, 7.8, 8, 8.08, 8.52], "swyk-1": [0, 0.48, 1.44, 1.76, 2, 2.32, 2.72, 3.04, 3.52, 3.92, 4.08, 4.24, 5.2, 5.44, 6.08, 6.24, 6.56, 7.68, 7.92, 8.64, 9.12, 9.4, 9.52, 9.68, 10, 10.56, 11.52, 11.76, 11.88, 12, 12.32], "end-1": [0, 0.32, 0.48, 0.8, 1.28, 1.44, 1.76, 2.96, 3.2, 3.36, 3.76, 4.16, 4.32, 5.08, 5.64, 5.8, 7.44, 7.76, 8.24, 8.48, 9.6, 9.76, 10.32, 10.48, 11.76, 11.84, 12, 12.16, 12.8, 13.36, 13.52, 13.68, 14.8, 15.2, 15.6, 16, 16.32, 16.56, 16.96]}}</script>
+
+<script src="assets/storybook/sb.js?v=92a96ac2"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   fetch('https://raw.githubusercontent.com/bbirchum1/optima-3rd-math/main/video-manifest.json?v=' + Date.now())
@@ -603,15 +431,11 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!m) return;
         var entry = manifest[m[1]];
         if (!entry || entry.status !== 'ready' || !entry.embed) return;
-        var temp = document.createElement('div');
-        temp.innerHTML = entry.embed;
-        var iframe = temp.querySelector('iframe');
-        if (!iframe) return;
-        iframe.removeAttribute('width');
-        iframe.removeAttribute('height');
+        var temp = document.createElement('div'); temp.innerHTML = entry.embed;
+        var iframe = temp.querySelector('iframe'); if (!iframe) return;
+        iframe.removeAttribute('width'); iframe.removeAttribute('height');
         iframe.style.cssText = 'display:block;width:100%;aspect-ratio:16/9;border:none;';
-        wrap.innerHTML = '';
-        wrap.style.cssText = 'display:block;border:none;background:#000;border-radius:14px;overflow:hidden;margin:0 0 18px;';
+        wrap.innerHTML = ''; wrap.style.cssText = 'display:block;border:none;background:#000;border-radius:14px;overflow:hidden;margin:0 0 18px;';
         wrap.appendChild(iframe);
       });
     })
@@ -620,4 +444,5 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 <!-- OAO math tools for this lesson (manipulatives library) -->
 <script src="https://optimaondemand.github.io/optima-4th-math/manipulatives/lesson-tools.js" defer></script>
-</body></html>
+</body>
+</html>

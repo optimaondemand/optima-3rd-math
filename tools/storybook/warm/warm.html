@@ -301,6 +301,33 @@ SC['3.10.07']=function(t,K){
   if(t>=K.take-0.3)label(820,440,'step 2: take away',ramp(t,K.take-0.3,0.4),'#B23A2E',28);
   if(t>=K.step-0.3)label(640,530,'one step at a time',ramp(t,K.step-0.3,0.4),GREEN,28);
 };
+SC['3.12.01']=function(t,K){
+  var HD='CHAPTER 12 · EUCLID\'S COMPASS',GR='#1E8C5A',VIO='#6B46C1';
+  function P(cx,cy,r,d){var a=d*Math.PI/180;return {x:cx+r*Math.cos(a),y:cy-r*Math.sin(a)};}
+  function comp(n,p,op){var mid={x:(n.x+p.x)/2,y:(n.y+p.y)/2},d=Math.hypot(p.x-n.x,p.y-n.y)||1,ux=-(p.y-n.y)/d,uy=(p.x-n.x)/d;if(uy>0){ux=-ux;uy=-uy;}var h=Math.max(110,230-d*.3),H={x:mid.x+ux*h,y:mid.y+uy*h},g=S('g',{opacity:op});
+    S('line',{x1:n.x,y1:n.y,x2:H.x,y2:H.y,stroke:'#5B6478','stroke-width':12,'stroke-linecap':'round'},g);S('line',{x1:p.x,y1:p.y,x2:H.x,y2:H.y,stroke:VIO,'stroke-width':12,'stroke-linecap':'round'},g);S('circle',{cx:H.x,cy:H.y,r:15,fill:NAVY},g);S('circle',{cx:n.x,cy:n.y,r:6,fill:NAVY},g);S('circle',{cx:p.x,cy:p.y,r:16,fill:'#F5C518',stroke:NAVY,'stroke-width':3},g);}
+  if(t<K.were-0.3){head('','');owl(1000,380,150,t);book(t,0.1,'sb-athens-geometer.jpg','CHAPTER 12 · LESSON 1','Circles','Alexandria, about 300 BC');return;}
+  if(t<K.teacher-0.3){head(HD,'Alexandria, Egypt');owl(null);var o=fade(t,K.were-0.3,K.teacher-0.3),g=S('g',{opacity:o});
+    var y=360,xa=180,xb=1100;S('line',{x1:xa,y1:y,x2:xb,y2:y,stroke:NAVY,'stroke-width':6,'stroke-linecap':'round'},g);for(var k=1;k<5;k++)S('line',{x1:xa+k*(xb-xa)/5,y1:y-10,x2:xa+k*(xb-xa)/5,y2:y+10,stroke:NAVY,'stroke-width':3},g);
+    S('circle',{cx:xb,cy:y,r:14,fill:GREEN},g);S('text',{x:xb,y:y+56,'text-anchor':'middle','font-size':28,'font-weight':900,fill:GREEN,text:'Today'},g);
+    var p=ramp(t,K.about-0.1,1.4),xd=xb-(xb-xa)*0.92*p;S('line',{x1:xd,y1:y,x2:xb,y2:y,stroke:GOLD,'stroke-width':10,'stroke-linecap':'round',opacity:.7},g);S('circle',{cx:xd,cy:y,r:16,fill:ORANGE},g);
+    label(400,230,'Alexandria, Egypt',ramp(t,K.alex-0.2,0.5),ORANGE,32);
+    if(p>0.98)S('text',{x:640,y:y+76,'text-anchor':'middle','font-size':30,'font-weight':900,fill:BROWN,text:'about 2,300 years ago'},g);return;}
+  if(t<K.look-0.3){head(HD,'Euclid\'s famous book');owl(null);var o2=fade(t,K.teacher-0.3,K.look-0.3);
+    pic('sb-byrne-circle.jpg',190,140,900,368,1+0.008*(t-K.teacher),.5,.5,o2);
+    label(640,580,'it starts with circles',o2*ramp(t,K.circles-0.3,0.4),GREEN,30);return;}
+  if(t<K.compass2-0.3){var zoom=t>=K.bends-0.3;head(HD,zoom?'A teacher with a compass':'A painting from Rome, about 1510');owl(null);var o3=fade(t,K.look-0.3,K.compass2-0.3);
+    if(!zoom)pic('sb-athens-full.jpg',320,100,640,441,1+0.03*(t-K.look),.5,.5,o3);
+    else pic('sb-athens-geometer.jpg',360,100,560,446,1+0.04*(t-K.bends),.55,.8,o3);
+    if(t>=K.many-0.3)label(640,600,'many people think it shows Euclid',o3*ramp(t,K.many-0.3,0.4),'#6B4A12',28);return;}
+  var cx=640,cy=380,R=170,o4=ramp(t,K.compass2-0.4,0.5);head(HD,t<K.today-0.3?'A compass draws a perfect circle':'Center, radius, diameter');owl(null);
+  var sw=360*ramp(t,K.draws,Math.max(0.8,K.today-0.5-K.draws));
+  if(sw>=359.5)S('circle',{cx:cx,cy:cy,r:R,fill:'none',stroke:NAVY,'stroke-width':6,opacity:o4});else if(sw>0){var a=P(cx,cy,R,0),b=P(cx,cy,R,sw);S('path',{d:'M'+a.x+' '+a.y+' A'+R+' '+R+' 0 '+(sw>180?1:0)+' 0 '+b.x+' '+b.y,fill:'none',stroke:NAVY,'stroke-width':6,opacity:o4});}
+  if(t<K.today-0.2)comp({x:cx,y:cy},P(cx,cy,R,sw),o4);
+  if(t>=K.center-0.3){var co=ramp(t,K.center-0.3,0.4);S('circle',{cx:cx,cy:cy,r:10,fill:NAVY,opacity:co});label(300,300,'center',co,NAVY,30);}
+  if(t>=K.radius-0.3){var ro=ramp(t,K.radius-0.3,0.4),e=P(cx,cy,R,45);S('line',{x1:cx,y1:cy,x2:e.x,y2:e.y,stroke:GR,'stroke-width':7,opacity:ro});label(990,260,'radius',ro,GR,30);}
+  if(t>=K.diam-0.3){var dd=ramp(t,K.diam-0.3,0.8);S('line',{x1:cx-R,y1:cy+0,x2:cx-R+2*R*dd,y2:cy,stroke:VIO,'stroke-width':7});label(990,470,'diameter',ramp(t,K.diam-0.3,0.4),VIO,30);}
+};
 SC['3.11.07']=function(t,K){
   var HD='CHAPTER 11 · THE METER OF PARIS';
   if(t<K.nw-0.3){head('','');owl(1000,380,150,t);book(t,0.1,'sb-mesures-row-plate.jpg','CHAPTER 11 · LESSON 7',['Word','Problems'],'Paris, 1800');return;}
@@ -505,6 +532,7 @@ SC['3.11.01']=function(t,K){
   if(t>=K.two-0.3)label(640,540,'say it two ways',ramp(t,K.two-0.3,0.4),GREEN,30);
 };
 var CUES={
+ '3.12.01':function(){return{were:wt(/^We're$/),alex:wt(/^Alexandria$/),about:wt(/^about$/),teacher:wt(/^teacher$/,0),circles:wt(/^circles$/),look:wt(/^Look$/),bends:wt(/^bends$/),many:wt(/^Many$/),compass2:wt(/^compass$/,1),draws:wt(/^draws$/),today:wt(/^Today$/),center:wt(/^center$/),radius:wt(/^radius$/),diam:wt(/^diameter$/)};},
  '3.11.07':function(){return{nw:wt(/^new$/),every:wt(/^everywhere$/),look:wt(/^Look$/),pours:wt(/^pours$/),weighs:wt(/^weighs$/),meas:wt(/^measures$/,1),market:wt(/^market$/),word:wt(/^Word$/),today:wt(/^Today$/),bar:wt(/^bar$/),solve:wt(/^solve$/)};},
  '3.11.06':function(){return{sci:wt(/^Scientists$/),same:wt(/^same$/),antoine:wt(/^Antoine$/),balance:wt(/^balance$/),helps:wt(/^helps$/),idea:wt(/^idea$/),gram:wt(/^gram$/,0),side:wt(/^side$/),thousand:wt(/^thousand$/),kg:wt(/^kilogram$/),look:wt(/^Look$/),table:wt(/^table$/),tools:wt(/^tools$/),today:wt(/^Today$/),weigh:wt(/^weigh$/)};},
  '3.11.05':function(){return{france:wt(/^France$/),measure:wt(/^measure$/),called:wt(/^called$/),shop:wt(/^Shopkeepers$/),pour:wt(/^pour$/),inpic:wt(/^In$/),funnel:wt(/^funnel$/),fill:wt(/^fill$/,0),today:wt(/^Today$/),beaker:wt(/^beaker$/),fill2:wt(/^fill$/,1)};},

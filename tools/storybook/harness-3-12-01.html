@@ -1,0 +1,112 @@
+<!DOCTYPE html><html><head><meta charset="utf-8">
+<!-- 3.12.01 Learn video: "Draw It with a Compass". Frames rendered by render.js from timeline-3-12-01.json (Scribe word times). -->
+<style>
+html,body{margin:0;width:1280px;height:720px;overflow:hidden;background:#FBF6EA;font-family:Nunito,Arial,sans-serif}
+#st{position:absolute;inset:0}
+.cap{position:absolute;left:90px;right:90px;bottom:22px;min-height:52px;background:rgba(14,28,66,.88);color:#fff;border-radius:14px;padding:10px 20px;font-size:26px;font-weight:800;line-height:1.3;text-align:center}
+.cap:empty{display:none}
+.hd{position:absolute;left:40px;top:22px;font-family:'Cormorant Garamond',Georgia,serif;font-size:32px;font-weight:700;color:#3A2A12}
+.hd small{display:block;font-family:Nunito,Arial;font-size:15px;letter-spacing:.18em;color:#B8892E;font-weight:900}
+.book{position:absolute;inset:0;display:none;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 40%,#FFF8E6,#EFE2C6)}
+.book.on{display:flex}
+.bk{display:grid;grid-template-columns:420px 420px;background:#E8DCC0;padding:12px;border-radius:10px;box-shadow:0 20px 40px rgba(60,40,10,.25)}
+.pg{background:#FFFBF1;height:380px;padding:24px;box-sizing:border-box}
+.pg img{width:100%;height:290px;object-fit:cover;border:8px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.2);box-sizing:border-box}
+.pg.r{display:flex;flex-direction:column;justify-content:center}
+.ch{font-family:Georgia,serif;letter-spacing:.2em;color:#B8892E;font-weight:700;font-size:16px}
+.tt{font-family:'Cormorant Garamond',Georgia,serif;font-size:40px;font-weight:700;color:#3A2A12;line-height:1.05;margin:8px 0}
+.q{font-size:22px;font-weight:800;color:#0E1C42;margin-top:10px}
+.owl{position:absolute;width:140px;right:28px;bottom:150px}
+</style></head><body>
+<div id="st"><svg id="sv" width="1280" height="720" viewBox="0 0 1280 720"></svg>
+<div class="hd"><small>CHAPTER 12 · EUCLID'S COMPASS</small>Draw It with a Compass</div></div>
+<div class="book" id="book"><div class="bk"><div class="pg"><img src="../repo/images/storybook/sb-athens-geometer.jpg" style="object-fit:cover"></div><div class="pg r"><div class="ch">CHAPTER 12 · LESSON 1</div><div class="tt" id="btt">Circles</div><div class="q" id="bq">What makes a circle a circle?</div></div></div><img class="owl" src="../repo/images/storybook/opti-owl.png"></div>
+<div class="cap" id="cap"></div>
+<script>
+var TL=null, NSV='http://www.w3.org/2000/svg';
+function S(tag,a,p){var e=document.createElementNS(NSV,tag);for(var k in a){if(k==='text')e.textContent=a[k];else e.setAttribute(k,a[k]);}(p||sv).appendChild(e);return e;}
+var NV='#0E1C42', GR='#1E8C5A', VIO='#6B46C1', GRAY='#5B6478', YEL='#F5C518', OK='#1E7A4C', NO='#B23A2E', GOLD='#B8892E', WATER='#BFE3F2';
+function sec(s){return TL.secs[s];}
+var M='vid-math';
+function wt(re,n,from){var Wd=sec(M).words,c=0;for(var i=0;i<Wd.length;i++){if(re.test(Wd[i].w.replace(/[^\w'-]/g,''))){if(c===(n||0))return Wd[i].t;c++;}}return null;}
+function we(re,n){var Wd=sec(M).words,c=0;for(var i=0;i<Wd.length;i++){if(re.test(Wd[i].w.replace(/[^\w'-]/g,''))){if(c===(n||0))return Wd[i].e;c++;}}return null;}
+function ease(x){x=Math.max(0,Math.min(1,x));return x<.5?2*x*x:1-Math.pow(-2*x+2,2)/2;}
+function caption(t){var all=[];['vid-open',M,'vid-close'].forEach(function(s){var Wd=sec(s).words,cur=[];Wd.forEach(function(w,i){cur.push(w);if(/[.!?:]$/.test(w.w)||i===Wd.length-1){all.push(cur);cur=[];}});});
+  for(var i=0;i<all.length;i++){var a=all[i][0].t,b=all[i][all[i].length-1].e+0.35;if(t>=a-0.1&&t<=b)return all[i].map(function(w){return w.w;}).join(' ');}return '';}
+var K={};
+function big(x,y,txt,col,size,op){return S('text',{x:x,y:y,'text-anchor':'middle','font-size':size||40,'font-weight':900,fill:col||NV,opacity:op==null?1:op,text:txt});}
+function pill(x,y,txt,col,op,fs){fs=fs||24;var g=S('g',{opacity:op==null?1:op});var w=txt.length*fs*.56+34;S('rect',{x:x-w/2,y:y-24,width:w,height:48,rx:24,fill:'#fff',stroke:col,'stroke-width':3},g);S('text',{x:x,y:y+fs*.36,'text-anchor':'middle','font-size':fs,'font-weight':900,fill:col,text:txt},g);return g;}
+function fadeIn(t,a,d){return ease((t-a)/(d||0.4));}
+function P(cx,cy,r,d){var a=d*Math.PI/180;return {x:cx+r*Math.cos(a),y:cy-r*Math.sin(a)};}
+function arcD(cx,cy,r,sw){if(sw>=359.5)return null;var a=P(cx,cy,r,0),b=P(cx,cy,r,sw);return 'M'+a.x+' '+a.y+' A'+r+' '+r+' 0 '+(sw>180?1:0)+' 0 '+b.x+' '+b.y;}
+function grid(x0,y0,w,h,k,op){S('rect',{x:x0,y:y0,width:w,height:h,rx:12,fill:'#fff',stroke:'#DCE2EE','stroke-width':2,opacity:op});for(var x=x0;x<=x0+w+0.1;x+=k)S('line',{x1:x,y1:y0,x2:x,y2:y0+h,stroke:'#DCE2EE','stroke-width':1.5,opacity:op});for(var y=y0;y<=y0+h+0.1;y+=k)S('line',{x1:x0,y1:y,x2:x0+w,y2:y,stroke:'#DCE2EE','stroke-width':1.5,opacity:op});}
+// the compass, like the Compass tool: gray point leg, violet pencil leg, navy hinge, yellow pencil
+function compass(n,p,op){var mid={x:(n.x+p.x)/2,y:(n.y+p.y)/2},d=Math.hypot(p.x-n.x,p.y-n.y)||1,ux=-(p.y-n.y)/d,uy=(p.x-n.x)/d;if(uy>0){ux=-ux;uy=-uy;}var h=Math.max(110,230-d*.3),H={x:mid.x+ux*h,y:mid.y+uy*h};
+  var g=S('g',{opacity:op==null?1:op});S('line',{x1:n.x,y1:n.y,x2:H.x,y2:H.y,stroke:GRAY,'stroke-width':12,'stroke-linecap':'round'},g);S('line',{x1:p.x,y1:p.y,x2:H.x,y2:H.y,stroke:VIO,'stroke-width':12,'stroke-linecap':'round'},g);
+  S('circle',{cx:H.x,cy:H.y,r:15,fill:NV},g);S('circle',{cx:n.x,cy:n.y,r:16,fill:'rgba(91,100,120,.3)',stroke:GRAY,'stroke-width':3},g);S('circle',{cx:n.x,cy:n.y,r:5,fill:NV},g);S('circle',{cx:p.x,cy:p.y,r:16,fill:YEL,stroke:NV,'stroke-width':3},g);}
+function setup(){
+  K.a=sec(M).start; K.close=sec('vid-close').start;
+  K.legs=wt(/^legs$/,0); K.sharp=wt(/^sharp$/,0); K.pencil=wt(/^pencil$/,0); K.open=wt(/^Open$/,0); K.apart=we(/^apart$/,0);
+  K.swing=wt(/^swing$/,0); K.around=we(/^around$/,0); K.thats=wt(/^That's$/,0);
+  K.stayed=wt(/^stayed$/,0); K.center=wt(/^center$/,0); K.every=wt(/^Every$/,0); K.radius=wt(/^radius$/,0); K.across=wt(/^across$/,0); K.diam=wt(/^diameter$/,0); K.two=wt(/^radii$/,0); K.four=wt(/^four$/,0);
+  K.ifk=wt(/^If$/,0); K.half=wt(/^half$/,0); K.fountain=wt(/^fountain$/,0); K.fifty=wt(/^Fifty$/,0); K.tf=wt(/^twenty-five$/,1);
+  K.watch=wt(/^Watch$/,0); K.r35=wt(/^thirty-five$/,0); K.d35=wt(/^thirty-five$/,1); K.twice=wt(/^twice$/,0);
+}
+function render(t){
+  window.__t=t;var book=document.getElementById('book'),cap=document.getElementById('cap');
+  cap.textContent=window.NOCAP?'':caption(t);
+  var inOpen=t<K.a-0.3, inClose=t>=K.close-0.3;
+  book.classList.toggle('on',inOpen||inClose);
+  if(inClose){document.getElementById('btt').textContent='Your turn';document.getElementById('bq').textContent='The diameter is as long as 2 radii.';}
+  sv.innerHTML='';if(inOpen||inClose)return;
+  var k=70, CX=470, CY=400;
+  // ── scene 1+2: draw the circle, name its parts (grid: each square 1 cm)
+  if(t<K.ifk+0.6){
+    var o=fadeIn(t,K.a-0.3);grid(120,110,1040,560,k,o);
+    big(1050,140,'each square is 1 cm',GRAY,20,o);
+    var r=0;if(t>=K.open-0.2)r=Math.min(2,2*fadeIn(t,K.open,Math.max(0.6,K.apart-K.open)));
+    var sw=0;if(t>=K.swing-0.1)sw=360*ease((t-K.swing)/Math.max(1,(K.around-K.swing)));
+    var done=t>=K.around;
+    // the circle
+    if(sw>0){if(done||sw>=359.5)S('circle',{cx:CX,cy:CY,r:2*k,fill:'none',stroke:NV,'stroke-width':5});else S('path',{d:arcD(CX,CY,2*k,sw),fill:'none',stroke:NV,'stroke-width':5});}
+    // after the circle: the parts
+    if(t>=K.stayed-0.3){
+      if(t>=K.center-0.3){var co=fadeIn(t,K.center-0.3);S('circle',{cx:CX,cy:CY,r:9,fill:NV,opacity:co});pill(CX-250,CY-170,'center',NV,co);S('line',{x1:CX-190,y1:CY-150,x2:CX-10,y2:CY-8,stroke:'#8792A8','stroke-width':2,'stroke-dasharray':'5 5',opacity:co});}
+      if(t>=K.every-0.2&&t<K.diam-0.3){[50,140,230,320].forEach(function(d,i){var e=P(CX,CY,2*k,d),oo=fadeIn(t,K.every+i*0.5);S('line',{x1:CX,y1:CY,x2:e.x,y2:e.y,stroke:GR,'stroke-width':5,opacity:oo});var l=P(CX,CY,2*k+48,d);big(l.x,l.y+10,'2 cm',GR,26,oo);});}
+      if(t>=K.radius-0.3){var ro=fadeIn(t,K.radius-0.3),e2=P(CX,CY,2*k,50);S('line',{x1:CX,y1:CY,x2:e2.x,y2:e2.y,stroke:GR,'stroke-width':7,opacity:ro});pill(960,230,'radius: 2 cm',GR,ro,28);big(960,290,'center to edge',GRAY,22,ro);}
+      if(t>=K.across-0.3){var dl=fadeIn(t,K.across-0.3,1.0);S('line',{x1:CX-2*k,y1:CY,x2:CX-2*k+4*k*dl,y2:CY,stroke:VIO,'stroke-width':7});}
+      if(t>=K.diam-0.3){var dop=fadeIn(t,K.diam-0.3);pill(960,380,'diameter',VIO,dop,28);big(960,440,'all the way across,',GRAY,22,dop);big(960,470,'through the center',GRAY,22,dop);}
+      if(t>=K.two-0.4){var to=fadeIn(t,K.two-0.4);S('line',{x1:CX-2*k,y1:CY+26,x2:CX-4,y2:CY+26,stroke:GR,'stroke-width':6,opacity:to});S('line',{x1:CX+4,y1:CY+26,x2:CX+2*k,y2:CY+26,stroke:GR,'stroke-width':6,opacity:to});big(CX-k,CY+64,'2 cm',GR,24,to);big(CX+k,CY+64,'2 cm',GR,24,to);}
+      if(t>=K.four-0.3){var fo=fadeIn(t,K.four-0.3);S('rect',{x:780,y:520,width:360,height:70,rx:16,fill:'#fff',stroke:OK,'stroke-width':4,opacity:fo});big(960,568,'2 cm + 2 cm = 4 cm',OK,30,fo);}
+    }
+    // the compass (until the circle is done, then it lifts away)
+    var cop=done?1-fadeIn(t,K.around,0.8):fadeIn(t,K.a,0.6);
+    if(cop>0.02){var n={x:CX,y:CY},pp=P(CX,CY,Math.max(r,0.12)*k,sw);compass(n,pp,cop);
+      if(t>=K.sharp-0.2&&t<K.open)pill(CX-240,CY+150,'sharp point',GRAY,fadeIn(t,K.sharp-0.2),22);
+      if(t>=K.pencil-0.2&&t<K.open)pill(CX+260,CY+150,'pencil',VIO,fadeIn(t,K.pencil-0.2),22);
+      if(t>=K.open-0.2&&!done){S('line',{x1:CX,y1:CY+40,x2:CX+r*k,y2:CY+40,stroke:'#E3B505','stroke-width':4,'stroke-dasharray':'6 5',opacity:cop});big(CX+r*k/2+(r<1?40:0),CY+80,(Math.round(r*10)/10)+' cm',GOLD,26,cop);}
+    }
+  }
+  // ── scene 3: diameter to radius (the fountain)
+  else if(t<K.watch-0.3){
+    var o3=fadeIn(t,K.ifk+0.6);var FX=420,FY=420,FR=175;
+    big(640,150,'Know the diameter? Cut it in half.',NV,34,o3);
+    if(t>=K.fountain-0.3){var fo3=fadeIn(t,K.fountain-0.3);S('circle',{cx:FX,cy:FY,r:FR+18,fill:'#D8D2C4',stroke:'#9A8F78','stroke-width':4,opacity:fo3});S('circle',{cx:FX,cy:FY,r:FR,fill:WATER,stroke:'#7FB6CF','stroke-width':3,opacity:fo3});
+      [60,110,150].forEach(function(rr){S('circle',{cx:FX,cy:FY,r:rr,fill:'none',stroke:'#fff','stroke-width':3,opacity:fo3*.6});});S('circle',{cx:FX,cy:FY,r:20,fill:'#9A8F78',opacity:fo3});
+      S('line',{x1:FX-FR,y1:FY,x2:FX+FR,y2:FY,stroke:VIO,'stroke-width':7,opacity:fo3});pill(FX,FY-FR-45,'50 ft across',VIO,fo3,26);}
+    if(t>=K.fifty-0.3){var ho=fadeIn(t,K.fifty-0.3);S('rect',{x:740,y:290,width:430,height:72,rx:16,fill:'#fff',stroke:NV,'stroke-width':4,opacity:ho});big(955,338,'50 ÷ 2 = 25',NV,34,ho);
+      S('line',{x1:FX,y1:FY+24,x2:FX+FR,y2:FY+24,stroke:GR,'stroke-width':7,opacity:ho});S('circle',{cx:FX,cy:FY,r:9,fill:NV,opacity:ho});}
+    if(t>=K.tf-0.3){var ro3=fadeIn(t,K.tf-0.3);pill(955,450,'radius: 25 ft',GR,ro3,30);}
+  }
+  // ── scene 4: same number, different circle
+  else {
+    S('rect',{x:140,y:96,width:1000,height:62,rx:14,fill:'#FBE7E4',stroke:NO,'stroke-width':3});big(640,138,'Watch out! Is the number a radius or a diameter?',NO,28);
+    var kk=4.0, AX=420, AY=395, BX=930, BY=395;
+    if(t>=K.r35-0.3){var ao=fadeIn(t,K.r35-0.3);S('circle',{cx:AX,cy:AY,r:35*kk,fill:'#fff',stroke:NV,'stroke-width':5,opacity:ao});S('line',{x1:AX,y1:AY,x2:AX+35*kk,y2:AY,stroke:GR,'stroke-width':6,opacity:ao});S('circle',{cx:AX,cy:AY,r:7,fill:NV,opacity:ao});pill(AX,AY-35*kk-30,'radius 35 in',GR,ao,22);}
+    if(t>=K.d35-0.3){var bo=fadeIn(t,K.d35-0.3);S('circle',{cx:BX,cy:BY,r:17.5*kk,fill:'#fff',stroke:NV,'stroke-width':5,opacity:bo});S('line',{x1:BX-17.5*kk,y1:BY,x2:BX+17.5*kk,y2:BY,stroke:VIO,'stroke-width':6,opacity:bo});pill(BX,BY-17.5*kk-34,'diameter 35 in',VIO,bo,22);}
+    if(t>=K.twice-0.4){var wo=fadeIn(t,K.twice-0.4);S('line',{x1:AX-35*kk,y1:AY+35*kk+18,x2:AX+35*kk,y2:AY+35*kk+18,stroke:OK,'stroke-width':5,opacity:wo});S('line',{x1:BX-17.5*kk,y1:BY+35*kk+18,x2:BX+17.5*kk,y2:BY+35*kk+18,stroke:OK,'stroke-width':5,opacity:wo});
+      big(AX,AY+35*kk+48,'70 in across',OK,24,wo);big(BX,BY+35*kk+48,'35 in across',OK,24,wo);}
+  }
+}
+window.init=function(tl){TL=tl;setup();};
+</script></body></html>
