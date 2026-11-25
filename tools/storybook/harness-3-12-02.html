@@ -1,0 +1,114 @@
+<!DOCTYPE html><html><head><meta charset="utf-8">
+<!-- 3.12.02 Learn video: "Open an Angle". Frames rendered by render.js from a timeline (estimated until voiced: timeline-3-12-02-est.json). -->
+<style>
+html,body{margin:0;width:1280px;height:720px;overflow:hidden;background:#FBF6EA;font-family:Nunito,Arial,sans-serif}
+#st{position:absolute;inset:0}
+.cap{position:absolute;left:90px;right:90px;bottom:22px;min-height:52px;background:rgba(14,28,66,.88);color:#fff;border-radius:14px;padding:10px 20px;font-size:26px;font-weight:800;line-height:1.3;text-align:center}
+.cap:empty{display:none}
+.hd{position:absolute;left:40px;top:22px;font-family:'Cormorant Garamond',Georgia,serif;font-size:32px;font-weight:700;color:#3A2A12}
+.hd small{display:block;font-family:Nunito,Arial;font-size:15px;letter-spacing:.18em;color:#B8892E;font-weight:900}
+.book{position:absolute;inset:0;display:none;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 40%,#FFF8E6,#EFE2C6)}
+.book.on{display:flex}
+.bk{display:grid;grid-template-columns:420px 420px;background:#E8DCC0;padding:12px;border-radius:10px;box-shadow:0 20px 40px rgba(60,40,10,.25)}
+.pg{background:#FFFBF1;height:380px;padding:24px;box-sizing:border-box}
+.pg img{width:100%;height:290px;object-fit:cover;border:8px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.2);box-sizing:border-box}
+.pg.r{display:flex;flex-direction:column;justify-content:center}
+.ch{font-family:Georgia,serif;letter-spacing:.2em;color:#B8892E;font-weight:700;font-size:16px}
+.tt{font-family:'Cormorant Garamond',Georgia,serif;font-size:40px;font-weight:700;color:#3A2A12;line-height:1.05;margin:8px 0}
+.q{font-size:22px;font-weight:800;color:#0E1C42;margin-top:10px}
+.owl{position:absolute;width:140px;right:28px;bottom:150px}
+</style></head><body>
+<div id="st"><svg id="sv" width="1280" height="720" viewBox="0 0 1280 720"></svg>
+<div class="hd"><small>CHAPTER 12 · EUCLID'S COMPASS</small>Open an Angle</div></div>
+<div class="book" id="book"><div class="bk"><div class="pg"><img src="../repo/images/storybook/sb-byrne-angles.jpg" style="object-fit:cover;object-position:top"></div><div class="pg r"><div class="ch">CHAPTER 12 · LESSON 2</div><div class="tt" id="btt">Angles</div><div class="q" id="bq">What is an angle, and how can you tell its size?</div></div></div><img class="owl" src="../repo/images/storybook/opti-owl.png"></div>
+<div class="cap" id="cap"></div>
+<script>
+var TL=null, NSV='http://www.w3.org/2000/svg';
+function S(tag,a,p){var e=document.createElementNS(NSV,tag);for(var k in a){if(k==='text')e.textContent=a[k];else e.setAttribute(k,a[k]);}(p||sv).appendChild(e);return e;}
+var NV='#0E1C42', GR='#1E8C5A', RED='#B23A2E', GRAY='#5B6478', GOLD='#C9A227', OK='#1E7A4C', NO='#B23A2E', SQF='#D9F0E3', LG='#8792A8';
+function sec(s){return TL.secs[s];}
+var M='vid-math';
+function wt(re,n){var Wd=sec(M).words,c=0;for(var i=0;i<Wd.length;i++){if(re.test(Wd[i].w.replace(/[^\w'-]/g,''))){if(c===(n||0))return Wd[i].t;c++;}}return null;}
+function ease(x){x=Math.max(0,Math.min(1,x));return x<.5?2*x*x:1-Math.pow(-2*x+2,2)/2;}
+function caption(t){var all=[];['vid-open',M,'vid-close'].forEach(function(s){var Wd=sec(s).words,cur=[];Wd.forEach(function(w,i){cur.push(w);if(/[.!?:]$/.test(w.w)||i===Wd.length-1){all.push(cur);cur=[];}});});
+  for(var i=0;i<all.length;i++){var a=all[i][0].t,b=all[i][all[i].length-1].e+0.35;if(t>=a-0.1&&t<=b)return all[i].map(function(w){return w.w;}).join(' ');}return '';}
+var K={};
+function big(x,y,txt,col,size,op){return S('text',{x:x,y:y,'text-anchor':'middle','font-size':size||40,'font-weight':900,fill:col||NV,opacity:op==null?1:op,text:txt});}
+function pill(x,y,txt,col,op,fs){fs=fs||24;var g=S('g',{opacity:op==null?1:op});var w=txt.length*fs*.56+34;S('rect',{x:x-w/2,y:y-24,width:w,height:48,rx:24,fill:'#fff',stroke:col,'stroke-width':3},g);S('text',{x:x,y:y+fs*.36,'text-anchor':'middle','font-size':fs,'font-weight':900,fill:col,text:txt},g);return g;}
+function fadeIn(t,a,d){return ease((t-a)/(d||0.4));}
+function P(v,d,r){var a=d*Math.PI/180;return {x:v.x+r*Math.cos(a),y:v.y-r*Math.sin(a)};}
+function arcD(v,r,a0,a1){var p=P(v,a0,r),q=P(v,a1,r);return 'M'+p.x+' '+p.y+' A'+r+' '+r+' 0 '+(a1-a0>180?1:0)+' 0 '+q.x+' '+q.y;}
+function ln(a,b,col,w,op,dash){return S('line',{x1:a.x,y1:a.y,x2:b.x,y2:b.y,stroke:col,'stroke-width':w||7,'stroke-linecap':'round',opacity:op==null?1:op,'stroke-dasharray':dash||''});}
+// an angle like the tools-site Protractor arms: navy ray, green ray, green arc (or square mark at a right angle), navy vertex dot
+function angle(v,b,a,L1,L2,col,op,opt){opt=opt||{};ln(v,P(v,b,L1),NV,opt.w||8,op);ln(v,P(v,b+a,L2),col||GR,opt.w||8,op);
+  if(Math.abs(a-90)<0.5){var s=30,p1=P(v,b,s),p2=P(p1,b+90,s),p3=P(v,b+90,s);S('polyline',{points:[p1,p2,p3].map(function(p){return p.x+','+p.y;}).join(' '),fill:'none',stroke:col||GR,'stroke-width':4,opacity:op});}
+  else if(a>0.5)S('path',{d:arcD(v,opt.r||60,b,b+a),fill:'none',stroke:col||GR,'stroke-width':4,opacity:op});
+  if(opt.brad){S('circle',{cx:v.x,cy:v.y,r:14,fill:GOLD,stroke:NV,'stroke-width':3,opacity:op});S('circle',{cx:v.x,cy:v.y,r:5,fill:NV,opacity:op});}else S('circle',{cx:v.x,cy:v.y,r:9,fill:NV,opacity:op});}
+// the set square, like the tools-site Set Square: mint 45-degree triangle with a square-corner mark
+function setsq(c,rot,size,op){var p1=P(c,rot,size),p2=P(c,rot+90,size);S('polygon',{points:[c,p1,p2].map(function(p){return p.x+','+p.y;}).join(' '),fill:SQF,'fill-opacity':.8,stroke:LG,'stroke-width':2.5,opacity:op});
+  var m1=P(c,rot,20),m2=P(m1,rot+90,20),m3=P(c,rot+90,20);S('polyline',{points:[m1,m2,m3].map(function(p){return p.x+','+p.y;}).join(' '),fill:'none',stroke:LG,'stroke-width':2,opacity:op});}
+function setup(){
+  K.a=sec(M).start; K.close=sec('vid-close').start;
+  K.turn=wt(/^Turn$/,0); K.open1=wt(/^open$/,0); K.space=wt(/^space$/,0); K.angle1=wt(/^angle$/,0); K.vertex=wt(/^vertex$/,0); K.meet=wt(/^meet$/,0); K.ray=wt(/^ray$/,0);
+  K.wider=wt(/^wider$/,0); K.closeW=wt(/^Close$/,0); K.tiny=wt(/^tiny$/,0); K.straight=wt(/^straight$/,0); K.sa=wt(/^straight$/,1);
+  K.corner=wt(/^corner$/,0); K.right=wt(/^right$/,0); K.put=wt(/^Put$/,0); K.lineup=wt(/^line$/,0); K.hides=wt(/^hides$/,0); K.sticks=wt(/^sticks$/,0); K.greater=wt(/^greater$/,0);
+  K.watch=wt(/^Watch$/,0); K.only=wt(/^Only$/,0); K.these=wt(/^These$/,0); K.same=wt(/^same$/,0); K.even=wt(/^even$/,0);
+}
+// opening (degrees) of the strips over scenes 1 and 2
+function openAt(t){var a=0;
+  if(t>=K.turn)a=50*ease((t-K.turn)/1.4);
+  if(t>=K.wider)a=50+60*ease((t-K.wider)/1.2);
+  if(t>=K.closeW)a=110-85*ease((t-K.closeW)/1.2);
+  if(t>=K.tiny)a=25-19*ease((t-K.tiny)/1.0);
+  if(t>=K.straight)a=6+174*ease((t-K.straight)/1.8);
+  return a;}
+function render(t){
+  window.__t=t;var book=document.getElementById('book'),cap=document.getElementById('cap');
+  cap.textContent=window.NOCAP?'':caption(t);
+  var inOpen=t<K.a-0.3, inClose=t>=K.close-0.3;
+  book.classList.toggle('on',inOpen||inClose);
+  if(inClose){document.getElementById('btt').textContent='Your turn';document.getElementById('bq').textContent='Check the opening with a square corner.';}
+  sv.innerHTML='';if(inOpen||inClose)return;
+  // ── scenes 1 + 2: two strips pinned together; open, name the parts, wider, smaller, straight
+  if(t<K.corner-0.6){
+    var o=fadeIn(t,K.a-0.3),V={x:640,y:470},a=openAt(t);
+    angle(V,0,a,400,400,GR,o,{brad:1,w:16,r:80});
+    if(t>=K.space-0.2&&t<K.straight){var so=fadeIn(t,K.space-0.2);S('path',{d:'M'+V.x+' '+V.y+' L'+P(V,0,150).x+' '+P(V,0,150).y+' A150 150 0 0 0 '+P(V,a,150).x+' '+P(V,a,150).y+' Z',fill:'rgba(30,140,90,.14)',opacity:so});}
+    if(t>=K.angle1-0.3&&t<K.wider){var ao=fadeIn(t,K.angle1-0.3),lp=P(V,a/2,230);pill(lp.x+40,lp.y,'angle',GR,ao,28);}
+    if(t>=K.vertex-0.3&&t<K.wider){var vo=fadeIn(t,K.vertex-0.3);pill(V.x-150,V.y+70,'vertex',NV,vo,28);ln({x:V.x-90,y:V.y+50},{x:V.x-14,y:V.y+8},LG,3,vo,'6 6');}
+    if(t>=K.ray-0.3&&t<K.wider){var ro=fadeIn(t,K.ray-0.3);pill(V.x+330,V.y+60,'ray',NV,ro,28);var rp=P(V,a,330);pill(rp.x-90,rp.y-30,'ray',GR,ro,28);}
+    if(t>=K.wider-0.2&&t<K.closeW-0.2)pill(1050,170,'wider: bigger angle',GR,fadeIn(t,K.wider-0.2),28);
+    if(t>=K.closeW-0.2&&t<K.tiny-0.2)pill(1050,170,'closer: smaller angle',GR,fadeIn(t,K.closeW-0.2),28);
+    if(t>=K.tiny-0.2&&t<K.straight-0.2)pill(1050,170,'tiny, but still an angle',GR,fadeIn(t,K.tiny-0.2),28);
+    if(t>=K.sa-0.3){var sao=fadeIn(t,K.sa-0.3);pill(640,260,'straight angle',NV,sao,32);big(640,560,'two rays make one straight line',GRAY,26,sao);}
+  }
+  // ── scene 3: the square corner check
+  else if(t<K.watch-0.3){
+    var o3=fadeIn(t,K.corner-0.6);
+    if(t<K.hides-0.5){
+      // the set square alone, its corner named, then it slides onto a vertex
+      var C0={x:640,y:470},sl=t>=K.put?ease((t-K.put)/1.2):0;
+      if(t>=K.put-0.2)angle({x:640,y:470},0,90,420,330,GR,fadeIn(t,K.put-0.2),{w:9});
+      var cx={x:420+220*sl,y:490-20*sl};setsq(sl>0?cx:{x:420,y:490},0,300,o3);
+      if(t<K.put){S('circle',{cx:420,cy:490,r:34,fill:'none',stroke:GOLD,'stroke-width':5,opacity:fadeIn(t,K.corner-0.3)});pill(560,270,'square corner',NV,fadeIn(t,K.corner-0.3),28);}
+      if(t>=K.right-0.3&&t<K.put)pill(560,335,'a right angle',GR,fadeIn(t,K.right-0.3),28);
+      if(t>=K.put+1.2)pill(980,250,'it fits: a right angle',OK,fadeIn(t,K.put+1.2),26);
+    } else {
+      // two angles, each checked: less (the ray hides under), greater (the ray sticks out past)
+      var V1={x:300,y:480},V2={x:900,y:480};
+      var ho=fadeIn(t,K.hides-0.5);setsq(V1,0,250,ho);angle(V1,0,38,330,175,GR,ho,{w:9});pill(V1.x+120,V1.y+64,'less than a right angle',GR,fadeIn(t,K.hides),24);
+      if(t>=K.sticks-0.5){var go=fadeIn(t,K.sticks-0.5);setsq(V2,0,250,go);angle(V2,0,132,300,300,GR,go,{w:9});pill(V2.x+40,V2.y+64,'greater than a right angle',GR,fadeIn(t,K.sticks),24);}
+    }
+  }
+  // ── scene 4: watch out, longer rays
+  else {
+    S('rect',{x:140,y:96,width:1000,height:62,rx:14,fill:'#FBE7E4',stroke:NO,'stroke-width':3});big(640,138,'Watch out! Only the opening matters.',NO,30);
+    var A={x:200,y:500},B0={x:860,y:500},sl4=t>=K.even-0.2?ease((t-K.even+0.2)/1.4):0,B={x:B0.x+(A.x-B0.x)*sl4,y:B0.y};
+    angle(A,0,40,480,480,GR,1,{w:9,r:70});pill(A.x+80,A.y+60,'long rays',NV,1,22);
+    angle(B,0,40,150,150,RED,1,{w:9,r:100});if(sl4<0.05)pill(B.x+70,B.y+60,'short rays',NV,1,22);
+    if(t>=K.same-0.3&&sl4<0.05){var sm=fadeIn(t,K.same-0.3);big(640,270,'same opening',OK,32,sm);}
+    if(sl4>=1)pill(760,290,'same size angle',OK,fadeIn(t,K.even+1.2),28);
+  }
+}
+window.init=function(tl){TL=tl;setup();};
+</script></body></html>

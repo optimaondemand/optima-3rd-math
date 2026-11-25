@@ -328,6 +328,33 @@ SC['3.12.01']=function(t,K){
   if(t>=K.radius-0.3){var ro=ramp(t,K.radius-0.3,0.4),e=P(cx,cy,R,45);S('line',{x1:cx,y1:cy,x2:e.x,y2:e.y,stroke:GR,'stroke-width':7,opacity:ro});label(990,260,'radius',ro,GR,30);}
   if(t>=K.diam-0.3){var dd=ramp(t,K.diam-0.3,0.8);S('line',{x1:cx-R,y1:cy+0,x2:cx-R+2*R*dd,y2:cy,stroke:VIO,'stroke-width':7});label(990,470,'diameter',ramp(t,K.diam-0.3,0.4),VIO,30);}
 };
+SC['3.12.02']=function(t,K){
+  var HD='CHAPTER 12 · EUCLID\'S COMPASS',GR='#1E8C5A',SQF='#D9F0E3',LG='#8792A8';
+  function P(v,d,r){var a=d*Math.PI/180;return {x:v.x+r*Math.cos(a),y:v.y-r*Math.sin(a)};}
+  function arc(v,r,a0,a1,op,fill){var p=P(v,a0,r),q=P(v,a1,r);return S('path',{d:(fill?'M'+v.x+' '+v.y+' L':'M')+p.x+' '+p.y+' A'+r+' '+r+' 0 '+(a1-a0>180?1:0)+' 0 '+q.x+' '+q.y+(fill?' Z':''),fill:fill||'none',stroke:fill?'none':GR,'stroke-width':5,opacity:op});}
+  function ang(v,b,a,L,op,w){S('line',{x1:v.x,y1:v.y,x2:P(v,b,L).x,y2:P(v,b,L).y,stroke:NAVY,'stroke-width':w||9,'stroke-linecap':'round',opacity:op});S('line',{x1:v.x,y1:v.y,x2:P(v,b+a,L).x,y2:P(v,b+a,L).y,stroke:GR,'stroke-width':w||9,'stroke-linecap':'round',opacity:op});
+    if(a===90){var s=26,p1=P(v,b,s),p2=P(p1,b+90,s),p3=P(v,b+90,s);S('polyline',{points:[p1,p2,p3].map(function(p){return p.x+','+p.y;}).join(' '),fill:'none',stroke:GR,'stroke-width':4,opacity:op});}else arc(v,54,b,b+a,op);S('circle',{cx:v.x,cy:v.y,r:9,fill:NAVY,opacity:op});}
+  if(t<K.near-0.3){head('','');owl(1000,380,150,t);book(t,0.1,'sb-byrne-angles.jpg','CHAPTER 12 · LESSON 2','Angles','Alexandria, about 300 BC');return;}
+  if(t<K.look-0.3){head(HD,'Near the start of Euclid\'s book');owl(null);var o=fade(t,K.near-0.3,K.look-0.3);
+    pic('sb-byrne-angle-def.jpg',240,150,800,364,1+0.01*(t-K.near),.5,.5,o);
+    label(640,590,'Euclid explains angles',o*ramp(t,K.near+0.6,0.4),GREEN,30);return;}
+  if(t<K.two-0.3){head(HD,'A page from Euclid\'s book, 1847');owl(null);var o2=fade(t,K.look-0.3,K.two-0.3);
+    pic('sb-byrne-angles.jpg',310,96,660,523,1+0.03*(t-K.look),.6,.6,o2);return;}
+  if(t<K.some-0.3){head(HD,'Two lines meet at one point');owl(null);var V={x:520,y:470},o3=ramp(t,K.two-0.3,0.5),gr=ramp(t,K.two,1.2);
+    S('line',{x1:V.x,y1:V.y,x2:V.x+460,y2:V.y,stroke:NAVY,'stroke-width':10,'stroke-linecap':'round',opacity:o3});var e=P(V,48,440*gr);S('line',{x1:V.x,y1:V.y,x2:e.x,y2:e.y,stroke:GR,'stroke-width':10,'stroke-linecap':'round',opacity:o3});
+    if(t>=K.point-0.3){var po=ramp(t,K.point-0.3,0.4);S('circle',{cx:V.x,cy:V.y,r:13,fill:NAVY,opacity:po});label(V.x-120,V.y+70,'one point',po,NAVY,28);}
+    if(t>=K.space-0.3){arc(V,200,0,48,ramp(t,K.space-0.3,0.6)*0.9,'rgba(30,140,90,.22)');arc(V,70,0,48,ramp(t,K.space-0.3,0.6));}
+    if(t>=K.angle-0.3)label(880,330,'an angle',ramp(t,K.angle-0.3,0.4),GREEN,32);return;}
+  if(t<K.today-0.3){head(HD,'Different angles');owl(null);
+    var c1=ramp(t,K.some-0.3,0.5),c2=ramp(t,K.smaller-0.3,0.5),c3=ramp(t,K.bigger-0.3,0.5);
+    ang({x:150,y:450},0,90,230,c1);label(265,560,'square corner',c1,NAVY,26);
+    ang({x:520,y:450},0,35,230,c2);label(640,560,'smaller',c2,NAVY,26);
+    ang({x:960,y:450},0,130,230,c3);label(1000,560,'bigger',c3,NAVY,26);return;}
+  head(HD,'Check it with a square corner');owl(null);var V2={x:560,y:470},o5=ramp(t,K.today-0.3,0.5),sl=ramp(t,K.today+0.6,1.4);
+  ang(V2,0,62,200,o5);var c={x:V2.x-300*(1-sl),y:V2.y+60*(1-sl)};
+  S('polygon',{points:[c,P(c,0,280),P(c,90,280)].map(function(p){return p.x+','+p.y;}).join(' '),fill:SQF,'fill-opacity':.8,stroke:LG,'stroke-width':2.5,opacity:o5});
+  ang(V2,0,62,200,o5);S('line',{x1:V2.x,y1:V2.y,x2:V2.x+380,y2:V2.y,stroke:NAVY,'stroke-width':9,'stroke-linecap':'round',opacity:o5});
+};
 SC['3.11.07']=function(t,K){
   var HD='CHAPTER 11 · THE METER OF PARIS';
   if(t<K.nw-0.3){head('','');owl(1000,380,150,t);book(t,0.1,'sb-mesures-row-plate.jpg','CHAPTER 11 · LESSON 7',['Word','Problems'],'Paris, 1800');return;}
@@ -532,6 +559,7 @@ SC['3.11.01']=function(t,K){
   if(t>=K.two-0.3)label(640,540,'say it two ways',ramp(t,K.two-0.3,0.4),GREEN,30);
 };
 var CUES={
+ '3.12.02':function(){return{were:wt(/^We're$/),near:wt(/^Near$/),look:wt(/^Look$/),two:wt(/^Two$/),point:wt(/^point$/),space:wt(/^space$/),angle:wt(/^angle$/,0),some:wt(/^Some$/,0),smaller:wt(/^smaller$/),bigger:wt(/^bigger$/),today:wt(/^Today$/)};},
  '3.12.01':function(){return{were:wt(/^We're$/),alex:wt(/^Alexandria$/),about:wt(/^about$/),teacher:wt(/^teacher$/,0),circles:wt(/^circles$/),look:wt(/^Look$/),bends:wt(/^bends$/),many:wt(/^Many$/),compass2:wt(/^compass$/,1),draws:wt(/^draws$/),today:wt(/^Today$/),center:wt(/^center$/),radius:wt(/^radius$/),diam:wt(/^diameter$/)};},
  '3.11.07':function(){return{nw:wt(/^new$/),every:wt(/^everywhere$/),look:wt(/^Look$/),pours:wt(/^pours$/),weighs:wt(/^weighs$/),meas:wt(/^measures$/,1),market:wt(/^market$/),word:wt(/^Word$/),today:wt(/^Today$/),bar:wt(/^bar$/),solve:wt(/^solve$/)};},
  '3.11.06':function(){return{sci:wt(/^Scientists$/),same:wt(/^same$/),antoine:wt(/^Antoine$/),balance:wt(/^balance$/),helps:wt(/^helps$/),idea:wt(/^idea$/),gram:wt(/^gram$/,0),side:wt(/^side$/),thousand:wt(/^thousand$/),kg:wt(/^kilogram$/),look:wt(/^Look$/),table:wt(/^table$/),tools:wt(/^tools$/),today:wt(/^Today$/),weigh:wt(/^weigh$/)};},

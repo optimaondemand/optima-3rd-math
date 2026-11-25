@@ -529,3 +529,18 @@ html.sb-still *{animation:none!important;transition:none!important}
 .sb-ci svg .ci-cross{animation:ciPulse 1.6s ease-in-out infinite}
 @keyframes ciPulse{50%{opacity:.55}}
 @media (prefers-reduced-motion:reduce){.sb-ci svg .ci-cross{animation:none}}
+/* ── ang (3.12.02 angles) ── */
+.sb-an .an-btns{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:0 0 8px}
+.sb-an .an-btns:empty,.sb-an .an-chips:empty{display:none}
+.sb-an svg .an-lslot,.sb-an svg .an-v{cursor:pointer}
+.sb-an svg .drag{cursor:grab}
+.sb-an svg .drag:focus-visible,.sb-an svg .an-lslot:focus-visible,.sb-an svg .an-v:focus-visible{outline:3px solid #C9A227;outline-offset:2px}
+.sb-an svg .an-v{animation:anPulse 1.6s ease-in-out infinite}
+@keyframes anPulse{50%{opacity:.55}}
+.sb-an .an-sort{margin-top:12px;border-top:1.5px dashed #DCE2EE;padding-top:10px}
+.sb-an .an-sline{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px;font-weight:900;font-size:18px;color:#0E1C42}
+.sb-an .an-slot{min-width:220px;min-height:44px;display:inline-flex;align-items:center;justify-content:center;padding:6px 14px;border:2.5px dashed #8792A8;border-radius:12px;color:#8792A8;font-size:15px;background:#fff}
+.sb-an .an-slot.ok{border-style:solid;border-color:#1E7A4C;color:#1E7A4C;background:#E8F5EE;font-size:17px}
+.sb-an .an-slot.no{border-style:solid;border-color:#B23A2E;color:#B23A2E;background:#FBEDEB;font-size:17px}
+@media (max-width:560px){.sb-an .an-slot{min-width:0;width:100%}.sb-an .an-sline{font-size:16px}}
+@media (prefers-reduced-motion:reduce){.sb-an svg .an-v{animation:none}}

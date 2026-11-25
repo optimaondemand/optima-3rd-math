@@ -76,6 +76,8 @@ TOOLS = {
  'fbars-9-10': ('fbars', {"d": [9, 10], "lab": 1}, 'Fraction Tiles', 'Try a bar of ninths and a bar of tenths. Shade 1 ninth and 2 tenths. Which reaches farther?'),
  'compass-1': ('compass', {"r": 2, "circ": [[9, 6, 2]], "lines": True}, 'Compass', 'This circle has a radius of 2 cm. Count the squares from one side to the other. How many radii fit across?'),
  'compass-2': ('compass', {"r": 1, "lines": True}, 'Compass', 'Draw a circle with a radius of 1 cm. Then open the compass to 2 cm and draw another circle around the same center. Which one is twice as wide?'),
+ 'geoboard-ang': ('geoboard', {"n": 11, "mode": "line"}, 'Geoboard', 'Make an angle with two bands that start at the same pin. Move one band to make the opening wider or smaller.'),
+ 'setsquare': ('setsquare', {"mode": "move", "sel": "s45"}, 'Set Square', 'Slide the set square so its square corner sits on a corner. Is the corner smaller than, the same as, or bigger than the square corner?'),
  'compass-own': ('compass', {"r": 2, "lines": True}, 'Compass', 'Open the compass, then drag the pencil all the way around. Read the radius and the diameter under the tool.'),
 }
 def enc(o): return base64.urlsafe_b64encode(json.dumps(o, separators=(',', ':')).encode()).decode().rstrip('=')
@@ -246,6 +248,19 @@ L = {
      {"t": "fold", "alt": ["folds"], "d": "The line left on paper when you bend it flat. It is also called a crease."},
      {"t": "edge", "d": "The outside line of a shape. On a circle, the edge is the round line."},
      {"t": "slate", "d": "A small flat board of dark stone. Long ago, students wrote and drew on it."}]),
+  '3.12.02': dict(page='math-lesson-3-12-02-angles.html', title='Angles', video='g3math-12-02-learn', music='francesco-ricercar-41.mp3',
+   glossary=[
+     {"t": "angle", "alt": ["angles"], "d": "The opening between two rays that meet at one point.", "key": True},
+     {"t": "vertex", "d": "The point where the two sides of an angle meet.", "key": True},
+     {"t": "ray", "alt": ["rays"], "d": "One side of an angle. A ray starts at the vertex and goes straight out.", "key": True},
+     {"t": "right angle", "alt": ["right angles"], "d": "An angle that makes a square corner, like the corner of a page.", "key": True},
+     {"t": "straight angle", "d": "An angle whose two rays make one straight line.", "key": True},
+     {"t": "less than", "d": "Smaller. An angle less than a right angle has a smaller opening than a square corner.", "key": True},
+     {"t": "greater than", "d": "Bigger. An angle greater than a right angle has a wider opening than a square corner.", "key": True},
+     {"t": "set square", "alt": ["set squares"], "d": "A flat triangle with one square corner. It helps you check and draw right angles."},
+     {"t": "square corner", "alt": ["square corners"], "d": "A corner like the corner of a page. It is a right angle."},
+     {"t": "slate", "d": "A small flat board of dark stone. Long ago, students wrote and drew on it."},
+     {"t": "lute", "d": "An old string instrument with a round back, played by plucking the strings."}]),
   '3.11.06': dict(page='math-lesson-3-11-06-kilograms-and-grams.html', title='Kilograms and Grams', video='g3math-11-06-learn', music='mozart-k525-romanze.mp3',
    glossary=[
      {"t": "kilogram", "alt": ["kilograms"], "d": "A unit for how heavy something is. 1 kilogram is 1,000 grams. We write kg.", "key": True},
