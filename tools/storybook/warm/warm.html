@@ -328,6 +328,40 @@ SC['3.12.01']=function(t,K){
   if(t>=K.radius-0.3){var ro=ramp(t,K.radius-0.3,0.4),e=P(cx,cy,R,45);S('line',{x1:cx,y1:cy,x2:e.x,y2:e.y,stroke:GR,'stroke-width':7,opacity:ro});label(990,260,'radius',ro,GR,30);}
   if(t>=K.diam-0.3){var dd=ramp(t,K.diam-0.3,0.8);S('line',{x1:cx-R,y1:cy+0,x2:cx-R+2*R*dd,y2:cy,stroke:VIO,'stroke-width':7});label(990,470,'diameter',ramp(t,K.diam-0.3,0.4),VIO,30);}
 };
+SC['3.12.03']=function(t,K){
+  var HD='CHAPTER 12 · EUCLID\'S COMPASS',GR='#1E8C5A',ROADC='#C9CFDC',LGY='#5B6478';
+  function P(v,d,r){var a=d*Math.PI/180;return {x:v.x+r*Math.cos(a),y:v.y-r*Math.sin(a)};}
+  function sqm(v,b,op,s){s=s||26;var p1=P(v,b,s),p2=P(p1,b+90,s),p3=P(v,b+90,s);S('polyline',{points:[p1,p2,p3].map(function(p){return p.x+','+p.y;}).join(' '),fill:'none',stroke:GR,'stroke-width':4,opacity:op});}
+  function scrp(c,w,h,op,flatBottom){var pts=[],B=16;var x0=c.x-w/2,x1=c.x+w/2,y0=c.y-h/2,y1=c.y+h/2;
+    function push(x,y,bump){pts.push((x+(bump?B*Math.sin(x*.13+y*.11):0))+','+(y+(bump?B*Math.cos(x*.09-y*.12):0)));}
+    for(var x=x0;x<=x1;x+=40)push(x,y0,true);for(var y=y0;y<=y1;y+=40)push(x1,y,true);
+    for(var x=x1;x>=x0;x-=40)push(x,y1,!flatBottom);for(var y=y1;y>=y0;y-=40)push(x0,y,true);
+    S('polygon',{points:pts.join(' '),fill:'#EFE0BC',stroke:'#C8B080','stroke-width':2.5,opacity:op});}
+  if(t<K.years-0.3){head('','');owl(1000,380,150,t);book(t,0.1,'sb-byrne-perp.jpg','CHAPTER 12 · LESSON 3','Right Angles','Alexandria, about 300 BC');return;}
+  if(t<K.on-0.3){head(HD,'Alexandria\'s two widest streets');owl(null);var o=fade(t,K.years-0.3,K.on-0.3);
+    S('rect',{x:160,y:400,width:960,height:84,fill:ROADC,stroke:LGY,'stroke-width':3,opacity:o});
+    S('rect',{x:598,y:150,width:84,height:480,fill:ROADC,stroke:LGY,'stroke-width':3,opacity:o});
+    S('rect',{x:598,y:400,width:84,height:84,fill:ROADC,opacity:o});
+    S('line',{x1:180,y1:442,x2:1100,y2:442,stroke:'#fff','stroke-width':4,opacity:o*.8,'stroke-dasharray':'20 16'});
+    S('line',{x1:640,y1:170,x2:640,y2:610,stroke:'#fff','stroke-width':4,opacity:o*.8,'stroke-dasharray':'20 16'});
+    if(t>=K.cross-0.2){var mo=ramp(t,K.cross-0.2,0.5)*o;sqm({x:598,y:400},90,mo);sqm({x:682,y:400},0,mo);sqm({x:598,y:484},180,mo);sqm({x:682,y:484},270,mo);
+      label(640,120,'they cross at right angles',mo,GREEN,30);}return;}
+  if(t<K.stands-0.3){head(HD,'A page from Euclid\'s book, 1847');owl(null);var o2=fade(t,K.on-0.3,K.stands-0.3);
+    pic('sb-byrne-perp.jpg',310,96,660,520,1+0.03*(t-K.on),.55,.5,o2);return;}
+  if(t<K.today-0.3){head(HD,'Stand one line on another');owl(null);var V={x:640,y:470},o3=fade(t,K.stands-0.3,K.today-0.3);
+    S('line',{x1:V.x-440,y1:V.y,x2:V.x+440,y2:V.y,stroke:NAVY,'stroke-width':10,'stroke-linecap':'round',opacity:o3});
+    var up=ramp(t,K.stands,1.4),e=P(V,30+60*up,330);
+    S('line',{x1:V.x,y1:V.y,x2:e.x,y2:e.y,stroke:GREEN,'stroke-width':10,'stroke-linecap':'round',opacity:o3});
+    S('circle',{cx:V.x,cy:V.y,r:11,fill:NAVY,opacity:o3});
+    if(t>=K.meet-0.2&&up>=1){var so=ramp(t,K.meet-0.2,0.4);sqm(V,0,so,30);sqm(V,90,so,30);label(960,330,'a square corner',so,GREEN,30);}return;}
+  head(HD,'Fold your own square corner');owl(null);var o4=ramp(t,K.today-0.3,0.5);
+  if(t<K.fold+1.2){scrp({x:560,y:400},480,300,o4);if(t>=K.fold-0.2)S('line',{x1:310,y1:400,x2:810,y2:400,stroke:NAVY,'stroke-width':4,'stroke-dasharray':'10 8',opacity:ramp(t,K.fold-0.2,0.4)});}
+  else{var c={x:430,y:530},p1=P(c,0,300),p2=P(c,90,300),pts=[c.x+','+c.y,p1.x+','+p1.y];
+    for(var i=1;i<6;i++){var q=P(c,15*i,300*(0.96+0.1*Math.sin(i*2.7)));pts.push(q.x+','+q.y);}
+    pts.push(p2.x+','+p2.y);S('polygon',{points:pts.join(' '),fill:'#EFE0BC',stroke:'#C8B080','stroke-width':2.5,opacity:o4});
+    sqm(c,0,1,22);S('circle',{cx:c.x,cy:c.y,r:34,fill:'none',stroke:'#C9A227','stroke-width':5,opacity:ramp(t,K.fold+1.3,0.4)});
+    if(t>=K.find-0.3)label(950,380,'find the right angles',ramp(t,K.find-0.3,0.4),GREEN,30);}
+};
 SC['3.12.02']=function(t,K){
   var HD='CHAPTER 12 · EUCLID\'S COMPASS',GR='#1E8C5A',SQF='#D9F0E3',LG='#8792A8';
   function P(v,d,r){var a=d*Math.PI/180;return {x:v.x+r*Math.cos(a),y:v.y-r*Math.sin(a)};}
@@ -559,6 +593,7 @@ SC['3.11.01']=function(t,K){
   if(t>=K.two-0.3)label(640,540,'say it two ways',ramp(t,K.two-0.3,0.4),GREEN,30);
 };
 var CUES={
+ '3.12.03':function(){return{years:wt(/^Years$/),cross:wt(/^cross$/),on:wt(/^On$/),stands:wt(/^stands$/),meet:wt(/^meet$/),today:wt(/^Today$/),fold:wt(/^fold$/,0),find:wt(/^find$/)};},
  '3.12.02':function(){return{were:wt(/^We're$/),near:wt(/^Near$/),look:wt(/^Look$/),two:wt(/^Two$/),point:wt(/^point$/),space:wt(/^space$/),angle:wt(/^angle$/,0),some:wt(/^Some$/,0),smaller:wt(/^smaller$/),bigger:wt(/^bigger$/),today:wt(/^Today$/)};},
  '3.12.01':function(){return{were:wt(/^We're$/),alex:wt(/^Alexandria$/),about:wt(/^about$/),teacher:wt(/^teacher$/,0),circles:wt(/^circles$/),look:wt(/^Look$/),bends:wt(/^bends$/),many:wt(/^Many$/),compass2:wt(/^compass$/,1),draws:wt(/^draws$/),today:wt(/^Today$/),center:wt(/^center$/),radius:wt(/^radius$/),diam:wt(/^diameter$/)};},
  '3.11.07':function(){return{nw:wt(/^new$/),every:wt(/^everywhere$/),look:wt(/^Look$/),pours:wt(/^pours$/),weighs:wt(/^weighs$/),meas:wt(/^measures$/,1),market:wt(/^market$/),word:wt(/^Word$/),today:wt(/^Today$/),bar:wt(/^bar$/),solve:wt(/^solve$/)};},

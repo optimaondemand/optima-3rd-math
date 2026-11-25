@@ -1,0 +1,163 @@
+<!DOCTYPE html><html><head><meta charset="utf-8">
+<!-- 3.12.03 Learn video: "Find the Square Corner". Frames rendered by render.js from a timeline (estimated until voiced: timeline-3-12-03-est.json). -->
+<style>
+html,body{margin:0;width:1280px;height:720px;overflow:hidden;background:#FBF6EA;font-family:Nunito,Arial,sans-serif}
+#st{position:absolute;inset:0}
+.cap{position:absolute;left:90px;right:90px;bottom:22px;min-height:52px;background:rgba(14,28,66,.88);color:#fff;border-radius:14px;padding:10px 20px;font-size:26px;font-weight:800;line-height:1.3;text-align:center}
+.cap:empty{display:none}
+.hd{position:absolute;left:40px;top:22px;font-family:'Cormorant Garamond',Georgia,serif;font-size:32px;font-weight:700;color:#3A2A12}
+.hd small{display:block;font-family:Nunito,Arial;font-size:15px;letter-spacing:.18em;color:#B8892E;font-weight:900}
+.book{position:absolute;inset:0;display:none;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 40%,#FFF8E6,#EFE2C6)}
+.book.on{display:flex}
+.bk{display:grid;grid-template-columns:420px 420px;background:#E8DCC0;padding:12px;border-radius:10px;box-shadow:0 20px 40px rgba(60,40,10,.25)}
+.pg{background:#FFFBF1;height:380px;padding:24px;box-sizing:border-box}
+.pg img{width:100%;height:290px;object-fit:cover;border:8px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.2);box-sizing:border-box}
+.pg.r{display:flex;flex-direction:column;justify-content:center}
+.ch{font-family:Georgia,serif;letter-spacing:.2em;color:#B8892E;font-weight:700;font-size:16px}
+.tt{font-family:'Cormorant Garamond',Georgia,serif;font-size:40px;font-weight:700;color:#3A2A12;line-height:1.05;margin:8px 0}
+.q{font-size:22px;font-weight:800;color:#0E1C42;margin-top:10px}
+.owl{position:absolute;width:140px;right:28px;bottom:150px}
+</style></head><body>
+<div id="st"><svg id="sv" width="1280" height="720" viewBox="0 0 1280 720"></svg>
+<div class="hd"><small>CHAPTER 12 · EUCLID'S COMPASS</small>Find the Square Corner</div></div>
+<div class="book" id="book"><div class="bk"><div class="pg"><img src="../repo/images/storybook/sb-byrne-perp.jpg" style="object-fit:cover;object-position:top"></div><div class="pg r"><div class="ch">CHAPTER 12 · LESSON 3</div><div class="tt" id="btt">Right Angles</div><div class="q" id="bq">How can you check if a corner is a right angle?</div></div></div><img class="owl" src="../repo/images/storybook/opti-owl.png"></div>
+<div class="cap" id="cap"></div>
+<script>
+var TL=null, NSV='http://www.w3.org/2000/svg';
+function S(tag,a,p){var e=document.createElementNS(NSV,tag);for(var k in a){if(k==='text')e.textContent=a[k];else e.setAttribute(k,a[k]);}(p||sv).appendChild(e);return e;}
+var NV='#0E1C42', GR='#1E8C5A', RED='#B23A2E', GRAY='#5B6478', GOLD='#C9A227', OK='#1E7A4C', NO='#B23A2E', PAP='#EFE0BC', PAPL='#F6ECD2', LG='#8792A8', ROAD='#C9CFDC';
+function sec(s){return TL.secs[s];}
+var M='vid-math';
+function wt(re,n){var Wd=sec(M).words,c=0;for(var i=0;i<Wd.length;i++){if(re.test(Wd[i].w.replace(/[^\w'-]/g,''))){if(c===(n||0))return Wd[i].t;c++;}}return null;}
+function ease(x){x=Math.max(0,Math.min(1,x));return x<.5?2*x*x:1-Math.pow(-2*x+2,2)/2;}
+function caption(t){var all=[];['vid-open',M,'vid-close'].forEach(function(s){var Wd=sec(s).words,cur=[];Wd.forEach(function(w,i){cur.push(w);if(/[.!?:]$/.test(w.w)||i===Wd.length-1){all.push(cur);cur=[];}});});
+  for(var i=0;i<all.length;i++){var a=all[i][0].t,b=all[i][all[i].length-1].e+0.35;if(t>=a-0.1&&t<=b)return all[i].map(function(w){return w.w;}).join(' ');}return '';}
+var K={};
+function big(x,y,txt,col,size,op){return S('text',{x:x,y:y,'text-anchor':'middle','font-size':size||40,'font-weight':900,fill:col||NV,opacity:op==null?1:op,text:txt});}
+function pill(x,y,txt,col,op,fs){fs=fs||24;var g=S('g',{opacity:op==null?1:op});var w=txt.length*fs*.56+34;S('rect',{x:x-w/2,y:y-24,width:w,height:48,rx:24,fill:'#fff',stroke:col,'stroke-width':3},g);S('text',{x:x,y:y+fs*.36,'text-anchor':'middle','font-size':fs,'font-weight':900,fill:col,text:txt},g);return g;}
+function fadeIn(t,a,d){return ease((t-a)/(d||0.4));}
+function P(v,d,r){var a=d*Math.PI/180;return {x:v.x+r*Math.cos(a),y:v.y-r*Math.sin(a)};}
+function ln(a,b,col,w,op,dash){return S('line',{x1:a.x,y1:a.y,x2:b.x,y2:b.y,stroke:col,'stroke-width':w||7,'stroke-linecap':'round',opacity:op==null?1:op,'stroke-dasharray':dash||''});}
+function sqmark(v,b,col,op,s){s=s||30;var p1=P(v,b,s),p2=P(p1,b+90,s),p3=P(v,b+90,s);S('polyline',{points:[p1,p2,p3].map(function(p){return p.x+','+p.y;}).join(' '),fill:'none',stroke:col||GR,'stroke-width':4,opacity:op==null?1:op});}
+function arcD(v,r,a0,a1){var p=P(v,a0,r),q=P(v,a1,r);return 'M'+p.x+' '+p.y+' A'+r+' '+r+' 0 '+(a1-a0>180?1:0)+' 0 '+q.x+' '+q.y;}
+// an angle like the tools-site Protractor arms: navy ray, green ray, square mark at a right angle, navy vertex dot
+function angle(v,b,a,L1,L2,col,op,opt){opt=opt||{};ln(v,P(v,b,L1),NV,opt.w||8,op);ln(v,P(v,b+a,L2),col||GR,opt.w||8,op);
+  if(Math.abs(a-90)<0.5)sqmark(v,b,col||GR,op);
+  else if(a>0.5)S('path',{d:arcD(v,opt.r||60,b,b+a),fill:'none',stroke:col||GR,'stroke-width':4,opacity:op});
+  S('circle',{cx:v.x,cy:v.y,r:9,fill:NV,opacity:op==null?1:op});}
+// the folded papyrus checker: square corner at c, straight edges along rot and rot+90, torn outer edge
+function checker(c,rot,size,op){var p1=P(c,rot,size),p2=P(c,rot+90,size);var pts=[c.x+','+c.y,p1.x+','+p1.y];
+  for(var i=1;i<6;i++){var a=rot+15*i,r=size*(0.96+0.1*Math.sin(i*2.7));var q=P(c,a,r);pts.push(q.x+','+q.y);}
+  pts.push(p2.x+','+p2.y);
+  S('polygon',{points:pts.join(' '),fill:PAP,'fill-opacity':.92,stroke:'#C8B080','stroke-width':2.5,opacity:op==null?1:op});
+  sqmark(c,rot,'#A58B4F',op,18);}
+// torn scrap outline (bumpy all round), centered at c
+function scrap(c,w,h,op,flatBottom,flatLeft){var pts=[],B=18;
+  function push(x,y,bump){pts.push((x+(bump?B*Math.sin(x*.13+y*.11):0))+','+(y+(bump?B*Math.cos(x*.09-y*.12):0)));}
+  var x0=c.x-w/2,x1=c.x+w/2,y0=c.y-h/2,y1=c.y+h/2;
+  for(var x=x0;x<=x1;x+=40)push(x,y0,true);
+  for(var y=y0;y<=y1;y+=40)push(x1,y,true);
+  for(var x=x1;x>=x0;x-=40)push(x,y1,!flatBottom);
+  for(var y=y1;y>=y0;y-=40)push(x0,y,!flatLeft);
+  S('polygon',{points:pts.join(' '),fill:PAP,stroke:'#C8B080','stroke-width':2.5,opacity:op==null?1:op});}
+function setup(){
+  K.a=sec(M).start; K.close=sec('vid-close').start;
+  K.fold1=wt(/^Fold$/,0); K.sedge=wt(/^straight$/,0); K.fold2=wt(/^fold$/,1); K.corner1=wt(/^corner$/,0); K.checker1=wt(/^checker$/,0);
+  K.put=wt(/^Put$/,0); K.lineup=wt(/^line$/,0); K.mark=wt(/^Mark$/,0); K.hides=wt(/^hides$/,0); K.sticks=wt(/^sticks$/,0);
+  K.check=wt(/^Check$/,0); K.quarter=wt(/^quarter$/,0); K.redge=wt(/^round$/,1); K.noang=wt(/^no$/,1);
+  K.lines4=wt(/^Lines$/,0); K.perp=wt(/^perpendicular$/,0); K.roads=wt(/^roads$/,0); K.four=wt(/^four$/,0); K.gate=wt(/^gate$/,0);
+  K.watch=wt(/^Watch$/,0); K.gap=wt(/^gap$/,0); K.always=wt(/^Always$/,0);
+}
+function render(t){
+  window.__t=t;var book=document.getElementById('book'),cap=document.getElementById('cap');
+  cap.textContent=window.NOCAP?'':caption(t);
+  var inOpen=t<K.a-0.3, inClose=t>=K.close-0.3;
+  book.classList.toggle('on',inOpen||inClose);
+  if(inClose){document.getElementById('btt').textContent='Your turn';document.getElementById('bq').textContent='Fold it, fit it, mark it.';}
+  sv.innerHTML='';if(inOpen||inClose)return;
+  // ── scene 1: fold the scrap into a checker
+  if(t<K.put-0.5){
+    var o=fadeIn(t,K.a-0.3),C={x:560,y:430};
+    if(t<K.fold1+0.9){ // the bumpy scrap
+      scrap(C,520,340,o);
+      if(t<K.fold1-0.2)pill(C.x,170,'a scrap with bumpy edges',NV,fadeIn(t,K.a),26);
+      if(t>=K.fold1-0.2)ln({x:C.x-280,y:C.y},{x:C.x+280,y:C.y},NV,4,fadeIn(t,K.fold1-0.2),'10 8');
+    } else if(t<K.fold2-0.2){ // folded once: straight bottom edge
+      scrap({x:C.x,y:C.y+40},520,210,o,true);
+      ln({x:C.x-262,y:C.y+145},{x:C.x+262,y:C.y+145},'#A58B4F',5,1);
+      if(t>=K.sedge-0.3)pill(C.x,620,'the fold makes a straight edge',GR,fadeIn(t,K.sedge-0.3),26);
+    } else { // folded twice: the checker
+      var c2={x:C.x-140,y:C.y+150};checker(c2,0,320,o);
+      if(t>=K.corner1-0.2){S('circle',{cx:c2.x,cy:c2.y,r:36,fill:'none',stroke:GOLD,'stroke-width':5,opacity:fadeIn(t,K.corner1-0.2)});pill(880,300,'a square corner',NV,fadeIn(t,K.corner1-0.2),28);}
+      if(t>=K.corner1+1.1)pill(880,365,'a right angle',GR,fadeIn(t,K.corner1+1.1),28);
+      if(t>=K.checker1-0.4)pill(880,470,'your right-angle checker',GOLD,fadeIn(t,K.checker1-0.4),26);
+    }
+  }
+  // ── scene 2: fit, hide, stick out
+  else if(t<K.check-0.5){
+    var o2=fadeIn(t,K.put-0.5);
+    if(t<K.hides-0.6){ // the checker slides onto a right angle; it fits
+      var V={x:640,y:480},sl=t>=K.put?ease((t-K.put)/1.2):0;
+      angle(V,0,90,420,330,GR,o2,{w:9});
+      var cx={x:V.x-220+220*sl,y:V.y+60-60*sl};checker(cx,0,300,o2);
+      if(t>=K.lineup-0.2&&sl>=1)pill(1010,420,'line up one side',NV,fadeIn(t,K.lineup-0.2),24);
+      if(t>=K.mark-0.2){sqmark(V,0,GR,fadeIn(t,K.mark-0.2),34);pill(1010,250,'it fits: mark it',OK,fadeIn(t,K.mark-0.2),26);}
+    } else { // two angles: hides under (less), sticks out (greater)
+      var V1={x:300,y:480},V2={x:900,y:480};
+      var ho=fadeIn(t,K.hides-0.6);angle(V1,0,38,330,175,GR,ho,{w:9});checker(V1,0,250,ho*.9);pill(V1.x+120,V1.y+64,'less than a right angle',GR,fadeIn(t,K.hides),24);
+      if(t>=K.sticks-0.5){var go=fadeIn(t,K.sticks-0.5);angle(V2,0,132,300,300,GR,go,{w:9});checker(V2,0,250,go*.9);pill(V2.x+40,V2.y+64,'greater than a right angle',GR,fadeIn(t,K.sticks),24);}
+    }
+  }
+  // ── scene 3: a shape corner by corner, then the quarter pie
+  else if(t<K.lines4-0.5){
+    var o3=fadeIn(t,K.check-0.5);
+    if(t<K.quarter-0.5){ // 6-sided shape with two corners cut; the checker visits each corner
+      var pts=[{x:300,y:560},{x:300,y:300},{x:430,y:180},{x:720,y:180},{x:820,y:300},{x:820,y:560}];
+      S('polygon',{points:pts.map(function(p){return p.x+','+p.y;}).join(' '),fill:'#EAF4EE',stroke:NV,'stroke-width':6,opacity:o3});
+      var right=[true,false,false,false,false,true]; // only the two uncut rectangle corners are right angles
+      var ROT=[0,291,202,248,155,90]; // the checker points into the shape at each corner
+      var dur=(K.quarter-0.5-K.check)/6;
+      for(var i=0;i<6;i++){var at=K.check+dur*i;if(t>=at&&right[i])sqmark(pts[i],(i===0)?0:90,GR,fadeIn(t,at),26);}
+      var k=Math.max(0,Math.min(5,Math.floor((t-K.check)/dur)));checker(pts[k],ROT[k],170,.85);
+      pill(1050,230,'one corner at a time',NV,o3,24);
+    } else { // the quarter pie
+      var V4={x:540,y:500},qo=fadeIn(t,K.quarter-0.5);
+      S('path',{d:'M'+V4.x+' '+V4.y+' L'+(V4.x+260)+' '+V4.y+' A260 260 0 0 0 '+V4.x+' '+(V4.y-260)+' Z',fill:'#F7E3B2',stroke:'#B8892E','stroke-width':5,opacity:qo});
+      sqmark(V4,0,GR,qo,30);pill(V4.x-40,V4.y+70,'a right angle at the point',GR,qo,24);
+      if(t>=K.redge-0.3){var ro=fadeIn(t,K.redge-0.3);S('path',{d:arcD(V4,260,0,90),fill:'none',stroke:GOLD,'stroke-width':9,opacity:ro});}
+      if(t>=K.noang-0.2)pill(980,300,'the round edge: no corner, no angle',NV,fadeIn(t,K.noang-0.2),24);
+    }
+  }
+  // ── scene 4: perpendicular — crossing roads, then the gate
+  else if(t<K.watch-0.4){
+    var o5=fadeIn(t,K.lines4-0.4);
+    if(t<K.gate-0.6){ // two roads cross
+      S('rect',{x:140,y:420,width:1000,height:90,fill:ROAD,stroke:GRAY,'stroke-width':3,opacity:o5});
+      S('rect',{x:590,y:140,width:90,height:500,fill:ROAD,stroke:GRAY,'stroke-width':3,opacity:o5});
+      S('rect',{x:590,y:420,width:90,height:90,fill:ROAD,opacity:o5});
+      ln({x:160,y:465},{x:1120,y:465},'#fff',4,o5*.8,'22 18');ln({x:635,y:160},{x:635,y:620},'#fff',4,o5*.8,'22 18');
+      if(t>=K.perp-0.3)pill(640,100,'perpendicular',GR,fadeIn(t,K.perp-0.3),30);
+      if(t>=K.four-0.2){var fo=fadeIn(t,K.four-0.2);sqmark({x:590,y:420},90,GR,fo,26);sqmark({x:680,y:420},0,GR,fo,26);sqmark({x:590,y:510},180,GR,fo,26);sqmark({x:680,y:510},270,GR,fo,26);
+        pill(1020,230,'four right angles',OK,fo,26);}
+    } else { // the gate stands out from the wall
+      var go5=fadeIn(t,K.gate-0.6),W={x:420,y:560};
+      S('rect',{x:W.x-18,y:150,width:18,height:420,fill:'#B9A06B',stroke:'#8A7142','stroke-width':3,opacity:go5});
+      var sw=ease((t-K.gate+0.2)/1.4),ga=90*sw; // gate swings from along the wall to straight out
+      var ge=P(W,-ga+90,330);ln({x:W.x,y:W.y},{x:ge.x,y:ge.y},'#8A5A2B',14,go5);
+      for(var gb=1;gb<4;gb++){var gp1=P(W,-ga+90,gb*90),gp2={x:gp1.x,y:gp1.y-36};}
+      if(sw>=1){sqmark({x:W.x,y:W.y},0,GR,fadeIn(t,K.gate+1.3),30);pill(820,330,'perpendicular to the wall',GR,fadeIn(t,K.gate+1.3),26);}
+    }
+  }
+  // ── scene 5: watch out — almost square
+  else {
+    S('rect',{x:140,y:96,width:1000,height:62,rx:14,fill:'#FBE7E4',stroke:NO,'stroke-width':3});big(640,138,'Watch out! It looks square. Check it.',NO,30);
+    var V6={x:520,y:500},o6=fadeIn(t,K.watch-0.3);
+    angle(V6,0,101,380,330,GR,o6,{w:9,r:70});checker(V6,0,290,o6*.92);
+    if(t>=K.gap-0.3){var gpo=fadeIn(t,K.gap-0.3);S('path',{d:'M'+V6.x+' '+V6.y+' L'+P(V6,90,290).x+' '+P(V6,90,290).y+' A290 290 0 0 0 '+P(V6,101,290).x+' '+P(V6,101,290).y+' Z',fill:'rgba(178,58,46,.25)',opacity:gpo});
+      pill(1000,280,'the checker shows a gap',NO,gpo,24);}
+    if(t>=K.gap+1.2)pill(1000,350,'greater than a right angle',NO,fadeIn(t,K.gap+1.2),24);
+    if(t>=K.always-0.2)big(640,660,"Always check. Don't guess.",NV,28,fadeIn(t,K.always-0.2));
+  }
+}
+window.init=function(tl){TL=tl;setup();};
+</script></body></html>

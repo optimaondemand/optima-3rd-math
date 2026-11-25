@@ -77,6 +77,7 @@ TOOLS = {
  'compass-1': ('compass', {"r": 2, "circ": [[9, 6, 2]], "lines": True}, 'Compass', 'This circle has a radius of 2 cm. Count the squares from one side to the other. How many radii fit across?'),
  'compass-2': ('compass', {"r": 1, "lines": True}, 'Compass', 'Draw a circle with a radius of 1 cm. Then open the compass to 2 cm and draw another circle around the same center. Which one is twice as wide?'),
  'geoboard-ang': ('geoboard', {"n": 11, "mode": "line"}, 'Geoboard', 'Make an angle with two bands that start at the same pin. Move one band to make the opening wider or smaller.'),
+ 'geoboard-ra': ('geoboard', {"n": 11}, 'Geoboard', 'Make a shape with exactly 1 right angle. Check it with the set square.'),
  'setsquare': ('setsquare', {"mode": "move", "sel": "s45"}, 'Set Square', 'Slide the set square so its square corner sits on a corner. Is the corner smaller than, the same as, or bigger than the square corner?'),
  'compass-own': ('compass', {"r": 2, "lines": True}, 'Compass', 'Open the compass, then drag the pencil all the way around. Read the radius and the diameter under the tool.'),
 }
@@ -261,6 +262,20 @@ L = {
      {"t": "square corner", "alt": ["square corners"], "d": "A corner like the corner of a page. It is a right angle."},
      {"t": "slate", "d": "A small flat board of dark stone. Long ago, students wrote and drew on it."},
      {"t": "lute", "d": "An old string instrument with a round back, played by plucking the strings."}]),
+  '3.12.03': dict(page='math-lesson-3-12-03-right-angles.html', title='Right Angles', video='g3math-12-03-learn', music='susato-mille-regretz.mp3',
+   glossary=[
+     {"t": "right angle", "alt": ["right angles"], "d": "An angle that makes a square corner, like the corner of a page.", "key": True},
+     {"t": "square corner", "alt": ["square corners"], "d": "A corner like the corner of a page. It is a right angle.", "key": True},
+     {"t": "perpendicular", "d": "Two lines are perpendicular when they meet at a right angle.", "key": True},
+     {"t": "set square", "alt": ["set squares"], "d": "A flat triangle with one square corner. It helps you check and draw right angles.", "key": True},
+     {"t": "vertex", "d": "The point where the two sides of an angle meet.", "key": True},
+     {"t": "less than", "d": "Smaller. An angle less than a right angle has a smaller opening than a square corner.", "key": True},
+     {"t": "greater than", "d": "Bigger. An angle greater than a right angle has a wider opening than a square corner.", "key": True},
+     {"t": "checker", "d": "Your folded paper corner. You fit it on a corner to see if the corner is a right angle."},
+     {"t": "papyrus", "d": "Paper made long ago in Egypt from a tall water plant."},
+     {"t": "parallel", "d": "Two straight lines that always stay the same distance apart. They never meet."},
+     {"t": "mason", "alt": ["masons"], "d": "A worker who cuts and builds with stone."},
+     {"t": "pavane", "d": "A slow, stately dance from long ago. People walked it in pairs."}]),
   '3.11.06': dict(page='math-lesson-3-11-06-kilograms-and-grams.html', title='Kilograms and Grams', video='g3math-11-06-learn', music='mozart-k525-romanze.mp3',
    glossary=[
      {"t": "kilogram", "alt": ["kilograms"], "d": "A unit for how heavy something is. 1 kilogram is 1,000 grams. We write kg.", "key": True},

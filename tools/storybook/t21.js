@@ -54,7 +54,7 @@ await p.click('[data-next-st="2"]');await p.waitForTimeout(300);
 console.log('j3 now:',await now(3));await shot(RS(3,'ben'),'a-j3-start');q=PP(455,350,120,118);await dragTo(RS(3,'ben'),'.an-end',q.x,q.y);console.log(' short stretch:',await ro(3,'ben'));
 q=PP(455,350,210,118);await dragTo(RS(3,'ben'),'.an-end',q.x,q.y);console.log(' stretch:',await ro(3,'ben'),'| now:',await now(3));
 await dragTo(RS(3,'ben'),'.an-qv',300,250);console.log(' miss:',await ro(3,'ben'));
-await dragTo(RS(3,'ben'),'.an-qv',95,350);console.log(' laid:',await ro(3,'ben'),'| now:',await now(3));await shot(RS(3,'ben'),'a-j3-model');
+await dragTo(RS(3,'ben'),'.an-qv',150,350);console.log(' laid:',await ro(3,'ben'),'| now:',await now(3));await shot(RS(3,'ben'),'a-j3-model');
 await fill(3,['P']);await check(3);console.log('j3 wrong:',await fb(3));await fill(3,['Q']);await check(3);
 await p.fill('#w-ben','Long rays do not make a bigger angle. The size of an angle is the opening. Angle Q has the wider opening, so Q is greater.');await check(3);console.log('after j3',await prog());
 // JOB 4 turn

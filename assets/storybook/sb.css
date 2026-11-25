@@ -544,3 +544,8 @@ html.sb-still *{animation:none!important;transition:none!important}
 .sb-an .an-slot.no{border-style:solid;border-color:#B23A2E;color:#B23A2E;background:#FBEDEB;font-size:17px}
 @media (max-width:560px){.sb-an .an-slot{min-width:0;width:100%}.sb-an .an-sline{font-size:16px}}
 @media (prefers-reduced-motion:reduce){.sb-an svg .an-v{animation:none}}
+/* ── ang, right angles (3.12.03) ── */
+.sb-an svg .rk-v,.sb-an svg .rk-q{cursor:pointer}
+.sb-an svg .rk-v:focus-visible,.sb-an svg .rk-q:focus-visible{outline:3px solid #C9A227;outline-offset:2px}
+.sb-an svg .rk-q:not(.done){animation:anPulse 1.6s ease-in-out infinite}
+@media (prefers-reduced-motion:reduce){.sb-an svg .rk-q{animation:none}}
