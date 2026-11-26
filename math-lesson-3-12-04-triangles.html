@@ -1,648 +1,423 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Triangles · Grade 3 Math Lesson 3.12.04</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/storybook/sb.css?v=d8bcb5f9">
+</head>
+<body class="sb">
+<div class="sb-prog" aria-label="Progress"><span class="k">📖 EUCLID'S COMPASS</span><span class="bar"><i></i></span><span class="n">0 of 8 jobs</span></div>
+<div class="sb-wrap">
 
-<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Optima Academy Online — Grade 3 Math Lesson 3.12.04</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Nunito:wght@400;700;800;900&display=swap');
-*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Nunito',Verdana,sans-serif;background:#F5F8FA;color:#0E1C42;line-height:1.6}.page-wrap{max-width:920px;margin:0 auto;background:#fff;box-shadow:0 0 40px rgba(14,28,66,.08)}
-:root{--geo:#5B52A8;--geo-light:#EEEDFA;--geo-mid:#9A92D0;--geo-deep:#2D2A5E}
-.progress-wrap{position:sticky;top:0;z-index:200;background:#0E1C42;padding:8px 20px 10px;display:flex;align-items:center;gap:14px}.progress-label{font-size:12px;color:#F5C518;font-weight:800;text-transform:uppercase}.progress-track{flex:1;height:10px;background:rgba(255,255,255,.1);border-radius:10px;overflow:hidden}.progress-fill{height:100%;width:0%;background:linear-gradient(90deg,var(--geo),#9A92D0,#F5C518,var(--geo));background-size:200% 100%;animation:shimmer 3s linear infinite;border-radius:10px;transition:width .4s}.progress-pct{font-size:13px;color:#F5C518;font-weight:800;min-width:36px;text-align:right}@keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
-.header{background:#0E1C42;border-bottom:6px solid var(--geo);padding:20px 28px 18px}.header-brand{display:flex;align-items:center;gap:12px;margin-bottom:14px}.header-logo{width:52px;height:52px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center}.header-logo img{width:48px;height:38px}.header-org{font-size:22px;color:#fff;font-weight:800}.header-sub{font-size:11px;color:var(--geo-mid)}.header-title{font-family:'Lora',serif;font-size:28px;color:#fff;font-weight:700;margin-bottom:10px}.header-title em{color:var(--geo-mid);font-style:italic}.header-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(91,82,168,.25);border:1.5px solid rgba(154,146,208,.5);border-radius:28px;padding:6px 16px}.header-badge-icon{font-size:22px}.header-badge-text{font-size:18px;color:#fff;font-weight:800}
-.quote-strip{background:linear-gradient(135deg,var(--geo-light),var(--geo-mid));border-bottom:2px solid var(--geo-mid);padding:14px 28px;text-align:center}.quote-strip-text{font-family:'Lora',serif;font-size:16px;font-style:italic;color:var(--geo-deep)}.quote-strip-attr{font-size:11px;color:var(--geo);font-weight:700;margin-top:4px;text-transform:uppercase}
-.info-strip{display:flex;flex-wrap:wrap;background:#fff;border-bottom:2px solid #E2E8F4}.info-cell{flex:1;min-width:150px;padding:12px 16px;border-right:1px solid #E2E8F4;display:flex;align-items:center;gap:10px}.info-icon{width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px}.info-label{font-size:10px;color:#7A88A8;text-transform:uppercase;font-weight:700}.info-value{font-size:16px;color:#0E1C42;font-weight:800}.info-detail{font-size:11px;color:#3A4A6B}
-.explorer-strip{display:flex;align-items:center;gap:16px;padding:12px 28px;background:linear-gradient(135deg,#1A2340,#0E1C42);border-bottom:3px solid var(--geo)}.explorer-compass{font-size:28px}.explorer-mission-label{font-size:10px;color:#F5C518;text-transform:uppercase;font-weight:800}.explorer-mission-text{font-size:15px;color:#fff;font-weight:700}
-.intro-2col{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:20px 28px 4px}@media(max-width:720px){.intro-2col{grid-template-columns:1fr}}.intro-card{background:#fff;border:2px solid #E2E8F4;border-radius:18px;overflow:hidden}.intro-card-head{display:flex;align-items:center;gap:10px;padding:14px 18px;border-bottom:2px solid}.intro-card-head-icon{width:40px;height:40px;border-radius:50%;color:#fff;font-size:20px;display:flex;align-items:center;justify-content:center}.intro-card-head-label{font-size:10px;color:#7A88A8;text-transform:uppercase;font-weight:700}.intro-card-head-title{font-size:18px;color:#0E1C42;font-weight:800}.intro-card-body{padding:14px 18px}.intro-card-body p{font-size:15px;color:#3A4A6B;line-height:1.65;margin-bottom:8px}.obj-line{display:flex;gap:8px;font-size:15px;color:#0E1C42;line-height:1.55;margin-bottom:8px}.theme-question .intro-card-head{background:#FFF8E6;border-color:#F5E6C8}.theme-question .intro-card-head-icon{background:#F5C518}.theme-objectives .intro-card-head{background:var(--geo-light);border-color:var(--geo-mid)}.theme-objectives .intro-card-head-icon{background:var(--geo)}
-.need-strip{display:flex;flex-wrap:wrap;gap:8px;padding:12px 28px 18px}.need-strip-label{font-size:13px;color:#3A4A6B;font-weight:700}.need-chip{background:#E3F8ED;border:1.5px solid #B8E8CF;border-radius:20px;padding:5px 12px;font-size:13px;color:#0E1C42;font-weight:700}
-.tab-bar{position:sticky;top:38px;z-index:100;background:#fff;border-bottom:3px solid #E2E8F4;display:flex;overflow-x:auto;box-shadow:0 -4px 0 0 #0E1C42}.tab-btn{flex:1;min-width:130px;padding:12px 8px 11px;background:transparent;border:none;border-bottom:4px solid transparent;font-family:'Nunito',sans-serif;font-size:13px;font-weight:700;color:#7A88A8;cursor:pointer;text-align:center}.tab-btn.active{color:#0E1C42;border-bottom-color:var(--geo);background:#fff}.tab-btn .tab-check{display:none;color:#2DB87A;margin-left:4px;font-weight:800}.tab-btn.visited .tab-check{display:inline}.tab-panel{display:none;padding:24px 28px 36px}.tab-panel.active{display:block}
-.activity{background:#fff;border:2px solid #E2E8F4;border-radius:18px;margin-bottom:18px}.activity.bl-geo{border-left:6px solid var(--geo)}.activity.bl-green{border-left:6px solid #2DB87A}.activity.bl-yellow{border-left:6px solid #F5C518}.activity.bl-slate{border-left:6px solid #3A6B9A}.activity.bl-navy{border-left:6px solid #0E1C42}.activity-head{display:flex;align-items:center;gap:12px;padding:14px 20px 14px 18px;border-bottom:1.5px solid #E2E8F4}.activity-num{width:38px;height:38px;border-radius:14px;color:#fff;font-size:18px;font-weight:800;display:flex;align-items:center;justify-content:center}.activity-title{font-size:19px;color:#0E1C42;font-weight:800}.activity-sub{font-size:12px;color:#7A88A8}.activity-body{padding:18px 22px}.activity-body p{font-size:16px;color:#3A4A6B;line-height:1.7;margin-bottom:12px}
-.callout{border-radius:14px;padding:16px 18px;display:flex;gap:12px;margin-bottom:14px}.callout-icon{font-size:28px}.callout p{font-size:15.5px;color:#0E1C42;line-height:1.65;margin:0}.callout-info{background:var(--geo-light);border:2px solid var(--geo-mid)}.callout-think{background:#FFF8E6;border:2px solid #F5E6C8}.callout-tip{background:#E3F8ED;border:2px solid #B8E8CF}
-.key-concept{background:var(--geo-light);border:2px solid var(--geo-mid);border-radius:14px;padding:16px 18px;margin-bottom:14px}.key-concept-label{font-size:12px;color:var(--geo-deep);text-transform:uppercase;font-weight:800;margin-bottom:8px}.key-concept p{font-size:15px;color:#0E1C42;line-height:1.7}
-.socratic-box{background:linear-gradient(135deg,var(--geo-light),var(--geo-mid));border:2px solid var(--geo-mid);border-radius:14px;padding:16px 18px;margin-bottom:14px}.socratic-label{font-size:12px;color:var(--geo-deep);text-transform:uppercase;font-weight:800;margin-bottom:8px}.socratic-q{font-size:15.5px;color:#0E1C42;font-style:italic}
-.journal-label{font-size:13px;color:#3A4A6B;font-weight:700;margin:10px 0 4px}.journal-box{width:100%;min-height:80px;border:2px solid #E2E8F4;border-radius:12px;padding:12px 14px;font-family:'Nunito',sans-serif;font-size:15px;color:#0E1C42;resize:vertical}.journal-box:focus{outline:none;border-color:var(--geo)}.saved-dot{width:8px;height:8px;border-radius:50%;background:#E2E8F4;display:inline-block;transition:.3s}.saved-dot.saved{background:#2DB87A}
-.check-btn,.geo-btn,.green-btn,.orange-btn{display:inline-flex;align-items:center;gap:6px;color:#fff;border:none;border-radius:12px;padding:10px 20px;font-size:14px;font-weight:800;cursor:pointer;font-family:'Nunito',sans-serif;margin-top:10px}.check-btn{background:#3A6B9A}.geo-btn{background:var(--geo)}.green-btn{background:#2DB87A}.orange-btn{background:#E07B39}
-.hint-callout{background:#FFF8E6;border:2px solid #F5C518;border-radius:10px;padding:10px 14px;margin:12px 0;font-size:14px;color:#5A4A00;font-weight:700}
-.task-box{background:#FAFBFF;border:2px solid #E2E8F4;border-radius:14px;padding:16px 18px;margin-bottom:14px}.task-label{font-size:12px;color:var(--geo-deep);text-transform:uppercase;font-weight:800;margin-bottom:10px}
-.feedback-branch{display:none;margin-top:16px;border-radius:14px;padding:16px}.feedback-branch.show{display:block;animation:reveal .35s}.feedback-pass{background:#E3F8ED;border:2px solid #B8E8CF}.feedback-retry{background:#FFF0E6;border:2px solid #F5C8A0}
-.value-card-row{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}.value-card{border:2px solid #E2E8F4;background:#fff;border-radius:14px;padding:10px 14px;min-width:110px;text-align:center;cursor:pointer;transition:.2s}.value-card:hover{border-color:var(--geo);background:var(--geo-light)}.value-card.good{background:#E3F8ED;border-color:#2DB87A}.value-card.bad{background:#FFF0E6;border-color:#E07B39;animation:shake .25s}.value-card .big{font-size:22px;font-weight:900;color:#0E1C42}.value-card .small{font-size:12px;color:#3A4A6B;font-weight:800}
-.fill-row{display:flex;align-items:center;gap:8px;background:#FAFBFF;border:2px solid #E2E8F4;border-radius:12px;padding:12px 14px;margin:10px 0;flex-wrap:wrap;font-size:17px;font-weight:800;color:#0E1C42}.fill-input{width:100px;padding:8px 10px;border:2.5px solid var(--geo-mid);border-radius:10px;font-size:17px;font-weight:900;color:var(--geo-deep);text-align:center;font-family:'Nunito',sans-serif;background:#fff}.fill-input:focus{outline:none;border-color:var(--geo)}.fill-input.good{border-color:#2DB87A;background:#E3F8ED;color:#1A8A5A}.fill-input.bad{border-color:#E07B39;background:#FFF0E6;animation:shake .25s}
-.q-block{background:#FAFBFF;border:2px solid #E2E8F4;border-radius:14px;padding:14px 18px;margin-bottom:14px}.q-num{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--geo);color:#fff;font-weight:800;font-size:14px;margin-right:8px;vertical-align:middle}.q-text{font-size:15.5px;color:#0E1C42;line-height:1.65}
-.gathered-box{background:#fff;border:2px solid #E2E8F4;border-radius:18px;overflow:hidden;margin-top:24px}.gathered-head{display:flex;align-items:center;gap:14px;background:linear-gradient(135deg,#0E1C42,#1A2D5A);padding:18px 22px}.gathered-head-icon{font-size:32px}.gathered-head-label{font-size:11px;color:#F5C518;font-weight:800;text-transform:uppercase}.gathered-head-title{font-size:18px;color:#fff;font-weight:800}.gathered-body{padding:16px 22px}.gathered-output{width:100%;min-height:160px;border:2px solid #E2E8F4;border-radius:12px;padding:14px;font-family:monospace;font-size:13px;background:#FAFBFF}
-.tab-next-wrap{text-align:center;padding:24px 0 8px}.tab-transition-voice{font-family:'Lora',serif;font-size:15px;font-style:italic;color:var(--geo-deep);margin-bottom:12px}.tab-next-btn{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--geo),#2D2A5E);color:#fff;border:none;border-radius:28px;padding:13px 28px;font-size:15px;font-weight:800;cursor:pointer;box-shadow:0 4px 14px rgba(45,42,94,.3);animation:float 3s infinite}
-.turn-in-card{background:#fff;border:2px solid #E2E8F4;border-radius:18px;overflow:hidden;margin-top:18px}.turn-in-header{display:flex;align-items:center;gap:14px;background:var(--geo-light);padding:18px 22px;border-bottom:2px solid var(--geo-mid)}.turn-in-header-icon{font-size:36px}.turn-in-header-label{font-size:11px;color:var(--geo-deep);font-weight:800;text-transform:uppercase}.turn-in-header-title{font-family:'Lora',serif;font-size:22px;color:#0E1C42;font-weight:700}.turn-in-body{padding:18px 22px 20px}.turn-in-item{display:flex;align-items:center;gap:14px;padding:12px 16px;background:#FAFBFF;border:1.5px solid #E2E8F4;border-radius:12px;cursor:pointer;margin-bottom:10px}.turn-in-item.checked{background:#E3F8ED;border-color:#B8E8CF}.turn-in-check{width:26px;height:26px;border-radius:8px;border:2px solid var(--geo-mid);background:#fff;display:flex;align-items:center;justify-content:center;font-size:16px}.turn-in-item.checked .turn-in-check{background:#2DB87A;border-color:#2DB87A;color:#fff}
-.footer{background:#0E1C42;border-top:4px solid var(--geo);padding:18px 28px;text-align:center}.footer-main{font-size:14px;color:#fff;margin-bottom:4px}.footer-main span{color:var(--geo-mid);font-weight:700}.footer-sub{font-size:12px;color:rgba(255,255,255,.5)}.footer-copy{font-size:11px;color:rgba(255,255,255,.3)}
-.inline-feedback{display:none;margin:12px 0;border-radius:14px;padding:12px 14px;font-weight:800;line-height:1.5}.inline-feedback.show{display:block;animation:reveal .3s}.inline-feedback.good{background:#E3F8ED;border:2px solid #B8E8CF;color:#0E1C42}.inline-feedback.think{background:#FFF3DC;border:2px solid #F5E6C8;color:#5A4A3A}
-.vocab-section{background:#fff;border:2px solid var(--geo-mid);border-left:6px solid var(--geo);border-radius:18px;padding:14px 20px;margin:0 0 20px}.vocab-section-title{font-size:16px;color:#0E1C42;font-weight:900;margin-bottom:4px}
-.bubble-row{display:flex;gap:12px;flex-wrap:wrap;margin:14px 0}.bubble{display:flex;gap:10px;flex:1 1 260px;max-width:340px;background:#fff;border:2px solid #E2E8F4;border-radius:18px;padding:12px 14px}.bubble.atlas{border-left:5px solid #6B3FA0;background:linear-gradient(135deg,#fff,#F8F4FF)}.bubble.hazel{border-left:5px solid #2DB87A;background:linear-gradient(135deg,#fff,#F4FBF7)}.bubble.felix{border-left:5px solid #F5C518;background:linear-gradient(135deg,#fff,#FEFBEB)}.bubble.cora{border-left:5px solid #3A6B9A;background:linear-gradient(135deg,#fff,#F4F8FC)}.bubble-avatar{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:900;color:#fff;flex-shrink:0;font-family:'Lora',serif}.bubble.atlas .bubble-avatar{background:#6B3FA0}.bubble.hazel .bubble-avatar{background:#2DB87A}.bubble.felix .bubble-avatar{background:#F5C518;color:#0E1C42}.bubble.cora .bubble-avatar{background:#3A6B9A}.bubble-body{flex:1;min-width:0}.bubble-name{font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.7px;margin-bottom:3px;color:#6B3FA0}.bubble.hazel .bubble-name{color:#1A8A5A}.bubble.felix .bubble-name{color:#8A6D2B}.bubble.cora .bubble-name{color:#1A6B8E}.bubble-text{font-size:14.5px;color:#0E1C42;line-height:1.5;font-weight:600;font-family:'Lora',serif;font-style:italic}
-/* ═══ VIDEO PLACEHOLDER ═══ */
-.video-placeholder-wrap {
-  display: none;
-  border-radius: 14px; overflow: hidden; margin: 0 0 18px;
-  border: 2px dashed rgba(107,63,160,0.4);
-  background: linear-gradient(135deg, #0E1C42, #1A2D5A);
-}
-.video-placeholder-inner {
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-  text-align: center; padding: 28px 20px;
-}
-.video-placeholder-inner .vp-icon { font-size: 34px; margin-bottom: 6px; }
-.video-placeholder-inner .vp-label {
-  font-size: 10px; color: #F5C518; text-transform: uppercase;
-  letter-spacing: 2px; font-weight: 800; margin-bottom: 4px;
-}
-.video-placeholder-inner .vp-title {
-  font-size: 16px; font-weight: 800; color: #fff; margin-bottom: 8px;
-}
-.video-placeholder-inner .vp-slot {
-  font-family: monospace; font-size: 11px; color: #6B3FA0;
-  background: rgba(107,63,160,0.15);
-  padding: 3px 10px; border-radius: 4px;
-}
-.video-placeholder-inner .vp-notes {
-  font-size: 12px; color: rgba(255,255,255,0.8); font-style: italic;
-  margin-top: 10px; text-align: left; padding: 10px 12px;
-  background: rgba(0,0,0,0.25); border-radius: 6px; border-left: 3px solid #6B3FA0;
-}
+<header class="sb-head">
+  <div class="sb-brand"><img alt="" src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png"><div><b>Optima Academy Online</b><small>An Education Experience Company</small></div></div>
+  <h1 class="sb-title">Triangles</h1>
+  <div class="sb-chips">
+    <span class="sb-chip lead">Lesson 3.12.04 · Unit 12 · Lesson 4</span>
+    <button type="button" class="sb-chip" id="sb-read">🔊 Read aloud</button>
+    <button type="button" class="sb-chip" data-pop="#sb-std" aria-expanded="false">Standards ▾</button>
+    <button type="button" class="sb-chip" id="sb-music" aria-pressed="false">🎵 Music: off</button>
+    <button type="button" class="sb-chip" id="sb-motion" aria-pressed="true">✨ Motion: on</button>
+  </div>
+  <div class="sb-pop" id="sb-std"><b>MA.3.GR.1.1</b> Describe and draw points, lines, line segments, rays, intersecting lines, perpendicular lines and parallel lines. Find them in shapes.<br><b>MA.K12.MTR.2.1</b> Show math in many ways. <b>MTR.5.1</b> Use patterns and structure. <b>MTR.6.1</b> Check that answers make sense.<br><small>Today: build triangles, name their sides, vertices and angles, and tell why a shape is or is not a triangle. Dimensions Math 3B, Chapter 12, Lesson 4 · Triangles</small></div>
+</header>
 
-/* TRIANGLE BUILDER */
-.builder-frame{background:#fff;border:2px solid var(--geo-mid);border-radius:16px;padding:18px;margin:14px 0}
-.builder-canvas{width:100%;max-width:500px;margin:0 auto;display:block;border:2px dashed var(--geo-mid);border-radius:12px;background:#FAFBFF;cursor:crosshair}
-.builder-readout{background:linear-gradient(135deg,var(--geo-light),#9A92D0);border:2px solid var(--geo-mid);border-radius:12px;padding:14px;text-align:center;margin-top:14px;font-family:'Lora',serif;font-weight:900;color:#0E1C42;font-size:18px}
-.builder-challenge{background:#FFF8E6;border:2px solid #F5E6C8;border-radius:12px;padding:12px 16px;text-align:center;font-family:'Lora',serif;font-size:15px;color:#0E1C42;font-weight:700;margin-top:10px}
-.builder-reset-btn{background:#7A88A8;color:#fff;border:none;border-radius:14px;padding:10px 18px;font-size:14px;font-weight:900;cursor:pointer;font-family:'Nunito',sans-serif;margin-top:6px}
-
-@keyframes reveal{0%{opacity:0;transform:translateY(10px)}100%{opacity:1;transform:translateY(0)}}@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}@keyframes mini{0%{transform:translateY(0) scale(0);opacity:1}50%{transform:translateY(-30px) scale(1.2)}100%{transform:translateY(-60px) scale(.6);opacity:0}}
-
-.practice-note { font-size: 12px; color: #8899AA; text-align: center; margin: 6px 0 2px; font-style: italic; line-height: 1.4; }
-</style>
-<style id="fluencyStyles">
-.fluency-box{background:#fff;border:2px solid #F5C518;border-radius:18px;overflow:hidden;margin-bottom:22px;font-family:'Nunito',sans-serif}
-.fluency-head{display:flex;align-items:center;gap:12px;background:linear-gradient(135deg,#F5C518,#E8B723);padding:14px 20px;flex-wrap:wrap}
-.fluency-head-icon{font-size:26px;line-height:1}
-.fluency-head-label{font-size:10px;color:#0E1C42;font-weight:800;text-transform:uppercase;letter-spacing:0.5px}
-.fluency-head-title{font-size:15px;color:#0E1C42;font-weight:800}
-.fluency-timer-ui{margin-left:auto;display:flex;align-items:center;gap:10px}
-.fluency-timer-display{font-size:20px;font-weight:800;color:#0E1C42;min-width:46px;text-align:center}
-.fluency-start-btn{background:#0E1C42;color:#fff;border:none;border-radius:10px;padding:8px 14px;font-weight:700;font-size:12px;cursor:pointer}
-.fluency-start-btn:disabled{opacity:0.55;cursor:default}
-.fluency-body{padding:16px 20px}
-.fluency-instructions{font-size:13px;color:#4A5568;margin:0 0 12px}
-.fluency-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(128px,1fr));gap:10px;margin-bottom:14px}
-.fluency-item{display:flex;align-items:center;gap:6px;background:#FAFBFF;border:1.5px solid #E2E8F4;border-radius:10px;padding:8px 10px}
-.fluency-item.fluency-correct{border-color:#2DB87A;background:#EAFBF3}
-.fluency-item.fluency-wrong{border-color:#E07B39;background:#FDF1E9}
-.fluency-q{font-size:13px;font-weight:700;color:#0E1C42;white-space:nowrap}
-.fluency-input{width:46px;border:1.5px solid #CBD5E8;border-radius:6px;padding:4px;font-size:14px;text-align:center;font-family:'Nunito',sans-serif}
-.fluency-input:disabled{background:#F0F2F8}
-.fluency-check-btn{background:#2DB87A;color:#fff;border:none;border-radius:10px;padding:10px 18px;font-weight:800;font-size:13px;cursor:pointer}
-.fluency-check-btn:disabled{opacity:0.55;cursor:default}
-.fluency-result{margin-top:10px;font-size:14px;color:#0E1C42;font-weight:700}
-</style></head><body>
-<div class="page-wrap">
-
-<!-- ═══════════════════════════════════════════════════════════════════════
-     OPTIMA READ-ALOUD PLAYER — drop-in snippet for GitHub-hosted lesson pages
-     ═══════════════════════════════════════════════════════════════════════ -->
-<div id="optima-read-aloud">
-<style>
-    #optima-read-aloud { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 14px 18px; margin: 0 0 20px 0; }
-    #optima-read-aloud .ora-kicker { font-size: 11px; color: #1B6A94; letter-spacing: 0.4px; margin-bottom: 10px; }
-    #optima-read-aloud .ora-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
-    #optima-read-aloud .ora-controls button { border-radius: 8px; padding: 8px 16px; font-size: 14px; cursor: pointer; font-family: inherit; transition: all 0.15s; }
-    #ora-play { background: #0E1C42; color: #FFFFFF; border: 1.5px solid #0E1C42; }
-    #ora-play:hover:enabled { background: #1B2D5E; }
-    #ora-play:disabled { background: #D0D9E8; border-color: #D0D9E8; color: #6b7a99; cursor: default; }
-    #ora-stop { background: #FFFFFF; color: #0E1C42; border: 1.5px solid #D0D9E8; }
-    #ora-stop:hover:enabled { background: #F4F6FA; border-color: #55C8E8; }
-    #ora-stop:disabled { color: #999; border-color: #E4E9F2; cursor: default; }
-    #optima-read-aloud .ora-speed { font-size: 12px; color: #6b7a99; display: flex; align-items: center; gap: 6px; }
-    #ora-rate { font-family: inherit; font-size: 13px; color: #0E1C42; border: 1.5px solid #D0D9E8; border-radius: 6px; padding: 5px 8px; background: #FFFFFF; }
-    #ora-status { font-size: 12px; color: #666; }
-    .ora-highlight { background: #FDF3E3 !important; box-shadow: inset 4px 0 0 #C7922C; border-radius: 4px; transition: background 0.2s; }
-</style>
-    <div class="ora-kicker">&#128266; READ ALOUD &mdash; LISTEN TO THIS PAGE</div>
-    <div class="ora-controls">
-        <button id="ora-play" type="button" aria-label="Listen to this page">&#9654;&#65039; Listen</button>
-<p class="practice-note">Interactive practice tools on this page won't save if you leave — your written answers below are saved automatically.</p>
-
-        <button id="ora-stop" type="button" aria-label="Stop reading" disabled>&#9632; Stop</button>
-        <label class="ora-speed">Speed
-            <select id="ora-rate" aria-label="Reading speed">
-                <option value="0.8">Slower</option>
-                <option value="1" selected>Normal</option>
-                <option value="1.25">Faster</option>
-            </select>
-        </label>
-        <span id="ora-status" role="status" aria-live="polite"></span>
+<!-- the open book -->
+<div class="sb-book" aria-label="Opti's storybook, open to Chapter 12">
+  <div class="sb-book-in">
+    <div class="sb-pg">
+      <figure class="sb-plate"><img src="images/storybook/sb-byrne-prop20.jpg" alt="An old printed page. A big triangle with a blue side, a red side and a black bottom side. A yellow line and a dotted line make the blue and red sides into one long line. Small blue, red and yellow wedges mark the angles."><figcaption>Euclid shows that any two sides of a triangle are longer than the third, from Oliver Byrne's book, 1847</figcaption></figure>
     </div>
-<script>
-(function () {
-    "use strict";
-    var playBtn  = document.getElementById("ora-play");
-    var stopBtn  = document.getElementById("ora-stop");
-    var rateSel  = document.getElementById("ora-rate");
-    var statusEl = document.getElementById("ora-status");
-
-    if (!("speechSynthesis" in window) || !("SpeechSynthesisUtterance" in window)) {
-        playBtn.disabled = true;
-        rateSel.disabled = true;
-        statusEl.textContent = "Read-aloud is not supported in this browser.";
-        return;
-    }
-
-    var LABEL_PLAY   = "▶️ Listen";
-    var LABEL_PAUSE  = "⏸️ Pause";
-    var LABEL_RESUME = "▶️ Resume";
-    var BLOCK_SEL = "p, li, h1, h2, h3, h4, h5, h6, blockquote, td, th, dt, dd, figcaption, div";
-    var SKIP_SEL  = "#optima-read-aloud, [data-ra-skip], button, script, style, select, noscript, iframe";
-
-    var queue = [];
-    var idx = 0;
-    var playing = false, paused = false, stopping = false;
-    var currentBlock = null;
-    var currentUtterance = null;
-
-    var voices = [];
-    function loadVoices() { voices = window.speechSynthesis.getVoices(); }
-    loadVoices();
-    if ("onvoiceschanged" in window.speechSynthesis) {
-        window.speechSynthesis.onvoiceschanged = loadVoices;
-    }
-    function pickVoice() {
-        if (!voices.length) loadVoices();
-        var en = voices.filter(function (v) { return /^en/i.test(v.lang); });
-        return en.filter(function (v) { return /natural/i.test(v.name); })[0]
-            || en.filter(function (v) { return /google us english/i.test(v.name); })[0]
-            || en.filter(function (v) { return v.default; })[0]
-            || en[0] || null;
-    }
-
-    function isVisible(el) {
-        return !!(el.offsetWidth || el.offsetHeight || el.getClientRects().length);
-    }
-
-    function collectQueue() {
-        var root = document.querySelector("[data-readaloud-root]")
-                || document.querySelector(".canvas-frame")
-                || document.body;
-        var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null, false);
-        var items = [];
-        var node;
-        while ((node = walker.nextNode())) {
-            if (!/\S/.test(node.textContent)) continue;
-            var el = node.parentElement;
-            if (!el || el.closest(SKIP_SEL)) continue;
-            if (!isVisible(el)) continue;
-            var block = el.closest(BLOCK_SEL) || root;
-            var last = items[items.length - 1];
-            if (last && last.el === block) last.text += " " + node.textContent;
-            else items.push({ el: block, text: node.textContent });
-        }
-        var q = [];
-        items.forEach(function (item) {
-            var clean = item.text.replace(/[\u{1F600}-\u{1F64F}\u{1F300}-\u{1F5FF}\u{1F680}-\u{1F6FF}\u{1F1E0}-\u{1F1FF}\u{1F900}-\u{1F9FF}\u{1FA00}-\u{1FA6F}\u{1FA70}-\u{1FAFF}\u{2600}-\u{27BF}\u{2300}-\u{23FF}\u{2B50}\u{2B55}\u{25A0}-\u{25FF}\u{2702}-\u{27B0}\u{FE00}-\u{FE0F}\u{200D}\u{20E3}\u{E0020}-\u{E007F}]/gu, "").replace(/\s+/g, " ").trim();
-            if (!clean) return;
-            var sentences = clean.match(/[^.!?]+[.!?]+["”’')\]]*\s*|[^.!?]+$/g) || [clean];
-            sentences.forEach(function (s) {
-                s = s.trim();
-                if (s) q.push({ el: item.el, text: s });
-            });
-        });
-        return q;
-    }
-
-    function highlight(el) {
-        if (el === currentBlock) return;
-        clearHighlight();
-        currentBlock = el;
-        if (el && el !== document.body) {
-            el.classList.add("ora-highlight");
-            try { el.scrollIntoView({ behavior: "smooth", block: "nearest" }); } catch (e) {}
-        }
-    }
-    function clearHighlight() {
-        if (currentBlock) currentBlock.classList.remove("ora-highlight");
-        currentBlock = null;
-    }
-
-    function speakNext() {
-        if (idx >= queue.length) { finish("Finished reading this page."); return; }
-        var item = queue[idx];
-        highlight(item.el);
-        var u = new SpeechSynthesisUtterance(item.text);
-        u.rate = parseFloat(rateSel.value) || 1;
-        var v = pickVoice();
-        if (v) u.voice = v;
-        u.onend = function () {
-            if (stopping) return;
-            idx++;
-            speakNext();
-        };
-        u.onerror = function (e) {
-            if (stopping || e.error === "canceled" || e.error === "interrupted") return;
-            idx++;
-            speakNext();
-        };
-        currentUtterance = u;
-        window.speechSynthesis.speak(u);
-        statusEl.textContent = "Reading… " + (idx + 1) + " / " + queue.length;
-    }
-
-    function finish(message) {
-        playing = false;
-        paused = false;
-        clearHighlight();
-        playBtn.textContent = LABEL_PLAY;
-        stopBtn.disabled = true;
-        statusEl.textContent = message || "";
-        currentUtterance = null;
-    }
-
-    playBtn.addEventListener("click", function () {
-        if (playing && !paused) {
-            window.speechSynthesis.pause();
-            paused = true;
-            playBtn.textContent = LABEL_RESUME;
-            statusEl.textContent = "Paused";
-            return;
-        }
-        if (playing && paused) {
-            window.speechSynthesis.resume();
-            paused = false;
-            playBtn.textContent = LABEL_PAUSE;
-            statusEl.textContent = "Reading… " + (idx + 1) + " / " + queue.length;
-            return;
-        }
-        queue = collectQueue();
-        if (!queue.length) { statusEl.textContent = "Nothing to read on this page."; return; }
-        idx = 0;
-        stopping = false;
-        playing = true;
-        paused = false;
-        window.speechSynthesis.cancel();
-        playBtn.textContent = LABEL_PAUSE;
-        stopBtn.disabled = false;
-        speakNext();
-    });
-
-    stopBtn.addEventListener("click", function () {
-        stopping = true;
-        window.speechSynthesis.cancel();
-        finish("");
-    });
-
-    rateSel.addEventListener("change", function () {
-        if (!playing || paused) return;
-        stopping = true;
-        window.speechSynthesis.cancel();
-        setTimeout(function () { stopping = false; speakNext(); }, 60);
-    });
-
-    window.addEventListener("pagehide", function () { window.speechSynthesis.cancel(); });
-})();
-</script>
+    <div class="sb-pg r">
+      <div class="sb-chap">Chapter 12</div>
+      <div class="sb-chap-t">Euclid's Compass</div>
+      <div class="sb-orn" aria-hidden="true"></div>
+      <p class="sb-chap-s">Alexandria, Egypt · about 300 BC</p>
+      <div class="sb-chap-l">Lesson 4 · Triangles</div>
+    </div>
+  </div>
+  <img class="sb-owl" src="images/storybook/opti-owl.png" alt="Opti the owl, sitting on the open book">
 </div>
-<!-- ═══ END OPTIMA READ-ALOUD PLAYER ═══ -->
 
-<div class="progress-wrap"><span class="progress-label">Lesson Progress</span><div class="progress-track"><div class="progress-fill" id="pf"></div></div><span class="progress-pct" id="pp">0%</span></div>
-<div class="header">
-<div class="header-brand"><div class="header-logo"><img alt="Optima" src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png"/></div><div><div class="header-org">Optima Academy Online</div><div class="header-sub">An Education Experience Company</div></div></div>
-<div class="header-title"><em>Triangles</em></div>
-<div class="header-badge"><span class="header-badge-icon">🔺</span><span class="header-badge-text">Lesson 3.12.04 · U3 Apply</span></div>
-</div>
-<div class="quote-strip"><div class="quote-strip-text">"Three sides, three angles — that’s all it takes to make a triangle."</div><div class="quote-strip-attr">Geometry fact</div></div>
-<div class="info-strip">
-<div class="info-cell"><div class="info-icon" style="background:var(--geo-light);">📐</div><div><div class="info-label">Unit</div><div class="info-value">Unit 12</div><div class="info-detail">Geometry</div></div></div>
-<div class="info-cell"><div class="info-icon" style="background:#E3F8ED;">📅</div><div><div class="info-label">Lesson</div><div class="info-value">3.12.04</div><div class="info-detail">U3 Apply</div></div></div>
-<div class="info-cell"><div class="info-icon" style="background:#EAF0FF;">📐</div><div><div class="info-label">Standard</div><div class="info-value">MA.3.GR.1.1</div><div class="info-detail">classify shapes</div></div></div>
-<div class="info-cell"><div class="info-icon" style="background:#FFF8E6;">🔧</div><div><div class="info-label">Tool</div><div class="info-value">Triangle Builder</div><div class="info-detail">build triangles on a grid</div></div></div>
-</div>
-<div class="explorer-strip"><span class="explorer-compass">🧭</span><div><div class="explorer-mission-label">Today’s Mission</div><div class="explorer-mission-text">Build triangles — three sides, three corners, endless possibilities.</div></div></div>
-<div class="intro-2col">
-<div class="intro-card theme-question"><div class="intro-card-head"><div class="intro-card-head-icon">❓</div><div><div class="intro-card-head-label">Essential Question</div><div class="intro-card-head-title">What makes a triangle a triangle?</div></div></div><div class="intro-card-body"><p>Three straight sides that connect end-to-end, closing up completely — that’s the whole recipe.</p></div></div>
-<div class="intro-card theme-objectives"><div class="intro-card-head"><div class="intro-card-head-icon">🎯</div><div><div class="intro-card-head-label">Today’s Objectives</div><div class="intro-card-head-title">You will…</div></div></div><div class="intro-card-body">
-<div class="obj-line"><span style="flex-shrink:0">🔍</span><span><strong>Identify</strong> triangles by their defining attributes (3 sides, 3 angles).</span></div>
-<div class="obj-line"><span style="flex-shrink:0">✏️</span><span><strong>Draw</strong> triangles on a grid.</span></div>
-</div></div>
-</div>
-<div class="need-strip"><span class="need-strip-label">You’ll need:</span><span class="need-chip">📓 Math Journal</span><span class="need-chip">✏️ Pencil</span></div>
-<div class="tab-bar" id="tabBar">
-<button class="tab-btn active" data-tab="warmup" onclick="switchTab('warmup')">🔍 Warm-Up <span class="tab-check">✓</span></button>
-<button class="tab-btn" data-tab="learn" onclick="switchTab('learn')">📐 Learn <span class="tab-check">✓</span></button>
-
-<button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">🌟 Show What You Know <span class="tab-check">✓</span></button>
-</div>
-<!-- WARM-UP TAB -->
-<div class="tab-panel active" id="tab-warmup">
-<!-- ═══ INTRODUCTION VIDEO ═══ -->
-<div class="video-placeholder-wrap">
-<!-- slot: g3math-12-04 -->
-<div class="video-placeholder-inner">
-  <span class="vp-icon">&#x1F3AC;</span>
-  <div class="vp-label">Introduction Video</div>
-  <div class="vp-title">Optima Academy Online — Grade 3 Math Lesson 3.12.04</div>
-  <div class="vp-slot">g3math-12-04</div>
-  <div class="vp-notes">
-    <strong>Teacher recording notes:</strong> Introduction video for this lesson.
+<div class="sb-intro">
+  <div class="sb-card sb-eq">
+    <span class="sb-k">Essential Question</span>
+    <h3>What makes a shape a triangle?</h3>
+    <div class="sb-stage" role="img" aria-label="Three colored rods, a 3, a 5 and a 7, joined end to end into a closed triangle." style="margin:6px 0;max-width:260px"><svg viewBox="0 0 260 190"><polygon points="30,160 230,160 102,36" fill="none"/><g stroke="rgba(0,0,0,.45)" stroke-width="1.5"><polygon points="30,153 230,153 230,167 30,167" fill="#2C2C2C"/><polygon points="24,155 96,33 108,39 36,165" fill="#7BC043"/><polygon points="97,42 108,30 236,155 224,165" fill="#F4D03F"/></g><text x="130" y="165" text-anchor="middle" font-size="12" font-weight="800" fill="#fff">7</text><text x="58" y="98" text-anchor="middle" font-size="12" font-weight="800" fill="#fff">3</text><text x="172" y="98" text-anchor="middle" font-size="12" font-weight="800" fill="#0E1C42">5</text></svg></div>
+    <p style="margin:4px 0 0">3 straight sides that meet end to end, with no gaps.</p>
+  </div>
+  <div class="sb-card sb-obj">
+    <span class="sb-k">Today's Objectives</span>
+    <h3>You will…</h3>
+    <ul>
+      <li><b>Build</b> triangles with rods and on a geoboard.</li>
+      <li><b>Name</b> the sides, vertices and angles of a triangle.</li>
+      <li><b>Tell</b> why a shape is or is not a triangle.</li>
+    </ul>
   </div>
 </div>
+
+<div class="sb-tabs" role="tablist" aria-label="Lesson sections">
+  <button class="sb-tab" role="tab" data-tab="warmup" aria-controls="tab-warmup">🔍 Warm-Up <span class="ck">✓</span></button>
+  <button class="sb-tab" role="tab" data-tab="learn" aria-controls="tab-learn">📐 Lesson <span class="ck">✓</span></button>
+  <button class="sb-tab" role="tab" data-tab="swyk" aria-controls="tab-swyk">🌟 Show What You Know <span class="ck">✓</span></button>
 </div>
 
-<div class="fluency-box" data-timed="false">
-<div class="fluency-head">
-<div class="fluency-head-icon">✍️</div>
-<div><div class="fluency-head-label">FLUENCY WARM-UP</div><div class="fluency-head-title">Mixed Multiplication Facts</div></div>
-</div>
-<div class="fluency-body">
-<p class="fluency-instructions">Warm up your fact fluency before today’s lesson. Work through these, then check your answers.</p>
-<div class="fluency-grid" id="fluencyGrid">
-<div class="fluency-item"><span class="fluency-q">6 × 8 =</span><input autocomplete="off" class="fluency-input" data-answer="48" inputmode="numeric" type="text"/></div>
-<div class="fluency-item"><span class="fluency-q">7 × 9 =</span><input autocomplete="off" class="fluency-input" data-answer="63" inputmode="numeric" type="text"/></div>
-<div class="fluency-item"><span class="fluency-q">8 × 4 =</span><input autocomplete="off" class="fluency-input" data-answer="32" inputmode="numeric" type="text"/></div>
-<div class="fluency-item"><span class="fluency-q">9 × 6 =</span><input autocomplete="off" class="fluency-input" data-answer="54" inputmode="numeric" type="text"/></div>
-<div class="fluency-item"><span class="fluency-q">7 × 7 =</span><input autocomplete="off" class="fluency-input" data-answer="49" inputmode="numeric" type="text"/></div>
-<div class="fluency-item"><span class="fluency-q">8 × 8 =</span><input autocomplete="off" class="fluency-input" data-answer="64" inputmode="numeric" type="text"/></div>
-<div class="fluency-item"><span class="fluency-q">6 × 9 =</span><input autocomplete="off" class="fluency-input" data-answer="54" inputmode="numeric" type="text"/></div>
-<div class="fluency-item"><span class="fluency-q">9 × 4 =</span><input autocomplete="off" class="fluency-input" data-answer="36" inputmode="numeric" type="text"/></div>
-<div class="fluency-item"><span class="fluency-q">7 × 6 =</span><input autocomplete="off" class="fluency-input" data-answer="42" inputmode="numeric" type="text"/></div>
-<div class="fluency-item"><span class="fluency-q">8 × 9 =</span><input autocomplete="off" class="fluency-input" data-answer="72" inputmode="numeric" type="text"/></div>
-</div>
-<button class="fluency-check-btn" id="fluencyCheckBtn" onclick="fluencyCheck()">Check My Answers</button>
-<div class="fluency-result" id="fluencyResult"></div>
-</div>
-<textarea class="journal-box" data-label="Fluency Warm-Up (Mixed Multiplication Facts)" id="fluencyJournal" readonly="" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;"></textarea>
+<!-- ══════════════ WARM-UP ══════════════ -->
+<section class="sb-panel tab-panel" id="tab-warmup" role="tabpanel">
+
+<div class="sb-opti" data-slot="warm-1">Hoo! We're back in Alexandria with Euclid's book. Near the start, he names a shape with three straight sides, a triangle. Later, he proves that any two sides of a triangle together are longer than the third side. Builders in Greece put triangles on their temples, too. Today you'll build triangles from rods.</div>
+
+<div class="sb-video pq-vslot" data-slot="warm">
+  <video controls preload="metadata" playsinline poster="assets/video/g3math-12-04-warm.jpg" src="assets/video/g3math-12-04-warm.mp4"></video>
+  <div class="cap">🎬 Opti Opens Lesson 4: Triangles</div>
 </div>
 
-<div class="activity bl-yellow"><div class="activity-head"><div class="activity-num" style="background:#F5C518;color:#0E1C42;">🔎</div><div><div class="activity-title">Readiness Check</div><div class="activity-sub">Tap the card.</div></div></div><div class="activity-body">
-<p>How many right angles does a rectangle have?</p>
-<div class="value-card-row">
-<div class="value-card" onclick="rA(this,true)"><div class="big">4</div></div>
-<div class="value-card" onclick="rA(this,false)"><div class="big">2</div></div>
-<div class="value-card" onclick="rA(this,false)"><div class="big">3</div></div>
-</div>
-<div class="inline-feedback" id="rA-fb"></div>
-<div class="hint-callout">A rectangle has a right angle at every corner — that’s 4 total.</div>
-</div></div>
-
-<div class="activity bl-yellow"><div class="activity-head"><div class="activity-num" style="background:#F5C518;color:#0E1C42;">🤔</div><div><div class="activity-title">Think About It</div></div></div><div class="activity-body">
-<div class="callout callout-think"><span class="callout-icon">🧠</span><p>Atlas is building a kite frame. Kite frames use triangles because they’re strong shapes. How many sides does a triangle have?</p></div>
-<div class="value-card-row">
-<div class="value-card" onclick="rT(this,true)"><div class="big">3</div></div>
-<div class="value-card" onclick="rT(this,false)"><div class="big">4</div></div>
-<div class="value-card" onclick="rT(this,false)"><div class="big">2</div></div>
-</div>
-<div class="inline-feedback" id="rT-fb"></div>
-<div class="olt-nudge"><a href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=geoboard&amp;st=1" target="_blank" rel="noopener" title="Open the Geoboard to stretch bands into shapes and check the sides."><span aria-hidden="true">🧮</span> Try the <b>Geoboard</b> <span aria-hidden="true">↗</span></a></div><div class="journal-label">✏️ What else do you know about triangles? <span class="saved-dot" id="dt"></span></div>
-<textarea class="journal-box" data-label="Warm-Up journal" id="j-t01" oninput="autoSave(this,'dt')" placeholder=""></textarea>
-</div></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Three sides. Three angles. One shape — let’s build it.</p><button class="tab-next-btn" onclick="switchTab('learn')">Continue to 📐 Learn →</button></div>
-</div>
-<!-- LEARN TAB -->
-<div class="tab-panel" id="tab-learn">
-<div class="vocab-section"><div class="vocab-section-title">Vocabulary</div>
-<p style="font-size:14px;color:#3A4A6B;font-family:'Lora',serif;font-style:italic;margin-bottom:10px;"><strong>Triangle</strong> — a closed shape with exactly 3 straight sides and 3 angles.</p>
-<p style="font-size:14px;color:#3A4A6B;font-family:'Lora',serif;font-style:italic;margin-bottom:10px;"><strong>Side</strong> — a straight line segment that forms part of a shape’s boundary.</p>
-<p style="font-size:14px;color:#3A4A6B;font-family:'Lora',serif;font-style:italic;margin-bottom:10px;"><strong>Vertex</strong> — a corner point where two sides meet. A triangle has 3 vertices.</p>
-<p style="font-size:14px;color:#3A4A6B;font-family:'Lora',serif;font-style:italic;"><strong>Closed shape</strong> — a shape whose sides connect with no gaps.</p>
+<div class="sb-card">
+  <span class="sb-k">From the past</span>
+  <h3>A triangle on a temple</h3>
+  <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>This is the Temple of Hephaestus in Athens, Greece. Builders finished most of it about 2,450 years ago. That is about 150 years before Euclid wrote his book. Look at the top of the front, above the columns. The roof makes a big triangle there. It has 3 straight sides that meet at 3 corners. The second picture is a close-up of that triangle.</p></div>
+  <div class="sb-art">
+    <figure class="sb-fig"><img src="images/storybook/sb-hephaestus-temple.jpg" alt="An old stone temple with many tall columns under a blue sky. The front of the roof makes a wide triangle above the columns."><figcaption>The Temple of Hephaestus, Athens, Greece, built about 450 BC.<small>Photo by George E. Koronaios, 2020. Public domain (CC0), via Wikimedia Commons.</small></figcaption></figure>
+    <figure class="sb-fig"><img src="images/storybook/sb-hephaestus-front.jpg" alt="A close-up of the temple's front. Above the columns, two sloping stone edges and a flat stone edge make a wide triangle."><figcaption>A close-up of the triangle at the front of the roof.<small>Photo by George E. Koronaios, 2020. Public domain (CC0), via Wikimedia Commons.</small></figcaption></figure>
+  </div>
+  <p style="margin:6px 0 0">Greek builders put a big triangle at each end of the roof. Later, in Alexandria, Euclid wrote down what is true about every triangle.</p>
+  <p style="margin:6px 0 0"><b>Today's math:</b> build triangles, and find out what makes a shape a triangle.</p>
 </div>
 
-<div class="callout callout-info"><span class="callout-icon">🔧</span><p><strong>Try the Triangle Builder.</strong> Place 3 points on the grid and watch the triangle form.</p></div>
-<!-- CENTERPIECE: Triangle Builder -->
-<div class="activity bl-geo"><div class="activity-head"><div class="activity-num" style="background:var(--geo);">🔺</div><div><div class="activity-title">Triangle Builder</div></div></div><div class="activity-body">
-<p style="font-family:'Lora',serif;font-size:14.5px;font-style:italic;color:var(--geo-deep);margin-bottom:8px;">Click 3 points on the grid. The triangle draws itself.</p>
-<div class="builder-frame">
-<canvas class="builder-canvas" height="400" id="tb-canvas" width="500"></canvas>
-<div class="builder-readout" id="tb-readout">Place 3 points to build a triangle.</div>
-<div class="builder-challenge" id="tb-challenge">Build the tallest triangle you can.</div>
-<div style="text-align:center;"><button class="builder-reset-btn" onclick="tbReset()">↩ Clear &amp; Try Again</button></div>
-</div>
-</div></div>
-<div class="key-concept"><div class="key-concept-label">📐 Key Concept — What You Just Saw</div>
-<p><strong>A triangle is a closed shape with exactly 3 straight sides and 3 angles.</strong> Every triangle has 3 vertices (corners). Triangles can look very different from each other, but they all share those three features: 3 sides, 3 angles, closed.</p>
+<div class="video-placeholder-wrap">
+<!-- slot: g3math-12-04 -->
+<div class="video-placeholder-inner"><div class="vp-label">🎬 Welcome Video</div><div class="vp-slot">g3math-12-04</div><div class="vp-notes"><b>Teacher recording notes:</b> Welcome to triangles! Warm up with × 7 and × 8 facts. Then build a triangle from three rods and tell what makes it a triangle.</div></div>
 </div>
 
-<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">🧠</div><div><div class="activity-title">Worked Example: Atlas’s Kite</div></div></div><div class="activity-body">
-<div class="task-box"><div class="task-label">Problem</div><p>Atlas needs two triangles for his kite frame. The first has sides of 3, 4, and 5 units. The second has sides of 3, 3, and 3 units. Are both triangles?</p></div>
-<div class="bubble-row">
-<div class="bubble atlas"><div class="bubble-avatar">A</div><div class="bubble-body"><div class="bubble-name">Atlas</div><div class="bubble-text">“Both have 3 sides and 3 angles. Both are closed. Yes — both are triangles.”</div></div></div>
-<div class="bubble hazel"><div class="bubble-avatar">H</div><div class="bubble-body"><div class="bubble-name">Hazel</div><div class="bubble-text">“But they look really different! The first one has a right angle.”</div></div></div>
+<div class="fluency-box">
+  <div class="fluency-head"><div class="fluency-head-icon">✍️</div><div><div class="fluency-head-label">FACT WARM-UP</div><div class="fluency-head-title">Today's Helpers: Times 7 and Times 8</div></div></div>
+  <div class="fluency-body">
+    <p class="fluency-instructions">Warm up with × 7 and × 8 facts. Type each answer, then check. You can fix any answer and check again.</p>
+    <div class="fluency-grid" id="fluencyGrid">
+      <div class="fluency-item"><span class="fluency-q">7 × 6 =</span><input class="fluency-input" data-answer="42" inputmode="numeric" autocomplete="off" aria-label="7 times 6"></div>
+      <div class="fluency-item"><span class="fluency-q">8 × 4 =</span><input class="fluency-input" data-answer="32" inputmode="numeric" autocomplete="off" aria-label="8 times 4"></div>
+      <div class="fluency-item"><span class="fluency-q">7 × 9 =</span><input class="fluency-input" data-answer="63" inputmode="numeric" autocomplete="off" aria-label="7 times 9"></div>
+      <div class="fluency-item"><span class="fluency-q">8 × 7 =</span><input class="fluency-input" data-answer="56" inputmode="numeric" autocomplete="off" aria-label="8 times 7"></div>
+      <div class="fluency-item"><span class="fluency-q">7 × 3 =</span><input class="fluency-input" data-answer="21" inputmode="numeric" autocomplete="off" aria-label="7 times 3"></div>
+      <div class="fluency-item"><span class="fluency-q">8 × 9 =</span><input class="fluency-input" data-answer="72" inputmode="numeric" autocomplete="off" aria-label="8 times 9"></div>
+      <div class="fluency-item"><span class="fluency-q">7 × 12 =</span><input class="fluency-input" data-answer="84" inputmode="numeric" autocomplete="off" aria-label="7 times 12"></div>
+      <div class="fluency-item"><span class="fluency-q">8 × 6 =</span><input class="fluency-input" data-answer="48" inputmode="numeric" autocomplete="off" aria-label="8 times 6"></div>
+      <div class="fluency-item"><span class="fluency-q">7 × 5 =</span><input class="fluency-input" data-answer="35" inputmode="numeric" autocomplete="off" aria-label="7 times 5"></div>
+      <div class="fluency-item"><span class="fluency-q">8 × 8 =</span><input class="fluency-input" data-answer="64" inputmode="numeric" autocomplete="off" aria-label="8 times 8"></div>
+    </div>
+    <div class="sb-help"><button type="button" class="sb-btn check" data-fluency-check>Check my answers</button></div>
+    <div class="sb-fb" aria-live="polite"></div>
+  </div>
 </div>
-<div class="bubble-row">
-<div class="bubble felix"><div class="bubble-avatar">F</div><div class="bubble-body"><div class="bubble-name">Felix</div><div class="bubble-text">“The second one has all equal sides.”</div></div></div>
-<div class="bubble cora"><div class="bubble-avatar">C</div><div class="bubble-body"><div class="bubble-name">Cora</div><div class="bubble-text">“Different sides and angles — but still triangles. 3 sides, 3 angles, closed.”</div></div></div>
+
+<div class="sb-card sb-qgroup" data-done="review" data-ok="✓ Yes! This shape has 5 sides and 5 vertices. A shape has as many vertices as it has sides.">
+  <span class="sb-k">Remember from 2nd grade</span>
+  <h3>Count the sides and corners</h3>
+  <p>Count the sides of this shape. Then count its vertices, the corners where two sides meet.</p>
+  <div class="sb-stage" role="img" aria-label="A shape with 5 straight sides and 5 corners, each corner marked with a dot." style="margin:6px auto;max-width:260px"><svg viewBox="0 0 260 220"><polygon points="40,180 210,190 232,90 130,26 30,80" fill="#FBF6EA" stroke="#0E1C42" stroke-width="5" stroke-linejoin="round"/><g fill="#C9A227"><circle cx="40" cy="180" r="6"/><circle cx="210" cy="190" r="6"/><circle cx="232" cy="90" r="6"/><circle cx="130" cy="26" r="6"/><circle cx="30" cy="80" r="6"/></g></svg></div>
+  <div class="sb-q">The shape has <input class="sb-ans" data-a="5" inputmode="numeric" autocomplete="off" aria-label="number" data-hint="Count each straight side once. Put your finger on one side and go all the way around."> sides and <input class="sb-ans" data-a="5" inputmode="numeric" autocomplete="off" aria-label="number" data-hint="Count the gold dots. Each one is a vertex."> vertices.</div>
+  <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div>
+  <div class="sb-fb" aria-live="polite"></div>
 </div>
-<p style="font-family:'Lora',serif;background:#FAFBFF;border:2px solid #E2E8F4;border-radius:12px;padding:10px;text-align:center;font-size:20px;font-weight:900;margin-top:14px;">Both shapes are triangles: 3 sides, 3 angles, closed</p>
-</div></div>
-<div class="socratic-box"><div class="socratic-label">🔮 Think Deeper</div><p class="socratic-q">Can you make a triangle with 4 sides? Why or why not?</p><div class="olt-nudge"><a href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=tangram&amp;st=1" target="_blank" rel="noopener" title="Open the Tangrams to slide, turn, and flip the pieces into the shape."><span aria-hidden="true">🧮</span> Try the <b>Tangrams</b> <span aria-hidden="true">↗</span></a></div><div class="journal-label">✏️ <span class="saved-dot" id="ds1"></span></div><textarea class="journal-box" data-label="Learn socratic" id="j-s101" oninput="autoSave(this,'ds1')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Three sides, three angles, closed — that’s all you need.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
+
+<!-- JOB 1 · THINK -->
+<section class="sb-card sb-job" data-job="1">
+  <div class="sb-jh"><span class="sb-jn">JOB 1</span><div><h3>Think: Three Rods</h3><span class="sb-kind">🔨 Do · ✏️ Write</span></div><span class="sb-donechip"></span></div>
+  <div class="sb-opti" data-slot="think-1">Euclid's students have three rods: a purple 4, a black 7, and a blue 9. Join them end to end, so each rod touches the next one. What shape do the rods make, and why?</div>
+  <p class="sb-story">Euclid's students lay a long blue rod on the table. They have two more rods. Can the three rods join end to end?</p>
+  <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>A blue 9 rod lies flat. Each end of it has a gold ring. Under the mat, a purple 4 rod and a black 7 rod wait in the tray. The number on each rod is its length.</p></div>
+  <div data-mod="tri" data-do="close" data-base="9" data-rods="4,7" data-name="think" data-for="left right closed sides"></div>
+  <div class="sb-steps">
+    <div class="sb-step" data-need="left" data-cue=".tr-rod"><h4>Put on the first rod</h4><p>Drag the purple 4 rod onto the gold ring at the left end of the blue rod.</p></div>
+    <div class="sb-step" data-need="closed" data-cue=".tr-rod:not(.used)"><h4>Put on the second rod</h4><p>Drag the black 7 rod onto the gold ring at the right end of the blue rod.</p></div>
+    <div class="sb-step" data-need="sides" data-cue=".tr-side"><h4>Count the sides</h4><p>Tap each rod in the shape, one at a time, until all 3 sides are counted.</p></div>
+    <div class="sb-step"><h4>Why a triangle?</h4>
+      <label class="sb-write-l" for="w-think">Your rods made a triangle. Tell what makes it a triangle.</label>
+      <textarea class="sb-write" id="w-think" data-req data-label="Three Rods" placeholder="It is a triangle because it has … The sides are … They meet …"></textarea>
+      <div class="sb-chips2">Remember to tell: <span>3 sides</span><span>straight</span><span>no gaps</span></div>
+      <div class="sb-help"><button type="button" class="sb-btn check">Done</button></div><div class="sb-fb" aria-live="polite"></div></div>
+    <div class="sb-locked"></div>
+  </div>
+  <div class="sb-help"><button type="button" class="sb-btn ghost" data-hints='["Drag the rod from the tray and let go right on a gold ring.", "Each rod is one side. The rods touch end to end at the corners.", "3 straight sides that meet with no gaps make a closed shape: a triangle."]'>💡 Need a hint?</button><a class="sb-tool" href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=cuisenaire&amp;st=1#s=eyJyIjpbXSwibGFiIjoxLCJyb3dzIjo4fQ" target="_blank" rel="noopener" title="Pick any 3 rods. Can you lay them end to end so they close into a triangle?">🧮 Try the Cuisenaire Rods ↗</a><button type="button" class="sb-btn ghost sb-tipbtn" data-tip="#tip-1">💬 Atlas has a tip</button></div>
+  <div class="sb-hintbox"></div>
+  <div class="sb-tip" id="tip-1" data-who="atlas">I trace around the shape with my finger. If I can go all the way around and end where I started, with no gaps, the shape is closed.</div>
+  <div class="sb-payoff" data-after-job="1">
+    <p style="margin:0"><b>You built a triangle.</b> It has 3 straight sides. They meet end to end at 3 vertices, with no gaps, so the shape is closed.</p>
+  </div>
+  <div class="sb-opti" data-slot="think-done" data-after="1">Your rods made a triangle! Three straight sides meet end to end, with no gaps. Where two sides meet is a vertex, and every vertex has an angle.</div>
+</section>
+
+<div class="sb-next"><button type="button" class="sb-btn gold" data-go-tab="learn" data-go-st="1">Next: the Lesson →</button></div>
+</section>
+
+<!-- ══════════════ LESSON ══════════════ -->
+<section class="sb-panel tab-panel" id="tab-learn" role="tabpanel">
+<div class="sb-path" role="list">
+  <button type="button" class="sb-pstep" data-st="1" role="listitem"><span class="num">1</span><span><b>Learn it</b><small>Learn + Your Turn</small></span></button>
+  <button type="button" class="sb-pstep" data-st="2" role="listitem"><span class="num">2</span><span><b>Practice together</b><small>3 jobs</small></span></button>
+  <button type="button" class="sb-pstep" data-st="3" role="listitem"><span class="num">3</span><span><b>On your own</b><small>1 job</small></span></button>
 </div>
-<!-- PRACTICE TAB -->
-<!-- SHOW WHAT YOU KNOW TAB -->
-<div class="tab-panel" id="tab-assignment">
-<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">🎯</div><div><div class="activity-title">Ready Check</div></div></div><div class="activity-body">
-<div class="q-block"><p class="q-text"><span class="q-num">A</span>How many sides does every triangle have?</p><div class="value-card-row"><div class="value-card" onclick="eA(this,true)"><div class="big">3</div></div><div class="value-card" onclick="eA(this,false)"><div class="big">4</div></div><div class="value-card" onclick="eA(this,false)"><div class="big">5</div></div></div><div class="inline-feedback" id="eA-fb"></div></div>
-<div class="q-block"><p class="q-text"><span class="q-num">B</span>Is this a triangle?</p>
-<svg height="80" style="display:block;margin:10px auto;" viewbox="0 0 120 100" width="100"><polygon fill="none" points="80,10 20,90 110,70" stroke="#5B52A8" stroke-width="3"></polygon></svg>
-<div class="value-card-row"><div class="value-card" onclick="eB(this,true)"><div class="big">Yes</div></div><div class="value-card" onclick="eB(this,false)"><div class="big">No</div></div></div><div class="inline-feedback" id="eB-fb"></div>
+
+<!-- STATION 1 -->
+<div class="sb-station" data-st="1">
+  <div class="sb-opti" data-slot="learn-1">Welcome to the Lesson. First, you'll make a triangle with a band on the geoboard. Next, we fix some mix-ups. Then you'll make a triangle of your own.</div>
+
+  <div class="sb-video pq-vslot" data-slot="learn">
+    <video controls preload="metadata" playsinline poster="assets/video/g3math-12-04-learn.jpg" src="assets/video/g3math-12-04-learn.mp4"></video>
+    <div class="cap">🎬 What Makes a Triangle</div>
+  </div>
+
+  <div class="sb-card">
+    <span class="sb-k">Learn</span>
+    <h3>The parts of a triangle</h3>
+    <div class="sb-stage" role="img" aria-label="A triangle with navy sides. Each side is labeled side. Each corner has a gold dot labeled vertex and a small green arc labeled angle." style="margin:6px 0"><svg viewBox="0 0 640 260"><polygon points="140,210 500,210 330,40" fill="#FBF6EA" stroke="#0E1C42" stroke-width="5" stroke-linejoin="round"/><path d="M178 210 A38 38 0 0 0 166 185" fill="none" stroke="#1E8C5A" stroke-width="3.5"/><path d="M462 210 A38 38 0 0 1 471 184" fill="none" stroke="#1E8C5A" stroke-width="3.5"/><path d="M304 66 A36 36 0 0 0 353 63" fill="none" stroke="#1E8C5A" stroke-width="3.5"/><g fill="#C9A227"><circle cx="140" cy="210" r="7"/><circle cx="500" cy="210" r="7"/><circle cx="330" cy="40" r="7"/></g><g font-size="16" font-weight="900"><text x="320" y="242" text-anchor="middle" fill="#0E1C42">side</text><text x="205" y="118" text-anchor="end" fill="#0E1C42">side</text><text x="440" y="118" fill="#0E1C42">side</text><text x="96" y="232" fill="#8C6A12">vertex</text><text x="510" y="232" fill="#8C6A12">vertex</text><text x="345" y="30" fill="#8C6A12">vertex</text><text x="190" y="196" fill="#1E7A4C">angle</text><text x="400" y="196" fill="#1E7A4C">angle</text><text x="330" y="96" text-anchor="middle" fill="#1E7A4C">angle</text></g></svg></div>
+    <p style="margin:6px 0 0">A <b>triangle</b> is a closed shape with <b>3 straight sides</b>. Where two sides meet is a <b>vertex</b>, so a triangle has <b>3 vertices</b>. Each vertex has an <b>angle</b>, so a triangle has <b>3 angles</b>.</p>
+  </div>
+
+  <div class="sb-card">
+    <span class="sb-k">Learn</span>
+    <h3>Many shapes, still triangles</h3>
+    <div class="sb-stage" role="img" aria-label="Four different triangles: a big wide one, a small one, a tall thin one, and one turned upside down. Each has 3 straight sides and no gaps." style="margin:6px 0"><svg viewBox="0 0 640 200"><g fill="#F2ECFB" stroke="#6B46C1" stroke-width="4.5" stroke-linejoin="round"><polygon points="20,170 220,170 90,40"/><polygon points="250,170 320,170 290,120"/><polygon points="360,180 410,180 395,20"/><polygon points="450,40 620,40 560,170"/></g></svg></div>
+    <p style="margin:6px 0 0">Big or small, wide or thin, turned any way: if it has 3 straight sides that meet with no gaps, it is a triangle.</p>
+  </div>
+
+  <div class="sb-card">
+    <span class="sb-k">Learn</span>
+    <h3>Not triangles</h3>
+    <div class="sb-stage" role="img" aria-label="Three shapes that are not triangles. The first has 3 straight sides, but two of them do not meet: there is a gap. The second has 2 straight sides and 1 curved side. The third has 4 straight sides." style="margin:6px 0"><svg viewBox="0 0 640 230"><g fill="none" stroke="#B23A2E" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="40,180 105,50 175,180 62,180"/><path d="M240 180 L310 50 L380 180 Q 310 230 240 180"/><polygon points="440,180 610,180 580,60 470,80"/></g><g font-size="16" font-weight="900" fill="#B23A2E" text-anchor="middle"><text x="108" y="214">a gap</text><text x="310" y="226">a curved side</text><text x="525" y="214">4 sides</text></g></svg></div>
+    <p style="margin:6px 0 0">Check three things: Are there <b>3 sides</b>? Are they all <b>straight</b>? Do they meet with <b>no gaps</b>? If any answer is no, it is not a triangle.</p>
+  </div>
+
+  <div class="sb-card">
+    <span class="sb-k">A peek ahead</span>
+    <h3>Tick marks</h3>
+    <div class="sb-stage" role="img" aria-label="A triangle with two sides the same length. Each of those two sides has one small tick mark across it." style="margin:6px auto;max-width:320px"><svg viewBox="0 0 320 200"><polygon points="60,170 260,170 160,30" fill="#FBF6EA" stroke="#0E1C42" stroke-width="5" stroke-linejoin="round"/><line x1="100" y1="94" x2="120" y2="108" stroke="#0E1C42" stroke-width="4"/><line x1="200" y1="108" x2="220" y2="94" stroke="#0E1C42" stroke-width="4"/></svg></div>
+    <p style="margin:6px 0 0">When two sides are the same length, we draw the same number of small <b>tick marks</b> on them. Same marks, same length. You'll use these again in the next lesson.</p>
+  </div>
+
+  <div class="sb-card">
+    <span class="sb-k">The Math Crew</span>
+    <h3>Four ways to stay on track</h3>
+    <div class="sb-crew">
+      <div class="sb-mate" data-who="atlas"><span>I trace around the shape with my finger. If I end where I started, with no gaps, it is closed.</span></div>
+      <div class="sb-mate" data-who="felix"><span>I count the sides, then I count the vertices. A triangle has 3 of each.</span></div>
+      <div class="sb-mate" data-who="hazel"><span>I check every side. One curved side means it is not a triangle.</span></div>
+      <div class="sb-mate" data-who="cora"><span>A turned triangle is still a triangle. I don't let the way it points fool me.</span></div>
+    </div>
+    <label class="sb-write-l" for="w-crew">Which Crew way helps you most? Why?</label>
+    <textarea class="sb-write" id="w-crew" data-label="Which Crew way helps me most" placeholder="I like… because…"></textarea>
+  </div>
+
+  <!-- JOB 2 · YOUR TURN -->
+  <section class="sb-card sb-job" data-job="2">
+    <div class="sb-jh"><span class="sb-jn">JOB 2</span><div><h3>Your Turn: A Band Triangle</h3><span class="sb-kind">🔨 Do</span></div><span class="sb-donechip"></span></div>
+    <p class="sb-story">Euclid's students stretch a band around pins to make shapes. Make a triangle of your own.</p>
+    <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>A geoboard with 11 rows of 11 pins. Tap a pin to hook the band on it. The first pin you tap gets a ring, so you can find it again to close the band.</p></div>
+    <div data-mod="tri" data-do="band" data-name="yt" data-for="closed sides verts"></div>
+    <div class="sb-steps">
+      <div class="sb-step" data-need="closed" data-cue=".tr-pin"><h4>Make a triangle</h4><p>Tap 3 pins that are not in one straight line. Then tap the first pin again to close the band.</p></div>
+      <div class="sb-step" data-need="sides" data-cue=".tr-side"><h4>Count the sides</h4><p>Tap each side of your triangle, one at a time.</p></div>
+      <div class="sb-step" data-need="verts" data-cue=".tr-vt"><h4>Count the vertices</h4><p>Tap each gold dot at a corner of your triangle.</p></div>
+      <div class="sb-step"><h4>Fill in the parts</h4>
+        <div class="sb-q">Your triangle has <input class="sb-ans" data-a="3" inputmode="numeric" autocomplete="off" aria-label="number" data-hint="How many sides did you tap?"> sides, <input class="sb-ans" data-a="3" inputmode="numeric" autocomplete="off" aria-label="number" data-hint="How many gold dots did you tap?"> vertices and <input class="sb-ans" data-a="3" inputmode="numeric" autocomplete="off" aria-label="number" data-hint="Each vertex has one angle."> angles.</div>
+        <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-locked"></div>
+    </div>
+    <div class="sb-help"><button type="button" class="sb-btn ghost" data-hints='["Pick 3 pins that do not sit in one straight row.", "Tap the pin with the ring last. That closes the band.", "Every triangle has 3 sides, 3 vertices and 3 angles, no matter its size."]'>💡 Need a hint?</button><a class="sb-tool" href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=geoboard&amp;st=1#s=eyJuIjoxMX0" target="_blank" rel="noopener" title="Make a triangle with one band. Count its sides and its vertices.">🧮 Try the Geoboard ↗</a><button type="button" class="sb-btn ghost sb-tipbtn" data-tip="#tip-2">💬 Felix has a tip</button></div>
+    <div class="sb-hintbox"></div>
+    <div class="sb-tip" id="tip-2" data-who="felix">If my 3 pins are in one straight row, the band lies flat. So I always pick a pin above or below the other two.</div>
+  </section>
+  <div class="sb-next"><button type="button" class="sb-btn gold" data-next-st="2">Next station: Practice together →</button></div>
 </div>
-</div></div>
-<div class="activity bl-navy"><div class="activity-head"><div class="activity-num" style="background:#0E1C42;">📬</div><div><div class="activity-title">Show What You Know</div></div></div><div class="activity-body">
-<div class="q-block"><p class="q-text"><span class="q-num">1</span><strong>Fluency.</strong> Draw a triangle in your math journal. Label the 3 sides and 3 vertices.</p><div class="olt-nudge"><a href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=compass&amp;st=1" target="_blank" rel="noopener" title="Open the Compass to set the radius and draw the circle."><span aria-hidden="true">🧮</span> Try the <b>Compass</b> <span aria-hidden="true">↗</span></a></div><div class="journal-label">✏️ <span class="saved-dot" id="da1"></span></div><textarea class="journal-box" data-label="SWYK 1" id="j-a101" oninput="autoSave(this,'da1')" placeholder=""></textarea></div>
-<div class="q-block"><p class="q-text"><span class="q-num">2</span><strong>Transfer.</strong> Hazel says a shape with 3 curved sides is a triangle. Is she correct? Explain why or why not.</p><div class="journal-label">✏️ <span class="saved-dot" id="da2"></span></div><textarea class="journal-box" data-label="SWYK 2" id="j-a201" oninput="autoSave(this,'da2')" placeholder=""></textarea></div>
 
-<div class="activity bl-slate" style="margin-top:18px;border-left-color:#F5A36F;"><div class="activity-head"><div class="activity-num" style="background:#F5A36F;color:#0E1C42;">🗺️</div><div><div class="activity-title">Connection Forward</div><div class="activity-sub">Next: Lesson 3.12.05</div></div></div><div class="activity-body">
-<p>Now you know what makes a triangle. Next lesson: not all triangles are the same — some have equal sides, some have right angles. We’ll sort them.</p>
-</div></div>
-</div></div>
-<div class="gathered-box"><div class="gathered-head"><div class="gathered-head-icon">📋</div><div><div class="gathered-head-label">Math Journal</div><div class="gathered-head-title">All Answers</div></div></div><div class="gathered-body"><textarea class="gathered-output" id="gO" readonly="">Click “Gather” to collect.</textarea><div style="display:flex;gap:10px;margin-top:12px;"><button class="geo-btn" onclick="gather()">📋 Gather</button><button class="green-btn" onclick="copyA()">Copy</button><button class="check-btn" onclick="dl()">Download</button></div></div></div>
-<div class="turn-in-card"><div class="turn-in-header"><div class="turn-in-header-icon">✅</div><div><div class="turn-in-header-label">Turn-In</div><div class="turn-in-header-title">Ready?</div></div></div><div class="turn-in-body">
-<div class="turn-in-item" onclick="tg(this)"><span class="turn-in-check">✓</span><span>I completed Show What You Know.</span></div>
-<div class="turn-in-item" onclick="tg(this)"><span class="turn-in-check">✓</span><span>I can identify triangles by their attributes.</span></div>
-</div></div>
+<!-- STATION 2 -->
+<div class="sb-station" data-st="2">
+  <div class="sb-opti" data-slot="practice-1">Each job has a mix-up kids often make. Here's a clue. Check three things every time. Are there three sides? Are they all straight? Do they meet with no gaps?</div>
+
+  <!-- JOB 3 -->
+  <section class="sb-card sb-job" data-job="3">
+    <div class="sb-jh"><span class="sb-jn">JOB 3</span><div><h3>Ben's Band</h3><span class="sb-kind">🔨 Do · ✏️ Write</span></div><span class="sb-donechip"></span></div>
+    <p class="sb-story">Ben stretches a band on the geoboard. He says, "It has 3 straight sides, so it's a triangle."</p>
+    <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>Ben's red band on the geoboard. A gold bracket shows where the band ends and where it started.</p></div>
+    <div data-mod="tri" data-do="gap" data-ans="not" data-name="ben" data-for="sorted closed"></div>
+    <div class="sb-steps">
+      <div class="sb-step" data-need="sorted" data-cue=".an-slot"><h4>Is it a triangle?</h4><p>Look at the gold bracket. Drag the card that tells about Ben's shape into the box.</p></div>
+      <div class="sb-step" data-need="closed" data-cue=".tr-end"><h4>Fix Ben's band</h4><p>Drag the loose end of the band onto the first pin, where the band starts.</p></div>
+      <div class="sb-step"><h4>Help Ben</h4><label class="sb-write-l" for="w-ben">Tell Ben why his first shape was not a triangle.</label><textarea class="sb-write" id="w-ben" data-req data-label="Help Ben" placeholder="Your band had 3 straight sides, but …"></textarea><div class="sb-chips2">Remember to tell: <span>gap</span><span>closed</span><span>meet</span></div><div class="sb-help"><button type="button" class="sb-btn check">Done</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-locked"></div>
+    </div>
+    <div class="sb-help"><button type="button" class="sb-btn ghost" data-hints='["Follow the band with your finger from where it starts. Do you end up back at the start?", "The band stops one pin early. That leaves a gap.", "A shape with a gap is not closed, so it is not a triangle. Close the gap to fix it."]'>💡 Need a hint?</button><a class="sb-tool" href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=geoboard&amp;st=1#s=eyJuIjoxMX0" target="_blank" rel="noopener" title="Make a triangle with one band. Count its sides and its vertices.">🧮 Try the Geoboard ↗</a><button type="button" class="sb-btn ghost sb-tipbtn" data-tip="#tip-3">💬 Atlas has a tip</button></div>
+    <div class="sb-hintbox"></div>
+    <div class="sb-tip" id="tip-3" data-who="atlas">3 straight sides are not enough. They have to meet, end to end, with no gaps.</div>
+  </section>
+
+  <!-- JOB 4 -->
+  <section class="sb-card sb-job" data-job="4">
+    <div class="sb-jh"><span class="sb-jn">JOB 4</span><div><h3>Mia's Bent Side</h3><span class="sb-kind">🔨 Do · ✏️ Write</span></div><span class="sb-donechip"></span></div>
+    <p class="sb-story">Mia draws a shape on the geoboard. She says, "It has 3 sides and 3 corners, so it's a triangle."</p>
+    <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>Mia's green shape on the geoboard. It has a side on the left, a side on the right, and a side along the bottom.</p></div>
+    <div data-mod="tri" data-do="curve" data-ans="not" data-name="mia" data-for="sorted found fixed"></div>
+    <div class="sb-steps">
+      <div class="sb-step" data-need="sorted" data-cue=".an-slot"><h4>Is it a triangle?</h4><p>Look at each side. Drag the card that tells about Mia's shape into the box.</p></div>
+      <div class="sb-step" data-need="found" data-cue=".tr-cv"><h4>Find the problem</h4><p>Tap the side that is not straight.</p></div>
+      <div class="sb-step" data-need="fixed" data-cue=".tr-fix"><h4>Fix Mia's shape</h4><p>Press 📏 Swap in a straight band.</p></div>
+      <div class="sb-step"><h4>Help Mia</h4><label class="sb-write-l" for="w-mia">Tell Mia why her first shape was not a triangle.</label><textarea class="sb-write" id="w-mia" data-req data-label="Help Mia" placeholder="Your shape had 3 sides, but …"></textarea><div class="sb-chips2">Remember to tell: <span>curved</span><span>straight</span><span>3 sides</span></div><div class="sb-help"><button type="button" class="sb-btn check">Done</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-locked"></div>
+    </div>
+    <div class="sb-help"><button type="button" class="sb-btn ghost" data-hints='["Look at the bottom side. Does it go straight from corner to corner?", "The bottom side bends like a smile. It is curved.", "A triangle has 3 straight sides. A curved side means it is not a triangle."]'>💡 Need a hint?</button><a class="sb-tool" href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=geoboard&amp;st=1#s=eyJuIjoxMX0" target="_blank" rel="noopener" title="Make a triangle with one band. Count its sides and its vertices.">🧮 Try the Geoboard ↗</a><button type="button" class="sb-btn ghost sb-tipbtn" data-tip="#tip-4">💬 Hazel has a tip</button></div>
+    <div class="sb-hintbox"></div>
+    <div class="sb-tip" id="tip-4" data-who="hazel">A rubber band on pins always makes straight sides. A bent side is a sign that something is wrong.</div>
+  </section>
+
+  <!-- JOB 5 -->
+  <section class="sb-card sb-job" data-job="5">
+    <div class="sb-jh"><span class="sb-jn">JOB 5</span><div><h3>Kai's Three Rods</h3><span class="sb-kind">🔨 Do · ✏️ Write</span></div><span class="sb-donechip"></span></div>
+    <p class="sb-story">Kai picks a brown 8 rod, a red 2 rod and a light green 3 rod. He says, "Any 3 rods make a triangle."</p>
+    <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>A brown 8 rod lies flat, with a gold ring at each end. The red 2 rod and the light green 3 rod wait in the tray. The dotted lines show how far each short rod can reach when it swings.</p></div>
+    <div data-mod="tri" data-do="cant" data-base="8" data-rods="2,3" data-name="kai" data-for="left right tried"></div>
+    <div class="sb-steps">
+      <div class="sb-step" data-need="left" data-cue=".tr-rod"><h4>Put on the first rod</h4><p>Drag the red 2 rod onto the gold ring at the left end of the brown rod.</p></div>
+      <div class="sb-step" data-need="tried" data-cue=".tr-rod:not(.used)"><h4>Put on the second rod</h4><p>Drag the light green 3 rod onto the gold ring at the right end of the brown rod.</p></div>
+      <div class="sb-step"><h4>Add the short rods</h4>
+        <div class="sb-q">Together, the two short rods are 2 + 3 = <input class="sb-ans" data-a="5" inputmode="numeric" autocomplete="off" aria-label="number" data-hint="Add the red rod and the light green rod."> long. The long rod is 8, so they can't reach each other.</div>
+        <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-step"><h4>Help Kai</h4><label class="sb-write-l" for="w-kai">Tell Kai why his 3 rods can't make a triangle.</label><textarea class="sb-write" id="w-kai" data-req data-label="Help Kai" placeholder="The two short rods together are … The long rod is … so …"></textarea><div class="sb-chips2">Remember to tell: <span>together</span><span>shorter</span><span>gap</span></div><div class="sb-help"><button type="button" class="sb-btn check">Done</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-locked"></div>
+    </div>
+    <div class="sb-help"><button type="button" class="sb-btn ghost" data-hints='["Put each short rod on a ring and watch where it can reach.", "The short rods swing toward each other, but there is still a gap.", "The two short rods together must be longer than the long rod. 2 + 3 is not longer than 8."]'>💡 Need a hint?</button><a class="sb-tool" href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=cuisenaire&amp;st=1#s=eyJyIjpbXSwibGFiIjoxLCJyb3dzIjo4fQ" target="_blank" rel="noopener" title="Pick any 3 rods. Can you lay them end to end so they close into a triangle?">🧮 Try the Cuisenaire Rods ↗</a><button type="button" class="sb-btn ghost sb-tipbtn" data-tip="#tip-5">💬 Cora has a tip</button></div>
+    <div class="sb-hintbox"></div>
+    <div class="sb-tip" id="tip-5" data-who="cora">I add the two short sides. If that is not more than the long side, the ends can't meet.</div>
+  </section>
+  <div class="sb-next"><button type="button" class="sb-btn gold" data-next-st="3">Next station: On your own →</button></div>
 </div>
-<div class="footer"><div class="footer-main">🏫 <span>Optima Academy Online</span></div><div class="footer-sub">Math · Grade 3 · 3.12.04 · U3 Apply</div><div class="footer-copy">© 2025 Optima Academy Online</div></div>
+
+<!-- STATION 3 -->
+<div class="sb-station" data-st="3">
+  <div class="sb-opti" data-slot="own-1">Your turn. Make a triangle that has a square corner. Then check that corner with the set square, just like you did in the last lesson.</div>
+
+  <!-- JOB 6 -->
+  <section class="sb-card sb-job" data-job="6">
+    <div class="sb-jh"><span class="sb-jn">JOB 6</span><div><h3>On Your Own: A Square-Corner Triangle</h3><span class="sb-kind">🔨 Do · ✏️ Write</span></div><span class="sb-donechip"></span></div>
+    <p class="sb-story">Make a triangle with a square corner. The two sides at the square corner are 3 pin spaces and 5 pin spaces long.</p>
+    <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>A geoboard with 11 rows of 11 pins. A pin space is the gap from one pin to the next one. The set square waits at the bottom right.</p></div>
+    <div data-mod="tri" data-do="right" data-legs="3,5" data-name="own" data-for="made checked"></div>
+    <div class="sb-steps">
+      <div class="sb-step" data-need="made" data-cue=".tr-pin"><h4>Make the triangle</h4><p>Tap 3 pins and close the band so it has a square corner, with sides of 3 pin spaces and 5 pin spaces at that corner.</p></div>
+      <div class="sb-step" data-need="checked" data-cue=".tr-sq"><h4>Check the corner</h4><p>Drag the set square so its square corner lands on the square corner of your triangle.</p></div>
+      <div class="sb-step"><h4>Tell how you know</h4><label class="sb-write-l" for="w-own">Tell how you know your shape is a triangle, and how you know it has a square corner.</label><textarea class="sb-write" id="w-own" data-req data-label="A Square-Corner Triangle" placeholder="It is a triangle because … The set square …"></textarea><div class="sb-chips2">Remember to tell: <span>3 straight sides</span><span>closed</span><span>set square</span></div><div class="sb-help"><button type="button" class="sb-btn check">Done</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-locked"></div>
+    </div>
+    <div class="sb-help"><button type="button" class="sb-btn ghost" data-hints='["Start at a pin. Count 3 pin spaces straight across for one side.", "Go back to the first pin. Count 5 pin spaces straight up or down for the other side.", "Close the band across the slanted side. Then lay the set square on the corner where you started."]'>💡 Need a hint?</button><a class="sb-tool" href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=geoboard&amp;st=1#s=eyJuIjoxMX0" target="_blank" rel="noopener" title="Make a shape with exactly 1 right angle. Check it with the set square.">🧮 Try the Geoboard ↗</a></div>
+    <div class="sb-hintbox"></div>
+  </section>
+
+  <div class="sb-next"><button type="button" class="sb-btn gold" data-go-tab="swyk">Next: Show What You Know →</button></div>
 </div>
-<script>
-var LS='g3-3-12-04-';
-function mini(el){if(!el)return;var em=['&#x2B50;','&#x2728;','&#x1F389;','&#x1F9E9;'];for(var i=0;i<8;i++){var s=document.createElement('span');s.textContent=em[Math.floor(Math.random()*em.length)];s.style.cssText='position:absolute;font-size:'+(16+Math.random()*14)+'px;pointer-events:none;z-index:999;animation:mini .7s ease-out forwards;left:'+(20+Math.random()*60)+'%;top:'+(Math.random()*40)+'%;';el.style.position='relative';el.style.overflow='visible';el.appendChild(s);setTimeout(function(x){x.remove()}.bind(null,s),800);}}
-function switchTab(t){document.querySelectorAll('.tab-panel').forEach(function(p){p.classList.remove('active');});document.getElementById('tab-'+t).classList.add('active');document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active');if(b.dataset.tab===t){b.classList.add('active');b.classList.add('visited');}});var bs=[].slice.call(document.querySelectorAll('.tab-btn'));var i=bs.findIndex(function(b){return b.classList.contains('active');});var p=Math.round(((i+1)/bs.length)*100);document.getElementById('pf').style.width=p+'%';document.getElementById('pp').textContent=p+'%';window.scrollTo({top:0,behavior:'smooth'});}
-function autoSave(el,d){try{localStorage.setItem(LS+el.id,el.value);}catch(e){}var dt=document.getElementById(d);if(dt){dt.classList.add('saved');setTimeout(function(){dt.classList.remove('saved')},900);}}
-function restore(){document.querySelectorAll('textarea.journal-box').forEach(function(t){try{var v=localStorage.getItem(LS+t.id);if(v)t.value=v;}catch(e){}});}
-function showBranch(id){document.getElementById(id).classList.add('show');}
-function hideBranches(p){['pass','retry'].forEach(function(x){var e=document.getElementById(p+'-'+x);if(e)e.classList.remove('show');});}
+</section>
 
-/* Warm-Up */
-function rA(c,ok){c.parentElement.querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});var f=document.getElementById('rA-fb');if(ok){c.classList.add('good');f.className='inline-feedback show good';f.innerHTML='<strong>&#x2705;</strong> A rectangle has 4 right angles.';mini(c);}else{c.classList.add('bad');f.className='inline-feedback show think';f.innerHTML='A rectangle has a right angle at every corner. Count the corners.';}}
-function rT(c,ok){c.parentElement.querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});var f=document.getElementById('rT-fb');if(ok){c.classList.add('good');f.className='inline-feedback show good';f.innerHTML='<strong>&#x2705;</strong> A triangle has exactly 3 sides.';mini(c);}else{c.classList.add('bad');f.className='inline-feedback show think';f.innerHTML='&#8220;Tri&#8221; means three. A triangle has three sides.';}}
+<!-- ══════════════ SHOW WHAT YOU KNOW ══════════════ -->
+<section class="sb-panel tab-panel" id="tab-swyk" role="tabpanel">
+<div class="sb-opti" data-slot="swyk-1">Last stop! Euclid proved a rule about the sides of every triangle. Keep two rods, and try different rods for the third side. Which ones close into a triangle?</div>
 
-/* ========== TRIANGLE BUILDER ========== */
-var tb={pts:[],challenges:['Build the tallest triangle you can.','Build one with a right angle.','Build one where all sides are different lengths.'],ci:0};
-var tbCanvas=null,tbCtx=null;
-function tbInit(){
-  tbCanvas=document.getElementById('tb-canvas');tbCtx=tbCanvas.getContext('2d');
-  tbCanvas.addEventListener('click',function(e){
-    if(tb.pts.length>=3)return;
-    var rect=tbCanvas.getBoundingClientRect();
-    var sx=500/rect.width, sy=400/rect.height;
-    var mx=(e.clientX-rect.left)*sx, my=(e.clientY-rect.top)*sy;
-    // snap to grid
-    var gx=Math.round(mx/25)*25, gy=Math.round(my/25)*25;
-    gx=Math.max(25,Math.min(475,gx));gy=Math.max(25,Math.min(375,gy));
-    tb.pts.push([gx,gy]);
-    tbDraw();
-  });
-  tbDraw();
-}
-function tbReset(){tb.pts=[];tb.ci=(tb.ci+1)%tb.challenges.length;document.getElementById('tb-challenge').textContent=tb.challenges[tb.ci];tbDraw();}
-function tbDraw(){
-  var c=tbCtx;c.clearRect(0,0,500,400);
-  // grid dots
-  c.fillStyle='#E2E8F4';
-  for(var x=25;x<=475;x+=25)for(var y=25;y<=375;y+=25){c.beginPath();c.arc(x,y,2,0,Math.PI*2);c.fill();}
-  // draw placed points
-  for(var i=0;i<tb.pts.length;i++){
-    c.fillStyle='#5B52A8';c.beginPath();c.arc(tb.pts[i][0],tb.pts[i][1],8,0,Math.PI*2);c.fill();
-    c.fillStyle='#fff';c.font='bold 10px Nunito';c.textAlign='center';c.textBaseline='middle';
-    c.fillText((i+1),tb.pts[i][0],tb.pts[i][1]);
-  }
-  // draw lines
-  if(tb.pts.length>=2){
-    c.strokeStyle='#5B52A8';c.lineWidth=3;c.beginPath();
-    c.moveTo(tb.pts[0][0],tb.pts[0][1]);
-    for(var i=1;i<tb.pts.length;i++)c.lineTo(tb.pts[i][0],tb.pts[i][1]);
-    if(tb.pts.length===3){c.closePath();}
-    c.stroke();
-  }
-  // readout
-  var ro=document.getElementById('tb-readout');
-  if(tb.pts.length<3){
-    ro.textContent='Points placed: '+tb.pts.length+' / 3'+(tb.pts.length<3?' &#8212; click the grid to add more.':'');
-    ro.innerHTML='Points placed: '+tb.pts.length+' / 3'+(tb.pts.length<3?' &#8212; click the grid to add more.':'');
-  } else {
-    // compute side lengths
-    var sides=[];
-    for(var i=0;i<3;i++){
-      var j=(i+1)%3;
-      var dx=tb.pts[j][0]-tb.pts[i][0], dy=tb.pts[j][1]-tb.pts[i][1];
-      sides.push(Math.round(Math.sqrt(dx*dx+dy*dy)/25*10)/10);
-    }
-    // draw side labels
-    for(var i=0;i<3;i++){
-      var j=(i+1)%3;
-      var mx2=(tb.pts[i][0]+tb.pts[j][0])/2, my2=(tb.pts[i][1]+tb.pts[j][1])/2;
-      c.fillStyle='#2D2A5E';c.font='bold 13px Nunito';c.textAlign='center';c.textBaseline='middle';
-      c.fillText(sides[i]+' units',mx2,my2-12);
-    }
-    // check right angle
-    var hasRight=false;
-    for(var i=0;i<3;i++){
-      var prev=tb.pts[(i+2)%3], curr=tb.pts[i], next=tb.pts[(i+1)%3];
-      var d1x=prev[0]-curr[0],d1y=prev[1]-curr[1],d2x=next[0]-curr[0],d2y=next[1]-curr[1];
-      var dot=d1x*d2x+d1y*d2y;
-      if(Math.abs(dot)<1){
-        hasRight=true;
-        // draw right angle symbol
-        var l1=Math.sqrt(d1x*d1x+d1y*d1y),l2=Math.sqrt(d2x*d2x+d2y*d2y);
-        var sz=15;
-        var ax=curr[0]+sz*d1x/l1,ay=curr[1]+sz*d1y/l1;
-        var bx=curr[0]+sz*d2x/l2,by=curr[1]+sz*d2y/l2;
-        var cx2=ax+sz*d2x/l2,cy2=ay+sz*d2y/l2;
-        c.strokeStyle='#2D2A5E';c.lineWidth=1.5;
-        c.beginPath();c.moveTo(ax,ay);c.lineTo(cx2,cy2);c.lineTo(bx,by);c.stroke();
-      }
-    }
-    ro.innerHTML='Sides: '+sides.join(', ')+' units | Angles: 3 | Right angle: '+(hasRight?'Yes':'No');
-  }
-}
+<!-- JOB 7 -->
+<section class="sb-card sb-job" data-job="7">
+  <div class="sb-jh"><span class="sb-jn">JOB 7</span><div><h3>Euclid's Rod Rule</h3><span class="sb-kind">🔨 Do</span></div><span class="sb-donechip"></span></div>
+  <p class="sb-story">A black 7 rod lies flat. A light green 3 rod stands on its left end. Which rods can close the triangle on the right?</p>
+  <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>The black 7 rod and the light green 3 rod stay put. The tray holds rods from 1 to 10. Under the mat, a chip shows what happened with each rod you try.</p></div>
+  <div class="sb-steps">
+    <div class="sb-step" data-need="all" data-cue=".tr-rod:not(.used)"><h4>Problem 1 · Try every rod</h4><p>Drag each rod from 1 to 10 onto the gold ring, one at a time, until all 10 rods are tried.</p></div>
+    <div class="sb-step"><h4>Problem 2 · Find the rule</h4>
+      <div class="sb-q">The shortest rod that closes the triangle is <input class="sb-ans" data-a="5" inputmode="numeric" autocomplete="off" aria-label="number" data-hint="Look at the chips. Which is the first one that says closes?">. The longest rod that closes it is <input class="sb-ans" data-a="9" inputmode="numeric" autocomplete="off" aria-label="number" data-hint="Look at the chips. Which is the last one that says closes?">.</div>
+      <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+    <div class="sb-locked"></div>
+  </div>
+  <div data-mod="tri" data-do="try" data-base="7" data-left="3" data-name="wow" data-for="all"></div>
+  <div class="sb-payoff" data-after-job="7"><p style="margin:0">Euclid proved it: in every triangle, <b>any two sides together are longer than the third side</b>. The 3 rod and the 7 rod make 10 together, so the third rod has to be shorter than 10. A 4 rod is too short: 3 + 4 is only 7, so it lies flat.</p></div>
+  <figure class="sb-fig" style="max-width:340px;margin:10px auto 0"><img src="images/storybook/sb-byrne-prop22.jpg" alt="An old printed page from Euclid's book. A blue circle and a red circle overlap. Lines from their centers meet where the circles cross, making a triangle." style="object-fit:contain;background:#FBF6EA"><figcaption>Euclid builds a triangle from three lines, if any two of them together are longer than the third, from Oliver Byrne's book, London, 1847.<small>Public domain, via Wikimedia Commons.</small></figcaption></figure>
+  <div class="sb-help"><button type="button" class="sb-btn ghost" data-hints='["Try the rods in order, 1, 2, 3, all the way to 10.", "Some rods are too short to reach. Two rods make the shape lie flat.", "The rods that close it are longer than 4 and shorter than 10."]'>💡 Need a hint?</button><a class="sb-tool" href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=cuisenaire&amp;st=1#s=eyJyIjpbXSwibGFiIjoxLCJyb3dzIjo4fQ" target="_blank" rel="noopener" title="Pick any 3 rods. Can you lay them end to end so they close into a triangle?">🧮 Try the Cuisenaire Rods ↗</a></div>
+  <div class="sb-hintbox"></div>
+</section>
 
-/* Practice */
-function checkP1(c,ok){c.parentElement.querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});hideBranches('p1');if(ok){c.classList.add('good');showBranch('p1-pass');mini(c);}else{c.classList.add('bad');showBranch('p1-retry');}}
-function checkP2(){hideBranches('p2');var v=parseInt(document.getElementById('p2-ans').value,10);var el=document.getElementById('p2-ans');el.classList.remove('good','bad');if(v===3){el.classList.add('good');showBranch('p2-pass');mini(el);}else{el.classList.add('bad');showBranch('p2-retry');}}
-function p3(c,ok){c.parentElement.querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});hideBranches('p3');if(ok){c.classList.add('good');showBranch('p3-pass');mini(c);}else{c.classList.add('bad');showBranch('p3-retry');}}
-function resetP(n){if(n===1){document.querySelectorAll('.REMOVED-PRACTICE').forEach(function(x){x.classList.remove('good','bad');});hideBranches('p1');}
-if(n===2){document.getElementById('p2-ans').value='';document.getElementById('p2-ans').classList.remove('good','bad');hideBranches('p2');}
-if(n===3){var cards=document.querySelectorAll('.REMOVED-PRACTICE');if(cards)cards.forEach(function(x){x.classList.remove('good','bad');});document.getElementById('p3-fb').className='inline-feedback';hideBranches('p3');}}
+<!-- JOB 8 -->
+<section class="sb-card sb-job" data-job="8">
+  <div class="sb-jh"><span class="sb-jn">JOB 8</span><div><h3>Prove It</h3><span class="sb-kind">✏️ Write</span></div><span class="sb-donechip"></span></div>
+  <div class="sb-steps">
+    <div class="sb-step"><h4>Problem 3 · Prove It</h4>
+      <label class="sb-write-l" for="w-prove">Write a note to a younger student. Tell them how to check if a shape is a triangle. Give one shape that is not a triangle, and tell why.</label><textarea class="sb-write" id="w-prove" data-req data-label="Prove It" placeholder="To check a shape, first … Then … A … is not a triangle because …"></textarea><div class="sb-chips2">Remember to tell: <span>3 straight sides</span><span>closed</span><span>vertices</span></div>
+      <div class="sb-help"><button type="button" class="sb-btn check">Done</button></div><div class="sb-fb" aria-live="polite"></div></div>
+    <div class="sb-locked"></div>
+  </div>
+</section>
 
-/* Ready Check */
-function eA(c,ok){c.parentElement.querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});var f=document.getElementById('eA-fb');if(ok){c.classList.add('good');f.className='inline-feedback show good';f.innerHTML='<strong>&#x2705;</strong> Every triangle has exactly 3 sides.';mini(c);}else{c.classList.add('bad');f.className='inline-feedback show think';f.innerHTML='&#8220;Tri&#8221; means three. A triangle always has 3 sides.';}}
-function eB(c,ok){c.parentElement.querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});var f=document.getElementById('eB-fb');if(ok){c.classList.add('good');f.className='inline-feedback show good';f.innerHTML='<strong>&#x2705;</strong> Yes! It has 3 straight sides, 3 angles, and it&#8217;s closed &#8212; even rotated, it&#8217;s still a triangle.';mini(c);}else{c.classList.add('bad');f.className='inline-feedback show think';f.innerHTML='Count the sides. Does it have 3 straight sides? Is it closed?';}}
+<div class="sb-card sb-qgroup" data-done="bonus" data-ok="✓ Yes! There are 2 small triangles, one on each side of the line, and the big triangle around both of them: 2 + 1 = 3.">
+  <span class="sb-k">Bonus · optional</span>
+  <h3>Hidden Triangles</h3>
+  <p>A straight line goes from the top vertex of a triangle down to its bottom side. How many triangles can you find in all?</p>
+  <div class="sb-stage" role="img" aria-label="A big triangle. A straight line goes from its top corner down to the middle of its bottom side, splitting it into two smaller parts." style="margin:6px auto;max-width:300px"><svg viewBox="0 0 300 220"><polygon points="20,200 280,200 120,20" fill="#FBF6EA" stroke="#0E1C42" stroke-width="5" stroke-linejoin="round"/><line x1="120" y1="20" x2="170" y2="200" stroke="#0E1C42" stroke-width="5" stroke-linecap="round"/></svg></div>
+  <div class="sb-q">I can find <input class="sb-ans" data-a="3" inputmode="numeric" autocomplete="off" aria-label="number" data-hint="Count the two small triangles. Then look for one more: the big one around both."> triangles in all.</div>
+  <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div>
+</div>
 
-/* Gather / Copy / Download */
-function gather(){var o='Lesson 3.12.04 &#8212; Triangles\n\n';document.querySelectorAll('textarea.journal-box').forEach(function(t){o+=(t.dataset.label||t.id)+'\n'+((t.value||'').trim()||'[empty]')+'\n\n';});document.getElementById('gO').value=o;}
-function copyA(){gather();var text=document.getElementById('gO').value;if(!text||text.indexOf('Click')===0){return;}try{var ta=document.createElement('textarea');ta.value=text;ta.style.position='fixed';ta.style.left='-9999px';document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);var btn=document.querySelector('.green-btn');if(btn){btn.textContent='\u2705 Copied!';setTimeout(function(){btn.textContent='Copy All Answers';},2000);}}catch(e){var btn2=document.querySelector('.green-btn');if(btn2){btn2.textContent='\u274c Could not copy';setTimeout(function(){btn2.textContent='Copy All Answers';},2000);}}}
-function dl(){gather();var text=document.getElementById('gO').value;if(!text||text.indexOf('Click')===0){return;}var blob=new Blob([text],{type:'text/plain'});var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=(window.lessonKey||'math-journal')+'.txt';document.body.appendChild(a);a.click();document.body.removeChild(a);URL.revokeObjectURL(a.href);}
-function tg(i){i.classList.toggle('checked');var c=i.querySelector('.turn-in-check');if(c)c.textContent=i.classList.contains('checked')?'✓':'';}
+<div class="sb-card">
+  <span class="sb-k">How to turn in</span>
+  <h3>Turn in your work</h3>
+  <ol class="sb-steps4">
+    <li>Check the list below. Jobs 1 to 8 are required. The Bonus is optional.</li>
+    <li>Press <b>📋 Gather my answers</b>, then <b>📋 Copy</b>. Or press <b>🖨️ Print or save as PDF</b>.</li>
+    <li>Open this lesson's assignment in Canvas.</li>
+    <li>Paste your answers (or upload your PDF and journal photo), then press <b>Submit</b>.</li>
+  </ol>
+</div>
 
-async function loadVideoManifest(){try{var res=await fetch('video-manifest.md',{cache:'no-store'});if(!res.ok)return;var txt=await res.text();var map=parseManifest(txt);document.querySelectorAll('.video-wrap[data-video-slot]').forEach(function(w){var slot=w.dataset.videoSlot;if(map[slot]){var ratio=w.querySelector('.video-ratio');ratio.innerHTML=map[slot].trim();var iframe=ratio.querySelector('iframe');if(iframe){iframe.classList.add('video-iframe');iframe.setAttribute('allowfullscreen','');iframe.setAttribute('loading','lazy');}}});}catch(e){}}
-function parseManifest(txt){var map={};var lines=txt.split(/\r?\n/);var current=null,buf=[];function commit(){if(current&&buf.join('\n').trim()){map[current]=buf.join('\n').trim();}buf=[];}for(var i=0;i<lines.length;i++){var line=lines[i];var m=line.match(/^([A-Za-z0-9-]+):\s*$/);if(m){commit();current=m[1];}else if(current){buf.push(line);}}commit();return map;}
+<div class="sb-card sb-journal">
+  <span class="sb-k">Math journal</span>
+  <h3>All my answers</h3>
+  <div class="sb-help"><button type="button" class="sb-btn" data-journal="gather">📋 Gather my answers</button><button type="button" class="sb-btn ghost" data-journal="copy">📋 Copy</button><button type="button" class="sb-btn ghost" data-journal="download">⬇️ Download as text</button><button type="button" class="sb-btn ghost" data-journal="print">🖨️ Print or save as PDF</button></div>
+  <textarea id="sb-journal-out" readonly aria-label="All my answers">Press Gather my answers to collect everything here.</textarea>
+  <p class="sb-saved">Your answers and your work on this page save on this device as you go.</p>
+</div>
 
-window.addEventListener('DOMContentLoaded',function(){loadVideoManifest();restore();tbInit();});
-</script>
-<script id="fluencyScript">
-(function(){
-var FLUENCY_TIMED = false;
-var FLUENCY_TITLE = "Mixed Multiplication Facts";
-var fluencyInterval = null;
-var fluencySecondsLeft = 60;
+<div class="sb-card">
+  <span class="sb-k">Checklist</span>
+  <h3>Before you turn in</h3>
+  <ul class="sb-check">
+    <li><span class="bx"></span><span>I finished Jobs 1 to 8.</span></li>
+    <li><span class="bx"></span><span>I can build a triangle and name its sides, vertices and angles.</span></li>
+    <li><span class="bx"></span><span>I can tell why a shape is or is not a triangle.</span></li>
+    <li><span class="bx"></span><span>I can tell why some sets of 3 rods can't make a triangle.</span></li>
+    <li><span class="bx"></span><span>I tried the Bonus. <span class="opt">(optional)</span></span></li>
+  </ul>
+</div>
 
-window.fluencyStart = function(){
-  if(!FLUENCY_TIMED) return;
-  var grid = document.getElementById('fluencyGrid');
-  if(!grid) return;
-  grid.querySelectorAll('.fluency-input').forEach(function(i){ i.disabled = false; });
-  var btn = document.getElementById('fluencyStartBtn');
-  if(btn){ btn.disabled = true; btn.textContent = 'Timer Running\u2026'; }
-  var checkBtn = document.getElementById('fluencyCheckBtn');
-  if(checkBtn) checkBtn.disabled = false;
-  fluencySecondsLeft = 60;
-  fluencyUpdateDisplay();
-  fluencyInterval = setInterval(function(){
-    fluencySecondsLeft--;
-    fluencyUpdateDisplay();
-    if(fluencySecondsLeft <= 0){
-      clearInterval(fluencyInterval);
-      grid.querySelectorAll('.fluency-input').forEach(function(i){ i.disabled = true; });
-      window.fluencyCheck();
-    }
-  }, 1000);
-};
+<div class="sb-card">
+  <span class="sb-k">Coming up next</span>
+  <h3>Lesson 3.12.05 · Properties of Triangles</h3>
+  <p>Next, you'll sort triangles by their sides and angles, and use tick marks to show which sides match.</p>
+</div>
 
-function fluencyUpdateDisplay(){
-  var el = document.getElementById('fluencyTimerDisplay');
-  if(el) el.textContent = fluencySecondsLeft + 's';
-}
+<div class="sb-opti" data-slot="end-1">That's the fourth lesson in Chapter 12. Here's music by Franz Liszt, from about 170 years ago. One player in the orchestra plays a real triangle! Listen for its bright ting. Press play, and stop whenever you like.</div>
+<div class="sb-card sb-listen" data-src="liszt-triangle-scherzo.mp3">
+  <img src="images/storybook/sb-hephaestus-front.jpg" alt="The triangle at the front of the Temple of Hephaestus" style="object-fit:cover;background:#FBF6EA">
+  <div style="flex:1">
+    <span class="sb-k">Listening corner</span>
+    <h3>Piano Concerto No. 1, the "Triangle Concerto"</h3>
+    <p style="margin:2px 0">Franz Liszt finished this piece in 1849. In this part, a player in the orchestra taps a small metal triangle, and it rings out over the strings and the piano. A music writer of the time teased Liszt about all that triangle, and the nickname "Triangle Concerto" stuck.</p>
+    <div class="meter"><i></i></div><div class="sb-row"><button type="button" class="sb-btn play">▶ Play the music</button><button type="button" class="sb-btn ghost stop">■ Stop</button><span class="time" style="font-weight:800;color:#5B6478">0:00</span></div>
+    <p class="sb-credits">Franz Liszt, Piano Concerto No. 1 in E-flat major (third part). Played by Debbie Hu, piano, with the UW Symphony. CC BY-SA 2.0, via Wikimedia Commons.</p>
+  </div>
+</div>
+</section>
 
-window.fluencyCheck = function(){
-  if(fluencyInterval){ clearInterval(fluencyInterval); fluencyInterval = null; }
-  var items = document.querySelectorAll('#fluencyGrid .fluency-item');
-  var correct = 0, attempted = 0, total = items.length;
-  var lines = [];
-  items.forEach(function(item){
-    var input = item.querySelector('.fluency-input');
-    var qText = item.querySelector('.fluency-q').textContent;
-    var given = (input.value || '').trim();
-    var ans = input.dataset.answer;
-    var ok = given !== '' && given === ans;
-    if(given !== '') attempted++;
-    item.classList.remove('fluency-correct','fluency-wrong');
-    if(ok){ correct++; item.classList.add('fluency-correct'); }
-    else if(given !== ''){ item.classList.add('fluency-wrong'); }
-    lines.push(qText + ' ' + ans + '   [answered: ' + (given || 'blank') + ']' + (ok ? ' \u2713' : (given ? ' \u2717' : '')));
-  });
-  var pct = total ? Math.round((correct/total)*100) : 0;
-  var timeStr = FLUENCY_TIMED ? (' in ' + (60 - fluencySecondsLeft) + ' seconds') : '';
-  var summary = 'Fluency Warm-Up \u2014 ' + FLUENCY_TITLE + '\n' + correct + ' / ' + total + ' correct (' + pct + '%)' + timeStr + '\n\n' + lines.join('\n');
-  var j = document.getElementById('fluencyJournal');
-  if(j) j.value = summary;
-  var resEl = document.getElementById('fluencyResult');
-  if(resEl) resEl.innerHTML = correct + ' / ' + total + ' correct (' + pct + '%)' + timeStr;
-  var checkBtn = document.getElementById('fluencyCheckBtn');
-  if(checkBtn) checkBtn.disabled = true;
-  var startBtn = document.getElementById('fluencyStartBtn');
-  if(startBtn) startBtn.textContent = 'Done';
-};
-})();
-</script>
-<!-- Video Manifest Loader -->
+<footer class="sb-foot footer"><b>🏫 Optima Academy Online</b><br>Math · Grade 3 · Lesson 3.12.04 · Unit 12<br><span style="font-size:12px">Art: Temple of Hephaestus, photo by George E. Koronaios, public domain (CC0); Oliver Byrne, "The First Six Books of the Elements of Euclid" (London, 1847), public domain; both via Wikimedia Commons. Music: Franz Liszt, Piano Concerto No. 1, played by Debbie Hu and the UW Symphony, CC BY-SA 2.0, via Wikimedia Commons.</span></footer>
+</div>
+
+<script type="application/json" id="sb-data">{"lesson": "3.12.04", "key": "g3sb-3-12-04", "title": "Triangles", "audioBase": "audio/storybook/", "imgBase": "images/storybook/", "music": "liszt-triangle-scherzo.mp3", "audioReady": true, "glossary": [{"t": "triangle", "alt": ["triangles"], "d": "A closed shape with 3 straight sides, 3 vertices and 3 angles.", "key": true}, {"t": "closed shape", "alt": ["closed"], "d": "A shape whose sides all meet, with no gaps. You could trace all the way around and end where you started.", "key": true}, {"t": "side", "alt": ["sides"], "d": "One straight part of a shape's edge. A triangle has 3 sides.", "key": true}, {"t": "tick marks", "alt": ["tick mark"], "d": "Small marks on sides that are the same length. Same number of marks, same length.", "key": true}, {"t": "vertex", "alt": ["vertices"], "d": "A corner where two sides meet. A triangle has 3 vertices.", "key": true}, {"t": "angle", "alt": ["angles"], "d": "The opening between two sides that meet at a vertex.", "key": true}, {"t": "rod", "alt": ["rods"], "d": "A colored wooden bar. Each color is a different length, from 1 to 10."}, {"t": "geoboard", "d": "A board with rows of pins. You stretch rubber bands around the pins to make shapes."}, {"t": "set square", "d": "A flat triangle with one square corner. It helps you check right angles."}, {"t": "temple", "d": "A big building made long ago for worship."}, {"t": "orchestra", "d": "A big group of musicians who play many kinds of instruments together."}, {"t": "concerto", "d": "A piece of music where one player, here on the piano, plays with a whole orchestra."}], "cueWords": {}}</script>
+
+<script src="assets/storybook/sb.js?v=d8bcb5f9"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   fetch('https://raw.githubusercontent.com/bbirchum1/optima-3rd-math/main/video-manifest.json?v=' + Date.now())
@@ -654,15 +429,11 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!m) return;
         var entry = manifest[m[1]];
         if (!entry || entry.status !== 'ready' || !entry.embed) return;
-        var temp = document.createElement('div');
-        temp.innerHTML = entry.embed;
-        var iframe = temp.querySelector('iframe');
-        if (!iframe) return;
-        iframe.removeAttribute('width');
-        iframe.removeAttribute('height');
+        var temp = document.createElement('div'); temp.innerHTML = entry.embed;
+        var iframe = temp.querySelector('iframe'); if (!iframe) return;
+        iframe.removeAttribute('width'); iframe.removeAttribute('height');
         iframe.style.cssText = 'display:block;width:100%;aspect-ratio:16/9;border:none;';
-        wrap.innerHTML = '';
-        wrap.style.cssText = 'display:block;border:none;background:#000;border-radius:14px;overflow:hidden;margin:0 0 18px;';
+        wrap.innerHTML = ''; wrap.style.cssText = 'display:block;border:none;background:#000;border-radius:14px;overflow:hidden;margin:0 0 18px;';
         wrap.appendChild(iframe);
       });
     })
@@ -671,4 +442,5 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 <!-- OAO math tools for this lesson (manipulatives library) -->
 <script src="https://optimaondemand.github.io/optima-4th-math/manipulatives/lesson-tools.js" defer></script>
-</body></html>
+</body>
+</html>

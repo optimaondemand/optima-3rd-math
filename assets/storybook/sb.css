@@ -549,3 +549,16 @@ html.sb-still *{animation:none!important;transition:none!important}
 .sb-an svg .rk-v:focus-visible,.sb-an svg .rk-q:focus-visible{outline:3px solid #C9A227;outline-offset:2px}
 .sb-an svg .rk-q:not(.done){animation:anPulse 1.6s ease-in-out infinite}
 @media (prefers-reduced-motion:reduce){.sb-an svg .rk-q{animation:none}}
+/* ── tri (3.12.04 triangles; patch1204): rods tray + geoboard parts ── */
+.sb-tri .tr-tray{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:10px;margin:10px 0 4px;padding:10px;border:1.5px dashed #DCE2EE;border-radius:12px;background:#FBFCFE}
+.sb-tri .tr-rod{height:30px;min-width:36px;border:1.5px solid rgba(0,0,0,.45);border-radius:4px;font:800 16px Nunito,Arial,sans-serif;cursor:grab;touch-action:none;box-shadow:0 2px 0 rgba(0,0,0,.18)}
+.sb-tri .tr-rod:focus-visible{outline:3px solid #C9A227;outline-offset:2px}
+.sb-tri .tr-rod.used{opacity:.35}
+.sb-tri .tr-rod:disabled{cursor:default}
+.sb-tri .tr-rod.dragging{opacity:.85;z-index:5;position:relative}
+.sb-tri svg .tr-ring,.sb-tri svg .tr-side,.sb-tri svg .tr-vt,.sb-tri svg .tr-pin,.sb-tri svg .tr-cv,.sb-tri svg .tr-st{cursor:pointer}
+.sb-tri svg .tr-ring circle+circle{animation:anPulse 1.6s ease-in-out infinite}
+.sb-tri svg .tr-side:focus-visible,.sb-tri svg .tr-vt:focus-visible,.sb-tri svg .tr-cv:focus-visible{outline:3px solid #C9A227;outline-offset:2px}
+.sb-tri .an-chips .tr-res{display:inline-block;padding:4px 10px;border-radius:999px;font-weight:800;font-size:14px;border:1.5px solid #DCE2EE;background:#fff;color:#5B6478}
+.sb-tri .an-chips .tr-res.yes{border-color:#1E7A4C;color:#1E7A4C;background:#E8F5EE}
+.sb-tri .an-chips .tr-res.flat,.sb-tri .an-chips .tr-res.short{border-color:#B23A2E;color:#B23A2E;background:#FBE7E4}
