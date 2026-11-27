@@ -1,0 +1,157 @@
+<!DOCTYPE html><html><head><meta charset="utf-8">
+<!-- 3.12.05 Learn video: "Two Names for Every Triangle". Frames rendered by render.js from a timeline (estimated until voiced: timeline-3-12-05-est.json). -->
+<style>
+html,body{margin:0;width:1280px;height:720px;overflow:hidden;background:#FBF6EA;font-family:Nunito,Arial,sans-serif}
+#st{position:absolute;inset:0}
+.cap{position:absolute;left:90px;right:90px;bottom:22px;min-height:52px;background:rgba(14,28,66,.88);color:#fff;border-radius:14px;padding:10px 20px;font-size:26px;font-weight:800;line-height:1.3;text-align:center}
+.cap:empty{display:none}
+.hd{position:absolute;left:40px;top:22px;font-family:'Cormorant Garamond',Georgia,serif;font-size:32px;font-weight:700;color:#3A2A12}
+.hd small{display:block;font-family:Nunito,Arial;font-size:15px;letter-spacing:.18em;color:#B8892E;font-weight:900}
+.book{position:absolute;inset:0;display:none;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 40%,#FFF8E6,#EFE2C6)}
+.book.on{display:flex}
+.bk{display:grid;grid-template-columns:420px 420px;background:#E8DCC0;padding:12px;border-radius:10px;box-shadow:0 20px 40px rgba(60,40,10,.25)}
+.pg{background:#FFFBF1;height:380px;padding:24px;box-sizing:border-box}
+.pg img{width:100%;height:290px;object-fit:cover;border:8px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.2);box-sizing:border-box}
+.pg.r{display:flex;flex-direction:column;justify-content:center}
+.ch{font-family:Georgia,serif;letter-spacing:.2em;color:#B8892E;font-weight:700;font-size:16px}
+.tt{font-family:'Cormorant Garamond',Georgia,serif;font-size:40px;font-weight:700;color:#3A2A12;line-height:1.05;margin:8px 0}
+.q{font-size:22px;font-weight:800;color:#0E1C42;margin-top:10px}
+.owl{position:absolute;width:140px;right:28px;bottom:150px}
+</style></head><body>
+<div id="st"><svg id="sv" width="1280" height="720" viewBox="0 0 1280 720"></svg>
+<div class="hd"><small>CHAPTER 12 · EUCLID'S COMPASS</small>Two Names for Every Triangle</div></div>
+<div class="book" id="book"><div class="bk"><div class="pg"><img src="../repo/images/storybook/sb-byrne-defs.jpg" style="object-fit:cover;object-position:top"></div><div class="pg r"><div class="ch">CHAPTER 12 · LESSON 5</div><div class="tt" id="btt">Properties of Triangles</div><div class="q" id="bq">How can one triangle have two names?</div></div></div><img class="owl" src="../repo/images/storybook/opti-owl.png"></div>
+<div class="cap" id="cap"></div>
+<script>
+var TL=null, NSV='http://www.w3.org/2000/svg';
+function S(tag,a,p){var e=document.createElementNS(NSV,tag);for(var k in a){if(k==='text')e.textContent=a[k];else e.setAttribute(k,a[k]);}(p||sv).appendChild(e);return e;}
+var NV='#0E1C42', GR='#1E8C5A', RED='#B23A2E', GRAY='#5B6478', GOLD='#C9A227', OK='#1E7A4C', NO='#B23A2E', PAP='#EFE0BC', PAPL='#F6ECD2', LG='#8792A8', ROAD='#C9CFDC';
+function sec(s){return TL.secs[s];}
+var M='vid-math';
+function wt(re,n){var Wd=sec(M).words,c=0;for(var i=0;i<Wd.length;i++){if(re.test(Wd[i].w.replace(/[^\w'-]/g,''))){if(c===(n||0))return Wd[i].t;c++;}}return null;}
+function ease(x){x=Math.max(0,Math.min(1,x));return x<.5?2*x*x:1-Math.pow(-2*x+2,2)/2;}
+function caption(t){var all=[];['vid-open',M,'vid-close'].forEach(function(s){var Wd=sec(s).words,cur=[];Wd.forEach(function(w,i){cur.push(w);if(/[.!?:]$/.test(w.w)||i===Wd.length-1){all.push(cur);cur=[];}});});
+  for(var i=0;i<all.length;i++){var a=all[i][0].t,b=all[i][all[i].length-1].e+0.35;if(t>=a-0.1&&t<=b)return all[i].map(function(w){return w.w;}).join(' ');}return '';}
+var K={};
+function big(x,y,txt,col,size,op){return S('text',{x:x,y:y,'text-anchor':'middle','font-size':size||40,'font-weight':900,fill:col||NV,opacity:op==null?1:op,text:txt});}
+function pill(x,y,txt,col,op,fs){fs=fs||24;var g=S('g',{opacity:op==null?1:op});var w=txt.length*fs*.56+34;S('rect',{x:x-w/2,y:y-24,width:w,height:48,rx:24,fill:'#fff',stroke:col,'stroke-width':3},g);S('text',{x:x,y:y+fs*.36,'text-anchor':'middle','font-size':fs,'font-weight':900,fill:col,text:txt},g);return g;}
+function fadeIn(t,a,d){return ease((t-a)/(d||0.4));}
+function P(v,d,r){var a=d*Math.PI/180;return {x:v.x+r*Math.cos(a),y:v.y-r*Math.sin(a)};}
+function ln(a,b,col,w,op,dash){return S('line',{x1:a.x,y1:a.y,x2:b.x,y2:b.y,stroke:col,'stroke-width':w||7,'stroke-linecap':'round',opacity:op==null?1:op,'stroke-dasharray':dash||''});}
+function sqmark(v,b,col,op,s){s=s||30;var p1=P(v,b,s),p2=P(p1,b+90,s),p3=P(v,b+90,s);S('polyline',{points:[p1,p2,p3].map(function(p){return p.x+','+p.y;}).join(' '),fill:'none',stroke:col||GR,'stroke-width':4,opacity:op==null?1:op});}
+function arcD(v,r,a0,a1){var p=P(v,a0,r),q=P(v,a1,r);return 'M'+p.x+' '+p.y+' A'+r+' '+r+' 0 '+(a1-a0>180?1:0)+' 0 '+q.x+' '+q.y;}
+// an angle like the tools-site Protractor arms: navy ray, green ray, square mark at a right angle, navy vertex dot
+function angle(v,b,a,L1,L2,col,op,opt){opt=opt||{};ln(v,P(v,b,L1),NV,opt.w||8,op);ln(v,P(v,b+a,L2),col||GR,opt.w||8,op);
+  if(Math.abs(a-90)<0.5)sqmark(v,b,col||GR,op);
+  else if(a>0.5)S('path',{d:arcD(v,opt.r||60,b,b+a),fill:'none',stroke:col||GR,'stroke-width':4,opacity:op});
+  S('circle',{cx:v.x,cy:v.y,r:9,fill:NV,opacity:op==null?1:op});}
+// the folded papyrus checker: square corner at c, straight edges along rot and rot+90, torn outer edge
+function checker(c,rot,size,op){var p1=P(c,rot,size),p2=P(c,rot+90,size);var pts=[c.x+','+c.y,p1.x+','+p1.y];
+  for(var i=1;i<6;i++){var a=rot+15*i,r=size*(0.96+0.1*Math.sin(i*2.7));var q=P(c,a,r);pts.push(q.x+','+q.y);}
+  pts.push(p2.x+','+p2.y);
+  S('polygon',{points:pts.join(' '),fill:PAP,'fill-opacity':.92,stroke:'#C8B080','stroke-width':2.5,opacity:op==null?1:op});
+  sqmark(c,rot,'#A58B4F',op,18);}
+// torn scrap outline (bumpy all round), centered at c
+function scrap(c,w,h,op,flatBottom,flatLeft){var pts=[],B=18;
+  function push(x,y,bump){pts.push((x+(bump?B*Math.sin(x*.13+y*.11):0))+','+(y+(bump?B*Math.cos(x*.09-y*.12):0)));}
+  var x0=c.x-w/2,x1=c.x+w/2,y0=c.y-h/2,y1=c.y+h/2;
+  for(var x=x0;x<=x1;x+=40)push(x,y0,true);
+  for(var y=y0;y<=y1;y+=40)push(x1,y,true);
+  for(var x=x1;x>=x0;x-=40)push(x,y1,!flatBottom);
+  for(var y=y1;y>=y0;y-=40)push(x0,y,!flatLeft);
+  S('polygon',{points:pts.join(' '),fill:PAP,stroke:'#C8B080','stroke-width':2.5,opacity:op==null?1:op});}
+var ROD=[null,['#F7F5EE','#0E1C42'],['#E03C31','#fff'],['#7BC043','#fff'],['#8E44AD','#fff'],['#F4D03F','#0E1C42'],['#1E7B34','#fff'],['#2C2C2C','#fff'],['#8B5A2B','#fff'],['#2E86DE','#fff'],['#F08A24','#fff']];
+var U=70;
+function rod(A,B,n,op){var T=30,dx=B.x-A.x,dy=B.y-A.y,L=Math.hypot(dx,dy)||1,nx=-dy/L*T/2,ny=dx/L*T/2;var g=S('g',{opacity:op==null?1:op});
+  S('polygon',{points:[[A.x+nx,A.y+ny],[B.x+nx,B.y+ny],[B.x-nx,B.y-ny],[A.x-nx,A.y-ny]].map(function(p){return p[0]+','+p[1];}).join(' '),fill:ROD[n][0],stroke:'rgba(0,0,0,.45)','stroke-width':2},g);
+  var a=Math.atan2(dy,dx)*180/Math.PI;if(a>90)a-=180;if(a<-90)a+=180;var m={x:(A.x+B.x)/2,y:(A.y+B.y)/2};var t=S('text',{x:m.x,y:m.y+7,'text-anchor':'middle','font-size':20,'font-weight':800,fill:ROD[n][1],text:String(n)},g);t.setAttribute('transform','rotate('+a+' '+m.x+' '+m.y+')');return g;}
+function apex(A,c,a,b){var x=(a*a-b*b+c*c)/(2*c),h=Math.sqrt(Math.max(0,a*a-x*x));return {x:A.x+x*U,y:A.y-h*U};}
+function lerp(a,b,k){return {x:a.x+(b.x-a.x)*k,y:a.y+(b.y-a.y)*k};}
+function setup(){
+  K.a=sec(M).start; K.close=sec('vid-close').start;
+  K.these=wt(/^These$/,0); K.equi=wt(/^equilateral$/,0); K.one2=wt(/^This$/,0); K.iso=wt(/^isosceles$/,0); K.one3=wt(/^This$/,1); K.scal=wt(/^scalene$/,0);
+  K.tick=wt(/^Tick$/,0); K.marks=wt(/^marks$/,1); K.equi2=wt(/^equilateral$/,1); K.iso2=wt(/^isosceles$/,1);
+  K.now=wt(/^Now$/,0); K.sq=wt(/^square$/,1); K.rt=wt(/^right$/,0); K.bigger=wt(/^bigger$/,0); K.obt=wt(/^obtuse$/,0); K.smaller=wt(/^smaller$/,0); K.acute=wt(/^acute$/,0);
+  K.so=wt(/^So$/,0); K.iso3=wt(/^isosceles$/,2); K.rt2=wt(/^right$/,1);
+  K.watch=wt(/^Watch$/,0); K.big=wt(/^big$/,0); K.tiny=wt(/^tiny$/,0); K.samen=wt(/^names$/,1);
+}
+function poly(V,fill,stroke,w,op){return S('polygon',{points:V.map(function(p){return p.x+','+p.y;}).join(' '),fill:fill,stroke:stroke,'stroke-width':w||7,'stroke-linejoin':'round',opacity:op==null?1:op});}
+function ticks(V,marks,op){for(var i=0;i<3;i++){var A=V[i],B=V[(i+1)%3],dx=B.x-A.x,dy=B.y-A.y,L=Math.hypot(dx,dy),ux=dx/L,uy=dy/L,nx=-uy,ny=ux,m=lerp(A,B,.5);for(var k=0;k<marks[i];k++){var off=(k-(marks[i]-1)/2)*13;ln({x:m.x+ux*off-nx*16,y:m.y+uy*off-ny*16},{x:m.x+ux*off+nx*16,y:m.y+uy*off+ny*16},NV,6,op);}}}
+function kind(V,i){var q=V[i],a=V[(i+2)%3],c=V[(i+1)%3],d=(a.x-q.x)*(c.x-q.x)+(a.y-q.y)*(c.y-q.y),cs=d/(Math.hypot(a.x-q.x,a.y-q.y)*Math.hypot(c.x-q.x,c.y-q.y));return Math.abs(cs)<0.02?'sq':cs>0?'sm':'bg';}
+function corner(V,i,op){var q=V[i],a=V[(i+2)%3],c=V[(i+1)%3],k=kind(V,i),a1=angDeg(q,a),a2=angDeg(q,c);var lo=Math.min(a1,a2),hi=Math.max(a1,a2);if(hi-lo>180){var tmp=lo;lo=hi;hi=tmp+360;}
+  if(k==='sq'){sqmark(q,lo,GR,op,26);return;} S('path',{d:arcD(q,40,lo,hi),fill:'none',stroke:k==='sm'?'#C26A0A':NO,'stroke-width':6,opacity:op});}
+function setsq(q,b,op,L){L=L||150;var p1=P(q,b,L),p2=P(q,b+90,L);S('polygon',{points:[q,p1,p2].map(function(p){return p.x+','+p.y;}).join(' '),fill:'#D9F0E3','fill-opacity':.8,stroke:NV,'stroke-width':3,opacity:op});}
+function rodTri(A,c,l,r,cols,op){var B={x:A.x+c*U,y:A.y},T=apex(A,c,l,r);rod(A,T,l,op);rod(B,T,r,op);rod(A,B,c,op);return [A,B,T];}
+function render(t){
+  window.__t=t;var book=document.getElementById('book'),cap=document.getElementById('cap');
+  cap.textContent=window.NOCAP?'':caption(t);
+  var inOpen=t<K.a-0.3, inClose=t>=K.close-0.3;
+  book.classList.toggle('on',inOpen||inClose);
+  if(inClose){document.getElementById('btt').textContent='Your turn';document.getElementById('bq').textContent='Count the sides. Check the corners. Give two names.';}
+  sv.innerHTML='';if(inOpen||inClose)return;
+  U=38;
+  // scene 1: three rod triangles, one per side name
+  if(t<K.tick-0.4){
+    var o=fadeIn(t,K.a-0.3);
+    var e1=t>=K.these-0.3?fadeIn(t,K.these-0.3):0, e2=t>=K.one2-0.3?fadeIn(t,K.one2-0.3):0, e3=t>=K.one3-0.3?fadeIn(t,K.one3-0.3):0;
+    U=52;
+    if(e1)rodTri({x:150,y:520},3,3,3,0,e1*o);
+    if(e2)rodTri({x:562,y:520},3,7,7,0,e2);
+    if(e3)rodTri({x:915,y:520},4,2,3,0,e3);
+    if(t<K.these-0.3)big(640,360,'Look at the sides',NV,44,o);
+    if(t>=K.equi-0.2)pill(228,600,'equilateral',GR,fadeIn(t,K.equi-0.2),26);
+    if(t>=K.iso-0.2)pill(640,600,'isosceles',GR,fadeIn(t,K.iso-0.2),26);
+    if(t>=K.scal-0.2)pill(1019,600,'scalene',GR,fadeIn(t,K.scal-0.2),26);
+    if(t>=K.these-0.3)big(228,340,'all 3 the same',NV,26,e1);
+    if(t>=K.one2-0.3)big(640,150,'2 the same',NV,26,e2);
+    if(t>=K.one3-0.3)big(1019,340,'none the same',NV,26,e3);
+  }
+  // scene 2: tick marks
+  else if(t<K.now-0.4){
+    var o2=fadeIn(t,K.tick-0.4),h=Math.sqrt(3)/2;
+    var T1=[{x:120,y:500},{x:380,y:500},{x:250,y:500-260*h}],T2=[{x:540,y:500},{x:740,y:500},{x:640,y:190}],T3=[{x:880,y:500},{x:1180,y:500},{x:950,y:300}];
+    var hi=t>=K.equi2-0.3;
+    poly(T1,hi?'#E8F5EE':'#FBF6EA',NV,7,o2);poly(T2,'#FBF6EA',NV,7,o2);poly(T3,'#FBF6EA',NV,7,o2);
+    if(t>=K.tick-0.2){var to=fadeIn(t,K.tick-0.2);ticks(T1,[1,1,1],to);ticks(T2,[2,1,1],to);ticks(T3,[3,2,1],to);}
+    if(t>=K.marks-0.3&&t<K.equi2-0.3){var mo=fadeIn(t,K.marks-0.3);ln(T2[1],T2[2],GR,14,mo*.45);ln(T2[2],T2[0],GR,14,mo*.45);pill(640,600,'same marks, same length',OK,mo,24);}
+    big(250,560,'equilateral',NV,26,o2);big(640,560,'isosceles',NV,26,o2);big(1030,560,'scalene',NV,26,o2);
+    if(hi){var ho=fadeIn(t,K.equi2-0.3);ln(T1[0],T1[2],GR,14,ho*.45);ln(T1[1],T1[2],GR,14,ho*.45);pill(250,140,'at least 2 equal sides',GR,ho,22);}
+    if(t>=K.iso2-0.3)pill(250,610,'also isosceles',OK,fadeIn(t,K.iso2-0.3),24);
+  }
+  // scene 3: angles with the set square
+  else if(t<K.so-0.4){
+    var o3=fadeIn(t,K.now-0.4);
+    var R=[{x:110,y:520},{x:390,y:520},{x:110,y:300}],O=[{x:470,y:520},{x:830,y:520},{x:560,y:420}],A3=[{x:900,y:520},{x:1180,y:520},{x:1010,y:300}];
+    poly(R,'#FBF6EA',NV,7,o3);poly(O,'#FBF6EA',NV,7,o3);poly(A3,'#FBF6EA',NV,7,o3);
+    // set square visits: right corner at K.sq, obtuse corner at K.bigger, acute corners at K.smaller
+    if(t>=K.sq-0.4&&t<K.bigger-0.4)setsq(R[0],0,fadeIn(t,K.sq-0.4));
+    if(t>=K.rt-0.2){corner(R,0,fadeIn(t,K.rt-0.2));pill(250,600,'right triangle',GR,fadeIn(t,K.rt-0.2),24);}
+    if(t>=K.bigger-0.4&&t<K.smaller-0.4)setsq(O[2],angDeg(O[2],O[1])-90,fadeIn(t,K.bigger-0.4),80);
+    if(t>=K.obt-0.2){corner(O,2,fadeIn(t,K.obt-0.2));pill(650,600,'obtuse',NO,fadeIn(t,K.obt-0.2),24);}
+    if(t>=K.smaller-0.4&&t<K.acute)setsq(A3[0],0,fadeIn(t,K.smaller-0.4));
+    if(t>=K.smaller){for(var i=0;i<3;i++)corner(A3,i,fadeIn(t,K.smaller+i*0.3));}
+    if(t>=K.acute-0.2)pill(1040,600,'acute',GR,fadeIn(t,K.acute-0.2),24);
+    big(640,150,'Check every corner with a set square',NV,34,o3);
+  }
+  // scene 4: two names for one triangle
+  else if(t<K.watch-0.4){
+    var o4=fadeIn(t,K.so-0.4),V=[{x:330,y:540},{x:330,y:200},{x:670,y:540}];
+    poly(V,'#FBF6EA',NV,8,o4);ticks(V,[1,1,2],o4);corner(V,0,o4);
+    big(640,140,'Every triangle gets two names',NV,36,o4);
+    if(t>=K.iso3-0.3)pill(940,300,'sides: isosceles',NV,fadeIn(t,K.iso3-0.3),28);
+    if(t>=K.rt2-0.3)pill(940,390,'angles: right',GR,fadeIn(t,K.rt2-0.3),28);
+  }
+  // scene 5: watch out, size doesn't change the name
+  else {
+    S('rect',{x:140,y:96,width:1000,height:62,rx:14,fill:'#FBE7E4',stroke:NO,'stroke-width':3});big(640,138,"Watch out! Size doesn't change the name.",NO,30);
+    var sc=function(c,s){return [{x:c.x-1.6*s,y:c.y+1*s},{x:c.x+1.8*s,y:c.y+1*s},{x:c.x+0.2*s,y:c.y-1.4*s}];};
+    var Bg=sc({x:430,y:390},150),Tn=sc({x:960,y:470},45);
+    var bo=t>=K.big-0.3?fadeIn(t,K.big-0.3):0.25,to2=t>=K.tiny-0.3?fadeIn(t,K.tiny-0.3):0;
+    poly(Bg,'#FBF6EA',NV,7,bo);for(var j=0;j<3;j++)corner(Bg,j,bo);
+    if(to2){poly(Tn,'#FBF6EA',NV,5,to2);for(var k=0;k<3;k++)corner(Tn,k,to2);}
+    if(t>=K.samen-0.3){var so=fadeIn(t,K.samen-0.3);pill(430,640,'acute',GR,so,26);pill(960,640,'acute',GR,so,26);}
+  }
+}
+function angDeg(v,p){return ((Math.atan2(v.y-p.y,p.x-v.x)*180/Math.PI)+360)%360;}
+window.init=function(tl){TL=tl;setup();};
+</script></body></html>

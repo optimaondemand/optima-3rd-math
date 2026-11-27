@@ -1,669 +1,406 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Properties of Quadrilaterals · Grade 3 Math Lesson 3.12.06</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/storybook/sb.css?v=8baa609e">
+</head>
+<body class="sb">
+<div class="sb-prog" aria-label="Progress"><span class="k">📖 EUCLID'S COMPASS</span><span class="bar"><i></i></span><span class="n">0 of 8 jobs</span></div>
+<div class="sb-wrap">
 
-<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Optima Academy Online — Grade 3 Math Lesson 3.12.06</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Nunito:wght@400;700;800;900&display=swap');
-*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Nunito',Verdana,sans-serif;background:#F5F8FA;color:#0E1C42;line-height:1.6}.page-wrap{max-width:920px;margin:0 auto;background:#fff;box-shadow:0 0 40px rgba(14,28,66,.08)}
-:root{--geo:#5B52A8;--geo-light:#EEEDFA;--geo-mid:#9A92D0;--geo-deep:#2D2A5E}
-.progress-wrap{position:sticky;top:0;z-index:200;background:#0E1C42;padding:8px 20px 10px;display:flex;align-items:center;gap:14px}.progress-label{font-size:12px;color:#F5C518;font-weight:800;text-transform:uppercase}.progress-track{flex:1;height:10px;background:rgba(255,255,255,.1);border-radius:10px;overflow:hidden}.progress-fill{height:100%;width:0%;background:linear-gradient(90deg,var(--geo),#9A92D0,#F5C518,var(--geo));background-size:200% 100%;animation:shimmer 3s linear infinite;border-radius:10px;transition:width .4s}.progress-pct{font-size:13px;color:#F5C518;font-weight:800;min-width:36px;text-align:right}@keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
-.header{background:#0E1C42;border-bottom:6px solid var(--geo);padding:20px 28px 18px}.header-brand{display:flex;align-items:center;gap:12px;margin-bottom:14px}.header-logo{width:52px;height:52px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center}.header-logo img{width:48px;height:38px}.header-org{font-size:22px;color:#fff;font-weight:800}.header-sub{font-size:11px;color:var(--geo-mid)}.header-title{font-family:'Lora',serif;font-size:28px;color:#fff;font-weight:700;margin-bottom:10px}.header-title em{color:var(--geo-mid);font-style:italic}.header-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(91,82,168,.25);border:1.5px solid rgba(154,146,208,.5);border-radius:28px;padding:6px 16px}.header-badge-icon{font-size:22px}.header-badge-text{font-size:18px;color:#fff;font-weight:800}
-.quote-strip{background:linear-gradient(135deg,var(--geo-light),var(--geo-mid));border-bottom:2px solid var(--geo-mid);padding:14px 28px;text-align:center}.quote-strip-text{font-family:'Lora',serif;font-size:16px;font-style:italic;color:var(--geo-deep)}.quote-strip-attr{font-size:11px;color:var(--geo);font-weight:700;margin-top:4px;text-transform:uppercase}
-.info-strip{display:flex;flex-wrap:wrap;background:#fff;border-bottom:2px solid #E2E8F4}.info-cell{flex:1;min-width:150px;padding:12px 16px;border-right:1px solid #E2E8F4;display:flex;align-items:center;gap:10px}.info-icon{width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px}.info-label{font-size:10px;color:#7A88A8;text-transform:uppercase;font-weight:700}.info-value{font-size:16px;color:#0E1C42;font-weight:800}.info-detail{font-size:11px;color:#3A4A6B}
-.explorer-strip{display:flex;align-items:center;gap:16px;padding:12px 28px;background:linear-gradient(135deg,#1A2340,#0E1C42);border-bottom:3px solid var(--geo)}.explorer-compass{font-size:28px}.explorer-mission-label{font-size:10px;color:#F5C518;text-transform:uppercase;font-weight:800}.explorer-mission-text{font-size:15px;color:#fff;font-weight:700}
-.intro-2col{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:20px 28px 4px}@media(max-width:720px){.intro-2col{grid-template-columns:1fr}}.intro-card{background:#fff;border:2px solid #E2E8F4;border-radius:18px;overflow:hidden}.intro-card-head{display:flex;align-items:center;gap:10px;padding:14px 18px;border-bottom:2px solid}.intro-card-head-icon{width:40px;height:40px;border-radius:50%;color:#fff;font-size:20px;display:flex;align-items:center;justify-content:center}.intro-card-head-label{font-size:10px;color:#7A88A8;text-transform:uppercase;font-weight:700}.intro-card-head-title{font-size:18px;color:#0E1C42;font-weight:800}.intro-card-body{padding:14px 18px}.intro-card-body p{font-size:15px;color:#3A4A6B;line-height:1.65;margin-bottom:8px}.obj-line{display:flex;gap:8px;font-size:15px;color:#0E1C42;line-height:1.55;margin-bottom:8px}.theme-question .intro-card-head{background:#FFF8E6;border-color:#F5E6C8}.theme-question .intro-card-head-icon{background:#F5C518}.theme-objectives .intro-card-head{background:var(--geo-light);border-color:var(--geo-mid)}.theme-objectives .intro-card-head-icon{background:var(--geo)}
-.need-strip{display:flex;flex-wrap:wrap;gap:8px;padding:12px 28px 18px}.need-strip-label{font-size:13px;color:#3A4A6B;font-weight:700}.need-chip{background:#E3F8ED;border:1.5px solid #B8E8CF;border-radius:20px;padding:5px 12px;font-size:13px;color:#0E1C42;font-weight:700}
-.tab-bar{position:sticky;top:38px;z-index:100;background:#fff;border-bottom:3px solid #E2E8F4;display:flex;overflow-x:auto;box-shadow:0 -4px 0 0 #0E1C42}.tab-btn{flex:1;min-width:130px;padding:12px 8px 11px;background:transparent;border:none;border-bottom:4px solid transparent;font-family:'Nunito',sans-serif;font-size:13px;font-weight:700;color:#7A88A8;cursor:pointer;text-align:center}.tab-btn.active{color:#0E1C42;border-bottom-color:var(--geo);background:#fff}.tab-btn .tab-check{display:none;color:#2DB87A;margin-left:4px;font-weight:800}.tab-btn.visited .tab-check{display:inline}.tab-panel{display:none;padding:24px 28px 36px}.tab-panel.active{display:block}
-.activity{background:#fff;border:2px solid #E2E8F4;border-radius:18px;margin-bottom:18px}.activity.bl-geo{border-left:6px solid var(--geo)}.activity.bl-green{border-left:6px solid #2DB87A}.activity.bl-yellow{border-left:6px solid #F5C518}.activity.bl-slate{border-left:6px solid #3A6B9A}.activity.bl-navy{border-left:6px solid #0E1C42}.activity-head{display:flex;align-items:center;gap:12px;padding:14px 20px 14px 18px;border-bottom:1.5px solid #E2E8F4}.activity-num{width:38px;height:38px;border-radius:14px;color:#fff;font-size:18px;font-weight:800;display:flex;align-items:center;justify-content:center}.activity-title{font-size:19px;color:#0E1C42;font-weight:800}.activity-sub{font-size:12px;color:#7A88A8}.activity-body{padding:18px 22px}.activity-body p{font-size:16px;color:#3A4A6B;line-height:1.7;margin-bottom:12px}
-.callout{border-radius:14px;padding:16px 18px;display:flex;gap:12px;margin-bottom:14px}.callout-icon{font-size:28px}.callout p{font-size:15.5px;color:#0E1C42;line-height:1.65;margin:0}.callout-info{background:var(--geo-light);border:2px solid var(--geo-mid)}.callout-think{background:#FFF8E6;border:2px solid #F5E6C8}.callout-tip{background:#E3F8ED;border:2px solid #B8E8CF}
-.key-concept{background:var(--geo-light);border:2px solid var(--geo-mid);border-radius:14px;padding:16px 18px;margin-bottom:14px}.key-concept-label{font-size:12px;color:var(--geo-deep);text-transform:uppercase;font-weight:800;margin-bottom:8px}.key-concept p{font-size:15px;color:#0E1C42;line-height:1.7}
-.socratic-box{background:linear-gradient(135deg,var(--geo-light),var(--geo-mid));border:2px solid var(--geo-mid);border-radius:14px;padding:16px 18px;margin-bottom:14px}.socratic-label{font-size:12px;color:var(--geo-deep);text-transform:uppercase;font-weight:800;margin-bottom:8px}.socratic-q{font-size:15.5px;color:#0E1C42;font-style:italic}
-.journal-label{font-size:13px;color:#3A4A6B;font-weight:700;margin:10px 0 4px}.journal-box{width:100%;min-height:80px;border:2px solid #E2E8F4;border-radius:12px;padding:12px 14px;font-family:'Nunito',sans-serif;font-size:15px;color:#0E1C42;resize:vertical}.journal-box:focus{outline:none;border-color:var(--geo)}.saved-dot{width:8px;height:8px;border-radius:50%;background:#E2E8F4;display:inline-block;transition:.3s}.saved-dot.saved{background:#2DB87A}
-.check-btn,.geo-btn,.green-btn,.orange-btn{display:inline-flex;align-items:center;gap:6px;color:#fff;border:none;border-radius:12px;padding:10px 20px;font-size:14px;font-weight:800;cursor:pointer;font-family:'Nunito',sans-serif;margin-top:10px}.check-btn{background:#3A6B9A}.geo-btn{background:var(--geo)}.green-btn{background:#2DB87A}.orange-btn{background:#E07B39}
-.hint-callout{background:#FFF8E6;border:2px solid #F5C518;border-radius:10px;padding:10px 14px;margin:12px 0;font-size:14px;color:#5A4A00;font-weight:700}
-.task-box{background:#FAFBFF;border:2px solid #E2E8F4;border-radius:14px;padding:16px 18px;margin-bottom:14px}.task-label{font-size:12px;color:var(--geo-deep);text-transform:uppercase;font-weight:800;margin-bottom:10px}
-.feedback-branch{display:none;margin-top:16px;border-radius:14px;padding:16px}.feedback-branch.show{display:block;animation:reveal .35s}.feedback-pass{background:#E3F8ED;border:2px solid #B8E8CF}.feedback-retry{background:#FFF0E6;border:2px solid #F5C8A0}
-.value-card-row{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}.value-card{border:2px solid #E2E8F4;background:#fff;border-radius:14px;padding:10px 14px;min-width:110px;text-align:center;cursor:pointer;transition:.2s}.value-card:hover{border-color:var(--geo);background:var(--geo-light)}.value-card.good{background:#E3F8ED;border-color:#2DB87A}.value-card.bad{background:#FFF0E6;border-color:#E07B39;animation:shake .25s}.value-card .big{font-size:22px;font-weight:900;color:#0E1C42}.value-card .small{font-size:12px;color:#3A4A6B;font-weight:800}
-.q-block{background:#FAFBFF;border:2px solid #E2E8F4;border-radius:14px;padding:14px 18px;margin-bottom:14px}.q-num{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--geo);color:#fff;font-weight:800;font-size:14px;margin-right:8px;vertical-align:middle}.q-text{font-size:15.5px;color:#0E1C42;line-height:1.65}
-.gathered-box{background:#fff;border:2px solid #E2E8F4;border-radius:18px;overflow:hidden;margin-top:24px}.gathered-head{display:flex;align-items:center;gap:14px;background:linear-gradient(135deg,#0E1C42,#1A2D5A);padding:18px 22px}.gathered-head-icon{font-size:32px}.gathered-head-label{font-size:11px;color:#F5C518;font-weight:800;text-transform:uppercase}.gathered-head-title{font-size:18px;color:#fff;font-weight:800}.gathered-body{padding:16px 22px}.gathered-output{width:100%;min-height:160px;border:2px solid #E2E8F4;border-radius:12px;padding:14px;font-family:monospace;font-size:13px;background:#FAFBFF}
-.tab-next-wrap{text-align:center;padding:24px 0 8px}.tab-transition-voice{font-family:'Lora',serif;font-size:15px;font-style:italic;color:var(--geo-deep);margin-bottom:12px}.tab-next-btn{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--geo),#2D2A5E);color:#fff;border:none;border-radius:28px;padding:13px 28px;font-size:15px;font-weight:800;cursor:pointer;box-shadow:0 4px 14px rgba(45,42,94,.3);animation:float 3s infinite}
-.turn-in-card{background:#fff;border:2px solid #E2E8F4;border-radius:18px;overflow:hidden;margin-top:18px}.turn-in-header{display:flex;align-items:center;gap:14px;background:var(--geo-light);padding:18px 22px;border-bottom:2px solid var(--geo-mid)}.turn-in-header-icon{font-size:36px}.turn-in-header-label{font-size:11px;color:var(--geo-deep);font-weight:800;text-transform:uppercase}.turn-in-header-title{font-family:'Lora',serif;font-size:22px;color:#0E1C42;font-weight:700}.turn-in-body{padding:18px 22px 20px}.turn-in-item{display:flex;align-items:center;gap:14px;padding:12px 16px;background:#FAFBFF;border:1.5px solid #E2E8F4;border-radius:12px;cursor:pointer;margin-bottom:10px}.turn-in-item.checked{background:#E3F8ED;border-color:#B8E8CF}.turn-in-check{width:26px;height:26px;border-radius:8px;border:2px solid var(--geo-mid);background:#fff;display:flex;align-items:center;justify-content:center;font-size:16px}.turn-in-item.checked .turn-in-check{background:#2DB87A;border-color:#2DB87A;color:#fff}
-.footer{background:#0E1C42;border-top:4px solid var(--geo);padding:18px 28px;text-align:center}.footer-main{font-size:14px;color:#fff;margin-bottom:4px}.footer-main span{color:var(--geo-mid);font-weight:700}.footer-sub{font-size:12px;color:rgba(255,255,255,.5)}.footer-copy{font-size:11px;color:rgba(255,255,255,.3)}
-.inline-feedback{display:none;margin:12px 0;border-radius:14px;padding:12px 14px;font-weight:800;line-height:1.5}.inline-feedback.show{display:block;animation:reveal .3s}.inline-feedback.good{background:#E3F8ED;border:2px solid #B8E8CF;color:#0E1C42}.inline-feedback.think{background:#FFF3DC;border:2px solid #F5E6C8;color:#5A4A3A}
-.vocab-section{background:#fff;border:2px solid var(--geo-mid);border-left:6px solid var(--geo);border-radius:18px;padding:14px 20px;margin:0 0 20px}.vocab-section-title{font-size:16px;color:#0E1C42;font-weight:900;margin-bottom:4px}
-.bubble-row{display:flex;gap:12px;flex-wrap:wrap;margin:14px 0}.bubble{display:flex;gap:10px;flex:1 1 260px;max-width:340px;background:#fff;border:2px solid #E2E8F4;border-radius:18px;padding:12px 14px}.bubble.atlas{border-left:5px solid #6B3FA0;background:linear-gradient(135deg,#fff,#F8F4FF)}.bubble.hazel{border-left:5px solid #2DB87A;background:linear-gradient(135deg,#fff,#F4FBF7)}.bubble.felix{border-left:5px solid #F5C518;background:linear-gradient(135deg,#fff,#FEFBEB)}.bubble.cora{border-left:5px solid #3A6B9A;background:linear-gradient(135deg,#fff,#F4F8FC)}.bubble-avatar{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:900;color:#fff;flex-shrink:0;font-family:'Lora',serif}.bubble.atlas .bubble-avatar{background:#6B3FA0}.bubble.hazel .bubble-avatar{background:#2DB87A}.bubble.felix .bubble-avatar{background:#F5C518;color:#0E1C42}.bubble.cora .bubble-avatar{background:#3A6B9A}.bubble-body{flex:1;min-width:0}.bubble-name{font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.7px;margin-bottom:3px;color:#6B3FA0}.bubble.hazel .bubble-name{color:#1A8A5A}.bubble.felix .bubble-name{color:#8A6D2B}.bubble.cora .bubble-name{color:#1A6B8E}.bubble-text{font-size:14.5px;color:#0E1C42;line-height:1.5;font-weight:600;font-family:'Lora',serif;font-style:italic}
-/* ═══ VIDEO PLACEHOLDER ═══ */
-.video-placeholder-wrap {
-  display: none;
-  border-radius: 14px; overflow: hidden; margin: 0 0 18px;
-  border: 2px dashed rgba(107,63,160,0.4);
-  background: linear-gradient(135deg, #0E1C42, #1A2D5A);
-}
-.video-placeholder-inner {
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-  text-align: center; padding: 28px 20px;
-}
-.video-placeholder-inner .vp-icon { font-size: 34px; margin-bottom: 6px; }
-.video-placeholder-inner .vp-label {
-  font-size: 10px; color: #F5C518; text-transform: uppercase;
-  letter-spacing: 2px; font-weight: 800; margin-bottom: 4px;
-}
-.video-placeholder-inner .vp-title {
-  font-size: 16px; font-weight: 800; color: #fff; margin-bottom: 8px;
-}
-.video-placeholder-inner .vp-slot {
-  font-family: monospace; font-size: 11px; color: #6B3FA0;
-  background: rgba(107,63,160,0.15);
-  padding: 3px 10px; border-radius: 4px;
-}
-.video-placeholder-inner .vp-notes {
-  font-size: 12px; color: rgba(255,255,255,0.8); font-style: italic;
-  margin-top: 10px; text-align: left; padding: 10px 12px;
-  background: rgba(0,0,0,0.25); border-radius: 6px; border-left: 3px solid #6B3FA0;
-}
+<header class="sb-head">
+  <div class="sb-brand"><img alt="" src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png"><div><b>Optima Academy Online</b><small>An Education Experience Company</small></div></div>
+  <h1 class="sb-title">Properties of Quadrilaterals</h1>
+  <div class="sb-chips">
+    <span class="sb-chip lead">Lesson 3.12.06 · Unit 12 · Lesson 6</span>
+    <button type="button" class="sb-chip" id="sb-read">🔊 Read aloud</button>
+    <button type="button" class="sb-chip" data-pop="#sb-std" aria-expanded="false">Standards ▾</button>
+    <button type="button" class="sb-chip" id="sb-music" aria-pressed="false">🎵 Music: off</button>
+    <button type="button" class="sb-chip" id="sb-motion" aria-pressed="true">✨ Motion: on</button>
+  </div>
+  <div class="sb-pop" id="sb-std"><b>MA.3.GR.1.2</b> Identify and draw quadrilaterals based on their defining attributes. Quadrilaterals include parallelograms, rhombi, rectangles, squares and trapezoids.<br><b>MA.K12.MTR.2.1</b> Show math in many ways. <b>MTR.5.1</b> Use patterns and structure. <b>MTR.6.1</b> Check that answers make sense.<br><small>Today: check the sides and corners of 4-sided shapes and give each one the name that tells the most. Dimensions Math 3B, Chapter 12, Lesson 6 · Properties of Quadrilaterals</small></div>
+</header>
 
-/* QUAD BUILDER */
-.qb-frame{background:#fff;border:2px solid var(--geo-mid);border-radius:16px;padding:18px;margin:14px 0}
-.qb-layout{display:grid;grid-template-columns:1.2fr 1fr;gap:16px}@media(max-width:720px){.qb-layout{grid-template-columns:1fr}}
-.qb-canvas-wrap{background:#FAFBFF;border:2px solid #E2E8F4;border-radius:14px;padding:10px;position:relative;min-height:320px}
-.qb-props{background:#FAFBFF;border:2px solid #E2E8F4;border-radius:14px;padding:14px}
-.qb-props-title{font-size:12px;color:var(--geo-deep);font-weight:900;text-transform:uppercase;margin-bottom:8px;letter-spacing:.5px}
-.qb-prop-line{font-size:14px;color:#0E1C42;font-weight:700;margin-bottom:6px;padding:6px 10px;background:#fff;border-radius:10px;border:1.5px solid #E2E8F4}
-.qb-classify{margin-top:10px;padding:10px;background:var(--geo-light);border:2px solid var(--geo-mid);border-radius:12px;text-align:center;font-size:16px;font-weight:900;color:var(--geo-deep)}
-.qb-presets{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:10px}
-.qb-preset-btn{background:var(--geo-light);border:2px solid var(--geo-mid);border-radius:12px;padding:6px 12px;font-size:12px;font-weight:800;cursor:pointer;font-family:'Nunito',sans-serif;color:var(--geo-deep)}.qb-preset-btn:hover{background:var(--geo);color:#fff}
-.qb-reset-btn{background:#7A88A8;color:#fff;border:none;border-radius:14px;padding:8px 16px;font-size:13px;font-weight:900;cursor:pointer;font-family:'Nunito',sans-serif;margin-top:6px}
-
-@keyframes reveal{0%{opacity:0;transform:translateY(10px)}100%{opacity:1;transform:translateY(0)}}@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}@keyframes mini{0%{transform:translateY(0) scale(0);opacity:1}50%{transform:translateY(-30px) scale(1.2)}100%{transform:translateY(-60px) scale(.6);opacity:0}}
-</style>
-<style id="fluencyStyles">
-.fluency-box{background:#fff;border:2px solid #F5C518;border-radius:18px;overflow:hidden;margin-bottom:22px;font-family:'Nunito',sans-serif}
-.fluency-head{display:flex;align-items:center;gap:12px;background:linear-gradient(135deg,#F5C518,#E8B723);padding:14px 20px;flex-wrap:wrap}
-.fluency-head-icon{font-size:26px;line-height:1}
-.fluency-head-label{font-size:10px;color:#0E1C42;font-weight:800;text-transform:uppercase;letter-spacing:0.5px}
-.fluency-head-title{font-size:15px;color:#0E1C42;font-weight:800}
-.fluency-timer-ui{margin-left:auto;display:flex;align-items:center;gap:10px}
-.fluency-timer-display{font-size:20px;font-weight:800;color:#0E1C42;min-width:46px;text-align:center}
-.fluency-start-btn{background:#0E1C42;color:#fff;border:none;border-radius:10px;padding:8px 14px;font-weight:700;font-size:12px;cursor:pointer}
-.fluency-start-btn:disabled{opacity:0.55;cursor:default}
-.fluency-body{padding:16px 20px}
-.fluency-instructions{font-size:13px;color:#4A5568;margin:0 0 12px}
-.fluency-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(128px,1fr));gap:10px;margin-bottom:14px}
-.fluency-item{display:flex;align-items:center;gap:6px;background:#FAFBFF;border:1.5px solid #E2E8F4;border-radius:10px;padding:8px 10px}
-.fluency-item.fluency-correct{border-color:#2DB87A;background:#EAFBF3}
-.fluency-item.fluency-wrong{border-color:#E07B39;background:#FDF1E9}
-.fluency-q{font-size:13px;font-weight:700;color:#0E1C42;white-space:nowrap}
-.fluency-input{width:46px;border:1.5px solid #CBD5E8;border-radius:6px;padding:4px;font-size:14px;text-align:center;font-family:'Nunito',sans-serif}
-.fluency-input:disabled{background:#F0F2F8}
-.fluency-check-btn{background:#2DB87A;color:#fff;border:none;border-radius:10px;padding:10px 18px;font-weight:800;font-size:13px;cursor:pointer}
-.fluency-check-btn:disabled{opacity:0.55;cursor:default}
-.fluency-result{margin-top:10px;font-size:14px;color:#0E1C42;font-weight:700}
-</style></head><body>
-<div class="page-wrap">
-
-<!-- ═══════════════════════════════════════════════════════════════════════
-     OPTIMA READ-ALOUD PLAYER — drop-in snippet for GitHub-hosted lesson pages
-     ═══════════════════════════════════════════════════════════════════════ -->
-<div id="optima-read-aloud">
-<style>
-    #optima-read-aloud { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 14px 18px; margin: 0 0 20px 0; }
-    #optima-read-aloud .ora-kicker { font-size: 11px; color: #1B6A94; letter-spacing: 0.4px; margin-bottom: 10px; }
-    #optima-read-aloud .ora-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
-    #optima-read-aloud .ora-controls button { border-radius: 8px; padding: 8px 16px; font-size: 14px; cursor: pointer; font-family: inherit; transition: all 0.15s; }
-    #ora-play { background: #0E1C42; color: #FFFFFF; border: 1.5px solid #0E1C42; }
-    #ora-play:hover:enabled { background: #1B2D5E; }
-    #ora-play:disabled { background: #D0D9E8; border-color: #D0D9E8; color: #6b7a99; cursor: default; }
-    #ora-stop { background: #FFFFFF; color: #0E1C42; border: 1.5px solid #D0D9E8; }
-    #ora-stop:hover:enabled { background: #F4F6FA; border-color: #55C8E8; }
-    #ora-stop:disabled { color: #999; border-color: #E4E9F2; cursor: default; }
-    #optima-read-aloud .ora-speed { font-size: 12px; color: #6b7a99; display: flex; align-items: center; gap: 6px; }
-    #ora-rate { font-family: inherit; font-size: 13px; color: #0E1C42; border: 1.5px solid #D0D9E8; border-radius: 6px; padding: 5px 8px; background: #FFFFFF; }
-    #ora-status { font-size: 12px; color: #666; }
-    .ora-highlight { background: #FDF3E3 !important; box-shadow: inset 4px 0 0 #C7922C; border-radius: 4px; transition: background 0.2s; }
-</style>
-    <div class="ora-kicker">&#128266; READ ALOUD &mdash; LISTEN TO THIS PAGE</div>
-    <div class="ora-controls">
-        <button id="ora-play" type="button" aria-label="Listen to this page">&#9654;&#65039; Listen</button>
-        <button id="ora-stop" type="button" aria-label="Stop reading" disabled>&#9632; Stop</button>
-        <label class="ora-speed">Speed
-            <select id="ora-rate" aria-label="Reading speed">
-                <option value="0.8">Slower</option>
-                <option value="1" selected>Normal</option>
-                <option value="1.25">Faster</option>
-            </select>
-        </label>
-        <span id="ora-status" role="status" aria-live="polite"></span>
+<!-- the open book -->
+<div class="sb-book" aria-label="Opti's storybook, open to Chapter 12">
+  <div class="sb-book-in">
+    <div class="sb-pg">
+      <figure class="sb-plate"><img src="images/storybook/sb-byrne-quads.jpg" alt="An old printed page of definitions. Next to each one is a small four-sided shape drawn with red, yellow and blue sides: a square, an oblong and a rhombus."><figcaption>Euclid's names for four-sided shapes, from Oliver Byrne's book, 1847</figcaption></figure>
     </div>
-<script>
-(function () {
-    "use strict";
-    var playBtn  = document.getElementById("ora-play");
-    var stopBtn  = document.getElementById("ora-stop");
-    var rateSel  = document.getElementById("ora-rate");
-    var statusEl = document.getElementById("ora-status");
-
-    if (!("speechSynthesis" in window) || !("SpeechSynthesisUtterance" in window)) {
-        playBtn.disabled = true;
-        rateSel.disabled = true;
-        statusEl.textContent = "Read-aloud is not supported in this browser.";
-        return;
-    }
-
-    var LABEL_PLAY   = "▶️ Listen";
-    var LABEL_PAUSE  = "⏸️ Pause";
-    var LABEL_RESUME = "▶️ Resume";
-    var BLOCK_SEL = "p, li, h1, h2, h3, h4, h5, h6, blockquote, td, th, dt, dd, figcaption, div";
-    var SKIP_SEL  = "#optima-read-aloud, [data-ra-skip], button, script, style, select, noscript, iframe";
-
-    var queue = [];
-    var idx = 0;
-    var playing = false, paused = false, stopping = false;
-    var currentBlock = null;
-    var currentUtterance = null;
-
-    var voices = [];
-    function loadVoices() { voices = window.speechSynthesis.getVoices(); }
-    loadVoices();
-    if ("onvoiceschanged" in window.speechSynthesis) {
-        window.speechSynthesis.onvoiceschanged = loadVoices;
-    }
-    function pickVoice() {
-        if (!voices.length) loadVoices();
-        var en = voices.filter(function (v) { return /^en/i.test(v.lang); });
-        return en.filter(function (v) { return /natural/i.test(v.name); })[0]
-            || en.filter(function (v) { return /google us english/i.test(v.name); })[0]
-            || en.filter(function (v) { return v.default; })[0]
-            || en[0] || null;
-    }
-
-    function isVisible(el) {
-        return !!(el.offsetWidth || el.offsetHeight || el.getClientRects().length);
-    }
-
-    function collectQueue() {
-        var root = document.querySelector("[data-readaloud-root]")
-                || document.querySelector(".canvas-frame")
-                || document.body;
-        var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null, false);
-        var items = [];
-        var node;
-        while ((node = walker.nextNode())) {
-            if (!/\S/.test(node.textContent)) continue;
-            var el = node.parentElement;
-            if (!el || el.closest(SKIP_SEL)) continue;
-            if (!isVisible(el)) continue;
-            var block = el.closest(BLOCK_SEL) || root;
-            var last = items[items.length - 1];
-            if (last && last.el === block) last.text += " " + node.textContent;
-            else items.push({ el: block, text: node.textContent });
-        }
-        var q = [];
-        items.forEach(function (item) {
-            var clean = item.text.replace(/[\u{1F600}-\u{1F64F}\u{1F300}-\u{1F5FF}\u{1F680}-\u{1F6FF}\u{1F1E0}-\u{1F1FF}\u{1F900}-\u{1F9FF}\u{1FA00}-\u{1FA6F}\u{1FA70}-\u{1FAFF}\u{2600}-\u{27BF}\u{2300}-\u{23FF}\u{2B50}\u{2B55}\u{25A0}-\u{25FF}\u{2702}-\u{27B0}\u{FE00}-\u{FE0F}\u{200D}\u{20E3}\u{E0020}-\u{E007F}]/gu, "").replace(/\s+/g, " ").trim();
-            if (!clean) return;
-            var sentences = clean.match(/[^.!?]+[.!?]+["”’')\]]*\s*|[^.!?]+$/g) || [clean];
-            sentences.forEach(function (s) {
-                s = s.trim();
-                if (s) q.push({ el: item.el, text: s });
-            });
-        });
-        return q;
-    }
-
-    function highlight(el) {
-        if (el === currentBlock) return;
-        clearHighlight();
-        currentBlock = el;
-        if (el && el !== document.body) {
-            el.classList.add("ora-highlight");
-            try { el.scrollIntoView({ behavior: "smooth", block: "nearest" }); } catch (e) {}
-        }
-    }
-    function clearHighlight() {
-        if (currentBlock) currentBlock.classList.remove("ora-highlight");
-        currentBlock = null;
-    }
-
-    function speakNext() {
-        if (idx >= queue.length) { finish("Finished reading this page."); return; }
-        var item = queue[idx];
-        highlight(item.el);
-        var u = new SpeechSynthesisUtterance(item.text);
-        u.rate = parseFloat(rateSel.value) || 1;
-        var v = pickVoice();
-        if (v) u.voice = v;
-        u.onend = function () {
-            if (stopping) return;
-            idx++;
-            speakNext();
-        };
-        u.onerror = function (e) {
-            if (stopping || e.error === "canceled" || e.error === "interrupted") return;
-            idx++;
-            speakNext();
-        };
-        currentUtterance = u;
-        window.speechSynthesis.speak(u);
-        statusEl.textContent = "Reading… " + (idx + 1) + " / " + queue.length;
-    }
-
-    function finish(message) {
-        playing = false;
-        paused = false;
-        clearHighlight();
-        playBtn.textContent = LABEL_PLAY;
-        stopBtn.disabled = true;
-        statusEl.textContent = message || "";
-        currentUtterance = null;
-    }
-
-    playBtn.addEventListener("click", function () {
-        if (playing && !paused) {
-            window.speechSynthesis.pause();
-            paused = true;
-            playBtn.textContent = LABEL_RESUME;
-            statusEl.textContent = "Paused";
-            return;
-        }
-        if (playing && paused) {
-            window.speechSynthesis.resume();
-            paused = false;
-            playBtn.textContent = LABEL_PAUSE;
-            statusEl.textContent = "Reading… " + (idx + 1) + " / " + queue.length;
-            return;
-        }
-        queue = collectQueue();
-        if (!queue.length) { statusEl.textContent = "Nothing to read on this page."; return; }
-        idx = 0;
-        stopping = false;
-        playing = true;
-        paused = false;
-        window.speechSynthesis.cancel();
-        playBtn.textContent = LABEL_PAUSE;
-        stopBtn.disabled = false;
-        speakNext();
-    });
-
-    stopBtn.addEventListener("click", function () {
-        stopping = true;
-        window.speechSynthesis.cancel();
-        finish("");
-    });
-
-    rateSel.addEventListener("change", function () {
-        if (!playing || paused) return;
-        stopping = true;
-        window.speechSynthesis.cancel();
-        setTimeout(function () { stopping = false; speakNext(); }, 60);
-    });
-
-    window.addEventListener("pagehide", function () { window.speechSynthesis.cancel(); });
-})();
-</script>
+    <div class="sb-pg r">
+      <div class="sb-chap">Chapter 12</div>
+      <div class="sb-chap-t">Euclid's Compass</div>
+      <div class="sb-orn" aria-hidden="true"></div>
+      <p class="sb-chap-s">Alexandria, Egypt · about 300 BC</p>
+      <div class="sb-chap-l">Lesson 6 · Properties of Quadrilaterals</div>
+    </div>
+  </div>
+  <img class="sb-owl" src="images/storybook/opti-owl.png" alt="Opti the owl, sitting on the open book">
 </div>
-<!-- ═══ END OPTIMA READ-ALOUD PLAYER ═══ -->
 
-<div class="progress-wrap"><span class="progress-label">Lesson Progress</span><div class="progress-track"><div class="progress-fill" id="pf"></div></div><span class="progress-pct" id="pp">0%</span></div>
-<div class="header">
-<div class="header-brand"><div class="header-logo"><img alt="Optima" src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png"/></div><div><div class="header-org">Optima Academy Online</div><div class="header-sub">An Education Experience Company</div></div></div>
-<div class="header-title"><em>Properties of Quadrilaterals</em></div>
-<div class="header-badge"><span class="header-badge-icon">🔷</span><span class="header-badge-text">Lesson 3.12.06 · U4 Extend</span></div>
-</div>
-<div class="quote-strip"><div class="quote-strip-text">“Quadrilaterals come in many shapes, but they all share one thing: four sides.”</div><div class="quote-strip-attr">Geometry fact</div></div>
-<div class="info-strip">
-<div class="info-cell"><div class="info-icon" style="background:var(--geo-light);">📐</div><div><div class="info-label">Unit</div><div class="info-value">Unit 12</div><div class="info-detail">Geometry</div></div></div>
-<div class="info-cell"><div class="info-icon" style="background:#E3F8ED;">📅</div><div><div class="info-label">Lesson</div><div class="info-value">3.12.06</div><div class="info-detail">U4 Extend</div></div></div>
-<div class="info-cell"><div class="info-icon" style="background:#EAF0FF;">📐</div><div><div class="info-label">Standard</div><div class="info-value">MA.3.GR.1.2</div><div class="info-detail">quadrilaterals</div></div></div>
-<div class="info-cell"><div class="info-icon" style="background:#FFF8E6;">🔧</div><div><div class="info-label">Tool</div><div class="info-value">Quad Builder</div><div class="info-detail">drag &amp; classify</div></div></div>
-</div>
-<div class="explorer-strip"><span class="explorer-compass">🧭</span><div><div class="explorer-mission-label">Today’s Mission</div><div class="explorer-mission-text">Build four-sided shapes and see what makes each family special.</div></div></div>
-<div class="intro-2col">
-<div class="intro-card theme-question"><div class="intro-card-head"><div class="intro-card-head-icon">❓</div><div><div class="intro-card-head-label">Essential Question</div><div class="intro-card-head-title">What makes quadrilaterals different from each other?</div></div></div><div class="intro-card-body"><p>They all have four sides. But some have parallel sides, some have right angles, and some have both.</p></div></div>
-<div class="intro-card theme-objectives"><div class="intro-card-head"><div class="intro-card-head-icon">🎯</div><div><div class="intro-card-head-label">Today’s Objectives</div><div class="intro-card-head-title">You will…</div></div></div><div class="intro-card-body">
-<div class="obj-line"><span style="flex-shrink:0">🔷</span><span><strong>Identify</strong> rectangles, squares, rhombi, parallelograms, and trapezoids.</span></div>
-<div class="obj-line"><span style="flex-shrink:0">📐</span><span><strong>Classify</strong> quadrilaterals by their properties (parallel sides, equal sides, right angles).</span></div>
-<div class="obj-line"><span style="flex-shrink:0">🔧</span><span><strong>Build</strong> shapes on the Quad Builder and watch properties update.</span></div>
-</div></div>
-</div>
-<div class="need-strip"><span class="need-strip-label">You’ll need:</span><span class="need-chip">📓 Math Journal</span><span class="need-chip">✏️ Pencil</span></div>
-<div class="tab-bar" id="tabBar">
-<button class="tab-btn active" data-tab="warmup" onclick="switchTab('warmup')">🔍 Warm-Up <span class="tab-check">✓</span></button>
-<button class="tab-btn" data-tab="learn" onclick="switchTab('learn')">📐 Learn <span class="tab-check">✓</span></button>
-
-<button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">🌟 Show What You Know <span class="tab-check">✓</span></button>
-</div>
-<!-- WARM-UP TAB -->
-<div class="tab-panel active" id="tab-warmup">
-<!-- ═══ INTRODUCTION VIDEO ═══ -->
-<div class="video-placeholder-wrap">
-<!-- slot: g3math-12-06 -->
-<div class="video-placeholder-inner">
-  <span class="vp-icon">&#x1F3AC;</span>
-  <div class="vp-label">Introduction Video</div>
-  <div class="vp-title">Optima Academy Online — Grade 3 Math Lesson 3.12.06</div>
-  <div class="vp-slot">g3math-12-06</div>
-  <div class="vp-notes">
-    <strong>Teacher recording notes:</strong> Introduction video for this lesson.
+<div class="sb-intro">
+  <div class="sb-card sb-eq">
+    <span class="sb-k">Essential Question</span>
+    <h3>How can we name a 4-sided shape by its sides and corners?</h3>
+    <div class="sb-stage" role="img" aria-label="A slanted 4-sided shape. Arrow marks show two pairs of parallel sides. Tick marks show two pairs of equal sides." style="margin:6px 0;max-width:240px"><svg viewBox="0 0 260 190"><polygon points="30.0,160.0 200.0,160.0 230.0,40.0 60.0,40.0" fill="#FBF6EA" stroke="#0E1C42" stroke-width="4.5" stroke-linejoin="round"/><line x1="115.0" y1="151.0" x2="115.0" y2="169.0" stroke="#0E1C42" stroke-width="3.5" stroke-linecap="round"/><line x1="205.3" y1="101.7" x2="222.8" y2="106.1" stroke="#0E1C42" stroke-width="3.5" stroke-linecap="round"/><line x1="207.2" y1="93.9" x2="224.7" y2="98.3" stroke="#0E1C42" stroke-width="3.5" stroke-linecap="round"/><line x1="145.0" y1="49.0" x2="145.0" y2="31.0" stroke="#0E1C42" stroke-width="3.5" stroke-linecap="round"/><line x1="54.7" y1="98.3" x2="37.2" y2="93.9" stroke="#0E1C42" stroke-width="3.5" stroke-linecap="round"/><line x1="52.8" y1="106.1" x2="35.3" y2="101.7" stroke="#0E1C42" stroke-width="3.5" stroke-linecap="round"/><polyline points="121.0,152.0 131.0,160.0 121.0,168.0" fill="none" stroke="#C26A0A" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><polyline points="151.0,32.0 161.0,40.0 151.0,48.0" fill="none" stroke="#C26A0A" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><polyline points="208.7,92.2 218.9,84.5 224.2,96.1" fill="none" stroke="#C26A0A" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><polyline points="211.1,82.5 221.3,74.8 226.6,86.4" fill="none" stroke="#C26A0A" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><polyline points="38.7,92.2 48.9,84.5 54.2,96.1" fill="none" stroke="#C26A0A" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><polyline points="41.1,82.5 51.3,74.8 56.6,86.4" fill="none" stroke="#C26A0A" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <p style="margin:4px 0 0">Check three things: parallel sides, equal sides, square corners.</p>
+  </div>
+  <div class="sb-card sb-obj">
+    <span class="sb-k">Today's Objectives</span>
+    <h3>You will…</h3>
+    <ul>
+      <li><b>Make</b> 4-sided shapes on a geoboard.</li>
+      <li><b>Check</b> for parallel sides, equal sides and square corners.</li>
+      <li><b>Name</b> trapezoids, parallelograms, rectangles, rhombuses and squares.</li>
+    </ul>
   </div>
 </div>
+
+<div class="sb-tabs" role="tablist" aria-label="Lesson sections">
+  <button class="sb-tab" role="tab" data-tab="warmup" aria-controls="tab-warmup">🔍 Warm-Up <span class="ck">✓</span></button>
+  <button class="sb-tab" role="tab" data-tab="learn" aria-controls="tab-learn">📐 Lesson <span class="ck">✓</span></button>
+  <button class="sb-tab" role="tab" data-tab="swyk" aria-controls="tab-swyk">🌟 Show What You Know <span class="ck">✓</span></button>
 </div>
 
-<div class="fluency-box" data-timed="false">
-<div class="fluency-head">
-<div class="fluency-head-icon">✍️</div>
-<div><div class="fluency-head-label">FLUENCY WARM-UP</div><div class="fluency-head-title">Fact Families (All Four Operations)</div></div>
-</div>
-<div class="fluency-body">
-<p class="fluency-instructions">Warm up your fact fluency before today’s lesson. Work through these, then check your answers.</p>
-<div class="fluency-grid" id="fluencyGrid">
-<div class="fluency-item"><span class="fluency-q">7 × 8 = ___ =</span><input autocomplete="off" class="fluency-input" data-answer="56" inputmode="numeric" type="text"/></div>
-<div class="fluency-item"><span class="fluency-q">56 ÷ 7 = ___ =</span><input autocomplete="off" class="fluency-input" data-answer="8" inputmode="numeric" type="text"/></div>
-<div class="fluency-item"><span class="fluency-q">56 ÷ 8 = ___ =</span><input autocomplete="off" class="fluency-input" data-answer="7" inputmode="numeric" type="text"/></div>
-<div class="fluency-item"><span class="fluency-q">9 + 6 = ___ =</span><input autocomplete="off" class="fluency-input" data-answer="15" inputmode="numeric" type="text"/></div>
-<div class="fluency-item"><span class="fluency-q">15 - 9 = ___ =</span><input autocomplete="off" class="fluency-input" data-answer="6" inputmode="numeric" type="text"/></div>
-<div class="fluency-item"><span class="fluency-q">15 - 6 = ___ =</span><input autocomplete="off" class="fluency-input" data-answer="9" inputmode="numeric" type="text"/></div>
-<div class="fluency-item"><span class="fluency-q">8 × 6 = ___ =</span><input autocomplete="off" class="fluency-input" data-answer="48" inputmode="numeric" type="text"/></div>
-<div class="fluency-item"><span class="fluency-q">48 ÷ 8 = ___ =</span><input autocomplete="off" class="fluency-input" data-answer="6" inputmode="numeric" type="text"/></div>
-<div class="fluency-item"><span class="fluency-q">48 ÷ 6 = ___ =</span><input autocomplete="off" class="fluency-input" data-answer="8" inputmode="numeric" type="text"/></div>
-<div class="fluency-item"><span class="fluency-q">8 × 7 = ___ =</span><input autocomplete="off" class="fluency-input" data-answer="56" inputmode="numeric" type="text"/></div>
-</div>
-<button class="fluency-check-btn" id="fluencyCheckBtn" onclick="fluencyCheck()">Check My Answers</button>
-<div class="fluency-result" id="fluencyResult"></div>
-</div>
-<textarea class="journal-box" data-label="Fluency Warm-Up (Fact Families (All Four Operations))" id="fluencyJournal" readonly="" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;"></textarea>
+<!-- ══════════════ WARM-UP ══════════════ -->
+<section class="sb-panel tab-panel" id="tab-warmup" role="tabpanel">
+
+<div class="sb-opti" data-slot="warm-1">Hoo! Euclid's book names four-sided shapes, too: the square, the oblong, the rhombus, and more. In Roman towns, builders laid floors with marble rhombuses. Today you'll stretch bands into four-sided shapes and find each one's family.</div>
+
+<div class="sb-video pq-vslot" data-slot="warm">
+  <video controls preload="metadata" playsinline poster="assets/video/g3math-12-06-warm.jpg" src="assets/video/g3math-12-06-warm.mp4"></video>
+  <div class="cap">🎬 Opti Opens Lesson 6: Properties of Quadrilaterals</div>
 </div>
 
-<div class="activity bl-yellow"><div class="activity-head"><div class="activity-num" style="background:#F5C518;color:#0E1C42;">🔎</div><div><div class="activity-title">Readiness Check</div><div class="activity-sub">Tap the card.</div></div></div><div class="activity-body">
-<p>An equilateral triangle has ___ equal sides.</p>
-<div class="value-card-row">
-<div class="value-card" onclick="rA(this,true)"><div class="big">3</div></div>
-<div class="value-card" onclick="rA(this,false)"><div class="big">2</div></div>
-<div class="value-card" onclick="rA(this,false)"><div class="big">0</div></div>
-</div>
-<div class="inline-feedback" id="rA-fb"></div>
-<div class="hint-callout">“Equi” means equal, “lateral” means side. All 3 sides equal.</div>
-</div></div>
-
-<div class="activity bl-yellow"><div class="activity-head"><div class="activity-num" style="background:#F5C518;color:#0E1C42;">🤔</div><div><div class="activity-title">Think About It</div></div></div><div class="activity-body">
-<div class="callout callout-think"><span class="callout-icon">🧠</span><p>Cora is designing floor tiles. She can use squares, rectangles, or other four-sided shapes. What do all these shapes have in common?</p></div>
-<div class="value-card-row">
-<div class="value-card" onclick="rT(this,true)"><div class="big">4 sides</div></div>
-<div class="value-card" onclick="rT(this,false)"><div class="big">3 sides</div></div>
-<div class="value-card" onclick="rT(this,false)"><div class="big">Curved edges</div></div>
-</div>
-<div class="inline-feedback" id="rT-fb"></div>
-<div class="olt-nudge"><a href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=geoboard&amp;st=1" target="_blank" rel="noopener" title="Open the Geoboard to stretch bands into shapes and check the sides."><span aria-hidden="true">🧮</span> Try the <b>Geoboard</b> <span aria-hidden="true">↗</span></a></div><div class="journal-label">✏️ Name as many four-sided shapes as you can. <span class="saved-dot" id="dt"></span></div>
-<textarea class="journal-box" data-label="Warm-Up journal" id="j-t01" oninput="autoSave(this,'dt')" placeholder=""></textarea>
-</div></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Four sides, four angles — but so many different shapes.</p><button class="tab-next-btn" onclick="switchTab('learn')">Continue to 📐 Learn →</button></div>
-</div>
-<!-- LEARN TAB -->
-<div class="tab-panel" id="tab-learn">
-<div class="vocab-section"><div class="vocab-section-title">Vocabulary</div>
-<p style="font-size:14px;color:#3A4A6B;font-family:'Lora',serif;font-style:italic;margin-bottom:10px;"><strong>Quadrilateral</strong> — any closed shape with exactly 4 straight sides.</p>
-<p style="font-size:14px;color:#3A4A6B;font-family:'Lora',serif;font-style:italic;margin-bottom:10px;"><strong>Parallelogram</strong> — opposite sides are parallel and equal length.</p>
-<p style="font-size:14px;color:#3A4A6B;font-family:'Lora',serif;font-style:italic;margin-bottom:10px;"><strong>Rectangle</strong> — a parallelogram with 4 right angles.</p>
-<p style="font-size:14px;color:#3A4A6B;font-family:'Lora',serif;font-style:italic;margin-bottom:10px;"><strong>Rhombus</strong> — a parallelogram with 4 equal sides.</p>
-<p style="font-size:14px;color:#3A4A6B;font-family:'Lora',serif;font-style:italic;margin-bottom:10px;"><strong>Square</strong> — a rectangle AND a rhombus — 4 equal sides AND 4 right angles.</p>
-<p style="font-size:14px;color:#3A4A6B;font-family:'Lora',serif;font-style:italic;"><strong>Trapezoid</strong> — exactly one pair of parallel sides.</p>
+<div class="sb-card">
+  <span class="sb-k">From the past</span>
+  <h3>A floor of rhombuses</h3>
+  <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>This marble floor is in Herculaneum, a Roman town in Italy. In the year 79, a volcano called Mount Vesuvius buried the town in ash and mud, and the floor stayed hidden for about 1,700 years. Look at the pieces of stone. Many of them have 4 equal sides, and their corners are not square corners. Those pieces are rhombuses. Small triangles fill the spaces between them.</p></div>
+  <div class="sb-art">
+    <figure class="sb-fig"><img src="images/storybook/sb-herculaneum-rhombi.jpg" alt="A floor made of colored marble pieces: pink, grey, white and blue rhombuses, with small triangles between them."><figcaption>A marble floor in Herculaneum, Italy, from before the year 79.<small>Photo by AlMare, 2002. CC BY-SA 3.0, via Wikimedia Commons.</small></figcaption></figure>
+  </div>
+  <p style="margin:6px 0 0">Euclid wrote down names for four-sided shapes, like the square and the rhombus. Builders used those same shapes to make floors.</p>
+  <p style="margin:6px 0 0"><b>Today's math:</b> make 4-sided shapes, check their sides and corners, and give each one the name that tells the most.</p>
 </div>
 
-<div class="callout callout-info"><span class="callout-icon">🔧</span><p><strong>Try the Quad Builder.</strong> Pick a preset shape or drag the corners yourself. Watch the properties update live.</p></div>
-<!-- CENTERPIECE: Quad Builder -->
-<div class="activity bl-geo"><div class="activity-head"><div class="activity-num" style="background:var(--geo);">🔷</div><div><div class="activity-title">Quad Builder</div></div></div><div class="activity-body">
-<p style="font-family:'Lora',serif;font-size:14.5px;font-style:italic;color:var(--geo-deep);margin-bottom:8px;">Drag the corners to reshape the quadrilateral. Watch the classification change.</p>
-<div class="qb-frame">
-<div class="qb-presets">
-<button class="qb-preset-btn" onclick="qbPreset('square')">Make a square</button>
-<button class="qb-preset-btn" onclick="qbPreset('rect')">Make a rectangle</button>
-<button class="qb-preset-btn" onclick="qbPreset('trap')">Make a trapezoid</button>
-<button class="qb-preset-btn" onclick="qbPreset('para')">Make a parallelogram</button>
-<button class="qb-preset-btn" onclick="qbPreset('free')">Free build</button>
-</div>
-<div class="qb-layout">
-<div class="qb-canvas-wrap">
-<svg id="qb-svg" style="touch-action:none;cursor:crosshair;" viewbox="0 0 300 300" width="100%"></svg>
-</div>
-<div class="qb-props">
-<div class="qb-props-title">Properties</div>
-<div class="qb-prop-line" id="qb-parallel">Parallel sides: —</div>
-<div class="qb-prop-line" id="qb-equal">Equal sides: —</div>
-<div class="qb-prop-line" id="qb-right">Right angles: —</div>
-<div class="qb-classify" id="qb-name">Drag a corner!</div>
-</div>
-</div>
-<div style="text-align:center;"><button class="qb-reset-btn" onclick="qbPreset('square')">↩ Reset</button></div>
-</div>
-</div></div>
-<div class="key-concept"><div class="key-concept-label">📐 Key Concept — What You Just Saw</div>
-<p><strong>All quadrilaterals have 4 sides.</strong> The special ones have extra properties: parallel sides, equal sides, right angles. A square has ALL the special properties — 4 equal sides, 4 right angles, 2 pairs of parallel sides. It’s the most special quadrilateral.</p>
+<div class="video-placeholder-wrap">
+<!-- slot: g3math-12-06 -->
+<div class="video-placeholder-inner"><div class="vp-label">🎬 Welcome Video</div><div class="vp-slot">g3math-12-06</div><div class="vp-notes"><b>Teacher recording notes:</b> Welcome to properties of quadrilaterals! Warm up with × 7 and × 9 facts. Then reshape a rectangle on the geoboard and tell what stays the same.</div></div>
 </div>
 
-<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">🧠</div><div><div class="activity-title">Worked Example: Cora’s Tiles</div></div></div><div class="activity-body">
-<div class="task-box"><div class="task-label">Problem</div><p>Cora has three tile shapes. Tile A: 4 equal sides, 4 right angles. Tile B: 4 right angles, sides of different lengths (2 long, 2 short). Tile C: 4 equal sides, no right angles.</p></div>
-<div class="bubble-row">
-<div class="bubble cora"><div class="bubble-avatar">C</div><div class="bubble-body"><div class="bubble-name">Cora</div><div class="bubble-text">“Tile A: 4 equal sides + 4 right angles = square.”</div></div></div>
-<div class="bubble atlas"><div class="bubble-avatar">A</div><div class="bubble-body"><div class="bubble-name">Atlas</div><div class="bubble-text">“Tile B: 4 right angles but not all sides equal = rectangle.”</div></div></div>
+<div class="fluency-box">
+  <div class="fluency-head"><div class="fluency-head-icon">✍️</div><div><div class="fluency-head-label">FACT WARM-UP</div><div class="fluency-head-title">Today's Helpers: Times 7 and Times 9</div></div></div>
+  <div class="fluency-body">
+    <p class="fluency-instructions">Warm up with × 7 and × 9 facts. Type each answer, then check. You can fix any answer and check again.</p>
+    <div class="fluency-grid" id="fluencyGrid">
+      <div class="fluency-item"><span class="fluency-q">7 × 4 =</span><input class="fluency-input" data-answer="28" inputmode="numeric" autocomplete="off" aria-label="7 times 4"></div>
+      <div class="fluency-item"><span class="fluency-q">9 × 6 =</span><input class="fluency-input" data-answer="54" inputmode="numeric" autocomplete="off" aria-label="9 times 6"></div>
+      <div class="fluency-item"><span class="fluency-q">7 × 7 =</span><input class="fluency-input" data-answer="49" inputmode="numeric" autocomplete="off" aria-label="7 times 7"></div>
+      <div class="fluency-item"><span class="fluency-q">9 × 8 =</span><input class="fluency-input" data-answer="72" inputmode="numeric" autocomplete="off" aria-label="9 times 8"></div>
+      <div class="fluency-item"><span class="fluency-q">7 × 11 =</span><input class="fluency-input" data-answer="77" inputmode="numeric" autocomplete="off" aria-label="7 times 11"></div>
+      <div class="fluency-item"><span class="fluency-q">9 × 4 =</span><input class="fluency-input" data-answer="36" inputmode="numeric" autocomplete="off" aria-label="9 times 4"></div>
+      <div class="fluency-item"><span class="fluency-q">7 × 8 =</span><input class="fluency-input" data-answer="56" inputmode="numeric" autocomplete="off" aria-label="7 times 8"></div>
+      <div class="fluency-item"><span class="fluency-q">9 × 11 =</span><input class="fluency-input" data-answer="99" inputmode="numeric" autocomplete="off" aria-label="9 times 11"></div>
+      <div class="fluency-item"><span class="fluency-q">7 × 6 =</span><input class="fluency-input" data-answer="42" inputmode="numeric" autocomplete="off" aria-label="7 times 6"></div>
+      <div class="fluency-item"><span class="fluency-q">9 × 3 =</span><input class="fluency-input" data-answer="27" inputmode="numeric" autocomplete="off" aria-label="9 times 3"></div>
+    </div>
+    <div class="sb-help"><button type="button" class="sb-btn check" data-fluency-check>Check my answers</button></div>
+    <div class="sb-fb" aria-live="polite"></div>
+  </div>
 </div>
-<div class="bubble-row">
-<div class="bubble hazel"><div class="bubble-avatar">H</div><div class="bubble-body"><div class="bubble-name">Hazel</div><div class="bubble-text">“Tile C: 4 equal sides but no right angles = rhombus.”</div></div></div>
-<div class="bubble felix"><div class="bubble-avatar">F</div><div class="bubble-body"><div class="bubble-name">Felix</div><div class="bubble-text">“They’re all parallelograms too — all have 2 pairs of parallel sides!”</div></div></div>
+
+<div class="sb-card sb-qgroup" data-done="review" data-ok="✓ Yes! The tick marks show 2 sides the same length, and the green square shows 1 square corner. Today you'll check sides and corners on 4-sided shapes.">
+  <span class="sb-k">Remember from Lesson 5</span>
+  <h3>Read the marks</h3>
+  <p>Look at the marks on this triangle. Count the sides that are the same length, and count the square corners.</p>
+  <div class="sb-stage" role="img" aria-label="A triangle. Two sides have one tick mark each and the third side has two. One corner has a small green square." style="margin:6px auto;max-width:280px"><svg viewBox="0 0 300 220"><polygon points="60.0,190.0 60.0,40.0 230.0,190.0" fill="#FBF6EA" stroke="#0E1C42" stroke-width="4.5" stroke-linejoin="round"/><line x1="51.0" y1="115.0" x2="69.0" y2="115.0" stroke="#0E1C42" stroke-width="3.5" stroke-linecap="round"/><line x1="148.0" y1="105.6" x2="136.0" y2="119.1" stroke="#0E1C42" stroke-width="3.5" stroke-linecap="round"/><line x1="154.0" y1="110.9" x2="142.0" y2="124.4" stroke="#0E1C42" stroke-width="3.5" stroke-linecap="round"/><line x1="145.0" y1="199.0" x2="145.0" y2="181.0" stroke="#0E1C42" stroke-width="3.5" stroke-linecap="round"/><polyline points="73.0,190.0 73.0,177.0 60.0,177.0" fill="none" stroke="#1E7A4C" stroke-width="3"/><path d="M60.0 58.0 A18 18 0 0 0 73.5 51.9" fill="none" stroke="#C26A0A" stroke-width="3.5"/><path d="M216.5 178.1 A18 18 0 0 0 212.0 190.0" fill="none" stroke="#C26A0A" stroke-width="3.5"/></svg></div>
+  <div class="sb-q">It has <input class="sb-ans" data-a="2" inputmode="numeric" autocomplete="off" aria-label="number" data-hint="Sides with the same number of tick marks are the same length."> sides the same length and <input class="sb-ans" data-a="1" inputmode="numeric" autocomplete="off" aria-label="number" data-hint="Count the small green squares."> square corner.</div>
+  <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div>
+  <div class="sb-fb" aria-live="polite"></div>
 </div>
-</div></div>
-<div class="socratic-box"><div class="socratic-label">🔮 Think Deeper</div><p class="socratic-q">Is a square also a rectangle? Is a rectangle also a square? Explain.</p><div class="olt-nudge"><a href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=tangram&amp;st=1" target="_blank" rel="noopener" title="Open the Tangrams to slide, turn, and flip the pieces into the shape."><span aria-hidden="true">🧮</span> Try the <b>Tangrams</b> <span aria-hidden="true">↗</span></a></div><div class="journal-label">✏️ <span class="saved-dot" id="ds1"></span></div><textarea class="journal-box" data-label="Learn socratic" id="j-s101" oninput="autoSave(this,'ds1')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Four sides, many families — and squares belong to all of them.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
+
+<!-- JOB 1 · THINK -->
+<section class="sb-card sb-job" data-job="1">
+  <div class="sb-jh"><span class="sb-jn">JOB 1</span><div><h3>Think: Reshape the Rectangle</h3><span class="sb-kind">🔨 Do · ✏️ Write</span></div><span class="sb-donechip"></span></div>
+  <div class="sb-opti" data-slot="think-1">Euclid's students made a rectangle with a band. Move its corners to make three new shapes, each with four sides. What stays the same every time?</div>
+  <p class="sb-story">Euclid's students stretched a band into a rectangle. What happens if they move its corners?</p>
+  <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>A geoboard with 11 rows of 11 pins. A purple band makes a rectangle. Each corner of the band has a big dot you can move to another pin.</p></div>
+  <div class="sb-steps">
+    <div class="sb-step" data-need="made3" data-cue=".qd-h"><h4>Make 3 new shapes</h4><p>Drag a corner dot to a different pin. Keep moving corners until you have made 3 new 4-sided shapes.</p></div>
+    <div class="sb-step"><h4>What stays the same?</h4>
+      <label class="sb-write-l" for="w-think">Every shape you made is different. Tell what stayed the same every time.</label>
+      <textarea class="sb-write" id="w-think" data-req data-label="Reshape the Rectangle" placeholder="Every shape had … The sides were … There were no …"></textarea>
+      <div class="sb-chips2">Remember to tell: <span>4 sides</span><span>straight</span><span>corners</span></div>
+      <div class="sb-help"><button type="button" class="sb-btn check">Done</button></div><div class="sb-fb" aria-live="polite"></div></div>
+    <div class="sb-locked"></div>
+  </div>
+  <div data-mod="quad" data-do="reshape" data-name="think" data-for="made3"></div>
+  <div class="sb-help"><button type="button" class="sb-btn ghost" data-hints='["Drag one corner dot up, down or sideways to a new pin.", "If the band crosses itself, pick a different pin.", "Every shape still has 4 straight sides and 4 corners, with no gaps."]'>💡 Need a hint?</button><a class="sb-tool" href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=geoboard&amp;st=1#s=eyJuIjoxMSwiYmFuZHMiOlt7InAiOltbMiwzXSxbOCwzXSxbOCw3XSxbMiw3XV0sImsiOjEsImMiOjB9XX0" target="_blank" rel="noopener" title="Move the corners of the rectangle to make new 4-sided shapes. Which sides stay parallel?">🧮 Try the Geoboard ↗</a><button type="button" class="sb-btn ghost sb-tipbtn" data-tip="#tip-1">💬 Cora has a tip</button></div>
+  <div class="sb-hintbox"></div>
+  <div class="sb-tip" id="tip-1" data-who="cora">I count the sides after every move. If I still get 4 straight sides with no gaps, it's a 4-sided shape.</div>
+  <div class="sb-payoff" data-after-job="1">
+    <p style="margin:0"><b>Every shape you made is a quadrilateral:</b> a closed shape with 4 straight sides and 4 corners. "Quad" means four.</p>
+  </div>
+  <div class="sb-opti" data-slot="think-done" data-after="1">Every shape you made had four straight sides, four corners, and no gaps. That's a quadrilateral. Quad means four.</div>
+</section>
+
+<div class="sb-next"><button type="button" class="sb-btn gold" data-go-tab="learn" data-go-st="1">Next: the Lesson →</button></div>
+</section>
+
+<!-- ══════════════ LESSON ══════════════ -->
+<section class="sb-panel tab-panel" id="tab-learn" role="tabpanel">
+<div class="sb-path" role="list">
+  <button type="button" class="sb-pstep" data-st="1" role="listitem"><span class="num">1</span><span><b>Learn it</b><small>Learn + Your Turn</small></span></button>
+  <button type="button" class="sb-pstep" data-st="2" role="listitem"><span class="num">2</span><span><b>Practice together</b><small>2 jobs</small></span></button>
+  <button type="button" class="sb-pstep" data-st="3" role="listitem"><span class="num">3</span><span><b>On your own</b><small>1 job</small></span></button>
 </div>
-<!-- PRACTICE TAB -->
-<!-- SHOW WHAT YOU KNOW TAB -->
-<div class="tab-panel" id="tab-assignment">
-<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">🎯</div><div><div class="activity-title">Ready Check</div></div></div><div class="activity-body">
-<div class="q-block"><p class="q-text"><span class="q-num">A</span>How many pairs of parallel sides does a trapezoid have?</p><div class="value-card-row"><div class="value-card" onclick="eA(this,true)"><div class="big">1</div></div><div class="value-card" onclick="eA(this,false)"><div class="big">2</div></div><div class="value-card" onclick="eA(this,false)"><div class="big">0</div></div></div><div class="inline-feedback" id="eA-fb"></div></div>
-<div class="q-block"><p class="q-text"><span class="q-num">B</span>A shape has 4 equal sides and 4 right angles. It is a ___.</p><div class="value-card-row"><div class="value-card" onclick="eB(this,true)"><div class="big">Square</div></div><div class="value-card" onclick="eB(this,false)"><div class="big">Rectangle</div></div><div class="value-card" onclick="eB(this,false)"><div class="big">Rhombus</div></div></div><div class="inline-feedback" id="eB-fb"></div></div>
-</div></div>
-<div class="activity bl-navy"><div class="activity-head"><div class="activity-num" style="background:#0E1C42;">📬</div><div><div class="activity-title">Show What You Know</div></div></div><div class="activity-body">
-<div class="q-block"><p class="q-text"><span class="q-num">1</span><strong>Fluency.</strong> Name the quadrilateral: 4 sides, 2 pairs of parallel sides, 4 right angles, sides not all equal.</p><div class="olt-nudge"><a href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=compass&amp;st=1" target="_blank" rel="noopener" title="Open the Compass to set the radius and draw the circle."><span aria-hidden="true">🧮</span> Try the <b>Compass</b> <span aria-hidden="true">↗</span></a></div><div class="journal-label">✏️ <span class="saved-dot" id="da1"></span></div><textarea class="journal-box" data-label="SWYK 1" id="j-a101" oninput="autoSave(this,'da1')" placeholder=""></textarea></div>
-<div class="q-block"><p class="q-text"><span class="q-num">2</span><strong>Transfer.</strong> Cora says a rhombus is like a “pushed-over square.” Do you agree? What properties do they share, and what’s different?</p><div class="journal-label">✏️ <span class="saved-dot" id="da2"></span></div><textarea class="journal-box" data-label="SWYK 2" id="j-a201" oninput="autoSave(this,'da2')" placeholder=""></textarea></div>
 
-<div class="activity bl-slate" style="margin-top:18px;border-left-color:#F5A36F;"><div class="activity-head"><div class="activity-num" style="background:#F5A36F;color:#0E1C42;">🗺️</div><div><div class="activity-title">Connection Forward</div><div class="activity-sub">Next: Lesson 3.12.07</div></div></div><div class="activity-body">
-<p>You know triangles and quadrilaterals now. Next lesson: using a compass to construct perfect circles and shapes. It’s the tool that ties geometry together.</p>
-</div></div>
-</div></div>
-<div class="gathered-box"><div class="gathered-head"><div class="gathered-head-icon">📋</div><div><div class="gathered-head-label">Math Journal</div><div class="gathered-head-title">All Answers</div></div></div><div class="gathered-body"><textarea class="gathered-output" id="gO" readonly="">Click “Gather” to collect.</textarea><div style="display:flex;gap:10px;margin-top:12px;"><button class="geo-btn" onclick="gather()">📋 Gather</button><button class="green-btn" onclick="copyA()">Copy</button><button class="check-btn" onclick="dl()">Download</button></div></div></div>
-<div class="turn-in-card"><div class="turn-in-header"><div class="turn-in-header-icon">✅</div><div><div class="turn-in-header-label">Turn-In</div><div class="turn-in-header-title">Ready?</div></div></div><div class="turn-in-body">
-<div class="turn-in-item" onclick="tg(this)"><span class="turn-in-check">✓</span><span>I completed Show What You Know.</span></div>
-<div class="turn-in-item" onclick="tg(this)"><span class="turn-in-check">✓</span><span>I can identify and classify quadrilaterals by their properties.</span></div>
-</div></div>
+<!-- STATION 1 -->
+<div class="sb-station" data-st="1">
+  <div class="sb-opti" data-slot="learn-1">Welcome to the Lesson. First, you'll check the sides and corners of four-sided shapes. Next, we fix some mix-ups. Then you'll make a shape of your own.</div>
+
+  <div class="sb-video pq-vslot" data-slot="learn">
+    <video controls preload="metadata" playsinline poster="assets/video/g3math-12-06-learn.jpg" src="assets/video/g3math-12-06-learn.mp4"></video>
+    <div class="cap">🎬 Check Three Things</div>
+  </div>
+
+  <div class="sb-card">
+    <span class="sb-k">Learn</span>
+    <h3>What is a quadrilateral?</h3>
+    <div class="sb-stage" role="img" aria-label="Four different 4-sided shapes: a big lopsided one, a small one, a square turned on its corner, and a pointy dart shape." style="margin:6px 0"><svg viewBox="0 0 640 210"><polygon points="20.0,170.0 190.0,170.0 170.0,60.0 40.0,40.0" fill="#FBF6EA" stroke="#0E1C42" stroke-width="4.5" stroke-linejoin="round"/><polygon points="230.0,170.0 300.0,170.0 300.0,110.0 230.0,120.0" fill="#FBF6EA" stroke="#0E1C42" stroke-width="4.5" stroke-linejoin="round"/><polygon points="400.0,30.0 470.0,100.0 400.0,170.0 330.0,100.0" fill="#FBF6EA" stroke="#0E1C42" stroke-width="4.5" stroke-linejoin="round"/><polygon points="520.0,180.0 570.0,40.0 625.0,180.0 572.0,130.0" fill="#FBF6EA" stroke="#0E1C42" stroke-width="4.5" stroke-linejoin="round"/></svg></div>
+    <p style="margin:6px 0 0">A <b>quadrilateral</b> is a closed shape with 4 straight sides and 4 corners. Big or small, tipped or pointy: if it has 4 straight sides and no gaps, it is a quadrilateral.</p>
+  </div>
+
+  <div class="sb-card">
+    <span class="sb-k">Learn</span>
+    <h3>Check 1: parallel sides</h3>
+    <div class="sb-stage" role="img" aria-label="Two shapes. The first has orange arrow marks on its top and bottom sides only, labeled trapezoid, at least 1 pair. The second has one arrow on its top and bottom and two arrows on its slanted sides, labeled parallelogram, 2 pairs." style="margin:6px 0"><svg viewBox="0 0 640 230"><polygon points="30.0,180.0 280.0,180.0 220.0,60.0 90.0,60.0" fill="#FBF6EA" stroke="#0E1C42" stroke-width="4.5" stroke-linejoin="round"/><polyline points="161.0,172.0 171.0,180.0 161.0,188.0" fill="none" stroke="#C26A0A" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><polyline points="161.0,52.0 171.0,60.0 161.0,68.0" fill="none" stroke="#C26A0A" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><polygon points="350.0,180.0 560.0,180.0 615.0,60.0 405.0,60.0" fill="#FBF6EA" stroke="#0E1C42" stroke-width="4.5" stroke-linejoin="round"/><polyline points="461.0,172.0 471.0,180.0 461.0,188.0" fill="none" stroke="#C26A0A" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><polyline points="516.0,52.0 526.0,60.0 516.0,68.0" fill="none" stroke="#C26A0A" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><polyline points="582.7,111.2 594.2,105.5 597.3,117.9" fill="none" stroke="#C26A0A" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><polyline points="586.9,102.1 598.3,96.4 601.4,108.8" fill="none" stroke="#C26A0A" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><polyline points="372.7,111.2 384.2,105.5 387.3,117.9" fill="none" stroke="#C26A0A" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><polyline points="376.9,102.1 388.3,96.4 391.4,108.8" fill="none" stroke="#C26A0A" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><text x="155" y="218" text-anchor="middle" font-size="17" font-weight="900" fill="#0E1C42">trapezoid: at least 1 pair</text><text x="482" y="218" text-anchor="middle" font-size="17" font-weight="900" fill="#0E1C42">parallelogram: 2 pairs</text></svg></div>
+    <p style="margin:6px 0 0"><b>Parallel</b> sides go the same way, like train tracks. They never meet. Arrow marks show them. A quadrilateral with at least 1 pair of parallel sides is a <b>trapezoid</b>. With 2 pairs, it is a <b>parallelogram</b>.</p>
+  </div>
+
+  <div class="sb-card">
+    <span class="sb-k">Learn</span>
+    <h3>Checks 2 and 3: equal sides and square corners</h3>
+    <div class="sb-stage" role="img" aria-label="Three shapes. A rhombus with one tick mark on every side. A rectangle with green squares in all four corners and tick marks showing two long and two short sides. A square with one tick mark on every side and green squares in all four corners." style="margin:6px 0"><svg viewBox="0 0 640 230"><polygon points="110.0,30.0 185.0,105.0 110.0,180.0 35.0,105.0" fill="#FBF6EA" stroke="#0E1C42" stroke-width="4.5" stroke-linejoin="round"/><line x1="153.9" y1="61.1" x2="141.1" y2="73.9" stroke="#0E1C42" stroke-width="3.5" stroke-linecap="round"/><line x1="153.9" y1="148.9" x2="141.1" y2="136.1" stroke="#0E1C42" stroke-width="3.5" stroke-linecap="round"/><line x1="66.1" y1="148.9" x2="78.9" y2="136.1" stroke="#0E1C42" stroke-width="3.5" stroke-linecap="round"/><line x1="66.1" y1="61.1" x2="78.9" y2="73.9" stroke="#0E1C42" stroke-width="3.5" stroke-linecap="round"/><polygon points="240.0,50.0 420.0,50.0 420.0,160.0 240.0,160.0" fill="#FBF6EA" stroke="#0E1C42" stroke-width="4.5" stroke-linejoin="round"/><line x1="330.0" y1="41.0" x2="330.0" y2="59.0" stroke="#0E1C42" stroke-width="3.5" stroke-linecap="round"/><line x1="429.0" y1="101.0" x2="411.0" y2="101.0" stroke="#0E1C42" stroke-width="3.5" stroke-linecap="round"/><line x1="429.0" y1="109.0" x2="411.0" y2="109.0" stroke="#0E1C42" stroke-width="3.5" stroke-linecap="round"/><line x1="330.0" y1="169.0" x2="330.0" y2="151.0" stroke="#0E1C42" stroke-width="3.5" stroke-linecap="round"/><line x1="231.0" y1="109.0" x2="249.0" y2="109.0" stroke="#0E1C42" stroke-width="3.5" stroke-linecap="round"/><line x1="231.0" y1="101.0" x2="249.0" y2="101.0" stroke="#0E1C42" stroke-width="3.5" stroke-linecap="round"/><polyline points="240.0,63.0 253.0,63.0 253.0,50.0" fill="none" stroke="#1E7A4C" stroke-width="3"/><polyline points="407.0,50.0 407.0,63.0 420.0,63.0" fill="none" stroke="#1E7A4C" stroke-width="3"/><polyline points="420.0,147.0 407.0,147.0 407.0,160.0" fill="none" stroke="#1E7A4C" stroke-width="3"/><polyline points="253.0,160.0 253.0,147.0 240.0,147.0" fill="none" stroke="#1E7A4C" stroke-width="3"/><polygon points="480.0,40.0 610.0,40.0 610.0,170.0 480.0,170.0" fill="#FBF6EA" stroke="#0E1C42" stroke-width="4.5" stroke-linejoin="round"/><line x1="545.0" y1="31.0" x2="545.0" y2="49.0" stroke="#0E1C42" stroke-width="3.5" stroke-linecap="round"/><line x1="619.0" y1="105.0" x2="601.0" y2="105.0" stroke="#0E1C42" stroke-width="3.5" stroke-linecap="round"/><line x1="545.0" y1="179.0" x2="545.0" y2="161.0" stroke="#0E1C42" stroke-width="3.5" stroke-linecap="round"/><line x1="471.0" y1="105.0" x2="489.0" y2="105.0" stroke="#0E1C42" stroke-width="3.5" stroke-linecap="round"/><polyline points="480.0,53.0 493.0,53.0 493.0,40.0" fill="none" stroke="#1E7A4C" stroke-width="3"/><polyline points="597.0,40.0 597.0,53.0 610.0,53.0" fill="none" stroke="#1E7A4C" stroke-width="3"/><polyline points="610.0,157.0 597.0,157.0 597.0,170.0" fill="none" stroke="#1E7A4C" stroke-width="3"/><polyline points="493.0,170.0 493.0,157.0 480.0,157.0" fill="none" stroke="#1E7A4C" stroke-width="3"/><text x="110" y="218" text-anchor="middle" font-size="17" font-weight="900" fill="#0E1C42">rhombus</text><text x="330" y="218" text-anchor="middle" font-size="17" font-weight="900" fill="#0E1C42">rectangle</text><text x="545" y="218" text-anchor="middle" font-size="17" font-weight="900" fill="#0E1C42">square</text></svg></div>
+    <p style="margin:6px 0 0">4 equal sides: <b>rhombus</b>. 4 square corners: <b>rectangle</b>. Both: <b>square</b>. So a square is a rectangle and a rhombus, too. We give each shape the name that tells the most.</p>
+  </div>
+
+  <div class="sb-card">
+    <span class="sb-k">The Math Crew</span>
+    <h3>Four ways to stay on track</h3>
+    <div class="sb-crew">
+      <div class="sb-mate" data-who="atlas"><span>I look for train tracks first. Arrow marks show me the parallel sides.</span></div>
+      <div class="sb-mate" data-who="felix"><span>I check all 4 corners with the set square, one at a time.</span></div>
+      <div class="sb-mate" data-who="hazel"><span>Tick marks tell me which sides match. 4 matching sides make a rhombus.</span></div>
+      <div class="sb-mate" data-who="cora"><span>A tipped square is still a square. I check its sides and corners, not the way it points.</span></div>
+    </div>
+    <label class="sb-write-l" for="w-crew">Which Crew way helps you most? Why?</label>
+    <textarea class="sb-write" id="w-crew" data-label="Which Crew way helps me most" placeholder="I like… because…"></textarea>
+  </div>
+
+  <!-- JOB 2 · YOUR TURN: CHECK -->
+  <section class="sb-card sb-job" data-job="2">
+    <div class="sb-jh"><span class="sb-jn">JOB 2</span><div><h3>Your Turn: Check Three Things</h3><span class="sb-kind">🔨 Do</span></div><span class="sb-donechip"></span></div>
+    <p class="sb-story">Euclid's students found this shape on the geoboard. Check it, then name it.</p>
+    <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>A green 4-sided shape on a geoboard. Tick marks show which sides are the same length. Every corner has a gold ring for the set square, which waits at the bottom right.</p></div>
+    <div class="sb-steps">
+      <div class="sb-step" data-need="par" data-cue=".qd-side"><h4>Find the parallel sides</h4><p>Tap a side, then tap the side that goes the same way. Find every parallel pair.</p></div>
+      <div class="sb-step" data-need="checked" data-cue=".tn-cn:not(.done)"><h4>Check the corners</h4><p>Drag the set square onto each corner, one at a time, until all 4 gold rings are gone.</p></div>
+      <div class="sb-step" data-need="named" data-cue=".qd-cards"><h4>Name it</h4><p>Drag the card with the name that tells the most into the box.</p></div>
+      <div class="sb-locked"></div>
+    </div>
+    <div data-mod="quad" data-do="check" data-quad="&#91;&#91;2,7&#93;,&#91;7,7&#93;,&#91;9,3&#93;,&#91;4,3&#93;&#93;" data-col="#23915A" data-cards="quadrilateral,trapezoid,parallelogram,rectangle,rhombus,square" data-name="yt" data-for="par checked named"></div>
+    <div class="sb-help"><button type="button" class="sb-btn ghost" data-hints='["The top and bottom sides go straight across. Do the slanted sides go the same way too?", "There are 2 parallel pairs, and none of the corners is a square corner.", "2 pairs of parallel sides, no square corners, sides not all equal: parallelogram."]'>💡 Need a hint?</button><a class="sb-tool" href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=geoboard&amp;st=1#s=eyJuIjoxMSwiYmFuZHMiOlt7InAiOltbMiwzXSxbOCwzXSxbOCw3XSxbMiw3XV0sImsiOjEsImMiOjB9XX0" target="_blank" rel="noopener" title="Move the corners of the rectangle to make new 4-sided shapes. Which sides stay parallel?">🧮 Try the Geoboard ↗</a><button type="button" class="sb-btn ghost sb-tipbtn" data-tip="#tip-2">💬 Atlas has a tip</button></div>
+    <div class="sb-hintbox"></div>
+    <div class="sb-tip" id="tip-2" data-who="atlas">I imagine making two sides longer and longer. If they would never meet, they are parallel.</div>
+  </section>
+
+  <!-- JOB 3 · YOUR TURN: MAKE -->
+  <section class="sb-card sb-job" data-job="3">
+    <div class="sb-jh"><span class="sb-jn">JOB 3</span><div><h3>Your Turn: A Long Rectangle</h3><span class="sb-kind">🔨 Do</span></div><span class="sb-donechip"></span></div>
+    <p class="sb-story">Make a rectangle that is not a square: 2 long sides and 2 short sides.</p>
+    <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>A geoboard with 11 rows of 11 pins. Tap 4 pins to hook the band, then tap the first pin again to close it. The set square waits at the bottom right.</p></div>
+    <div class="sb-steps">
+      <div class="sb-step" data-need="made" data-cue=".tr-pin"><h4>Make the rectangle</h4><p>Tap 4 pins to make a rectangle with 2 long sides and 2 short sides. Then tap the first pin again to close the band.</p></div>
+      <div class="sb-step" data-need="checked" data-cue=".tn-cn:not(.done)"><h4>Check the corners</h4><p>Drag the set square onto each corner, one at a time, until all 4 gold rings are gone.</p></div>
+      <div class="sb-step" data-need="named" data-cue=".qd-cards"><h4>Name it</h4><p>Drag the card with the name that tells the most into the box.</p></div>
+      <div class="sb-locked"></div>
+    </div>
+    <div data-mod="quad" data-do="make" data-rule="rect-not-square" data-need="ck" data-cards="quadrilateral,trapezoid,parallelogram,rectangle,rhombus,square" data-name="rect" data-for="made checked named"></div>
+    <div class="sb-help"><button type="button" class="sb-btn ghost" data-hints='["Go straight across from a pin, then straight down.", "Make the across sides longer than the up-and-down sides.", "4 square corners but sides not all equal: rectangle."]'>💡 Need a hint?</button><a class="sb-tool" href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=geoboard&amp;st=1#s=eyJuIjoxMSwiYmFuZHMiOlt7InAiOltbMiwzXSxbOCwzXSxbOCw3XSxbMiw3XV0sImsiOjEsImMiOjB9XX0" target="_blank" rel="noopener" title="Move the corners of the rectangle to make new 4-sided shapes. Which sides stay parallel?">🧮 Try the Geoboard ↗</a><button type="button" class="sb-btn ghost sb-tipbtn" data-tip="#tip-3">💬 Felix has a tip</button></div>
+    <div class="sb-hintbox"></div>
+    <div class="sb-tip" id="tip-3" data-who="felix">I count pin spaces. 6 across and 3 down makes a long rectangle every time.</div>
+  </section>
+  <div class="sb-next"><button type="button" class="sb-btn gold" data-next-st="2">Next station: Practice together →</button></div>
 </div>
-<div class="footer"><div class="footer-main">🏫 <span>Optima Academy Online</span></div><div class="footer-sub">Math · Grade 3 · 3.12.06 · U4 Extend</div><div class="footer-copy">© 2025 Optima Academy Online</div></div>
+
+<!-- STATION 2 -->
+<div class="sb-station" data-st="2">
+  <div class="sb-opti" data-slot="practice-1">Each job has a mix-up kids often make. Here's a clue. Check three things every time. Are sides parallel? Are they equal? Are the corners square?</div>
+
+  <!-- JOB 4 -->
+  <section class="sb-card sb-job" data-job="4">
+    <div class="sb-jh"><span class="sb-jn">JOB 4</span><div><h3>Ben's Square</h3><span class="sb-kind">🔨 Do · ✏️ Write</span></div><span class="sb-donechip"></span></div>
+    <p class="sb-story">Ben makes a square on the geoboard. He says, "This is a square, so it can't be a rectangle."</p>
+    <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>Ben's red square on the geoboard. Tick marks show 4 sides the same length. Each corner has a gold ring for the set square.</p></div>
+    <div class="sb-steps">
+      <div class="sb-step" data-need="checked" data-cue=".tn-cn:not(.done)"><h4>Check Ben's corners</h4><p>Drag the set square onto each corner, one at a time, until all 4 gold rings are gone.</p></div>
+      <div class="sb-step"><h4>Count the square corners</h4>
+        <div class="sb-q">Ben's square has <input class="sb-ans" data-a="4" inputmode="numeric" autocomplete="off" aria-label="number" data-hint="Count the green squares in the corners."> square corners.</div>
+        <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-step" data-need="sorted" data-cue=".tn-slot"><h4>Is it a rectangle?</h4><p>A rectangle is any 4-sided shape with 4 square corners. Drag the card that answers Ben into the box.</p></div>
+      <div class="sb-step"><h4>Help Ben</h4><label class="sb-write-l" for="w-ben">Tell Ben why his square is also a rectangle.</label><textarea class="sb-write" id="w-ben" data-req data-label="Help Ben" placeholder="Your square is a rectangle because …"></textarea><div class="sb-chips2">Remember to tell: <span>4 square corners</span><span>rectangle</span><span>equal sides</span></div><div class="sb-help"><button type="button" class="sb-btn check">Done</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-locked"></div>
+    </div>
+    <div data-mod="quad" data-do="isrect" data-quad="&#91;&#91;3,3&#93;,&#91;7,3&#93;,&#91;7,7&#93;,&#91;3,7&#93;&#93;" data-col="#D2453B" data-name="ben" data-for="checked sorted"></div>
+    <div class="sb-help"><button type="button" class="sb-btn ghost" data-hints='["Check every corner. How many are square corners?", "All 4 corners are square corners.", "A rectangle has 4 square corners. Ben&#39;s square has 4 square corners, so it is a rectangle too."]'>💡 Need a hint?</button><a class="sb-tool" href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=setsquare&amp;st=1#s=eyJtb2RlIjoibW92ZSIsInNlbCI6InM0NSJ9" target="_blank" rel="noopener" title="Slide the set square so its square corner sits on a corner. Is the corner smaller than, the same as, or bigger than the square corner?">🧮 Try the Set Square ↗</a><button type="button" class="sb-btn ghost sb-tipbtn" data-tip="#tip-4">💬 Hazel has a tip</button></div>
+    <div class="sb-hintbox"></div>
+    <div class="sb-tip" id="tip-4" data-who="hazel">A square is a special rectangle: 4 square corners, and all its sides are equal too.</div>
+  </section>
+
+  <!-- JOB 5 -->
+  <section class="sb-card sb-job" data-job="5">
+    <div class="sb-jh"><span class="sb-jn">JOB 5</span><div><h3>Mia's Four Shapes</h3><span class="sb-kind">🔨 Do · ✏️ Write</span></div><span class="sb-donechip"></span></div>
+    <p class="sb-story">Mia draws four shapes. She says, "They're all quadrilaterals."</p>
+    <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>Mia's four blue shapes in the tray. Under them are two groups: Quadrilateral and Not a quadrilateral.</p></div>
+    <div class="sb-steps">
+      <div class="sb-step" data-need="sorted" data-cue=".qd-tray .tn-rt"><h4>Sort Mia's shapes</h4><p>Drag each shape into Quadrilateral or Not a quadrilateral.</p></div>
+      <div class="sb-step"><h4>Help Mia</h4><label class="sb-write-l" for="w-mia">Tell Mia which shape surprised you, and why.</label><textarea class="sb-write" id="w-mia" data-req data-label="Help Mia" placeholder="I was surprised that … because …"></textarea><div class="sb-chips2">Remember to tell: <span>4 straight sides</span><span>closed</span><span>curved</span></div><div class="sb-help"><button type="button" class="sb-btn check">Done</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-locked"></div>
+    </div>
+    <div data-mod="quad" data-do="qsort" data-name="mia" data-for="sorted"></div>
+    <div class="sb-help"><button type="button" class="sb-btn ghost" data-hints='["For each shape, count the straight sides and look for gaps or curves.", "A shape with a curve, a gap or 5 sides breaks a rule.", "The pointy dart has 4 straight sides and is closed, so it is a quadrilateral."]'>💡 Need a hint?</button><a class="sb-tool" href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=geoboard&amp;st=1#s=eyJuIjoxMSwiYmFuZHMiOlt7InAiOltbMiwzXSxbOCwzXSxbOCw3XSxbMiw3XV0sImsiOjEsImMiOjB9XX0" target="_blank" rel="noopener" title="Move the corners of the rectangle to make new 4-sided shapes. Which sides stay parallel?">🧮 Try the Geoboard ↗</a><button type="button" class="sb-btn ghost sb-tipbtn" data-tip="#tip-5">💬 Cora has a tip</button></div>
+    <div class="sb-hintbox"></div>
+    <div class="sb-tip" id="tip-5" data-who="cora">Pointy doesn't matter. I trace each side with my finger and count to 4.</div>
+  </section>
+  <div class="sb-next"><button type="button" class="sb-btn gold" data-next-st="3">Next station: On your own →</button></div>
 </div>
-<script>
-var LS='g3-3-12-06-';
-function mini(el){if(!el)return;var em=['⭐','✨','🎉','🧩'];for(var i=0;i<8;i++){var s=document.createElement('span');s.textContent=em[Math.floor(Math.random()*em.length)];s.style.cssText='position:absolute;font-size:'+(16+Math.random()*14)+'px;pointer-events:none;z-index:999;animation:mini .7s ease-out forwards;left:'+(20+Math.random()*60)+'%;top:'+(Math.random()*40)+'%;';el.style.position='relative';el.style.overflow='visible';el.appendChild(s);setTimeout(function(x){x.remove()}.bind(null,s),800);}}
-function switchTab(t){document.querySelectorAll('.tab-panel').forEach(function(p){p.classList.remove('active');});document.getElementById('tab-'+t).classList.add('active');document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active');if(b.dataset.tab===t){b.classList.add('active');b.classList.add('visited');}});var bs=[].slice.call(document.querySelectorAll('.tab-btn'));var i=bs.findIndex(function(b){return b.classList.contains('active');});var p=Math.round(((i+1)/bs.length)*100);document.getElementById('pf').style.width=p+'%';document.getElementById('pp').textContent=p+'%';window.scrollTo({top:0,behavior:'smooth'});}
-function autoSave(el,d){try{localStorage.setItem(LS+el.id,el.value);}catch(e){}var dt=document.getElementById(d);if(dt){dt.classList.add('saved');setTimeout(function(){dt.classList.remove('saved')},900);}}
-function restore(){document.querySelectorAll('textarea.journal-box').forEach(function(t){try{var v=localStorage.getItem(LS+t.id);if(v)t.value=v;}catch(e){}});}
-function showBranch(id){document.getElementById(id).classList.add('show');}
-function hideBranches(p){['pass','retry'].forEach(function(x){var e=document.getElementById(p+'-'+x);if(e)e.classList.remove('show');});}
 
-/* Warm-Up */
-function rA(c,ok){c.parentElement.querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});var f=document.getElementById('rA-fb');if(ok){c.classList.add('good');f.className='inline-feedback show good';f.innerHTML='<strong>✅</strong> Equilateral = 3 equal sides.';mini(c);}else{c.classList.add('bad');f.className='inline-feedback show think';f.innerHTML='"Equi" means equal, "lateral" means side. All 3 sides of an equilateral triangle are equal.';}}
-function rT(c,ok){c.parentElement.querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});var f=document.getElementById('rT-fb');if(ok){c.classList.add('good');f.className='inline-feedback show good';f.innerHTML='<strong>✅</strong> Squares, rectangles, trapezoids — they all have 4 straight sides.';mini(c);}else{c.classList.add('bad');f.className='inline-feedback show think';f.innerHTML='Squares, rectangles, and other tiles are all closed shapes with 4 straight sides.';}}
+<!-- STATION 3 -->
+<div class="sb-station" data-st="3">
+  <div class="sb-opti" data-slot="own-1">Your turn. Make a four-sided shape with exactly one pair of parallel sides. Then give it its family name.</div>
 
-/* ========== QUAD BUILDER ========== */
-var qb={pts:[{x:80,y:80},{x:220,y:80},{x:220,y:220},{x:80,y:220}],drag:-1};
-function qbPreset(type){
-  if(type==='square') qb.pts=[{x:100,y:80},{x:200,y:80},{x:200,y:180},{x:100,y:180}];
-  else if(type==='rect') qb.pts=[{x:60,y:90},{x:240,y:90},{x:240,y:200},{x:60,y:200}];
-  else if(type==='trap') qb.pts=[{x:110,y:80},{x:190,y:80},{x:240,y:210},{x:60,y:210}];
-  else if(type==='para') qb.pts=[{x:120,y:80},{x:240,y:80},{x:180,y:210},{x:60,y:210}];
-  else qb.pts=[{x:80,y:60},{x:220,y:100},{x:200,y:240},{x:60,y:200}];
-  qbRender();
-}
-function qbRender(){
-  var svg=document.getElementById('qb-svg');
-  var pts=qb.pts;
-  var html='<rect width="300" height="300" fill="#FAFBFF" rx="8"/>';
-  // grid
-  for(var g=0;g<=300;g+=30){html+='<line x1="'+g+'" y1="0" x2="'+g+'" y2="300" stroke="#E2E8F4" stroke-width="0.5"/><line x1="0" y1="'+g+'" x2="300" y2="'+g+'" stroke="#E2E8F4" stroke-width="0.5"/>';}
-  // polygon
-  html+='<polygon points="'+pts.map(function(p){return p.x+','+p.y;}).join(' ')+'" fill="var(--geo-light)" stroke="var(--geo)" stroke-width="3" stroke-linejoin="round"/>';
-  // vertices
-  for(var i=0;i<4;i++){html+='<circle cx="'+pts[i].x+'" cy="'+pts[i].y+'" r="10" fill="var(--geo)" stroke="#fff" stroke-width="2" style="cursor:grab"/>';}
-  svg.innerHTML=html;
-  // analyze properties
-  var sides=[];var angles=[];
-  for(var i=0;i<4;i++){
-    var j=(i+1)%4;
-    sides.push(Math.sqrt(Math.pow(pts[j].x-pts[i].x,2)+Math.pow(pts[j].y-pts[i].y,2)));
-  }
-  // directions for parallel check
-  var dirs=[];
-  for(var i=0;i<4;i++){var j=(i+1)%4;dirs.push({dx:pts[j].x-pts[i].x,dy:pts[j].y-pts[i].y});}
-  function isParallel(d1,d2){return Math.abs(d1.dx*d2.dy-d1.dy*d2.dx)<15;}
-  var par=0;
-  if(isParallel(dirs[0],dirs[2])) par++;
-  if(isParallel(dirs[1],dirs[3])) par++;
-  // right angles
-  var ra=0;
-  for(var i=0;i<4;i++){
-    var p=pts[(i+3)%4],c2=pts[i],n=pts[(i+1)%4];
-    var d1x=p.x-c2.x,d1y=p.y-c2.y,d2x=n.x-c2.x,d2y=n.y-c2.y;
-    var dot=d1x*d2x+d1y*d2y;
-    var m1=Math.sqrt(d1x*d1x+d1y*d1y),m2=Math.sqrt(d2x*d2x+d2y*d2y);
-    var ang=Math.acos(Math.max(-1,Math.min(1,dot/(m1*m2))))*180/Math.PI;
-    angles.push(ang);
-    if(Math.abs(ang-90)<8) ra++;
-  }
-  // equal sides
-  var eq=0;var tol=8;
-  var sEq=[];
-  for(var i=0;i<4;i++)for(var j=i+1;j<4;j++){if(Math.abs(sides[i]-sides[j])<tol)sEq.push([i,j]);}
-  var allEq=Math.abs(sides[0]-sides[1])<tol&&Math.abs(sides[1]-sides[2])<tol&&Math.abs(sides[2]-sides[3])<tol;
-  // classify
-  var name='Quadrilateral';
-  if(par===1) name='Trapezoid';
-  else if(par===2){
-    name='Parallelogram';
-    if(ra>=4&&allEq) name='Square';
-    else if(ra>=4) name='Rectangle';
-    else if(allEq) name='Rhombus';
-  }
-  document.getElementById('qb-parallel').textContent='Parallel sides: '+par+' pair'+(par!==1?'s':'');
-  document.getElementById('qb-equal').textContent='Equal sides: '+(allEq?'all 4':sEq.length>0?'some':'none match');
-  document.getElementById('qb-right').textContent='Right angles: '+ra;
-  document.getElementById('qb-name').textContent='This is a: '+name;
-}
-// drag
-(function(){
-  var svg;
-  function getPos(e){
-    svg=document.getElementById('qb-svg');
-    var r=svg.getBoundingClientRect();
-    var cX=e.touches?e.touches[0].clientX:e.clientX;
-    var cY=e.touches?e.touches[0].clientY:e.clientY;
-    return{x:(cX-r.left)/r.width*300,y:(cY-r.top)/r.height*300};
-  }
-  function down(e){
-    var pos=getPos(e);
-    for(var i=0;i<4;i++){var dx=qb.pts[i].x-pos.x,dy=qb.pts[i].y-pos.y;if(dx*dx+dy*dy<400){qb.drag=i;e.preventDefault();break;}}
-  }
-  function move(e){if(qb.drag<0)return;e.preventDefault();var pos=getPos(e);qb.pts[qb.drag].x=Math.max(10,Math.min(290,pos.x));qb.pts[qb.drag].y=Math.max(10,Math.min(290,pos.y));qbRender();}
-  function up(){qb.drag=-1;}
-  document.addEventListener('DOMContentLoaded',function(){
-    svg=document.getElementById('qb-svg');
-    svg.addEventListener('mousedown',down);svg.addEventListener('touchstart',down,{passive:false});
-    window.addEventListener('mousemove',move);window.addEventListener('touchmove',move,{passive:false});
-    window.addEventListener('mouseup',up);window.addEventListener('touchend',up);
-  });
-})();
+  <!-- JOB 6 -->
+  <section class="sb-card sb-job" data-job="6">
+    <div class="sb-jh"><span class="sb-jn">JOB 6</span><div><h3>On Your Own: One Pair</h3><span class="sb-kind">🔨 Do · ✏️ Write</span></div><span class="sb-donechip"></span></div>
+    <p class="sb-story">Make a 4-sided shape with exactly 1 pair of parallel sides. Then name it.</p>
+    <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>A geoboard with 11 rows of 11 pins. Tap 4 pins to hook the band, then tap the first pin again to close it.</p></div>
+    <div class="sb-steps">
+      <div class="sb-step" data-need="made" data-cue=".tr-pin"><h4>Make the shape</h4><p>Tap 4 pins and close the band so exactly 1 pair of sides is parallel.</p></div>
+      <div class="sb-step" data-need="par" data-cue=".qd-side"><h4>Show the parallel pair</h4><p>Tap one of the parallel sides, then tap the side that goes the same way.</p></div>
+      <div class="sb-step" data-need="named" data-cue=".qd-cards"><h4>Name it</h4><p>Drag the card with the name that tells the most into the box.</p></div>
+      <div class="sb-step"><h4>Tell how you know</h4><label class="sb-write-l" for="w-own">Tell how you made exactly 1 pair of parallel sides, and why the name fits.</label><textarea class="sb-write" id="w-own" data-req data-label="One Pair" placeholder="I made the top and bottom … It is a … because …"></textarea><div class="sb-chips2">Remember to tell: <span>parallel</span><span>1 pair</span><span>trapezoid</span></div><div class="sb-help"><button type="button" class="sb-btn check">Done</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-locked"></div>
+    </div>
+    <div data-mod="quad" data-do="make" data-rule="one-pair" data-need="par" data-cards="quadrilateral,trapezoid,parallelogram,rectangle,rhombus,square" data-name="own" data-for="made par named"></div>
+    <div class="sb-help"><button type="button" class="sb-btn ghost" data-hints='["Make the bottom side go straight across.", "Make the top side go straight across too, but shorter than the bottom.", "Exactly 1 pair of parallel sides: trapezoid."]'>💡 Need a hint?</button><a class="sb-tool" href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=geoboard&amp;st=1#s=eyJuIjoxMSwiYmFuZHMiOlt7InAiOltbMiwzXSxbOCwzXSxbOCw3XSxbMiw3XV0sImsiOjEsImMiOjB9XX0" target="_blank" rel="noopener" title="Move the corners of the rectangle to make new 4-sided shapes. Which sides stay parallel?">🧮 Try the Geoboard ↗</a></div>
+    <div class="sb-hintbox"></div>
+  </section>
 
-/* Practice */
-function p1(c,ok){c.parentElement.querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});hideBranches('p1');if(ok){c.classList.add('good');showBranch('p1-pass');mini(c);}else{c.classList.add('bad');showBranch('p1-retry');}}
-function p2(c,ok){c.parentElement.querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});hideBranches('p2');if(ok){c.classList.add('good');showBranch('p2-pass');mini(c);}else{c.classList.add('bad');showBranch('p2-retry');}}
-function p3(c,v){c.parentElement.querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});hideBranches('p3');if(v==='atlas'){c.classList.add('good');showBranch('p3-pass');mini(c);}else{c.classList.add('bad');showBranch('p3-retry');}}
-function resetP(n){hideBranches('p'+n);document.querySelectorAll('.REMOVED-PRACTICE').forEach(function(x){x.classList.remove('good','bad');});}
+  <div class="sb-next"><button type="button" class="sb-btn gold" data-go-tab="swyk">Next: Show What You Know →</button></div>
+</div>
+</section>
 
-/* Ready Check */
-function eA(c,ok){c.parentElement.querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});var f=document.getElementById('eA-fb');if(ok){c.classList.add('good');f.className='inline-feedback show good';f.innerHTML='<strong>✅</strong> A trapezoid has exactly 1 pair of parallel sides.';mini(c);}else{c.classList.add('bad');f.className='inline-feedback show think';f.innerHTML='A trapezoid is special because it has just one pair of parallel sides — not two, not zero.';}}
-function eB(c,ok){c.parentElement.querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});var f=document.getElementById('eB-fb');if(ok){c.classList.add('good');f.className='inline-feedback show good';f.innerHTML='<strong>✅</strong> 4 equal sides + 4 right angles = square.';mini(c);}else{c.classList.add('bad');f.className='inline-feedback show think';f.innerHTML='It has BOTH 4 equal sides AND 4 right angles. Only one shape has both properties.';}}
+<!-- ══════════════ SHOW WHAT YOU KNOW ══════════════ -->
+<section class="sb-panel tab-panel" id="tab-swyk" role="tabpanel">
+<div class="sb-opti" data-slot="swyk-1">Last stop! Every four-sided shape belongs to a family. Put each shape in its place on the family tree. Which shape fits in every family?</div>
 
-/* Gather / Copy / Download */
-function gather(){var o='Lesson 3.12.06 — Properties of Quadrilaterals\n\n';document.querySelectorAll('textarea.journal-box').forEach(function(t){o+=(t.dataset.label||t.id)+'\n'+((t.value||'').trim()||'[empty]')+'\n\n';});document.getElementById('gO').value=o;}
-function copyA(){gather();var text=document.getElementById('gO').value;if(!text||text.indexOf('Click')===0){return;}try{var ta=document.createElement('textarea');ta.value=text;ta.style.position='fixed';ta.style.left='-9999px';document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);var btn=document.querySelector('.green-btn');if(btn){btn.textContent='\u2705 Copied!';setTimeout(function(){btn.textContent='Copy All Answers';},2000);}}catch(e){var btn2=document.querySelector('.green-btn');if(btn2){btn2.textContent='\u274c Could not copy';setTimeout(function(){btn2.textContent='Copy All Answers';},2000);}}}
-function dl(){gather();var text=document.getElementById('gO').value;if(!text||text.indexOf('Click')===0){return;}var blob=new Blob([text],{type:'text/plain'});var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=(window.lessonKey||'math-journal')+'.txt';document.body.appendChild(a);a.click();document.body.removeChild(a);URL.revokeObjectURL(a.href);}
-function tg(i){i.classList.toggle('checked');var c=i.querySelector('.turn-in-check');if(c)c.textContent=i.classList.contains('checked')?'✓':'';}
+<!-- JOB 7 -->
+<section class="sb-card sb-job" data-job="7">
+  <div class="sb-jh"><span class="sb-jn">JOB 7</span><div><h3>The Family Tree</h3><span class="sb-kind">🔨 Do</span></div><span class="sb-donechip"></span></div>
+  <p class="sb-story">Every 4-sided shape belongs to the quadrilateral family. Lower on the tree, the names tell more.</p>
+  <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>Six shape cards in the tray. Under them is a family tree with six spots: quadrilateral at the top, then trapezoid, then parallelogram, then rectangle and rhombus side by side, then square at the bottom.</p></div>
+  <div class="sb-steps">
+    <div class="sb-step" data-need="placed" data-cue=".qd-tray .tn-rt"><h4>Problem 1 · Fill the tree</h4><p>Drag each shape card to the spot with the name that tells the most about it.</p></div>
+    <div class="sb-step" data-need="all" data-cue=".qd-node:not(.tap)"><h4>Problem 2 · The square's names</h4><p>Tap every name on the tree that fits a square.</p></div>
+    <div class="sb-locked"></div>
+  </div>
+  <div data-mod="quad" data-do="tree" data-name="wow" data-for="placed all"></div>
+  <div class="sb-payoff" data-after-job="7"><p style="margin:0">A square fits every name on the tree: it has 4 straight sides, 2 pairs of parallel sides, 4 equal sides and 4 square corners. Euclid's book names the square first of all the four-sided shapes.</p></div>
+  <div class="sb-help"><button type="button" class="sb-btn ghost" data-hints='["Start with the shapes you are sure of, like the square.", "The pointy shape has no parallel sides, so it only fits the top: quadrilateral.", "Every name on the tree fits the square: all 6."]'>💡 Need a hint?</button><a class="sb-tool" href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=geoboard&amp;st=1#s=eyJuIjoxMSwiYmFuZHMiOlt7InAiOltbMiwzXSxbOCwzXSxbOCw3XSxbMiw3XV0sImsiOjEsImMiOjB9XX0" target="_blank" rel="noopener" title="Move the corners of the rectangle to make new 4-sided shapes. Which sides stay parallel?">🧮 Try the Geoboard ↗</a></div>
+  <div class="sb-hintbox"></div>
+</section>
 
-async function loadVideoManifest(){try{var res=await fetch('video-manifest.md',{cache:'no-store'});if(!res.ok)return;var txt=await res.text();var map=parseManifest(txt);document.querySelectorAll('.video-wrap[data-video-slot]').forEach(function(w){var slot=w.dataset.videoSlot;if(map[slot]){var ratio=w.querySelector('.video-ratio');ratio.innerHTML=map[slot].trim();var iframe=ratio.querySelector('iframe');if(iframe){iframe.classList.add('video-iframe');iframe.setAttribute('allowfullscreen','');iframe.setAttribute('loading','lazy');}}});}catch(e){}}
-function parseManifest(txt){var map={};var lines=txt.split(/\r?\n/);var current=null,buf=[];function commit(){if(current&&buf.join('\n').trim()){map[current]=buf.join('\n').trim();}buf=[];}for(var i=0;i<lines.length;i++){var line=lines[i];var m=line.match(/^([A-Za-z0-9-]+):\s*$/);if(m){commit();current=m[1];}else if(current){buf.push(line);}}commit();return map;}
+<!-- JOB 8 -->
+<section class="sb-card sb-job" data-job="8">
+  <div class="sb-jh"><span class="sb-jn">JOB 8</span><div><h3>Prove It</h3><span class="sb-kind">✏️ Write</span></div><span class="sb-donechip"></span></div>
+  <div class="sb-steps">
+    <div class="sb-step"><h4>Problem 3 · Prove It</h4>
+      <label class="sb-write-l" for="w-prove">Write a note to a younger student. Tell them the 3 things to check to name a 4-sided shape.</label><textarea class="sb-write" id="w-prove" data-req data-label="Prove It" placeholder="First, check … Next, check … Then check … The name that tells the most is …"></textarea><div class="sb-chips2">Remember to tell: <span>parallel</span><span>equal sides</span><span>square corners</span></div>
+      <div class="sb-help"><button type="button" class="sb-btn check">Done</button></div><div class="sb-fb" aria-live="polite"></div></div>
+    <div class="sb-locked"></div>
+  </div>
+</section>
 
-window.addEventListener('DOMContentLoaded',function(){loadVideoManifest();restore();qbRender();});
-</script>
-<script id="fluencyScript">
-(function(){
-var FLUENCY_TIMED = false;
-var FLUENCY_TITLE = "Fact Families (All Four Operations)";
-var fluencyInterval = null;
-var fluencySecondsLeft = 60;
+<div class="sb-card sb-qgroup" data-done="bonus" data-ok="✓ Yes! There are 4 small squares, plus 1 big square made of all four: 4 + 1 = 5.">
+  <span class="sb-k">Bonus · optional</span>
+  <h3>Hidden Squares</h3>
+  <p>Four small squares make a bigger shape. How many squares can you find in all?</p>
+  <div class="sb-stage" role="img" aria-label="Four small squares in 2 rows of 2, making one big square." style="margin:6px auto;max-width:240px"><svg viewBox="0 0 240 240"><g fill="#FBF6EA" stroke="#0E1C42" stroke-width="5" stroke-linejoin="round"><rect x="30" y="30" width="90" height="90"/><rect x="120" y="30" width="90" height="90"/><rect x="30" y="120" width="90" height="90"/><rect x="120" y="120" width="90" height="90"/></g></svg></div>
+  <div class="sb-q">I can find <input class="sb-ans" data-a="5" inputmode="numeric" autocomplete="off" aria-label="number" data-hint="Count the 4 small squares. Then look for one more: the big one around all of them."> squares in all.</div>
+  <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div>
+</div>
 
-window.fluencyStart = function(){
-  if(!FLUENCY_TIMED) return;
-  var grid = document.getElementById('fluencyGrid');
-  if(!grid) return;
-  grid.querySelectorAll('.fluency-input').forEach(function(i){ i.disabled = false; });
-  var btn = document.getElementById('fluencyStartBtn');
-  if(btn){ btn.disabled = true; btn.textContent = 'Timer Running\u2026'; }
-  var checkBtn = document.getElementById('fluencyCheckBtn');
-  if(checkBtn) checkBtn.disabled = false;
-  fluencySecondsLeft = 60;
-  fluencyUpdateDisplay();
-  fluencyInterval = setInterval(function(){
-    fluencySecondsLeft--;
-    fluencyUpdateDisplay();
-    if(fluencySecondsLeft <= 0){
-      clearInterval(fluencyInterval);
-      grid.querySelectorAll('.fluency-input').forEach(function(i){ i.disabled = true; });
-      window.fluencyCheck();
-    }
-  }, 1000);
-};
+<div class="sb-card">
+  <span class="sb-k">How to turn in</span>
+  <h3>Turn in your work</h3>
+  <ol class="sb-steps4">
+    <li>Check the list below. Jobs 1 to 8 are required. The Bonus is optional.</li>
+    <li>Press <b>📋 Gather my answers</b>, then <b>📋 Copy</b>. Or press <b>🖨️ Print or save as PDF</b>.</li>
+    <li>Open this lesson's assignment in Canvas.</li>
+    <li>Paste your answers (or upload your PDF and journal photo), then press <b>Submit</b>.</li>
+  </ol>
+</div>
 
-function fluencyUpdateDisplay(){
-  var el = document.getElementById('fluencyTimerDisplay');
-  if(el) el.textContent = fluencySecondsLeft + 's';
-}
+<div class="sb-card sb-journal">
+  <span class="sb-k">Math journal</span>
+  <h3>All my answers</h3>
+  <div class="sb-help"><button type="button" class="sb-btn" data-journal="gather">📋 Gather my answers</button><button type="button" class="sb-btn ghost" data-journal="copy">📋 Copy</button><button type="button" class="sb-btn ghost" data-journal="download">⬇️ Download as text</button><button type="button" class="sb-btn ghost" data-journal="print">🖨️ Print or save as PDF</button></div>
+  <textarea id="sb-journal-out" readonly aria-label="All my answers">Press Gather my answers to collect everything here.</textarea>
+  <p class="sb-saved">Your answers and your work on this page save on this device as you go.</p>
+</div>
 
-window.fluencyCheck = function(){
-  if(fluencyInterval){ clearInterval(fluencyInterval); fluencyInterval = null; }
-  var items = document.querySelectorAll('#fluencyGrid .fluency-item');
-  var correct = 0, attempted = 0, total = items.length;
-  var lines = [];
-  items.forEach(function(item){
-    var input = item.querySelector('.fluency-input');
-    var qText = item.querySelector('.fluency-q').textContent;
-    var given = (input.value || '').trim();
-    var ans = input.dataset.answer;
-    var ok = given !== '' && given === ans;
-    if(given !== '') attempted++;
-    item.classList.remove('fluency-correct','fluency-wrong');
-    if(ok){ correct++; item.classList.add('fluency-correct'); }
-    else if(given !== ''){ item.classList.add('fluency-wrong'); }
-    lines.push(qText + ' ' + ans + '   [answered: ' + (given || 'blank') + ']' + (ok ? ' \u2713' : (given ? ' \u2717' : '')));
-  });
-  var pct = total ? Math.round((correct/total)*100) : 0;
-  var timeStr = FLUENCY_TIMED ? (' in ' + (60 - fluencySecondsLeft) + ' seconds') : '';
-  var summary = 'Fluency Warm-Up \u2014 ' + FLUENCY_TITLE + '\n' + correct + ' / ' + total + ' correct (' + pct + '%)' + timeStr + '\n\n' + lines.join('\n');
-  var j = document.getElementById('fluencyJournal');
-  if(j) j.value = summary;
-  var resEl = document.getElementById('fluencyResult');
-  if(resEl) resEl.innerHTML = correct + ' / ' + total + ' correct (' + pct + '%)' + timeStr;
-  var checkBtn = document.getElementById('fluencyCheckBtn');
-  if(checkBtn) checkBtn.disabled = true;
-  var startBtn = document.getElementById('fluencyStartBtn');
-  if(startBtn) startBtn.textContent = 'Done';
-};
-})();
-</script>
-<!-- Video Manifest Loader -->
+<div class="sb-card">
+  <span class="sb-k">Checklist</span>
+  <h3>Before you turn in</h3>
+  <ul class="sb-check">
+    <li><span class="bx"></span><span>I finished Jobs 1 to 8.</span></li>
+    <li><span class="bx"></span><span>I can tell what makes a shape a quadrilateral.</span></li>
+    <li><span class="bx"></span><span>I can check for parallel sides, equal sides and square corners.</span></li>
+    <li><span class="bx"></span><span>I can name trapezoids, parallelograms, rectangles, rhombuses and squares.</span></li>
+    <li><span class="bx"></span><span>I tried the Bonus. <span class="opt">(optional)</span></span></li>
+  </ul>
+</div>
+
+<div class="sb-card">
+  <span class="sb-k">Coming up next</span>
+  <h3>Lesson 3.12.07 · Using a Compass</h3>
+  <p>Next, you'll use a compass, the tool in our chapter's name, to draw circles and build shapes the way Euclid did.</p>
+</div>
+
+<div class="sb-opti" data-slot="end-1">That's the sixth lesson in Chapter 12. Here's music by Joseph Haydn, from more than 230 years ago. It's a string quartet: four players, like the four sides of a quadrilateral. Press play, and stop whenever you like.</div>
+<div class="sb-card sb-listen" data-src="haydn-lark-quartet.mp3">
+  <img src="images/storybook/sb-herculaneum-rhombi.jpg" alt="The marble rhombus floor in Herculaneum" style="object-fit:cover;background:#FBF6EA">
+  <div style="flex:1">
+    <span class="sb-k">Listening corner</span>
+    <h3>String Quartet "The Lark"</h3>
+    <p style="margin:2px 0">Joseph Haydn wrote this quartet in 1790 for two violins, a viola and a cello. Near the start, the first violin floats up high over the others, like a lark singing in the sky. That's how the piece got its nickname.</p>
+    <div class="meter"><i></i></div><div class="sb-row"><button type="button" class="sb-btn play">▶ Play the music</button><button type="button" class="sb-btn ghost stop">■ Stop</button><span class="time" style="font-weight:800;color:#5B6478">0:00</span></div>
+    <p class="sb-credits">Joseph Haydn, String Quartet in D major, Op. 64 No. 5, "The Lark" (first part). Played by the Musopen String Quartet. Public domain, via Wikimedia Commons.</p>
+  </div>
+</div>
+</section>
+
+<footer class="sb-foot footer"><b>🏫 Optima Academy Online</b><br>Math · Grade 3 · Lesson 3.12.06 · Unit 12<br><span style="font-size:12px">Art: Oliver Byrne, "The First Six Books of the Elements of Euclid" (London, 1847), public domain, via Wikimedia Commons; marble floor in Herculaneum, photo by AlMare, CC BY-SA 3.0, via Wikimedia Commons. Music: Joseph Haydn, String Quartet Op. 64 No. 5, "The Lark", played by the Musopen String Quartet, public domain, via Wikimedia Commons.</span></footer>
+</div>
+
+<script type="application/json" id="sb-data">{"lesson": "3.12.06", "key": "g3sb-3-12-06", "title": "Properties of Quadrilaterals", "audioBase": "audio/storybook/", "imgBase": "images/storybook/", "music": "haydn-lark-quartet.mp3", "audioReady": true, "glossary": [{"t": "quadrilateral", "alt": ["quadrilaterals"], "d": "A closed shape with 4 straight sides and 4 corners.", "key": true}, {"t": "parallel", "d": "Parallel sides go the same way, like train tracks. They never meet, even if you make them longer.", "key": true}, {"t": "parallelogram", "alt": ["parallelograms"], "d": "A quadrilateral with 2 pairs of parallel sides.", "key": true}, {"t": "trapezoid", "alt": ["trapezoids"], "d": "A quadrilateral with at least 1 pair of parallel sides.", "key": true}, {"t": "rectangle", "alt": ["rectangles"], "d": "A quadrilateral with 4 square corners.", "key": true}, {"t": "rhombus", "alt": ["rhombuses"], "d": "A quadrilateral with 4 equal sides.", "key": true}, {"t": "square", "alt": ["squares"], "d": "A quadrilateral with 4 equal sides and 4 square corners.", "key": true}, {"t": "tick marks", "alt": ["tick mark"], "d": "Small marks on sides. Sides with the same number of marks are the same length."}, {"t": "arrow marks", "alt": ["arrow mark"], "d": "Small arrows on sides. Sides with the same arrows are parallel."}, {"t": "geoboard", "d": "A board with rows of pins. You stretch rubber bands around the pins to make shapes."}, {"t": "set square", "d": "A flat triangle with one square corner. It helps you check corners."}, {"t": "oblong", "d": "Euclid's word for a rectangle that is not a square."}, {"t": "quartet", "d": "A group of 4 musicians. A string quartet has 2 violins, a viola and a cello."}], "cueWords": {}}</script>
+
+<script src="assets/storybook/sb.js?v=8baa609e"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   fetch('https://raw.githubusercontent.com/bbirchum1/optima-3rd-math/main/video-manifest.json?v=' + Date.now())
@@ -675,15 +412,11 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!m) return;
         var entry = manifest[m[1]];
         if (!entry || entry.status !== 'ready' || !entry.embed) return;
-        var temp = document.createElement('div');
-        temp.innerHTML = entry.embed;
-        var iframe = temp.querySelector('iframe');
-        if (!iframe) return;
-        iframe.removeAttribute('width');
-        iframe.removeAttribute('height');
+        var temp = document.createElement('div'); temp.innerHTML = entry.embed;
+        var iframe = temp.querySelector('iframe'); if (!iframe) return;
+        iframe.removeAttribute('width'); iframe.removeAttribute('height');
         iframe.style.cssText = 'display:block;width:100%;aspect-ratio:16/9;border:none;';
-        wrap.innerHTML = '';
-        wrap.style.cssText = 'display:block;border:none;background:#000;border-radius:14px;overflow:hidden;margin:0 0 18px;';
+        wrap.innerHTML = ''; wrap.style.cssText = 'display:block;border:none;background:#000;border-radius:14px;overflow:hidden;margin:0 0 18px;';
         wrap.appendChild(iframe);
       });
     })
@@ -692,4 +425,5 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 <!-- OAO math tools for this lesson (manipulatives library) -->
 <script src="https://optimaondemand.github.io/optima-4th-math/manipulatives/lesson-tools.js" defer></script>
-</body></html>
+</body>
+</html>
