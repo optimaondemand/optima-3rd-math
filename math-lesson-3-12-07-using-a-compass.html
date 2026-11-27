@@ -1,642 +1,413 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lines of Symmetry · Grade 3 Math Lesson 3.12.07</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/storybook/sb.css?v=9b0912a2">
+</head>
+<body class="sb">
+<div class="sb-prog" aria-label="Progress"><span class="k">📖 EUCLID'S COMPASS</span><span class="bar"><i></i></span><span class="n">0 of 8 jobs</span></div>
+<div class="sb-wrap">
 
-<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Optima Academy Online — Grade 3 Math Lesson 3.12.07</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Nunito:wght@400;700;800;900&display=swap');
-*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Nunito',Verdana,sans-serif;background:#F5F8FA;color:#0E1C42;line-height:1.6}.page-wrap{max-width:920px;margin:0 auto;background:#fff;box-shadow:0 0 40px rgba(14,28,66,.08)}
-:root{--geo:#5B52A8;--geo-light:#EEEDFA;--geo-mid:#9A92D0;--geo-deep:#2D2A5E}
-.progress-wrap{position:sticky;top:0;z-index:200;background:#0E1C42;padding:8px 20px 10px;display:flex;align-items:center;gap:14px}.progress-label{font-size:12px;color:#F5C518;font-weight:800;text-transform:uppercase}.progress-track{flex:1;height:10px;background:rgba(255,255,255,.1);border-radius:10px;overflow:hidden}.progress-fill{height:100%;width:0%;background:linear-gradient(90deg,var(--geo),#9A92D0,#F5C518,var(--geo));background-size:200% 100%;animation:shimmer 3s linear infinite;border-radius:10px;transition:width .4s}.progress-pct{font-size:13px;color:#F5C518;font-weight:800;min-width:36px;text-align:right}@keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
-.header{background:#0E1C42;border-bottom:6px solid var(--geo);padding:20px 28px 18px}.header-brand{display:flex;align-items:center;gap:12px;margin-bottom:14px}.header-logo{width:52px;height:52px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center}.header-logo img{width:48px;height:38px}.header-org{font-size:22px;color:#fff;font-weight:800}.header-sub{font-size:11px;color:var(--geo-mid)}.header-title{font-family:'Lora',serif;font-size:28px;color:#fff;font-weight:700;margin-bottom:10px}.header-title em{color:var(--geo-mid);font-style:italic}.header-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(91,82,168,.25);border:1.5px solid rgba(154,146,208,.5);border-radius:28px;padding:6px 16px}.header-badge-icon{font-size:22px}.header-badge-text{font-size:18px;color:#fff;font-weight:800}
-.quote-strip{background:linear-gradient(135deg,var(--geo-light),var(--geo-mid));border-bottom:2px solid var(--geo-mid);padding:14px 28px;text-align:center}.quote-strip-text{font-family:'Lora',serif;font-size:16px;font-style:italic;color:var(--geo-deep)}.quote-strip-attr{font-size:11px;color:var(--geo);font-weight:700;margin-top:4px;text-transform:uppercase}
-.info-strip{display:flex;flex-wrap:wrap;background:#fff;border-bottom:2px solid #E2E8F4}.info-cell{flex:1;min-width:150px;padding:12px 16px;border-right:1px solid #E2E8F4;display:flex;align-items:center;gap:10px}.info-icon{width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px}.info-label{font-size:10px;color:#7A88A8;text-transform:uppercase;font-weight:700}.info-value{font-size:16px;color:#0E1C42;font-weight:800}.info-detail{font-size:11px;color:#3A4A6B}
-.explorer-strip{display:flex;align-items:center;gap:16px;padding:12px 28px;background:linear-gradient(135deg,#1A2340,#0E1C42);border-bottom:3px solid var(--geo)}.explorer-compass{font-size:28px}.explorer-mission-label{font-size:10px;color:#F5C518;text-transform:uppercase;font-weight:800}.explorer-mission-text{font-size:15px;color:#fff;font-weight:700}
-.intro-2col{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:20px 28px 4px}@media(max-width:720px){.intro-2col{grid-template-columns:1fr}}.intro-card{background:#fff;border:2px solid #E2E8F4;border-radius:18px;overflow:hidden}.intro-card-head{display:flex;align-items:center;gap:10px;padding:14px 18px;border-bottom:2px solid}.intro-card-head-icon{width:40px;height:40px;border-radius:50%;color:#fff;font-size:20px;display:flex;align-items:center;justify-content:center}.intro-card-head-label{font-size:10px;color:#7A88A8;text-transform:uppercase;font-weight:700}.intro-card-head-title{font-size:18px;color:#0E1C42;font-weight:800}.intro-card-body{padding:14px 18px}.intro-card-body p{font-size:15px;color:#3A4A6B;line-height:1.65;margin-bottom:8px}.obj-line{display:flex;gap:8px;font-size:15px;color:#0E1C42;line-height:1.55;margin-bottom:8px}.theme-question .intro-card-head{background:#FFF8E6;border-color:#F5E6C8}.theme-question .intro-card-head-icon{background:#F5C518}.theme-objectives .intro-card-head{background:var(--geo-light);border-color:var(--geo-mid)}.theme-objectives .intro-card-head-icon{background:var(--geo)}
-.need-strip{display:flex;flex-wrap:wrap;gap:8px;padding:12px 28px 18px}.need-strip-label{font-size:13px;color:#3A4A6B;font-weight:700}.need-chip{background:#E3F8ED;border:1.5px solid #B8E8CF;border-radius:20px;padding:5px 12px;font-size:13px;color:#0E1C42;font-weight:700}
-.tab-bar{position:sticky;top:38px;z-index:100;background:#fff;border-bottom:3px solid #E2E8F4;display:flex;overflow-x:auto;box-shadow:0 -4px 0 0 #0E1C42}.tab-btn{flex:1;min-width:130px;padding:12px 8px 11px;background:transparent;border:none;border-bottom:4px solid transparent;font-family:'Nunito',sans-serif;font-size:13px;font-weight:700;color:#7A88A8;cursor:pointer;text-align:center}.tab-btn.active{color:#0E1C42;border-bottom-color:var(--geo);background:#fff}.tab-btn .tab-check{display:none;color:#2DB87A;margin-left:4px;font-weight:800}.tab-btn.visited .tab-check{display:inline}.tab-panel{display:none;padding:24px 28px 36px}.tab-panel.active{display:block}
-.activity{background:#fff;border:2px solid #E2E8F4;border-radius:18px;margin-bottom:18px}.activity.bl-geo{border-left:6px solid var(--geo)}.activity.bl-green{border-left:6px solid #2DB87A}.activity.bl-yellow{border-left:6px solid #F5C518}.activity.bl-slate{border-left:6px solid #3A6B9A}.activity.bl-navy{border-left:6px solid #0E1C42}.activity-head{display:flex;align-items:center;gap:12px;padding:14px 20px 14px 18px;border-bottom:1.5px solid #E2E8F4}.activity-num{width:38px;height:38px;border-radius:14px;color:#fff;font-size:18px;font-weight:800;display:flex;align-items:center;justify-content:center}.activity-title{font-size:19px;color:#0E1C42;font-weight:800}.activity-sub{font-size:12px;color:#7A88A8}.activity-body{padding:18px 22px}.activity-body p{font-size:16px;color:#3A4A6B;line-height:1.7;margin-bottom:12px}
-.callout{border-radius:14px;padding:16px 18px;display:flex;gap:12px;margin-bottom:14px}.callout-icon{font-size:28px}.callout p{font-size:15.5px;color:#0E1C42;line-height:1.65;margin:0}.callout-info{background:var(--geo-light);border:2px solid var(--geo-mid)}.callout-think{background:#FFF8E6;border:2px solid #F5E6C8}.callout-tip{background:#E3F8ED;border:2px solid #B8E8CF}
-.key-concept{background:var(--geo-light);border:2px solid var(--geo-mid);border-radius:14px;padding:16px 18px;margin-bottom:14px}.key-concept-label{font-size:12px;color:var(--geo-deep);text-transform:uppercase;font-weight:800;margin-bottom:8px}.key-concept p{font-size:15px;color:#0E1C42;line-height:1.7}
-.socratic-box{background:linear-gradient(135deg,var(--geo-light),var(--geo-mid));border:2px solid var(--geo-mid);border-radius:14px;padding:16px 18px;margin-bottom:14px}.socratic-label{font-size:12px;color:var(--geo-deep);text-transform:uppercase;font-weight:800;margin-bottom:8px}.socratic-q{font-size:15.5px;color:#0E1C42;font-style:italic}
-.journal-label{font-size:13px;color:#3A4A6B;font-weight:700;margin:10px 0 4px}.journal-box{width:100%;min-height:80px;border:2px solid #E2E8F4;border-radius:12px;padding:12px 14px;font-family:'Nunito',sans-serif;font-size:15px;color:#0E1C42;resize:vertical}.journal-box:focus{outline:none;border-color:var(--geo)}.saved-dot{width:8px;height:8px;border-radius:50%;background:#E2E8F4;display:inline-block;transition:.3s}.saved-dot.saved{background:#2DB87A}
-.check-btn,.geo-btn,.green-btn,.orange-btn{display:inline-flex;align-items:center;gap:6px;color:#fff;border:none;border-radius:12px;padding:10px 20px;font-size:14px;font-weight:800;cursor:pointer;font-family:'Nunito',sans-serif;margin-top:10px}.check-btn{background:#3A6B9A}.geo-btn{background:var(--geo)}.green-btn{background:#2DB87A}.orange-btn{background:#E07B39}
-.hint-callout{background:#FFF8E6;border:2px solid #F5C518;border-radius:10px;padding:10px 14px;margin:12px 0;font-size:14px;color:#5A4A00;font-weight:700}
-.task-box{background:#FAFBFF;border:2px solid #E2E8F4;border-radius:14px;padding:16px 18px;margin-bottom:14px}.task-label{font-size:12px;color:var(--geo-deep);text-transform:uppercase;font-weight:800;margin-bottom:10px}
-.feedback-branch{display:none;margin-top:16px;border-radius:14px;padding:16px}.feedback-branch.show{display:block;animation:reveal .35s}.feedback-pass{background:#E3F8ED;border:2px solid #B8E8CF}.feedback-retry{background:#FFF0E6;border:2px solid #F5C8A0}
-.value-card-row{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}.value-card{border:2px solid #E2E8F4;background:#fff;border-radius:14px;padding:10px 14px;min-width:110px;text-align:center;cursor:pointer;transition:.2s}.value-card:hover{border-color:var(--geo);background:var(--geo-light)}.value-card.good{background:#E3F8ED;border-color:#2DB87A}.value-card.bad{background:#FFF0E6;border-color:#E07B39;animation:shake .25s}.value-card .big{font-size:22px;font-weight:900;color:#0E1C42}.value-card .small{font-size:12px;color:#3A4A6B;font-weight:800}
-.fill-row{display:flex;align-items:center;gap:8px;background:#FAFBFF;border:2px solid #E2E8F4;border-radius:12px;padding:12px 14px;margin:10px 0;flex-wrap:wrap;font-size:17px;font-weight:800;color:#0E1C42}.fill-input{width:100px;padding:8px 10px;border:2.5px solid var(--geo-mid);border-radius:10px;font-size:17px;font-weight:900;color:var(--geo-deep);text-align:center;font-family:'Nunito',sans-serif;background:#fff}.fill-input:focus{outline:none;border-color:var(--geo)}.fill-input.good{border-color:#2DB87A;background:#E3F8ED;color:#1A8A5A}.fill-input.bad{border-color:#E07B39;background:#FFF0E6;animation:shake .25s}
-.q-block{background:#FAFBFF;border:2px solid #E2E8F4;border-radius:14px;padding:14px 18px;margin-bottom:14px}.q-num{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--geo);color:#fff;font-weight:800;font-size:14px;margin-right:8px;vertical-align:middle}.q-text{font-size:15.5px;color:#0E1C42;line-height:1.65}
-.gathered-box{background:#fff;border:2px solid #E2E8F4;border-radius:18px;overflow:hidden;margin-top:24px}.gathered-head{display:flex;align-items:center;gap:14px;background:linear-gradient(135deg,#0E1C42,#1A2D5A);padding:18px 22px}.gathered-head-icon{font-size:32px}.gathered-head-label{font-size:11px;color:#F5C518;font-weight:800;text-transform:uppercase}.gathered-head-title{font-size:18px;color:#fff;font-weight:800}.gathered-body{padding:16px 22px}.gathered-output{width:100%;min-height:160px;border:2px solid #E2E8F4;border-radius:12px;padding:14px;font-family:monospace;font-size:13px;background:#FAFBFF}
-.tab-next-wrap{text-align:center;padding:24px 0 8px}.tab-transition-voice{font-family:'Lora',serif;font-size:15px;font-style:italic;color:var(--geo-deep);margin-bottom:12px}.tab-next-btn{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--geo),#2D2A5E);color:#fff;border:none;border-radius:28px;padding:13px 28px;font-size:15px;font-weight:800;cursor:pointer;box-shadow:0 4px 14px rgba(45,42,94,.3);animation:float 3s infinite}
-.turn-in-card{background:#fff;border:2px solid #E2E8F4;border-radius:18px;overflow:hidden;margin-top:18px}.turn-in-header{display:flex;align-items:center;gap:14px;background:var(--geo-light);padding:18px 22px;border-bottom:2px solid var(--geo-mid)}.turn-in-header-icon{font-size:36px}.turn-in-header-label{font-size:11px;color:var(--geo-deep);font-weight:800;text-transform:uppercase}.turn-in-header-title{font-family:'Lora',serif;font-size:22px;color:#0E1C42;font-weight:700}.turn-in-body{padding:18px 22px 20px}.turn-in-item{display:flex;align-items:center;gap:14px;padding:12px 16px;background:#FAFBFF;border:1.5px solid #E2E8F4;border-radius:12px;cursor:pointer;margin-bottom:10px}.turn-in-item.checked{background:#E3F8ED;border-color:#B8E8CF}.turn-in-check{width:26px;height:26px;border-radius:8px;border:2px solid var(--geo-mid);background:#fff;display:flex;align-items:center;justify-content:center;font-size:16px}.turn-in-item.checked .turn-in-check{background:#2DB87A;border-color:#2DB87A;color:#fff}
-.footer{background:#0E1C42;border-top:4px solid var(--geo);padding:18px 28px;text-align:center}.footer-main{font-size:14px;color:#fff;margin-bottom:4px}.footer-main span{color:var(--geo-mid);font-weight:700}.footer-sub{font-size:12px;color:rgba(255,255,255,.5)}.footer-copy{font-size:11px;color:rgba(255,255,255,.3)}
-.inline-feedback{display:none;margin:12px 0;border-radius:14px;padding:12px 14px;font-weight:800;line-height:1.5}.inline-feedback.show{display:block;animation:reveal .3s}.inline-feedback.good{background:#E3F8ED;border:2px solid #B8E8CF;color:#0E1C42}.inline-feedback.think{background:#FFF3DC;border:2px solid #F5E6C8;color:#5A4A3A}
-.vocab-section{background:#fff;border:2px solid var(--geo-mid);border-left:6px solid var(--geo);border-radius:18px;padding:14px 20px;margin:0 0 20px}.vocab-section-title{font-size:16px;color:#0E1C42;font-weight:900;margin-bottom:4px}
-.bubble-row{display:flex;gap:12px;flex-wrap:wrap;margin:14px 0}.bubble{display:flex;gap:10px;flex:1 1 260px;max-width:340px;background:#fff;border:2px solid #E2E8F4;border-radius:18px;padding:12px 14px}.bubble.atlas{border-left:5px solid #6B3FA0;background:linear-gradient(135deg,#fff,#F8F4FF)}.bubble.hazel{border-left:5px solid #2DB87A;background:linear-gradient(135deg,#fff,#F4FBF7)}.bubble.felix{border-left:5px solid #F5C518;background:linear-gradient(135deg,#fff,#FEFBEB)}.bubble.cora{border-left:5px solid #3A6B9A;background:linear-gradient(135deg,#fff,#F4F8FC)}.bubble-avatar{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:900;color:#fff;flex-shrink:0;font-family:'Lora',serif}.bubble.atlas .bubble-avatar{background:#6B3FA0}.bubble.hazel .bubble-avatar{background:#2DB87A}.bubble.felix .bubble-avatar{background:#F5C518;color:#0E1C42}.bubble.cora .bubble-avatar{background:#3A6B9A}.bubble-body{flex:1;min-width:0}.bubble-name{font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.7px;margin-bottom:3px;color:#6B3FA0}.bubble.hazel .bubble-name{color:#1A8A5A}.bubble.felix .bubble-name{color:#8A6D2B}.bubble.cora .bubble-name{color:#1A6B8E}.bubble-text{font-size:14.5px;color:#0E1C42;line-height:1.5;font-weight:600;font-family:'Lora',serif;font-style:italic}
-/* ═══ VIDEO PLACEHOLDER ═══ */
-.video-placeholder-wrap {
-  display: none;
-  border-radius: 14px; overflow: hidden; margin: 0 0 18px;
-  border: 2px dashed rgba(107,63,160,0.4);
-  background: linear-gradient(135deg, #0E1C42, #1A2D5A);
-}
-.video-placeholder-inner {
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-  text-align: center; padding: 28px 20px;
-}
-.video-placeholder-inner .vp-icon { font-size: 34px; margin-bottom: 6px; }
-.video-placeholder-inner .vp-label {
-  font-size: 10px; color: #F5C518; text-transform: uppercase;
-  letter-spacing: 2px; font-weight: 800; margin-bottom: 4px;
-}
-.video-placeholder-inner .vp-title {
-  font-size: 16px; font-weight: 800; color: #fff; margin-bottom: 8px;
-}
-.video-placeholder-inner .vp-slot {
-  font-family: monospace; font-size: 11px; color: #6B3FA0;
-  background: rgba(107,63,160,0.15);
-  padding: 3px 10px; border-radius: 4px;
-}
-.video-placeholder-inner .vp-notes {
-  font-size: 12px; color: rgba(255,255,255,0.8); font-style: italic;
-  margin-top: 10px; text-align: left; padding: 10px 12px;
-  background: rgba(0,0,0,0.25); border-radius: 6px; border-left: 3px solid #6B3FA0;
-}
+<header class="sb-head">
+  <div class="sb-brand"><img alt="" src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png"><div><b>Optima Academy Online</b><small>An Education Experience Company</small></div></div>
+  <h1 class="sb-title">Lines of Symmetry</h1>
+  <div class="sb-chips">
+    <span class="sb-chip lead">Lesson 3.12.07 · Unit 12 · Lesson 7</span>
+    <button type="button" class="sb-chip" id="sb-read">🔊 Read aloud</button>
+    <button type="button" class="sb-chip" data-pop="#sb-std" aria-expanded="false">Standards ▾</button>
+    <button type="button" class="sb-chip" id="sb-music" aria-pressed="false">🎵 Music: off</button>
+    <button type="button" class="sb-chip" id="sb-motion" aria-pressed="true">✨ Motion: on</button>
+  </div>
+  <div class="sb-pop" id="sb-std"><b>MA.3.GR.1.3</b> Draw line(s) of symmetry in a two-dimensional figure and identify line-symmetric two-dimensional figures. A figure may have no line of symmetry, exactly one line of symmetry or more than one line of symmetry.<br><b>MA.3.GR.1.1</b> Describe a circle: the radius and the diameter.<br><b>MA.K12.MTR.2.1</b> Show math in many ways. <b>MTR.5.1</b> Use patterns and structure. <b>MTR.6.1</b> Check that answers make sense.<br><small>Today: fold shapes to find lines of symmetry, and draw circles with a compass. Euclid, Elements, Book I, Proposition 1.</small></div>
+</header>
 
-/* COMPASS TOOL */
-.comp-frame{background:#fff;border:2px solid var(--geo-mid);border-radius:16px;padding:18px;margin:14px 0}
-.comp-controls{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:14px;align-items:center}
-.comp-pick{background:var(--geo-light);border:2px solid var(--geo-mid);border-radius:14px;padding:10px 14px;text-align:center;min-width:140px}
-.comp-pick-label{font-size:11px;color:var(--geo-deep);font-weight:900;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
-.comp-stepper{display:flex;align-items:center;justify-content:center;gap:10px}
-.comp-btn{background:#fff;border:2.5px solid var(--geo);color:var(--geo);width:36px;height:36px;border-radius:50%;font-size:18px;font-weight:900;cursor:pointer;font-family:'Nunito',sans-serif}.comp-btn:hover{background:var(--geo);color:#fff}
-.comp-val{font-family:'Lora',serif;font-size:28px;font-weight:900;color:#0E1C42;min-width:30px;text-align:center}
-.comp-canvas-wrap{background:#FAFBFF;border:2px dashed var(--geo-mid);border-radius:12px;padding:10px;margin-bottom:10px;text-align:center;min-height:320px}
-.comp-readout{background:linear-gradient(135deg,var(--geo-light),var(--geo-mid));border:2px solid var(--geo-mid);border-radius:12px;padding:12px;text-align:center;font-family:'Lora',serif;font-weight:900;color:#0E1C42;font-size:18px;margin-bottom:8px}
-.comp-challenge{background:#FFF8E6;border:2px solid #F5E6C8;border-radius:12px;padding:10px 14px;text-align:center;font-size:14px;color:#5A4A00;font-weight:700;margin-bottom:10px}
-.comp-sweep-btn{background:var(--geo);color:#fff;border:none;border-radius:14px;padding:10px 20px;font-size:14px;font-weight:900;cursor:pointer;font-family:'Nunito',sans-serif;margin:4px}
-.comp-reset-btn{background:#7A88A8;color:#fff;border:none;border-radius:14px;padding:8px 16px;font-size:13px;font-weight:900;cursor:pointer;font-family:'Nunito',sans-serif;margin:4px}
-
-@keyframes reveal{0%{opacity:0;transform:translateY(10px)}100%{opacity:1;transform:translateY(0)}}@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}@keyframes mini{0%{transform:translateY(0) scale(0);opacity:1}50%{transform:translateY(-30px) scale(1.2)}100%{transform:translateY(-60px) scale(.6);opacity:0}}
-</style>
-<style id="fluencyStyles">
-.fluency-box{background:#fff;border:2px solid #F5C518;border-radius:18px;overflow:hidden;margin-bottom:22px;font-family:'Nunito',sans-serif}
-.fluency-head{display:flex;align-items:center;gap:12px;background:linear-gradient(135deg,#F5C518,#E8B723);padding:14px 20px;flex-wrap:wrap}
-.fluency-head-icon{font-size:26px;line-height:1}
-.fluency-head-label{font-size:10px;color:#0E1C42;font-weight:800;text-transform:uppercase;letter-spacing:0.5px}
-.fluency-head-title{font-size:15px;color:#0E1C42;font-weight:800}
-.fluency-timer-ui{margin-left:auto;display:flex;align-items:center;gap:10px}
-.fluency-timer-display{font-size:20px;font-weight:800;color:#0E1C42;min-width:46px;text-align:center}
-.fluency-start-btn{background:#0E1C42;color:#fff;border:none;border-radius:10px;padding:8px 14px;font-weight:700;font-size:12px;cursor:pointer}
-.fluency-start-btn:disabled{opacity:0.55;cursor:default}
-.fluency-body{padding:16px 20px}
-.fluency-instructions{font-size:13px;color:#4A5568;margin:0 0 12px}
-.fluency-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(128px,1fr));gap:10px;margin-bottom:14px}
-.fluency-item{display:flex;align-items:center;gap:6px;background:#FAFBFF;border:1.5px solid #E2E8F4;border-radius:10px;padding:8px 10px}
-.fluency-item.fluency-correct{border-color:#2DB87A;background:#EAFBF3}
-.fluency-item.fluency-wrong{border-color:#E07B39;background:#FDF1E9}
-.fluency-q{font-size:13px;font-weight:700;color:#0E1C42;white-space:nowrap}
-.fluency-input{width:46px;border:1.5px solid #CBD5E8;border-radius:6px;padding:4px;font-size:14px;text-align:center;font-family:'Nunito',sans-serif}
-.fluency-input:disabled{background:#F0F2F8}
-.fluency-check-btn{background:#2DB87A;color:#fff;border:none;border-radius:10px;padding:10px 18px;font-weight:800;font-size:13px;cursor:pointer}
-.fluency-check-btn:disabled{opacity:0.55;cursor:default}
-.fluency-result{margin-top:10px;font-size:14px;color:#0E1C42;font-weight:700}
-</style></head><body>
-<div class="page-wrap">
-
-<!-- ═══════════════════════════════════════════════════════════════════════
-     OPTIMA READ-ALOUD PLAYER — drop-in snippet for GitHub-hosted lesson pages
-     ═══════════════════════════════════════════════════════════════════════ -->
-<div id="optima-read-aloud">
-<style>
-    #optima-read-aloud { background: linear-gradient(135deg, #E8F6FB 0%, #F4F9FC 100%); border: 1px solid #C5DCE5; border-left: 5px solid #2196D0; border-radius: 8px; padding: 14px 18px; margin: 0 0 20px 0; }
-    #optima-read-aloud .ora-kicker { font-size: 11px; color: #1B6A94; letter-spacing: 0.4px; margin-bottom: 10px; }
-    #optima-read-aloud .ora-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
-    #optima-read-aloud .ora-controls button { border-radius: 8px; padding: 8px 16px; font-size: 14px; cursor: pointer; font-family: inherit; transition: all 0.15s; }
-    #ora-play { background: #0E1C42; color: #FFFFFF; border: 1.5px solid #0E1C42; }
-    #ora-play:hover:enabled { background: #1B2D5E; }
-    #ora-play:disabled { background: #D0D9E8; border-color: #D0D9E8; color: #6b7a99; cursor: default; }
-    #ora-stop { background: #FFFFFF; color: #0E1C42; border: 1.5px solid #D0D9E8; }
-    #ora-stop:hover:enabled { background: #F4F6FA; border-color: #55C8E8; }
-    #ora-stop:disabled { color: #999; border-color: #E4E9F2; cursor: default; }
-    #optima-read-aloud .ora-speed { font-size: 12px; color: #6b7a99; display: flex; align-items: center; gap: 6px; }
-    #ora-rate { font-family: inherit; font-size: 13px; color: #0E1C42; border: 1.5px solid #D0D9E8; border-radius: 6px; padding: 5px 8px; background: #FFFFFF; }
-    #ora-status { font-size: 12px; color: #666; }
-    .ora-highlight { background: #FDF3E3 !important; box-shadow: inset 4px 0 0 #C7922C; border-radius: 4px; transition: background 0.2s; }
-</style>
-    <div class="ora-kicker">&#128266; READ ALOUD &mdash; LISTEN TO THIS PAGE</div>
-    <div class="ora-controls">
-        <button id="ora-play" type="button" aria-label="Listen to this page">&#9654;&#65039; Listen</button>
-        <button id="ora-stop" type="button" aria-label="Stop reading" disabled>&#9632; Stop</button>
-        <label class="ora-speed">Speed
-            <select id="ora-rate" aria-label="Reading speed">
-                <option value="0.8">Slower</option>
-                <option value="1" selected>Normal</option>
-                <option value="1.25">Faster</option>
-            </select>
-        </label>
-        <span id="ora-status" role="status" aria-live="polite"></span>
+<!-- the open book -->
+<div class="sb-book" aria-label="Opti's storybook, open to Chapter 12">
+  <div class="sb-book-in">
+    <div class="sb-pg">
+      <figure class="sb-plate"><img src="images/storybook/sb-byrne-prop1.jpg" alt="An old printed page. Two circles of the same size overlap, and a red, yellow and blue triangle stands on the line between their centers."><figcaption>Euclid's first problem, from Oliver Byrne's book, 1847</figcaption></figure>
     </div>
-<script>
-(function () {
-    "use strict";
-    var playBtn  = document.getElementById("ora-play");
-    var stopBtn  = document.getElementById("ora-stop");
-    var rateSel  = document.getElementById("ora-rate");
-    var statusEl = document.getElementById("ora-status");
-
-    if (!("speechSynthesis" in window) || !("SpeechSynthesisUtterance" in window)) {
-        playBtn.disabled = true;
-        rateSel.disabled = true;
-        statusEl.textContent = "Read-aloud is not supported in this browser.";
-        return;
-    }
-
-    var LABEL_PLAY   = "▶️ Listen";
-    var LABEL_PAUSE  = "⏸️ Pause";
-    var LABEL_RESUME = "▶️ Resume";
-    var BLOCK_SEL = "p, li, h1, h2, h3, h4, h5, h6, blockquote, td, th, dt, dd, figcaption, div";
-    var SKIP_SEL  = "#optima-read-aloud, [data-ra-skip], button, script, style, select, noscript, iframe";
-
-    var queue = [];
-    var idx = 0;
-    var playing = false, paused = false, stopping = false;
-    var currentBlock = null;
-    var currentUtterance = null;
-
-    var voices = [];
-    function loadVoices() { voices = window.speechSynthesis.getVoices(); }
-    loadVoices();
-    if ("onvoiceschanged" in window.speechSynthesis) {
-        window.speechSynthesis.onvoiceschanged = loadVoices;
-    }
-    function pickVoice() {
-        if (!voices.length) loadVoices();
-        var en = voices.filter(function (v) { return /^en/i.test(v.lang); });
-        return en.filter(function (v) { return /natural/i.test(v.name); })[0]
-            || en.filter(function (v) { return /google us english/i.test(v.name); })[0]
-            || en.filter(function (v) { return v.default; })[0]
-            || en[0] || null;
-    }
-
-    function isVisible(el) {
-        return !!(el.offsetWidth || el.offsetHeight || el.getClientRects().length);
-    }
-
-    function collectQueue() {
-        var root = document.querySelector("[data-readaloud-root]")
-                || document.querySelector(".canvas-frame")
-                || document.body;
-        var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null, false);
-        var items = [];
-        var node;
-        while ((node = walker.nextNode())) {
-            if (!/\S/.test(node.textContent)) continue;
-            var el = node.parentElement;
-            if (!el || el.closest(SKIP_SEL)) continue;
-            if (!isVisible(el)) continue;
-            var block = el.closest(BLOCK_SEL) || root;
-            var last = items[items.length - 1];
-            if (last && last.el === block) last.text += " " + node.textContent;
-            else items.push({ el: block, text: node.textContent });
-        }
-        var q = [];
-        items.forEach(function (item) {
-            var clean = item.text.replace(/[\u{1F600}-\u{1F64F}\u{1F300}-\u{1F5FF}\u{1F680}-\u{1F6FF}\u{1F1E0}-\u{1F1FF}\u{1F900}-\u{1F9FF}\u{1FA00}-\u{1FA6F}\u{1FA70}-\u{1FAFF}\u{2600}-\u{27BF}\u{2300}-\u{23FF}\u{2B50}\u{2B55}\u{25A0}-\u{25FF}\u{2702}-\u{27B0}\u{FE00}-\u{FE0F}\u{200D}\u{20E3}\u{E0020}-\u{E007F}]/gu, "").replace(/\s+/g, " ").trim();
-            if (!clean) return;
-            var sentences = clean.match(/[^.!?]+[.!?]+["”’')\]]*\s*|[^.!?]+$/g) || [clean];
-            sentences.forEach(function (s) {
-                s = s.trim();
-                if (s) q.push({ el: item.el, text: s });
-            });
-        });
-        return q;
-    }
-
-    function highlight(el) {
-        if (el === currentBlock) return;
-        clearHighlight();
-        currentBlock = el;
-        if (el && el !== document.body) {
-            el.classList.add("ora-highlight");
-            try { el.scrollIntoView({ behavior: "smooth", block: "nearest" }); } catch (e) {}
-        }
-    }
-    function clearHighlight() {
-        if (currentBlock) currentBlock.classList.remove("ora-highlight");
-        currentBlock = null;
-    }
-
-    function speakNext() {
-        if (idx >= queue.length) { finish("Finished reading this page."); return; }
-        var item = queue[idx];
-        highlight(item.el);
-        var u = new SpeechSynthesisUtterance(item.text);
-        u.rate = parseFloat(rateSel.value) || 1;
-        var v = pickVoice();
-        if (v) u.voice = v;
-        u.onend = function () {
-            if (stopping) return;
-            idx++;
-            speakNext();
-        };
-        u.onerror = function (e) {
-            if (stopping || e.error === "canceled" || e.error === "interrupted") return;
-            idx++;
-            speakNext();
-        };
-        currentUtterance = u;
-        window.speechSynthesis.speak(u);
-        statusEl.textContent = "Reading… " + (idx + 1) + " / " + queue.length;
-    }
-
-    function finish(message) {
-        playing = false;
-        paused = false;
-        clearHighlight();
-        playBtn.textContent = LABEL_PLAY;
-        stopBtn.disabled = true;
-        statusEl.textContent = message || "";
-        currentUtterance = null;
-    }
-
-    playBtn.addEventListener("click", function () {
-        if (playing && !paused) {
-            window.speechSynthesis.pause();
-            paused = true;
-            playBtn.textContent = LABEL_RESUME;
-            statusEl.textContent = "Paused";
-            return;
-        }
-        if (playing && paused) {
-            window.speechSynthesis.resume();
-            paused = false;
-            playBtn.textContent = LABEL_PAUSE;
-            statusEl.textContent = "Reading… " + (idx + 1) + " / " + queue.length;
-            return;
-        }
-        queue = collectQueue();
-        if (!queue.length) { statusEl.textContent = "Nothing to read on this page."; return; }
-        idx = 0;
-        stopping = false;
-        playing = true;
-        paused = false;
-        window.speechSynthesis.cancel();
-        playBtn.textContent = LABEL_PAUSE;
-        stopBtn.disabled = false;
-        speakNext();
-    });
-
-    stopBtn.addEventListener("click", function () {
-        stopping = true;
-        window.speechSynthesis.cancel();
-        finish("");
-    });
-
-    rateSel.addEventListener("change", function () {
-        if (!playing || paused) return;
-        stopping = true;
-        window.speechSynthesis.cancel();
-        setTimeout(function () { stopping = false; speakNext(); }, 60);
-    });
-
-    window.addEventListener("pagehide", function () { window.speechSynthesis.cancel(); });
-})();
-</script>
+    <div class="sb-pg r">
+      <div class="sb-chap">Chapter 12</div>
+      <div class="sb-chap-t">Euclid's Compass</div>
+      <div class="sb-orn" aria-hidden="true"></div>
+      <p class="sb-chap-s">Alexandria, Egypt · about 300 BC</p>
+      <div class="sb-chap-l">Lesson 7 · Lines of Symmetry</div>
+    </div>
+  </div>
+  <img class="sb-owl" src="images/storybook/opti-owl.png" alt="Opti the owl, sitting on the open book">
 </div>
-<!-- ═══ END OPTIMA READ-ALOUD PLAYER ═══ -->
 
-<div class="progress-wrap"><span class="progress-label">Lesson Progress</span><div class="progress-track"><div class="progress-fill" id="pf"></div></div><span class="progress-pct" id="pp">0%</span></div>
-<div class="header">
-<div class="header-brand"><div class="header-logo"><img alt="Optima" src="https://raw.githubusercontent.com/optimaondemand/optima-assets/eeb0b335630058906d52f478028361d352253a93/images/Optima%20Final%20Circle%20-%20Owl%20Only.png"/></div><div><div class="header-org">Optima Academy Online</div><div class="header-sub">An Education Experience Company</div></div></div>
-<div class="header-title"><em>Using a Compass</em></div>
-<div class="header-badge"><span class="header-badge-icon">🧭</span><span class="header-badge-text">Lesson 3.12.07 · U5 Fluency</span></div>
-</div>
-<div class="quote-strip"><div class="quote-strip-text">“A compass draws perfect circles — set the radius, place the point, and sweep.”</div><div class="quote-strip-attr">Geometry fact</div></div>
-<div class="info-strip">
-<div class="info-cell"><div class="info-icon" style="background:var(--geo-light);">📐</div><div><div class="info-label">Unit</div><div class="info-value">Unit 12</div><div class="info-detail">Geometry</div></div></div>
-<div class="info-cell"><div class="info-icon" style="background:#E3F8ED;">📅</div><div><div class="info-label">Lesson</div><div class="info-value">3.12.07</div><div class="info-detail">U5 Fluency</div></div></div>
-<div class="info-cell"><div class="info-icon" style="background:#EAF0FF;">📐</div><div><div class="info-label">Standards</div><div class="info-value">Enrichment</div><div class="info-detail">construct shapes</div></div></div>
-<div class="info-cell"><div class="info-icon" style="background:#FFF8E6;">🔧</div><div><div class="info-label">Tool</div><div class="info-value">Compass Tool</div><div class="info-detail">draw circles</div></div></div>
-</div>
-<div class="explorer-strip"><span class="explorer-compass">🧭</span><div><div class="explorer-mission-label">Today’s Mission</div><div class="explorer-mission-text">Set the radius, plant the point, sweep the arc — that’s how a compass works.</div></div></div>
-<div class="intro-2col">
-<div class="intro-card theme-question"><div class="intro-card-head"><div class="intro-card-head-icon">❓</div><div><div class="intro-card-head-label">Essential Question</div><div class="intro-card-head-title">How does a compass help us draw precise shapes?</div></div></div><div class="intro-card-body"><p>A compass keeps the distance fixed so every point on the circle is exactly the same distance from the center.</p></div></div>
-<div class="intro-card theme-objectives"><div class="intro-card-head"><div class="intro-card-head-icon">🎯</div><div><div class="intro-card-head-label">Today’s Objectives</div><div class="intro-card-head-title">You will…</div></div></div><div class="intro-card-body">
-<div class="obj-line"><span style="flex-shrink:0">🧭</span><span><strong>Draw</strong> circles with a given radius using the Compass Tool.</span></div>
-<div class="obj-line"><span style="flex-shrink:0">📐</span><span><strong>Connect</strong> radius to diameter (diameter = 2 × radius).</span></div>
-<div class="obj-line"><span style="flex-shrink:0">🔧</span><span><strong>Construct</strong> designs with multiple circles.</span></div>
-</div></div>
-</div>
-<div class="need-strip"><span class="need-strip-label">You’ll need:</span><span class="need-chip">📓 Math Journal</span><span class="need-chip">✏️ Pencil</span></div>
-<div class="tab-bar" id="tabBar">
-<button class="tab-btn active" data-tab="warmup" onclick="switchTab('warmup')">🔍 Warm-Up <span class="tab-check">✓</span></button>
-<button class="tab-btn" data-tab="learn" onclick="switchTab('learn')">📐 Learn <span class="tab-check">✓</span></button>
-
-<button class="tab-btn" data-tab="assignment" onclick="switchTab('assignment')">🌟 Show What You Know <span class="tab-check">✓</span></button>
-</div>
-<!-- WARM-UP TAB -->
-<div class="tab-panel active" id="tab-warmup">
-<!-- ═══ INTRODUCTION VIDEO ═══ -->
-<div class="video-placeholder-wrap">
-<!-- slot: g3math-12-07 -->
-<div class="video-placeholder-inner">
-  <span class="vp-icon">&#x1F3AC;</span>
-  <div class="vp-label">Introduction Video</div>
-  <div class="vp-title">Optima Academy Online — Grade 3 Math Lesson 3.12.07</div>
-  <div class="vp-slot">g3math-12-07</div>
-  <div class="vp-notes">
-    <strong>Teacher recording notes:</strong> Introduction video for this lesson.
+<div class="sb-intro">
+  <div class="sb-card sb-eq">
+    <span class="sb-k">Essential Question</span>
+    <h3>How can a fold show that two halves match?</h3>
+    <div class="sb-stage" role="img" aria-label="An arrow shape with a dashed line down the middle. The left half and the right half are the same." style="margin:6px 0;max-width:230px"><svg viewBox="0 0 320 220"><polygon points="160,20 230,90 195,90 195,190 125,190 125,90 90,90" fill="#FBF6EA" stroke="#0E1C42" stroke-width="4.5" stroke-linejoin="round"/><line x1="160" y1="8" x2="160" y2="205" stroke="#C9A227" stroke-width="3.5" stroke-dasharray="9 7" stroke-linecap="round"/></svg></div>
+    <p style="margin:4px 0 0">Fold on the dashed line. If both halves land on top of each other, the fold is a line of symmetry.</p>
+  </div>
+  <div class="sb-card sb-obj">
+    <span class="sb-k">Today's Objectives</span>
+    <h3>You will…</h3>
+    <ul>
+      <li><b>Fold</b> shapes to test whether the halves match exactly.</li>
+      <li><b>Draw</b> the lines of symmetry a shape has: none, one, or more than one.</li>
+      <li><b>Use</b> a compass to draw circles and build Euclid's first picture.</li>
+    </ul>
   </div>
 </div>
+
+<div class="sb-tabs" role="tablist" aria-label="Lesson sections">
+  <button class="sb-tab" role="tab" data-tab="warmup" aria-controls="tab-warmup">🔍 Warm-Up <span class="ck">✓</span></button>
+  <button class="sb-tab" role="tab" data-tab="learn" aria-controls="tab-learn">📐 Lesson <span class="ck">✓</span></button>
+  <button class="sb-tab" role="tab" data-tab="swyk" aria-controls="tab-swyk">🌟 Show What You Know <span class="ck">✓</span></button>
 </div>
 
-<div class="fluency-box" data-timed="true">
-<div class="fluency-head">
-<div class="fluency-head-icon">⏳</div>
-<div><div class="fluency-head-label">TIMED FLUENCY CHECK</div><div class="fluency-head-title">Mixed All-Operations Facts</div></div>
-<div class="fluency-timer-ui"><span class="fluency-timer-display" id="fluencyTimerDisplay">60s</span><button class="fluency-start-btn" id="fluencyStartBtn" onclick="fluencyStart()">Start 1-Minute Check</button></div>
-</div>
-<div class="fluency-body">
-<p class="fluency-instructions">Unit check — Quarter 4 timed fluency. Click Start, then answer as many as you can in 60 seconds. Answers lock in automatically when time is up.</p>
-<div class="fluency-grid" id="fluencyGrid">
-<div class="fluency-item"><span class="fluency-q">8 + 7 =</span><input autocomplete="off" class="fluency-input" data-answer="15" disabled="" inputmode="numeric" type="text"/></div>
-<div class="fluency-item"><span class="fluency-q">16 - 9 =</span><input autocomplete="off" class="fluency-input" data-answer="7" disabled="" inputmode="numeric" type="text"/></div>
-<div class="fluency-item"><span class="fluency-q">6 × 7 =</span><input autocomplete="off" class="fluency-input" data-answer="42" disabled="" inputmode="numeric" type="text"/></div>
-<div class="fluency-item"><span class="fluency-q">54 ÷ 9 =</span><input autocomplete="off" class="fluency-input" data-answer="6" disabled="" inputmode="numeric" type="text"/></div>
-<div class="fluency-item"><span class="fluency-q">9 + 8 =</span><input autocomplete="off" class="fluency-input" data-answer="17" disabled="" inputmode="numeric" type="text"/></div>
-<div class="fluency-item"><span class="fluency-q">15 - 6 =</span><input autocomplete="off" class="fluency-input" data-answer="9" disabled="" inputmode="numeric" type="text"/></div>
-<div class="fluency-item"><span class="fluency-q">7 × 8 =</span><input autocomplete="off" class="fluency-input" data-answer="56" disabled="" inputmode="numeric" type="text"/></div>
-<div class="fluency-item"><span class="fluency-q">63 ÷ 7 =</span><input autocomplete="off" class="fluency-input" data-answer="9" disabled="" inputmode="numeric" type="text"/></div>
-<div class="fluency-item"><span class="fluency-q">8 × 6 =</span><input autocomplete="off" class="fluency-input" data-answer="48" disabled="" inputmode="numeric" type="text"/></div>
-<div class="fluency-item"><span class="fluency-q">48 ÷ 8 =</span><input autocomplete="off" class="fluency-input" data-answer="6" disabled="" inputmode="numeric" type="text"/></div>
-<div class="fluency-item"><span class="fluency-q">9 × 7 =</span><input autocomplete="off" class="fluency-input" data-answer="63" disabled="" inputmode="numeric" type="text"/></div>
-<div class="fluency-item"><span class="fluency-q">72 ÷ 8 =</span><input autocomplete="off" class="fluency-input" data-answer="9" disabled="" inputmode="numeric" type="text"/></div>
-<div class="fluency-item"><span class="fluency-q">6 + 8 =</span><input autocomplete="off" class="fluency-input" data-answer="14" disabled="" inputmode="numeric" type="text"/></div>
-<div class="fluency-item"><span class="fluency-q">14 - 8 =</span><input autocomplete="off" class="fluency-input" data-answer="6" disabled="" inputmode="numeric" type="text"/></div>
-<div class="fluency-item"><span class="fluency-q">7 × 9 =</span><input autocomplete="off" class="fluency-input" data-answer="63" disabled="" inputmode="numeric" type="text"/></div>
-<div class="fluency-item"><span class="fluency-q">56 ÷ 7 =</span><input autocomplete="off" class="fluency-input" data-answer="8" disabled="" inputmode="numeric" type="text"/></div>
-<div class="fluency-item"><span class="fluency-q">9 × 8 =</span><input autocomplete="off" class="fluency-input" data-answer="72" disabled="" inputmode="numeric" type="text"/></div>
-<div class="fluency-item"><span class="fluency-q">64 ÷ 8 =</span><input autocomplete="off" class="fluency-input" data-answer="8" disabled="" inputmode="numeric" type="text"/></div>
-<div class="fluency-item"><span class="fluency-q">8 + 9 =</span><input autocomplete="off" class="fluency-input" data-answer="17" disabled="" inputmode="numeric" type="text"/></div>
-<div class="fluency-item"><span class="fluency-q">17 - 8 =</span><input autocomplete="off" class="fluency-input" data-answer="9" disabled="" inputmode="numeric" type="text"/></div>
-</div>
-<button class="fluency-check-btn" disabled="" id="fluencyCheckBtn" onclick="fluencyCheck()">Check My Answers</button>
-<div class="fluency-result" id="fluencyResult"></div>
-</div>
-<textarea class="journal-box" data-label="Fluency Warm-Up (Mixed All-Operations Facts)" id="fluencyJournal" readonly="" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;"></textarea>
+<!-- ══════════════ WARM-UP ══════════════ -->
+<section class="sb-panel tab-panel" id="tab-warmup" role="tabpanel">
+
+<div class="sb-opti" data-slot="warm-1">Hoo! Here's Euclid's very first problem: draw two circles of the same size with a compass. Their picture has a fold line where both halves match. Greek builders made their temples match side to side, too. Today you'll fold shapes to find lines of symmetry.</div>
+
+<div class="sb-video pq-vslot" data-slot="warm">
+  <video controls preload="metadata" playsinline poster="assets/video/g3math-12-07-warm.jpg" src="assets/video/g3math-12-07-warm.mp4"></video>
+  <div class="cap">🎬 Opti Opens Lesson 7: Lines of Symmetry</div>
 </div>
 
-<div class="activity bl-yellow"><div class="activity-head"><div class="activity-num" style="background:#F5C518;color:#0E1C42;">🔎</div><div><div class="activity-title">Readiness Check</div><div class="activity-sub">Tap the card.</div></div></div><div class="activity-body">
-<p>A square has ___ equal sides and ___ right angles.</p>
-<div class="value-card-row">
-<div class="value-card" onclick="rA(this,true)"><div class="big">4 and 4</div></div>
-<div class="value-card" onclick="rA(this,false)"><div class="big">4 and 2</div></div>
-<div class="value-card" onclick="rA(this,false)"><div class="big">3 and 4</div></div>
-</div>
-<div class="inline-feedback" id="rA-fb"></div>
-<div class="hint-callout">A square is the “most special” quadrilateral — 4 equal sides AND 4 right angles.</div>
-</div></div>
-
-<div class="activity bl-yellow"><div class="activity-head"><div class="activity-num" style="background:#F5C518;color:#0E1C42;">🤔</div><div><div class="activity-title">Think About It</div></div></div><div class="activity-body">
-<div class="callout callout-think"><span class="callout-icon">🧠</span><p>Felix has a compass — the geometry tool, not the direction-finder. He sets it to 3 cm and draws. What shape does he get?</p></div>
-<div class="value-card-row">
-<div class="value-card" onclick="rT(this,true)"><div class="big">A circle with radius 3 cm</div></div>
-<div class="value-card" onclick="rT(this,false)"><div class="big">A square with side 3 cm</div></div>
-<div class="value-card" onclick="rT(this,false)"><div class="big">A triangle</div></div>
-</div>
-<div class="inline-feedback" id="rT-fb"></div>
-<div class="olt-nudge"><a href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=compass&amp;st=1" target="_blank" rel="noopener" title="Open the Compass to set the radius and draw the circle."><span aria-hidden="true">🧮</span> Try the <b>Compass</b> <span aria-hidden="true">↗</span></a></div><div class="journal-label">✏️ What do you already know about using a compass? <span class="saved-dot" id="dt"></span></div>
-<textarea class="journal-box" data-label="Warm-Up journal" id="j-t01" oninput="autoSave(this,'dt')" placeholder=""></textarea>
-</div></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Point, radius, sweep — that’s all it takes.</p><button class="tab-next-btn" onclick="switchTab('learn')">Continue to 📐 Learn →</button></div>
-</div>
-<!-- LEARN TAB -->
-<div class="tab-panel" id="tab-learn">
-<div class="vocab-section"><div class="vocab-section-title">Vocabulary</div>
-<p style="font-size:14px;color:#3A4A6B;font-family:'Lora',serif;font-style:italic;margin-bottom:10px;"><strong>Compass</strong> — a tool with a fixed point and a pencil that draws circles and arcs.</p>
-<p style="font-size:14px;color:#3A4A6B;font-family:'Lora',serif;font-style:italic;margin-bottom:10px;"><strong>Arc</strong> — part of a circle — a curved section.</p>
-<p style="font-size:14px;color:#3A4A6B;font-family:'Lora',serif;font-style:italic;margin-bottom:10px;"><strong>Radius setting</strong> — the distance between the compass point and pencil tip.</p>
-<p style="font-size:14px;color:#3A4A6B;font-family:'Lora',serif;font-style:italic;"><strong>Construction</strong> — drawing shapes precisely using tools like a compass and straightedge.</p>
+<div class="sb-card">
+  <span class="sb-k">From the past</span>
+  <h3>A building that matches</h3>
+  <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>This is the front of a Greek temple at Agrigento, in Sicily. Builders finished it about 430 BC, more than 100 years before Euclid wrote his book. Cover the right side with your hand and look at the left. Then cover the left and look at the right. The columns and the triangle roof match on both sides of the middle.</p></div>
+  <div class="sb-art">
+    <figure class="sb-fig"><img src="images/storybook/sb-greek-temple-front.jpg" alt="The front of a stone temple with tall columns in a row and a wide triangle roof above them."><figcaption>The front of the Temple of Concordia at Agrigento, in Sicily.<small>Photo by Benjamin Smith, 2022. CC BY-SA 4.0, via Wikimedia Commons.</small></figcaption></figure>
+  </div>
+  <p style="margin:6px 0 0">Greek builders planned their temples so the two halves matched. Euclid planned his pictures the same way, with a compass.</p>
+  <p style="margin:6px 0 0"><b>Today's math:</b> fold a shape to see if its halves match exactly, and count how many folds work.</p>
 </div>
 
-<div class="callout callout-info"><span class="callout-icon">🔧</span><p><strong>Try the Compass Tool.</strong> Click the grid to place a center, set the radius, and sweep.</p></div>
-<!-- CENTERPIECE: Compass Tool -->
-<div class="activity bl-geo"><div class="activity-head"><div class="activity-num" style="background:var(--geo);">🧭</div><div><div class="activity-title">Compass Tool</div></div></div><div class="activity-body">
-<p style="font-family:'Lora',serif;font-size:14.5px;font-style:italic;color:var(--geo-deep);margin-bottom:8px;">Click the grid to place a center point. Set the radius. Hit Sweep.</p>
-<div class="comp-frame">
-<div class="comp-controls">
-<div class="comp-pick"><div class="comp-pick-label">Radius (units)</div><div class="comp-stepper"><button class="comp-btn" onclick="compStep(-1)">−</button><span class="comp-val" id="comp-r">3</span><button class="comp-btn" onclick="compStep(1)">+</button></div></div>
-</div>
-<div class="comp-challenge" id="comp-challenge">Draw a circle with radius 3.</div>
-<div class="comp-canvas-wrap">
-<svg id="comp-svg" style="touch-action:none;cursor:crosshair;" viewbox="0 0 320 320" width="100%"></svg>
-</div>
-<div class="comp-readout" id="comp-readout">Click the grid to place a center point.</div>
-<div style="text-align:center;">
-<button class="comp-sweep-btn" disabled="" id="comp-sweep-btn" onclick="compSweep()">🖌️ Sweep</button>
-<button class="comp-reset-btn" onclick="compClear()">Clear All</button>
-</div>
-</div>
-</div></div>
-<div class="key-concept"><div class="key-concept-label">📐 Key Concept — What You Just Saw</div>
-<p><strong>A compass draws circles by keeping one point fixed (the center) while sweeping the pencil at a set distance (the radius).</strong> Every point on the circle is exactly the radius distance from the center — that’s what makes it a perfect circle.</p>
+<div class="video-placeholder-wrap">
+<!-- slot: g3math-12-07 -->
+<div class="video-placeholder-inner"><div class="vp-label">🎬 Welcome Video</div><div class="vp-slot">g3math-12-07</div><div class="vp-notes"><b>Teacher recording notes:</b> Welcome to lines of symmetry! Warm up with × 6 and × 8 facts. Then fold a paper shape down the middle and show that the halves match exactly, with nothing sticking out.</div></div>
 </div>
 
-<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">🧠</div><div><div class="activity-title">Worked Example: Felix’s Compass Design</div></div></div><div class="activity-body">
-<div class="task-box"><div class="task-label">Problem</div><p>Felix draws a circle with radius 4 cm, then another circle with the same center and radius 2 cm. What design does he get?</p></div>
-<div class="bubble-row">
-<div class="bubble felix"><div class="bubble-avatar">F</div><div class="bubble-body"><div class="bubble-name">Felix</div><div class="bubble-text">“Two circles, same center, different sizes.”</div></div></div>
-<div class="bubble atlas"><div class="bubble-avatar">A</div><div class="bubble-body"><div class="bubble-name">Atlas</div><div class="bubble-text">“The big one has diameter 8 cm. The small one has diameter 4 cm.”</div></div></div>
+<div class="fluency-box">
+  <div class="fluency-head"><div class="fluency-head-icon">✍️</div><div><div class="fluency-head-label">FACT WARM-UP</div><div class="fluency-head-title">Today's Helpers: Times 6 and Times 8</div></div></div>
+  <div class="fluency-body">
+    <p class="fluency-instructions">Warm up with × 6 and × 8 facts. Type each answer, then check. You can fix any answer and check again.</p>
+    <div class="fluency-grid" id="fluencyGrid">
+      <div class="fluency-item"><span class="fluency-q">6 × 3 =</span><input class="fluency-input" data-answer="18" inputmode="numeric" autocomplete="off" aria-label="6 times 3"></div>
+      <div class="fluency-item"><span class="fluency-q">8 × 5 =</span><input class="fluency-input" data-answer="40" inputmode="numeric" autocomplete="off" aria-label="8 times 5"></div>
+      <div class="fluency-item"><span class="fluency-q">6 × 9 =</span><input class="fluency-input" data-answer="54" inputmode="numeric" autocomplete="off" aria-label="6 times 9"></div>
+      <div class="fluency-item"><span class="fluency-q">8 × 8 =</span><input class="fluency-input" data-answer="64" inputmode="numeric" autocomplete="off" aria-label="8 times 8"></div>
+      <div class="fluency-item"><span class="fluency-q">6 × 11 =</span><input class="fluency-input" data-answer="66" inputmode="numeric" autocomplete="off" aria-label="6 times 11"></div>
+      <div class="fluency-item"><span class="fluency-q">8 × 3 =</span><input class="fluency-input" data-answer="24" inputmode="numeric" autocomplete="off" aria-label="8 times 3"></div>
+      <div class="fluency-item"><span class="fluency-q">6 × 7 =</span><input class="fluency-input" data-answer="42" inputmode="numeric" autocomplete="off" aria-label="6 times 7"></div>
+      <div class="fluency-item"><span class="fluency-q">8 × 12 =</span><input class="fluency-input" data-answer="96" inputmode="numeric" autocomplete="off" aria-label="8 times 12"></div>
+      <div class="fluency-item"><span class="fluency-q">6 × 6 =</span><input class="fluency-input" data-answer="36" inputmode="numeric" autocomplete="off" aria-label="6 times 6"></div>
+      <div class="fluency-item"><span class="fluency-q">8 × 4 =</span><input class="fluency-input" data-answer="32" inputmode="numeric" autocomplete="off" aria-label="8 times 4"></div>
+    </div>
+    <div class="sb-help"><button type="button" class="sb-btn check" data-fluency-check>Check my answers</button></div>
+    <div class="sb-fb" aria-live="polite"></div>
+  </div>
 </div>
-<div class="bubble-row">
-<div class="bubble hazel"><div class="bubble-avatar">H</div><div class="bubble-body"><div class="bubble-name">Hazel</div><div class="bubble-text">“They look like a bullseye! Circles inside circles.”</div></div></div>
-<div class="bubble cora"><div class="bubble-avatar">C</div><div class="bubble-body"><div class="bubble-name">Cora</div><div class="bubble-text">“When circles share a center, they’re called concentric circles.”</div></div></div>
+
+<div class="sb-card sb-qgroup" data-done="review" data-ok="✓ Yes! Folding on the dashed line makes 2 halves, and they land right on top of each other.">
+  <span class="sb-k">Remember from 2nd grade</span>
+  <h3>Fold it in half</h3>
+  <p>Someone folded this paper heart on the dashed line. Count the halves the fold makes.</p>
+  <div class="sb-stage" role="img" aria-label="A paper heart with a dashed line straight down its middle." style="margin:6px auto;max-width:260px"><svg viewBox="0 0 300 210"><path d="M150 185 C 90 140, 40 110, 40 75 C 40 45, 65 25, 95 25 C 118 25, 138 38, 150 58 C 162 38, 182 25, 205 25 C 235 25, 260 45, 260 75 C 260 110, 210 140, 150 185 Z" fill="#FBF6EA" stroke="#0E1C42" stroke-width="4.5" stroke-linejoin="round"/><line x1="150" y1="14" x2="150" y2="198" stroke="#C9A227" stroke-width="3.5" stroke-dasharray="9 7" stroke-linecap="round"/></svg></div>
+  <div class="sb-q">The fold makes <input class="sb-ans" data-a="2" inputmode="numeric" autocomplete="off" aria-label="number" data-hint="One fold cuts the heart into 2 parts."> halves, and they match.</div>
+  <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div>
+  <div class="sb-fb" aria-live="polite"></div>
 </div>
-</div></div>
-<div class="socratic-box"><div class="socratic-label">🔮 Think Deeper</div><p class="socratic-q">Why can’t you draw a perfect circle without a compass?</p><div class="olt-nudge"><a href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=geoboard&amp;st=1" target="_blank" rel="noopener" title="Open the Geoboard to stretch bands into shapes and check the sides."><span aria-hidden="true">🧮</span> Try the <b>Geoboard</b> <span aria-hidden="true">↗</span></a></div><div class="journal-label">✏️ <span class="saved-dot" id="ds1"></span></div><textarea class="journal-box" data-label="Learn socratic" id="j-s101" oninput="autoSave(this,'ds1')" placeholder=""></textarea></div>
-<div class="tab-next-wrap"><p class="tab-transition-voice">Point, radius, sweep — now use what you know.</p><button class="tab-next-btn" onclick="switchTab('assignment')">Continue to 🌟 Show What You Know →</button></div>
+
+<!-- JOB 1 · THINK -->
+<section class="sb-card sb-job" data-job="1">
+  <div class="sb-jh"><span class="sb-jn">JOB 1</span><div><h3>Think: Fold the Vase</h3><span class="sb-kind">🔨 Do · ✏️ Write</span></div><span class="sb-donechip"></span></div>
+  <div class="sb-opti" data-slot="think-1">Euclid's students drew a vase shape. Try each fold line. When the two halves match exactly, you've found a line of symmetry.</div>
+  <p class="sb-story">Euclid's students drew a vase and marked three fold lines on it. Only some folds will work.</p>
+  <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>A paper vase shape with three dashed lines across it: one up and down, one across the middle, and one slanted. Tap a dashed line to fold the paper on it. The folded half shows in green when it matches and in red when it sticks out.</p></div>
+  <div class="sb-steps">
+    <div class="sb-step" data-need="tried" data-cue=".sf-line"><h4>Try all 3 folds</h4><p>Tap each dashed line, one at a time. Watch whether the folded half lands right on top of the other half.</p></div>
+    <div class="sb-step"><h4>Which fold matched?</h4>
+      <label class="sb-write-l" for="w-think">Tell which fold made the halves match, and how you could tell.</label>
+      <textarea class="sb-write" id="w-think" data-req data-label="Fold the Vase" placeholder="The fold that went … matched because … The other folds …"></textarea>
+      <div class="sb-chips2">Remember to tell: <span>match exactly</span><span>sticks out</span><span>halves</span></div>
+      <div class="sb-help"><button type="button" class="sb-btn check">Done</button></div><div class="sb-fb" aria-live="polite"></div></div>
+    <div class="sb-locked"></div>
+  </div>
+  <div data-mod="symm" data-do="fold" data-name="think" data-shape="260,55 380,55 366,100 350,150 350,195 384,248 394,320 320,370 246,320 256,248 290,195 290,150 274,100" data-lines="320,30 320,400|120,215 520,215|190,85 450,345" data-for="tried"></div>
+  <div class="sb-help"><button type="button" class="sb-btn ghost" data-hints='["Tap one dashed line. The folded half shows on top of the shape.", "Look along the edges. Does any part stick out past the other half?", "Only the up-and-down fold makes the two halves land right on top of each other."]'>💡 Need a hint?</button><button type="button" class="sb-btn ghost sb-tipbtn" data-tip="#tip-1">💬 Hazel has a tip</button></div>
+  <div class="sb-hintbox"></div>
+  <div class="sb-tip" id="tip-1" data-who="hazel">I look at the edges after I fold. If even a little bit pokes out, the halves don't match.</div>
+  <div class="sb-payoff" data-after-job="1">
+    <p style="margin:0"><b>A fold that makes the two halves match exactly is a line of symmetry.</b> Each half is a mirror image of the other one.</p>
+  </div>
+  <div class="sb-opti" data-slot="think-done" data-after="1">Only one fold made the halves match exactly. That fold is a line of symmetry. The two halves are mirror images.</div>
+</section>
+
+<div class="sb-next"><button type="button" class="sb-btn gold" data-go-tab="learn" data-go-st="1">Next: the Lesson →</button></div>
+</section>
+
+<!-- ══════════════ LESSON ══════════════ -->
+<section class="sb-panel tab-panel" id="tab-learn" role="tabpanel">
+<div class="sb-path" role="list">
+  <button type="button" class="sb-pstep" data-st="1" role="listitem"><span class="num">1</span><span><b>Learn it</b><small>Learn + Your Turn</small></span></button>
+  <button type="button" class="sb-pstep" data-st="2" role="listitem"><span class="num">2</span><span><b>Practice together</b><small>3 jobs</small></span></button>
+  <button type="button" class="sb-pstep" data-st="3" role="listitem"><span class="num">3</span><span><b>On your own</b><small>1 job</small></span></button>
 </div>
-<!-- PRACTICE TAB -->
-<!-- SHOW WHAT YOU KNOW TAB -->
-<div class="tab-panel" id="tab-assignment">
-<div class="activity bl-green"><div class="activity-head"><div class="activity-num" style="background:#2DB87A;">🎯</div><div><div class="activity-title">Ready Check</div></div></div><div class="activity-body">
-<div class="q-block"><p class="q-text"><span class="q-num">A</span>A compass is set to 6 cm. The circle it draws has a diameter of ___.</p><div class="value-card-row"><div class="value-card" onclick="eA(this,true)"><div class="big">12 cm</div></div><div class="value-card" onclick="eA(this,false)"><div class="big">6 cm</div></div><div class="value-card" onclick="eA(this,false)"><div class="big">3 cm</div></div></div><div class="inline-feedback" id="eA-fb"></div></div>
-<div class="q-block"><p class="q-text"><span class="q-num">B</span>True or false: every point on a circle is the same distance from the center.</p><div class="value-card-row"><div class="value-card" onclick="eB(this,true)"><div class="big">True</div></div><div class="value-card" onclick="eB(this,false)"><div class="big">False</div></div></div><div class="inline-feedback" id="eB-fb"></div></div>
-</div></div>
-<div class="activity bl-navy"><div class="activity-head"><div class="activity-num" style="background:#0E1C42;">📬</div><div><div class="activity-title">Show What You Know</div></div></div><div class="activity-body">
-<div class="q-block"><p class="q-text"><span class="q-num">1</span><strong>Fluency.</strong> You need to draw a circle with a diameter of 16 cm. What radius do you set on the compass?</p><div class="olt-nudge"><a href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=tangram&amp;st=1" target="_blank" rel="noopener" title="Open the Tangrams to slide, turn, and flip the pieces into the shape."><span aria-hidden="true">🧮</span> Try the <b>Tangrams</b> <span aria-hidden="true">↗</span></a></div><div class="journal-label">✏️ <span class="saved-dot" id="da1"></span></div><textarea class="journal-box" data-label="SWYK 1" id="j-a101" oninput="autoSave(this,'da1')" placeholder=""></textarea></div>
-<div class="q-block"><p class="q-text"><span class="q-num">2</span><strong>Transfer.</strong> Atlas says he can draw a bigger circle by pushing harder on the compass. Felix says you need to open the compass wider. Who is right, and why?</p><div class="journal-label">✏️ <span class="saved-dot" id="da2"></span></div><textarea class="journal-box" data-label="SWYK 2" id="j-a201" oninput="autoSave(this,'da2')" placeholder=""></textarea></div>
 
-<div class="activity bl-slate" style="margin-top:18px;border-left-color:#F5A36F;"><div class="activity-head"><div class="activity-num" style="background:#F5A36F;color:#0E1C42;">🗺️</div><div><div class="activity-title">Connection Forward</div><div class="activity-sub">Unit 12 Complete!</div></div></div><div class="activity-body">
-<p>You’ve traveled through all of Unit 12 — circles, angles, right angles, triangles, quadrilaterals, and compass constructions. In 4th grade, you’ll use these shapes to study area and perimeter.</p>
-</div></div>
-</div></div>
-<div class="gathered-box"><div class="gathered-head"><div class="gathered-head-icon">📋</div><div><div class="gathered-head-label">Math Journal</div><div class="gathered-head-title">All Answers</div></div></div><div class="gathered-body"><textarea class="gathered-output" id="gO" readonly="">Click “Gather” to collect.</textarea><div style="display:flex;gap:10px;margin-top:12px;"><button class="geo-btn" onclick="gather()">📋 Gather</button><button class="green-btn" onclick="copyA()">Copy</button><button class="check-btn" onclick="dl()">Download</button></div></div></div>
-<div class="turn-in-card"><div class="turn-in-header"><div class="turn-in-header-icon">✅</div><div><div class="turn-in-header-label">Turn-In</div><div class="turn-in-header-title">Ready?</div></div></div><div class="turn-in-body">
-<div class="turn-in-item" onclick="tg(this)"><span class="turn-in-check">✓</span><span>I completed Show What You Know.</span></div>
-<div class="turn-in-item" onclick="tg(this)"><span class="turn-in-check">✓</span><span>I can use a compass to draw circles and connect radius to diameter.</span></div>
-</div></div>
+<!-- STATION 1 -->
+<div class="sb-station" data-st="1">
+  <div class="sb-opti" data-slot="learn-1">Welcome to the Lesson. First, you'll build the other half of a shape. Next, we fix some mix-ups. Then you'll draw circles with a compass.</div>
+
+  <div class="sb-video pq-vslot" data-slot="learn">
+    <video controls preload="metadata" playsinline poster="assets/video/g3math-12-07-learn.jpg" src="assets/video/g3math-12-07-learn.mp4"></video>
+    <div class="cap">🎬 Fold, Match, Count</div>
+  </div>
+
+  <div class="sb-card">
+    <span class="sb-k">Learn</span>
+    <h3>What a line of symmetry is</h3>
+    <div class="sb-stage" role="img" aria-label="An arrow shape with a dashed line down its middle. Both halves are the same shape, turned the other way." style="margin:6px 0;max-width:300px"><svg viewBox="0 0 320 250"><polygon points="160,20 230,90 195,90 195,190 125,190 125,90 90,90" fill="#FBF6EA" stroke="#0E1C42" stroke-width="4.5" stroke-linejoin="round"/><line x1="160" y1="8" x2="160" y2="205" stroke="#C9A227" stroke-width="3.5" stroke-dasharray="9 7" stroke-linecap="round"/><text x="160" y="235" text-anchor="middle" font-size="17" font-weight="900" fill="#0E1C42">the two halves match exactly</text></svg></div>
+    <p style="margin:6px 0 0">Fold a shape along a line. If the two halves land right on top of each other, with nothing sticking out, that line is a <b>line of symmetry</b>. A shape with one is <b>symmetric</b>. The two <b>matching halves</b> are <b>mirror images</b>: the same shape, facing the other way.</p>
+  </div>
+
+  <div class="sb-card">
+    <span class="sb-k">Learn</span>
+    <h3>How many lines a shape has</h3>
+    <div class="sb-stage" role="img" aria-label="Three triangles. The first has one dashed fold line. The second has three dashed fold lines. The third has none." style="margin:6px 0"><svg viewBox="0 0 700 230"><polygon points="80,180 200,180 140,50" fill="#FBF6EA" stroke="#0E1C42" stroke-width="4.5" stroke-linejoin="round"/><line x1="140" y1="38" x2="140" y2="192" stroke="#C9A227" stroke-width="3.5" stroke-dasharray="9 7" stroke-linecap="round"/><polygon points="320,180 480,180 400,41" fill="#FBF6EA" stroke="#0E1C42" stroke-width="4.5" stroke-linejoin="round"/><line x1="400" y1="30" x2="400" y2="192" stroke="#C9A227" stroke-width="3.5" stroke-dasharray="9 7" stroke-linecap="round"/><line x1="308" y1="187" x2="452" y2="104" stroke="#C9A227" stroke-width="3.5" stroke-dasharray="9 7" stroke-linecap="round"/><line x1="492" y1="187" x2="348" y2="104" stroke="#C9A227" stroke-width="3.5" stroke-dasharray="9 7" stroke-linecap="round"/><polygon points="540,180 665,166 585,62" fill="#FBF6EA" stroke="#0E1C42" stroke-width="4.5" stroke-linejoin="round"/><text x="140" y="215" text-anchor="middle" font-size="17" font-weight="900" fill="#0E1C42">exactly one line</text><text x="400" y="215" text-anchor="middle" font-size="17" font-weight="900" fill="#0E1C42">more than one line</text><text x="602" y="215" text-anchor="middle" font-size="17" font-weight="900" fill="#0E1C42">no line at all</text></svg></div>
+    <p style="margin:6px 0 0">Some shapes have exactly one line of symmetry. Some have more than one. Some have none at all, because no fold makes the halves match. Try every fold before you decide.</p>
+  </div>
+
+  <div class="sb-card">
+    <span class="sb-k">The Math Crew</span>
+    <h3>Four ways to stay on track</h3>
+    <div class="sb-crew">
+      <div class="sb-mate" data-who="hazel"><span>I fold first, then look at the edges. Nothing may stick out.</span></div>
+      <div class="sb-mate" data-who="atlas"><span>Two halves the same size is not enough. They have to land on top of each other.</span></div>
+      <div class="sb-mate" data-who="felix"><span>I try every fold I can think of before I say a shape has none.</span></div>
+      <div class="sb-mate" data-who="cora"><span>I count how far a corner sits from the line, then count the same on the other side.</span></div>
+    </div>
+    <label class="sb-write-l" for="w-crew">Which Crew way helps you most? Why?</label>
+    <textarea class="sb-write" id="w-crew" data-label="Which Crew way helps me most" placeholder="I like… because…"></textarea>
+  </div>
+
+  <!-- JOB 2 · YOUR TURN: MIRROR -->
+  <section class="sb-card sb-job" data-job="2">
+    <div class="sb-jh"><span class="sb-jn">JOB 2</span><div><h3>Your Turn: Build the Other Half</h3><span class="sb-kind">🔨 Do</span></div><span class="sb-donechip"></span></div>
+    <p class="sb-story">Half an arrow is on the geoboard. Build the half that is missing, so the dashed line becomes a line of symmetry.</p>
+    <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>A geoboard with 11 rows of 11 pins. A gold dashed line runs straight down the middle. On the left of it, a purple band shows half an arrow. The right side is empty.</p></div>
+    <div class="sb-steps">
+      <div class="sb-step" data-need="built" data-cue=".tr-pin[data-p='9,1']"><h4>Place the 3 missing corners</h4><p>Tap the pin that mirrors each corner on the left. A corner 2 steps from the line needs a partner 2 steps from the line on the other side.</p></div>
+      <div class="sb-locked"></div>
+    </div>
+    <div data-mod="symm" data-do="mirror" data-name="yt" data-half="5,1 1,5 3,5 3,9 5,9" data-axis="5" data-for="built"></div>
+    <div class="sb-help"><button type="button" class="sb-btn ghost" data-hints='["Pick one corner on the left. Count the pins from it to the dashed line.", "Count the same number of pins on the other side of the line, in the same row.", "The widest corner on the left is 4 steps from the line, so its partner is 4 steps the other way."]'>💡 Need a hint?</button><a class="sb-tool" href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=geoboard&amp;st=1#s=eyJuIjoxMX0" target="_blank" rel="noopener" title="Make half a shape on one side of a line of pins, then build the other half so both halves match.">🧮 Try the Geoboard ↗</a><button type="button" class="sb-btn ghost sb-tipbtn" data-tip="#tip-2">💬 Cora has a tip</button></div>
+    <div class="sb-hintbox"></div>
+    <div class="sb-tip" id="tip-2" data-who="cora">I work one row at a time. Same row, same number of steps, other side of the line.</div>
+  </section>
+  <div class="sb-next"><button type="button" class="sb-btn gold" data-next-st="2">Next station: Practice together →</button></div>
 </div>
-<div class="footer"><div class="footer-main">🏫 <span>Optima Academy Online</span></div><div class="footer-sub">Math · Grade 3 · 3.12.07 · U5 Fluency</div><div class="footer-copy">© 2025 Optima Academy Online</div></div>
+
+<!-- STATION 2 -->
+<div class="sb-station" data-st="2">
+  <div class="sb-opti" data-slot="practice-1">Each job has a mix-up kids often make. Here's a clue. Fold, then look closely. Do the halves match exactly, with nothing sticking out?</div>
+
+  <!-- JOB 3 -->
+  <section class="sb-card sb-job" data-job="3">
+    <div class="sb-jh"><span class="sb-jn">JOB 3</span><div><h3>Ben's Rectangle</h3><span class="sb-kind">🔨 Do</span></div><span class="sb-donechip"></span></div>
+    <p class="sb-story">Ben draws a line from one corner of a rectangle to the opposite corner. He says, "That makes two equal halves, so it's a line of symmetry."</p>
+    <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>A paper rectangle with four dashed lines on it. The first one goes corner to corner, the way Ben drew it. Tap a dashed line to fold the paper on it.</p></div>
+    <div class="sb-steps">
+      <div class="sb-step" data-need="tried" data-cue=".sf-line[data-i='0']"><h4>Fold Ben's line first, then the rest</h4><p>Tap Ben's corner-to-corner line and watch what happens. Then tap the other three dashed lines, one at a time.</p></div>
+      <div class="sb-step"><h4>Count the lines of symmetry</h4>
+        <div class="sb-q">This rectangle has <input class="sb-ans" data-a="2" inputmode="numeric" autocomplete="off" aria-label="number" data-hint="Count the folds that turned green."> lines of symmetry.</div>
+        <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-locked"></div>
+    </div>
+    <div data-mod="symm" data-do="fold" data-name="ben" data-shape="170,120 470,120 470,300 170,300" data-lines="140,102 500,318|320,80 320,340|140,210 500,210|140,318 500,102" data-for="tried"></div>
+    <div class="sb-payoff" data-after-job="3"><p style="margin:0">Ben's two halves really are the same size. But when he folds, one corner pokes out past the other half, so they don't match. <b>Equal halves are not enough: the halves have to land on top of each other.</b></p></div>
+    <div class="sb-help"><button type="button" class="sb-btn ghost" data-hints='["Fold Ben&#39;s corner-to-corner line. Does a corner stick out?", "Now try the fold straight across and the fold straight up and down.", "Two folds made the halves match: the one straight across and the one straight up and down."]'>💡 Need a hint?</button><button type="button" class="sb-btn ghost sb-tipbtn" data-tip="#tip-3">💬 Atlas has a tip</button></div>
+    <div class="sb-hintbox"></div>
+    <div class="sb-tip" id="tip-3" data-who="atlas">Same size is not the same as matching. I always fold and look for a bit sticking out.</div>
+  </section>
+
+  <!-- JOB 4 -->
+  <section class="sb-card sb-job" data-job="4">
+    <div class="sb-jh"><span class="sb-jn">JOB 4</span><div><h3>Mia's Four Sides</h3><span class="sb-kind">🔨 Do · ✏️ Write</span></div><span class="sb-donechip"></span></div>
+    <p class="sb-story">Mia looks at a shape with 4 sides. She says, "4 sides, so it has 4 lines of symmetry."</p>
+    <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>A paper shape with 4 sides. Its two slanted sides are the same length. Four dashed lines are drawn on it, one for each of Mia's guesses.</p></div>
+    <div class="sb-steps">
+      <div class="sb-step" data-need="tried" data-cue=".sf-line"><h4>Try all 4 folds</h4><p>Tap each dashed line, one at a time, and watch whether the halves match.</p></div>
+      <div class="sb-step"><h4>Count the lines of symmetry</h4>
+        <div class="sb-q">This shape has <input class="sb-ans" data-a="1" inputmode="numeric" autocomplete="off" aria-label="number" data-hint="Count the folds that turned green."> line of symmetry.</div>
+        <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-step"><h4>Help Mia</h4><label class="sb-write-l" for="w-mia">Tell Mia why counting the sides does not tell you the number of lines of symmetry.</label><textarea class="sb-write" id="w-mia" data-req data-label="Help Mia" placeholder="The shape has 4 sides, but … You have to … because …"></textarea><div class="sb-chips2">Remember to tell: <span>fold</span><span>match</span><span>try every line</span></div><div class="sb-help"><button type="button" class="sb-btn check">Done</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-locked"></div>
+    </div>
+    <div data-mod="symm" data-do="fold" data-name="mia" data-shape="190,300 450,300 400,130 240,130" data-lines="320,100 320,330|160,215 480,215|160,324 430,106|480,324 210,106" data-for="tried"></div>
+    <div class="sb-help"><button type="button" class="sb-btn ghost" data-hints='["Try the fold that goes straight up and down first.", "Now try the fold straight across. The top side and the bottom side are different lengths.", "Only one fold works, even though the shape has 4 sides."]'>💡 Need a hint?</button><button type="button" class="sb-btn ghost sb-tipbtn" data-tip="#tip-4">💬 Felix has a tip</button></div>
+    <div class="sb-hintbox"></div>
+    <div class="sb-tip" id="tip-4" data-who="felix">The number of sides and the number of fold lines are two different counts. I test the folds.</div>
+  </section>
+
+  <!-- JOB 5 -->
+  <section class="sb-card sb-job" data-job="5">
+    <div class="sb-jh"><span class="sb-jn">JOB 5</span><div><h3>Kai Keeps Looking</h3><span class="sb-kind">🔨 Do · ✏️ Write</span></div><span class="sb-donechip"></span></div>
+    <p class="sb-story">Kai folds a triangle again and again. He says, "Every shape has a line of symmetry. I just haven't found this one yet."</p>
+    <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>A paper triangle with no two sides the same length, the kind you called scalene in Lesson 5. Three dashed lines are drawn on it, one from each corner.</p></div>
+    <div class="sb-steps">
+      <div class="sb-step" data-need="tried" data-cue=".sf-line"><h4>Try all 3 folds</h4><p>Tap each dashed line, one at a time, and watch whether the halves match.</p></div>
+      <div class="sb-step"><h4>Count the lines of symmetry</h4>
+        <div class="sb-q">This triangle has <input class="sb-ans" data-a="0" inputmode="numeric" autocomplete="off" aria-label="number" data-hint="Count the folds that turned green. If none did, the count is 0."> lines of symmetry.</div>
+        <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-step"><h4>Help Kai</h4><label class="sb-write-l" for="w-kai">Tell Kai what you found, and why this triangle has no line of symmetry.</label><textarea class="sb-write" id="w-kai" data-req data-label="Help Kai" placeholder="I tried … None of them … The sides are …"></textarea><div class="sb-chips2">Remember to tell: <span>tried every fold</span><span>no match</span><span>sides are all different</span></div><div class="sb-help"><button type="button" class="sb-btn check">Done</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-locked"></div>
+    </div>
+    <div data-mod="symm" data-do="fold" data-name="kai" data-shape="180,310 470,290 300,110" data-lines="160,321 406,189|493,298 217,220|298,91 328,319" data-for="tried"></div>
+    <div class="sb-payoff" data-after-job="5"><p style="margin:0">All three sides of this triangle are different lengths, so no fold can make the halves match. <b>Some shapes have no line of symmetry at all.</b></p></div>
+    <div class="sb-help"><button type="button" class="sb-btn ghost" data-hints='["Try each dashed line and look at the edges after the fold.", "Every fold leaves a piece sticking out past the other half.", "None of the folds match, so the count is 0."]'>💡 Need a hint?</button><button type="button" class="sb-btn ghost sb-tipbtn" data-tip="#tip-5">💬 Hazel has a tip</button></div>
+    <div class="sb-hintbox"></div>
+    <div class="sb-tip" id="tip-5" data-who="hazel">Zero is an answer too. When no fold matches, the shape has no line of symmetry.</div>
+  </section>
+  <div class="sb-next"><button type="button" class="sb-btn gold" data-next-st="3">Next station: On your own →</button></div>
 </div>
-<script>
-var LS='g3-3-12-07-';
-function mini(el){if(!el)return;var em=['⭐','✨','🎉','🧩'];for(var i=0;i<8;i++){var s=document.createElement('span');s.textContent=em[Math.floor(Math.random()*em.length)];s.style.cssText='position:absolute;font-size:'+(16+Math.random()*14)+'px;pointer-events:none;z-index:999;animation:mini .7s ease-out forwards;left:'+(20+Math.random()*60)+'%;top:'+(Math.random()*40)+'%;';el.style.position='relative';el.style.overflow='visible';el.appendChild(s);setTimeout(function(x){x.remove()}.bind(null,s),800);}}
-function switchTab(t){document.querySelectorAll('.tab-panel').forEach(function(p){p.classList.remove('active');});document.getElementById('tab-'+t).classList.add('active');document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active');if(b.dataset.tab===t){b.classList.add('active');b.classList.add('visited');}});var bs=[].slice.call(document.querySelectorAll('.tab-btn'));var i=bs.findIndex(function(b){return b.classList.contains('active');});var p=Math.round(((i+1)/bs.length)*100);document.getElementById('pf').style.width=p+'%';document.getElementById('pp').textContent=p+'%';window.scrollTo({top:0,behavior:'smooth'});}
-function autoSave(el,d){try{localStorage.setItem(LS+el.id,el.value);}catch(e){}var dt=document.getElementById(d);if(dt){dt.classList.add('saved');setTimeout(function(){dt.classList.remove('saved')},900);}}
-function restore(){document.querySelectorAll('textarea.journal-box').forEach(function(t){try{var v=localStorage.getItem(LS+t.id);if(v)t.value=v;}catch(e){}});}
-function showBranch(id){document.getElementById(id).classList.add('show');}
-function hideBranches(p){['pass','retry'].forEach(function(x){var e=document.getElementById(p+'-'+x);if(e)e.classList.remove('show');});}
 
-/* Warm-Up */
-function rA(c,ok){c.parentElement.querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});var f=document.getElementById('rA-fb');if(ok){c.classList.add('good');f.className='inline-feedback show good';f.innerHTML='<strong>✅</strong> 4 equal sides and 4 right angles — that’s a square.';mini(c);}else{c.classList.add('bad');f.className='inline-feedback show think';f.innerHTML='A square has ALL four sides equal AND all four angles are right angles.';}}
-function rT(c,ok){c.parentElement.querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});var f=document.getElementById('rT-fb');if(ok){c.classList.add('good');f.className='inline-feedback show good';f.innerHTML='<strong>✅</strong> A compass set to 3 cm sweeps a circle with radius 3 cm.';mini(c);}else{c.classList.add('bad');f.className='inline-feedback show think';f.innerHTML='A compass draws circles, not straight-sided shapes. The opening sets the radius.';}}
+<!-- STATION 3 -->
+<div class="sb-station" data-st="3">
+  <div class="sb-opti" data-slot="own-1">Your turn. Set the compass, draw a circle, and find its diameter. Then see what happens when you change the opening.</div>
 
-/* ========== COMPASS TOOL ========== */
-var comp={r:3,center:null,circles:[],challenges:['Draw a circle with radius 3.','Draw two circles with the same center but different radii.','Draw two circles that touch at exactly one point.'],ci:0};
-function compStep(d){comp.r=Math.max(1,Math.min(8,comp.r+d));document.getElementById('comp-r').textContent=comp.r;compRenderSVG();}
-function compClear(){comp.center=null;comp.circles=[];comp.ci=0;document.getElementById('comp-sweep-btn').disabled=true;document.getElementById('comp-readout').textContent='Click the grid to place a center point.';document.getElementById('comp-challenge').textContent=comp.challenges[0];compRenderSVG();}
-function compSweep(){
-  if(!comp.center) return;
-  comp.circles.push({cx:comp.center.x,cy:comp.center.y,r:comp.r*30});
-  comp.center=null;
-  document.getElementById('comp-sweep-btn').disabled=true;
-  comp.ci=Math.min(comp.ci+1,comp.challenges.length-1);
-  document.getElementById('comp-challenge').textContent=comp.challenges[comp.ci];
-  var last=comp.circles[comp.circles.length-1];
-  var diam=comp.r*2;
-  document.getElementById('comp-readout').textContent='Circle drawn! Radius: '+comp.r+' units | Diameter: '+diam+' units';
-  compRenderSVG();
-}
-function compRenderSVG(){
-  var svg=document.getElementById('comp-svg');
-  var html='<rect width="320" height="320" fill="#FAFBFF" rx="8"/>';
-  // grid
-  for(var g=0;g<=320;g+=30){html+='<line x1="'+g+'" y1="0" x2="'+g+'" y2="320" stroke="#E2E8F4" stroke-width="0.5"/><line x1="0" y1="'+g+'" x2="320" y2="'+g+'" stroke="#E2E8F4" stroke-width="0.5"/>';}
-  // drawn circles
-  var colors=['var(--geo)','#2DB87A','#E07B39','#3A6B9A','#F5C518'];
-  for(var i=0;i<comp.circles.length;i++){
-    var c=comp.circles[i];
-    html+='<circle cx="'+c.cx+'" cy="'+c.cy+'" r="'+c.r+'" fill="none" stroke="'+colors[i%colors.length]+'" stroke-width="2.5"/>';
-    html+='<circle cx="'+c.cx+'" cy="'+c.cy+'" r="4" fill="'+colors[i%colors.length]+'"/>';
-  }
-  // pending center
-  if(comp.center){
-    html+='<circle cx="'+comp.center.x+'" cy="'+comp.center.y+'" r="5" fill="var(--geo)" stroke="#fff" stroke-width="2"/>';
-    // show radius preview
-    var pr=comp.r*30;
-    html+='<circle cx="'+comp.center.x+'" cy="'+comp.center.y+'" r="'+pr+'" fill="none" stroke="var(--geo-mid)" stroke-width="1.5" stroke-dasharray="6,4"/>';
-    html+='<line x1="'+comp.center.x+'" y1="'+comp.center.y+'" x2="'+(comp.center.x+pr)+'" y2="'+comp.center.y+'" stroke="var(--geo)" stroke-width="2"/>';
-    html+='<text x="'+(comp.center.x+pr/2)+'" y="'+(comp.center.y-8)+'" font-size="12" fill="var(--geo-deep)" font-weight="800" text-anchor="middle" font-family="Nunito">'+comp.r+'</text>';
-  }
-  svg.innerHTML=html;
-}
-// click to place center
-document.addEventListener('DOMContentLoaded',function(){
-  var svg=document.getElementById('comp-svg');
-  svg.addEventListener('click',function(e){
-    var r=svg.getBoundingClientRect();
-    var x=(e.clientX-r.left)/r.width*320;
-    var y=(e.clientY-r.top)/r.height*320;
-    // snap to grid
-    x=Math.round(x/30)*30;y=Math.round(y/30)*30;
-    comp.center={x:x,y:y};
-    document.getElementById('comp-sweep-btn').disabled=false;
-    document.getElementById('comp-readout').textContent='Center placed. Radius: '+comp.r+' units. Hit Sweep!';
-    compRenderSVG();
-  });
-});
+  <!-- JOB 6 -->
+  <section class="sb-card sb-job" data-job="6">
+    <div class="sb-jh"><span class="sb-jn">JOB 6</span><div><h3>On Your Own: Set It, Draw It</h3><span class="sb-kind">🔨 Do · ✏️ Write</span></div><span class="sb-donechip"></span></div>
+    <p class="sb-story">Euclid drew every circle with a compass. Set yours on the ruler, then draw.</p>
+    <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>A compass standing on paper. Its needle point stays in one place, and the ruler below shows how far the pencil leg is from it in centimeters. Drag the pencil leg to set the opening, then press ✏️ Draw the circle.</p></div>
+    <div class="sb-steps">
+      <div class="sb-step" data-need="r3" data-cue=".sf-pen"><h4>Open it to 3 cm and draw</h4><p>Drag the pencil leg until the ruler shows 3 cm. Then press ✏️ Draw the circle.</p></div>
+      <div class="sb-step"><h4>How far across?</h4>
+        <div class="sb-q">The radius is 3 cm, so straight across the middle the circle is <input class="sb-ans" data-a="6" inputmode="numeric" autocomplete="off" aria-label="number" data-hint="Across the middle is 2 radii: 3 cm and 3 cm more."> cm. That is the diameter.</div>
+        <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-step" data-need="r1" data-cue=".sf-pen"><h4>Close it to 1 cm and draw again</h4><p>Leave the needle point where it is. Drag the pencil leg to 1 cm and press ✏️ Draw the circle.</p></div>
+      <div class="sb-step"><h4>How far across the small one?</h4>
+        <div class="sb-q">The small circle has a radius of 1 cm, so its diameter is <input class="sb-ans" data-a="2" inputmode="numeric" autocomplete="off" aria-label="number" data-hint="Across the middle is 2 radii: 1 cm and 1 cm more."> cm.</div>
+        <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-step" data-need="card" data-cue=".qd-cards"><h4>What does a wider opening do?</h4><p>Drag the card that finishes the sentence into the box.</p></div>
+      <div class="sb-step"><h4>Tell why it works</h4><label class="sb-write-l" for="w-own">Tell why a compass always draws a circle, even when you change the opening.</label><textarea class="sb-write" id="w-own" data-req data-label="Set It, Draw It" placeholder="The needle point stays … The pencil is always … so every point …"></textarea><div class="sb-chips2">Remember to tell: <span>needle point</span><span>same distance</span><span>all the way around</span></div><div class="sb-help"><button type="button" class="sb-btn check">Done</button></div><div class="sb-fb" aria-live="polite"></div></div>
+      <div class="sb-locked"></div>
+    </div>
+    <div data-mod="symm" data-do="compass" data-name="own" data-radii="3,1" data-cards="a bigger circle,a smaller circle" data-for="r3 r1 card"></div>
+    <div class="sb-help"><button type="button" class="sb-btn ghost" data-hints='["Drag the pencil leg along the ruler. The chip under the tool tells you the opening.", "The needle point sits on 0, so the pencil lands on the number of centimeters you opened it.", "Straight across the middle is 2 radii, so the diameter is double the radius."]'>💡 Need a hint?</button><a class="sb-tool" href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=compass&amp;st=1#s=eyJyIjozLCJsaW5lcyI6dHJ1ZX0" target="_blank" rel="noopener" title="Open the compass to 3 cm and draw a circle. Then open it wider and draw another one around the same needle point. Which circle is bigger?">🧮 Try the Compass ↗</a></div>
+    <div class="sb-hintbox"></div>
+  </section>
 
-/* Practice */
-function checkP1(){hideBranches('p1');var v=parseInt(document.getElementById('p1-ans').value,10);var el=document.getElementById('p1-ans');el.classList.remove('good','bad');if(v===10){el.classList.add('good');showBranch('p1-pass');mini(el);}else{el.classList.add('bad');showBranch('p1-retry');}}
-function checkP2(){hideBranches('p2');var v=parseInt(document.getElementById('p2-ans').value,10);var el=document.getElementById('p2-ans');el.classList.remove('good','bad');if(v===6){el.classList.add('good');showBranch('p2-pass');mini(el);}else{el.classList.add('bad');showBranch('p2-retry');}}
-function p3(c,ok){c.parentElement.querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});hideBranches('p3');if(ok){c.classList.add('good');showBranch('p3-pass');mini(c);}else{c.classList.add('bad');showBranch('p3-retry');}}
-function resetP(n){if(n===1){document.getElementById('p1-ans').value='';document.getElementById('p1-ans').classList.remove('good','bad');hideBranches('p1');}
-if(n===2){document.getElementById('p2-ans').value='';document.getElementById('p2-ans').classList.remove('good','bad');hideBranches('p2');}
-if(n===3){document.querySelectorAll('.REMOVED-PRACTICE').forEach(function(x){x.classList.remove('good','bad');});hideBranches('p3');}}
+  <div class="sb-next"><button type="button" class="sb-btn gold" data-go-tab="swyk">Next: Show What You Know →</button></div>
+</div>
+</section>
 
-/* Ready Check */
-function eA(c,ok){c.parentElement.querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});var f=document.getElementById('eA-fb');if(ok){c.classList.add('good');f.className='inline-feedback show good';f.innerHTML='<strong>✅</strong> Radius 6 × 2 = diameter 12 cm.';mini(c);}else{c.classList.add('bad');f.className='inline-feedback show think';f.innerHTML='Diameter = 2 × radius. If radius is 6, what’s 6 × 2?';}}
-function eB(c,ok){c.parentElement.querySelectorAll('.value-card').forEach(function(x){x.classList.remove('good','bad');});var f=document.getElementById('eB-fb');if(ok){c.classList.add('good');f.className='inline-feedback show good';f.innerHTML='<strong>✅</strong> That’s the definition of a circle — every point is the same distance (the radius) from the center.';mini(c);}else{c.classList.add('bad');f.className='inline-feedback show think';f.innerHTML='That IS what makes a circle a circle. The compass keeps the distance fixed.';}}
+<!-- ══════════════ SHOW WHAT YOU KNOW ══════════════ -->
+<section class="sb-panel tab-panel" id="tab-swyk" role="tabpanel">
+<div class="sb-opti" data-slot="swyk-1">Last stop! Try Euclid's first problem with a compass. Draw two circles, then find the line that folds the whole picture onto itself.</div>
 
-/* Gather / Copy / Download */
-function gather(){var o='Lesson 3.12.07 — Using a Compass\n\n';document.querySelectorAll('textarea.journal-box').forEach(function(t){o+=(t.dataset.label||t.id)+'\n'+((t.value||'').trim()||'[empty]')+'\n\n';});document.getElementById('gO').value=o;}
-function copyA(){gather();var text=document.getElementById('gO').value;if(!text||text.indexOf('Click')===0){return;}try{var ta=document.createElement('textarea');ta.value=text;ta.style.position='fixed';ta.style.left='-9999px';document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);var btn=document.querySelector('.green-btn');if(btn){btn.textContent='\u2705 Copied!';setTimeout(function(){btn.textContent='Copy All Answers';},2000);}}catch(e){var btn2=document.querySelector('.green-btn');if(btn2){btn2.textContent='\u274c Could not copy';setTimeout(function(){btn2.textContent='Copy All Answers';},2000);}}}
-function dl(){gather();var text=document.getElementById('gO').value;if(!text||text.indexOf('Click')===0){return;}var blob=new Blob([text],{type:'text/plain'});var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=(window.lessonKey||'math-journal')+'.txt';document.body.appendChild(a);a.click();document.body.removeChild(a);URL.revokeObjectURL(a.href);}
-function tg(i){i.classList.toggle('checked');var c=i.querySelector('.turn-in-check');if(c)c.textContent=i.classList.contains('checked')?'✓':'';}
+<!-- JOB 7 -->
+<section class="sb-card sb-job" data-job="7">
+  <div class="sb-jh"><span class="sb-jn">JOB 7</span><div><h3>Euclid's First Problem</h3><span class="sb-kind">🔨 Do</span></div><span class="sb-donechip"></span></div>
+  <p class="sb-story">The very first problem in Euclid's book starts with one line and a compass. Follow his steps.</p>
+  <div class="sb-ctx"><div class="sb-ctx-h">👀 What am I looking at?</div><p>A straight line with a dot at each end, marked A and B. The buttons above the picture do one step each: open the compass, draw a circle around A, then draw one around B.</p></div>
+  <div class="sb-steps">
+    <div class="sb-step" data-need="cset" data-cue="text:open the compass"><h4>Problem 1 · Open the compass</h4><p>Press 📏 Open the compass from A to B, so the opening is exactly as long as that line.</p></div>
+    <div class="sb-step" data-need="ca" data-cue="text:circle around A"><h4>Put the needle on A</h4><p>Press ✏️ Draw the circle around A. Keep the same opening.</p></div>
+    <div class="sb-step" data-need="cb" data-cue="text:circle around B"><h4>Put the needle on B</h4><p>Press ✏️ Draw the circle around B, still with the same opening.</p></div>
+    <div class="sb-step" data-need="fline" data-cue=".sf-x"><h4>Find the fold line</h4><p>Tap each of the two places where the circles cross. The line through them is the fold line.</p></div>
+    <div class="sb-step"><h4>Problem 2 · The triangle</h4>
+      <div class="sb-q">The triangle on A, B and the top crossing has <input class="sb-ans" data-a="3" inputmode="numeric" autocomplete="off" aria-label="number" data-hint="Count the tick marks: one on each side means all the sides are the same length."> sides the same length.</div>
+      <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div></div>
+    <div class="sb-locked"></div>
+  </div>
+  <div data-mod="symm" data-do="euclid" data-name="wow" data-for="cset ca cb fline"></div>
+  <div class="sb-payoff" data-after-job="7"><p style="margin:0">Both circles have the same radius, so the crossing points are the same distance from A and from B. Fold the picture on the dashed line and the two circles land on each other. Euclid used this one picture to build a triangle with 3 equal sides, without measuring anything.</p></div>
+  <div class="sb-help"><button type="button" class="sb-btn ghost" data-hints='["Press the buttons in order, top to bottom.", "The two circles cross in two places: one above the line and one below it.", "Every side of the triangle is as long as the compass opening, so all 3 match."]'>💡 Need a hint?</button><a class="sb-tool" href="https://optimaondemand.github.io/optima-4th-math/manipulatives/tool.html?t=compass&amp;st=1#s=eyJyIjoyLCJsaW5lcyI6dHJ1ZX0" target="_blank" rel="noopener" title="Open the compass, then drag the pencil all the way around. Read the radius and the diameter under the tool.">🧮 Try the Compass ↗</a></div>
+  <div class="sb-hintbox"></div>
+</section>
 
-async function loadVideoManifest(){try{var res=await fetch('video-manifest.md',{cache:'no-store'});if(!res.ok)return;var txt=await res.text();var map=parseManifest(txt);document.querySelectorAll('.video-wrap[data-video-slot]').forEach(function(w){var slot=w.dataset.videoSlot;if(map[slot]){var ratio=w.querySelector('.video-ratio');ratio.innerHTML=map[slot].trim();var iframe=ratio.querySelector('iframe');if(iframe){iframe.classList.add('video-iframe');iframe.setAttribute('allowfullscreen','');iframe.setAttribute('loading','lazy');}}});}catch(e){}}
-function parseManifest(txt){var map={};var lines=txt.split(/\r?\n/);var current=null,buf=[];function commit(){if(current&&buf.join('\n').trim()){map[current]=buf.join('\n').trim();}buf=[];}for(var i=0;i<lines.length;i++){var line=lines[i];var m=line.match(/^([A-Za-z0-9-]+):\s*$/);if(m){commit();current=m[1];}else if(current){buf.push(line);}}commit();return map;}
+<!-- JOB 8 -->
+<section class="sb-card sb-job" data-job="8">
+  <div class="sb-jh"><span class="sb-jn">JOB 8</span><div><h3>Prove It</h3><span class="sb-kind">✏️ Write</span></div><span class="sb-donechip"></span></div>
+  <div class="sb-steps">
+    <div class="sb-step"><h4>Problem 3 · Prove It</h4>
+      <label class="sb-write-l" for="w-prove">Write a note to a younger student. Tell them how to check whether a fold is a line of symmetry, and name one shape that has none.</label><textarea class="sb-write" id="w-prove" data-req data-label="Prove It" placeholder="To check a fold, first … Then look for … One shape with no line of symmetry is …"></textarea><div class="sb-chips2">Remember to tell: <span>fold</span><span>match exactly</span><span>nothing sticking out</span><span>a shape with none</span></div>
+      <div class="sb-help"><button type="button" class="sb-btn check">Done</button></div><div class="sb-fb" aria-live="polite"></div></div>
+    <div class="sb-locked"></div>
+  </div>
+</section>
 
-window.addEventListener('DOMContentLoaded',function(){loadVideoManifest();restore();compRenderSVG();});
-</script>
-<script id="fluencyScript">
-(function(){
-var FLUENCY_TIMED = true;
-var FLUENCY_TITLE = "Mixed All-Operations Facts";
-var fluencyInterval = null;
-var fluencySecondsLeft = 60;
+<div class="sb-card sb-qgroup" data-done="bonus" data-ok="✓ Yes! A square folds 4 ways: straight across, straight up and down, and on each of its two corner-to-corner lines.">
+  <span class="sb-k">Bonus · optional</span>
+  <h3>How Many Folds Has a Square?</h3>
+  <p>Four dashed lines are drawn on this square. Fold each one and count the folds that make the halves match.</p>
+  <div data-mod="symm" data-do="fold" data-name="bonus" data-shape="200,90 440,90 440,330 200,330" data-lines="320,70 320,350|180,210 460,210|180,70 460,350|180,350 460,70"></div>
+  <div class="sb-q">A square has <input class="sb-ans" data-a="4" inputmode="numeric" autocomplete="off" aria-label="number" data-hint="Count the folds that turned green."> lines of symmetry.</div>
+  <div class="sb-help"><button type="button" class="sb-btn check">Check</button></div><div class="sb-fb" aria-live="polite"></div>
+</div>
 
-window.fluencyStart = function(){
-  if(!FLUENCY_TIMED) return;
-  var grid = document.getElementById('fluencyGrid');
-  if(!grid) return;
-  grid.querySelectorAll('.fluency-input').forEach(function(i){ i.disabled = false; });
-  var btn = document.getElementById('fluencyStartBtn');
-  if(btn){ btn.disabled = true; btn.textContent = 'Timer Running\u2026'; }
-  var checkBtn = document.getElementById('fluencyCheckBtn');
-  if(checkBtn) checkBtn.disabled = false;
-  fluencySecondsLeft = 60;
-  fluencyUpdateDisplay();
-  fluencyInterval = setInterval(function(){
-    fluencySecondsLeft--;
-    fluencyUpdateDisplay();
-    if(fluencySecondsLeft <= 0){
-      clearInterval(fluencyInterval);
-      grid.querySelectorAll('.fluency-input').forEach(function(i){ i.disabled = true; });
-      window.fluencyCheck();
-    }
-  }, 1000);
-};
+<div class="sb-card">
+  <span class="sb-k">How to turn in</span>
+  <h3>Turn in your work</h3>
+  <ol class="sb-steps4">
+    <li>Check the list below. Jobs 1 to 8 are required. The Bonus is optional.</li>
+    <li>Press <b>📋 Gather my answers</b>, then <b>📋 Copy</b>. Or press <b>🖨️ Print or save as PDF</b>.</li>
+    <li>Open this lesson's assignment in Canvas.</li>
+    <li>Paste your answers (or upload your PDF and journal photo), then press <b>Submit</b>.</li>
+  </ol>
+</div>
 
-function fluencyUpdateDisplay(){
-  var el = document.getElementById('fluencyTimerDisplay');
-  if(el) el.textContent = fluencySecondsLeft + 's';
-}
+<div class="sb-card sb-journal">
+  <span class="sb-k">Math journal</span>
+  <h3>All my answers</h3>
+  <div class="sb-help"><button type="button" class="sb-btn" data-journal="gather">📋 Gather my answers</button><button type="button" class="sb-btn ghost" data-journal="copy">📋 Copy</button><button type="button" class="sb-btn ghost" data-journal="download">⬇️ Download as text</button><button type="button" class="sb-btn ghost" data-journal="print">🖨️ Print or save as PDF</button></div>
+  <textarea id="sb-journal-out" readonly aria-label="All my answers">Press Gather my answers to collect everything here.</textarea>
+  <p class="sb-saved">Your answers and your work on this page save on this device as you go.</p>
+</div>
 
-window.fluencyCheck = function(){
-  if(fluencyInterval){ clearInterval(fluencyInterval); fluencyInterval = null; }
-  var items = document.querySelectorAll('#fluencyGrid .fluency-item');
-  var correct = 0, attempted = 0, total = items.length;
-  var lines = [];
-  items.forEach(function(item){
-    var input = item.querySelector('.fluency-input');
-    var qText = item.querySelector('.fluency-q').textContent;
-    var given = (input.value || '').trim();
-    var ans = input.dataset.answer;
-    var ok = given !== '' && given === ans;
-    if(given !== '') attempted++;
-    item.classList.remove('fluency-correct','fluency-wrong');
-    if(ok){ correct++; item.classList.add('fluency-correct'); }
-    else if(given !== ''){ item.classList.add('fluency-wrong'); }
-    lines.push(qText + ' ' + ans + '   [answered: ' + (given || 'blank') + ']' + (ok ? ' \u2713' : (given ? ' \u2717' : '')));
-  });
-  var pct = total ? Math.round((correct/total)*100) : 0;
-  var timeStr = FLUENCY_TIMED ? (' in ' + (60 - fluencySecondsLeft) + ' seconds') : '';
-  var summary = 'Fluency Warm-Up \u2014 ' + FLUENCY_TITLE + '\n' + correct + ' / ' + total + ' correct (' + pct + '%)' + timeStr + '\n\n' + lines.join('\n');
-  var j = document.getElementById('fluencyJournal');
-  if(j) j.value = summary;
-  var resEl = document.getElementById('fluencyResult');
-  if(resEl) resEl.innerHTML = correct + ' / ' + total + ' correct (' + pct + '%)' + timeStr;
-  var checkBtn = document.getElementById('fluencyCheckBtn');
-  if(checkBtn) checkBtn.disabled = true;
-  var startBtn = document.getElementById('fluencyStartBtn');
-  if(startBtn) startBtn.textContent = 'Done';
-};
-})();
-</script>
-<!-- Video Manifest Loader -->
+<div class="sb-card">
+  <span class="sb-k">Checklist</span>
+  <h3>Before you turn in</h3>
+  <ul class="sb-check">
+    <li><span class="bx"></span><span>I finished Jobs 1 to 8.</span></li>
+    <li><span class="bx"></span><span>I can tell what makes a fold a line of symmetry.</span></li>
+    <li><span class="bx"></span><span>I can find whether a shape has none, one, or more than one.</span></li>
+    <li><span class="bx"></span><span>I can set a compass and draw a circle, and I know the diameter is double the radius.</span></li>
+    <li><span class="bx"></span><span>I tried the Bonus. <span class="opt">(optional)</span></span></li>
+  </ul>
+</div>
+
+<div class="sb-card">
+  <span class="sb-k">Coming up next</span>
+  <h3>Unit 12 Check</h3>
+  <p>Next, you'll show everything from Chapter 12 together: circles, angles, triangles, four-sided shapes and lines of symmetry.</p>
+</div>
+
+<div class="sb-opti" data-slot="end-1">That's the last lesson in Chapter 12. Here's a short piece by Johann Sebastian Bach, from about 300 years ago. The second voice plays the first one upside down, like a mirror. Press play, and stop whenever you like.</div>
+<div class="sb-card sb-listen" data-src="bach-mirror-canon.mp3">
+  <img src="images/storybook/sb-byrne-prop1.jpg" alt="Euclid's first problem in Oliver Byrne's book" style="object-fit:cover;background:#FBF6EA">
+  <div style="flex:1">
+    <span class="sb-k">Listening corner</span>
+    <h3>A Mirror in Music</h3>
+    <p style="margin:2px 0">Bach wrote this little canon in 1747. One voice starts the tune. The second voice plays the very same tune turned upside down: where the first voice steps up, the second steps down. It is a mirror you can hear.</p>
+    <div class="meter"><i></i></div><div class="sb-row"><button type="button" class="sb-btn play">▶ Play the music</button><button type="button" class="sb-btn ghost stop">■ Stop</button><span class="time" style="font-weight:800;color:#5B6478">0:00</span></div>
+    <p class="sb-credits">Johann Sebastian Bach, a canon by inversion from "The Musical Offering". Recording by Andiport, CC BY-SA 4.0, via Wikimedia Commons.</p>
+  </div>
+</div>
+</section>
+
+<footer class="sb-foot footer"><b>🏫 Optima Academy Online</b><br>Math · Grade 3 · Lesson 3.12.07 · Unit 12<br><span style="font-size:12px">Art: Oliver Byrne, "The First Six Books of the Elements of Euclid" (London, 1847), public domain, via Wikimedia Commons; the Temple of Concordia, Agrigento, photo by Benjamin Smith, CC BY-SA 4.0, via Wikimedia Commons. Music: Johann Sebastian Bach, a canon by inversion from "The Musical Offering", recording by Andiport, CC BY-SA 4.0, via Wikimedia Commons.</span></footer>
+</div>
+
+<script type="application/json" id="sb-data">{"lesson": "3.12.07", "key": "g3sb-3-12-07", "title": "Lines of Symmetry", "audioBase": "audio/storybook/", "imgBase": "images/storybook/", "music": "bach-mirror-canon.mp3", "audioReady": true, "glossary": [{"t": "line of symmetry", "alt": ["lines of symmetry"], "d": "A fold line that makes the two halves of a shape match exactly.", "key": true}, {"t": "symmetric", "d": "A shape is symmetric when it has at least one line of symmetry.", "key": true}, {"t": "matching halves", "alt": ["matching half"], "d": "Two halves that land right on top of each other when you fold.", "key": true}, {"t": "mirror image", "alt": ["mirror images"], "d": "The same shape, facing the other way, like what you see in a mirror.", "key": true}, {"t": "compass", "d": "A tool with a needle point and a pencil. It draws circles.", "key": true}, {"t": "radius", "alt": ["radii"], "d": "The distance from the middle of a circle to its edge.", "key": true}, {"t": "diameter", "d": "The distance straight across a circle through the middle. It is 2 radii.", "key": true}, {"t": "scalene", "d": "A triangle with no sides the same length."}, {"t": "geoboard", "d": "A board with rows of pins. You stretch rubber bands around the pins to make shapes."}, {"t": "temple", "d": "A big building made long ago for worship."}, {"t": "canon", "d": "A piece of music where players play the same tune, one starting after another."}, {"t": "upside down", "d": "In music, a tune turned over: where it went up, it goes down."}], "cueWords": {}}</script>
+
+<script src="assets/storybook/sb.js?v=9b0912a2"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   fetch('https://raw.githubusercontent.com/bbirchum1/optima-3rd-math/main/video-manifest.json?v=' + Date.now())
@@ -648,15 +419,11 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!m) return;
         var entry = manifest[m[1]];
         if (!entry || entry.status !== 'ready' || !entry.embed) return;
-        var temp = document.createElement('div');
-        temp.innerHTML = entry.embed;
-        var iframe = temp.querySelector('iframe');
-        if (!iframe) return;
-        iframe.removeAttribute('width');
-        iframe.removeAttribute('height');
+        var temp = document.createElement('div'); temp.innerHTML = entry.embed;
+        var iframe = temp.querySelector('iframe'); if (!iframe) return;
+        iframe.removeAttribute('width'); iframe.removeAttribute('height');
         iframe.style.cssText = 'display:block;width:100%;aspect-ratio:16/9;border:none;';
-        wrap.innerHTML = '';
-        wrap.style.cssText = 'display:block;border:none;background:#000;border-radius:14px;overflow:hidden;margin:0 0 18px;';
+        wrap.innerHTML = ''; wrap.style.cssText = 'display:block;border:none;background:#000;border-radius:14px;overflow:hidden;margin:0 0 18px;';
         wrap.appendChild(iframe);
       });
     })
@@ -665,4 +432,5 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 <!-- OAO math tools for this lesson (manipulatives library) -->
 <script src="https://optimaondemand.github.io/optima-4th-math/manipulatives/lesson-tools.js" defer></script>
-</body></html>
+</body>
+</html>

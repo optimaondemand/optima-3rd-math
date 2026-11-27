@@ -626,3 +626,7 @@ html.sb-still *{animation:none!important;transition:none!important}
 .sb-quad .qd-node.tap{background:#E8F5EE;box-shadow:0 0 0 3px rgba(30,122,76,.35)}
 .sb-quad .qd-ph{display:inline-block;padding:16px 0;color:#8792A8;font-weight:800;font-size:13px}
 @media (max-width:560px){.sb-quad .qd-node{width:39vw;max-width:170px}.sb-quad .tn-rt svg{width:76px}.sb-quad .tn-rt.in svg{width:56px}.sb-quad .tn-slot{min-width:0;width:100%}.sb-quad .qd-arr{letter-spacing:20px;padding-left:20px}}
+.sb-quad svg .sf-line,.sb-quad svg .sf-x,.sb-quad svg .sf-pen{cursor:pointer}
+.sb-quad svg .sf-line:focus-visible,.sb-quad svg .sf-x:focus-visible,.sb-quad svg .sf-pen:focus-visible{outline:3px solid #C9A227;outline-offset:2px}
+.sb-quad svg .sf-x:not(.done) circle+circle{animation:anPulse 1.6s ease-in-out infinite}
+.sb-quad .qd-chips .tr-res.no{border-color:#B23A2E;color:#B23A2E;background:#FBE7E4}
