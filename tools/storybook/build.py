@@ -85,6 +85,7 @@ TOOLS = {
  'geoboard-quad': ('geoboard', {"n": 11, "bands": [{"p": [[2, 3], [8, 3], [8, 7], [2, 7]], "k": 1, "c": 0}]}, 'Geoboard', 'Move the corners of the rectangle to make new 4-sided shapes. Which sides stay parallel?'),
  'geoboard-sym': ('geoboard', {"n": 11}, 'Geoboard', 'Make half a shape on one side of a line of pins, then build the other half so both halves match.'),
  'compass-sym': ('compass', {"r": 3, "lines": True}, 'Compass', 'Open the compass to 3 cm and draw a circle. Then open it wider and draw another one around the same needle point. Which circle is bigger?'),
+ 'area-grid': ('tiles', {}, 'Color Tiles & Area Grid', 'Lay square tiles to cover a shape and count them to find the area. Walk the edges to find the perimeter.'),
  'setsquare': ('setsquare', {"mode": "move", "sel": "s45"}, 'Set Square', 'Slide the set square so its square corner sits on a corner. Is the corner smaller than, the same as, or bigger than the square corner?'),
  'compass-own': ('compass', {"r": 2, "lines": True}, 'Compass', 'Open the compass, then drag the pencil all the way around. Read the radius and the diameter under the tool.'),
 }
@@ -297,6 +298,20 @@ L = {
      {"t": "temple", "d": "A big building made long ago for worship."},
      {"t": "canon", "d": "A piece of music where players play the same tune, one starting after another."},
      {"t": "upside down", "d": "In music, a tune turned over: where it went up, it goes down."}]),
+  '3.13.01': dict(page='math-lesson-3-13-01-area.html', title='Area', video='g3math-13-01-learn', music='bach-goldberg-aria.mp3',
+   glossary=[
+     {"t": "area", "d": "How much flat space a shape covers. We measure it in square units.", "key": True},
+     {"t": "square unit", "alt": ["square units"], "d": "One square that covers a shape. Count the square units to find the area.", "key": True},
+     {"t": "row", "alt": ["rows"], "d": "A line of squares that goes across, left to right.", "key": True},
+     {"t": "column", "alt": ["columns"], "d": "A line of squares that goes up and down.", "key": True},
+     {"t": "half square", "alt": ["half squares", "half tile", "half tiles"], "d": "A square cut along a slant into two triangles. Two half tiles make one whole square unit.", "key": True},
+     {"t": "cover", "alt": ["covered", "covering"], "d": "To fill a shape with tiles so no part is left bare."},
+     {"t": "gap", "alt": ["gaps"], "d": "A bare space left between tiles. Gaps make the count too small."},
+     {"t": "overlap", "alt": ["overlaps", "overlapping"], "d": "When one tile sits on top of another. Overlaps count the same space twice."},
+     {"t": "tessera", "alt": ["tesserae"], "d": "A tiny square tile the Romans used to build a floor."},
+     {"t": "mosaic", "alt": ["mosaics"], "d": "A picture or floor made of many little tiles set side by side."},
+     {"t": "slanted edge", "alt": ["slanted"], "d": "An edge that is not straight across or straight up and down, but on a slant."},
+     {"t": "estimate", "d": "A smart guess about how many, made before you count."}]),
   '3.12.06': dict(page='math-lesson-3-12-06-properties-of-quadrilaterals.html', title='Properties of Quadrilaterals', video='g3math-12-06-learn', music='haydn-lark-quartet.mp3',
    glossary=[
      {"t": "quadrilateral", "alt": ["quadrilaterals"], "d": "A closed shape with 4 straight sides and 4 corners.", "key": True},

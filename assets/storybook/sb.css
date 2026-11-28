@@ -630,3 +630,16 @@ html.sb-still *{animation:none!important;transition:none!important}
 .sb-quad svg .sf-line:focus-visible,.sb-quad svg .sf-x:focus-visible,.sb-quad svg .sf-pen:focus-visible{outline:3px solid #C9A227;outline-offset:2px}
 .sb-quad svg .sf-x:not(.done) circle+circle{animation:anPulse 1.6s ease-in-out infinite}
 .sb-quad .qd-chips .tr-res.no{border-color:#B23A2E;color:#B23A2E;background:#FBE7E4}
+
+/* area model (3.13.01): mosaic tiles, count, half tiles, build */
+.sb-area svg{max-width:100%;height:auto}
+.ar-chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;align-items:center;margin-top:4px}
+.ar-cell{cursor:pointer}
+.ar-cell:focus{outline:none}
+.ar-cell:focus-visible rect,.ar-cell:focus-visible polygon{stroke:#2563EB;stroke-width:3.5}
+.ar-tray{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:8px;justify-content:center}
+.ar-tray[hidden]{display:none}
+.ar-tlab{font-weight:800;color:#5B6478}
+.ar-tile-src{width:40px;height:40px;border:none;border-radius:6px;background:#C0632F;color:#fff;font-size:20px;line-height:1;cursor:grab;box-shadow:0 2px 0 #7C3A16;touch-action:none}
+.ar-tile-src:active{cursor:grabbing}
+.ar-tile-src.dragging{opacity:.85}
